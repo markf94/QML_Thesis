@@ -1,0 +1,416 @@
+\documentclass[a4paper]{article}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+% package for including graphics with figure-environment
+\usepackage{graphicx}
+\usepackage{parskip}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\DeclareMathOperator*{\minimize}{minimize}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\usepackage[natbibapa]{apacite}
+\usepackage{geometry}
+\geometry{
+ a4paper,
+ %total={170mm,257mm},
+ left=30mm,
+ top=30mm,
+ right = 20mm,
+ bottom = 30mm
+ }
+% colors for hyperlinks
+% colored borders (false) colored text (true)
+\hypersetup{colorlinks=true,citecolor=black,filecolor=black,linkcolor=black,urlcolor=black}
+
+% package for bibliography
+\PassOptionsToPackage{authoryear,round}{natbib}
+% package for header
+\usepackage[automark]{scrpage2}
+\pagestyle{scrheadings}
+\ihead[]{Mark Fingerhuth}
+\ohead[]{\today}
+\cfoot[]{\pagemark} 
+\setheadsepline[160mm]{0.3mm}
+
+\begin{document}
+\title{
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.5\textwidth]{MSC2.png}
+\end{figure}
+%\vspace{0.3cm}
+%\begin{figure}[!ht]
+%\centering
+%\includegraphics[width=0.5\textwidth]{azm.jpg}
+%\end{figure}
+\vspace{2cm}
+\Huge{Research Proposal \\ Quantum Machine Learning \\}}
+\vspace{3cm}
+% Insert here your name and correct mail address
+\author{\Large \href{mailto:m.fingerhuth@student.maastrichtuniversity.nl}{Mark Fingerhuth}
+\vspace{1cm}}
+\date{
+\today \\
+\vspace{2cm}
+In collaboration with the Quantum Research Group at the University of KwaZulu-Natal Durban \\ 
+\vspace{9.0cm}
+\flushleft{
+\large IN PARTIAL FULFILLMENT OF THE REQUIREMENTS FOR THE DEGREE BACHELOR OF SCIENCE, MAASTRICHT UNIVERSITY. \\
+Under supervision of Prof. Petruccione, Quantum Research Group at UKZN, and
+internal supervisor, somebody, Maastricht Science Programme, Maastricht University.
+}}
+% In partial fulfillment of the requirements for the degree Bachelor of Science, Maastricht University. 
+\maketitle
+\setlength{\parindent}{0pt}
+
+\vspace{10.0cm}
+\begin{abstract}
+%%DHRUVA (START)
+Novel 3D printed cranial implants by Maastricht UMC+ and Xilloc Medical reduce cranioplasty surgery time and frequency drastically. The implants are modeled from computerized tomography (CT) scans to be patient specific, allowing them to be customized to the size, shape and needs of the patient. However, CT scans are not the most accurate method of obtaining surface data of the skull, but are used because of their non invasive nature and ubiquity. This paper examines the topological differences between CT and laser scans of a human skull. The Iterative Closest Point (ICP) algorithm and manual point-based alignment techniques were implemented in order to match the 3D surfaces. The analysis establishes that maceration and the creation of an artificial defect significantly alters skull shape. Additionally, the differences between the (I) soft tissue filter and (II) bone filter for CT scans are investigated.
+%%DHRUVA (END)
+
+\end{abstract}
+	\newpage
+	\tableofcontents
+	\newpage
+\begin{center}\textbf{\emph{Disclaimer} }\end{center}
+\small\emph{In this study, the skull of one cadaver was used. A handwritten and signed codicil from the donor, posed when still alive and well, is kept at the Department of Anatomy and Embryology Faculty of Health, Medicine and Life Sciences, Maastricht University, Maastricht, The Netherlands. This is required by Dutch law for the use of cadavers for scientific research and education.}
+
+\section{Introduction} % (fold)
+%% MARK (START)
+Three-dimensional imaging techniques such as computerized tomography (CT) and laser scanner are important tools in modern medicine. They produce a 3D model of the scanned body region, which can be used for diagnosis, virtual surgery planning or the modeling of patient specific implants \citep{rengier20103d}. However, despite their frequent use in hospitals and research, it remains unclear how accurate a CT scan reflects the true surface of a given bone structure when compared to a laser surface scan.
+
+\begin{figure}[!ht]
+		\centering
+			\includegraphics[scale=0.4]{cranioplasty-1.jpg}
+\caption{\label{fig:patient}Patient before restorative cranioplasty surgery \citep*{patient_figure}}
+\end{figure}
+
+As an illustrative example, consider a patient with a severe skull defect (see Fig.~\ref{fig:patient}) coming to a hospital. The supervising doctor will first perform a CT scan and schedule a surgery. After this there are two possibilities: the surgeon could (a) perform a classical surgery and close the skull opening with bone cement and a metal mesh or (b) they sent the CT scan to a company like Xilloc Medical that prints a patient specific implant according to the CT data before the surgery takes place (see Fig.~\ref{fig:xilloc_cranioplate}). The latter will result in a severely better result as the patient specific implant fits almost perfectly to the skull and does not create unnaturally shaped skull regions \citep{maikelbeerens}. Since the implant has to be very precise it is crucial to know how accurately a CT scan represents the skull of the patient.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.4\textwidth]{8.png}
+\caption{\label{fig:xilloc_cranioplate}3D printed titanium cranioplate by Xilloc Medical \citep*{lethaus2011treatment}}
+\end{figure}
+\newpage
+A laser scan is ideal for such a comparison as it is one of the most precise 3D surface scanning tools. However, it can only be performed on a macerated skull (flesh removed) as it only scans the surface and does not penetrate the scanned object like a CT scan. The need for maceration also explains why the supervising doctor cannot take a laser scan of the patient even though it would be the ideal 3D scan for the implant producing company. Hence, the main aim of this project was to examine the topological differences between CT and laser scans of a human skull and to determine if maceration or the creation of an artificial defect significantly alters the skull shape. Furthermore, two different CT filters, namely the soft tissue and bone filters, were compared with each other in order to gain insight into the right CT filter parameters.
+
+When a CT scan is performed, the software produces a {\fontfamily{pcr}\selectfont .dicom} file, which combines many 2D CT slices of different spatial orientations into one rotatable 3D image. Usually {\fontfamily{pcr}\selectfont .dicom} files are very large and contain information about the entire scanned space. Varying the allowed density range allows to filter for specific material like soft tissue, bone and metal. In order to solely retrieve the surface of the skull, a bone filter has to be applied to the {\fontfamily{pcr}\selectfont .dicom} file. It is, however, difficult to know exactly where to set the density boundaries and to not accidentally include soft tissue or exclude bone. Therefore, to calibrate the software for the digital bone filtering process, a phantom sample containing density standards is scanned together with the human skull \citep{arnold1990automated,arnold1991calibration}. The bone density sample is then used to filter for its density range in the {\fontfamily{pcr}\selectfont .dicom} file. The remaining data will then only be a hollow skull that is converted into a stereo lithography ({\fontfamily{pcr}\selectfont .stl}) file for further processing. An {\fontfamily{pcr}\selectfont .stl} file essentially models the skull surface as a triangle mesh. A triangle mesh is a collection of edges, vertices and faces, which approximates the shape of a 3D surface. 
+
+\begin{figure}[!ht]
+		\centering
+			\includegraphics[width=0.4\textwidth]{149_1.png}
+\caption{\label{fig:triangle_mesh}Modeling a human head using triangle meshes of various resolutions \citep*{aachen_figure}}
+\end{figure}
+
+
+Fig.~\ref{fig:triangle_mesh} illustrates that triangles are unable to accurately represent a curved surface \citep{accurate}. Larger numbers of triangles yield better approximations but theoretically even a near infinite number of triangles will introduce a certain error to the CT/LS scans. When producing patient specific skull bone implants it is crucial that the implant fits exactly within a narrow error bound (+/- 0.3mm). Therefore, it is important to know the uncertainties of the CT scan hardware as well as the imprecision of the software and the file formats used.
+
+This paper investigates the effect of maceration and the creation of an artificial defect on the human skull bone. For this comparison, CT and laser surface scans of a single human skull are matched using either the Iterative Closest Point (ICP) algorithm or manual point-based alignment techniques. Furthermore, the differences between two CT filter, namely the soft tissue and bone filter, are analysed.
+%% MARK (END)
+% section introduction (end)
+\newpage
+\section{Materials \& Methods} % (fold)
+%% MARK (START)
+The automatic 3D surface matching was primarily performed with the Computer Vision Toolbox in MATLAB R2015b. All the manual point-based alignments, surface distance calculations, and temperature maps were made in the free and open-source software MeshLab.
+
+\subsection{3D Surface Matching} % (fold)
+Every scan of a three-dimensional surface consists of individual points which are either visualized as point clouds or as triangulated meshes. Hence, the 3D surface matching problem can be simplified to a point cloud matching problem. The so called registration of two point clouds is an important problem in the fields of computer vision, 3D modeling and pattern recognition. It can be summarized as the search for a spatial transformation to align two different data sets.
+
+In mathematical terms, let $\left\{ S,M \right\}$ be two finite sized sets with $s$ and $m$ data points respectively. Both sets are defined in a finite dimensional real vector space ${\mathbb{R}}^{ d }$ which limits the search to a linear mapping as given below:
+
+\begin{equation}
+{\mathbb{R}}^{ d }\: \Longrightarrow \: {\mathbb{R}}^{ d }
+\end{equation}
+
+Hereby, the set $S$ is going to remain static and the set $M$ is going to be transformed by a transform $T$ such that the square of the Euclidean distance between the two sets $T({ M })$ and $S$ is minimized:
+
+\begin{equation}
+{ dist }(T({ M }),{ S })=\sum _{ m\in T({ M }) } \sum _{ s\in { S } } (m-s)^{ 2 }
+\end{equation}
+
+There are two distinct ways of performing point cloud matching: rigid and non-rigid registration. Rigid registration only allows for translation and rotation of the entire set $M$ thereby preserving the distance between each two points within $M$. Non-rigid registration, in contrast, additionally allows for stretching and shear-mapping of $M$ which can lead to significant changes in the distance between any two points in $M$. In the case of matching 3D surface scans of a human skull, rigid transformations are needed as non-rigid transformations would alter the shape of the skull and introduce uncontrollable errors.
+
+%% MARK (END)
+% subsection point cloud registration (end)
+
+\subsection{Preprocessing and Prealignment} % (fold)
+%% SESEGMA (START)
+Original files are in binary encoded {\fontfamily{pcr}\selectfont .stl} format. This format is widely used in computer aided design (CAD) software systems to represent 3D surface geometry. Preliminary operations were performed to transform the original files into a more manageable format. First, non-essential parts were manually removed from the images using MeshLab. These parts included the stand to which the skull was attached in some of the scans, and the lower jaw (mandible) which due to being mobile cannot be relied upon in the matching process. The essential part of every format is an \emph{m-by-3} matrix where a row contains coordinates of a single vertex. All further transformations involve dealing with this coordinate matrix.
+
+All the files were converted into {\fontfamily{pcr}\selectfont .ply} format using Meshlab. This conversion does not compromise information in the file, as it simply rearranges it in a different manner. This was checked by subtracting $xyz$ coordinates  stored in the {\fontfamily{pcr}\selectfont .stl} file from the coordinates of the corresponding {\fontfamily{pcr}\selectfont .ply} file; the result was zero, thereby confirming that no loss of information occurred. The conversion was necessary because the Computer Vision Toolbox only works with {\fontfamily{pcr}\selectfont pointCloud} objects read from {\fontfamily{pcr}\selectfont .ply} files. All further operations were performed with point clouds. 
+%%which at the end were transformed back into {\fontfamily{pcr}\selectfont .stl} format with new aligned coordinates.
+\newpage
+Next step in the preprocessing included offset translation to center the images roughly around the origin. This was done by subtracting the mean of each coordinate vector from itself:
+\begin{equation}
+Q = Q - mean(Q)
+\end{equation}
+Where $Q$ is a coordinate vector $x$,$y$, or $z$. This procedure, however, only puts the images roughly in the same area and further manipulations were done using rigid transformation with a custom transformation matrix. There are three rotation matrices necessary to rotate the image around all three axes:
+
+\begin{equation}
+R_x(\alpha) = \begin{bmatrix}
+1 & 0 & 0 \\
+0 & \cos \alpha &  -\sin \alpha \\[3pt]
+0 & \sin \alpha  &  \cos \alpha \\[3pt]
+\end{bmatrix}, \quad
+R_y(\beta) = \begin{bmatrix}
+\cos \beta & 0 & \sin \beta \\[3pt]
+0 & 1 & 0 \\[3pt]
+-\sin \beta & 0 & \cos \beta \\
+\end{bmatrix}, \quad
+R_z(\gamma) = \begin{bmatrix}
+\cos \gamma &  -\sin \gamma & 0 \\[3pt]
+\sin \gamma & \cos \gamma & 0\\[3pt]
+0 & 0 & 1\\
+\end{bmatrix}
+\end{equation}
+The three matrices are combined into a single rotation matrix $R$ through multiplication $R = R_z*R_y*R_x$.  Translation is achieved by adding a \emph{1-by-3} translation vector to each row of the coordinate matrix. The initial manual alignment was performed using the rotational and translational transformation. 
+
+%% SESEGMA (END)
+
+\subsection{Iterative Closest Point (ICP)} % (fold)
+%% SESEGMA (START)
+After comparing manual point-based alignment with the automatic Iterative Closest Point (ICP) algorithm, the automatic alignment was chosen for all comparisons in this paper. After manual matrix-based alignment, an automatic registration was performed using the Computer Vision Toolbox function {\fontfamily{pcr}\selectfont pcregrigid(moving, fixed)} which takes two point clouds as arguments and returns a rigid transformation which matches a moving point cloud to a fixed point cloud. The process is based on the ICP algorithm, introduced by \cite{121791}. The algorithm consist of several main steps that are iterated until the desired convergence is obtained. 
+
+Starting with the moving point cloud $P_t$ with points $\{\boldsymbol{p_i}\}$ and the fixed point cloud $X$ the algorithm is as follows
+\begin{itemize}
+\item Compute the set $Y_t$ of closest points between $P_t$ and $X$, such that distance $d$ is
+$d(\boldsymbol{p_i},X) = \min_{\substack{\boldsymbol{x} \in X}} \|\boldsymbol{x_i} - \boldsymbol{p_i}\|$
+\item Compute the registration (translation and rotation) $q_t$ such that $(q_t,d_t) = Q(P_t,Y_t)$ using the least squares quaternion operator $Q$ as the minimized cost function
+\item Apply the registration: $P_{t+1} = q_t(P_t)$
+\item Iterate again or terminate when the change in the mean squared error is smaller than the defined tolerance $\tau > 0 $, specifically $d_k-d_{k+1} < \tau$
+\end{itemize}
+
+The algorithm is implemented in the {\fontfamily{pcr}\selectfont pcregrigid} function and it takes other arguments along with the two point clouds. One of the most important arguments is the inlier ratio that can significantly alter the algorithm's performance. An inlier is a pair of matched points whose Euclidean distance belongs to the specified percentage of the distribution of matching distance. 
+
+In a standard ICP registration all points from two point clouds are matched pairwise. In this case, because of the large discrepancy in size among the scans 100\% matching might not be optimal. Different results can be obtained by altering this parameter, so several runs were performed with various values to get the best alignment. In cases where there are few outliers -  scans of the same type, such as CT vs. CT, - a larger value is needed, conversely, in case with the CT-laser alignment the inlier ratio might has to be set to a lower value. 
+%% SESEGMA (END)
+% subsection iterative closest point 
+\pagebreak
+\subsection{Calculation of the Distances Between Surfaces} % (fold)
+%% DHRUVA (START)
+When comparing skull models quantitatively, the distance between two surfaces must be measured. Surface registration is a common problem in several professional fields, and several metrics have been created to surmount it. For the case of two identical models at different resolutions, however, the Hausdorff distance proves to be the best because of its level of detail and computing speed. 
+
+The Hausdorff distance between the skull models was calculated using a program called METRO, which is integrated into MeshLab \citep{cignoni1998metro}. First, the 'sampled mesh' (denoted by ${ S }_{ 1 }$) is sampled at a chosen percentage of all vertices, and a downsampled series of points that resembles the original mesh is obtained. In this report, the models are not downsampled, and every vertex on the triangle mesh is used for distance calculations. For each point sampled, the distance between that point, $p$, and the closest point on the target mesh, ${ S }_{ 2 }$ , is taken to be the Hausdorff distance $e$ between $p$ and ${ S }_{ 2 }$, as seen by Eq. 5, yielding a Hausdorff distance for each vertex of mesh ${ S }_{ 1 }$.
+
+\begin{equation}
+e(p{ { ,S } }) \: = \: \underset { p'\in S }{ min }\: d(p,p’)
+\end{equation}
+
+While this gives a point specific distance between ${ S }_{ 1 }$ and ${ S }_{ 2 }$, an average distance between the two meshes can also be obtained. This is done in one of two ways: the first is taking the max value of all Hausdorff distances, and taking that to be the average distance between ${ S }_{ 1 }$ and ${ S }_{ 2 }$ (Eq. 6). The second is integrating all Hausdorff distances over the area of ${ S }_{ 1 }$ (Eq. 7).
+%% CHANGE ALL QUADS TO \:
+\begin{equation}
+E({ S }_{ 1 }{ { ,{ S }_{ 2 } } })\: =\: \max _{ p\in { S }_{ 1 } }{ \: e(p,{ S }_{ 2 } } )
+\end{equation}
+
+\begin{equation}
+{ E }_{ m }({ S }_{ 1 },{ S }_{ 2 })\: =\: \frac { 1 }{ \left| { S }_{ 1 } \right|  } \int _{ { S }_{ 1 } }^{  }{ e(p,{ S }_{ 2 } } )ds
+\end{equation}
+
+MeshLab assigns the calculated shortest distance values to each vertex of the triangle mesh as a variable called vertex quality. Vertex quality can then be visualized by colour to create a temperature map of distances between the two surfaces.
+%% DHRUVA (END)
+% subsection Hausdorff distance (end)
+
+\subsection{Representation of Differences Between Scans} % (fold)
+%% DHRUVA (START)
+The Hausdorff distance for each vertex can be represented on an intuitive colour scale known as a temperature map. Each vertex on the sampled mesh is assigned a specific colour that corresponds to its Hausdorff distance, resulting in a temperature map on the surface of the sampled mesh. This map is only present on the sampled mesh, so the target mesh becomes redundant in the visualization once the errors have been calculated. In the maps found in this report, the scale goes from red, which indicates high similarity, through green, and finally to blue, which represents low similarity between the two meshes. The colour scale corresponds linearly to Hausdorff distance, and is calibrated differently in each comparison of scans to optimise the visibility of errors. The histogram on the right side of each figure shows both, the colour scale corresponding to the Hausdorff distances for the mesh in question (on the vertical axis), as well as the distribution of vertices with specific Hausdorff distances (on the horizontal axis). This feature is important in understanding the visualization of the difference between two meshes. 
+%% DHRUVA (END)
+% subsection distance colour maps (end)
+
+% section materials & methods (end)
+
+\section{Results \& Discussion} % (fold)
+
+\subsection{The Alignment Algorithm} % (fold)
+
+\subsubsection{Iterative Closest Point vs. Point Based Alignment}
+
+%% DHRUVA (START)
+Point Based Alignment (PBA) is used in several fields such as medicine and dentistry to loosely match scanned models. In this project, however, a better alignment of two scans was achieved using the ICP algorithm rather than the more conventional PBA. The meshes used in the comparison were a laser and CT scan of the macerated skull without a defect. These two scabs represent models of the same structure at different resolutions and inaccuracies. The two models were  aligned once with ICP, and twice with PBA, once with meticulously chosen points, and once with crudely chosen points.
+The alignments are shown in Fig.~\ref{fig:XX} below.
+
+\begin {figure} [ht!]
+\centering
+\includegraphics[width=1\textwidth]{alignment_points_new.jpg}
+\caption{\label{fig:XX}Points chosen for PBA 1 and 2}
+\end{figure}
+
+In the above figure, PBA 1 shows the meticulously chosen points, and PBA 2 shows the crudely chosen points. At first sight, the points appear to be at the same place on both meshes for both PBA's, and seem to have very similar accuracy. However, the temperature maps shown in Fig.~\ref{fig:YY} that were obtained from these alignments are drastically different. This is because it is the exactness in location of the points on both meshes that determines how well it aligns.
+\pagebreak
+\begin {figure} [ht!]
+\centering
+\includegraphics[width=0.97\textwidth]{ICP_vs_PBA_New.jpg}
+\caption{\label{fig:YY}Temperature maps obtained from ICP and both meticulous (PBA 1) as well as crude (PBA 2) Point Based Alignment on CT and Laser scans of the macerated skull}
+\end{figure}
+
+\pagebreak
+
+In the temperature maps obtained, the ICP and the meticulous point based alignment are very similar to each other, both visually and statistically. Their root mean square (rms) values differ by 0.01 mm, and they have very similar distributions in their histograms. The ICP is only slightly more precise than PBA 1. The crude point based alignment is drastically different to both ICP and PBA 1, with many more points having a far higher error than in the other two comparisons. The rms value of PBA 2 is 1.76 mm, with a mean of 1.41 mm. This is a large deviation from the other alignments as well as all comparisons made in this report.
+
+The only difference between the two point based alignments was the precision with which the points were chosen. All points were chosen by hand, and done with the  MeshLab's built-in alignment tool. ICP on the other hand, was carried out mathematically, and can be repeated multiple times until the optimum alignment is obtained. The temperature maps are evidence that although Point Based Alignment can be used to get near perfect alignments, it is also subject to the human error, and is largely dependent on the skill of the person carrying out the alignment. ICP is therefore preferable in comparison with PBA, as the result will likely be the same regardless of the circumstances the alignment was carried out in. 
+%% DHRUVA (END)
+
+\subsubsection{The Role of the Inlier Ratio in ICP Registration}
+%% MARK (START)
+As stated in the Materials and Methods section the ICP algorithm in the Computer Vision Toolbox takes the inlier ratio as a parameter. This parameter tells the algorithm what percentage of the data points are inliers (e.g. 0.75). As a result, the remaining percentage (in this example 0.25) is considered to be outliers and should therefore not be taken into consideraton when minimizing the distance between the two scans. The inlier ratio seemed especially important when trying to match the one-layered laser surface scan with the double layered (inside and outside bone layer) CT scan. To optimize the algorithm only the outer bone layer should be matched with the laser scan and the inner layer should be ignored. This calls for a lower inlier ratio, but in subsequent experiments this turned out not to be the case. Different values were implemented and the direct comparison can be seen in Fig.~\ref{fig:inlier_ratio}. When comparing the colours of the eyebrow region in the three pictures, it can be seen that the higher the inlier ratio the less blue coloured regions are visible. Hence, it can be concluded that even though the CT scan has two skull bone layers the inlier ratio should be around 0.95 or 1.
+%% MARK (END)
+
+\begin {figure} [ht!]
+\centering
+\includegraphics[height = 4.7cm]{19_01_CT_laser_ICP_IR_0_45.png}%
+\hspace{0.25cm}
+\includegraphics[height = 4.7cm]{19_01_CT_laser_ICP_IR_0_75.png}
+\hspace{0.1cm}
+\includegraphics[height = 4.7cm]{19_01_CT_laser_ICP_IR_0_95.png}
+\caption{\label{fig:inlier_ratio}Comparing different ICP inlier ratios from left to right: 0.45, 0.75, 0.95}
+\end{figure}
+\pagebreak
+\subsection{Effect of Maceration on Skull Shape} % (fold)
+%% MARK (START)
+As described by \cite{de1990value} and \cite{todd1923effect}, the process of maceration usually leads to a shrinkage of the skull because the skull is first boiled and then dried. Fig.~\ref{fig:1a_vs_2a} shows the ICP surface matching results between the bone-filtered unmacerated CT scan and the bone-filtered macerated CT scan. Here, the macerated skull was the sample mesh and the unmacerated skull the target, which means that only the macerated skull is visible in Fig.~\ref{fig:1a_vs_2a}. The mean distance between the two scans is 0.97 mm, the rms value is 1.28 mm and the maximum distance between two points is 4.97 mm. The histogram in Fig.~\ref{fig:1a_vs_2a} shows that more than half of the points lie within a distance smaller than 0.70 mm. The large blue spectrum that can not be observed on the skull surface but which is present in the histogram can be attributed to artifacts which will be adressed later. 
+
+\begin {figure} [ht!]
+\centering
+\includegraphics[width=0.86\textwidth]{1a_vs_2.jpg}
+\caption{\label{fig:1a_vs_2a}Matching of unmacerated CT scan (bone filter) with macerated CT scan (bone filter) (1a vs. 2)}
+\end{figure}
+
+Changing the parameters of the density filtering in the post-processing stage of the CT images can introduce errors as it is difficult to state with absolute precision where the tissue stops and the bone begins. This of course does not apply to the CT scans of the macerated skull due to prior tissue removal. However, for the unmacerated skull two different filters were used and Fig.~\ref{fig:1a_vs_2a} already adressed the bone filter. Fig.~\ref{fig:1b_vs_2a} shows the results of the surface matching between the soft tissue-filtered unmacerated skull and the bone-filtered macerated skull. Due to the difference in filter parameters, considerable distances between the two CT scans are expected. This hypothesis is confirmed by the histogram shown in Fig.~\ref{fig:1b_vs_2a} which demonstrates that the majority of points have a large distance of up to 1.9 mm between each other (compared to 0.7 mm in Fig.~\ref{fig:1a_vs_2a}). The mean and rms values for this comparison are 1.62 mm and 2.00 mm respectively. Additionally, the maximum distance between two points is 5.50 mm which again supports the hypothesis that the scans do not fit as well as the bone-filtered scans in Fig.~\ref{fig:1a_vs_2a}.
+
+\begin {figure} [ht!]
+\centering
+\includegraphics[width=0.9\textwidth]{1b_vs_2.jpg}
+\caption{\label{fig:1b_vs_2a}Matching of unmacerated CT scan (soft tissue filter) with macerated CT scan (bone filter) (1b vs. 2)}
+\end{figure}
+\pagebreak
+When comparing the histograms in Fig.~\ref{fig:1b_vs_2a} with all other temperature maps in this paper, the large blue area (also observed in Fig.~\ref{fig:1a_vs_2a}) between 1.90 mm and 4.10 mm is an anomaly that requires explanation. Interestingly, the areas were not as large when the temperature maps were created directly from the aligned point clouds. However, for better visualization we triangulated the point clouds again to obtain smooth and non-transparent surfaces. In the case of Fig.~\ref{fig:1a_vs_2a} and Fig.~\ref{fig:1b_vs_2a} artifacts have been found in the middle between the two layers of the skull bone. The redundant artifacts are visualized in Fig.~\ref{fig:1b_vs_2a_artifacts} and their blue colour can directly be put in correspondence with the blue areas in the histograms of Fig.~\ref{fig:1a_vs_2a} and Fig.~\ref{fig:1b_vs_2a}. It can be hypothesized that the size difference of the blue areas between Fig.~\ref{fig:1a_vs_2a} and Fig.~\ref{fig:1b_vs_2a} is due to the soft-tissue filter that allowed more artifacts to remain in the middle layer of Fig.~\ref{fig:1b_vs_2a}. 
+
+As a result, it can be concluded that maceration leads to a noticeable shrinkage of the skull bone. However, the presence of the triangulated artifacts make it impossible to give a precise numerical estimate for the shrinkage as the mean and rms distance are distorted.
+%% MARK (END)
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[scale=0.13]{inside_layer_arrows.jpg}
+\caption{\label{fig:1b_vs_2a_artifacts}Triangulated artifacts between the two bone layers}
+\end{figure}
+
+\pagebreak
+\subsection{Anatomical Changes due to Defect Creation} % (fold)
+%%DHRUVA (START)
+The skull defect lies between the frontal and parietal regions of the skull. Fig.~\ref{fig:3a_vs_3b} shows the alignment of the two laser scans with and without defect. The distance mapping shows a high correspondence at the top of the skull (error under 0.30 mm), but limited correspondence at regions of the maxillar, the zygomatic, and the temporal areas (error of more than 0.30 mm). This suggests that the production of the defect might have stronger effect on the facial areas, than the area surrounding the defect. The histogram shows that 50\% of the points are aligned with an error of less than 0.30 mm. The spread of data is similar to the other comparisons made in this report, and the number of points with high error is relatively small. In the top left image in Fig.~\ref{fig:3a_vs_3b}, it can be observed that there is an area within the interior of the mesh that is entirely blue. A lot of points with low correspondence certainly come from this area. The rms calculated for the two laser scan meshes is 0.86 mm and the mean distance is 0.45 mm. These are reasonable values for rms and mean, but the blue area undoubtedly makes these values larger than they really are. The evidence from the map, the histogram, and the rms show clear difference in scans that might be attributed to the defect creation.
+%%DHRUVA (END)
+\vspace{2cm}
+\begin {figure} [ht!]
+\centering
+\includegraphics[width=0.99\textwidth]{3a_vs__3b.jpg}
+\caption{\label{fig:3a_vs_3b}Matching of laser surface scans with and without defect (3a vs. 3b)}
+\end{figure}
+\pagebreak
+\subsection{Inaccuracies between CT and Laser Scans} % (fold)
+
+\subsubsection{Inaccuracies without Defect} % (fold)
+
+\begin {figure} [ht!]
+\centering
+\includegraphics[width=0.8\textwidth]{1a_vs__3a_report_image.jpg}
+\caption{\label{fig:1a_vs_3a}Matching of CT scan (unmacerated \& bone filter) with laser surface scan (macerated) (1a vs. 3a)}
+\end{figure}
+
+In the defect free comparison between the bone-filtered unmacerated CT scan and the macerated laser scan in Fig.~\ref{fig:1a_vs_3a} a relatively small mean distance of 0.36 mm was achieved. The rms result of 0.45 mm further supports a reasonable alignment of the two scans. The maximum distance between two points was 1.7 mm but the histogram in Fig.~\ref{fig:1a_vs_3a} shows that only a small fraction of large (blue) errors were obtained. 
+
+\begin {figure} [ht!]
+\centering
+\includegraphics[width=0.95\textwidth]{2_vs_3a.jpg}
+\caption{\label{fig:2_vs_3a}Matching of macerated CT scan (bone filter) with laser surface scan (2 vs 3a)}
+\end{figure}
+
+Fig.~\ref{fig:2_vs_3a} shows the final matching of the bone-filtered macerated CT scan and the macerated laser scan and achieves very similar results to the previously discussed alignment. This time the obtained rms value was again 0.45 mm and the mean distance of 0.26 mm was even lower than in Fig.~\ref{fig:1a_vs_3a} and the largest distance between any two points was 2.50 mm. As a result, it can be said that both bone-filtered CT scans align well with the laser surface scan.
+
+\begin {figure} [ht!]
+\centering
+\includegraphics[width=0.95\textwidth]{1b_vs_3a.jpg}
+\caption{\label{fig:1b_vs_3a}Matching of unmacerated CT scan (soft tissue filter) with macerated laser surface scan (1b vs. 3a)}
+\end{figure}
+
+%% Dhruva (START)
+As mentioned earlier, the maceration of the skull causes it to shrink. Fig.~\ref{fig:1b_vs_3a} which compares the soft tissue filtered macerated CT scan with the laser scan shows that the majority of the skull has an error under 0.50 mm. Thereby, it shows a fairly large correlation between the two meshes. The rms and mean values at 0.63 mm and 0.45 mm respectively support this. The areas of high error (blue colour) are relatively sparse. In terms of overall accuracy, the scattering of yellow within the red area could be attributed to small, random fluctuations in error likely caused by the low resolving power of a soft tissue filtered CT scan. Interestingly, the differences are not only limited to the facial areas, but also to the cranium.
+
+When comparing the numerical values of Fig.~\ref{fig:1a_vs_3a} to Fig.~\ref{fig:1b_vs_3a} it can be seen that the rms and mean distance increased by 0.18 mm and 0.09 mm respectively. Furthermore, the rms and mean distance in the comparison between Fig.~\ref{fig:2_vs_3a} and Fig.~\ref{fig:1b_vs_3a} also increased by 0.18 mm and 0.19 mm correspondingly. As an overall conclusion, it can be stated that both bone-filtered CT scans align better with the laser surface scan than the soft-tissue filtered CT scans by the above stated deviations. Hence, the use of the bone filter seems more preferable.
+%% Dhruva (END)
+\pagebreak
+\pagebreak
+\subsubsection{Inaccuracies with Defect} % (fold)
+%%DHRUVA (START)
+The CT and laser scans for the skull with a defect show moderate correspondence (see Fig.~\ref{fig:4_vs_3b}). The areas of high correspondence are present in a ring around the defect and in the temporal and maxillar regions of the skull. Most high error areas are within the eye cavity and on the edge of the defect itself. The histogram shows that a large proportion of the skull has an error under 0.30 mm. The high error areas (1.00 mm and above) are sparse, especially compared to the other matchings in this paper. The maximum error obtained is 2.40 mm, but there are very few points with this error. The rms error for this comparison is 0.48 mm, which is very low. As a result, the data, especially the rms, suggests that the two scans have a relatively high correspondence.
+
+The point of interest, however, is the distribution of error over the surface of the skull. Unlike other scan comparisons, the cranium has only moderate error (a green coloration), while the facial areas have a higher correspondence. The ring around the defect could simply be attributed to the error inherent within CT scans. The difference in error is relatively small over the surface of the skull, and the significant errors are small in number, and occur only in small patches. 
+%%DHRUVA (END)
+
+\begin {figure} [ht!]
+\centering
+\includegraphics[width=0.9\textwidth]{4_vs_3b.jpg}
+\caption{\label{fig:4_vs_3b}Matching of macerated CT scan with defect (bone filter) with laser surface scan with defect (4 vs. 3b)}
+\end{figure}
+
+\subsection{The Flat Spot Anomaly} % (fold)
+\label{sec:skull_spot}
+
+%%Sesegma(start)
+In the alignment images provided by Dr. Koper there is a conspicuous spot in the left part of the frontal bone. Initially it was thought to be due to an uneven scraping during the maceration process. However, a look at the {\fontfamily{pcr}\selectfont .dicom} file of the unmacerated head revealed that the spot had been there before the procedure. This can be seen in Fig.~\ref{fig:spot} where there is a faint trace of tissue around the skull bones.  The origin of the spot is unknown, but we can state with absolute certainty that it did not appear during maceration. 
+\begin{figure} [ht!]
+\centering
+\includegraphics[scale = 0.5]{SkullSpot.png}
+\caption{\label{fig:spot} Spot in the left part of the frontal bone with the trace of the tissue}
+\end{figure}
+%%Sesegma (end)
+\pagebreak
+
+\subsection{Possible Improvements} % (fold)
+%% MARK (START)
+During the project several problems were encountered which can be avoided in the future. Firstly, when performing CT and laser surface scans that should later be matched up with each other, tiny landmarks should be introduced onto the scanned surface. The use of a 3D splint has already been proposed by \cite{swennen2007use} and the use of small glass beads as landmarks is a standard procedure for cone beam CT scans in dentistry \citep{fransdebeer}. The use of such landmarks would allow easy verification of automatically computed matches as well as enable complete and accurate manual alignments.
+
+One of the main shortcomings of the work performed for this project was that all the scans were obtained from a single skull. This means that all the conclusions are based on the sample size of one and this cannot give a statistically relevant picture. A larger sample size would be required for a statistically significant information on how maceration and defect creation influence the shape of a skull. 
+
+Another difficulty was the size of the laser surface scans which did not visualize the entire skull but only slightly more than half of it. This size difference increased the ICP search space significantly as too many rotations were possible. Initially, the ICP algorithm struggled with those alignments as it (a) tried to minimize the distance between the single layered laser surface scans and the two bone layers of the CT scan and (b) rotated the laser surface scan too much most of the time. Case (a) lead to the positioning of the laser surface scan right in between the two skull bone layers of the CT scans and case (b) lead to a good surface matching on one side of the skull but a total mismatch on the other as almost no data points were present on this side. Hence, without the other side of the skull it became difficult to determine when the two scans were accurately aligned. Therefore, future laser surface scans should ideally be conducted on the entire skull surface rather than only on sections of it.
+
+Even though the ICP algorithm is one of the most widely used point registration algorithms it is not necessarily the best. Firstly, ICP requires an exact point-to-point correspondence between the two point clouds \citep{akca2007matching}. Secondly, when confronted with large quantities of outliers such as the second bone layer in CT scans or artifacts in the middle layer (see Fig.~\ref{fig:1b_vs_2a_artifacts}) the ICP algorithm outputs a lot of wrong alignments which have to be corrected manually.
+
+\cite{akca2007matching} proposed a more sophisticated 3D surface matching algorithm that is based on so called quasisurfaces. Additional to the matching of the actual surfaces, intensity information derived from the CT or laser surface scans is used to create quasisurfaces which are perpendicular to the actual surface. Therefore, the problem is generalized to the matching of multiple surfaces rather than a single surface. According to their results, their algorithm performs well on homogeneous or isotropic surfaces. When allowing the approximation of the skull bone as a homogeneous 3D structure it would be worth investigating further into the application of quasisurfaces.
+
+Another disadvantage of the ICP algorithm is the fact that it is purely based on points and the distances between. It completely ignores the actual surface structure of the triangle mesh, thereby, wasting valuable information. From a mathematical perspective the human skull is a spherical object with positive Gaussian curvature, which enables the use of more sophisticated mathematics: differential geometry. This was proposed by \cite{wang20033d} in the context of 3D brain surface matching, however, it is certainly also applicable to the geometry of the human skull. Their algorithm is based on matching local surface curvature and geodesic distances (generalization of ‘straight lines’ in curved spaces) to match complex 3D surfaces. An implementation of this type of algorithm was impossible regarding the short time of the project but should definitely be considered for future research.
+
+By far one of the most promising and most cited 3D surface matching algorithms is the least squares 3D surface and curve matching (LS3D) method developed by \cite{gruen2005least}. Using a generalized Gauss–Markoff model they achieve faster convergence of the solution vectors for large data sets when compared to ICP. Furthermore, LS3D offers control over the estimation parameters of the algorithm and thereby enables direct control over the size of the parameter space. Besides matching surfaces onto surfaces they also demonstrate the matching of curves onto surfaces which would be particularly helpful when a company such as Xilloc Medical wants to virtually evaluate the fit of a newly developed implant design.
+%% MARK (END)
+% section results & discussion (end)
+
+\section{Conclusion} % (fold)
+Firstly, the qualitative difference between automatic (ICP) and point-based alignments were evaluated in order to establish the method of choice for all alignments presented in this paper. Even though both alignment techniques performed equally well in the first run, the implementation of the ICP algorithm was chosen for all alignments. This is based on the fact, that the manual point-based alignment is largely subject to human error as it was observed in the second manual alignment. The ICP algorithm, however, has a profound mathematical foundation and can be repeated until the optimum has been reached.
+
+Moreover, this paper analysed the effect of maceration on skull shape by comparing bone and soft tissue filtered CT scans of a macerated and unmacerated human skull. It has been found that maceration leads to an observable shrinkage of the skull that can be explained by the boiling and subsequent drying of the specimen. No accurate numerical values could be drawn from this analysis as triangulated artifacts in the middle layer of the skull bone distorted the obtained rms and mean distance values. Furthermore, an anatomical change in skull shape was observed when comparing the two laser scans that were made before and after the creation of the artificial defect. According to the alignments, the maxillar, the zygomatic and the temporal region of the skull were primarily affected.
+
+In order to evaluate how accurately a filtered CT scan represents the actual skull bone surface, the CT scans were aligned with the laser scans. In the analysis of the defect free scans a discrepancy of 0.18 mm in the rms and up to 0.19 mm in the mean distance have been found when comparing the bone to the soft tissue filter. The good alignment results for the bone-filtered CT and laser scan with defects further support this hypothesis with an rms value of 0.48 mm. As a result, the performance of the bone filter was found to be better.
+
+For future research, a larger sample size would be required in order to be able to draw statistically significant conclusions on how maceration and defect creation influences the shape of a skull. For even better alignments and faster convergence, more sophisticated surface matching algorithms based on differential geometry or quasisurfaces should be considered.
+% section conclusion (end)
+
+\newpage
+\section{References}
+\begingroup
+\renewcommand{\section}[2]{}%
+\bibliographystyle{apacite}
+\bibliography{proposal}
+\endgroup
+
+\newpage
+
+\section{Appendix}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale = 0.5]{contributions.png}
+\caption{\label{fig:contributions}Individual contributions to the report}
+\end{figure}
+
+\end{document}

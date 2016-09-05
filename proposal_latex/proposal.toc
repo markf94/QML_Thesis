@@ -1,0 +1,22 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Introduction}{4}{section.1}
+\contentsline {section}{\numberline {2}Materials \& Methods}{6}{section.2}
+\contentsline {subsection}{\numberline {2.1}3D Surface Matching}{6}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Preprocessing and Prealignment}{6}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Iterative Closest Point (ICP)}{7}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Calculation of the Distances Between Surfaces}{8}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Representation of Differences Between Scans}{8}{subsection.2.5}
+\contentsline {section}{\numberline {3}Results \& Discussion}{8}{section.3}
+\contentsline {subsection}{\numberline {3.1}The Alignment Algorithm}{8}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Iterative Closest Point vs. Point Based Alignment}{8}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}The Role of the Inlier Ratio in ICP Registration}{11}{subsubsection.3.1.2}
+\contentsline {subsection}{\numberline {3.2}Effect of Maceration on Skull Shape}{12}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Anatomical Changes due to Defect Creation}{15}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Inaccuracies between CT and Laser Scans}{16}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Inaccuracies without Defect}{16}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}Inaccuracies with Defect}{18}{subsubsection.3.4.2}
+\contentsline {subsection}{\numberline {3.5}The Flat Spot Anomaly}{19}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}Possible Improvements}{20}{subsection.3.6}
+\contentsline {section}{\numberline {4}Conclusion}{21}{section.4}
+\contentsline {section}{\numberline {5}References}{23}{section.5}
+\contentsline {section}{\numberline {6}Appendix}{24}{section.6}
