@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0+" codebase="http://secs.ceas.uc.edu/~mcahay/blochsphere/" href="newbloch3d.jnlp">
+
+  <information>
+    <title>Bloch Sphere Simulation</title>
+    <vendor>University Of Cincinnati: College of Engineering</vendor>
+    <homepage href="http://secs.ceas.uc.edu/~mcahay/blochsphere"/>
+    <description>Bloch Sphere Simulation</description>
+    <offline-allowed/>
+  </information>
+
+  <security>
+    <all-permissions/>
+  </security>
+
+  <resources>
+    <j2se version="1.5+"/>
+    <jar href="bloch3d.jar" main="true"/>
+	<extension href="http://secs.ceas.uc.edu/~mcahay/blochsphere/java3d/java3d.jnlp"/>
+  </resources>
+
+  <application-desc main-class="edu.uc.ece.blochSphere.BlochApplication"/>
+
+</jnlp>
+
+
