@@ -1,21 +1,20 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.2}{Materials \046 Methods}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{3D Surface Matching}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{Preprocessing and Prealignment}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.3}{Iterative Closest Point \(ICP\)}{section.2}% 5
-\BOOKMARK [2][-]{subsection.2.4}{Calculation of the Distances Between Surfaces}{section.2}% 6
-\BOOKMARK [2][-]{subsection.2.5}{Representation of Differences Between Scans}{section.2}% 7
-\BOOKMARK [1][-]{section.3}{Results \046 Discussion}{}% 8
-\BOOKMARK [2][-]{subsection.3.1}{The Alignment Algorithm}{section.3}% 9
-\BOOKMARK [3][-]{subsubsection.3.1.1}{Iterative Closest Point vs. Point Based Alignment}{subsection.3.1}% 10
-\BOOKMARK [3][-]{subsubsection.3.1.2}{The Role of the Inlier Ratio in ICP Registration}{subsection.3.1}% 11
-\BOOKMARK [2][-]{subsection.3.2}{Effect of Maceration on Skull Shape}{section.3}% 12
-\BOOKMARK [2][-]{subsection.3.3}{Anatomical Changes due to Defect Creation}{section.3}% 13
-\BOOKMARK [2][-]{subsection.3.4}{Inaccuracies between CT and Laser Scans}{section.3}% 14
-\BOOKMARK [3][-]{subsubsection.3.4.1}{Inaccuracies without Defect}{subsection.3.4}% 15
-\BOOKMARK [3][-]{subsubsection.3.4.2}{Inaccuracies with Defect}{subsection.3.4}% 16
-\BOOKMARK [2][-]{subsection.3.5}{The Flat Spot Anomaly}{section.3}% 17
-\BOOKMARK [2][-]{subsection.3.6}{Possible Improvements}{section.3}% 18
-\BOOKMARK [1][-]{section.4}{Conclusion}{}% 19
-\BOOKMARK [1][-]{section.5}{References}{}% 20
-\BOOKMARK [1][-]{section.6}{Appendix}{}% 21
+\BOOKMARK [2][-]{subsection.1.1}{Motivation}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Basics of Quantum Computing}{section.1}% 3
+\BOOKMARK [3][-]{subsubsection.1.2.1}{Qubits}{subsection.1.2}% 4
+\BOOKMARK [3][-]{subsubsection.1.2.2}{Quantum Logic Gates}{subsection.1.2}% 5
+\BOOKMARK [2][-]{subsection.1.3}{Classical Machine Learning}{section.1}% 6
+\BOOKMARK [3][-]{subsubsection.1.3.1}{k-nearest Neighbour Algorithm}{subsection.1.3}% 7
+\BOOKMARK [3][-]{subsubsection.1.3.2}{Linear regression in supervised pattern recognition}{subsection.1.3}% 8
+\BOOKMARK [2][-]{subsection.1.4}{Quantum Machine Learning}{section.1}% 9
+\BOOKMARK [3][-]{subsubsection.1.4.1}{Quantum improvements to ML}{subsection.1.4}% 10
+\BOOKMARK [3][-]{subsubsection.1.4.2}{Maria's Two Algorithms}{subsection.1.4}% 11
+\BOOKMARK [2][-]{subsection.1.5}{Research Question}{section.1}% 12
+\BOOKMARK [1][-]{section.2}{Research Methods}{}% 13
+\BOOKMARK [2][-]{subsection.2.1}{IBM Quantum Computer}{section.2}% 14
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Possibilities and Restrictions with 5 Qubits}{subsection.2.1}% 15
+\BOOKMARK [3][-]{subsubsection.2.1.2}{Potentially developing an amplitude-based alternative}{subsection.2.1}% 16
+\BOOKMARK [2][-]{subsection.2.2}{Microsoft Liqui|"526930B }{section.2}% 17
+\BOOKMARK [1][-]{section.3}{Outlook \046 Conclusion}{}% 18
+\BOOKMARK [1][-]{section.4}{References}{}% 19
+\BOOKMARK [1][-]{section.5}{Appendix}{}% 20

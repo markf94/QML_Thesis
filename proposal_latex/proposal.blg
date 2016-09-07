@@ -12,50 +12,45 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: proposal.bib
-Warning--entry type for "aachen_figure" isn't style-file defined
---line 1 of file proposal.bib
-Warning--entry type for "patient_figure" isn't style-file defined
---line 10 of file proposal.bib
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
-You've used 17 entries,
+You've used 1 entry,
             6951 wiz_defined-function locations,
-            1380 strings with 13513 characters,
-and the built_in function-call counts, 30863 in all, are:
-= -- 3818
-> -- 260
-< -- 1389
-+ -- 1399
-- -- 34
-* -- 1925
-:= -- 5466
-add.period$ -- 72
-call.type$ -- 17
-change.case$ -- 297
+            1277 strings with 10832 characters,
+and the built_in function-call counts, 1778 in all, are:
+= -- 203
+> -- 19
+< -- 70
++ -- 70
+- -- 2
+* -- 118
+:= -- 320
+add.period$ -- 4
+call.type$ -- 1
+change.case$ -- 17
 chr.to.int$ -- 0
-cite$ -- 34
-duplicate$ -- 843
-empty$ -- 1292
-format.name$ -- 447
-if$ -- 5962
+cite$ -- 2
+duplicate$ -- 54
+empty$ -- 83
+format.name$ -- 32
+if$ -- 340
 int.to.chr$ -- 0
-int.to.str$ -- 51
+int.to.str$ -- 3
 missing$ -- 0
-newline$ -- 433
-num.names$ -- 136
-pop$ -- 607
+newline$ -- 33
+num.names$ -- 8
+pop$ -- 25
 preamble$ -- 1
-purify$ -- 76
+purify$ -- 4
 quote$ -- 0
-skip$ -- 2050
+skip$ -- 122
 stack$ -- 0
-substring$ -- 1521
-swap$ -- 497
-text.length$ -- 42
+substring$ -- 76
+swap$ -- 35
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 1504
+type$ -- 80
 warning$ -- 0
-while$ -- 159
+while$ -- 12
 width$ -- 0
-write$ -- 530
-(There were 2 warnings)
+write$ -- 41
