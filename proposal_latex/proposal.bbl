@@ -32,6 +32,38 @@ Acharya, U\BPBI R.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Cai%
+\ \protect \BOthers {.}}{%
+Cai%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+Cai2015}
+\APACinsertmetastar {%
+Cai2015}%
+\begin{APACrefauthors}%
+Cai, X\BPBI D.%
+, Wu, D.%
+, Su, Z\BPBI E.%
+, Chen, M\BPBI C.%
+, Wang, X\BPBI L.%
+, Li, L.%
+\BDBL {}Pan, J\BPBI W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Entanglement-based machine learning on a quantum
+  computer}} {{Entanglement-based machine learning on a quantum
+  computer}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Physical Review Letters}{114}{11}{1--5}.
+\newblock
+\begin{APACrefDOI} \doi{10.1103/PhysRevLett.114.110504} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 D-Wave%
 }{%
 D-Wave%
@@ -138,6 +170,38 @@ IBM.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Li%
+, Liu%
+, Xu%
+\BCBL {}\ \BBA {} Du%
+}{%
+Li%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+Li2015}
+\APACinsertmetastar {%
+Li2015}%
+\begin{APACrefauthors}%
+Li, Z.%
+, Liu, X.%
+, Xu, N.%
+\BCBL {}\ \BBA {} Du, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Experimental realization of a quantum support vector
+  machine}} {{Experimental realization of a quantum support vector
+  machine}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Physical Review Letters}{114}{14}{1--5}.
+\newblock
+\begin{APACrefDOI} \doi{10.1103/PhysRevLett.114.140504} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 O'Malley%
 \ \protect \BOthers {.}}{%
 O'Malley%
@@ -169,6 +233,37 @@ O'Malley, P\BPBI J\BPBI J.%
   \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1103/PhysRevX.6.031007} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Rist{\`{e}}%
+\ \protect \BOthers {.}}{%
+Rist{\`{e}}%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+Riste2015}
+\APACinsertmetastar {%
+Riste2015}%
+\begin{APACrefauthors}%
+Rist{\`{e}}, D.%
+, da Silva, M\BPBI P.%
+, Ryan, C\BPBI A.%
+, Cross, A\BPBI W.%
+, Smolin, J\BPBI A.%
+, Gambetta, J\BPBI M.%
+\BDBL {}Johnson, B\BPBI R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Demonstration of quantum advantage in machine
+  learning}} {{Demonstration of quantum advantage in machine learning}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{arXiv:1512.06069}{}{}{1--12}.
+\newblock
+\begin{APACrefURL} \url{http://arxiv.org/abs/1512.06069} \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

@@ -7,4 +7,3 @@
 \contentsline {section}{\numberline {3}Timeline}{6}{section.3}
 \contentsline {section}{\numberline {4}Outlook \& Conclusion}{6}{section.4}
 \contentsline {section}{\numberline {5}References}{7}{section.5}
-\contentsline {section}{\numberline {6}Appendix}{8}{section.6}
