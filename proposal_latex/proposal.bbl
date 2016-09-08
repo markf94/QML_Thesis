@@ -1,34 +1,199 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
-Schuld%
-, Sinayskiy%
-\BCBL {}\ \BBA {} Petruccione%
-}{%
-Schuld%
+Acharya%
 \ \protect \BOthers {.}}{%
-{\protect \APACyear {2014}}%
+Acharya%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
 }]{%
-Schuld2014}
+acharya2015integrated}
 \APACinsertmetastar {%
-Schuld2014}%
+acharya2015integrated}%
 \begin{APACrefauthors}%
-Schuld, M.%
-, Sinayskiy, I.%
-\BCBL {}\ \BBA {} Petruccione, F.%
+Acharya, U\BPBI R.%
+, Fujita, H.%
+, Sudarshan, V\BPBI K.%
+, Sree, V\BPBI S.%
+, Eugene, L\BPBI W\BPBI J.%
+, Ghista, D\BPBI N.%
+\BCBL {}\ \BBA {} San~Tan, R.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2014}{}{}.
+\APACrefYearMonthDay{2015}{}{}.
 \newblock
-{\BBOQ}\APACrefatitle {{An introduction to quantum machine learning}} {{An
-  introduction to quantum machine learning}}.{\BBCQ}
+{\BBOQ}\APACrefatitle {An integrated index for detection of sudden cardiac
+  death using discrete wavelet transform and nonlinear features} {An integrated
+  index for detection of sudden cardiac death using discrete wavelet transform
+  and nonlinear features}.{\BBCQ}
 \newblock
-\APACjournalVolNumPages{arXiv}{}{November}{19}.
+\APACjournalVolNumPages{Knowledge-Based Systems}{83}{}{149--158}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+D-Wave%
+}{%
+D-Wave%
+}{%
+{\protect \APACyear {2015}}%
+}]{%
+dwave2}
+\APACinsertmetastar {%
+dwave2}%
+\begin{APACrefauthors}%
+D-Wave.%
+\end{APACrefauthors}%
+\unskip\
 \newblock
-\begin{APACrefURL} \url{http://arxiv.org/abs/1409.3097} \end{APACrefURL}
+\APACrefYearMonthDay{2015}{}{}.
 \newblock
-\begin{APACrefDOI} \doi{10.1080/00107514.2014.964942} \end{APACrefDOI}
+\APACrefbtitle {Breaking through 1000 Qubits.} {Breaking through 1000 qubits.}
+\newblock
+\APAChowpublished
+  {\url{http://www.dwavesys.com/blog/2015/06/breaking-through-1000-qubits}}.
+\newblock
+\APACrefnote{Accessed: 2010-09-08}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Giovannetti%
+, Lloyd%
+\BCBL {}\ \BBA {} Maccone%
+}{%
+Giovannetti%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2008}}%
+}]{%
+qRAM}
+\APACinsertmetastar {%
+qRAM}%
+\begin{APACrefauthors}%
+Giovannetti, V.%
+, Lloyd, S.%
+\BCBL {}\ \BBA {} Maccone, L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2008}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Quantum random access memory} {Quantum random access
+  memory}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Physical review letters}{100}{16}{160501}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Harrow%
+, Hassidim%
+\BCBL {}\ \BBA {} Lloyd%
+}{%
+Harrow%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2009}}%
+}]{%
+HHL2009}
+\APACinsertmetastar {%
+HHL2009}%
+\begin{APACrefauthors}%
+Harrow, A\BPBI W.%
+, Hassidim, A.%
+\BCBL {}\ \BBA {} Lloyd, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2009}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Quantum algorithm for linear systems of equations}}
+  {{Quantum algorithm for linear systems of equations}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Physical Review Letters}{103}{15}{1--4}.
+\newblock
+\begin{APACrefDOI} \doi{10.1103/PhysRevLett.103.150502} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+IBM%
+}{%
+IBM%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+bigdata}
+\APACinsertmetastar {%
+bigdata}%
+\begin{APACrefauthors}%
+IBM.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+\APACrefbtitle {What is big data?} {What is big data?}
+\newblock
+\APAChowpublished
+  {\url{https://www-01.ibm.com/software/data/bigdata/what-is-big-data.html}}.
+\newblock
+\APACrefnote{Accessed: 2016-09-08}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+O'Malley%
+\ \protect \BOthers {.}}{%
+O'Malley%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2016}}%
+}]{%
+hydrogensimulation}
+\APACinsertmetastar {%
+hydrogensimulation}%
+\begin{APACrefauthors}%
+O'Malley, P\BPBI J\BPBI J.%
+, Babbush, R.%
+, Kivlichan, I\BPBI D.%
+, Romero, J.%
+, McClean, J\BPBI R.%
+, Barends, R.%
+\BDBL {}Martinis, J\BPBI M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{Jul}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Scalable Quantum Simulation of Molecular Energies}
+  {Scalable quantum simulation of molecular energies}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Phys. Rev. X}{6}{}{031007}.
+\newblock
+\begin{APACrefURL} \url{http://link.aps.org/doi/10.1103/PhysRevX.6.031007}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1103/PhysRevX.6.031007} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Shor%
+}{%
+Shor%
+}{%
+{\protect \APACyear {1994}}%
+}]{%
+shor1994}
+\APACinsertmetastar {%
+shor1994}%
+\begin{APACrefauthors}%
+Shor, P\BPBI W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1994}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Polynomial-Time Algorithm For Prime Factorization And
+  Discrete Logarithms On A Quantum Computer: Proc} {Polynomial-time algorithm
+  for prime factorization and discrete logarithms on a quantum computer:
+  Proc}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{}{}{}{124}.
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}

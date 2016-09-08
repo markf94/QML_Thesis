@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{parskip}
 \usepackage{amssymb}
+\usepackage{mathbbol}
 \usepackage{amsmath}
 \DeclareMathOperator*{\minimize}{minimize}
 %\usepackage{verbatim}
@@ -34,6 +35,12 @@
 \cfoot[]{\pagemark} 
 \setheadsepline[160mm]{0.3mm}
 
+% Defining some new mathematics commands
+\newcommand*{\colvec}[1]{\begin{pmatrix}#1\end{pmatrix}}
+\newcommand*{\0}{$\ket{0}$}
+\newcommand*{\1}{$\ket{1}$}
+
+
 \begin{document}
 \title{
 \vspace{1cm}
@@ -47,7 +54,7 @@
 \includegraphics[width=0.5\textwidth]{logo.jpeg}
 \end{figure}
 \vspace{2cm}
-\Huge{\bf{Research Proposal for} \\ Proof of Concept Implementation of Quantum Machine Learning Algorithms \\}}
+\Huge{\bf{Research Proposal for} \\ Experimental Implementation of Quantum Machine Learning Algorithms \\}}
 \vspace{3cm}
 % Insert here your name and correct mail address
 \author{\Large \href{mailto:m.fingerhuth@student.maastrichtuniversity.nl}{Mark Fingerhuth}
@@ -67,6 +74,8 @@ In collaboration with the Quantum Research Group at the University of KwaZulu-Na
 
 \vspace{10.0cm}
 \begin{abstract}
+
+% >> this should be a nice concise summary of the entire proposal
 Mixtape tote bag quinoa, deep v ramps organic pabst. Cliche trust fund twee lo-fi, lumbersexual sustainable skateboard brunch keytar edison bulb. Try-hard blue bottle meggings fashion axe, gentrify freegan PBRB. Squid retro viral, shoreditch sriracha salvia kogi chia. Celiac tumblr thundercats, williamsburg literally etsy man braid franzen flannel chambray raw denim. Try-hard woke retro intelligentsia. Af actually synth coloring book hoodie tumeric, knausgaard paleo butcher.
 
 \end{abstract}
@@ -77,143 +86,91 @@ Mixtape tote bag quinoa, deep v ramps organic pabst. Cliche trust fund twee lo-f
 \section{Introduction}
 \label{sec:introduction}
 
-Mixtape tote bag quinoa, deep v ramps organic pabst. Cliche trust fund twee lo-fi, lumbersexual sustainable skateboard brunch keytar edison bulb. Try-hard blue bottle meggings fashion axe, gentrify freegan PBRB. Squid retro viral, shoreditch sriracha salvia kogi chia. Celiac tumblr thundercats, williamsburg literally etsy man braid franzen flannel chambray raw denim. Try-hard woke retro intelligentsia. Af actually synth coloring book hoodie tumeric, knausgaard paleo butcher.
+%>> Introduce the TOPIC (QML) not the (HYPO)THESIS!
+
+The ability to understand spoken language, to recognize faces and to distinguish different types of fruit comes naturally to humans, even though these processes of pattern recognition and classification are inherently complex. Machine learning (ML), a subtopic of artificial intelligence, is concerned with the development of algorithms that mimic these mechanisms, thereby enabling computers to find and recognise patterns in data and classify unknown inputs based on previous training with labelled inputs. Such algorithms paved the way for e.g. human speech recognition, recommendation engines as used by Amazon and prediction algorithms that can predict heart disease from real-time electrocardiograms \citep{acharya2015integrated}.
+
+According to \cite*{bigdata}, every day approximately 2.5 quintillion (${10}^{18}$) bytes of digital data are created. This growing number implies that every area dealing with data will eventually require advanced algorithms that can make sense of data content, retrieve patterns and reveal correlations. However, most ML algorithms involve the execution of computationally expensive operations and doing so on large data sets inevitably takes a lot of time (REFERENCE?). Hence, it becomes increasingly important to find efficient ways of dealing with big data and/or reduce the computational complexity of the algorithms.
+
+A promising solution is the use of quantum computation which has been researched intensively in the last decades. Quantum computers use quantum mechanical systems and their special properties to manipulate and process information in ways that are impossible to implement on classical computers. The quantum equivalent to a classical bit is called a quantum bit (or qubit) and additionally to being in either state they can be in a linear superposition of \0 and \1. This peculiar property gives rise to so called quantum parallelism, which enables the execution of certain operations on many quantum states at the same time. Despite this obvious advantage, the real difficulty in quantum computation lies in the retrieval of the computed solution since a measurement of a qubit collapses it into a classical bit and thereby destroys information about its previous superposition. Several quantum algorithms have been proposed that provide exponential speed-ups when compared to their classical counterparts with Shor's prime factorization algorithm being the most famous \citep{shor1994}. Hence, quantum computation bears the potential to vastly improve computational power, speed up the processing of big data and solve problems that are practically unsolvable on classical computers. 
+
+%for the QML toolbox to be complete a quantum algorithm to solve systems of linear equations is needed since most ML algorithms rely on solving those.
+
+Considering these advantages, the combination of quantum computation and classical ML into the new field of quantum machine learning (QML) seems almost natural. However, since most ML algorithms rely on solving some system of linear equations a corresponding quantum algorithm is required for QML to become achievable. \cite{HHL2009} were first to describe such an algorithm (referred to as HHL-algorithm) which since has become a subroutine in many QML algorithms. There are currently two main ideas on how to merge quantum computation with ML, namely a) running the classical algorithm on a classical computer and 'outsourcing' only the computationally intensive task to a quantum computer or b) executing the quantum version of the entire algorithm on a quantum computer. Current QML research mostly focusses on the latter by developing quantum algorithms that tab into the full potential of quantum parallelism.
+
+%QML
+%- the unification or symbiosis of ML and QC comes naturally when considering the vast speed-ups that could be gained through implementing ML on QCs
+%- this relatively new research field is called QML and is largely based on the discovery of the HLL algorithm
+%- two possibilities: 1. run entire algorithm on QC or 2. run computationally exhaustive subroutines on QC and the rest on a CC
+
+
+%ML
+
+%- machine learning as a subarea of artificial intelligence is all about teaching/training a computer on how to recognise patterns, classify unknown information and ultimately learn from given input data
+%- important for prediction algorithms, recommendation engines, expert machines (e.g. Watson) and computer vision or speech recognition
+%- cite the amount of data humans create per year >> this huge amount of data requires advanced analysis in order to make sense of it
+%- machine learning algorithms are usually very computationally exhaustive and when increasing the amount of data the computation time increases (exponentially???) >> maybe give the example of how long it took AlphaGo to be trained
+
+%Quantum
+
+%- quantum computation has become a very promising research area
+%- it exploits/uses quantum mechanical systems to manipulate information and since quantum mechanics allows for superpositions it makes quantum parallelism possible / things like interference can be used to our benefit
+%- offers the possibility of vastly boosting our computational power and enrich the space of solvable problems e.g. optimization problems (might be able to solve some P and NP problems) >> check this exactly
+%- quantum mechanics essentially is 'applied linear algebra in complex vector spaces' and since classical computation is all about manipulating vectors and matrices the usefulness of QM for computation becomes obvious
+
+\newpage
 
 \subsection{Motivation}
 \label{subsec:motivation}
 
-Taxidermy edison bulb plaid, chia swag organic roof party shabby chic raw denim tilde waistcoat. Swag everyday carry iPhone, pitchfork pop-up ethical blog small batch la croix before they sold out chartreuse chia gastropub craft beer crucifix. Occupy mustache organic tumblr, scenester cred listicle kombucha lumbersexual. Crucifix tumeric bushwick, organic unicorn ugh food truck 90's echo park freegan mumblecore chia shabby chic. Keytar actually intelligentsia mumblecore, ugh selvage schlitz tousled iPhone cray paleo wayfarers snackwave viral humblebrag. Subway tile pop-up squid church-key craft beer. Church-key la croix cornhole kitsch 8-bit gluten-free.
-
-\subsection{Basics of Quantum Computing}
-\label{subsec:basicsofquantumcomputing}
-
-+1 bitters health goth fixie, irony cred meh keytar sriracha forage chambray master cleanse sartorial ugh fingerstache. Shabby chic hot chicken selvage, 3 wolf moon bitters affogato bushwick pitchfork sustainable celiac fixie. Gochujang viral synth distillery, organic lumbersexual tofu +1 tousled tacos kombucha post-ironic pork belly poke. Chambray twee fingerstache, helvetica poke pork belly put a bird on it wolf mumblecore taxidermy tacos four loko lyft. Subway tile listicle godard cray echo park.
-
-\subsubsection{Qubits}
-\label{subsubsec:qubits}
-
-to be written now...
-
-\begin{equation}
-\label{equ: simplequbit}
-\ket{q} = \alpha \ket{0} + \beta \ket{1}
-\end{equation}
-
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[scale=0.07]{blochsphere.png}				\caption{\label{fig:blochsphere} An arbitrary two-dimensional qubit $\ket{\psi}$ visualized on the Bloch sphere. \textit{\small{Reprinted from Wikipedia, n.d., Retrieved September 7, 2016, from \url{https://en.wikipedia.org/wiki/Bloch_Sphere}. Copyright 2012 by Glosser.ca. Reprinted with permission.}}}
-\end{figure}
-
-\begin{equation}
-\label{equ: blochqubit}
-\ket{q} = \cos\frac{\theta}{2} \ket{0} + e^{i \phi} \sin\frac{\theta}{2} \ket{1}
-\end{equation}
-
-\subsubsection{Quantum Logic Gates}
-\label{subsubsec:quantumlogicgates}
-
-+1 bitters health goth fixie, irony cred meh keytar sriracha forage chambray master cleanse sartorial ugh fingerstache. Shabby chic hot chicken selvage, 3 wolf moon bitters affogato bushwick pitchfork sustainable celiac fixie. Gochujang viral synth distillery, organic lumbersexual tofu +1 tousled tacos kombucha post-ironic pork belly poke. Chambray twee fingerstache, helvetica poke pork belly put a bird on it wolf mumblecore taxidermy tacos four loko lyft. Subway tile listicle godard cray echo park.
+Classical ML is a very practical topic since it can be directly tested, verified and implemented on any commercial classical computer. So far, QML has been of almost entirely theoretical nature since the computational resources are not in place yet. QML algorithms often require a relatively large number of error-corrected qubits and some sort of quantum data storage such as the proposed quantum random access memory (qRAM) \citep{qRAM}. However, to date the maximum number of superconducting qubits used for calculation is nine, the D-Wave II quantum annealing device delivers 1152 qubits but can only solve a narrow class of problems and a qRAM has not been developed yet \citep{hydrogensimulation, dwave2}. Furthermore, qubit error-correction is still a very active research field and most of the described preliminary quantum computers deal with non error-corrected qubits with short lifetimes and are, thus, impractical for large QML implementations.
 
 
-\subsection{Classical Machine Learning}
-\label{subsec:classicalmachinelearning}
-
-Mixtape tote bag quinoa, deep v ramps organic pabst. Cliche trust fund twee lo-fi, lumbersexual sustainable skateboard brunch keytar edison bulb. Try-hard blue bottle meggings fashion axe, gentrify freegan PBR. Squid retro viral, shoreditch sriracha salvia kogi chia. Celiac tumblr thundercats, williamsburg literally etsy man braid franzen flannel chambray raw denim. Try-hard woke retro intelligentsia. Af actually synth coloring book hoodie tumeric, knausgaard paleo butcher.
-
-\subsubsection{k-nearest Neighbour Algorithm}
-\label{subsubsec:knearestneighbour}
 
 
-Mixtape tote bag quinoa, deep v ramps organic pabst. Cliche trust fund twee lo-fi, lumbersexual sustainable skateboard brunch keytar edison bulb. Try-hard blue bottle meggings fashion axe, gentrify freegan PBRB. Squid retro viral, shoreditch sriracha salvia kogi chia. Celiac tumblr thundercats, williamsburg literally etsy man braid franzen flannel chambray raw denim. Try-hard woke retro intelligentsia. Af actually synth coloring book hoodie tumeric, knausgaard paleo butcher.
 
-\begin{equation}
-{\mathbb{R}}^{ d }\: \Longrightarrow \: {\mathbb{R}}^{ d }
-\end{equation}
+>> what is your point? what exactly do you wanna do and why? why does it makes sense?
+>> (Background and literature review/current state)
 
-Hereby, the set $S$ is going to remain static and the set $M$ is going to be transformed by a transform $T$ such that the square of the Euclidean distance between the two sets $T({ M })$ and $S$ is minimized:
+%- ML is a very hands-on, practical and applied topic whereas QML has been almost entirely theoretical so far since the computational resources are not in place yet
+%- mostly of theoretical nature since QML algorithms often require large amounts of qubits, error-corrected qubits and some sort of qRAM
+- there have been only a handful of attempts to experimentally implement QML algorithms as proof-of-concept studies ( cite Li and other fellows)
+- it is therefore important to continue along this line and to find small ML subproblems which can already be implemented on currently available technology in an attempt to unify the practical research area of ML with the theoretical side of QML and verify the claims and assumptions of the QML researchers 
+- there are many proposed quantum Machine Learning algorithms which should hypothetically work but who have not been implemented or verified experimentally yet
+- Finding very small machine learning problems which can be implemented on IBM’s QC would constitute a proof-of-concept for the quantum machine learning age. This is crucial for further research to be funded and supported since it shows that an upscaling of QCs will eventually 		lead to huge speed ups in ML routines and therefore 			revolutionize the handling of big data
 
-\begin{equation}
-{ dist }(T({ M }),{ S })=\sum _{ m\in T({ M }) } \sum _{ s\in { S } } (m-s)^{ 2 }
-\end{equation}
-
-Mixtape tote bag quinoa, deep v ramps organic pabst. Cliche trust fund twee lo-fi, lumbersexual sustainable skateboard brunch keytar edison bulb. Try-hard blue bottle meggings fashion axe, gentrify freegan PBRB. Squid retro viral, shoreditch sriracha salvia kogi chia. Celiac tumblr thundercats, williamsburg literally etsy man braid franzen flannel chambray raw denim. Try-hard woke retro intelligentsia. Af actually synth coloring book hoodie tumeric, knausgaard paleo butcher.
-
-\subsubsection{Linear regression in supervised pattern recognition}
-\label{subsubsec:linearregression}
-
-Pabst bicycle rights mlkshk fap, readymade paleo kickstarter crucifix hammock. Seitan air plant fanny pack keytar pork belly sriracha, portland paleo stumptown echo park put a bird on it roof party semiotics authentic you probably haven't heard of them. Schlitz raw denim trust fund kale chips air plant aesthetic. Humblebrag austin freegan, echo park fap hell of you probably haven't heard of them four dollar toast bitters coloring book etsy literally. 90's subway tile williamsburg neutra crucifix mlkshk, squid health goth roof party banjo humblebrag. Normcore plaid chia austin, crucifix unicorn chambray kickstarter +1 skateboard ennui cronut hell of freegan. Typewriter cray flexitarian sustainable forage brooklyn.
-
-\begin{equation}
-R_x(\alpha) = \begin{bmatrix}
-1 & 0 & 0 \\
-0 & \cos \alpha &  -\sin \alpha \\[3pt]
-0 & \sin \alpha  &  \cos \alpha \\[3pt]
-\end{bmatrix}, \quad
-R_y(\beta) = \begin{bmatrix}
-\cos \beta & 0 & \sin \beta \\[3pt]
-0 & 1 & 0 \\[3pt]
--\sin \beta & 0 & \cos \beta \\
-\end{bmatrix}, \quad
-R_z(\gamma) = \begin{bmatrix}
-\cos \gamma &  -\sin \gamma & 0 \\[3pt]
-\sin \gamma & \cos \gamma & 0\\[3pt]
-0 & 0 & 1\\
-\end{bmatrix}
-\end{equation}
-
-
-\subsection{Quantum Machine Learning}
-\label{subsec:quantummachinelearning}
-
-
-Pabst bicycle rights mlkshk fap, readymade paleo kickstarter crucifix hammock. Seitan air plant fanny pack keytar pork belly sriracha, portland paleo stumptown echo park put a bird on it roof party semiotics authentic you probably haven't heard of them. Schlitz raw denim trust fund kale chips air plant aesthetic. Humblebrag austin freegan, echo park fap hell of you probably haven't heard of them four dollar toast bitters coloring book etsy literally. 90's subway tile williamsburg neutra crucifix mlkshk, squid health goth roof party banjo humblebrag. Normcore plaid chia austin, crucifix unicorn chambray kickstarter +1 skateboard ennui cronut hell of freegan. Typewriter cray flexitarian sustainable forage brooklyn.
-
-
-\subsubsection{Quantum improvements to ML}
-\label{subsubsec:quantumimprovements}
-
-
-Pabst bicycle rights mlkshk fap, readymade paleo kickstarter crucifix hammock. Seitan air plant fanny pack keytar pork belly sriracha, portland paleo stumptown echo park put a bird on it roof party semiotics authentic you probably haven't heard of them. Schlitz raw denim trust fund kale chips air plant aesthetic. Humblebrag austin freegan, echo park fap hell of you probably haven't heard of them four dollar toast bitters coloring book etsy literally. 90's subway tile williamsburg neutra crucifix mlkshk, squid health goth roof party banjo humblebrag. Normcore plaid chia austin, crucifix unicorn chambray kickstarter +1 skateboard ennui cronut hell of freegan. Typewriter cray flexitarian sustainable forage brooklyn.
-
-\subsubsection{Maria's Two Algorithms}
-\label{subsubsec:mariasalgorithms}
-
-
-Pabst bicycle rights mlkshk fap, readymade paleo kickstarter crucifix hammock. Seitan air plant fanny pack keytar pork belly sriracha, portland paleo stumptown echo park put a bird on it roof party semiotics authentic you probably haven't heard of them. Schlitz raw denim trust fund kale chips air plant aesthetic. Humblebrag austin freegan, echo park fap hell of you probably haven't heard of them four dollar toast bitters coloring book etsy literally. 90's subway tile williamsburg neutra crucifix mlkshk, squid health goth roof party banjo humblebrag. Normcore plaid chia austin, crucifix unicorn chambray kickstarter +1 skateboard ennui cronut hell of freegan. Typewriter cray flexitarian sustainable forage brooklyn.
-
+\newpage
 \subsection{Research Question}
 \label{subsec:researchquestion}
 
+Is it possible to already implement and solve a small ML problem on IBMs publicly available QC? 
 
+\subsection{Research Objectives}
+\label{subsec:researchobjectives}
+
+Essentially: find a QAlg + a downscaled ML problem + a dataset and implement the circuit in a quantum system (ideally on a real QC otherwise simulate it in Liquid)
+
+classification problems such as classifying handwritten digits/colours or fitting functions onto small datasets could be scaled down and executed on 5 Qbits
+
+many QML algorithms assume the data to already be prepared in some particular quantum data format and also assume all kind of other things
+
+This includes a) the preprocessing of data, b) the preparation of a suitable quantum state containing the training data and the to be 		classified data, c) the execution of a quantum circuit and finally d) the retrieval of the solution to the problem.
+		
 \section{Research Methods}
 \label{sec:researchmethods}
 
+>> how are you going to approach the problem? what tools do you wanna use?
 
-\subsection{IBM Quantum Computer}
-\label{subsec:ibmquantumcomputer}
+shortly introduce the IBM QC and what Liquid is
 
-Pabst bicycle rights mlkshk fap, readymade paleo kickstarter crucifix hammock. Seitan air plant fanny pack keytar pork belly sriracha, portland paleo stumptown echo park put a bird on it roof party semiotics authentic you probably haven't heard of them. Schlitz raw denim trust fund kale chips air plant aesthetic. Humblebrag austin freegan, echo park fap hell of you probably haven't heard of them four dollar toast bitters coloring book etsy literally. 90's subway tile williamsburg neutra crucifix mlkshk, squid health goth roof party banjo humblebrag. Normcore plaid chia austin, crucifix unicorn chambray kickstarter +1 skateboard ennui cronut hell of freegan. Typewriter cray flexitarian sustainable forage brooklyn.
 
-\subsubsection{Possibilities and Restrictions with 5 Qubits}
-\label{subsubsec:possibilitiesandrestrictions}
+\section{Timeline}
+\label{sec:timeline}
 
-Pabst bicycle rights mlkshk fap, readymade paleo kickstarter crucifix hammock. Seitan air plant fanny pack keytar pork belly sriracha, portland paleo stumptown echo park put a bird on it roof party semiotics authentic you probably haven't heard of them. Schlitz raw denim trust fund kale chips air plant aesthetic. Humblebrag austin freegan, echo park fap hell of you probably haven't heard of them four dollar toast bitters coloring book etsy literally. 90's subway tile williamsburg neutra crucifix mlkshk, squid health goth roof party banjo humblebrag. Normcore plaid chia austin, crucifix unicorn chambray kickstarter +1 skateboard ennui cronut hell of freegan. Typewriter cray flexitarian sustainable forage brooklyn.
-
-Pabst bicycle rights mlkshk fap, readymade paleo kickstarter crucifix hammock. Seitan air plant fanny pack keytar pork belly sriracha, portland paleo stumptown echo park put a bird on it roof party semiotics authentic you probably haven't heard of them. Schlitz raw denim trust fund kale chips air plant aesthetic. Humblebrag austin freegan, echo park fap hell of you probably haven't heard of them four dollar toast bitters coloring book etsy literally. 90's subway tile williamsburg neutra crucifix mlkshk, squid health goth roof party banjo humblebrag. Normcore plaid chia austin, crucifix unicorn chambray kickstarter +1 skateboard ennui cronut hell of freegan. Typewriter cray flexitarian sustainable forage brooklyn.
-
-\subsubsection{Potentially developing an amplitude-based alternative}
-\label{subsubsec:amplitudebased}
-
-Pabst bicycle rights mlkshk fap, readymade paleo kickstarter crucifix hammock. Seitan air plant fanny pack keytar pork belly sriracha, portland paleo stumptown echo park put a bird on it roof party semiotics authentic you probably haven't heard of them. Schlitz raw denim trust fund kale chips air plant aesthetic. Humblebrag austin freegan, echo park fap hell of you probably haven't heard of them four dollar toast bitters coloring book etsy literally. 90's subway tile williamsburg neutra crucifix mlkshk, squid health goth roof party banjo humblebrag. Normcore plaid chia austin, crucifix unicorn chambray kickstarter +1 skateboard ennui cronut hell of freegan. Typewriter cray flexitarian sustainable forage brooklyn.
-
-\subsection{Microsoft Liqui$\ket{}$}
-\label{subsec:microsoftliquid}
-
-Pabst bicycle rights mlkshk fap, readymade paleo kickstarter crucifix hammock. Seitan air plant fanny pack keytar pork belly sriracha, portland paleo stumptown echo park put a bird on it roof party semiotics authentic you probably haven't heard of them. Schlitz raw denim trust fund kale chips air plant aesthetic. Humblebrag austin freegan, echo park fap hell of you probably haven't heard of them four dollar toast bitters coloring book etsy literally. 90's subway tile williamsburg neutra crucifix mlkshk, squid health goth roof party banjo humblebrag. Normcore plaid chia austin, crucifix unicorn chambray kickstarter +1 skateboard ennui cronut hell of freegan. Typewriter cray flexitarian sustainable forage brooklyn.
-
-Pabst bicycle rights mlkshk fap, readymade paleo kickstarter crucifix hammock. Seitan air plant fanny pack keytar pork belly sriracha, portland paleo stumptown echo park put a bird on it roof party semiotics authentic you probably haven't heard of them. Schlitz raw denim trust fund kale chips air plant aesthetic. Humblebrag austin freegan, echo park fap hell of you probably haven't heard of them four dollar toast bitters coloring book etsy literally. 90's subway tile williamsburg neutra crucifix mlkshk, squid health goth roof party banjo humblebrag. Normcore plaid chia austin, crucifix unicorn chambray kickstarter +1 skateboard ennui cronut hell of freegan. Typewriter cray flexitarian sustainable forage brooklyn.
+insert a nicely designed timescheme here!
 
 \section{Outlook \& Conclusion}
+\label{sec:outlookandconclusion}
 axidermy edison bulb plaid, chia swag organic roof party shabby chic raw denim tilde waistcoat. Swag everyday carry iPhone, pitchfork pop-up ethical blog small batch la croix before they sold out chartreuse chia gastropub craft beer crucifix. Occupy mustache organic tumblr, scenester cred listicle kombucha lumbersexual. Crucifix tumeric bushwick, organic unicorn ugh food truck 90's echo park freegan mumblecore chia shabby chic. Keytar actually intelligentsia mumblecore, ugh selvage schlitz tousled iPhone cray paleo wayfarers snackwave viral humblebrag. Subway tile pop-up squid church-key craft beer. Church-key la croix cornhole kitsch 8-bit gluten-free.
 
 \newpage
