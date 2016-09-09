@@ -32,6 +32,34 @@ Acharya, U\BPBI R.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Bekkerman%
+, Bilenko%
+\BCBL {}\ \BBA {} Langford%
+}{%
+Bekkerman%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2011}}%
+}]{%
+bekkerman2011scaling}
+\APACinsertmetastar {%
+bekkerman2011scaling}%
+\begin{APACrefauthors}%
+Bekkerman, R.%
+, Bilenko, M.%
+\BCBL {}\ \BBA {} Langford, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2011}.
+\newblock
+\APACrefbtitle {Scaling up machine learning: Parallel and distributed
+  approaches} {Scaling up machine learning: Parallel and distributed
+  approaches}.
+\newblock
+\APACaddressPublisher{}{Cambridge University Press}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Cai%
 \ \protect \BOthers {.}}{%
 Cai%
@@ -264,6 +292,67 @@ Rist{\`{e}}, D.%
 \APACjournalVolNumPages{arXiv:1512.06069}{}{}{1--12}.
 \newblock
 \begin{APACrefURL} \url{http://arxiv.org/abs/1512.06069} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Schuld%
+, Sinayskiy%
+\BCBL {}\ \BBA {} Petruccione%
+}{%
+Schuld%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2014}}%
+}]{%
+Schuld2014}
+\APACinsertmetastar {%
+Schuld2014}%
+\begin{APACrefauthors}%
+Schuld, M.%
+, Sinayskiy, I.%
+\BCBL {}\ \BBA {} Petruccione, F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Quantum computing for pattern classification}}
+  {{Quantum computing for pattern classification}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{}{}{}{14}.
+\newblock
+\begin{APACrefURL} \url{http://arxiv.org/abs/1412.3646} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1007/978-3-319-13560-1} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Schuld%
+, Sinayskiy%
+\BCBL {}\ \BBA {} Petruccione%
+}{%
+Schuld%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2016}}%
+}]{%
+Schuld2016}
+\APACinsertmetastar {%
+Schuld2016}%
+\begin{APACrefauthors}%
+Schuld, M.%
+, Sinayskiy, I.%
+\BCBL {}\ \BBA {} Petruccione, F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Pattern classification with linear regression on a
+  quantum computer}} {{Pattern classification with linear regression on a
+  quantum computer}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{}{}{}{5}.
+\newblock
+\begin{APACrefURL} \url{http://arxiv.org/abs/1601.07823} \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

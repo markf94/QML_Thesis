@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  8 SEP 2016 19:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  9 SEP 2016 13:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -318,23 +318,27 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 25.
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrpage2.sty
 Package: scrpage2 2015/10/03 v3.19a KOMA-Script package (page head and foot)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/braket/braket.sty) (./proposal.aux)
+(/usr/share/texlive/texmf-dist/tex/latex/braket/braket.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/enumerate.sty
+Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
+\@enLab=\toks27
+) (./proposal.aux)
 \openout1 = `proposal.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
 
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
@@ -346,12 +350,12 @@ File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 \scratchbox=\box28
 \nofMPsegments=\count118
 \nofMParguments=\count119
-\everyMPshowfont=\toks27
+\everyMPshowfont=\toks28
 \MPscratchCnt=\count120
 \MPscratchDim=\dimen128
 \MPnumerator=\count121
 \makeMPintoPDFobject=\count122
-\everyMPtoPDFconversion=\toks28
+\everyMPtoPDFconversion=\toks29
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -377,7 +381,7 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 143.
 )
-Package hyperref Info: Link coloring ON on input line 44.
+Package hyperref Info: Link coloring ON on input line 45.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -387,9 +391,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count123
 )
-LaTeX Info: Redefining \ref on input line 44.
-LaTeX Info: Redefining \pageref on input line 44.
-LaTeX Info: Redefining \nameref on input line 44.
+LaTeX Info: Redefining \ref on input line 45.
+LaTeX Info: Redefining \pageref on input line 45.
+LaTeX Info: Redefining \nameref on input line 45.
 
 (./proposal.out) (./proposal.out)
 \@outlinefile=\write3
@@ -447,25 +451,25 @@ Package scrpage2 Warning: seems you are using a constant headheight.
 <MSC2.png, id=40, 378.41376pt x 33.12375pt>
 File: MSC2.png Graphic file (type png)
  <use MSC2.png>
-Package pdftex.def Info: MSC2.png used on input line 71.
+Package pdftex.def Info: MSC2.png used on input line 72.
 (pdftex.def)             Requested size: 227.62206pt x 19.92442pt.
 
 <logo.jpeg, id=42, 334.6101pt x 144.54pt>
 File: logo.jpeg Graphic file (type jpg)
  <use logo.jpeg>
-Package pdftex.def Info: logo.jpeg used on input line 71.
+Package pdftex.def Info: logo.jpeg used on input line 72.
 (pdftex.def)             Requested size: 227.62206pt x 98.32779pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 71.
+LaTeX Font Info:    Try loading font information for U+msa on input line 72.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 71.
+LaTeX Font Info:    Try loading font information for U+msb on input line 72.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+bbold on input line 71.
+LaTeX Font Info:    Try loading font information for U+bbold on input line 72.
 
 (/usr/share/texlive/texmf-dist/tex/latex/bbold/Ubbold.fd) [1
 
@@ -475,50 +479,51 @@ LaTeX Font Info:    Try loading font information for U+bbold on input line 71.
 \tf@toc=\write4
 \openout4 = `proposal.toc'.
 
- [3] [4] [5] [6] (./proposal.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 189.
- [7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 189.
+ [3] [4] [5] [6]
+<ready_timeline.png, id=144, 1176.395pt x 315.1775pt>
+File: ready_timeline.png Graphic file (type png)
+ <use ready_timeline.png>
+Package pdftex.def Info: ready_timeline.png used on input line 204.
+(pdftex.def)             Requested size: 470.54967pt x 126.06876pt.
+
+Overfull \hbox (15.30556pt too wide) in paragraph at lines 204--205
+ [][] 
+ []
+
+[7 <./ready_timeline.png>] (./proposal.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 229.
+ [8]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 229.
  (./proposal.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 189.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 189.
-
-
-Package rerunfilecheck Warning: File `proposal.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `proposal.out':
-(rerunfilecheck)             Before: 03E60E88BD14234AD0DCFD30C29F4AF4;480
-(rerunfilecheck)             After:  F3C60227FEA2727D279276620D68DB1D;437.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 189.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 229.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 229.
+Package rerunfilecheck Info: File `proposal.out' has not changed.
+(rerunfilecheck)             Checksum: 6FDB5A34E40403B0F465122821F60965;474.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 229.
  ) 
 Here is how much of TeX's memory you used:
- 8230 strings out of 493029
- 117660 string characters out of 6136235
- 233778 words of memory out of 5000000
- 11597 multiletter control sequences out of 15000+600000
+ 8281 strings out of 493029
+ 118503 string characters out of 6136235
+ 235405 words of memory out of 5000000
+ 11634 multiletter control sequences out of 15000+600000
  14695 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,11n,28p,1578b,428s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{section.6} has been referenced but does not exist
-, replaced by a fixed one
-
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt1
-0.pfb>
-Output written on proposal.pdf (7 pages, 202005 bytes).
+ 29i,11n,28p,1339b,428s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
+t10.pfb>
+Output written on proposal.pdf (8 pages, 267475 bytes).
 PDF statistics:
- 178 PDF objects out of 1000 (max. 8388607)
- 153 compressed objects within 2 object streams
- 28 named destinations out of 1000 (max. 500000)
- 83 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 211 PDF objects out of 1000 (max. 8388607)
+ 184 compressed objects within 2 object streams
+ 38 named destinations out of 1000 (max. 500000)
+ 88 words of extra memory for PDF output out of 10000 (max. 10000000)
 
