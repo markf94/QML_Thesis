@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  9 SEP 2016 13:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  9 SEP 2016 14:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -480,32 +480,32 @@ LaTeX Font Info:    Try loading font information for U+bbold on input line 72.
 \openout4 = `proposal.toc'.
 
  [3] [4] [5] [6]
-<ready_timeline.png, id=144, 1176.395pt x 315.1775pt>
+<ready_timeline.png, id=136, 1176.395pt x 315.1775pt>
 File: ready_timeline.png Graphic file (type png)
  <use ready_timeline.png>
-Package pdftex.def Info: ready_timeline.png used on input line 204.
-(pdftex.def)             Requested size: 470.54967pt x 126.06876pt.
+Package pdftex.def Info: ready_timeline.png used on input line 213.
+(pdftex.def)             Requested size: 452.90451pt x 121.34131pt.
 
-Overfull \hbox (15.30556pt too wide) in paragraph at lines 204--205
- [][] 
- []
-
-[7 <./ready_timeline.png>] (./proposal.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 229.
- [8]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 229.
+[7 <./ready_timeline.png>] [8] (./proposal.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 239.
+ [9]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 239.
  (./proposal.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 229.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 229.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 239.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 239.
 Package rerunfilecheck Info: File `proposal.out' has not changed.
 (rerunfilecheck)             Checksum: 6FDB5A34E40403B0F465122821F60965;474.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 229.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 239.
  ) 
 Here is how much of TeX's memory you used:
- 8281 strings out of 493029
- 118503 string characters out of 6136235
- 235405 words of memory out of 5000000
- 11634 multiletter control sequences out of 15000+600000
+ 8284 strings out of 493029
+ 118528 string characters out of 6136235
+ 236405 words of memory out of 5000000
+ 11635 multiletter control sequences out of 15000+600000
  14695 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  29i,11n,28p,1339b,428s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -520,10 +520,10 @@ ic/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 t10.pfb>
-Output written on proposal.pdf (8 pages, 267475 bytes).
+Output written on proposal.pdf (9 pages, 267830 bytes).
 PDF statistics:
- 211 PDF objects out of 1000 (max. 8388607)
- 184 compressed objects within 2 object streams
- 38 named destinations out of 1000 (max. 500000)
+ 216 PDF objects out of 1000 (max. 8388607)
+ 188 compressed objects within 2 object streams
+ 40 named destinations out of 1000 (max. 500000)
  88 words of extra memory for PDF output out of 10000 (max. 10000000)
 

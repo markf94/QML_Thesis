@@ -126,9 +126,10 @@ Considering these advantages, the combination of quantum computation and classic
 
 Classical ML is a very practical topic since it can be directly tested, verified and implemented on any commercial classical computer. So far, QML has been of almost entirely theoretical nature since the required computational resources are not in place yet. QML algorithms often require a relatively large number of error-corrected qubits and some sort of quantum data storage such as the proposed quantum random access memory (qRAM) \citep{qRAM}. However, to date the maximum number of superconducting qubits reportedly used for calculation is nine, the D-Wave II quantum annealing device delivers 1152 qubits but can only solve a narrow class of problems and a qRAM has not been developed yet \citep{hydrogensimulation, dwave2}. Furthermore, qubit error-correction is still a very active research field and most of the described preliminary quantum computers deal with non error-corrected qubits with short lifetimes and are, thus, impractical for large QML implementations.
 
-Until now there has been only three experimental verifications of QML algorithms that provide proof-of-principle. \cite{Li2015} successfully distinguished a handwritten six from a nine using a quantum support vector machine on a four-qubit nuclear magnetic resonance test bench. In addition, \cite{Cai2015} were first to experimentally demonstrate quantum machine learning on a photonic quantum computer and showed that the distance between and the inner product of two vectors can indeed be computed quantum mechanically. Lastly, \cite{Riste2015} solved a learning parity problem with five superconducting qubits and found that a quantum advantage can already be observed in non error-corrected systems. Consequently, considering the large gap between the number of proposed QML algorithms and experimental realisations of scaled-down QML problems, it remains important to find QML problems which can already be implemented on currently available quantum technology. 
+Until now there has been only three experimental verifications of QML algorithms that provide proof-of-principle. \cite{Li2015} successfully distinguished a handwritten six from a nine using a quantum support vector machine on a four-qubit nuclear magnetic resonance test bench. In addition, \cite{Cai2015} were first to experimentally demonstrate quantum machine learning on a photonic quantum computer and showed that the distance between and the inner product of two vectors can indeed be computed quantum mechanically. Lastly, \cite{Riste2015} solved a learning parity problem with five superconducting qubits and found that a quantum advantage can already be observed in non error-corrected systems.
 
-Earlier this year, technology company IBM has provided the public with access to their experimental quantum processor containing five non error-corrected superconducting qubits. The proposed research will investigate if two QML algorithms proposed by \cite{Schuld2014, Schuld2016} are already implementable using IBMs quantum computing technology and if they are able to solve scaled-down ML problems with suitable datasets. This is a step in the attempt to shift QML from a purely theoretical research area to a more applied field such as classical ML. Furthermore, this can also lead to verification or falsification of the claims and assumptions made in the field of QML. Successful proof-of-principle studies are crucial for further research to be funded and supported since it shows that an upscaling of quantum computational power will eventually lead to at best exponential speed ups compared to classical ML and hence has the potential to revolutionize the handling of big data.
+%Consequently,
+Considering the large gap between the number of proposed QML algorithms and experimental realisations of scaled-down QML problems, it remains important to find QML problems which can already be implemented on currently available quantum technology. This is a step in the attempt to shift QML from a purely theoretical research area to a more applied field such as classical ML. Furthermore, this can also lead to verification or falsification of the claims and assumptions made in the field of QML. Successful proof-of-principle studies are crucial for further research to be funded and supported since it shows that an upscaling of quantum computational power will eventually lead to at best exponential speed ups compared to classical ML and hence has the potential to revolutionize the handling of big data.
 
 %Does this belong here?
 %The proposed research will identify small ML problems and find suitable datasets, that can already be solved using QML algorithms and current quantum computing technology. Earlier this year, technology company IBM has provided the public with access to their experimental quantum processor containing five non error-corrected superconducting qubits. Investigated will be two algorithms proposed by \cite{Schuld2014, Schuld2016} that focus on supervised pattern classification based on linear regression and vector distance measurements.
@@ -146,12 +147,13 @@ Earlier this year, technology company IBM has provided the public with access to
 \subsection{Research Question}
 \label{subsec:researchquestion}
 
-Based on the small number of experimental realizations of QML algorithms, this research will address the following question:
+In light of the theoretical nature of current QML research and the small number of experimental realizations, this research will address the following question:
  
-\centering\textbf{Is it possible to already implement and solve a small ML problem on IBMs publicly available quantum computer?}
+\centering\textbf{How can theoretically proposed quantum machine learning algorithms be implemented on state-of-the-art quantum technology?}
 
-%Alternative:
+%Alternatives:
 %Is it possible to experimentally demonstrate that two QML algorithms proposed by \cite{Schuld2014, Schuld2016} can already solve a small ML problem using classical simulation or IBMs quantum processor?
+%Is it possible to already implement and solve a small ML problem on IBMs publicly available quantum computer?
 
 \flushleft
 The following sections will outline the steps required and the tools used in order to answer this research question. 
@@ -160,21 +162,7 @@ The following sections will outline the steps required and the tools used in ord
 \subsection{Research Objectives}
 \label{subsec:researchobjectives}
 
-% Making clear that only 2 algorithms are used!
-The proposed research will be solely based on the two QML algorithms described in \cite{Schuld2014, Schuld2016}. In detail, \cite{Schuld2014} is a quantum version of the distance-weighted k-nearest neighbour algorithm, outlined in brief detail in the following section. Next, \cite{Schuld2016} details a quantum algorithm for a linear regression model for supervised pattern recognition. The first step towards their experimental implementation will be the identification of one or several small ML problems that can be executed on five qubits only. For example, this might include the characterization of colours or differentiation of digits or letters. It thereby plays an important role if the respective ML problem can be approached using a very reduced dataset such as the average pixel brightness or the ratio of pixels above and below the bisector of the image. Ideally, the data should be representable as a 2-D vector such that it requires only a few qubits to encode the information quantum mechanically.
 
-Both algorithms assume that the classical data is readily available in the form of quantum states. Hence, the first crucial step will be translating the classical data into such states, constituting the first challenge since it is a non-trivial and still researched topic. For each algorithm, this will be done by applying a series of quantum logic gates to the qubits. Next, two separate quantum circuits consisting of quantum logic gates will be designed that accurately represent the two QML algorithms as outlined in the paper of \cite{Schuld2014, Schuld2016}. Finally, the computed solution needs to be retrieved through measurement and by repeating the execution of the algorithm a probabilty distribution will be obtained that ideally represents the solution to the given problem.
-
-In summary, the research objectives are:
-
-\begin{enumerate}[a)]
-\item Find small implementable ML problems
-\item Generate or find suitable datasets
-\item Encode the classical data into quantum states
-\item Design quantum circuits representing the QML algorithms
-\item Execute the entire circuit repeatedly (separately for the two algorithms)
-\item Retrieve the solution from the probability distribution
-\end{enumerate}
 
 %implement the circuit in a quantum system (ideally on a real QC otherwise simulate it in Liquid)
 %many QML algorithms assume the data to already be prepared in some particular quantum data format and also assume all kind of other things
@@ -191,19 +179,39 @@ In summary, the research objectives are:
 \section{Research Methods}
 \label{sec:researchmethods}
 
->> how are you going to approach the problem? what tools do you wanna use?
+%>> how are you going to approach the problem? what tools do you wanna use?
+%shortly introduce the IBM QC and what Liquid is
+% Making clear that only 2 algorithms are used!
 
-shortly introduce the IBM QC and what Liquid is
+Earlier this year, technology company IBM has provided the public with access to their experimental quantum processor containing five non error-corrected superconducting qubits. The proposed research will investigate if two QML algorithms proposed by \cite{Schuld2014, Schuld2016} are already implementable using IBMs quantum computing technology and if they are able to solve scaled-down ML problems with suitable datasets. 
+
+
+The proposed research will be solely based on the two QML algorithms described in \cite{Schuld2014, Schuld2016}. In detail, \cite{Schuld2014} is a quantum version of the distance-weighted k-nearest neighbour algorithm, outlined in brief detail in the following section. Next, \cite{Schuld2016} details a quantum algorithm for a linear regression model for supervised pattern recognition. The first step towards their experimental implementation will be the identification of one or several small ML problems that can be executed on five qubits only. For example, this might include the characterization of colours or differentiation of digits or letters. It thereby plays an important role if the respective ML problem can be approached using a very reduced dataset such as the average pixel brightness or the ratio of pixels above and below the bisector of the image. Ideally, the data should be representable as a 2-D vector such that it requires only a few qubits to encode the information quantum mechanically.
+
+Both algorithms assume that the classical data is readily available in the form of quantum states. Hence, the first crucial step will be translating the classical data into such states, constituting the first challenge since it is a non-trivial and still researched topic. For each algorithm, this will be done by applying a series of quantum logic gates to the qubits. Next, two separate quantum circuits consisting of quantum logic gates will be designed that accurately represent the two QML algorithms as outlined in the paper of \cite{Schuld2014, Schuld2016}. Finally, the computed solution needs to be retrieved through measurement and by repeating the execution of the algorithm a probabilty distribution will be obtained that ideally represents the solution to the given problem.
+
+In summary, the research objectives are:
+
+\begin{enumerate}[a)]
+\item Find small implementable ML problems
+\item Generate or find suitable datasets
+\item Encode the classical data into quantum states
+\item Design quantum circuits representing the QML algorithms
+\item Execute the entire circuit repeatedly (separately for the two algorithms)
+\item Retrieve the solution from the probability distribution
+\end{enumerate}
+
 
 
 \section{Timeline}
 \label{sec:timeline}
 
-The projected timeline for the proposed bachelor thesis research is shown below.
+The projected timeline for the proposed bachelor thesis research is given below.
 
 \begin{figure}[!ht]
 \centering
-\includegraphics[scale=0.4]{ready_timeline.png}
+\includegraphics[scale=0.385]{ready_timeline.png}
+\caption{Projected timeline for proposed research}
 \end{figure}
 
 \section{Research Impact}
