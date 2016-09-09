@@ -164,6 +164,37 @@ The following sections will outline the steps required and the tools used in ord
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 %implement the circuit in a quantum system (ideally on a real QC otherwise simulate it in Liquid)
 %many QML algorithms assume the data to already be prepared in some particular quantum data format and also assume all kind of other things
 %This includes a) the preprocessing of data, b) the preparation of a suitable quantum state containing the training data and the to be classified data, 
@@ -180,28 +211,44 @@ The following sections will outline the steps required and the tools used in ord
 \label{sec:researchmethods}
 
 %>> how are you going to approach the problem? what tools do you wanna use?
-%shortly introduce the IBM QC and what Liquid is
-% Making clear that only 2 algorithms are used!
 
+%%WHAT ALGORITHMS AND WHAT DO THEY DO???
+
+% Making clear that only 2 algorithms are used!
+The proposed research will be solely based on the two QML algorithms described in \cite{Schuld2014, Schuld2016}. Firstly, \cite{Schuld2014} is a quantum version of the distance-weighted k-nearest neighbour algorithm.
+%Roughly explain distance weighted k-nearest neighbour and its quantum advantage
+
+
+Next, \cite{Schuld2016} details a quantum algorithm for a linear regression model for supervised pattern recognition. 
+%explain linear regression and sketch the quantum algorithm
+
+%%POSSIBLY THE TOOLS
+%maybe describe the possible tools here (liquid, IBM, python, etc.)
+%shortly introduce the IBM QC and what Liquid is
 Earlier this year, technology company IBM has provided the public with access to their experimental quantum processor containing five non error-corrected superconducting qubits. The proposed research will investigate if two QML algorithms proposed by \cite{Schuld2014, Schuld2016} are already implementable using IBMs quantum computing technology and if they are able to solve scaled-down ML problems with suitable datasets. 
 
+%%CHOOSING SMALL PROBLEMS AND GENERATING THE DATASET
+The first step towards their experimental implementation will be the identification of one or several small ML problems that can be executed on five qubits only. For example, this might include the characterization of colours or differentiation of digits or letters. It thereby plays an important role if the respective ML problem can be approached using a very reduced dataset such as the average pixel brightness or the ratio of pixels above and below the bisector of the image. Ideally, the data should be representable as a 2-D vector such that it requires only a few qubits to encode the information quantum mechanically.
 
-The proposed research will be solely based on the two QML algorithms described in \cite{Schuld2014, Schuld2016}. In detail, \cite{Schuld2014} is a quantum version of the distance-weighted k-nearest neighbour algorithm, outlined in brief detail in the following section. Next, \cite{Schuld2016} details a quantum algorithm for a linear regression model for supervised pattern recognition. The first step towards their experimental implementation will be the identification of one or several small ML problems that can be executed on five qubits only. For example, this might include the characterization of colours or differentiation of digits or letters. It thereby plays an important role if the respective ML problem can be approached using a very reduced dataset such as the average pixel brightness or the ratio of pixels above and below the bisector of the image. Ideally, the data should be representable as a 2-D vector such that it requires only a few qubits to encode the information quantum mechanically.
+%%THE PROBLEM OF ENCODING THE DATA INTO QUANTUM STATES >> REFERENCE SOME PAPERS HERE
+Both algorithms assume that the classical data is readily available in the form of quantum states. Hence, the first crucial step will be translating the classical data into such states, constituting the first challenge since it is a non-trivial and still researched topic. For each algorithm, this will be done by applying a series of quantum logic gates to the qubits. 
 
-Both algorithms assume that the classical data is readily available in the form of quantum states. Hence, the first crucial step will be translating the classical data into such states, constituting the first challenge since it is a non-trivial and still researched topic. For each algorithm, this will be done by applying a series of quantum logic gates to the qubits. Next, two separate quantum circuits consisting of quantum logic gates will be designed that accurately represent the two QML algorithms as outlined in the paper of \cite{Schuld2014, Schuld2016}. Finally, the computed solution needs to be retrieved through measurement and by repeating the execution of the algorithm a probabilty distribution will be obtained that ideally represents the solution to the given problem.
+%%DESIGNING THE QUANTUM CIRCUITS
+Next, two separate quantum circuits consisting of quantum logic gates will be designed that accurately represent the two QML algorithms as outlined in the paper of \cite{Schuld2014, Schuld2016}.
 
-In summary, the research objectives are:
+%%SOLUTION RETRIEVAL
+Finally, the computed solution needs to be retrieved through measurement and by repeating the execution of the algorithm a probabilty distribution will be obtained that ideally represents the solution to the given problem.
 
-\begin{enumerate}[a)]
-\item Find small implementable ML problems
-\item Generate or find suitable datasets
+To summarize, the steps needed for the successful implementation of a QML algorithm are given below.
+
+\begin{enumerate}
+\item Find a small implementable ML problem
+\item Generate or find a suitable dataset
 \item Encode the classical data into quantum states
-\item Design quantum circuits representing the QML algorithms
-\item Execute the entire circuit repeatedly (separately for the two algorithms)
-\item Retrieve the solution from the probability distribution
+\item Design a quantum circuit representing the QML algorithm
+\item Execute the entire quantum circuit multiple times
+\item Retrieve the solution from the resulting probability distribution
 \end{enumerate}
-
-
 
 \section{Timeline}
 \label{sec:timeline}
@@ -216,7 +263,7 @@ The projected timeline for the proposed bachelor thesis research is given below.
 
 \section{Research Impact}
 \label{sec:research impact}
-
+%is this really needed?
 axidermy edison bulb plaid, chia swag organic roof party shabby chic raw denim tilde waistcoat. Swag everyday carry iPhone, pitchfork pop-up ethical blog small batch la croix before they sold out chartreuse chia gastropub craft beer crucifix. Occupy mustache organic tumblr, scenester cred listicle kombucha lumbersexual. Crucifix tumeric bushwick, organic unicorn ugh food truck 90's echo park freegan mumblecore chia shabby chic. Keytar actually intelligentsia mumblecore, ugh selvage schlitz tousled iPhone cray paleo wayfarers snackwave viral humblebrag. Subway tile pop-up squid church-key craft beer. Church-key la croix cornhole kitsch 8-bit gluten-free.
 
 \section{Conclusion}
