@@ -113,7 +113,7 @@ D-Wave.%
 \APAChowpublished
   {\url{http://www.dwavesys.com/blog/2015/06/breaking-through-1000-qubits}}.
 \newblock
-\APACrefnote{Accessed: 2010-09-08}
+\APACrefnote{Accessed: 2016-09-09}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -261,6 +261,31 @@ O'Malley, P\BPBI J\BPBI J.%
   \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1103/PhysRevX.6.031007} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Quantiki%
+}{%
+Quantiki%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+quantiki}
+\APACinsertmetastar {%
+quantiki}%
+\begin{APACrefauthors}%
+Quantiki.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+\APACrefbtitle {List of quantum computing simulators.} {List of quantum
+  computing simulators.}
+\newblock
+\APAChowpublished {\url{https://quantiki.org/wiki/list-qc-simulators}}.
+\newblock
+\APACrefnote{Accessed: 2016-09-12}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
