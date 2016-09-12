@@ -144,6 +144,33 @@ Giovannetti, V.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Grover%
+\ \BBA {} Rudolph%
+}{%
+Grover%
+\ \BBA {} Rudolph%
+}{%
+{\protect \APACyear {2002}}%
+}]{%
+grover2002creating}
+\APACinsertmetastar {%
+grover2002creating}%
+\begin{APACrefauthors}%
+Grover, L.%
+\BCBT {}\ \BBA {} Rudolph, T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2002}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Creating superpositions that correspond to efficiently
+  integrable probability distributions} {Creating superpositions that
+  correspond to efficiently integrable probability distributions}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{arXiv preprint quant-ph/0208112}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Harrow%
 , Hassidim%
 \BCBL {}\ \BBA {} Lloyd%
@@ -403,6 +430,32 @@ Shor, P\BPBI W.%
   Proc}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{}{}{}{124}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Ventura%
+\ \BBA {} Martinez%
+}{%
+Ventura%
+\ \BBA {} Martinez%
+}{%
+{\protect \APACyear {1999}}%
+}]{%
+ventura1999initializing}
+\APACinsertmetastar {%
+ventura1999initializing}%
+\begin{APACrefauthors}%
+Ventura, D.%
+\BCBT {}\ \BBA {} Martinez, T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1999}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Initializing the amplitude distribution of a quantum
+  state} {Initializing the amplitude distribution of a quantum state}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Foundations of Physics Letters}{12}{6}{547--559}.
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}
