@@ -65,7 +65,7 @@
 \vspace{2.0cm}
 In partial fulfillment of the requirements for the degree Bachelor of Science (BSc) at Maastricht University. \\
 \vspace{1cm}
-In collaboration with the Quantum Research Group at the University of KwaZulu-Natal Durban. Under supervision of Prof. Petruccione, Quantum Research Group at UKZN, and internal supervisor, somebody, Maastricht Science Programme, Maastricht University.
+In collaboration with the Quantum Research Group at the University of KwaZulu-Natal Durban. Under supervision of Prof. Petruccione, Quantum Research Group at UKZN, and internal supervisor, Dr. Fabrice Birembaut, Maastricht Science Programme, Maastricht University.
 }
 % In partial fulfillment of the requirements for the degree Bachelor of Science, Maastricht University. 
 \maketitle
@@ -129,7 +129,7 @@ Classical ML is a very practical topic since it can be directly tested, verified
 Until now there has been only three experimental verifications of QML algorithms that provide proof-of-principle. \cite{Li2015} successfully distinguished a handwritten six from a nine using a quantum support vector machine on a four-qubit nuclear magnetic resonance test bench. In addition, \cite{Cai2015} were first to experimentally demonstrate quantum machine learning on a photonic quantum computer and showed that the distance between and the inner product of two vectors can indeed be computed quantum mechanically. Lastly, \cite{Riste2015} solved a learning parity problem with five superconducting qubits and found that a quantum advantage can already be observed in non error-corrected systems.
 
 %Consequently,
-Considering the large gap between the number of proposed QML algorithms and experimental realisations of scaled-down QML problems, it remains important to find QML problems which can already be implemented on currently available quantum technology. This is a step in the attempt to shift QML from a purely theoretical research area to a more applied field such as classical ML. Furthermore, this can also lead to verification or falsification of the claims and assumptions made in the field of QML. Successful proof-of-principle studies are crucial for further research to be funded and supported since it shows that an upscaling of quantum computational power will eventually lead to at best exponential speed ups compared to classical ML and hence has the potential to revolutionize the handling of big data.
+Considering the large gap between the number of proposed QML algorithms and experimental realisations of scaled-down QML problems, it remains important to find QML problems which can already be implemented on currently available quantum technology. Thus, the purpose of this study is to provide proof-of-principle implementation of selected QML algorithms on small datasets. This is a step in the attempt to shift QML from a purely theoretical research area to a more applied field such as classical ML. Furthermore, this can also lead to verification or falsification of the claims and assumptions made in the field of QML. 
 
 %Does this belong here?
 %The proposed research will identify small ML problems and find suitable datasets, that can already be solved using QML algorithms and current quantum computing technology. Earlier this year, technology company IBM has provided the public with access to their experimental quantum processor containing five non error-corrected superconducting qubits. Investigated will be two algorithms proposed by \cite{Schuld2014, Schuld2016} that focus on supervised pattern classification based on linear regression and vector distance measurements.
@@ -162,14 +162,14 @@ The following sections will outline the steps required and the tools used in ord
 \subsection{Research Objectives}
 \label{subsec:researchobjectives}
 
-Proof-of-principle
-Demonstrating that some QML algorithms can already be used for solving small problems
+The main objective of this research is to demonstrate that QML algorithms can already be used for solving small problems on currently available quantum technology. Even though this might seem trivial at first, there are many problems that are often not addressed in the proposals of QML algorithms such as the encoding of data, the influence of quantum noise and the restrictions on the data type (e.g. uniformly distributed or sparse data sets only). All theses issues have to be addressed when implementing QML algorithms experimentally and thus consitute the major challenges during this study. 
+%not sure about the usefulness of the last sentence
+Ideally, the outcome will already demonstrate observable quantum advantages over the classical algorithms, provide supporting evidence for the claim that QML can indeed be used to solve ML problems and that the increasing number of qubits will bring the expected speed-ups in computation.
 
-tackling the many problems that are often not adressed in QML algorithm papers like data encoding, quantum noise, the constitution of the data (sparse, low-rank, uniformly distributed) by implementing it from start to end and having to encount them
+%Proof-of-principle
+%Demonstrating that some QML algorithms can already be used for solving small problems
 
-Ideally demonstrate quantum advantages over the classical counterparts
-
-Provide supporting evidence for the claim that QML can indeed be used to solve ML problems and that upscaling QT will bring the expected speed-ups in computation
+%tackling the many problems that are often not adressed in QML algorithm papers like data encoding, quantum noise, the constitution of the data (sparse, low-rank, uniformly distributed) by implementing it from start to end and having to encount them
 
 %implement the circuit in a quantum system (ideally on a real QC otherwise simulate it in Liquid)
 %many QML algorithms assume the data to already be prepared in some particular quantum data format and also assume all kind of other things
@@ -240,7 +240,7 @@ The projected timeline for the proposed bachelor thesis research is given below.
 \section{Research Impact}
 \label{sec:research impact}
 %is this really needed?
-axidermy edison bulb plaid, chia swag organic roof party shabby chic raw denim tilde waistcoat. Swag everyday carry iPhone, pitchfork pop-up ethical blog small batch la croix before they sold out chartreuse chia gastropub craft beer crucifix. Occupy mustache organic tumblr, scenester cred listicle kombucha lumbersexual. Crucifix tumeric bushwick, organic unicorn ugh food truck 90's echo park freegan mumblecore chia shabby chic. Keytar actually intelligentsia mumblecore, ugh selvage schlitz tousled iPhone cray paleo wayfarers snackwave viral humblebrag. Subway tile pop-up squid church-key craft beer. Church-key la croix cornhole kitsch 8-bit gluten-free.
+Successful proof-of-principle studies are crucial for further research to be funded and supported since it shows that an upscaling of quantum computational power will eventually lead to at best exponential speed ups compared to classical ML and hence has the potential to revolutionize the handling of big data.
 
 \section{Conclusion}
 \label{sec:conclusion}
