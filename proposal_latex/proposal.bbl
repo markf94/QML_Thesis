@@ -173,10 +173,10 @@ Giovannetti, V.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Grover%
+L.~Grover%
 \ \BBA {} Rudolph%
 }{%
-Grover%
+L.~Grover%
 \ \BBA {} Rudolph%
 }{%
 {\protect \APACyear {2002}}%
@@ -197,6 +197,35 @@ Grover, L.%
   correspond to efficiently integrable probability distributions}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{arXiv preprint quant-ph/0208112}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+L\BPBI K.~Grover%
+}{%
+L\BPBI K.~Grover%
+}{%
+{\protect \APACyear {1997}}%
+}]{%
+grover}
+\APACinsertmetastar {%
+grover}%
+\begin{APACrefauthors}%
+Grover, L\BPBI K.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1997}{Jul}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Quantum Mechanics Helps in Searching for a Needle in a
+  Haystack} {Quantum mechanics helps in searching for a needle in a
+  haystack}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Phys. Rev. Lett.}{79}{}{325--328}.
+\newblock
+\begin{APACrefURL} \url{http://link.aps.org/doi/10.1103/PhysRevLett.79.325}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1103/PhysRevLett.79.325} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
