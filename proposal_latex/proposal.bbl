@@ -349,6 +349,34 @@ O'Malley, P\BPBI J\BPBI J.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Pazzani%
+\ \BBA {} Billsus%
+}{%
+Pazzani%
+\ \BBA {} Billsus%
+}{%
+{\protect \APACyear {2007}}%
+}]{%
+pazzani2007content}
+\APACinsertmetastar {%
+pazzani2007content}%
+\begin{APACrefauthors}%
+Pazzani, M\BPBI J.%
+\BCBT {}\ \BBA {} Billsus, D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2007}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Content-based recommendation systems} {Content-based
+  recommendation systems}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {The adaptive web} {The adaptive web}\ (\BPGS\ 325--341).
+\newblock
+\APACaddressPublisher{}{Springer}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Quantiki%
 }{%
 Quantiki%

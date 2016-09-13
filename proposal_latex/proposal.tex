@@ -45,7 +45,7 @@
 
 \begin{document}
 \title{
-\vspace{1cm}
+\vspace{0.5cm}
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=0.5\textwidth]{MSC2.png}
@@ -55,18 +55,19 @@
 \centering
 \includegraphics[width=0.5\textwidth]{logo.jpeg}
 \end{figure}
-\vspace{2cm}
-\Huge{\bf{Research Proposal for the} \\ Experimental Implementation of Quantum Machine Learning Algorithms \\}}
-\vspace{3cm}
+\vspace{1.6cm}
+\Huge{ \underline{Research Proposal} \\ \vspace{1cm} \bf Experimental Implementation of Quantum Machine Learning Algorithms \\ \vspace{1cm}}}
 % Insert here your name and correct mail address
 \author{\Large \href{mailto:m.fingerhuth@student.maastrichtuniversity.nl}{Mark Fingerhuth}
 }
 \date{
 \today \\
-\vspace{2.0cm}
-In partial fulfillment of the requirements for the degree Bachelor of Science (BSc) at Maastricht University. \\
-\vspace{1cm}
-In collaboration with the Quantum Research Group at the University of KwaZulu-Natal Durban. Under supervision of Prof. Petruccione, Quantum Research Group at UKZN, and internal supervisor, Dr. Fabrice Birembaut, Maastricht Science Programme, Maastricht University.
+\vspace{1.0cm}
+\footnotesize{
+In partial fulfillment of the requirements for the degree Bachelor of Science (BSc) at Maastricht University. \\}
+\vspace{3.5cm}
+\normalsize
+In collaboration with the Quantum Research Group at the University of KwaZulu-Natal Durban. Under supervision of Prof. Francesco Petruccione, Quantum Research Group at UKZN, and internal supervision of Dr. Fabrice Birembaut, Maastricht Science Programme, Maastricht University.
 }
 % In partial fulfillment of the requirements for the degree Bachelor of Science, Maastricht University. 
 \maketitle
@@ -76,9 +77,9 @@ In collaboration with the Quantum Research Group at the University of KwaZulu-Na
 
 \vspace{10.0cm}
 \begin{abstract}
+Quantum machine learning, the intersection of quantum computation and classical machine learning, bears the potential to provide more efficient ways to deal with big data through the use of quantum superpositions, entanglement and the resulting quantum parallelism. The proposed research will attempt to experimentally implement two quantum machine learning routines and use them to solve small machine learning problems. This will establish the fourth proof-of-concept study in the field and demonstrate that quantum machine learning is already implementable on current devices. This is vital to show that an extrapolation to larger quantum computing devices will indeed lead to vast speed-ups of current machine learning algorithms.
 
-% >> this should be a nice concise summary of the entire proposal
-Mixtape tote bag quinoa, deep v ramps organic pabst. Cliche trust fund twee lo-fi, lumbersexual sustainable skateboard brunch keytar edison bulb. Try-hard blue bottle meggings fashion axe, gentrify freegan PBRB. Squid retro viral, shoreditch sriracha salvia kogi chia. Celiac tumblr thundercats, williamsburg literally etsy man braid franzen flannel chambray raw denim. Try-hard woke retro intelligentsia. Af actually synth coloring book hoodie tumeric, knausgaard paleo butcher.
+%bears the potential to resolve the problems in classical machine learning such as the growing computational complexity
 
 \end{abstract}
 	\newpage
@@ -90,15 +91,15 @@ Mixtape tote bag quinoa, deep v ramps organic pabst. Cliche trust fund twee lo-f
 
 %>> Introduce the TOPIC (QML) not the (HYPO)THESIS!
 
-The ability to understand spoken language, to recognize faces and to distinguish different types of fruit comes naturally to humans, even though these processes of pattern recognition and classification are inherently complex. Machine learning (ML), a subtopic of artificial intelligence, is concerned with the development of algorithms that mimic these mechanisms, thereby enabling computers to find and recognise patterns in data and classify unknown inputs based on previous training with labelled inputs. Such algorithms paved the way for e.g. human speech recognition, recommendation engines as used by Amazon and algorithms that can predict heart disease from real-time electrocardiograms \citep{acharya2015integrated}.
+The ability to understand spoken language, to recognize faces and to distinguish different types of fruit comes naturally to humans, even though these processes of pattern recognition and classification are inherently complex. Machine learning (ML), a subtopic of artificial intelligence, is concerned with the development of algorithms that mimic these mechanisms, thereby enabling computers to find and recognise patterns in data and classify unknown inputs based on previous training with labelled inputs. Such algorithms paved the way for e.g. human speech recognition, recommendation engines as used by Amazon and algorithms that can predict heart disease from real-time electrocardiograms \citep{acharya2015integrated, pazzani2007content}.
 
 According to \cite*{bigdata}, every day approximately 2.5 quintillion (${10}^{18}$) bytes of digital data are created. This growing number implies that every area dealing with data will eventually require advanced algorithms that can make sense of data content, retrieve patterns and reveal correlations. However, most ML algorithms involve the execution of computationally expensive operations and doing so on large data sets inevitably takes a lot of time \citep{bekkerman2011scaling}. Hence, it becomes increasingly important to find efficient ways of dealing with big data and/or reduce the computational complexity of the algorithms.
 
-A promising solution is the use of quantum computation which has been researched intensively in the last decades. Quantum computers (QCs) use quantum mechanical systems and their special properties to manipulate and process information in ways that are impossible to implement on classical computers. The quantum equivalent to a classical bit is called a quantum bit (or qubit) and additionally to being in either state (\0 or \1) they can be in a linear superposition of \0 and \1. This peculiar property gives rise to so called quantum parallelism, which enables the execution of certain operations on many quantum states at the same time. However, despite this obvious advantage the real difficulty in quantum computation lies in the retrieval of the computed solution since a measurement of a qubit collapses it into a single classical bit and thereby destroys information about its previous superposition. Several quantum algorithms have been proposed that provide exponential speed-ups when compared to their classical counterparts with Shor's prime factorization algorithm being the most famous \citep{shor1994}. Furthermore, Grover's quantum database search algorithm enables finding a single element in a list of $N$ elements within roughly $\sqrt{N}$ instead of a minimum of $\frac{N}{2}$ steps \citep{grover}. Hence, quantum computation bears the potential to vastly improve computational power, speed up the processing of big data and solve certain problems that are practically unsolvable on classical computers. 
+A promising solution is the use of quantum computation which has been researched intensively in the last decades. Quantum computers (QCs) use quantum mechanical systems and their special properties to manipulate and process information in ways that are impossible to implement on classical computers. The quantum equivalent to a classical bit is called a quantum bit (or qubit) and additionally to being in either state (\0 or \1) they can be in a linear superposition of \0 and \1. This peculiar property gives rise to so called quantum parallelism, which enables the execution of certain operations on many quantum states at the same time. However, despite this obvious advantage the real difficulty in quantum computation lies in the retrieval of the computed solution since a measurement of a qubit collapses it into a single classical bit and thereby destroys information about its previous superposition. Several quantum algorithms have been proposed that provide exponential speed-ups when compared to their classical counterparts with Shor's prime factorization algorithm being the most famous \citep{shor1994}. As another example, Grover's quantum database search algorithm enables finding a single element in a list of $N$ elements within roughly $\sqrt{N}$ steps instead of a classical minimum of $\frac{N}{2}$ steps \citep{grover}. Hence, quantum computation bears the potential to vastly improve computational power, speed up the processing of big data and solve certain problems that are practically unsolvable on classical computers. 
 
 %for the QML toolbox to be complete a quantum algorithm to solve systems of linear equations is needed since most ML algorithms rely on solving those.
 
-Considering these advantages, the combination of quantum computation and classical ML into the new field of quantum machine learning (QML) seems almost natural. However, since most ML algorithms rely on solving some system of linear equations, a corresponding quantum algorithm is required for QML to become achievable. \cite{HHL2009} were first to describe such an algorithm (referred to as HHL-algorithm) which since has become a subroutine in many QML algorithms. There are currently two main ideas on how to merge quantum computation with ML, namely a) running the classical algorithm on a classical computer and 'outsourcing' only the computationally intensive task to a QC or b) executing the quantum version of the entire algorithm on a QC. Current QML research mostly focusses on the latter by developing quantum algorithms that tab into the full potential of quantum parallelism.
+Considering these advantages, the combination of quantum computation and classical ML into the new field of quantum machine learning (QML) seems almost natural. However, since most ML algorithms rely on solving some system of linear equations, a corresponding quantum algorithm is required for QML to become achievable. \cite{HHL2009} were first to describe such an algorithm which since has become a subroutine in many QML algorithms. There are currently two main ideas on how to merge quantum computation with ML, namely a) running the classical algorithm on a classical computer and 'outsourcing' only the computationally intensive task to a QC or b) executing the quantum version of the entire algorithm on a QC. Current QML research mostly focusses on the latter by developing quantum algorithms that tab into the full potential of quantum parallelism.
 
 %QML
 %- the unification or symbiosis of ML and QC comes naturally when considering the vast speed-ups that could be gained through implementing ML on QCs
@@ -200,17 +201,17 @@ The proposed research will be solely based on the two QML algorithms described i
 
 In the case of $k = all$, input vector $x$ would simply be assigned to the class with the most members. In this case, the training vectors can be given distance-dependent weights (such as $\frac{1}{distance}$) in order to increase the influence of closer vectors over more distant ones. Hereby, the advantages of the quantum version are the parallel computation of the distances between each training vector and the input vector as well as contracting distance computation and distance weighting into one computational step.
 
-Next, \cite{Schuld2016} details a quantum algorithm based on linear least-squares regression. In contrast to the discrete classes ($A$ or $B$) used in kNN, this algorithm focusses on continuous outputs and the learning task is to find the best linear fit by reducing the least-squares error to all training data points. A simple example is that in a certain country, given ten data points that link the size of farm land (in ${m}^{2}$) to the total prize (in \$) predict the total prize for a new input size of farm land. Predicting such continuous class labels is important in many fields ranging from medicine to finance. The classical algorithm involves the computation of the (pseudo)inverse of a matrix which becomes very computationally intensive for large data sets. In contrast, the runtime of the quantum algorithm is independent of the size of the training data set and mainly depends on the dimension of the training vectors only.
+Next, \cite{Schuld2016} details a quantum algorithm based on linear least-squares regression. In contrast to the discrete classes ($A$ or $B$) used in kNN, this algorithm focusses on continuous outputs and the learning task is to find the best linear fit by reducing the least-squares error to all training data points. A simple example is that in a certain country, given ten data points that link the size of farm land (in ${m}^{2}$) to the total prize (in \$), predict the total prize for a new input size of farm land. Predicting such continuous class labels is important in many fields ranging from medicine to finance. The classical algorithm involves the computation of the (pseudo)inverse of a matrix which becomes computationally intensive for large data sets. In contrast, the runtime of the quantum algorithm is independent of the size of the training data set and mainly depends on the dimension of the training vectors only.
 
 %%CHOOSING SMALL PROBLEMS AND GENERATING THE DATASET
 The first step towards implementation of the outlined algorithms will be the identification of one or several small ML problems that can be executed on maximally nine qubits. For example, this might include the characterization of colours or differentiation of digits or letters. It thereby plays an important role if the respective ML problem can be approached using a very small dataset such as the average pixel brightness or the ratio of pixels above and below the image bisector. Ideally, the data should be representable as a 2-D vector such that it requires only a few qubits to encode the information quantum mechanically.
-
+\newpage
 %%THE TOOLS
-There are two types of tools available for the implementation of the QML algorithms. Firstly, since current state-of-the-art quantum technology uses maximally nine qubits, a classical computer can still be used to simulate the behaviour of the QC. Such a software architecture is provided by Microsoft Research which has released the quantum simulation toolsuite Liqui$\ket{}$ based on the programming language F\#. There are many more QC simulators available and the decision which one to use depends on the selected QML problem and corresponding dataset \citep{quantiki}.
+There are two types of tools available for the implementation of the QML algorithms. Firstly, since current state-of-the-art quantum technology uses maximally nine qubits, a classical computer can still be used to simulate the behaviour of the QC. For example, such a software architecture is provided by Microsoft Research which has released the quantum simulation toolsuite Liqui$\ket{}$ based on the programming language F\#. There are many more QC simulators available and the decision which one to use depends on the selected QML problem and corresponding dataset \citep{quantiki}.
 
-Secondly, earlier this year technology company IBM has enabled public access to their experimental quantum processor containing five non error-corrected superconducting qubits. Instead of only simulating on classical hardware, this opens up the possibility of executing the QML algorithm on actual quantum hardware. If it is possible to make use of IBM's QC is highly dependent on the dataset chosen. Furthermore, until this point it remains unclear if the algorithm in \cite{Schuld2016} can be executed using five qubits only.
+Secondly, earlier this year technology company IBM has enabled public access to their experimental quantum processor containing five non error-corrected superconducting qubits. Instead of only simulating on classical hardware, this opens up the possibility of executing the QML algorithm on actual quantum hardware. If it is possible to make use of IBM's QC, is highly dependent on the dataset chosen. Furthermore, until this point it remains unclear if the algorithm in \cite{Schuld2016} can be executed using five qubits only.
 
-For the subsequent discussion of quantum data encoding it is important to mathematically express the linear combination of the qubit states \0 and \1 as follows:
+For the subsequent discussion of quantum data encoding it is important to mathematically express the superposition of a qubit $\ket{q}$ as a linear combination of the qubit states \0 and \1 as follows:
 \begin{equation}
 \label{equ: simplequbit}
 \ket{q} = \alpha \ket{0} + \beta \ket{1}
@@ -226,7 +227,7 @@ The quantum linear regression algorithm is based on so called \textit{amplitude 
 \begin{figure}[!ht]
       \centering
        \includegraphics[scale=0.25]{qcircuit.png}
-       \caption[caption for qcircuit]{\label{fig:qcircuit} Basic quantum circuit with a single-qubit Hadamard gate (creating a superposition as in Equ.~\ref{equ: simplequbit} with $\alpha=\beta=\frac{1}{\sqrt{2}}$) and a multi-qubit CNOT gate (controlled bit flip)\footnotemark[2]}
+       \caption[caption for qcircuit]{\label{fig:qcircuit} Basic quantum circuit with a single-qubit Hadamard gate (creates a superposition as shown in Equ.~\ref{equ: simplequbit} with $\alpha=\beta=\frac{1}{\sqrt{2}}$) and a two-qubit CNOT gate (controlled bit flip)\footnotemark[2]}
 \end{figure}
 
 \footnotetext[2]{Reprinted from \cite{botsinis2013quantum}, Retrieved September 13, 2016, from \url{https://www.researchgate.net/publication/236883187_Quantum_Search_Algorithms_Quantum_Wireless_and_a_Low-Complexity_Maximum_Likelihood_Iterative_Quantum_Multi-User_Detector_Design}. Copyright 2013 by \cite{botsinis2013quantum}. Reprinted with permission.}
