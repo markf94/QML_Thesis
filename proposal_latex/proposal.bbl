@@ -60,6 +60,35 @@ Bekkerman, R.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Botsinis%
+, Ng%
+\BCBL {}\ \BBA {} Hanzo%
+}{%
+Botsinis%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2013}}%
+}]{%
+botsinis2013quantum}
+\APACinsertmetastar {%
+botsinis2013quantum}%
+\begin{APACrefauthors}%
+Botsinis, P.%
+, Ng, S\BPBI X.%
+\BCBL {}\ \BBA {} Hanzo, L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2013}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Quantum search algorithms, quantum wireless, and a
+  low-complexity maximum likelihood iterative quantum multi-user detector
+  design} {Quantum search algorithms, quantum wireless, and a low-complexity
+  maximum likelihood iterative quantum multi-user detector design}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{IEEE access}{1}{}{94--122}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Cai%
 \ \protect \BOthers {.}}{%
 Cai%

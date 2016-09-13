@@ -16,45 +16,45 @@ apacite.bst [2013/07/21 v6.03 APA bibliography style]
 Warning--No journal in Schuld2014
 Warning--No journal in Schuld2016
 Warning--No journal in shor1994
-You've used 16 entries,
+You've used 17 entries,
             6951 wiz_defined-function locations,
-            1374 strings with 14049 characters,
-and the built_in function-call counts, 31577 in all, are:
-= -- 3813
-> -- 294
-< -- 1470
-+ -- 1612
-- -- 38
-* -- 2047
-:= -- 5648
-add.period$ -- 64
-call.type$ -- 16
-change.case$ -- 274
+            1381 strings with 14277 characters,
+and the built_in function-call counts, 34119 in all, are:
+= -- 4116
+> -- 313
+< -- 1632
++ -- 1776
+- -- 40
+* -- 2233
+:= -- 6192
+add.period$ -- 68
+call.type$ -- 17
+change.case$ -- 291
 chr.to.int$ -- 0
-cite$ -- 35
-duplicate$ -- 974
-empty$ -- 1268
-format.name$ -- 537
-if$ -- 5950
+cite$ -- 37
+duplicate$ -- 1031
+empty$ -- 1344
+format.name$ -- 569
+if$ -- 6386
 int.to.chr$ -- 0
-int.to.str$ -- 48
+int.to.str$ -- 51
 missing$ -- 0
-newline$ -- 435
-num.names$ -- 128
-pop$ -- 606
+newline$ -- 461
+num.names$ -- 136
+pop$ -- 632
 preamble$ -- 1
-purify$ -- 66
+purify$ -- 70
 quote$ -- 0
-skip$ -- 1916
+skip$ -- 2052
 stack$ -- 0
-substring$ -- 1762
-swap$ -- 517
-text.length$ -- 37
+substring$ -- 1934
+swap$ -- 550
+text.length$ -- 39
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 1280
+type$ -- 1360
 warning$ -- 3
-while$ -- 186
+while$ -- 198
 width$ -- 0
-write$ -- 551
+write$ -- 586
 (There were 3 warnings)
