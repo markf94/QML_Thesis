@@ -158,13 +158,11 @@ In light of the theoretical nature of current QML research and the small number 
 \flushleft
 The following sections will outline the steps required and the tools used in order to answer this research question. 
 
-\newpage
 \subsection{Research Objectives}
 \label{subsec:researchobjectives}
 
-The main objective of this research is to demonstrate that QML algorithms can already be used for solving small problems on currently available quantum technology. Even though this might seem trivial at first, there are many problems that are often not addressed in the proposals of QML algorithms such as the encoding of data, the influence of quantum noise and the restrictions on the data type (e.g. uniformly distributed or low-rank data sets only). All theses issues have to be addressed when implementing QML algorithms experimentally and thus constitute the major challenges during this study. 
+The main objective of this research is to demonstrate that QML algorithms can already be used for solving small problems on currently available quantum technology. Even though this might seem trivial at first, there are many problems that are often not addressed in the proposals of QML algorithms such as the encoding of data, the influence of quantum noise and the restrictions on the data type (e.g. uniformly distributed or low-rank data sets only). All theses issues have to be addressed when implementing QML algorithms experimentally and thus constitute the major research objectives during this study. 
 %not sure about the usefulness of the last sentence
-Ideally, the outcome will already demonstrate observable quantum advantages over the classical algorithms, provide supporting evidence for the claim that QML can indeed be used to solve ML problems and that an increasing number of qubits will bring the expected speed-ups in computation.
 
 %Proof-of-principle
 %Demonstrating that some QML algorithms can already be used for solving small problems
@@ -233,7 +231,7 @@ The quantum linear regression algorithm is based on so called \textit{amplitude 
 \begin{figure}[!ht]
       \centering
        \includegraphics[scale=0.25]{qcircuit.png}
-       \caption[caption for qcircuit]{\label{fig:qcircuit} Basic quantum circuit with a single-qubit Hadamard gate and a multi-qubit controlled-NOT (CNOT) gate\footnotemark[2]}
+       \caption[caption for qcircuit]{\label{fig:qcircuit} Basic quantum circuit with a single-qubit Hadamard gate (creating a superposition) and a multi-qubit CNOT gate (controlled bit flip)\footnotemark[2]}
 \end{figure}
 
 \footnotetext[2]{Reprinted from \cite{botsinis2013quantum}, Retrieved September 13, 2016, from \url{https://www.researchgate.net/publication/236883187_Quantum_Search_Algorithms_Quantum_Wireless_and_a_Low-Complexity_Maximum_Likelihood_Iterative_Quantum_Multi-User_Detector_Design}. Copyright 2013 by \cite{botsinis2013quantum}. Reprinted with permission.}
@@ -268,12 +266,11 @@ The projected timeline for the proposed bachelor thesis research is given below.
 \section{Research Impact}
 \label{sec:research impact}
 %is this really needed?
-Successful proof-of-principle studies are crucial for further research to be funded and supported since it shows that an upscaling of quantum computational power will eventually lead to at best exponential speed ups compared to classical ML and hence has the potential to revolutionize the handling of big data.
+The proposed research is part of the recent effort to move QML from theory to praxis since there have been only three experimental verifications so far. Ideally, the research outcome will demonstrate already observable quantum advantages over the classical algorithms providing supporting evidence for the claim that QML can indeed be used to solve ML problems. Additionally, successful proof-of-principle studies are crucial for further research to be funded and supported since it shows that an upscaling of quantum computational power will eventually lead to at best exponential speed-ups compared to classical ML and hence has the potential to revolutionize the handling of big data.
 
 \section{Conclusion}
 \label{sec:conclusion}
-axidermy edison bulb plaid, chia swag organic roof party shabby chic raw denim tilde waistcoat. Swag everyday carry iPhone, pitchfork pop-up ethical blog small batch la croix before they sold out chartreuse chia gastropub craft beer crucifix. Occupy mustache organic tumblr, scenester cred listicle kombucha lumbersexual. Crucifix tumeric bushwick, organic unicorn ugh food truck 90's echo park freegan mumblecore chia shabby chic. Keytar actually intelligentsia mumblecore, ugh selvage schlitz tousled iPhone cray paleo wayfarers snackwave viral humblebrag. Subway tile pop-up squid church-key craft beer. Church-key la croix cornhole kitsch 8-bit gluten-free.
-
+The proposed research will identify small ML problems and suitable datasets that can already be solved using QML algorithms on state-of-the-art quantum computing technology. Investigated will be two algorithms proposed by \cite{Schuld2014, Schuld2016} which focus on supervised pattern classification based on linear regression and kNN. 
 \newpage
 \section{References}
 \begingroup
