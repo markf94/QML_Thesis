@@ -1,0 +1,73 @@
+# Created by Octave 4.0.2, Thu Sep 22 14:28:03 2016 SAST <mark@mark-ThinkPad-T450>
+# name: H
+# type: matrix
+# rows: 2
+# columns: 2
+ 0.7071067811865475 0.7071067811865475
+ 0.7071067811865475 -0.7071067811865475
+
+
+# name: S
+# type: complex matrix
+# rows: 2
+# columns: 2
+ (1,0) (0,0)
+ (0,0) (0,1)
+
+
+# name: Sd
+# type: complex matrix
+# rows: 2
+# columns: 2
+ (1,0) (0,0)
+ (0,0) (-0,-1)
+
+
+# name: T
+# type: complex matrix
+# rows: 2
+# columns: 2
+ (1,0) (0,0)
+ (0,0) (0.7071067811865476,0.7071067811865476)
+
+
+# name: Td
+# type: complex matrix
+# rows: 2
+# columns: 2
+ (1,0) (0,0)
+ (0,0) (0.7071067811865476,-0.7071067811865476)
+
+
+# name: X
+# type: matrix
+# rows: 2
+# columns: 2
+ 0 1
+ 1 0
+
+
+# name: Y
+# type: complex matrix
+# rows: 2
+# columns: 2
+ (0,0) (-0,-1)
+ (0,1) (0,0)
+
+
+# name: Z
+# type: matrix
+# rows: 2
+# columns: 2
+ 1 0
+ 0 -1
+
+
+# name: ans
+# type: matrix
+# rows: 2
+# columns: 2
+ 1 1
+ 1 -1
+
+
