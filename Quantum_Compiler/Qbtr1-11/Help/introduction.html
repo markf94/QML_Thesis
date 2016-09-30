@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+  <TITLE>Qubiter: Introduction</TITLE>
+  <LINK rel="stylesheet" type="text/css" href="artiste.css" />
+</HEAD>
+<BODY >
+<H1>
+  Introduction
+</H1>
+<P>
+<B>XCode</B> is an application (Integrated Development Environment) produced
+by Apple Inc. It provides an interface for the gcc (GNU) compiler. XCode
+is available for free at the Apple website.
+<P>
+<B>Clapack</B> is a library of linear algebra subroutines. It was produced
+by translating the Fortran library called Lapack into C via a tool called
+f2c. Clapack is available for free at
+<A HREF="http://www.netlib.org">www.netlib.org</A>. <U>Clapack is automatically
+included (as the vecLib Framework) in the standard installation of MacOS
+X .</U>
+<P>
+Qubiter (US Patent
+<A HREF="http://www.google.com/patents?id=b8ULAAAAEBAJ&amp;dq=patent:6456994">6,456,994
+</A>) is a computer program that can decompose an arbitrary unitary matrix
+(Well, as long as it's not too big) into a SEO (sequence of elementary
+operations---operations such as controlled-nots and qubit rotations). Such
+SEOs are used to manipulate an array of quantum bits (i.e. a quantum computer.)
+&nbsp;The mathematics behind Qubiter is explained in: "A Rudimentary Quantum
+Compiler(2cnd Ed.)", by R. R. Tucci, arXiv eprint
+<A HREF="http://www.arxiv.org/abs/quant-ph/9902062">quant-ph/9902062</A>.
+Additional references can be found
+<A HREF="http://www.ar-tiste.com/qubiter.html">here</A>. Qubiter is brought
+to you courtesy of the Artiste Company, makers of
+<A HREF="http://www.ar-tiste.com">Quantum Fog</A>.
+<P>
+<FONT COLOR="Red">VERY IMPORTANT: Before starting to use Qubiter 1.11, you
+must first read and agree with the Qubiter license. You can find it in the
+file entitled "Qbtr1.11_License.txt"</FONT>
+<P>
+In its current version 1.11, Qubiter is fairly crude---a pure C++ program
+with no GUI.&nbsp;It's just a research tool, so don't expect too much. The
+Qubiter 1.11 distribution includes an&nbsp;XCode 2.4 project file. Qubiter
+is linked to the Clapack library.
+<P>
+Since Qubiter 1.11 is pure C++, you don't need XCode, or even Mac OS X to
+use it: you can run Qubiter on any platform for which you have a C++ compiler.
+However, if you don't use XCode, you will have to write your own makefile
+or project file. Furthermore, if you do not use MacOS X, you will have to
+install the Clapack library in your computer, if it isn't installed already,
+as it is in Macs.
+<P>
+Henceforth we will use "MATNAME" as a prefix in file names. &nbsp;For example,
+we will speak of a file called "MATNAME-engl.in". You should replace MATNAME
+by a name that identifies the particular matrix being analyzed. For example,
+you might use "FT3bits-engl.in" instead of "MATNAME-engl.in" if you are dealing
+with 3 bit Fourier Transform matrices.
+<P>
+  <HR>
+<P ALIGN=Center>
+<A HREF="table_of_contents.html">[Table Of Contents]</A>
+</BODY></HTML>

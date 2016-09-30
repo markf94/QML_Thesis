@@ -1,0 +1,1 @@
+ '-I.' '-I/System/Library/Frameworks/vecLib.framework/Headers' $*

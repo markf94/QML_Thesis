@@ -1,0 +1,30 @@
+Qubiter -- Copyright (c) 1998-2007 R.R.Tucci. All rights reserved.
+
+June 15, 2007
+
+LICENSE AGREEMENT FOR QUBITER 1.11
+
+
+Below, the word "author" stands for "R.R. Tucci", and the word "package" stands for the Qubiter 1.11 package to which this license is attached.
+
+You may use this package provided you agree to the following conditions:
+
+1.	Use and changes
+
+You may use this package for free (gratis), but you may not modify its source code without explicit permission from the author.
+
+2.	Transfer
+
+You may not transfer this package, in part or in full, to any other party. If you want someone else to get it, just send them to www.ar-tiste.com, from where they can download it themselves.
+
+3.	Copyright and patent
+
+The author retains all allowable copyrights to this package.
+
+Parts of this package are covered by US Patent 6,456,994, which is owned by the author. He retains all rights conferred to him by said patent.
+
+
+4.	No Warranties of any kind
+
+THIS SOFTWARE IS PROVIDED BY AUTHOR ``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL AUTHOR OR HIS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+

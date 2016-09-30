@@ -1,0 +1,38 @@
+Metadata-Version: 1.1
+Name: qutip
+Version: 3.1.0
+Summary: QuTiP: The Quantum Toolbox in Python
+Home-page: http://qutip.org
+Author: Paul D. Nation, Robert J. Johansson
+Author-email: pnation@korea.ac.kr, robert@riken.jp
+License: BSD
+Description: QuTiP is open-source software for simulating the dynamics of closed and open
+        quantum systems. The QuTiP library depends on the excellent Numpy, Scipy, and
+        Cython numerical packages. In addition, graphical output is provided by
+        Matplotlib.  QuTiP aims to provide user-friendly and efficient numerical
+        simulations of a wide variety of quantum mechanical problems, including those
+        with Hamiltonians and/or collapse operators with arbitrary time-dependence,
+        commonly found in a wide range of physics applications. QuTiP is freely
+        available for use and/or modification on all common platforms. Being free of
+        any licensing fees, QuTiP is ideal for exploring quantum mechanics in research
+        as well as in the classroom.
+        
+Keywords: quantum physics dynamics
+Platform: Linux
+Platform: Mac OSX
+Platform: Unix
+Platform: Windows
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Unix
+Classifier: Operating System :: Microsoft :: Windows
+Requires: numpy (>=1.6)
+Requires: scipy (>=0.11)
+Requires: cython (>=0.15)
+Requires: matplotlib (>=1.1)

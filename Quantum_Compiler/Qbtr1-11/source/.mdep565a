@@ -1,0 +1,2 @@
+#!/bin/sh
+exec cc -arch ppc -arch i386 -E -D__DARWIN__ -DNO_ALLOCA -DCSRG_BASED  

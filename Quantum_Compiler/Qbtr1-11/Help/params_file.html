@@ -1,0 +1,155 @@
+<HTML>
+<HEAD>
+  <TITLE>Qubiter: Modes of Operation and Parameters File</TITLE>
+  <LINK rel="stylesheet" type="text/css" href="artiste.css" />
+</HEAD><BODY >
+<H1>
+  Modes of Operation and Parameters File
+</H1>
+<P>
+(Parameters File is called "qbtr-params.in")
+<P>
+We you run Qubiter, the first thing it does is to look for a parameter file
+entitled "qbtr-params.in". This&nbsp;is an example of such a file:
+<P>
+<IMG ALIGN="Middle" SRC="qbtr-params.gif" WIDTH="525" HEIGHT="325">
+<P>
+Qubiter will skip lines 1, 3, 4, 6, 8, etc. For clarity, we have indicated
+the lines that Qubiter skips by starting them with //, although Qubiter doesn't
+care what they start with. Questions that require a boolean (yes or no) answer
+should be answered by a 0 for no and 1 for yes.
+<P>
+  <HR>
+<H1>
+  MATNAME
+</H1>
+<P>
+The user should enter into the second line the name MATNAME of a matrix.
+In the figure, we have used "PBR.DFT2" for MATNAME.
+<P>
+  <HR>
+<H1>
+  Compilation and Decompilation
+</H1>
+<P>
+If the user enters 1 into the 4th line as an answer to "Do compilation?",
+then Qubiter will look for a file named "MATNAME.in". In other words, it
+will look for a file whose name is the string in line 2 plus the suffix ".in".
+Qubiter expects to find in this file the entries of the unitary matrix
+U<SUB>initial</SUB> to be decomposed. The file should be of the form discussed
+in the section entitled "Matrix Entries File".
+<P>
+If the user enters 1 into line 6 as an answer to "Do decompilation?", then
+Qubiter will look for a file named "MATNAME-engl.out". Qubiter expects this
+to be a plain SEO file. (See section entitled "SEO Files").
+<P>
+Qubiter has 2 main modes of operation as far as compilation/decompilation
+is concerned.
+<P>
+The first mode of operation is when the user answers:
+<UL>
+  <LI>
+    Do compilation? yes
+  <LI>
+    Do decompilation? yes
+</UL>
+<P>
+In this mode, the user must provide 2 input files entitled "qbtr-params.in"
+and "MATNAME.in". Qubiter will output a file called "MATNAME-engl.out". Then
+it will use "MATNAME-engl.out" as input, multiply the SEO listed in this
+file, arrive at a unitary matrix U<SUB>final</SUB>, and output a file called
+"MATNAME-chk.out" that lists the entries of U<SUB>final</SUB>. It will also
+output a file called "MATNAME-err.out" that list the entries of the difference
+matrix Delta = U<SUB>initial </SUB>- U<SUB>final</SUB> . If everything goes
+well, the matrix U<SUB>initial</SUB> specified by file "MATNAME.in" and the
+matrix U<SUB>final</SUB> specified by file "MATNAME-chk.out" will be the
+same matrix(within machine precision), and the matrix Delta will be zero
+(within machine precision).
+<P>
+The second mode of operation is when the user answers:
+<UL>
+  <LI>
+    Do compilation? no
+  <LI>
+    Do decompilation? yes
+</UL>
+<P>
+In this mode, the user must provide 2 input files entitled "qbtr-params.in"
+and "MATNAME-engl.out". Qubiter will multiply the SEO listed in
+"MATNAME-engl.out", arrive at a unitary matrix U<SUB>final</SUB>, and output
+a file called "MATNAME-chk.out" which lists the entries of U<SUB>final</SUB>
+.
+<P>
+  <HR>
+<H1>
+  Optimizations
+</H1>
+<UL>
+  <LI>
+    <FONT COLOR="Blue">Do light right optimization?(0,1)</FONT> (1 is recommended)
+    If the user answers 1 to this, then Qubiter will lighten the right side matrices
+    whenever it does a CSD.
+  <LI>
+    <FONT COLOR="Blue">Do complex D matrix optimization?(0,1)</FONT> (1 is
+    recommended) If the user answers 1 to this, then Qubiter will extract phase
+    factors from complex D matrices before doing a CSD.
+  <LI>
+    <FONT COLOR="Blue">Specify pmut_opt (permutation optimization level)
+    (0,1,2)</FONT>
+    <UL>
+      <LI>
+	If the user answers 0 to this, then Qubiter will do no permutation optimization.
+      <LI>
+	If the user answers 1 to this, Qubiter will decompose into a SEO one or more
+	bit permutations of the matrix U<SUB>initial</SUB> being decomposed.
+      <LI>
+	If the user answers 2 to this, Qubiter1.1 will abort because this is not
+	yet implemented. In the future, levels 2 and higher of this optimization
+	will do bit permutations at all nodes of the CSD tree, not just the root
+	one.
+    </UL>
+  <LI>
+    <FONT COLOR="Blue">If pmut_opt=1, should I run through all bit
+    permutations?(0,1)</FONT> If pmut_opt=0 (i.e., answer to previous question
+    is no), then the answer to this question is irrelevant. If pmut_opt=1,
+    then:&nbsp;
+    <UL>
+      <LI>
+	If the user answers 0 to this, then Qubiter will run through just one bit
+	permutation of U<SUB>initial</SUB> .
+      <LI>
+	If the user answers 1 to this, then Qubiter will run through all bit permutation
+	of U<SUB>initial</SUB> . It will output an extra file called "MATNAME-pmut.out"
+	that gives the length of the SEO obtained for each permutation.
+    </UL>
+  <LI>
+    <FONT COLOR="Blue">If pmut_opt=1, should I keep results for the identity
+    permu.?(0,1) </FONT>If pmut_opt=0, then the answer to this question is
+    irrelevant. If pmut_opt=1, then:
+    <UL>
+      <LI>
+	If the user answers 0 to this, then the "MATNAME-engl.out" file outputted
+	by Qubiter will contain a SEO for the bit permutation of
+	&nbsp;U<SUB>initial</SUB> &nbsp;specified in the next question.
+      <LI>
+	If the user answers 1 to this, then the "MATNAME-engl.out" file outputted
+	by Qubiter will contain a SEO for the identity bit permutation of
+	&nbsp;U<SUB>initial</SUB> (i.e., for an unpermutted U<SUB>initial</SUB> ).
+    </UL>
+  <LI>
+    <FONT COLOR="Blue">If pmut_opt=1 &amp; answered NO to prev. question, then
+    give another permu. Give length on 1st line, permu. on 2cd (0 1 2 ... is
+    identity). </FONT>If pmut_opt =0, then the answer to this question is irrelevant.
+    If pmut_opt = 1 but the answer to the previous question is YES, then the
+    answer to this question is irrelevant. Otherwise, this question is answered
+    by specifying a bit permutation . The first line of the answer is the number
+    of bits N<SUB>B </SUB>of U<SUB>initial</SUB>. The next line should be a
+    permutation of the set {0, 1, 2, ..., N<SUB>B</SUB>-1}. For example, for
+    2 bits, there are 2 permutations "0 &nbsp; 1" and "1 &nbsp; 0", where "0
+    &nbsp; &nbsp;1" is interpreted as the identity permutation.
+</UL>
+<P>
+  <HR>
+<P ALIGN=Center>
+<A HREF="table_of_contents.html">[Table Of Contents]</A>
+</BODY></HTML>

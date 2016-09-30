@@ -1,0 +1,29 @@
+/*
+good color picker at http://www.colorschemer.com/online.html
+good css tutorial at http://www.w3schools.com/css 
+*/
+
+/*blue theme
+light blue #5781FF
+purple #730099
+
+body {background-color: #DBEDFF; font-family: times}
+a:link {Color: #730099}
+a:visited {Color: #5781FF}
+a:hover {Color: #5781FF}
+a:active {Color: #5781FF}
+H1,H2,H3,H4 {Color:black}
+*/
+
+/*yelow theme
+orange #fb5b00
+wheat #ffcb65
+*/
+
+body {background-color: #ffffd8; font-family: times}
+a:link {Color: #93007b}
+a:visited {Color: #fb5b00}
+a:hover {Color: #fb5b00}
+a:active {Color: #fb5b00}
+H1,H2,H3,H4 {Color:#93007b}
+

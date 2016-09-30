@@ -1,0 +1,160 @@
+# Created by Octave 4.0.2, Mon Sep 26 11:17:29 2016 SAST <mark@mark-ThinkPad-T450>
+# name: H
+# type: matrix
+# rows: 2
+# columns: 2
+ 0.7071067811865475 0.7071067811865475
+ 0.7071067811865475 -0.7071067811865475
+
+
+# name: R_x
+# type: complex matrix
+# rows: 2
+# columns: 2
+ (6.123233995736766e-17,0) (-0,-1)
+ (-0,-1) (6.123233995736766e-17,0)
+
+
+# name: R_y
+# type: matrix
+# rows: 2
+# columns: 2
+ 6.123233995736766e-17 -1
+ 1 6.123233995736766e-17
+
+
+# name: R_z
+# type: complex matrix
+# rows: 2
+# columns: 2
+ (6.123233995736766e-17,-1) (0,0)
+ (0,0) (6.123233995736766e-17,1)
+
+
+# name: S
+# type: complex matrix
+# rows: 2
+# columns: 2
+ (1,0) (0,0)
+ (0,0) (0,1)
+
+
+# name: Sd
+# type: complex matrix
+# rows: 2
+# columns: 2
+ (1,0) (0,0)
+ (0,0) (-0,-1)
+
+
+# name: T
+# type: complex matrix
+# rows: 2
+# columns: 2
+ (1,0) (0,0)
+ (0,0) (0.7071067811865476,0.7071067811865476)
+
+
+# name: Td
+# type: complex matrix
+# rows: 2
+# columns: 2
+ (1,0) (0,0)
+ (0,0) (0.7071067811865476,-0.7071067811865476)
+
+
+# name: X
+# type: matrix
+# rows: 2
+# columns: 2
+ 0 1
+ 1 0
+
+
+# name: Y
+# type: complex matrix
+# rows: 2
+# columns: 2
+ (0,0) (-0,-1)
+ (0,1) (0,0)
+
+
+# name: Z
+# type: matrix
+# rows: 2
+# columns: 2
+ 1 0
+ 0 -1
+
+
+# name: alpha
+# type: scalar
+1.9635
+
+
+# name: ans
+# type: scalar
+-0.7071067811865475
+
+
+# name: beta
+# type: scalar
+3.141592653589793
+
+
+# name: delta
+# type: scalar
+1.570796326794897
+
+
+# name: gamma
+# type: scalar
+-0.7854
+
+
+# name: info
+# type: scalar
+-1.950803740768947e-09
+
+
+# name: lhs
+# type: complex scalar
+(0.0606601717798213,-1.146446609406726)
+
+
+# name: test
+# type: complex matrix
+# rows: 2
+# columns: 2
+ (0.8535546892574178,-0.3535493370129423) (0.1464453107274032,0.3535548468205975)
+ (0.3535548468205975,-0.1464453107274033) (-0.3535493370129427,-0.8535546892574176)
+
+
+# name: theta_x
+# type: scalar
+3.141592653589793
+
+
+# name: theta_y
+# type: scalar
+3.141592653589793
+
+
+# name: theta_z
+# type: scalar
+3.141592653589793
+
+
+# name: wanted
+# type: complex matrix
+# rows: 2
+# columns: 2
+ (0.8535533905932736,-0.3535533905932737) (0.1464466094067262,0.3535533905932737)
+ (0.3535533905932737,-0.1464466094067262) (-0.3535533905932737,-0.8535533905932736)
+
+
+# name: x
+# type: scalar
+-0.7854021372366941
+
+

@@ -1,0 +1,69 @@
+<HTML>
+<HEAD>
+  <TITLE>Qubiter: Other File Types</TITLE>
+  <LINK rel="stylesheet" type="text/css" href="artiste.css" />
+</HEAD><BODY >
+<H1>
+  Other File Types
+</H1>
+<P>
+<UL>
+  <LI>
+    <FONT COLOR="Blue">MATNAME-chk.out</FONT> This file is an output of a
+    compilation run. It is also an output of a decompilation run. The file is
+    of the form discussed in the section entitled "Matrix Entries File". In both
+    a compilation and a decompilation run, it contains the entries of the matrix
+    obtained by multiplying out the SEO contained in file MATNAME-engl.in .
+  <LI>
+    <FONT COLOR="Blue">MATNAME-err.out</FONT> This file is an output of a
+    compilation run. The file is of the form discussed in the section entitled
+    "Matrix Entries File". It lists the entries of the matrix which equals the
+    difference between the matrix in file MATNAME.in and the matrix in file
+    MATNAME-chk.out.
+  <LI>
+    <FONT COLOR="Blue">MATNAME-pict.out</FONT> This file is an output of a
+    compilation run. The file is an ASCII picture of the data contained in
+    MATNAME-engl.out. In MATNAME-pict.out, each elementary gate is represented
+    by a horizontal line of symbols. Consider a single such line.
+    <UL>
+      <LI>
+	There is a 1 to 1 correspondence between the characters in the line and the
+	qubits of an array of qubits. The rightmost character represents bit 0. The
+	next to rightmost character in the line represents bit 1. And so on.
+      <LI>
+	A bit that is not operated on is represented by a " | " character (except
+	when it is represented by a "-" character. See below.)
+      <LI>
+	A bit that is rotated about the Z axis (ditto, Y axis) is represented by
+	a "Z" character (ditto, "Y" character).
+      <LI>
+	Suppose the gate is a controlled gate (i.e., a cnot or a controlled phase
+	shift) with one or more controls. Then a&nbsp;control bit is represented
+	by a "@" character (ditto, "0" character) if it must be true (ditto, false)
+	for the action of the gate (i.e, bit fip, phase sift) to occur. In the case
+	of a c-not, the bit to be flipped is represented by an "X" character. Bits
+	that are not being operated on but which have the misfortune of lying between
+	a control and a flipper bit or between two control bits are represented by
+	a "-".
+      <LI>
+	If the gate is a pure phase acting on all bits, all bits are represented
+	by the "~" character.
+    </UL>
+  <LI>
+    <FONT COLOR="Blue">MATNAME-log.out</FONT> This file is an output of a
+    compilation run. It lists the two left side matrices, the CS angles of the
+    D matrix, and the two right side matrices, for every CSD performed during
+    the run.
+  <LI>
+    <FONT COLOR="Blue">MATNAME-pmut.out</FONT> This file is an output of a
+    compilation run whenever pmut_opt=1. If the matrix U<SUB>initial </SUB>being
+    decomposed has N<SUB>B </SUB>bits, the file lists all the N<SUB>B</SUB>!
+    permutations of N<SUB>B </SUB>bits. For each permutation, it gives the length
+    of the SEO obtained for that permutation of U<SUB>initial </SUB>.&nbsp;
+</UL>
+<P>
+<P>
+  <HR>
+<P ALIGN=Center>
+<A HREF="table_of_contents.html">[Table Of Contents]</A>
+</BODY></HTML>

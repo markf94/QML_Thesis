@@ -1,0 +1,122 @@
+#obtained by prunning all /usr/include files from makedepend output
+TREE.o: TREE.h prefix.h
+TREE.o: /System/Library/Frameworks/vecLib.framework/Headers/vecLib.h
+TREE.o: ANSI_UDebugging.h
+TREE.o: ANSI_UException.h my_notation.h clapack_needs.h W_SPEC.h L_LIST.h
+TREE.o: NODE.h PERMUTATION.h VECTOR.h Qbtr_globals.h UNITARY_MAT.h
+TREE.o: CENTRAL_MAT.h Qbtr_global_funs.h OPTIMIZATIONS.h
+UNITARY_MAT.o: UNITARY_MAT.h prefix.h
+UNITARY_MAT.o: /System/Library/Frameworks/vecLib.framework/Headers/vecLib.h
+UNITARY_MAT.o: ANSI_UDebugging.h ANSI_UException.h
+UNITARY_MAT.o: my_notation.h clapack_needs.h Qbtr_globals.h VECTOR.h
+UNITARY_MAT.o: Qbtr_global_funs.h D_MAT.h STRINGY.h /usr/include/string.h
+UNITARY_MAT.o: BIT_VECTOR.h PERMUTATION.h OPTIMIZATIONS.h DBL_SORTER.h
+OPTIMIZATIONS.o: OPTIMIZATIONS.h prefix.h
+OPTIMIZATIONS.o: /System/Library/Frameworks/vecLib.framework/Headers/vecLib.h
+OPTIMIZATIONS.o: ANSI_UDebugging.h ANSI_UException.h my_notation.h
+OPTIMIZATIONS.o: clapack_needs.h
+main.o: UNITARY_MAT.h prefix.h
+main.o: /System/Library/Frameworks/vecLib.framework/Headers/vecLib.h
+main.o:  ANSI_UDebugging.h
+main.o: ANSI_UException.h my_notation.h clapack_needs.h Qbtr_globals.h
+main.o: VECTOR.h TREE.h W_SPEC.h STRINGY.h 
+main.o: OPTIMIZATIONS.h PERMUTATION.h CENTRAL_MAT.h
+NODE.o: NODE.h prefix.h
+NODE.o: /System/Library/Frameworks/vecLib.framework/Headers/vecLib.h
+NODE.o: ANSI_UDebugging.h
+NODE.o: ANSI_UException.h my_notation.h clapack_needs.h PERMUTATION.h
+NODE.o: VECTOR.h Qbtr_globals.h W_SPEC.h CENTRAL_MAT.h UNITARY_MAT.h TREE.h
+NODE.o: OPTIMIZATIONS.h Qbtr_global_funs.h D_MAT.h
+CENTRAL_MAT.o: CENTRAL_MAT.h prefix.h
+CENTRAL_MAT.o: /System/Library/Frameworks/vecLib.framework/Headers/vecLib.h
+CENTRAL_MAT.o: ANSI_UDebugging.h ANSI_UException.h
+CENTRAL_MAT.o: my_notation.h clapack_needs.h VECTOR.h Qbtr_globals.h W_SPEC.h
+CENTRAL_MAT.o: D_MAT.h TREE.h had_transforms.h L_LIST.h BIT_VECTOR.h
+CENTRAL_MAT.o: Qbtr_global_funs.h OPTIMIZATIONS.h PERMUTATION.h
+CENTRAL_MAT.o: nu_n1_transforms.h
+D_MAT.o: D_MAT.h prefix.h
+D_MAT.o: /System/Library/Frameworks/vecLib.framework/Headers/vecLib.h
+D_MAT.o: /usr/include/ppc/types.h /usr/include/stdio.h ANSI_UDebugging.h
+D_MAT.o: ANSI_UException.h my_notation.h clapack_needs.h VECTOR.h
+D_MAT.o: Qbtr_globals.h Qbtr_global_funs.h OPTIMIZATIONS.h
+Qbtr_global_funs.o: Qbtr_global_funs.h prefix.h
+Qbtr_global_funs.o: /System/Library/Frameworks/vecLib.framework/Headers/vecLib.h
+btr_global_funs.o: ANSI_UDebugging.h ANSI_UException.h my_notation.h
+Qbtr_global_funs.o: clapack_needs.h VECTOR.h Qbtr_globals.h
+BIT_VECTOR.o: BIT_VECTOR.h prefix.h
+BIT_VECTOR.o: /System/Library/Frameworks/vecLib.framework/Headers/vecLib.h
+BIT_VECTOR.o: ANSI_UDebugging.h ANSI_UException.h
+BIT_VECTOR.o: my_notation.h clapack_needs.h PERMUTATION.h VECTOR.h
+BIT_VECTOR.o: Qbtr_globals.h
+STRINGY.o: STRINGY.h prefix.h
+STRINGY.o: /System/Library/Frameworks/vecLib.framework/Headers/vecLib.h
+STRINGY.o: ANSI_UDebugging.h ANSI_UException.h
+STRINGY.o: my_notation.h clapack_needs.h /usr/include/string.h
+clapack_needs.o: clapack_needs.h prefix.h
+clapack_needs.o: /System/Library/Frameworks/vecLib.framework/Headers/vecLib.h
+clapack_needs.o: ANSI_UDebugging.h ANSI_UException.h my_notation.h
+VECTOR_INST.o: VECTOR.cp VECTOR.h prefix.h
+VECTOR_INST.o: /System/Library/Frameworks/vecLib.framework/Headers/vecLib.h
+VECTOR_INST.o: /usr/include/stdlib.h /usr/include/sys/cdefs.h
+VECTOR_INST.o: /usr/include/_types.h /usr/include/sys/_types.h
+VECTOR_INST.o: /usr/include/machine/_types.h /usr/include/ppc/_types.h
+VECTOR_INST.o: /usr/include/sys/wait.h /usr/include/sys/signal.h
+VECTOR_INST.o: /usr/include/sys/appleapiopts.h /usr/include/machine/signal.h
+VECTOR_INST.o: /usr/include/ppc/signal.h /usr/include/sys/resource.h
+VECTOR_INST.o: /usr/include/machine/endian.h /usr/include/ppc/endian.h
+VECTOR_INST.o: /usr/include/sys/_endian.h /usr/include/alloca.h
+VECTOR_INST.o: /usr/include/machine/types.h /usr/include/ppc/types.h
+VECTOR_INST.o: /usr/include/stdio.h ANSI_UDebugging.h ANSI_UException.h
+VECTOR_INST.o: my_notation.h clapack_needs.h Qbtr_globals.h
+VECTOR.o: VECTOR.h prefix.h
+VECTOR.o: /System/Library/Frameworks/vecLib.framework/Headers/vecLib.h
+VECTOR.o: /usr/include/stdlib.h /usr/include/sys/cdefs.h
+VECTOR.o: /usr/include/_types.h /usr/include/sys/_types.h
+VECTOR.o: /usr/include/machine/_types.h /usr/include/ppc/_types.h
+VECTOR.o: /usr/include/sys/wait.h /usr/include/sys/signal.h
+VECTOR.o: /usr/include/sys/appleapiopts.h /usr/include/machine/signal.h
+VECTOR.o: /usr/include/ppc/signal.h /usr/include/sys/resource.h
+VECTOR.o: /usr/include/machine/endian.h /usr/include/ppc/endian.h
+VECTOR.o: /usr/include/sys/_endian.h /usr/include/alloca.h
+VECTOR.o: /usr/include/machine/types.h /usr/include/ppc/types.h
+VECTOR.o: /usr/include/stdio.h ANSI_UDebugging.h ANSI_UException.h
+VECTOR.o: my_notation.h clapack_needs.h Qbtr_globals.h
+PERMUTATION.o: PERMUTATION.h prefix.h
+PERMUTATION.o: /System/Library/Frameworks/vecLib.framework/Headers/vecLib.h
+PERMUTATION.o: /usr/include/stdlib.h /usr/include/sys/cdefs.h
+PERMUTATION.o: /usr/include/_types.h /usr/include/sys/_types.h
+PERMUTATION.o: /usr/include/machine/_types.h /usr/include/ppc/_types.h
+PERMUTATION.o: /usr/include/sys/wait.h /usr/include/sys/signal.h
+PERMUTATION.o: /usr/include/sys/appleapiopts.h /usr/include/machine/signal.h
+PERMUTATION.o: /usr/include/ppc/signal.h /usr/include/sys/resource.h
+PERMUTATION.o: /usr/include/machine/endian.h /usr/include/ppc/endian.h
+PERMUTATION.o: /usr/include/sys/_endian.h /usr/include/alloca.h
+PERMUTATION.o: /usr/include/machine/types.h /usr/include/ppc/types.h
+PERMUTATION.o: /usr/include/stdio.h ANSI_UDebugging.h ANSI_UException.h
+PERMUTATION.o: my_notation.h clapack_needs.h VECTOR.h Qbtr_globals.h
+PERMUTATION.o: nexper1.h
+nu_n1_transforms.o: nu_n1_transforms.h prefix.h
+nu_n1_transforms.o: /System/Library/Frameworks/vecLib.framework/Headers/vecLib.h
+nu_n1_transforms.o: ANSI_UDebugging.h ANSI_UException.h my_notation.h
+nu_n1_transforms.o: clapack_needs.h VECTOR.h Qbtr_globals.h BIT_VECTOR.h
+nexper1.o: nexper1.h prefix.h
+nexper1.o: /System/Library/Frameworks/vecLib.framework/Headers/vecLib.h
+nexper1.o: ANSI_UDebugging.h ANSI_UException.h
+nexper1.o: my_notation.h clapack_needs.h
+L_LIST_INST.o: L_LIST.cp L_LIST.h prefix.h
+L_LIST_INST.o: /System/Library/Frameworks/vecLib.framework/Headers/vecLib.h
+L_LIST_INST.o: ANSI_UDebugging.h ANSI_UException.h
+L_LIST_INST.o: my_notation.h clapack_needs.h NODE.h PERMUTATION.h VECTOR.h
+L_LIST_INST.o: Qbtr_globals.h W_SPEC.h
+L_LIST.o: L_LIST.h prefix.h
+L_LIST.o: ANSI_UDebugging.h ANSI_UException.h
+L_LIST.o: my_notation.h clapack_needs.h
+had_transforms.o: had_transforms.h prefix.h
+had_transforms.o: /System/Library/Frameworks/vecLib.framework/Headers/vecLib.h
+had_transforms.o: ANSI_UDebugging.h ANSI_UException.h my_notation.h
+had_transforms.o: clapack_needs.h VECTOR.h Qbtr_globals.h
+DBL_SORTER.o: DBL_SORTER.h prefix.h
+DBL_SORTER.o: /System/Library/Frameworks/vecLib.framework/Headers/vecLib.h
+DBL_SORTER.o: ANSI_UDebugging.h ANSI_UException.h
+DBL_SORTER.o: my_notation.h clapack_needs.h PERMUTATION.h VECTOR.h
+DBL_SORTER.o: Qbtr_globals.h Qbtr_global_funs.h

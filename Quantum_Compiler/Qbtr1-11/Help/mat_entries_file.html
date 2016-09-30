@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+  <TITLE>Qubiter: Matrix Entries File</TITLE>
+  <LINK rel="stylesheet" type="text/css" href="artiste.css" />
+</HEAD><BODY >
+<H1>
+  Matrix Entries File
+</H1>
+<P>
+(Matrix Entries File is called "MATNAME.in")
+<P>
+Qubiter uses files that list the entries of a unitary matrix U. This is an
+example of such files:
+<P>
+<IMG ALIGN="Middle" SRC="MATNAME.in.gif" WIDTH="265" HEIGHT="322"> 
+<P>
+Qubiter ignores the 2 lines preceded by //. The second line tells how many
+bits are necessary to label U's columns (or rows, since U must be square).
+In the example above, two bits are necessary to label U's column, so one
+expects U to be a 4 X 4 matrix with 16 entries. Each line after the third
+represents a complex number Z. The real part of Z&nbsp;is listed first, then
+some white space to the right of it, and then the imaginary part of Z to
+the right of that. The entries in the first column of U should be listed
+first, then those in the second column of U, etc.
+<P>
+  <HR>
+<P ALIGN=Center>
+<A HREF="table_of_contents.html">[Table Of Contents]</A>
+</BODY></HTML>

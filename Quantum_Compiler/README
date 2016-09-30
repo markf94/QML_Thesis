@@ -1,0 +1,249 @@
+Quantum Compiler, v0.03
+http://quantum-compiler.org
+29 May 2011
+
+This is a research implementation of a quantum compiler,
+initially using the Solovay-Kitaev algorithm
+of successive approximation.
+It is based on similar compilers by Chris Dawson and Aram Harrow.
+Links can be found at the project homepage above.
+
+-----------------------------------------------------------------
+LIMITATIONS:
+
+Currently, gate accuracy is limited to about 1e-5 using Fowler
+distance, occurring around n=7. This appears to be due to numerical errors.
+The basic approximations (initial epsilon nets) are searched by using
+a kd-tree data structure, which requires decomposing SU(d) unitarties
+to R^{{d^2}-1}. This decomposition fails in numpy/scipy when the
+unitary in question is too close to identity. In those cases, the
+kd-tree search simply returns the identity, which is what limits
+the compiled gate accuracy.
+
+Alternative solutions in the future may include some kind of limited
+exhaustive search for very fine epsilon nets whenever this near-identity
+case occurs.
+
+-----------------------------------------------------------------
+CHANGE NOTES:
+
+v0.01: Initial implementation with working SU(2) example.
+v0.02: Added README file, releases script, and working SU(4) example.
+v0.03: Fixed NaN ValueError due to decomposing unitaries too close to identity.
+       Simplify sequences after every multiplication.
+       Eliminates extraneous dagger for self-adjoint operators
+         (currently Hadamard and identity in the default gate set)
+
+-----------------------------------------------------------------
+REQUIREMENTS:
+
+I've tested this on
+	Mac OS X 10.5, python-2.5.4, numpy-1.4.1 from fink
+	Linux (Fedora Core 13), python-2.6.4, numpy-1.3.0.
+
+Note that generated files are included in this distribution,
+generated on the Mac OS X system above, but they may not be
+compatible with your version of Python and numpy.
+
+If it doesn't work (complains about lack of defmatrix module),
+then you'll have to wipe those files (in pickles/) and
+re-generate them according to the instructions below.
+
+-----------------------------------------------------------------
+FILES:
+
+This distribution contains the following top-level directories:
+/skc/		The main Solovay-Kitaev Python top-level module
+/manage/	Scripts for running maintenance tasks
+/pickles/	Generated files (described below)
+/scratch/	Sandbox for experimenting with functionality
+/releases/	Scripts and directory For generating releases
+/tests/		Unit tests
+
+-----------------------------------------------------------------
+SETUP:
+
+You will probably need to set your PYTHONPATH to the local directory,
+like this bash example:
+
+	export PYTHONPATH=.
+
+-----------------------------------------------------------------
+OPERATION:
+
+The compiler operates in the following stages.
+
+1. Generating basic approximations.
+2. Building a search tree out of basic approximations.
+3. Running the Solovay-Kitaev algorithm for a desired gate
+   using the tree of basic approximations as a base case.
+
+How to perform each of these steps is given in more detail below.
+with example commands given below for SU(2), that is, for single-qubit gates.
+
+You can perform analogous commands for SU(4), they will just take longer
+and you are more likely to run out of memory.
+
+1. GENERATION
+
+Generate the basic approximations (epsilon-0 net) as files on disk to
+be read / processed later. This depends on a given instruction set. 
+You can view the SU(2) settings used in the pre-packaged example
+by viewing the file:
+
+	manage/generate_su2.py
+
+This distribution should already come with generated files for your
+convenience, which you can list like this:
+
+anti-hero-1:skc-python buy-ppham$ ls -lh pickles/su2/
+total 33520
+-rw-r--r--  1 buy-ppham  staff   852B Aug 26 00:37 gen-g1-1.pickle
+-rw-r--r--  1 buy-ppham  staff   505K Aug 26 00:27 gen-g10-1.pickle
+-rw-r--r--  1 buy-ppham  staff   1.0M Aug 26 00:28 gen-g11-1.pickle
+-rw-r--r--  1 buy-ppham  staff   2.0M Aug 26 00:28 gen-g12-1.pickle
+-rw-r--r--  1 buy-ppham  staff   4.1M Aug 26 00:29 gen-g13-1.pickle
+-rw-r--r--  1 buy-ppham  staff   8.3M Aug 26 00:31 gen-g14-1.pickle
+-rw-r--r--  1 buy-ppham  staff   1.4K Aug 26 00:25 gen-g2-1.pickle
+-rw-r--r--  1 buy-ppham  staff   3.2K Aug 26 00:25 gen-g3-1.pickle
+-rw-r--r--  1 buy-ppham  staff   6.4K Aug 26 00:25 gen-g4-1.pickle
+-rw-r--r--  1 buy-ppham  staff    14K Aug 26 00:25 gen-g5-1.pickle
+-rw-r--r--  1 buy-ppham  staff    29K Aug 26 00:25 gen-g6-1.pickle
+-rw-r--r--  1 buy-ppham  staff    60K Aug 26 00:25 gen-g7-1.pickle
+-rw-r--r--  1 buy-ppham  staff   123K Aug 26 00:27 gen-g8-1.pickle
+-rw-r--r--  1 buy-ppham  staff   248K Aug 26 00:27 gen-g9-1.pickle
+-rw-r--r--  1 buy-ppham  staff   540B Aug 26 00:37 gen-iset.pickle
+
+Sequences are enumerated in "generations", one generation per file,
+where generation x contains all sequences up to x instructions in length
+(before simplifying). Naturally, generation 16 is larger than generation
+1 because there are many more sequences of length 16 than of length 1.
+
+If you want to regenerate these files from scratch, just wipe out
+the old ones and run the generate script again:
+
+	rm pickles/su2/*
+	python manage/generate_su2.py
+
+This takes a few minutes, so go read e-mail
+or get coffee. Some helpful stats are printed to amuse you if you really
+want to watch.
+
+Okay, so now we have generated sequences on disk, ready to be processed
+into a tree for efficient nearest-neighbor searching.
+
+-----------------------------------------------------------------
+2. SEARCHING
+
+This is combined with actually running the Solovay-Kitaev algorithm in practice,
+since it takes longer to build the tree, save it to a file, and then load it
+into memory again later. So we just build the tree, reading the generation
+files from the previous step, and then run the compiler at the same time.
+
+However, you may be curious about the kdtree we use. Yes, that's right, I said
+kd-tree.
+
+http://en.wikipedia.org/wiki/Kd-tree
+
+I stole the Python implementation in that example, and modified it for use
+with unitary operators.
+
+If you want to build a kd-tree and then immediately search for the nearest
+neighbor to a random unitary, you can run this script:
+
+	python scratch/scratch_kdtree_su2.py
+
+This is the basic lookup operation done when Solovay-Kitaev bottoms out in
+its recursion.
+
+It will show you both the Fowler distance (which discounts any global phase
+factor) as well as the more conventional trace distance.
+
+For SU(2) and sequences up to 16 in length in our example,
+you will typically get a Fowler distance of about 0.02 to 0.06.
+Not great, but workable.
+
+-----------------------------------------------------------------
+3. COMPILING
+
+Okay okay, enough chit chat. Time for the main attraction.
+
+	python scratch/sk_dawson_su2.py
+
+This script is so-named because it uses Chris Dawson's group factoring
+method for SU(2). For the given example (n=2), you should get an error
+of 0.00498 in Fowler distance, which again, is nothing to sneeze at for
+two levels of recursion.
+
+-----------------------------------------------------------------
+SU(4)
+
+So far, we have only done what Chris and Aram have done in their code,
+just much slower and several years later. But wait! Now we will, for
+the first time ever, compile an SU(4) unitary using Solovay-Kitaev.
+
+1. Generate: we've already generated SU(4) basic approximations up to
+   sequence length = 6, which is good enough for testing purposes.
+   If you want to generate them again (this takes a looong time):
+
+	rm -f pickles/su4/*
+	python manage/generate_su4.py
+
+2. Build a search tree: again, this is really part of the next step.
+   But you can test the basic lookup feature of the kdtree.
+
+	python scratch/scratch_kdtree_su4.py
+
+   This will give you fowler distance errors of about 0.2 - 0.4,
+   which isn't great, but we only went to sequence length = 6 after all.
+
+3. Compile: here we do n=4 recursion levels to get fowler distance errors
+   of about 3e-7. Pretty good!
+
+	python scratch/sk_dawson_su4.py
+
+-----------------------------------------------------------------
+FUTURE IMPROVEMENTS
+
+So there is a lot of work to be done to improve the performance of this
+implementation. As it is, it would take several hours to run an SU(4)
+compilation with sufficient accuracy, and it would probably be infeasible
+to run it for SU(8).
+
+Here are the areas I can think of off the top of my head:
+
+* Rewrite it in Cython and static typing to speed this up.
+  Really, I kinda regret writing this in Python because it is sooo
+  slow, but numpy is very convenient.
+  But compared to Aram's and Chris's C++ implementations, it makes
+  me cry.
+* Profile it to find the slow parts.
+* Remove assertions.
+
+As for new functionality, it would be interesting to compare different
+group factoring methods, and see whether better convergence occurs for
+Aram's SU(2) factoring or Chris's.
+
+Also, we could implement net calculation to determine the epsilon-0 of
+our basic approximations (initial net) to see whether it meets the
+critical epsilon for Solovay-Kitaev to converge. Right now I am just
+winging it.
+
+Of course, generic SU(d) compilation is not that interesting and way too hard.
+It would probably be more effective to implement Kitaev's idea of whole
+circuit compilation, instead of the single gate compilation presented above.
+
+Alternatively, we could examine what gates are interesting in popular algorithms,
+like quantum phase estimation, and then work backwards to optimize our compilers
+just for those gates.
+
+Another useful direction is to extend Austin Fowler's work to hand-compile a
+universal two qubit fault-tolerant gate (like CNOT) for fault-tolerant gates.
+
+I am currently working on these last two directions, so stay tuned!
+Any and all feedback is welcome.
+
+--
+Paul Pham
+ppham at local hyphen box dot org
+

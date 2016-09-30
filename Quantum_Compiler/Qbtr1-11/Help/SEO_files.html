@@ -1,0 +1,140 @@
+<HTML>
+<HEAD>
+  <TITLE>Qubiter: SEO Files</TITLE>
+  <LINK rel="stylesheet" type="text/css" href="artiste.css" />
+</HEAD><BODY >
+<H1>
+  SEO Files
+</H1>
+<P>
+(SEO Files are called "MATNAME-engl.in")
+<P>
+Qubiter outputs files that list SEOs (SEO = sequence of elementary operations)
+in either plain or verbose form. There is a macro variable somewhere in Qubiter
+called "_write_verbose_engl_file" . When this variable is #defined &nbsp;(ditto,
+is not #defined) then a verbose (ditto, plain ) MATNAME-engl.in is outputted.
+Fig.1 is an example of a verbose SEO file, and Fig.2 is the plain SEO file
+obtained by deleting all comments from Fig.1.
+<P>
+<IMG ALIGN="Middle" SRC="MATNAME-engl.out(Verb).gif" WIDTH="428" HEIGHT="371">
+<FONT COLOR="Blue">FIG.1</FONT>
+<P>
+<IMG ALIGN="Middle" SRC="MATNAME-engl.out(Plain).gif" WIDTH="249" HEIGHT="102">
+<FONT COLOR="Blue">FIG.2</FONT>
+<P>
+  <HR>
+Let us discuss plain SEO files first.
+<P>
+The first line of these files tells the number of bits N<SUB>B</SUB>. Each
+line after that represents a gate. There are six types of gates:
+<UL>
+  <LI>
+    <FONT COLOR="Blue">ROTY <I>alpha &nbsp;ang </I></FONT>
+    <P>
+    where <I>alpha</I>&nbsp;belongs to the set {0,1, ...,N<SUB>B</SUB>-1} and
+    <I>ang </I>&nbsp;is a real number. This signifies the rotation of qubit
+    <I>alpha </I>&nbsp;about the Y axis by an angle <I>ang</I> &nbsp;in degrees.
+    In other words, exp[i sigma<SUB>y</SUB>(alpha) ang pi/180].
+  <LI>
+    <FONT COLOR="Blue">ROTZ <I>alpha &nbsp;ang </I></FONT>
+    <P>
+    This is the same as ROTY except that the rotation is about the Z axis instead
+    of the Y one.
+  <LI>
+    <FONT COLOR="Blue">SIGX &nbsp;<I>alpha</I></FONT>
+    <P>
+    where <I>alpha</I>&nbsp;belongs to the set {0,1, ...N<SUB>B</SUB>-1}. This
+    signifies unconditional flipping (NOT) of qubit <I>alpha.</I>
+  <LI>
+    <P ALIGN=Left>
+    <FONT COLOR="Blue">CNOT <I>alpha<SUB>1&nbsp;</SUB> char<SUB>1&nbsp;</SUB>
+    alpha<SUB>2&nbsp;</SUB>char<SUB>2</SUB> ...
+    alpha<SUB>r&nbsp;</SUB>char<SUB>r </SUB>&nbsp;beta</I></FONT>
+    <P ALIGN=Left>
+    where <I>r &gt;0, &nbsp;alpha<SUB>1</SUB></I>, <I>alpha<SUB>2</SUB></I>,
+    ...<I>alpha<SUB>r</SUB>, beta </I>&nbsp;are distinct elements of {0,1,
+    ...N<SUB>B</SUB>-1}, and <I>char<SUB>1</SUB></I>,
+    &nbsp;<I>char<SUB>2</SUB></I>, ... <I>char<SUB>r</SUB></I>&nbsp;are elements
+    of { T, F }. &nbsp;This signifies a controlled not with <I>r
+    </I>&nbsp;controls. First suppose <I>r = 1&nbsp;</I>. If <I>char &nbsp;</I>is
+    the character T, this signifies
+    &nbsp;sigma<SUB>x</SUB>(beta)<SUP>n(alpha)</SUP>. Read it as "c-not: if
+    <I>alpha</I> &nbsp;is true, then flip <I>beta</I>." If <I>char</I> &nbsp;is
+    the character F, this signifies sigma<SUB>x</SUB>(beta)<SUP>1 - n(alpha)</SUP>.
+    Read it as "c-not: if <I>alpha</I> &nbsp;is false, then flip <I>beta</I>."
+    Cases where<I>r &gt;1&nbsp;</I>are defined analoguosly. For example, CNOT
+    0 T 1 F 2 would signify sigma<SUB>x</SUB>(2)<SUP>n(0)[1-n(1)] &nbsp;</SUP>.
+    Read it as "c-not: if bit 0 is true and bit 1 is false, then flip bit 2."
+  <LI>
+    <FONT COLOR="Blue">PHAS &nbsp;<I>ang</I></FONT>
+    <P>
+    where <I>ang</I> &nbsp;is a real number. This signifies a phase factor
+    <B>&nbsp;</B>exp[i &nbsp;ang &nbsp;pi/180]. Thus <I>ang</I> &nbsp;is an angle
+    expressed in degrees.
+  <LI>
+    <FONT COLOR="Blue">CPHA <I>alpha<SUB>1&nbsp;</SUB> char<SUB>1&nbsp;</SUB>
+    alpha<SUB>2&nbsp;</SUB>char<SUB>2</SUB> ...
+    alpha<SUB>r&nbsp;</SUB>char<SUB>r </SUB>&nbsp;ang</I></FONT>
+    <P>
+    where <I>r &gt;0, &nbsp;alpha<SUB>1</SUB></I>, <I>alpha<SUB>2</SUB></I>,
+    ...<I>alpha<SUB>r</SUB> </I>&nbsp;are distinct elements of {0,1,
+    ...N<SUB>B</SUB>-1}, <I>char<SUB>1</SUB></I>,
+    &nbsp;<I>char<SUB>2</SUB></I>, ... <I>char<SUB>r</SUB></I>&nbsp;are elements
+    of { T, F }, and <I>ang</I> &nbsp;is a real number. This signifies a controlled
+    phase factor with <I>r </I>&nbsp;controls. For example, PHAS 0 T 1 F 90 would
+    signify exp[i(90)pi/180]<SUP>n(0)[1-n(1)] &nbsp;</SUP>. Read it as "phase
+    shift: if bit 0 is true and bit 1 is false, then phase shift by 90
+    degrees."&nbsp;Thus <I>ang</I> &nbsp;is an angle expressed in degrees.
+</UL>
+<P>
+  <HR>
+Next consider verbose SEO files. The following&nbsp;explanation assumes that
+you have read the paper "A Rudimentary Quantum Compiler" mentioned in the
+introduction. If you haven't, we suggest that you postpone reading this
+explanation until you have.
+<P>
+Verbose SEO files may contain any of the types of lines that a plain SEO
+may contain, plus some new ones. Line types not contained in plain SEO files:
+<UL>
+  <LI>
+    <FONT COLOR="Blue">===============</FONT>
+    <P>
+    This symbol separates the decompositions of different central matrices. (When
+    one asks Qubiter to decompose a unitary matrix U, Qubiter assigns a central
+    matrix to each node of a subset of the nodes of a binary tree, wherein the
+    product of these central matrices in some order equals U. Then Qubiter decomposes
+    each central matrix into a SEO.)
+  <LI>
+    <FONT COLOR="Blue">{ angles: 10 20 &amp; 45 45 &amp; 67 89 &amp; 90 90</FONT>
+    <P>
+    <FONT COLOR="Blue">}</FONT>
+    <P>
+    In this example, a central matrix is a direct sum of four D matrices. The
+    CS angles of the first D matrix are 10 and 20 degrees. The CS angles of the
+    second D matrix are 45 and 45 degrees. And so on. Hence, different D matrices
+    are separated by an ampersand (&amp;). With certain optimizations ON, Qubiter
+    will extract complex phase factors from a central matrix before performing
+    a CSD of the result. The curly brackets enclose those operations generated
+    by the CSD after phase factors were extracted.
+  <LI>
+    <FONT COLOR="Blue">{ angles: 10 ^ 20 ^ 45 ^ 45 ^ 67 ^ 89 ^ 90 ^ 90</FONT>
+    <P>
+    <FONT COLOR="Blue">}</FONT>
+    <P>
+    In this example, a central matrix is a diagonal unitary matrix. In other
+    words, it is a diagonal matrix whose diagonal elements are simply phase factors
+    of the form exp(i theta), where theta is a real number.&nbsp;In this example,
+    the 8 thetas of the central matrix are 10, 20, 45, 45, 67, 89, 90, 90 degrees.
+  <LI>
+    <FONT COLOR="Blue">{ number of steps = 5</FONT>
+    <P>
+    <FONT COLOR="Blue">}</FONT>
+    <P>
+    This just means that out of all the lines in the verbose SEO file, only 5
+    represent actual elementary operations; the rest are just comments.
+</UL>
+<P>
+  <HR>
+<P ALIGN=Center>
+<A HREF="table_of_contents.html">[Table Of Contents]</A>
+</BODY></HTML>
