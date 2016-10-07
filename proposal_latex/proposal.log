@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  7 OCT 2016 10:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  7 OCT 2016 13:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -526,7 +526,7 @@ s [] []Quantum [] []Wireless [] []and [] []a [] []Low [] -Complexity [] []Maxim
 um [] []Likelihood []
  []
 
-[7 <./qcircuit.png>] <ready_timeline.png, id=184, 1176.395pt x 315.1775pt>
+[7 <./qcircuit.png>] <ready_timeline.png, id=181, 1176.395pt x 315.1775pt>
 File: ready_timeline.png Graphic file (type png)
 
 <use ready_timeline.png>
@@ -551,7 +551,7 @@ Here is how much of TeX's memory you used:
  11810 multiletter control sequences out of 15000+600000
  19788 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,11n,28p,1080b,474s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,11n,28p,1080b,471s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
@@ -569,7 +569,7 @@ ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on proposal.pdf (9 pages, 397162 bytes).
+Output written on proposal.pdf (9 pages, 397382 bytes).
 PDF statistics:
  282 PDF objects out of 1000 (max. 8388607)
  242 compressed objects within 3 object streams

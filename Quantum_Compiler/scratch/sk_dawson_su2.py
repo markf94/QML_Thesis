@@ -19,7 +19,7 @@ print "Identity Name: " + H2.identity.name
 matrix_U = matrixify([[0.83147 + 0.55557j,0], [0,0.83147 - 0.55557j]])
 op_U = Operator(name="U", matrix=matrix_U)
 
-n = 1
+n = 3
 print "U= " + str(matrix_U)
 
 ##############################################################################
@@ -68,7 +68,8 @@ sk_set_factor_method(dawson_group_factor)
 sk_set_basis(H2)
 sk_set_axis(X_AXIS)
 sk_set_simplify_engine(simplify_engine)
-sk_build_tree("su2", 11)
+#sk_build_tree("su2", 11)
+sk_build_tree("su2_all_gates", 9)
 
 Un = solovay_kitaev(op_U, n)
 print "Approximated U: " + str(Un)

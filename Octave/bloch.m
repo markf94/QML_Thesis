@@ -8,7 +8,7 @@ function [x,y,z,theta,phi] = bloch(alpha, beta)
 % Find and eliminate global phase
 angle_alpha = angle(alpha)
 angle_beta = angle(beta)
-if angle_alpha > angle_beta
+if angle_alpha < angle_beta
 alpha_new = alpha/exp(i*angle_beta)
 beta_new = beta/exp(i*angle_beta)
 else
