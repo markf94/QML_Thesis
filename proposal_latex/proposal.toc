@@ -7,4 +7,4 @@
 \contentsline {section}{\numberline {3}Timeline}{8}{section.3}
 \contentsline {section}{\numberline {4}Research Impact}{8}{section.4}
 \contentsline {section}{\numberline {5}Conclusion}{8}{section.5}
-\contentsline {section}{\numberline {6}References}{9}{section.6}
+\contentsline {section}{\numberline {6}References}{8}{section.6}

@@ -1,37 +1,6 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
-Acharya%
-\ \protect \BOthers {.}}{%
-Acharya%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2015}}%
-}]{%
-acharya2015integrated}
-\APACinsertmetastar {%
-acharya2015integrated}%
-\begin{APACrefauthors}%
-Acharya, U\BPBI R.%
-, Fujita, H.%
-, Sudarshan, V\BPBI K.%
-, Sree, V\BPBI S.%
-, Eugene, L\BPBI W\BPBI J.%
-, Ghista, D\BPBI N.%
-\BCBL {}\ \BBA {} San~Tan, R.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2015}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {An integrated index for detection of sudden cardiac
-  death using discrete wavelet transform and nonlinear features} {An integrated
-  index for detection of sudden cardiac death using discrete wavelet transform
-  and nonlinear features}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Knowledge-Based Systems}{83}{}{149--158}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
 Bekkerman%
 , Bilenko%
 \BCBL {}\ \BBA {} Langford%
@@ -121,6 +90,33 @@ Cai, X\BPBI D.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Decell%
+\ \BBA {} McHenry%
+}{%
+Decell%
+\ \BBA {} McHenry%
+}{%
+{\protect \APACyear {1975}}%
+}]{%
+decell1975generalized}
+\APACinsertmetastar {%
+decell1975generalized}%
+\begin{APACrefauthors}%
+Decell, H\BPBI P.%
+\BCBT {}\ \BBA {} McHenry, E\BPBI N.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1975}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {THE GENERALIZED INVERSE, WITH NONLINEAR REGRESSION AND
+  MATHEMATICAL PROGRAMMING APPLICATIONS} {The generalized inverse, with
+  nonlinear regression and mathematical programming applications}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Decision Sciences}{6}{2}{346--359}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 D-Wave%
 }{%
 D-Wave%
@@ -173,10 +169,10 @@ Giovannetti, V.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-L.~Grover%
+Grover%
 \ \BBA {} Rudolph%
 }{%
-L.~Grover%
+Grover%
 \ \BBA {} Rudolph%
 }{%
 {\protect \APACyear {2002}}%
@@ -197,64 +193,6 @@ Grover, L.%
   correspond to efficiently integrable probability distributions}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{arXiv preprint quant-ph/0208112}{}{}{}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-L\BPBI K.~Grover%
-}{%
-L\BPBI K.~Grover%
-}{%
-{\protect \APACyear {1997}}%
-}]{%
-grover}
-\APACinsertmetastar {%
-grover}%
-\begin{APACrefauthors}%
-Grover, L\BPBI K.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1997}{Jul}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Quantum Mechanics Helps in Searching for a Needle in a
-  Haystack} {Quantum mechanics helps in searching for a needle in a
-  haystack}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Phys. Rev. Lett.}{79}{}{325--328}.
-\newblock
-\begin{APACrefURL} \url{http://link.aps.org/doi/10.1103/PhysRevLett.79.325}
-  \end{APACrefURL}
-\newblock
-\begin{APACrefDOI} \doi{10.1103/PhysRevLett.79.325} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Harrow%
-, Hassidim%
-\BCBL {}\ \BBA {} Lloyd%
-}{%
-Harrow%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2009}}%
-}]{%
-HHL2009}
-\APACinsertmetastar {%
-HHL2009}%
-\begin{APACrefauthors}%
-Harrow, A\BPBI W.%
-, Hassidim, A.%
-\BCBL {}\ \BBA {} Lloyd, S.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2009}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {{Quantum algorithm for linear systems of equations}}
-  {{Quantum algorithm for linear systems of equations}}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Physical Review Letters}{103}{15}{1--4}.
-\newblock
-\begin{APACrefDOI} \doi{10.1103/PhysRevLett.103.150502} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -346,34 +284,6 @@ O'Malley, P\BPBI J\BPBI J.%
   \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1103/PhysRevX.6.031007} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Pazzani%
-\ \BBA {} Billsus%
-}{%
-Pazzani%
-\ \BBA {} Billsus%
-}{%
-{\protect \APACyear {2007}}%
-}]{%
-pazzani2007content}
-\APACinsertmetastar {%
-pazzani2007content}%
-\begin{APACrefauthors}%
-Pazzani, M\BPBI J.%
-\BCBT {}\ \BBA {} Billsus, D.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2007}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Content-based recommendation systems} {Content-based
-  recommendation systems}.{\BBCQ}
-\newblock
-\BIn{} \APACrefbtitle {The adaptive web} {The adaptive web}\ (\BPGS\ 325--341).
-\newblock
-\APACaddressPublisher{}{Springer}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

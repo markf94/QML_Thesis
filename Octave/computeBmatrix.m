@@ -1,4 +1,4 @@
-function B = computeBmatrix(beta, gamma, delta)
+function B = computeBmatrix(alpha, beta, gamma, delta)
   theta_z = -(delta+beta)/2;
   theta_y = -gamma/2;
   R_z = [exp(-i*theta_z/2) 0; 0 exp(i*theta_z/2)];

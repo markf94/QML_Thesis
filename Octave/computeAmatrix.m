@@ -1,4 +1,4 @@
-function A = computeAmatrix(alpha, beta, gamma)
+function A = computeAmatrix(alpha, beta, gamma, delta)
   theta_z = beta;
   theta_y = gamma/2;
   R_z = [exp(-i*theta_z/2) 0; 0 exp(i*theta_z/2)];

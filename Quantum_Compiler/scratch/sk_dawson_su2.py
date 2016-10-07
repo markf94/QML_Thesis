@@ -15,10 +15,11 @@ print "Identity Name: " + H2.identity.name
 
 # Compose a unitary to compile
 #matrix_U = axis_to_unitary(axis, theta, H2)
-matrix_U = matrixify([[0.19509,  -0.98079], [0.98079,   0.19509]])
+#matrix_U = matrixify([[1,0], [0,numpy.exp(1j * math.pi / 8)]])
+matrix_U = matrixify([[0.83147 + 0.55557j,0], [0,0.83147 - 0.55557j]])
 op_U = Operator(name="U", matrix=matrix_U)
 
-n = 6
+n = 1
 print "U= " + str(matrix_U)
 
 ##############################################################################
