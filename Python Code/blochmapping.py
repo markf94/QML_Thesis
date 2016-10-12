@@ -12,8 +12,8 @@ vec = [[1.,0.,0.],[0.,1.,0.],[0.,0.,1.]]
 b.add_vectors(vec)
 
 #Qubit amplitudes
-alpha = 0.5-0.5j
-beta = -0.5+0.5j
+alpha = 0.85355 - 0.35355j
+beta = 0.35355 - 0.14645j
 
 #Find and eliminate global phase
 angle_alpha = cmath.phase(alpha)
