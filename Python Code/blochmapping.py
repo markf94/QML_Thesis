@@ -12,13 +12,22 @@ vec = [[1.,0.,0.],[0.,1.,0.],[0.,0.,1.]]
 b.add_vectors(vec)
 
 #Qubit amplitudes
-#3/4 state:
-alpha = 0.85355 - 0.35355j
-beta = 0.35355 - 0.14645j
 
-#7/8 state:
-#alpha = 0.81549 - 0.54490j
-#beta =  0.16221 - 0.10839j
+alpha = 0.70711
+beta = -0.70711*cmath.exp(1j*cmath.pi/4)
+
+# #1 in Liquid (3/4 state)
+#alpha = 0.85355 - 0.35355j
+#beta = 0.35355 - 0.14645j
+
+# #2 in Liquid (7/8 state)
+#alpha = 0.96194 - 0.19134j
+#beta = 0.19134 - 0.03806j
+
+# #3 in Liquid (x-y-plane)
+#alpha = 0.70711
+#beta = 0.70711*cmath.exp(1j*cmath.pi/4)
+
 
 #Find and eliminate global phase
 angle_alpha = cmath.phase(alpha)
