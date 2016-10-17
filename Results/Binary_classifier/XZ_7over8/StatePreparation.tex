@@ -1,0 +1,29 @@
+\input{/Liquid/LiquidTikZ}
+% \usepackage[landscape]{geometry}
+\begin{document}
+\title{LiquidTikZ sample}
+\author{Liquid v1}
+
+\begin{figure*}
+\def\Scale{1.00}
+\begin{tikzpicture}[scale=\Scale,every node/.style={scale=\Scale}]
+\matrix[matStyle] {
+  \point[0-0] & \gate[0-1]{H} &  & \ctrl[0-3] & \ctrl[0-4] & \ctrl[0-5] & \ctrl[0-6] & \ctrl[0-7] &  & \gate[0-9]{X} & \ctrl[0-10] & \point[0-11]  \\
+  \point[1-0] &  &  & \gate[1-3]{H} & \gate[1-4]{T^\dagger} & \gate[1-5]{R4} & \gate[1-6]{H} & \gate[1-7]{S^\dagger} &  &  & \targ[1-10] & \point[1-11]  \\
+  \point[2-0] &  &  &  &  &  &  &  & \targ[2-8] &  &  & \point[2-11]  \\
+  \point[3-0] &  & \gate[3-2]{H} &  &  &  &  &  & \ctrl[3-8] &  & \ctrl[3-10] & \point[3-11]  \\
+   &  &  &  &  &  &  &  &  &  &  &   \\
+};
+% multigates go here
+% annotations go here
+% wires go here
+\begin{pgfonlayer}{background}
+\qw{0-0}{0-11} \qw{1-0}{1-11} \qw{2-0}{2-11} \qw{3-0}{3-11} 
+\qwx{0-3}{1-3} \qwx{0-4}{1-4} \qwx{0-5}{1-5} \qwx{0-6}{1-6} \qwx{0-7}{1-7} \qwx{0-10}{3-10} 
+\qwxB{1-10}{3-10} \qwx{2-8}{3-8} 
+\end{pgfonlayer}
+\end{tikzpicture}
+\caption{\label{fig:StatePreparation} StatePreparation}
+\end{figure*}
+
+\end{document}

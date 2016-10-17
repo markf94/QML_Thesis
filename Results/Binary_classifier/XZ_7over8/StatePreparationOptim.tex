@@ -1,0 +1,29 @@
+\input{/Liquid/LiquidTikZ}
+% \usepackage[landscape]{geometry}
+\begin{document}
+\title{LiquidTikZ sample}
+\author{Liquid v1}
+
+\begin{figure*}
+\def\Scale{1.00}
+\begin{tikzpicture}[scale=\Scale,every node/.style={scale=\Scale}]
+\matrix[matStyle] {
+  \point[0-0] & \mg[0-1]{70D7E8E} & \point[0-2]  \\
+  \point[1-0] &  & \point[1-2]  \\
+  \point[2-0] &  & \point[2-2]  \\
+  \point[3-0] & \mg[3-1]{70D7E8E} & \point[3-2]  \\
+   &  &   \\
+};
+% multigates go here
+\multigate{0-1}{3-1}{70D7E8E}
+% annotations go here
+% wires go here
+\begin{pgfonlayer}{background}
+\qw{0-0}{0-2} \qw{1-0}{1-2} \qw{2-0}{2-2} \qw{3-0}{3-2} 
+
+\end{pgfonlayer}
+\end{tikzpicture}
+\caption{\label{fig:StatePreparationOptim} StatePreparationOptim}
+\end{figure*}
+
+\end{document}
