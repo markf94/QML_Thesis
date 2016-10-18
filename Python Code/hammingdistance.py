@@ -1,18 +1,18 @@
 from numpy import binary_repr
 
 # Set to True if you want to find out if the binary encoding works well with respect to HD classification
-testmode = True;
+testmode = False;
 
 # INPUT must obey the normalization condition:
 # dec1 + dec2 = 1 (since they constitute probabilities)
-inputdec1 = 0.39;
-inputdec2 = 0.61;
+inputdec1 = 0.6;
+inputdec2 = 0.4;
 
 if testmode == True:
     # Generate a list of numbers to fill the input vector with:
-    dummytest = [None]*51;
-    for k in range(0,51):
-        dummytest[k] = 0.01*k;
+    dummytest = [None]*5;
+    for k in range(0,5):
+        dummytest[k] = 0.1*k;
     print dummytest
     #dummy_list = [0.1,0.2,0.21,0.22,0.23,0.24,0.3,0.4,0.5,0.53,0.54,0.55,0.6,0.65,0.66,0.67,0.68,0.69,0.7,0.75,0.8,0.85,0.9,0.95,1]
 else:
@@ -44,18 +44,18 @@ for j in reversed(dummytest):
         print "Training vector 2 (dec): ", [training2dec1, training2dec2]
 
     # Convert all vector entries from decimal to binary
-    inputbin1 = binary_repr(int(100*inputdec1));
-    inputbin2 = binary_repr(int(100*inputdec2));
-    #print "I Binary string 1: ", inputbin1
-    #print "I Binary string 2: ", inputbin2
-    training1bin1 = binary_repr(int(100*training1dec1));
-    training1bin2 = binary_repr(int(100*training1dec2));
-    #print "T1 Binary string 1: ", training1bin1
-    #print "T1 Binary string 2: ", training1bin2
-    training2bin1 = binary_repr(int(100*training2dec1));
-    training2bin2 = binary_repr(int(100*training2dec2));
-    #print "T2 Binary string 1: ", training2bin1
-    #print "T2 Binary string 2: ", training2bin2
+    inputbin1 = binary_repr(int(10*inputdec1));
+    inputbin2 = binary_repr(int(10*inputdec2));
+    print "I Binary string 1: ", inputbin1
+    print "I Binary string 2: ", inputbin2
+    training1bin1 = binary_repr(int(10*training1dec1));
+    training1bin2 = binary_repr(int(10*training1dec2));
+    print "T1 Binary string 1: ", training1bin1
+    print "T1 Binary string 2: ", training1bin2
+    training2bin1 = binary_repr(int(10*training2dec1));
+    training2bin2 = binary_repr(int(10*training2dec2));
+    print "T2 Binary string 1: ", training2bin1
+    print "T2 Binary string 2: ", training2bin2
 
 
     # HD function takes strings as input > convert to string
@@ -70,18 +70,18 @@ for j in reversed(dummytest):
     # make all binary strings equal to length 8
     # by adding leading zeros (8 bits = 1 byte)
 
-    for i in range(8):
-        if len(inputs1) != 8:
+    for i in range(4):
+        if len(inputs1) != 4:
             inputs1 = "0" + inputs1;
-        if len(inputs2) != 8:
+        if len(inputs2) != 4:
             inputs2 = "0" + inputs2;
-        if len(training1s1) != 8:
+        if len(training1s1) != 4:
             training1s1 = "0" + training1s1;
-        if len(training1s2) != 8:
+        if len(training1s2) != 4:
             training1s2 = "0" + training1s2;
-        if len(training2s1) != 8:
+        if len(training2s1) != 4:
             training2s1 = "0" + training2s1;
-        if len(training2s2) != 8:
+        if len(training2s2) != 4:
             training2s2 = "0" + training2s2;
 
     # for each vector glue the two 8 bitstrings together
