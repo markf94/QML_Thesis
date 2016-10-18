@@ -1,16 +1,22 @@
 from numpy import binary_repr
 
+# Set to True if you want to find out if the binary encoding works well with respect to HD classification
+testmode = True;
+
 # INPUT must obey the normalization condition:
 # dec1 + dec2 = 1 (since they constitute probabilities)
-dec1 = 0.50;
-dec2 = 0.50;
+inputdec1 = 0.39;
+inputdec2 = 0.61;
 
-print "Input vector: ", [dec1, dec2]
-
-# |0> vector binary representation
-training1 = "11001000000000";
-# |1> vector binary representation
-training2 = "00000001100100";
+if testmode == True:
+    # Generate a list of numbers to fill the input vector with:
+    dummytest = [None]*51;
+    for k in range(0,51):
+        dummytest[k] = 0.01*k;
+    print dummytest
+    #dummy_list = [0.1,0.2,0.21,0.22,0.23,0.24,0.3,0.4,0.5,0.53,0.54,0.55,0.6,0.65,0.66,0.67,0.68,0.69,0.7,0.75,0.8,0.85,0.9,0.95,1]
+else:
+    dummytest = [1];
 
 # Hamming distance function from Wikipedia
 def hammingDistance(s1, s2):
@@ -19,59 +25,107 @@ def hammingDistance(s1, s2):
         raise ValueError("Undefined for sequences of unequal length")
     return sum(el1 != el2 for el1, el2 in zip(s1, s2))
 
-# Convert decimal to binary
-br1 = binary_repr(int(100*dec1));
-br2 = binary_repr(int(100*dec2));
-print "Binary string 1: ", br1
-print "Binary string 2: ", br2
+for j in reversed(dummytest):
 
-# HD function takes strings as input > convert to string
-s1 = str(br1);
-s2 = str(br2);
-
-# make all binary strings equal to the same length by adding leading zeros
-if len(s1) != len(s2):
-    maxbinarylength = max([len(s1),len(s2)]);
-    for i in range((maxbinarylength-len(s1))):
-        br1 = "0" + br1;
-    for i in range(maxbinarylength-len(s2)):
-        br2 = "0" + br2;
-    if 2*maxbinarylength > len(training1):
-        for i in range(2*maxbinarylength-len(s1)):
-            training1 = "0" + training1;
-            training2 = "0" + training2;
-
-if  len(s1) < len(training1) or len(s2) < len(training1):
-    
-
-inputvector = br1 + br2;
-print "New binary string 1: ", br1
-print "New binary string 2: ", br2
-print "Training vector 1: ", training1
-print "Training vector 2: ", training2
-print "Input vector:      ", inputvector
-
-#s3old = "10010110011001";
-#s3 = "00110011001011";
-#s3 = "01010000111100"
-
-# Compute the HD between s1 and s2
-hdT1T2 = hammingDistance(training1,training2);
-hdT1IV = hammingDistance(training1,inputvector);
-hdT2IV = hammingDistance(training2,inputvector);
-print "Hamming Distance training-training: ", hdT1T2
-print "Hamming Distance training1-input:   ", hdT1IV
-print "Hamming Distance training2-input:   ", hdT2IV
-
-if dec1 > dec2:
-    print "Should be closer to T1"
-    if hdT1IV < hdT2IV:
-        print "TRUE"
+    if testmode == True:
+        inputdec1 = j;
+        inputdec2 = 1-j;
     else:
-        print "FALSE"
-else:
-    print "Should be closer to T2"
-    if hdT2IV < hdT1IV:
-        print "TRUE"
+        print "Input vector (dec): ", [inputdec1, inputdec2]
+
+    training1dec1 = 1;
+    training1dec2 = 0;
+    if testmode == False:
+        print "Training vector 1 (dec)", [training1dec1, training1dec2]
+
+    training2dec1 = 0;
+    training2dec2 = 1;
+    if testmode == False:
+        print "Training vector 2 (dec): ", [training2dec1, training2dec2]
+
+    # Convert all vector entries from decimal to binary
+    inputbin1 = binary_repr(int(100*inputdec1));
+    inputbin2 = binary_repr(int(100*inputdec2));
+    #print "I Binary string 1: ", inputbin1
+    #print "I Binary string 2: ", inputbin2
+    training1bin1 = binary_repr(int(100*training1dec1));
+    training1bin2 = binary_repr(int(100*training1dec2));
+    #print "T1 Binary string 1: ", training1bin1
+    #print "T1 Binary string 2: ", training1bin2
+    training2bin1 = binary_repr(int(100*training2dec1));
+    training2bin2 = binary_repr(int(100*training2dec2));
+    #print "T2 Binary string 1: ", training2bin1
+    #print "T2 Binary string 2: ", training2bin2
+
+
+    # HD function takes strings as input > convert to string
+    inputs1 = str(inputbin1);
+    inputs2 = str(inputbin2);
+    training1s1 = str(training1bin1);
+    training1s2 = str(training1bin2);
+    training2s1 = str(training2bin1 );
+    training2s2 = str(training2bin2 );
+
+
+    # make all binary strings equal to length 8
+    # by adding leading zeros (8 bits = 1 byte)
+
+    for i in range(8):
+        if len(inputs1) != 8:
+            inputs1 = "0" + inputs1;
+        if len(inputs2) != 8:
+            inputs2 = "0" + inputs2;
+        if len(training1s1) != 8:
+            training1s1 = "0" + training1s1;
+        if len(training1s2) != 8:
+            training1s2 = "0" + training1s2;
+        if len(training2s1) != 8:
+            training2s1 = "0" + training2s1;
+        if len(training2s2) != 8:
+            training2s2 = "0" + training2s2;
+
+    # for each vector glue the two 8 bitstrings together
+    inputvector = inputs1 + inputs2;
+    training1 = training1s1 + training1s2;
+    training2 = training2s1 + training2s2;
+    if testmode == False:
+        print "Training vector 1: ", training1
+        print "Training vector 2: ", training2
+        print "Input vector:      ", inputvector
+
+    # Compute the HD between s1 and s2
+    hdT1T2 = hammingDistance(training1,training2);
+    hdT1IV = hammingDistance(training1,inputvector);
+    hdT2IV = hammingDistance(training2,inputvector);
+    if testmode == False:
+        print "Hamming Distance training-training: ", hdT1T2
+        print "Hamming Distance training1-input:   ", hdT1IV
+        print "Hamming Distance training2-input:   ", hdT2IV
+
+    # Perform a check:
+    if inputdec1 > inputdec2:
+        print "Should be closer to T1"
+        if hdT1IV < hdT2IV:
+            print "TRUE"
+        else:
+            print "FALSE", j
+            print "Hamming Distance training1-input:   ", hdT1IV
+            print "Hamming Distance training2-input:   ", hdT2IV
     else:
-        print "FALSE"
+        if inputdec1 == inputdec2:
+            print "Should be equally close to both"
+            if hdT2IV == hdT1IV:
+                print "TRUE"
+            else:
+                print "FALSE", j
+                print "Hamming Distance training1-input:   ", hdT1IV
+                print "Hamming Distance training2-input:   ", hdT2IV
+
+        else:
+            print "Should be closer to T2"
+            if hdT2IV < hdT1IV:
+                print "TRUE"
+            else:
+                print "FALSE", j
+                print "Hamming Distance training1-input:   ", hdT1IV
+                print "Hamming Distance training2-input:   ", hdT2IV
