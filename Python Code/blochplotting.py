@@ -9,13 +9,13 @@ b = qp.Bloch()
 #z_basis = (qp.basis(2,0)+(0+0j)*qp.basis(2,1)).unit()
 #b.add_states([x_basis,y_basis,z_basis])
 #vec = [[1.,0.,0.],[0.,1.,0.],[0.,0.,1.]]
-vec = [[0.,1.,0.],[0.,-1.,0.]]
-b.add_vectors(vec)
+#vec = [[0.,1.,0.],[0.,-1.,0.]]
+#b.add_vectors(vec)
 
 #Qubit amplitudes
 
-#alpha = 0.70711
-#beta = -0.70711*cmath.exp(1j*cmath.pi/4)
+alpha = 0.70711
+beta = 0.70711j
 
 # #1 in Liquid (3/4 state)
 #alpha = 0.85355 - 0.35355j
@@ -26,8 +26,8 @@ b.add_vectors(vec)
 #beta = 0.19134 - 0.03806j
 
 # #3 in Liquid (x-y-plane)
-alpha = 0.70711
-beta = 0.70711*cmath.exp(1j*cmath.pi/4)
+#alpha = 0.70711
+#beta = 0.70711*cmath.exp(1j*cmath.pi/4)
 
 
 #Find and eliminate global phase
