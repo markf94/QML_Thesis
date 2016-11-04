@@ -6,18 +6,21 @@ from matplotlib import pyplot as plt
 from scipy import stats
 import scipy
 
+# READING THE PICTURE
 FILENAME = 'grant.jpg' #image can be in gif jpeg or png format
+# Extract RGB values
 im = Image.open(FILENAME).convert('RGB')
-pix = numpy.array(im)#im.load()
-w = im.size[0]
-h = im.size[1]
-array = pix.ravel()
+pix = numpy.array(im) #convert to numpy array
+array = pix.ravel() # splits the triples and yields a 1D data array
 length = array.size
 print "length: ", length
+
+#create histogram
 plt.hist(array,256,[0,256])
 plt.title('Pixel colour histogram for picture')
 plt.show()
 
+# Find all the zeros and save their positions in index
 counter = 0
 index = []
 for i in range(length):
@@ -25,58 +28,66 @@ for i in range(length):
         index.append(i)
         counter = counter + 1
         #array[i] = array[i] + 1
+# delete all zeros
 new_array = numpy.delete(array, index)
 
-'''
+# Plot histogram without zeros
 plt.hist(new_array,256,[0,256])
 plt.title('Reduced pixel colour histogram')
 plt.show()
 
+# Create Q-Q plots
 fig = plt.figure()
 ax1 = fig.add_subplot(211)
-x = new_array #stats.loggamma.rvs(5, size=500) + 5
+x = new_array
 stats.probplot(x, dist=stats.norm, plot=ax1)
 ax1.set_xlabel('')
 ax1.set_title('Probplot against normal distribution')
+
 ax2 = fig.add_subplot(212)
+# Perform Box Cox transformation
 xt = stats.boxcox(x,0.7) #0.6 for apple #0.9903 with 0.7 for grant
 stats.probplot(xt, dist=stats.norm, plot=ax2)
 ax2.set_title('Probplot after Box-Cox transformation')
 plt.show()
 
-
+# Plot transformed data in histogram
 plt.hist(xt,100,[0,80])
 plt.title('Box Cox transformed pixel colour histogram')
 plt.show()
-'''
-'''
-# Inverse hyperbolic sine transformation
 
+#### END OF BOX COX ####
+
+# Define function for inverse hyperbolic sine transformation
 def IHS(y, theta):
     return (numpy.log(theta*y+(theta**2*y**2+1)**0.5)/theta)
 
+# define function for log-likelihood
 def loglikelihood(theta,y):
     n = y.size;
+    # vectorize the IHS function
     IHS_vectorized = numpy.vectorize(IHS,otypes=[numpy.float]);
+    # compute the IHS transformed data
     xt = IHS_vectorized(y, theta);
-    #print xt
-    #loglike = f(xt,n)
-    #print loglike
-    #return loglike
-    result = (-0.5*n*numpy.log(sum((xt - numpy.mean(xt))**2))-0.5*sum(numpy.log(1+theta**2*y**2)))*(-1)
+    result = (-0.5*n*numpy.log(sum((xt - numpy.mean(xt))**2))-0.5*sum(numpy.log(1+theta**2*y**2)))*(-1);
     return result
 
 # try this on our data
-bnds = ((0.00001, None),)
+# theta must be greater than 0!
+bnds = ((0.00001, None),);
+# Maximize the log likelihood (we minimize the log-likelihood multiplied by -1)
 theta_optim = scipy.optimize.minimize(loglikelihood, x0=1, args=(new_array), bounds=bnds,tol=1e-10) # 2.0407
 print "theta optimized: ", theta_optim.x
 
+# vectorize IHS outside of loglikelihood
 f = numpy.vectorize(IHS);
+# transform data with optimized theta value
 transformed = f(new_array, theta_optim.x)
 
+# Create Q-Q plots for IHS
 fig = plt.figure()
 ax1 = fig.add_subplot(211)
-x = new_array #stats.loggamma.rvs(5, size=500) + 5
+x = new_array
 stats.probplot(x, dist=stats.norm, plot=ax1)
 ax1.set_xlabel('')
 ax1.set_title('Probplot against normal distribution')
@@ -85,12 +96,15 @@ stats.probplot(transformed, dist=stats.norm, plot=ax2)
 ax2.set_title('Probplot after IHS transformation')
 plt.show()
 
-plt.hist(new_array,256,[0,256])
+# Plot the transformed data in histogram
+plt.hist(transformed,256,[0,256])
 plt.title('IHS transformed pixel colour histogram')
 plt.show()
+
+# Trying to fit a curve onto the histogram
+# >> postponed to a later moment in time
+
 '''
-
-
 def f (x, a, b, c):
     return a * x ** 2 + b * x + c
 
@@ -113,40 +127,4 @@ plt.plot(fit_x, f(fit_x, *popt))
 plt.show()
 
 
-
-
-'''
-random = numpy.random.normal(10,8,20)
-for i in range(random.size):
-    if random[i] < 0:
-        random[i] = random[i] - (random[i]-1)
-    if random[i] == 0:
-        random[i] = random[i] + 1
-'''
-'''
-counter = 0
-check = 0
-for l in range(256):
-    for i in range(length):
-    #if array[i] <= 0:
-        if array[i] == l:
-            check = 1
-            break;
-        if i == w*h and check == 0:
-            numpy.append(array, l)
-'''
-
-'''
-# EXAMPLE BOX COX PROBABILITY
-fig = plt.figure()
-ax1 = fig.add_subplot(211)
-x = stats.loggamma.rvs(5, size=500) + 5
-stats.probplot(x, dist=stats.norm, plot=ax1)
-ax1.set_xlabel('')
-ax1.set_title('Probplot against normal distribution')
-ax2 = fig.add_subplot(212)
-xt, _ = stats.boxcox(x)
-stats.probplot(xt, dist=stats.norm, plot=ax2)
-ax2.set_title('Probplot after Box-Cox transformation')
-plt.show()
 '''
