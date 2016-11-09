@@ -1,0 +1,221 @@
+\chapter{Working with \LaTeX\ }\label{sec:working}
+This chapter explains how to typeset some of the most common elements contained in a technical report using \LaTeX.
+
+\section{Headings}
+Your report can be structured using several different types of headings. Use the commands \texttt{\textbackslash chapter\{.\}}, \texttt{\textbackslash section\{.\}}, \texttt{\textbackslash subsection\{.\}}, and \texttt{\textbackslash subsubsection\{.\}}. Use the asterisk symbol \texttt{*} to suppress numbering of a certain heading if necessary, for example, \texttt{\textbackslash section*\{.\}}.
+
+\section{References and Footnotes}\label{sec:references}
+References to literature are included using the command \texttt{\textbackslash
+cite\{.\}}. For example \cite{optreg,motsys}. Your references must be entered in the file \texttt{bibliography.bib}. Making changes or adding new references in the bibliography file can be done manually or by using specialized software such as \textit{JabRef} which is free of charge.
+ 
+Cross-referencing within the text is easily done using \texttt{\textbackslash label\{.\}} and \texttt{\textbackslash ref\{.\}}. For example, this paragraph is part of chapter~\ref{sec:working}; more specifically section~\ref{sec:references} on page~\pageref{sec:references}. You will need to compile your document twice in order for the cross-referencing to be updated.
+
+Footnotes\footnote{The use of footnotes is generally not recommended.} are added using the command \texttt{\textbackslash footnote\{.\}}, but try to avoid the used of footnotes altogether.
+
+\section{Lists}\label{sec:lists}
+Three types of list-environments are commonly used: \texttt{itemize}, \texttt{enumerate}, and \texttt{description}. The following example uses \texttt{itemize} to create a list without numbering
+\begin{itemize}
+  \item point one; and
+  \item point two
+\end{itemize}
+created using
+\begin{verbatim}
+\begin{itemize}
+  \item point one; and
+  \item point two
+\end{itemize}
+\end{verbatim}
+
+The following example uses \texttt{enumerate} to create a list with numbering
+\begin{enumerate}
+  \item point one; and
+  \item point two
+\end{enumerate}
+created using
+\begin{verbatim}
+\begin{enumerate}
+  \item point one; and
+  \item point two
+\end{enumerate}
+\end{verbatim}
+
+The following example uses \texttt{description} to create a list with custom text as bullet-points
+\begin{description}
+  \item[P1] point one; and
+  \item[P2] point two
+\end{description}
+created using
+\begin{verbatim}
+\begin{description}
+  \item[P1] point one; and
+  \item[P2] point two
+\end{description}
+\end{verbatim}
+
+
+\section{Tables}\label{sec:tables}
+Table~\ref{tab:table} shows an example of a simple table-layout. Try to avoid vertical lines on tables. The Internet contains countless resources on how to create special elements and structures in tables such as cells spanning multiple rows, rotated text, sideways tables, justification of cell elements, etc.
+\begin{table}[ht]
+\begin{center}
+\caption{Driving cycle data of ECE-15, EUDC, and NEDC.}\vspace{1ex}
+\label{tab:table}
+\begin{tabular}{llccc}\hline
+Description & Unit & ECE & EUDC & NEDC \\ \hline
+Duration & s & 780 & 400 & 1180 \\
+Distance & km & 4.052 & 6.955 & 11.007 \\
+Average velocity & km/h & 18.7 &  62.6 & 33.6 \\
+Idle speed & \% & 36 & 10 & 27 \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+This table was created using
+\begin{verbatim}
+\begin{table}[ht]
+\begin{center}
+\caption{Driving cycle data of ECE-15, EUDC, and NEDC.}\vspace{1ex}
+\label{tab:table}
+\begin{tabular}{llccc}\hline
+Description & Unit & ECE & EUDC & NEDC \\ \hline
+Duration & s & 780 & 400 & 1180 \\
+Distance & km & 4.052 & 6.955 & 11.007 \\
+Average velocity & km/h & 18.7 &  62.6 & 33.6 \\
+Idle speed & \% & 36 & 10 & 27 \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+\end{verbatim}
+Table~\ref{tab:table_advanced} shows a more advanced version of Tab.~\ref{tab:table} using the \texttt{booktabs} package. Inspect the source code of this document to see how this was done.
+\begin{table}[ht]
+\begin{center}
+\small
+\caption{Driving cycle data of ECE-15, EUDC, and NEDC.}\vspace{1ex}
+\label{tab:table_advanced}
+\begin{tabular}{@{}lcccc@{}}\toprule[1.5pt]
+& & \multicolumn{3}{c}{\bf Driving cycle}\\
+\cmidrule{3-5}
+Description & Unit & {ECE} & {EUDC} & {NEDC} \\ \midrule
+Duration & \unit[]{s} & 780 & 400 & 1180 \\
+Distance & \unit[]{km} & 4.052 & 6.955 & 11.007 \\
+Average velocity & \unitfrac[]{km}{h} & 18.7 &  62.6 & 33.6 \\
+Idle speed & \unit[]{\%} & 36 & 10 & 27 \\ \bottomrule[1.5pt]
+\end{tabular}
+\end{center}
+\end{table}
+
+
+
+\section{Working with Units}
+The package \texttt{\textbackslash usepackage\{units\}} enables two useful commands, namely \texttt{\textbackslash unit[.]\{.\}} and \\ \texttt{\textbackslash unitfrac[.]\{.\}\{.\}}. Use these commands to display units in a concise way, for example
+\begin{align}
+\delta t &= \unit[1]{s}\\
+v &= \unitfrac[5]{m}{s}.
+\end{align}
+This example was done using
+\begin{verbatim}
+\begin{align}
+\delta t &= \unit[1]{s}\\
+v &= \unitfrac[5]{m}{s}.
+\end{align}
+\end{verbatim}
+
+\section{Including Graphics}\label{sec:epsgraph}
+It is recommended that you only use encapsulated post-script graphics \texttt{.eps} in your report. If you mix \texttt{.eps} with other formats such as \texttt{.png}, \texttt{.jpeg} or \texttt{.gif}, you will most likely not be able to compile your report without errors. Note that figures created in \textsc{Matlab} are easily saved in \texttt{.eps} format.
+
+The inclusion of a figure can be done in the following way:
+\begin{verbatim}
+\begin{figure}[ht]
+   \centering
+   \includegraphics[width=0.75\textwidth]{img/k_surf.eps}
+   \caption{Example of a figure.}
+   \label{img:k_surf}
+\end{figure}
+\end{verbatim}
+
+\begin{figure}[ht]
+   \centering
+   \includegraphics[width=0.75\textwidth]{img/k_surf.eps}
+   \caption{Example of a figure.}
+   \label{img:k_surf}
+\end{figure}
+
+Two figures are displayed next to each other using
+\begin{verbatim}
+\begin{figure}[ht]
+  \begin{minipage}[t]{0.48\textwidth}
+    \includegraphics[width = \textwidth]{img/cycle_we.eps}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.48\textwidth}
+    \includegraphics[width = \textwidth]{img/cycle_ml.eps}
+  \end{minipage}
+  \caption{Two figures next to each other.}
+  \label{img:cycle}
+\end{figure}
+\end{verbatim}
+
+\begin{figure}[ht]
+  \begin{minipage}[t]{0.48\textwidth}
+    \includegraphics[width = \textwidth]{img/cycle_we.eps}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.48\textwidth}
+    \includegraphics[width = \textwidth]{img/cycle_ml.eps}
+  \end{minipage}
+  \caption{Two figures next to each other.}
+  \label{img:cycle}
+\end{figure}
+
+The positioning parameter \texttt{h} (here) forces your figure to be placed in the current position relative to your text. You may add \texttt{t} (top), \texttt{b} (bottom), and/or \texttt{p} (page) to allow for more flexible positioning within your document. For instance, \texttt{[tb]} forces your figure to be placed either on the top or bottom of a page.
+
+
+\section{Equations}\label{sec:math}
+The most common way to include equations is using the \texttt{equation} environment.
+\begin{equation}\label{eq:p_me0f}
+ p_\mathrm{me0f}(T_e,\omega_e) \ = \ k_1(T_e) \cdot (k_2+k_3 S^2
+ \omega_e^2) \cdot \Pi_\mathrm{max} \cdot \sqrt{\frac{k_4}{B}} \, .
+\end{equation}
+It is recommended to use \texttt{\textbackslash mathrm\{.\}} for subscripts comprising more than two letters since it reduces the width of the subscript significantly and improves readability. The corresponding code is
+\begin{verbatim}
+\begin{equation}\label{eq:p_me0f}
+ p_\mathrm{me0f}(T_e,\omega_e) \ = \ k_1(T_e) \cdot (k_2+k_3 S^2
+ \omega_e^2) \cdot \Pi_\mathrm{max} \cdot \sqrt{\frac{k_4}{B}} \, .
+\end{equation}
+\end{verbatim}
+Equations, such as Eq.~\eqref{eq:p_me0f}, may be referenced using \texttt{\textbackslash eqref\{.\}}. In-line mathematical content is created using \texttt{\$.\$}, for example $a^2+b^2=c^2$. It is practically possible to typeset any equation in \LaTeX. Equation~\eqref{eq:advanced} shows an example of a more advance structure.
+\begin{equation}\label{eq:advanced}
+x^k_n(i) = \left\{\begin{array}{ll}y(i) & \text{if}\quad x^k_{n-1}(i)\leq \mathbf{x}\\
+z(i) & \text{otherwise}\end{array}\right., \text{for}\quad i=\{1,\ldots,N\}.
+\end{equation}
+
+
+
+\section{Including Code in your Document}
+Include samples from your Matlab code using the \texttt{lstlistings} environment, for example
+\lstset{language=Matlab,numbers=none}
+\begin{lstlisting}[frame=lines]
+% Evaluate y = 2x
+for i = 1:length(x)
+
+  y(i) = 2*x(i);
+
+end
+\end{lstlisting}
+This example was created using
+\begin{verbatim}
+\lstset{language=Matlab,numbers=none}
+\begin{lstlisting}[frame=lines]
+% Evaluate y = 2x
+for i = 1:length(x)
+
+  y(i) = 2*x(i);
+
+end
+\end{lstlisting}
+\end{verbatim}
+where \texttt{\textbackslash usepackage\{mcode\}} must be included in the preamble of your document. If you want to include the entire content of a file \texttt{mycode.m} in your document, simply input the path to \texttt{mycode.m} instead of pasting the entire content into your \TeX -file
+\begin{verbatim}
+\lstset{language=Matlab,numbers=left}
+\lstinputlisting{path/to/mycode.m}
+\end{verbatim}
+Including the path to your m-file also ensures that the code in your report is always up-to-date. The \texttt{\textbackslash lstset\{language=Matlab\}} command ensures that \textsc{Matlab} syntax definitions are used, but many other languages are recognised as well such as \texttt{Fortran} and \texttt{C++}.

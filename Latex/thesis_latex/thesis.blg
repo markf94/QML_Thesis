@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis.aux
+The style file: apacite.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: thesis.bib
+apacite.bst [2013/07/21 v6.03 APA bibliography style]
+You've used 2 entries,
+            6951 wiz_defined-function locations,
+            1275 strings with 10822 characters,
+and the built_in function-call counts, 3433 in all, are:
+= -- 426
+> -- 24
+< -- 158
++ -- 158
+- -- 4
+* -- 202
+:= -- 672
+add.period$ -- 8
+call.type$ -- 2
+change.case$ -- 34
+chr.to.int$ -- 0
+cite$ -- 4
+duplicate$ -- 80
+empty$ -- 145
+format.name$ -- 38
+if$ -- 658
+int.to.chr$ -- 0
+int.to.str$ -- 6
+missing$ -- 0
+newline$ -- 50
+num.names$ -- 16
+pop$ -- 93
+preamble$ -- 1
+purify$ -- 8
+quote$ -- 0
+skip$ -- 202
+stack$ -- 0
+substring$ -- 172
+swap$ -- 38
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 160
+warning$ -- 0
+while$ -- 12
+width$ -- 0
+write$ -- 57

@@ -1,0 +1,306 @@
+%==============================================================================
+% ETHIDSC -- (ethidsc.sty) Style file
+% A LaTeX package providing new style definitions and commands.
+% The ethidsc-package defines a title page and an info page for term papers
+% and master theses written at the Measurement and Control Laboratory
+% of the Swiss Federal Institute of Technology (ETH) Zurich.
+% Author: Eric A. Mueller
+%         Measurement and Control Laboratory
+%         Swiss Federal Institute of Technology (ETH) Zurich
+%         Zurich, Switzerland
+%
+% Copyright (c) 2004 Eric A. Mueller
+% All rights reserved.
+%
+% ethidsc.sty,v.1.0 2009/29/05
+%
+% Revisions: 	2011/03/22  (Soren Ebbesen)
+%               2013/03/08  (Soren Ebbesen)
+%
+%==============================================================================
+\def\Presentation@Version{1.1}
+\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\ProvidesPackage{ethidsc}[2009/29/05, v. \Presentation@Version]
+\typeout{providing new style definitions and commands ---}
+\typeout{Eric Müller, ETHZ, Switzerland, 2004/04/02}
+\typeout{Maintained by Soren Ebbesen, 2009 ---}
+
+\newif\ifingerman
+\DeclareOption{german}{\global\ingermantrue}
+\DeclareOption{english}{\global\ingermanfalse}
+
+\DeclareOption{mt}{\gdef\@type{\ifingerman Masterarbeit\else Master Thesis\fi}}
+\DeclareOption{bt}{\gdef\@type{\ifingerman Bachelorarbeit\else Bachelor Thesis\fi}}
+\DeclareOption{st}{\gdef\@type{\ifingerman Semesterarbeit\else Semester Thesis\fi}}
+
+\ExecuteOptions{german,st}
+\ProcessOptions
+
+\RequirePackage[T1]{fontenc}
+\RequirePackage[latin1]{inputenc}
+\RequirePackage{amsmath,amssymb,amsthm}
+\RequirePackage{graphicx}
+\RequirePackage[dvips]{epsfig} 
+\RequirePackage{float}
+\RequirePackage{fancyhdr}
+%\RequirePackage{hyperref}
+\RequirePackage{pstricks,pst-plot,psfrag}
+\RequirePackage{multirow}
+\RequirePackage{rotating}
+\RequirePackage{mcode}
+\RequirePackage{units}
+\RequirePackage{booktabs}
+\RequirePackage[dvipdfm]{geometry}
+\RequirePackage{url}
+
+\ifingerman
+\RequirePackage{german,ae}
+\fi
+
+\newcommand{\@supervision}{}
+\newcommand{\supervision}[1]{\gdef\@supervision{#1}}
+
+\newcommand{\@studentA}{}
+\newcommand{\studentA}[1]{\gdef\@studentA{#1}}
+
+\newif\ifstudentB
+\newcommand{\@studentB}{}
+\newcommand{\studentB}[1]{\gdef\@studentB{#1}\studentBtrue}
+
+\newcommand{\@ethidA}{}
+\newcommand{\ethidA}[1]{\gdef\@ethidA{#1}}
+
+\newcommand{\@ethidB}{}
+\newcommand{\ethidB}[1]{\gdef\@ethidB{#1}}
+
+\newcommand{\@semesterA}{}
+\newcommand{\semesterA}[1]{\gdef\@semesterA{#1}}
+
+\newcommand{\@semesterB}{}
+\newcommand{\semesterB}[1]{\gdef\@semesterB{#1}}
+
+\newcommand{\@emailA}{}
+\newcommand{\emailA}[1]{\gdef\@emailA{#1}}
+
+\newcommand{\@emailB}{}
+\newcommand{\emailB}[1]{\gdef\@emailB{#1}}
+
+\newcommand{\@identification}{}
+\newcommand{\identification}[1]{\gdef\@identification{#1}}
+
+\newcommand{\@declaration}{}
+\newcommand{\declaration}{\gdef\@declaration{
+\ifingerman
+{\bf Erkl\"{a}rung betreffend Plagiaten: \\[1ex]}
+\ifstudentB
+Wir erkl\"{a}ren hiermit mit unserer Unterschrift, das Merkblatt Eigenst\"{a}ndigkeitserkl\"{a}rung zur Kenntnis genommen, die vorliegende Arbeit selbst\"{a}ndig verfasst und die im betroffenen Fachgebiet \"{u}blichen Zitiervorschriften eingehalten zu haben.\\[3ex]
+\else
+Ich erkl\"{a}re mit meiner Unterschrift, das Merkblatt Eigenst\"{a}ndigkeitserkl\"{a}rung zur Kenntnis genommen, die vorliegende Arbeit selbst\"{a}ndig verfasst und die im betroffenen Fachgebiet
+\"{u}blichen Zitiervorschriften eingehalten zu haben.\\[3ex]
+\fi
+Merkblatt Eigenst\"{a}ndigkeitserkl\"{a}rung:\\[1.5ex]
+\url{http://www.ethz.ch/faculty/exams/plagiarism/confirmation_de.pdf} 
+\\[6ex] 
+Z\"{u}rich, \the\day. \the\month. \the\year: \hrulefill
+
+\else
+
+{\bf Statement regarding plagiarism: \\[1ex]}
+\ifstudentB
+By signing this statement, we affirm that we have read and signed the Declaration of Originality, independently produced this paper, and adhered to the general practice of source citation in this subject-area.\\[3ex]
+\else
+By signing this statement, I affirm that I have read and signed the Declaration of Originality,
+independently produced this paper, and adhered to the general practice of source
+citation in this subject-area.\\[3ex]
+\fi
+Declaration of Originality:\\[1.5ex]
+\url{http://www.ethz.ch/faculty/exams/plagiarism/confirmation_en.pdf} 
+\\[6ex] 
+Zurich, \the\day. \the\month. \the\year: \hrulefill
+\fi}}
+
+
+
+% Definition of title page______________________________________________________
+\renewcommand{\maketitle}{
+
+\pagestyle{empty}
+
+\begin{center}
+\hspace{0.02\textwidth}
+\parbox[c][\textheight][t]{0.97\textwidth}{
+\begin{center}
+
+\vspace*{-2cm}
+\begin{minipage}[c]{0.4\textwidth}
+ \begin{flushleft}
+ \hspace*{-1.5cm}
+ \includegraphics[height=1.5cm]{img/ethlogo.eps}
+ \end{flushleft}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.4\textwidth}
+ \begin{flushright}
+ \hspace*{0.4cm}
+ \includegraphics[height=1.6cm]{img/IDSC_logo_Full.eps}
+ \end{flushright}
+\end{minipage}
+\vspace*{5.0cm}
+
+{\large \@studentA\if\@studentB\else \ \& \@studentB\fi}
+\vspace{1.5cm}
+
+{\Huge \bf \@title \par}
+\vspace{2.5cm} 
+
+{\large \bf \@type}\\[3ex]
+\ifingerman
+ Institut f\"{u}r Dynamische Systeme und Regelungstechnik\\
+ Eidgen\"{o}ssische Technische Hochschule (ETH) Z\"{u}rich\\
+\else
+ Institute for Dynamic Systems and Control\\
+ Swiss Federal Institute of Technology (ETH) Zurich\\
+\fi
+\vspace{3.5cm}
+
+\ifingerman
+ {\bf Betreuung} \\[1.5ex]
+\else
+ {\bf Supervision} \\[1.5ex]
+\fi
+\@supervision
+
+\vfill
+\@date
+
+% Report identification number
+\begin{flushleft}
+\hspace*{-1.5cm}
+\vspace{-1.5cm}
+\texttt{\@identification}
+\end{flushleft}
+
+\end{center}
+}
+\end{center}
+\cleardoublepage
+}
+
+
+
+% Definition of info page (last page)___________________________________________
+\newcommand{\infopage}{
+\AtEndDocument{
+
+\pagestyle{empty}
+\cleardoublepage
+\setlength{\oddsidemargin}{3cm}
+\setlength{\parindent}{0em}
+
+\vspace*{-2cm}
+\hspace{-0.354cm}
+\includegraphics[height=2cm]{img/ethlogo.eps}\\
+{\sffamily
+\ifingerman
+ Institut f\"{u}r Dynamische Systeme und Regelungstechnik\\
+\else
+ Institute for Dynamic Systems and Control\\
+\fi
+Prof.~Dr.~R.~D'Andrea, Prof.~Dr.~L.~Guzzella}
+\vspace{1.5cm}
+
+\ifingerman
+{\bf Titel der Arbeit: \\[1ex]}
+{\LARGE \@title \\[1ex] \par}
+\else
+{\bf Title of work: \\[1ex]}
+{\LARGE \@title \\[1ex] \par}
+\fi
+
+\ifingerman
+{\bf Art der Arbeit und Datum: \\[1ex]}
+\@type, \@date\\[2.5ex]
+%\ifst
+%Semesterarbeit, \@date\\[2.5ex]
+%\else
+%Masterarbeit, \@date\\[2.5ex]
+%\fi
+{\bf Betreuung: \\[1ex]}
+\@supervision
+\else
+{\bf Thesis type and date: \\[1ex]}
+\@type, \@date\\[2.5ex]
+%\ifst
+%Semester thesis, \@date\\[2.5ex]
+%\else
+%Master thesis, \@date\\[2.5ex]
+%\fi
+{\bf Supervision: \\[1ex]}
+\@supervision
+\fi
+\vspace{1cm}
+
+\ifingerman
+{\bf \ifstudentB Studenten:\else Student: \fi}
+\else
+{\bf \ifstudentB Students:\else Student: \fi}
+\fi
+\begin{tabbing}
+\hspace*{3cm}  \= \kill
+Name: \> \@studentA \\
+E-mail: \> \@emailA \\
+Legi-Nr.: \> \@ethidA \\
+Semester: \> \@semesterA
+\end{tabbing}
+
+\if\@studentB \else
+\begin{tabbing}
+\hspace*{3cm}  \= \kill
+Name: \> \@studentB \\
+E-mail: \> \@emailB \\
+Legi-Nr.: \> \@ethidB \\
+Semester: \> \@semesterB
+\end{tabbing}
+\fi
+\vspace{1cm}
+
+\if\@declaration \else \@declaration \fi
+
+\normalsize 
+}
+}
+
+% =======================================
+%	\usepackage[dvipdfm]{geometry}
+	\setlength\paperheight {297mm}%
+	\setlength\paperwidth  {210mm}%
+
+	%PAGE LAYOUT 2cm margin on all four sides
+	\setlength{\voffset}{-1in}
+	\setlength{\hoffset}{-1in}
+
+	\setlength{\oddsidemargin}{3cm}
+	\setlength{\evensidemargin}{3cm}
+
+	\setlength{\topmargin}{2.5cm} % -1in subtract latex default margin (1 inch) from topmargin
+
+%	\setlength{\headheight}{14.mm} %platz für kopfzeile
+%	\setlength{\headsep}{+11.mm} %freiraum nach kopfzeile
+%	\addtolength{\topmargin}{0.0mm} %rest, damit die geforderten 2.5 cm erfüllt werden
+
+	\setlength{\textheight}{229mm} %247mm 29.7cm-5cm = 24.7cm
+
+%	\setlength{\footskip}{+20mm}
+
+	\setlength{\textwidth}{150mm} %!!! %21cm - 5cm = 16cm
+
+
+%	\addtolength{\oddsidemargin}{-1in} %subtract latex default margin (1 inch) from oddsidemargin
+	
+
+%	\addtolength{\evensidemargin}{-1in}  %subtract latex default margin (1 inch) from evensidemargin
+%	\setlength{\marginparwidth}{10cm}
+	\setlength{\parindent}{0pt}
+
+% Revision history___________________________________________________________ 
+% 2009/29/05 Adapted from ethimrt.sty,v 1.1 2004/04/02

@@ -1,0 +1,49 @@
+\chapter{Introduction}\label{sec:introduction}
+This template is meant to be used for semester, bachelor, and master theses written at the Institute for Dynamic Systems and Control (IDSC), ETH Zurich. The template includes several examples of equations, figures, tables, etc. in order to act as a {\it very} short introduction to \TeX\! and \LaTeX. Yet, the template is also provided to ensure that all written work at IDSC shares identical formatting.
+
+\section{The Preamble}\label{sec:preamble}
+The preamble of the \LaTeX\! template defines the font size, page layout, language, report type, title, and author(s) of the report. The preamble of the current template is shown below. It should be more or less clear how you need to modify the preamble to fit your needs; if not, consult your supervisor.
+%\lstset{language=TeX,numbers=none}
+%\begin{lstlisting}[frame=lines]
+\begin{verbatim}
+ \documentclass[10pt,twoside,a4paper,fleqn]{report}
+
+ \usepackage[german,st]{ethidsc}             % IDSC style
+                                             % {german}/english: language
+                                             % {st}/bt/mt: thesis type
+
+ % Page header (don't change)
+ \setlength{\parindent}{0em}                 % Disable parindent
+ \rhead[\nouppercase{\rightmark}]{\thepage}  % Special headings
+ \lhead[\thepage]{\nouppercase{\leftmark}}   % Special headings
+ \cfoot{}                                    % Special headings
+
+ % Title page (please fill in)
+ \title{\LaTeX\ Thesis Template v.1.4}       % Report title
+
+ \studentA{Hans Muster}
+ \ethidA{97-906-739}
+ \semesterA{5}
+ \emailA{muster@student.ethz.ch}
+
+ % \studentB{Second Student}
+ % \ethidB{12-345-678}
+ % \semesterB{9}
+ % \emailB{second@student.ethz.ch}
+
+ \supervision{First Supervisor\\ Prof. Dr. Second Supervisor}
+ \date{March 2011}
+
+ \identification{IDSC-XX-YY-ZZ}              % Project identifier
+
+ \infopage
+ \declaration
+ \end{verbatim}
+%\end{lstlisting}
+
+The style \texttt{ethidsc.sty} enforces certain changes to the original \texttt{report} class, e.g., the title page. The style accepts two options. The first option lets you choose the language of your report, i.e., the language of the title page, headings, info-page, etc. Valid options are: \texttt{german} (default) and \texttt{english}. The second option defines the type of report which will be printed on the title and info page. Valid options are: \texttt{st} (default), \texttt{bt}, and \texttt{mt} for semester, bachelor and master thesis, respectively. For instance, if you will be writing a master thesis in English, use
+\begin{verbatim}
+ \usepackage[english,mt]{ethidsc}
+\end{verbatim}
+The command \texttt{\textbackslash infopage} prints an information page at the end of the document which you must sign before handing in the report.
+

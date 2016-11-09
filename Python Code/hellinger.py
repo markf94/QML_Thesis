@@ -39,3 +39,9 @@ print ""
 #source:https://www.pugetsystems.com/labs/hpc/Linpack-performance-Haswell-E-Core-i7-5960X-and-5930K-594/
 comptime = maxentries/nanoflops
 print "Classical time needed to compute Hellinger distance for %d entries: \n%d nanoseconds" %(maxentries, comptime)
+print ""
+# Quantum alg complexity is O(1/p_acc)
+print "Quantum algorithm complexity with p_acc=0.00001: ", 1/0.00001
+print "Quantum algorithm complexity with p_acc=0.1: ", 1/0.1
+print "Quantum algorithm complexity with p_acc=0.6: ", 1/0.6
+print "Quantum algorithm complexity with p_acc=0.9: ", 1/0.9

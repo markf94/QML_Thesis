@@ -1,0 +1,53 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Geering%
+}{%
+Geering%
+}{%
+{\protect \APACyear {2007}}%
+}]{%
+optreg}
+\APACinsertmetastar {%
+optreg}%
+\begin{APACrefauthors}%
+Geering, H\BPBI P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2007}.
+\newblock
+\APACrefbtitle {{Optimal Control with Engineering Applications}} {{Optimal
+  Control with Engineering Applications}}.
+\newblock
+\APACaddressPublisher{}{Springer}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Guzzella%
+\ \BBA {} Onder%
+}{%
+Guzzella%
+\ \BBA {} Onder%
+}{%
+{\protect \APACyear {2004}}%
+}]{%
+motsys}
+\APACinsertmetastar {%
+motsys}%
+\begin{APACrefauthors}%
+Guzzella, L.%
+\BCBT {}\ \BBA {} Onder, C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2004}.
+\newblock
+\APACrefbtitle {{Introduction To Modeling And Control Of Internal Combustion
+  Engine Systems}} {{Introduction To Modeling And Control Of Internal
+  Combustion Engine Systems}}.
+\newblock
+\APACaddressPublisher{}{Springer}.
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

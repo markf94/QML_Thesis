@@ -1,0 +1,92 @@
+% http://www.idsc.ethz.ch/education/theses-semester-projects.html
+% IDSC LaTeX Thesis Template
+% 
+% Author(s):	Eric Müller
+% 				Institute for Dynamic Systems and Control
+% 				Swiss Federal Institute of Technology (ETH) Zurich
+% 
+% Created:		2004/04/02  (Eric Mueller)
+% 
+% Notes: Has been tested on Windows 7 + MikTeX + TeXnicCenter
+%
+% Revisions: 	2009/05/29  (Soren Ebbesen)
+% 				    2011/03/22	(Soren Ebbesen)
+%             2013/03/08	(Soren Ebbesen)
+%             2014/03/13	(Soren Ebbesen)
+% ______________________________________________________________________________
+\documentclass[10pt,twoside,a4paper,fleqn]{report}
+
+
+\usepackage[english,st]{ethidsc} % Special IDSC styles and commands      	
+\usepackage{apacite}
+								 % {german}/english: language of headings, etc.
+								 % {st}/bt/mt: {semester}/bachelor/master thesis
+							
+% Page header (don't change)____________________________________________________
+\setlength{\parindent}{0em}                 % Disable parindent
+\rhead[\nouppercase{\rightmark}]{\thepage}  % Special headings
+\lhead[\thepage]{\nouppercase{\leftmark}}   % Special headings
+\cfoot{}                                    % Special headings
+
+
+% Title page (please fill in)___________________________________________________
+\title{\LaTeX\ Thesis Template v.1.4}
+
+
+\studentA{Hans Muster}
+\ethidA{97-906-739}
+\semesterA{5}
+\emailA{muster@student.ethz.ch}
+
+%\studentB{Second Student}
+%\ethidB{12-345-678}
+%\semesterB{9}
+%\emailB{second@student.ethz.ch}
+
+\supervision{First Supervisor\\ Prof. Dr. Second Supervisor}
+\date{March 2011}
+
+\identification{IDSC-XX-YY-ZZ} 		% Project identifier
+
+\infopage
+\declaration
+
+% Begin document________________________________________________________________
+\begin{document}
+
+\maketitle 							% Create title page
+
+
+% Preamble______________________________________________________________________
+
+\pagenumbering{roman} 				% Begin roman page numbering (i,ii,...)
+
+\input{chapters/preamble}
+
+% Chapters______________________________________________________________________
+
+\pagestyle{fancy}               	% Fancy headings
+\pagenumbering{arabic}				% Begin arabic page numbering (1,2,...)
+
+\input{chapters/introduction}
+\cleardoublepage
+\input{chapters/howto}
+\cleardoublepage
+% \input{}
+% \cleardoublepage
+% \input{}
+% \cleardoublepage
+% ...
+
+% Appendix______________________________________________________________________
+\appendix
+\input{chapters/appendix}
+
+
+% Bibliography__________________________________________________________________
+% Literature (Additional references can be added to the .bib-file manually, or by using, for example, the free application JabRef). Compile in the following order: latex -bibtex -latex -latex
+
+\bibliographystyle{apacite}
+\bibliography{thesis}
+
+\end{document}
