@@ -20,7 +20,7 @@ def GroverTheta(f):
 ### DEFINING THE RECURSIVE FUNCTION ###
 
 # the index variable being the i in theta_i as described in Grover & Rudolph (2002)  =[0]*numberofpartitions
-def theta_i_recursive(min,index,stepsizeintern,meanintern,numberofpartitions,theta, distribution="unknown"):
+def probabilities_recursive(min,index,stepsizeintern,meanintern,numberofpartitions,probabilityarray, distribution="unknown"):
     #function needs to be called initially with index=0
 
     # define the first pair of limits
@@ -35,14 +35,14 @@ def theta_i_recursive(min,index,stepsizeintern,meanintern,numberofpartitions,the
         # print "upperlimit", upperlimit
         I = quad(normaldistribution, lowerlimit, upperlimit, args=(std,mean))
         # Compute the arccos(sqrt(f(i)))
-        theta[index] = GroverTheta(I[0])
+        probabilityarray[index] = I[0] #GroverTheta(I[0])
 
         # fill the theta's based on symmetry if gaussian
         if distribution=="gaussian":
             for i in reversed(range(index+1)):
-                theta[index+i+1] = theta[index-i]
+                probabilityarray[index+i+1] = probabilityarray[index-i]
         #print "thetabase: ", theta
-        return theta;
+        return probabilityarray;
         #and don't call your own function again!
 
     # calculate the width of each partition
@@ -56,11 +56,11 @@ def theta_i_recursive(min,index,stepsizeintern,meanintern,numberofpartitions,the
     # perform the integration over the partition
     I = quad(normaldistribution, lowerlimit, upperlimit, args=(std,mean))
 
-    # Compute the arccos(sqrt(f(i)))
-    theta[index] = GroverTheta(I[0])
+    # Save the probability
+    probabilityarray[index] = I[0]# GroverTheta(I[0])
     index += 1
 
-    return theta_i_recursive(upperlimit,index,stepsizeintern,meanintern,numberofpartitions,theta,distribution)
+    return probabilities_recursive(upperlimit,index,stepsizeintern,meanintern,numberofpartitions,probabilityarray,distribution)
 
 
 # Print intro
@@ -72,6 +72,7 @@ mean = float(raw_input("Mean: "))
 std = float(raw_input("Standard Deviation: "))
 maxstdboundary = float(raw_input("How many stds out do you wanna set the boundary?: "))
 numberofpartitions = int(raw_input("Maximum number of partitions (input must satisfy input=2^N): "))
+numberofpartitions = numberofpartitions*2
 minbound = mean-maxstdboundary*std
 #print "minbound", minbound
 maxbound = mean+maxstdboundary*std
@@ -91,20 +92,79 @@ if minbound == 0:
 #print "range: ", rangeofinterest
 
 print "======================================================================"
-print "Theta_i results: "
+print "Probability results: "
 print ""
 
 # CALL RECURSIVE
 needed_iterations = int(math.log(numberofpartitions,2))
+ProbabilityMatrix = np.zeros(shape=(needed_iterations,numberofpartitions))
+print ProbabilityMatrix.shape
 for i in range(needed_iterations):
     currentpartitions = 2**(i+1)
     print "%i partitions: " %(currentpartitions)
     stepsize = rangeofinterest/float(currentpartitions)
     print "stepsize: ", stepsize
-    theta = [0]*currentpartitions
-    current_thetas = theta_i_recursive(minbound,0,stepsize,mean,currentpartitions,theta,distribution="gaussian")
-    print current_thetas
+    probabilities = [0]*currentpartitions
+    rawsolution = np.array(probabilities_recursive(minbound,0,stepsize,mean,currentpartitions,probabilities,distribution="gaussian"))
+    for m in range(numberofpartitions-len(rawsolution)):
+        rawsolution = np.append(rawsolution,[0])
+
+    ProbabilityMatrix[i] = rawsolution
+    print ProbabilityMatrix[i]
     print "_______________________________"
+
+#print ProbabilityMatrix
+
+# initialize thetas matrix
+thetas = np.zeros(shape=(needed_iterations-1,numberofpartitions/2))
+'''
+# Now compute the theta_i values
+for m in range(needed_iterations-1):
+    # calculate f(i) as described by Grover & Rudolph (2002)
+    f = ProbabilityMatrix[m+1,0]/ProbabilityMatrix[m,0]
+    if m == 0:
+        f = ProbabilityMatrix[0,0]/1
+    print "f: ", f
+    # Calculate the arccos(sqrt(f(i)))
+    thetas[m,0] = GroverTheta(f)
+print thetas
+
+for n in range(needed_iterations-2):
+    # calculate f(i) as described by Grover & Rudolph (2002)
+    print "left-side prob: ", ProbabilityMatrix[n+2,2]
+    print "total prob: ", ProbabilityMatrix[n+1,2]
+    f = ProbabilityMatrix[n+2,2]/ProbabilityMatrix[n+1,2]
+    #if n == 0:
+        #f = ProbabilityMatrix[0,0]/1
+    print "f: ", f
+    # Calculate the arccos(sqrt(f(i)))
+    thetas[n+1,1] = GroverTheta(f)
+print thetas
+'''
+
+for m in range(thetas.shape[0]): #rows
+    for n in range(thetas.shape[1]): #columns
+        print "ProbabilityMatrix[m,n+1]: ", ProbabilityMatrix[m,n+1]
+        if ProbabilityMatrix[m,n+1] != 0.0 and m == 0:
+            thetas[m,n+1] = GroverTheta(ProbabilityMatrix[m,n]/1)
+        if ProbabilityMatrix[m-1,n] != 0.0 and m != 0: #ProbabilityMatrix[m,n+1] != 0.0 and
+            print "m: ", m
+            print "n: ", n
+            thetas[m,n] = GroverTheta(ProbabilityMatrix[m,n]/ProbabilityMatrix[m-1,n])
+            if m == n:
+                thetas[m,n] = 0.0
+        if ProbabilityMatrix[m,n+1] != 0.0 and ProbabilityMatrix[m,n] != 0 and m != 0 and n>1:
+            print ProbabilityMatrix[m+1,n]/ProbabilityMatrix[m,n]
+            print "m: ", m
+            print "n: ", n
+            thetas[m,n] = GroverTheta(ProbabilityMatrix[m+1,n]/ProbabilityMatrix[m,n])
+
+        #thetas[m,n+1] = 0.0
+        #thetas[0,1] = GroverTheta(ProbabilityMatrix[0,0]/1)
+        #thetas[1,0] = GroverTheta(ProbabilityMatrix[1,0]/ProbabilityMatrix[0,0])
+        #thetas[1,2] = GroverTheta(ProbabilityMatrix[2,2]/ProbabilityMatrix[1,2])
+
+print thetas
 
 ####### OFFICIAL END OF CODE #######
 
