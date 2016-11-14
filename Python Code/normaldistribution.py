@@ -91,19 +91,21 @@ if minbound == 0:
 
 #print "range: ", rangeofinterest
 
-print "======================================================================"
-print "Probability results: "
+print ""
+print "============================== PROB RESULTS ========================================"
+print "Probabilities to lie within regions: "
 print ""
 
 # CALL RECURSIVE
 needed_iterations = int(math.log(numberofpartitions,2))
 ProbabilityMatrix = np.zeros(shape=(needed_iterations,numberofpartitions))
-print ProbabilityMatrix.shape
+#print ProbabilityMatrix.shape
 for i in range(needed_iterations):
     currentpartitions = 2**(i+1)
     print "%i partitions: " %(currentpartitions)
     stepsize = rangeofinterest/float(currentpartitions)
     print "stepsize: ", stepsize
+    print ""
     probabilities = [0]*currentpartitions
     rawsolution = np.array(probabilities_recursive(minbound,0,stepsize,mean,currentpartitions,probabilities,distribution="gaussian"))
     for m in range(numberofpartitions-len(rawsolution)):
@@ -111,12 +113,36 @@ for i in range(needed_iterations):
 
     ProbabilityMatrix[i] = rawsolution
     print ProbabilityMatrix[i]
-    print "_______________________________"
+    print "_________________________________________________________________________________"
 
 #print ProbabilityMatrix
 
 # initialize thetas matrix
-thetas = np.zeros(shape=(needed_iterations-1,numberofpartitions/2))
+thetas = np.zeros(shape=(needed_iterations,numberofpartitions))
+
+for m in range(thetas.shape[0]): #rows
+    for n in range(thetas.shape[1]): #cols
+        if (m == 0) & (ProbabilityMatrix[m,n] != 0.0) & (n%2 == 0):
+            #special case: prob of lying in left half of the entire prob distribution
+            thetas[m,n] = GroverTheta(ProbabilityMatrix[m,n]/1);
+            # print "m", m
+            # print "n", n
+            # print "ProbabilityMatrix[m,n]: ", ProbabilityMatrix[m,n]
+            # print "special case: ", 1
+        if (m != 0) & (n%2 == 0) & (ProbabilityMatrix[m,n] != 0.0): # & (n != 0)n must be even!
+            # print "m", m
+            # print "n", n
+            # print "ProbabilityMatrix[m,n]: ", ProbabilityMatrix[m,n]
+            # print "ProbabilityMatrix[m-1,n-1]: ", ProbabilityMatrix[m-1,n/2]
+            thetas[m,n] = GroverTheta(ProbabilityMatrix[m,n]/ProbabilityMatrix[m-1,n-(n/2)]);
+
+
+print ""
+
+print "============================== THETA RESULTS ========================================"
+print "Theta_i values for segments: "
+print thetas
+
 '''
 # Now compute the theta_i values
 for m in range(needed_iterations-1):
@@ -141,7 +167,7 @@ for n in range(needed_iterations-2):
     thetas[n+1,1] = GroverTheta(f)
 print thetas
 '''
-
+'''
 for m in range(thetas.shape[0]): #rows
     for n in range(thetas.shape[1]): #columns
         print "ProbabilityMatrix[m,n+1]: ", ProbabilityMatrix[m,n+1]
@@ -165,7 +191,7 @@ for m in range(thetas.shape[0]): #rows
         #thetas[1,2] = GroverTheta(ProbabilityMatrix[2,2]/ProbabilityMatrix[1,2])
 
 print thetas
-
+'''
 ####### OFFICIAL END OF CODE #######
 
 
