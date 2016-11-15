@@ -143,6 +143,45 @@ print "============================== THETA RESULTS ============================
 print "Theta_i values for segments: "
 print thetas
 
+# 7 qubits to approximate Theta_i
+possiblecombos = np.zeros(shape=(2**7,7))
+counter = 0
+
+# COMPUTE  ALL POSSIBLE BINARY STRINGS
+for a in range(2):
+    for b in range(2):
+        for c in range(2):
+            for d in range(2):
+                for e in range(2):
+                    for f in range(2):
+                        for g in range(2):
+                            possiblecombos[counter] = [a,b,c,d,e,f,g]
+                            counter += 1
+#print possiblecombos
+
+fractionsofpi = [math.pi/2**8,math.pi/2**7,math.pi/2**6,math.pi/2**5,math.pi/2**4,math.pi/2**3,math.pi/2**2]
+print "difference from pi/2", sum(fractionsofpi)-math.pi/2
+
+piapprox = np.zeros(shape=(2**7,1))
+
+for pos in range(2**7):
+    piapprox[pos] = sum(possiblecombos[pos]*fractionsofpi)
+#print piapprox
+
+# for each theta_i find the best approximation we can do with 7 qubits
+#http://stackoverflow.com/questions/12141150/from-list-of-integers-get-number-closest-to-a-given-value
+# takes O(n) time
+# bisection method illustrated in @Lauritz's answer which only takes O(log n) time (note however checking if a list is already sorted is O(n) and sorting is O(n log n).)
+closest = np.zeros(shape=(needed_iterations,numberofpartitions))
+
+for m in range(thetas.shape[0]): #rows
+    for n in range(thetas.shape[1]): #cols
+        if thetas[m,n] != 0.0:
+            closest[m,n] = min(range(piapprox.shape[0]), key=lambda i: abs(piapprox[i]-thetas[m,n]))
+            closest[m,n+1] = abs(piapprox[int(closest[m,n])]-thetas[m,n])
+print closest
+
+
 '''
 # Now compute the theta_i values
 for m in range(needed_iterations-1):
