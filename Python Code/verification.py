@@ -61,7 +61,9 @@ classprediction0state = 1/(prediction1)*sum(ancilla0m0)
 classprediction1state = 1/(prediction1)*sum(ancilla0m1)
 
 
-print "PREDICTION1 for ancilla in |0> state: ", prediction1
+print "PREDICTION for ancilla in |0> state: ", prediction1
+print "PREDICTION for ancilla in |1> state: ", (sum(ancilla1m0)+sum(ancilla1m1))
+
 #print "PREDICTION2 for ancilla in |0> state: ", prediction2
 print ""
 print "PREDICTION for class in |0> state: ", classprediction0state
@@ -130,7 +132,9 @@ classprediction0state = 1/(prediction1)*sum(ancilla0m0)
 classprediction1state = 1/(prediction1)*sum(ancilla0m1)
 
 
-print "PREDICTION1 for ancilla in |0> state: ", prediction1
+print "PREDICTION for ancilla in |0> state: ", prediction1
+print "PREDICTION for ancilla in |1> state: ", (sum(ancilla1m0)+sum(ancilla1m1))
+
 #print "PREDICTION2 for ancilla in |0> state: ", prediction2
 print ""
 print "PREDICTION for class in |0> state: ", classprediction0state
@@ -198,7 +202,9 @@ classprediction0state = 1/(prediction1)*sum(ancilla0m0)
 classprediction1state = 1/(prediction1)*sum(ancilla0m1)
 
 
-print "PREDICTION1 for ancilla in |0> state: ", prediction1
+print "PREDICTION for ancilla in |0> state: ", prediction1
+print "PREDICTION for ancilla in |1> state: ", (sum(ancilla1m0)+sum(ancilla1m1))
+
 #print "PREDICTION2 for ancilla in |0> state: ", prediction2
 print ""
 print "PREDICTION for class in |0> state: ", classprediction0state
@@ -212,6 +218,29 @@ print ""
 # print "ancilla1m1 prob: ", sum(ancilla1m1)
 print "==================================="
 print ""
+
+'''
+# interferred(ancilla, m)
+interferred00 = [0.601024,0.058291,0.137062,0.066168,0.067349,0.017330,0.005514,0.006696,0.010634,0.014573,0.009846,0.000394,0.001575,0.002363,0.001182,0.000000]
+interferred01 = [0.296003,0.063060,0.023777,0.054790,0.049966,0.004135,0.058925,0.052378,0.001378,0.001378,0.057547,0.309442,0.001378,0.000689,0.000689,0.024466]
+interferred10 = [0.148105,0.014459,0.590074,0.014459,0.017194,0.064088,0.001172,0.003517,0.058226,0.059398,0.001563,0.000782,0.007425,0.006252,0.012114,0.001172]
+interferred11 = [0.368577,0.016798,0.040020,0.018775,0.020751,0.012352,0.018281,0.026680,0.007411,0.007905,0.017292,0.372530,0.008893,0.008893,0.006423,0.048419]
+
+interferred00[:] = [math.sqrt(x) for x in interferred00]
+interferred01[:] = [math.sqrt(x) for x in interferred01]
+interferred00[:] = [x**2*0.125 for x in interferred00]
+interferred01[:] = [x**2*0.125 for x in interferred01]
+interferred10[:] = [math.sqrt(x) for x in interferred10]
+interferred11[:] = [math.sqrt(x) for x in interferred11]
+interferred10[:] = [x**2*0.125 for x in interferred10]
+interferred11[:] = [x**2*0.125 for x in interferred11]
+print ""
+print "Liquid extract after interference"
+print "Ancilla |0> ", sum(interferred00+interferred01)
+print "Ancilla |1> ", sum(interferred10+interferred11)
+print "SUM: ", sum(interferred00+interferred01)+sum(interferred10+interferred11)
+print ""
+'''
 '''
 # The following probabilities are extracted after interferring training with input vectors with delta = 0.6:
 
