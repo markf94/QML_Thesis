@@ -1,3 +1,6 @@
 *.pickle
 *.pyc
 /Quantum_Compiler/pickle/*
+/Quantum_Compiler/pickle/su2_all_gates
+/Quantum_Compiler/pickle/su2_withSSd
+/Quantum_Compiler/pickle/su2

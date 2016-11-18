@@ -14,8 +14,8 @@ b = qp.Bloch()
 
 #Qubit amplitudes
 
-alpha = -0.19509
-beta = 0.98079
+alpha = 
+beta = 0.44859 - 0.54660j
 
 # #1 in Liquid (3/4 state)
 #alpha = 0.85355 - 0.35355j

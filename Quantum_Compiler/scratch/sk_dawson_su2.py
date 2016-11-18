@@ -16,10 +16,10 @@ print "Identity Name: " + H2.identity.name
 # Compose a unitary to compile
 #matrix_U = axis_to_unitary(axis, theta, H2)
 #matrix_U = matrixify([[1,0], [0,numpy.exp(1j * math.pi / 8)]])
-matrix_U = matrixify([[0.83147 + 0.55557j,0], [0,0.83147 - 0.55557j]])
+matrix_U = matrixify([[0.63439 + 0.77301j,0.0], [0.0,0.63439 - 0.77301j]])
 op_U = Operator(name="U", matrix=matrix_U)
 
-n = 3
+n = 2
 print "U= " + str(matrix_U)
 
 ##############################################################################
@@ -39,9 +39,9 @@ Td8_rule = GeneralRule(['Td','Td','Td','Td','Td','Td','Td','Td'], H2.identity.na
 #new stuff
 S4_rule = GeneralRule(['S','S','S','S'], H2.identity.name)
 Sd4_rule = GeneralRule(['Sd','Sd','Sd','Sd'], H2.identity.name)
-#double_X_rule = DoubleIdentityRule('X', id_sym=H2.identity.name)
-#double_Y_rule = DoubleIdentityRule('Y', id_sym=H2.identity.name)
-#double_Z_rule = DoubleIdentityRule('Z', id_sym=H2.identity.name)
+double_SX_rule = DoubleIdentityRule('SX', id_sym=H2.identity.name)
+double_SY_rule = DoubleIdentityRule('SY', id_sym=H2.identity.name)
+double_SZ_rule = DoubleIdentityRule('SZ', id_sym=H2.identity.name)
 
 simplify_rules = [
 	identity_rule,
@@ -53,10 +53,10 @@ simplify_rules = [
 	H_non_dagger_rule,
 	I_non_dagger_rule,
 	S4_rule,
-	Sd4_rule
-	#double_X_rule,
-	#double_Y_rule,
-	#double_Z_rule
+	Sd4_rule,
+	double_SX_rule,
+	double_SY_rule,
+	double_SZ_rule
 	]
 
 simplify_engine = SimplifyEngine(simplify_rules)
@@ -68,13 +68,15 @@ sk_set_factor_method(dawson_group_factor)
 sk_set_basis(H2)
 sk_set_axis(X_AXIS)
 sk_set_simplify_engine(simplify_engine)
-#sk_build_tree("su2", 11)
-sk_build_tree("su2_all_gates", 9)
+#sk_build_tree("su2", 9)
+#sk_build_tree("su2_withSSd", 5)
+sk_build_tree("su2_all_gates", 3)
 
 Un = solovay_kitaev(op_U, n)
 print "Approximated U: " + str(Un)
 
 print "Un= " + str(Un.matrix)
+print Un.matrix*[[0.70711],[0.70711]]
 
 print "trace_dist(U,Un)= " + str(trace_distance(Un.matrix, op_U.matrix))
 print "fowler_dist(U,Un)= " + str(fowler_distance(Un.matrix, op_U.matrix))

@@ -6,10 +6,10 @@ import numpy as np
 from itertools import product
 
 #Hadamard matrix elements
-u00 = 0.70711;
-u01 = 0.70711; #top right
-u10 = 0.70711; #top left
-u11 = -0.70711;
+u00 = 0.19509;
+u01 =-0.98079; #top right
+u10 = 0.98079; #bottom left
+u11 = 0.19509;
 
 ## STILL DOESN'T COPE WITH ZERO ENTRIES IN THE U MATRIX!
 # S phase shift matrix elements
