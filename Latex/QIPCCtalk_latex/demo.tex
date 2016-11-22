@@ -9,6 +9,12 @@
 \usepackage{pgfplots}
 \usepgfplotslibrary{dateplot}
 
+\usepackage{braket}
+\usepackage[font=footnotesize,labelfont=bf]{caption}
+\usepackage{parskip}
+\usepackage{color}
+\usepackage{mathrsfs}
+ 	
 \usepackage{xspace}
 \newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
 
@@ -32,29 +38,195 @@
 \section{Introduction}
 
 {
-\setbeamertemplate{frame footer}{References go here}
-\begin{frame}[fragile]{Quantum Machine Learning}
+\setbeamertemplate{frame footer}{\textit{\tiny{Reprinted from Wikipedia, n.d., Retrieved September 7, 2016, from \url{https://en.wikipedia.org/wiki/Bloch_Sphere}. Copyright 2012 by Glosser.ca. Reprinted with permission.}}}
+\begin{frame}[fragile]{Quantum Computing \& Qubits}
 
-  Some general info about QML. Introduce the topic softly and zoom into it.
+\begin{minipage}[c]{.5\textwidth}
+		%\centering
+		\hspace{2mm}
+       \includegraphics[width=0.8\textwidth]{blochsphere.png}
+       \captionsetup{justification=raggedright, singlelinecheck=false}
+       \captionof{figure}{\footnotesize{Arbitrary two-dimensional qubit $\ket{\psi}$ visualized on the Bloch sphere.} }
+\end{minipage}%%%%%
+\begin{minipage}[c][][b]{.5\textwidth}
+Most general form of a 2-D qubit:
+\begin{equation}
+\label{equ: blochqubit}
+\ket{q} = \alpha \ket{0} + \beta \ket{1}
+\end{equation}
+where $\alpha,\beta \in \mathbb{C}$.\\
+\\
+Can also be visualized in spherical polar coords on the unit or Bloch sphere as follows: 
+
+\begin{equation}
+\label{equ: blochqubit}
+\ket{q} = \cos\frac{\theta}{2} \ket{0} + e^{i \phi} \sin\frac{\theta}{2} \ket{1}
+\end{equation}
+where $0 \leq \theta \leq \pi$ and $0 \leq \phi \leq 2\pi$
+\null
+\par\xdef\tpd{\the\prevdepth}
+\end{minipage}
+
 
 \end{frame}
 }
+
+{
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}IBM. (2016). What is big data? https://www-01.ibm.com/software/data/bigdata/what-is-big
+-data.html. (Accessed: 2016-09-08) \newline
+\textsuperscript{2} Bekkerman, R., Bilenko, M., \& Langford, J. (2011). Scaling up machine learning: Parallel and distributed
+approaches. Cambridge University Press.}}
+\begin{frame}[fragile]{Classical Machine Learning}
+   
+\begin{itemize}
+	\item Approximately 2.5 quintillion (${10}^{18}$) bytes of digital data are created every day\textsuperscript{1}
+	\item Need for advanced algorithms that can make sense of data content, retrieve patterns and reveal correlations $\rightarrow$ Machine learning (ML) 
+	\item ML algorithms often involve
+	\begin{itemize}
+	\item solving large systems of linear equations
+	\item inverting large matrices
+	\item distance computations
+	\end{itemize}
+	\item Performing these computations on large data
+sets gets increasingly difficult\textsuperscript{2}
+
+%when i.e. $\mathcal{O}(input size)$ or $\mathcal{O}(input size^{k})$ for some constant k\textsuperscript{2}
+%essentially manipulations on big vectors and matrices
+
+\end{itemize}
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{}
+\begin{frame}[fragile]{Classical Machine Learning}
+   
+Machine learning can be subdivided into three major fields.
+
+\metroset{block=fill}
+
+\begin{alertblock}{Supervised ML}
+- Based on \emph{input} and \emph{output} data\\
+\centering{
+"I know how to classify this data but I need the algorithm to do the computations for me."}
+\end{alertblock}
+
+\begin{exampleblock}{Unsupervised ML}
+- Based on \emph{input} data only\\
+\centering{
+"I have no clue how to classify this data, can the algorithm create a classifier for me?"}
+\end{exampleblock}
+
+\begin{block}{Reinforcement learning}
+- Based on \emph{input} data only\\
+\centering{
+"I have no clue how to classify this data, can the algorithm classify this data and I'll give it a reward if it's correct or I'll punish it if it's not."}
+\end{block}
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{}
+\begin{frame}[fragile]{Classical Machine Learning}
+   
+Machine learning can be subdivided into three major fields.$\mathcal{O}(input size)$
+
+\metroset{block=fill}
+
+\begin{alertblock}{Supervised ML}
+- Based on \emph{input} and \emph{output} data\\
+\centering{
+"I know how to classify this data but I need the algorithm to do the computations for me."}
+\end{alertblock}
+
+\begin{exampleblock}{\textcolor{gray}{Unsupervised ML}}
+\color{gray}
+- Based on \emph{input} data only\\
+\centering{
+"I have no clue how to classify this data, can the algorithm create a classifier for me?"}
+\end{exampleblock}
+
+\begin{block}{\textcolor{gray}{Reinforcement learning}}
+\color{gray}
+- Based on \emph{input} data only\\
+\centering{
+"I have no clue how to classify this data, can the algorithm classify this data and I'll give it a reward if it's correct or I'll punish it if it's not."}
+\end{block}
+
+\end{frame}
+}
+
 {
 \setbeamertemplate{frame footer}{References go here}
-\begin{frame}[fragile]{Experimental realizations}
-  Sections group slides of the same topic
+\begin{frame}[fragile]{Quantum Machine Learning}
 
-  \begin{verbatim}    \section{Elements}\end{verbatim}
+Some general info about QML. How can quantum computing aid classical machine learning?
 
-  for which \themename provides a nice progress indicator \ldots
 \end{frame}
+}
 
+{
+\setbeamertemplate{frame footer}{References go here}
+\begin{frame}[fragile]{Experimental realizations so far}
+
+
+Until now there have been only few experimental verifications of QML algorithms that establish proof-
+of-concept. Li, Liu, Xu, and Du (2015) successfully distinguished a handwritten six from a nine using a
+quantum support vector machine on a four-qubit nuclear magnetic resonance test bench. In addition, Cai
+et al. (2015) were first to experimentally demonstrate quantum machine learning on a photonic QC and
+showed that the distance between two vectors and their inner product can indeed be computed quantum
+mechanically. Lastly, Ristè et al. (2015) solved a learning parity problem with five superconducting qubits
+and found that a quantum advantage can already be observed in non error-corrected systems.
+
+%Explain the experimental results that have been shown so far. Outline problems with non-error corrected qubits, gate times and small qubit numbers.
+
+%> only proof-of-concept so far
+%little is known about full procedure from crude data to final classification
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}Reprinted from GitHub, Burton de Wilde, Retrieved September 13, 2016, from http://bdewilde.github.io/blog/
+blogger/2012/10/26/classification-of-hand-written-digits-3/. Copyright 2012 by Burton de Wilde. Reprinted with
+permission.}}
 \begin{frame}[fragile]{Classical k-nearest neighbour}
-  Sections group slides of the same topic
+ 
+ \begin{minipage}[t]{.5\textwidth}
+      
+Some description goes here.
+\end{minipage}%%%%%
+\begin{minipage}[c]{.5\textwidth}
+%\centering
+       \includegraphics[width=\textwidth]{knn-concept.png}
+       \captionsetup{justification=raggedright, singlelinecheck=false}
+      \captionof{figure}{\footnotesize{Visualization of a kNN classifier\footnotemark[1]}}
 
-  \begin{verbatim}    \section{Elements}\end{verbatim}
+\end{minipage}
 
-  for which \themename provides a nice progress indicator \ldots
+ 
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{References go here}
+\begin{frame}[fragile]{Quantum k-nearest neighbour}
+ 
+Two fundamentally different ways of doing it:
+
+\begin{alertblock}{Amplitude encoded data}
+		exponential speed up!
+give illustration of what I mean here
+\end{alertblock}
+
+\begin{alertblock}{Qubit encoded data}
+%speed-up not very clear since the \# of qubits increases linearly with the \# of classical bits
+$N$ classical bits are one-to-one encoded into $N$ qubits\\
+e.g. $n=1001 \quad \rightarrow \quad \ket{n} = \ket{1001}$
+\end{alertblock} 
+
 \end{frame}
 }
 
