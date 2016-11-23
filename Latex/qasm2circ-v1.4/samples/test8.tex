@@ -1,0 +1,91 @@
+% 
+% File:	  test8.qasm
+% Date:	  22-Mar-04
+% Author: I. Chuang <ichuang@mit.edu>
+%
+% Sample qasm input file - stage in
+% simplification of quantum teleportation
+% 
+% 	def	c-Z,1,'Z'
+% 
+% 	qubit	q0,\psi
+% 	qubit	q1,0
+% 	qubit	q2,0
+% 
+% 	H	q1
+% 	cnot	q0,q1
+% 	cnot	q1,q2
+% 	cnot	q0,q1
+% 	cnot	q1,q2
+% 	H	q0
+% 	c-Z	q2,q0
+% 	H	q0
+% 	H	q0
+
+%  Time 01:
+%    Gate 00 H(q1)
+%  Time 02:
+%    Gate 01 cnot(q0,q1)
+%  Time 03:
+%    Gate 02 cnot(q1,q2)
+%  Time 04:
+%    Gate 03 cnot(q0,q1)
+%  Time 05:
+%    Gate 04 cnot(q1,q2)
+%    Gate 05 H(q0)
+%  Time 06:
+%    Gate 06 c-Z(q2,q0)
+%  Time 07:
+%    Gate 07 H(q0)
+%  Time 08:
+%    Gate 08 H(q0)
+
+% Qubit circuit matrix:
+%
+% q0: n  , gBA, n  , gDA, gEA, gFA, gGA, gHA, n  
+% q1: gAB, gBB, gCB, gDB, gEB, n  , n  , n  , n  
+% q2: n  , n  , gCC, n  , gEC, gFC, n  , n  , n  
+
+\documentclass[11pt]{article}
+\input{xyqcirc.tex}
+
+% definitions for the circuit elements
+
+\def\gAB{\op{H}\w\A{gAB}}
+\def\gBA{\b\w\A{gBA}}
+\def\gBB{\o\w\A{gBB}}
+\def\gCB{\b\w\A{gCB}}
+\def\gCC{\o\w\A{gCC}}
+\def\gDA{\b\w\A{gDA}}
+\def\gDB{\o\w\A{gDB}}
+\def\gEB{\b\w\A{gEB}}
+\def\gEC{\o\w\A{gEC}}
+\def\gEA{\op{H}\w\A{gEA}}
+\def\gFC{\b\w\A{gFC}}
+\def\gFA{\op{Z}\w\A{gFA}}
+\def\gGA{\op{H}\w\A{gGA}}
+\def\gHA{\op{H}\w\A{gHA}}
+
+% definitions for bit labels and initial states
+
+\def\bA{\qv{q_{0}}{\psi}}
+\def\bB{\qv{q_{1}}{0}}
+\def\bC{\qv{q_{2}}{0}}
+
+% The quantum circuit as an xymatrix
+
+\xymatrix@R=5pt@C=10pt{
+    \bA & \n   &\gBA &\n   &\gDA &\gEA &\gFA &\gGA &\gHA &\n  
+\\  \bB & \gAB &\gBB &\gCB &\gDB &\gEB &\n   &\n   &\n   &\n  
+\\  \bC & \n   &\n   &\gCC &\n   &\gEC &\gFC &\n   &\n   &\n  
+%
+% Vertical lines and other post-xymatrix latex
+%
+\ar@{-}"gBB";"gBA"
+\ar@{-}"gCC";"gCB"
+\ar@{-}"gDB";"gDA"
+\ar@{-}"gEC";"gEB"
+\ar@{-}"gFA";"gFC"
+}
+
+\end{document}

@@ -1,0 +1,69 @@
+% 
+% File:	  test12.qasm
+% Date:	  22-Mar-04
+% Author: I. Chuang <ichuang@mit.edu>
+%
+% Sample qasm input file - multi-qubit controlled
+% multi-qubit operations
+% 
+% 	defbox	CU2,3,1,'U'
+% 	defbox	CV2,3,1,'V'
+% 
+% 	qubit	q0
+% 	qubit	q1
+% 	qubit	q2
+% 	
+% 	h	q0
+% 	CU2	q0,q1,q2
+% 	h	q0
+% 	CV2	q2,q0,q1
+% 	
+%  Time 01:
+%    Gate 00 h(q0)
+%  Time 02:
+%    Gate 01 CU2(q0,q1,q2)
+%  Time 03:
+%    Gate 02 h(q0)
+%  Time 04:
+%    Gate 03 CV2(q2,q0,q1)
+
+% Qubit circuit matrix:
+%
+% q0: gAA, gBA, gCA, gDA, n  
+% q1: n  , gBB, n  , gDB, n  
+% q2: n  , gBC, n  , gDC, n  
+
+\documentclass[11pt]{article}
+\input{xyqcirc.tex}
+
+% definitions for the circuit elements
+
+\def\gAA{\op{H}\w\A{gAA}}
+\def\gBB{\gnqubit{U}{d}\w\A{gBB}}
+\def\gBC{\gspace{U}\w\A{gBC}}
+\def\gBA{\b\w\A{gBA}}
+\def\gCA{\op{H}\w\A{gCA}}
+\def\gDA{\gnqubit{V}{d}\w\A{gDA}}
+\def\gDB{\gspace{V}\w\A{gDB}}
+\def\gDC{\b\w\A{gDC}}
+
+% definitions for bit labels and initial states
+
+\def\bA{ \q{q_{0}}}
+\def\bB{ \q{q_{1}}}
+\def\bC{ \q{q_{2}}}
+
+% The quantum circuit as an xymatrix
+
+\xymatrix@R=5pt@C=10pt{
+    \bA & \gAA &\gBA &\gCA &\gDA &\n  
+\\  \bB & \n   &\gBB &\n   &\gDB &\n  
+\\  \bC & \n   &\gBC &\n   &\gDC &\n  
+%
+% Vertical lines and other post-xymatrix latex
+%
+\ar@{-}"gBB";"gBA"
+\ar@{-}"gDB";"gDC"
+}
+
+\end{document}

@@ -1,0 +1,85 @@
+% 
+% File:   test2.qasm
+% Date:   22-Mar-04
+% Author: I. Chuang <ichuang@mit.edu>
+%
+% Sample qasm input file - simple teleportation circuit
+%
+%         qubit 	q0
+%         qubit 	q1
+% 	qubit 	q2
+% 
+% 	h	q1	% create EPR pair
+% 	cnot	q1,q2
+% 	cnot	q0,q1	% Bell basis measurement
+% 	h	q0
+% 	nop	q1
+% 	measure	q0	
+% 	measure	q1
+% 	c-z	q1,q2	% correction step
+% 	c-x	q0,q2
+
+%  Time 01:
+%    Gate 00 h(q1)
+%  Time 02:
+%    Gate 01 cnot(q1,q2)
+%  Time 03:
+%    Gate 02 cnot(q0,q1)
+%  Time 04:
+%    Gate 03 h(q0)
+%    Gate 04 nop(q1)
+%  Time 05:
+%    Gate 05 measure(q0)
+%    Gate 06 measure(q1)
+%  Time 06:
+%    Gate 07 c-z(q1,q2)
+%  Time 07:
+%    Gate 08 c-x(q0,q2)
+
+% Qubit circuit matrix:
+%
+% q0: n  , n  , gCA, gDA, gEA, N  , gGA, N  
+% q1: gAB, gBB, gCB, gDB, gEB, gFB, N  , N  
+% q2: n  , gBC, n  , n  , n  , gFC, gGC, n  
+
+\documentclass[11pt]{article}
+\input{xyqcirc.tex}
+
+% definitions for the circuit elements
+
+\def\gAB{\op{H}\w\A{gAB}}
+\def\gBB{\b\w\A{gBB}}
+\def\gBC{\o\w\A{gBC}}
+\def\gCA{\b\w\A{gCA}}
+\def\gCB{\o\w\A{gCB}}
+\def\gDA{\op{H}\w\A{gDA}}
+\def\gDB{*-{}\w\A{gDB}}
+\def\gEA{\meter\w\A{gEA}}
+\def\gEB{\meter\w\A{gEB}}
+\def\gFB{\b\W\A{gFB}}
+\def\gFC{\op{Z}\w\A{gFC}}
+\def\gGA{\b\W\A{gGA}}
+\def\gGC{\op{X}\w\A{gGC}}
+
+% definitions for bit labels and initial states
+
+\def\bA{ \q{q_{0}}}
+\def\bB{ \q{q_{1}}}
+\def\bC{ \q{q_{2}}}
+
+% The quantum circuit as an xymatrix
+
+\xymatrix@R=5pt@C=10pt{
+    \bA & \n   &\n   &\gCA &\gDA &\gEA &\N   &\gGA &\N  
+\\  \bB & \gAB &\gBB &\gCB &\gDB &\gEB &\gFB &\N   &\N  
+\\  \bC & \n   &\gBC &\n   &\n   &\n   &\gFC &\gGC &\n  
+%
+% Vertical lines and other post-xymatrix latex
+%
+\ar@{-}"gBC";"gBB"
+\ar@{-}"gCB";"gCA"
+\ar@{=}"gFC";"gFB"
+\ar@{=}"gGC";"gGA"
+}
+
+\end{document}

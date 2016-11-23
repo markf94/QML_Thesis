@@ -1,0 +1,84 @@
+% 
+% File:	  test16.qasm
+% Date:	  24-Mar-04
+% Author: I. Chuang <ichuang@mit.edu>
+%
+% Sample qasm input file - example from Nielsen
+% paper on cluster states
+% 
+% 	qubit	q0,\psi
+% 	qubit	q1,\psi
+% 	qubit	q2,\phi
+% 	qubit	q3,0
+% 
+% 	nop	q0
+% 	nop	q0
+% 	slash	q0
+% 	nop	q1
+% 	ZZ	q1,q2
+% 	cnot	q2,q3
+% 	nop	q2
+% 	discard	q2
+% 	dmeter	q3
+
+%  Time 01:
+%    Gate 00 nop(q0)
+%    Gate 03 nop(q1)
+%  Time 02:
+%    Gate 01 nop(q0)
+%    Gate 04 ZZ(q1,q2)
+%  Time 03:
+%    Gate 02 slash(q0)
+%    Gate 05 cnot(q2,q3)
+%  Time 04:
+%    Gate 06 nop(q2)
+%    Gate 08 dmeter(q3)
+%  Time 05:
+%    Gate 07 discard(q2)
+
+% Qubit circuit matrix:
+%
+% q0: gAA, gBA, gCA, n  , n  , n  
+% q1: gAB, gBB, n  , n  , n  , n  
+% q2: n  , gBC, gCC, gDC, gEC
+% q3: n  , n  , gCD, gDD, N  , N  
+
+\documentclass[11pt]{article}
+\input{xyqcirc.tex}
+
+% definitions for the circuit elements
+
+\def\gAA{*-{}\w\A{gAA}}
+\def\gBA{*-{}\w\A{gBA}}
+\def\gCA{\slash\w\A{gCA}}
+\def\gAB{*-{}\w\A{gAB}}
+\def\gBB{\b\w\A{gBB}}
+\def\gBC{\b\w\A{gBC}}
+\def\gCC{\b\w\A{gCC}}
+\def\gCD{\o\w\A{gCD}}
+\def\gDC{*-{}\w\A{gDC}}
+\def\gEC{\discard\w\A{gEC}}
+\def\gDD{\dmeter{}\w\A{gDD}}
+
+% definitions for bit labels and initial states
+
+\def\bA{\qv{q_{0}}{\psi}}
+\def\bB{\qv{q_{1}}{\psi}}
+\def\bC{\qv{q_{2}}{\phi}}
+\def\bD{\qv{q_{3}}{0}}
+
+% The quantum circuit as an xymatrix
+
+\xymatrix@R=5pt@C=10pt{
+    \bA & \gAA &\gBA &\gCA &\n   &\n   &\n  
+\\  \bB & \gAB &\gBB &\n   &\n   &\n   &\n  
+\\  \bC & \n   &\gBC &\gCC &\gDC &\gEC
+\\  \bD & \n   &\n   &\gCD &\gDD &\N   &\N  
+%
+% Vertical lines and other post-xymatrix latex
+%
+\ar@{-}"gBB";"gBC"
+\ar@{-}"gCD";"gCC"
+}
+
+\end{document}

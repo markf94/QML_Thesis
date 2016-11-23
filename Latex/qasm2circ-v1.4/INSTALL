@@ -1,0 +1,33 @@
+#
+# File:   qasm2circ/INSTALL
+# Date:   23-Mar-04
+# Author: I. Chuang <ichuang@mit.edu>
+#
+
+-----------------------------------------------------------------------------
+REQUIREMENTS:
+
+- latex2e with xypic (included in tetex)
+- python version 2.3 or greater
+- ghostscript (and epstopdf)
+- netpbm (for creation of png files)
+
+-----------------------------------------------------------------------------
+LIST OF FILES:
+
+ README		- this file
+ meter.epsf     - picture of measurement meter
+ qasm2pdf	- script to create PDF from QASM file
+ qasm2png	- script to create PNG from QASM file
+ qasm2tex.py	- main python program to convert QASM to latex file
+ samples	- directory containing examples
+ xyqcirc.tex	- latex macros necessary to compile the latex files
+
+-----------------------------------------------------------------------------
+INSTALLATION INSTRUCTIONS:
+
+untar/unzip this distribution; it creates the directory qasm2circ with
+all of the files.  Copy your qasm file into this directory, and run
+qasm2pdf or qasm2png to create the desired output.  You may also run
+"python qasm2tex.py foo.qasm" to generate just the tex file (it will
+appear on stdout).

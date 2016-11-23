@@ -1,0 +1,67 @@
+% 
+% File:	  test11.qasm
+% Date:	  22-Mar-04
+% Author: I. Chuang <ichuang@mit.edu>
+%
+% Sample qasm input file - user-defined 
+% multi-qubit ops
+% 
+% 	defbox	fx,2,0,'U_{f(x)}'
+% 	defbox	fxy,3,0,'U_{f(x,y)}'
+%   
+% 	qubit	q0
+% 	qubit	q1
+% 	qubit	q2
+% 
+% 	h	q0
+% 	fx	q0,q1
+% 	h	q1
+% 	fxy	q0,q1,q2
+% 
+
+%  Time 01:
+%    Gate 00 h(q0)
+%  Time 02:
+%    Gate 01 fx(q0,q1)
+%  Time 03:
+%    Gate 02 h(q1)
+%  Time 04:
+%    Gate 03 fxy(q0,q1,q2)
+
+% Qubit circuit matrix:
+%
+% q0: gAA, gBA, n  , gDA, n  
+% q1: n  , gBB, gCB, gDB, n  
+% q2: n  , n  , n  , gDC, n  
+
+\documentclass[11pt]{article}
+\input{xyqcirc.tex}
+
+% definitions for the circuit elements
+
+\def\gAA{\op{H}\w\A{gAA}}
+\def\gBA{\gnqubit{U_{f(x)}}{d}\w\A{gBA}}
+\def\gBB{\gspace{U_{f(x)}}\w\A{gBB}}
+\def\gCB{\op{H}\w\A{gCB}}
+\def\gDA{\gnqubit{U_{f(x,y)}}{dd}\w\A{gDA}}
+\def\gDB{\gspace{U_{f(x,y)}}\w\A{gDB}}
+\def\gDC{\gspace{U_{f(x,y)}}\w\A{gDC}}
+
+% definitions for bit labels and initial states
+
+\def\bA{ \q{q_{0}}}
+\def\bB{ \q{q_{1}}}
+\def\bC{ \q{q_{2}}}
+
+% The quantum circuit as an xymatrix
+
+\xymatrix@R=5pt@C=10pt{
+    \bA & \gAA &\gBA &\n   &\gDA &\n  
+\\  \bB & \n   &\gBB &\gCB &\gDB &\n  
+\\  \bC & \n   &\n   &\n   &\gDC &\n  
+%
+% Vertical lines and other post-xymatrix latex
+%
+}
+
+\end{document}

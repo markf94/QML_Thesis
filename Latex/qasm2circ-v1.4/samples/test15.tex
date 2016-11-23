@@ -1,0 +1,60 @@
+% 
+% File:	  test15.qasm
+% Date:	  24-Mar-04
+% Author: I. Chuang <ichuang@mit.edu>
+%
+% Sample qasm input file - "D-type" measurement
+% requested by Nielsen
+% 
+% 	def	MeasZ,0,'\dmeterwide{HZ_\theta}{18pt}'
+% 
+% 	qubit	q0,\psi
+% 	qubit	q1,+
+% 
+% 	nop	q0
+% 	ZZ	q0,q1
+% 	nop	q0
+% 	MeasZ	q0
+
+%  Time 01:
+%    Gate 00 nop(q0)
+%  Time 02:
+%    Gate 01 ZZ(q0,q1)
+%  Time 03:
+%    Gate 02 nop(q0)
+%  Time 04:
+%    Gate 03 MeasZ(q0)
+
+% Qubit circuit matrix:
+%
+% q0: gAA, gBA, gCA, gDA, N  
+% q1: n  , gBB, n  , n  , n  
+
+\documentclass[11pt]{article}
+\input{xyqcirc.tex}
+
+% definitions for the circuit elements
+
+\def\gAA{*-{}\w\A{gAA}}
+\def\gBA{\b\w\A{gBA}}
+\def\gBB{\b\w\A{gBB}}
+\def\gCA{*-{}\w\A{gCA}}
+\def\gDA{\dmeterwide{HZ_\theta}{18pt}\w\A{gDA}}
+
+% definitions for bit labels and initial states
+
+\def\bA{\qv{q_{0}}{\psi}}
+\def\bB{\qv{q_{1}}{+}}
+
+% The quantum circuit as an xymatrix
+
+\xymatrix@R=5pt@C=10pt{
+    \bA & \gAA &\gBA &\gCA &\gDA &\N  
+\\  \bB & \n   &\gBB &\n   &\n   &\n  
+%
+% Vertical lines and other post-xymatrix latex
+%
+\ar@{-}"gBA";"gBB"
+}
+
+\end{document}

@@ -1,0 +1,142 @@
+% 
+% File:	  test13.qasm
+% Date:	  22-Mar-04
+% Author: I. Chuang <ichuang@mit.edu>
+%
+% Sample qasm input file - three-qubit phase
+% estimation circuit with QFT and controlled-U
+% 
+% 	defbox	CU,3,1,'U'
+% 	defbox	CU2,3,1,'U^2'
+% 	defbox	CU4,3,1,'U^4'
+% 	def	c-S,1,'S'
+% 	def	c-T,1,'T'
+% 
+% 	qubit	j0,0	% QFT qubits
+% 	qubit	j1,0
+% 	qubit	j2,0
+% 	qubit	s0	% U qubits
+% 	qubit	s1
+% 
+% 	h	j0	% equal superposition
+% 	h	j1
+% 	h	j2
+% 
+% 	CU4	j0,s0,s1	% controlled-U
+% 	CU2	j1,s0,s1
+% 	CU	j2,s0,s1
+% 
+% 	h	j0	% QFT
+% 	c-S	j0,j1
+% 	h	j1
+% 	nop	j0
+% 	c-T	j0,j2
+% 	c-S	j1,j2
+% 	h	j2
+% 	nop	j0
+% 	nop	j0
+% 	nop	j1
+% 	
+% 	measure	j0	% final measurement
+% 	measure	j1	
+% 	measure	j2	
+
+%  Time 01:
+%    Gate 00 h(j0)
+%    Gate 01 h(j1)
+%    Gate 02 h(j2)
+%  Time 02:
+%    Gate 03 CU4(j0,s0,s1)
+%  Time 03:
+%    Gate 04 CU2(j1,s0,s1)
+%    Gate 06 h(j0)
+%  Time 04:
+%    Gate 05 CU(j2,s0,s1)
+%    Gate 07 c-S(j0,j1)
+%  Time 05:
+%    Gate 08 h(j1)
+%    Gate 09 nop(j0)
+%  Time 06:
+%    Gate 10 c-T(j0,j2)
+%  Time 07:
+%    Gate 11 c-S(j1,j2)
+%    Gate 13 nop(j0)
+%  Time 08:
+%    Gate 12 h(j2)
+%    Gate 14 nop(j0)
+%    Gate 15 nop(j1)
+%  Time 09:
+%    Gate 16 measure(j0)
+%    Gate 17 measure(j1)
+%    Gate 18 measure(j2)
+
+% Qubit circuit matrix:
+%
+% j0: gAA, gBA, gCA, gDA, gEA, gFA, gGA, gHA, gIA, N  
+% j1: gAB, n  , gCB, gDB, gEB, n  , gGB, gHB, gIB, N  
+% j2: gAC, n  , n  , gDC, n  , gFC, gGC, gHC, gIC, N  
+% s0: n  , gBD, gCD, gDD, n  , n  , n  , n  , n  , n  
+% s1: n  , gBE, gCE, gDE, n  , n  , n  , n  , n  , n  
+
+\documentclass[11pt]{article}
+\input{xyqcirc.tex}
+
+% definitions for the circuit elements
+
+\def\gAA{\op{H}\w\A{gAA}}
+\def\gAB{\op{H}\w\A{gAB}}
+\def\gAC{\op{H}\w\A{gAC}}
+\def\gBD{\gnqubit{U^4}{d}\w\A{gBD}}
+\def\gBE{\gspace{U^4}\w\A{gBE}}
+\def\gBA{\b\w\A{gBA}}
+\def\gCD{\gnqubit{U^2}{d}\w\A{gCD}}
+\def\gCE{\gspace{U^2}\w\A{gCE}}
+\def\gCB{\b\w\A{gCB}}
+\def\gDD{\gnqubit{U}{d}\w\A{gDD}}
+\def\gDE{\gspace{U}\w\A{gDE}}
+\def\gDC{\b\w\A{gDC}}
+\def\gCA{\op{H}\w\A{gCA}}
+\def\gDA{\b\w\A{gDA}}
+\def\gDB{\op{S}\w\A{gDB}}
+\def\gEB{\op{H}\w\A{gEB}}
+\def\gEA{*-{}\w\A{gEA}}
+\def\gFA{\b\w\A{gFA}}
+\def\gFC{\op{T}\w\A{gFC}}
+\def\gGB{\b\w\A{gGB}}
+\def\gGC{\op{S}\w\A{gGC}}
+\def\gHC{\op{H}\w\A{gHC}}
+\def\gGA{*-{}\w\A{gGA}}
+\def\gHA{*-{}\w\A{gHA}}
+\def\gHB{*-{}\w\A{gHB}}
+\def\gIA{\meter\w\A{gIA}}
+\def\gIB{\meter\w\A{gIB}}
+\def\gIC{\meter\w\A{gIC}}
+
+% definitions for bit labels and initial states
+
+\def\bA{\qv{j_{0}}{0}}
+\def\bB{\qv{j_{1}}{0}}
+\def\bC{\qv{j_{2}}{0}}
+\def\bD{ \q{s_{0}}}
+\def\bE{ \q{s_{1}}}
+
+% The quantum circuit as an xymatrix
+
+\xymatrix@R=5pt@C=10pt{
+    \bA & \gAA &\gBA &\gCA &\gDA &\gEA &\gFA &\gGA &\gHA &\gIA &\N  
+\\  \bB & \gAB &\n   &\gCB &\gDB &\gEB &\n   &\gGB &\gHB &\gIB &\N  
+\\  \bC & \gAC &\n   &\n   &\gDC &\n   &\gFC &\gGC &\gHC &\gIC &\N  
+\\  \bD & \n   &\gBD &\gCD &\gDD &\n   &\n   &\n   &\n   &\n   &\n  
+\\  \bE & \n   &\gBE &\gCE &\gDE &\n   &\n   &\n   &\n   &\n   &\n  
+%
+% Vertical lines and other post-xymatrix latex
+%
+\ar@{-}"gBD";"gBA"
+\ar@{-}"gCD";"gCB"
+\ar@{-}"gDD";"gDC"
+\ar@{-}"gDB";"gDA"
+\ar@{-}"gFC";"gFA"
+\ar@{-}"gGC";"gGB"
+}
+
+\end{document}

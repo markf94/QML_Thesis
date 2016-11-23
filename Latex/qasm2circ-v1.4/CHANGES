@@ -1,0 +1,45 @@
+#
+# File:   qasm2circ/CHANGES
+# Date:   23-Mar-04
+# Author: I. Chuang <ichuang@mit.edu>
+#
+# Log of changes to the qasm2circ procedural quantum circuit drawing package
+
+-----------------------------------------------------------------------------
+23-Mar-04
+-----------------------------------------------------------------------------
+
+v1.0 released
+
+native gate operations: cnot, c-z, c-x, measure, h, H, X, Y, Z, nop, toffoli
+
+-----------------------------------------------------------------------------
+24-Mar-04
+-----------------------------------------------------------------------------
+
+v1.1 released
+
+added multiple-qubit controlled multi-qubit operations
+new examples: test9-test14, including QFT and 3-qubit FT QEC
+added swap, S, T, space, Utwo
+
+-----------------------------------------------------------------------------
+24-Mar-04
+-----------------------------------------------------------------------------
+
+v1.2 released
+
+added dmeter, discard, slash, ZZ
+new examples: test15-17
+
+-----------------------------------------------------------------------------
+25-Mar-04
+-----------------------------------------------------------------------------
+
+v1.3 released
+
+switched ZZ to using filled circles; created SS, which uses open squares.
+for user-defined controlled single qubit ops, 'bullet' is now handled
+specially, as a target op.
+
+new example: test18

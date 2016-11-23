@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  22 NOV 2016 18:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  23 NOV 2016 13:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1327,7 +1327,7 @@ Overfull \hbox (0.4pt too wide) in paragraph at lines 167--167
 Missing character: There is no Ã in font cmss10!
 Missing character: There is no ¨ in font cmss10!
 )
-Overfull \hbox (0.4pt too wide) in paragraph at lines 188--188
+Overfull \hbox (0.4pt too wide) in paragraph at lines 189--189
 [][]  
  []
 
@@ -1343,7 +1343,7 @@ File: knn-concept.png Graphic file (type png)
 Package pdftex.def Info: knn-concept.png used on input line 9.
 (pdftex.def)             Requested size: 153.64493pt x 115.23296pt.
 )
-Overfull \hbox (0.4pt too wide) in paragraph at lines 210--210
+Overfull \hbox (0.4pt too wide) in paragraph at lines 211--211
 [][]  
  []
 
@@ -1353,210 +1353,227 @@ Overfull \hbox (0.4pt too wide) in paragraph at lines 210--210
 \openout4 = `demo.vrb'.
 
  (./demo.vrb)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 230--230
+Overfull \hbox (0.4pt too wide) in paragraph at lines 248--248
 [][]  
  []
 
 [11
 
-] [12
+]
+\openout4 = `demo.vrb'.
+
+ (./demo.vrb)
+Overfull \hbox (0.4pt too wide) in paragraph at lines 286--286
+[][]  
+ []
+
+[12
+
+] [13
 
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/sc' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 246.
+(Font)              using `OT1/cmss/bx/n' instead on input line 307.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 246.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 307.
 
 
-Overfull \hbox (0.4pt too wide) in paragraph at lines 246--246
-[][]  
- []
-
-[13
-
-]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 256--256
+Overfull \hbox (0.4pt too wide) in paragraph at lines 307--307
 [][]  
  []
 
 [14
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 268--268
+Overfull \hbox (0.4pt too wide) in paragraph at lines 318--318
 [][]  
  []
 
 [15
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 278--278
+Overfull \hbox (0.4pt too wide) in paragraph at lines 334--334
 [][]  
  []
 
 [16
 
-] [17
+]
+Overfull \hbox (0.4pt too wide) in paragraph at lines 352--352
+[][]  
+ []
+
+[17
 
 ]
-\openout4 = `demo.vrb'.
-
- (./demo.vrb)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 294--294
+Overfull \hbox (0.4pt too wide) in paragraph at lines 362--362
 [][]  
  []
 
 [18
 
-]
-
-LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 312.
-
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 312.
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/it' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 312.
-
-
-Overfull \hbox (0.4pt too wide) in paragraph at lines 312--312
-[][]  
- []
-
-[19
+] [19
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 335--335
+\openout4 = `demo.vrb'.
+
+ (./demo.vrb)
+Overfull \hbox (0.4pt too wide) in paragraph at lines 378--378
 [][]  
  []
 
 [20
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 342--342
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/bx/n' instead on input line 396.
+
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 396.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/it' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 396.
+
+
+Overfull \hbox (0.4pt too wide) in paragraph at lines 396--396
 [][]  
  []
 
 [21
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 342--342
+Overfull \hbox (0.4pt too wide) in paragraph at lines 419--419
 [][]  
  []
 
 [22
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 342--342
+Overfull \hbox (0.4pt too wide) in paragraph at lines 426--426
 [][]  
  []
 
 [23
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 342--342
+Overfull \hbox (0.4pt too wide) in paragraph at lines 426--426
 [][]  
  []
 
 [24
 
 ]
-\c@density=\count188
-
-Overfull \hbox (0.4pt too wide) in paragraph at lines 368--368
+Overfull \hbox (0.4pt too wide) in paragraph at lines 426--426
 [][]  
  []
 
 [25
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 383--383
+Overfull \hbox (0.4pt too wide) in paragraph at lines 426--426
 [][]  
  []
 
 [26
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 419--419
+\c@density=\count188
+
+Overfull \hbox (0.4pt too wide) in paragraph at lines 452--452
 [][]  
  []
 
 [27
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 424--424
+Overfull \hbox (0.4pt too wide) in paragraph at lines 467--467
 [][]  
  []
 
 [28
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 440--440
+Overfull \hbox (0.4pt too wide) in paragraph at lines 503--503
 [][]  
  []
 
 [29
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 461--461
+Overfull \hbox (0.4pt too wide) in paragraph at lines 508--508
 [][]  
  []
 
 [30
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 466--466
+Overfull \hbox (0.4pt too wide) in paragraph at lines 524--524
 [][]  
  []
 
 [31
 
-] [32
+]
+Overfull \hbox (0.4pt too wide) in paragraph at lines 545--545
+[][]  
+ []
+
+[32
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 473--473
+Overfull \hbox (0.4pt too wide) in paragraph at lines 550--550
 [][]  
  []
 
 [33
 
+] [34
+
 ]
-
-LaTeX Warning: Citation `knuth92' on page 34 undefined on input line 477.
-
-
-LaTeX Warning: Citation `ConcreteMath' on page 34 undefined on input line 477.
-
-
-LaTeX Warning: Citation `Simpson' on page 34 undefined on input line 477.
-
-
-LaTeX Warning: Citation `Er01' on page 34 undefined on input line 477.
-
-
-LaTeX Warning: Citation `greenwade93' on page 34 undefined on input line 477.
-
-
-Overfull \hbox (0.4pt too wide) in paragraph at lines 477--477
+Overfull \hbox (0.4pt too wide) in paragraph at lines 557--557
 [][]  
  []
 
-[34
+[35
 
-] [35
+]
+
+LaTeX Warning: Citation `knuth92' on page 36 undefined on input line 561.
+
+
+LaTeX Warning: Citation `ConcreteMath' on page 36 undefined on input line 561.
+
+
+LaTeX Warning: Citation `Simpson' on page 36 undefined on input line 561.
+
+
+LaTeX Warning: Citation `Er01' on page 36 undefined on input line 561.
+
+
+LaTeX Warning: Citation `greenwade93' on page 36 undefined on input line 561.
+
+
+Overfull \hbox (0.4pt too wide) in paragraph at lines 561--561
+[][]  
+ []
+
+[36
+
+] [37
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\translate ' on input line 484.
+(hyperref)                removing `\translate ' on input line 568.
 
 \openout4 = `demo.vrb'.
 
-(./demo.vrb) [36
+(./demo.vrb) [38
 
-] (./demo.bbl) [37
+] (./demo.bbl) [39
 
  </usr/share/texlive/texmf-dist/tex/latex/beamer/art/beamericonarticle.pdf>]
 \tf@nav=\write6
@@ -1568,11 +1585,11 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 \tf@snm=\write8
 \openout8 = `demo.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 497.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 497.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 581.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 581.
  (./demo.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 497.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 497.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 581.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 581.
 Package rerunfilecheck Info: File `demo.out' has not changed.
 (rerunfilecheck)             Checksum: A8B5D9699D45E4EDB9B5BC6DF1D04B18;265.
 
@@ -1589,13 +1606,13 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 497.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 581.
  ) 
 Here is how much of TeX's memory you used:
- 32288 strings out of 493029
- 774073 string characters out of 6136235
- 960942 words of memory out of 5000000
- 35047 multiletter control sequences out of 15000+600000
+ 32298 strings out of 493029
+ 774161 string characters out of 6136235
+ 961043 words of memory out of 5000000
+ 35051 multiletter control sequences out of 15000+600000
  16362 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,18n,102p,1750b,2116s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1617,10 +1634,10 @@ re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on demo.pdf (37 pages, 344714 bytes).
+Output written on demo.pdf (39 pages, 349768 bytes).
 PDF statistics:
- 359 PDF objects out of 1000 (max. 8388607)
- 285 compressed objects within 3 object streams
- 82 named destinations out of 1000 (max. 500000)
+ 370 PDF objects out of 1000 (max. 8388607)
+ 294 compressed objects within 3 object streams
+ 86 named destinations out of 1000 (max. 500000)
  93 words of extra memory for PDF output out of 10000 (max. 10000000)
 

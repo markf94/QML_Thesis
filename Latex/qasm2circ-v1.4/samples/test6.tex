@@ -1,0 +1,76 @@
+% 
+% File:	  test6.qasm
+% Date:	  22-Mar-04
+% Author: I. Chuang <ichuang@mit.edu>
+%
+% Sample qasm input file - demonstrate
+% multiple-qubit controlled single-q-gates
+% 
+% 	def	c-U,3,'U'
+% 
+% 	qubit	j0
+% 	qubit	j1
+% 	qubit	j2
+% 	qubit	j3
+% 
+% 	toffoli	j0,j1,j2
+% 	X	j0
+% 	c-U	j2,j3,j0,j1
+% 	H	j2
+% 	measure	j3
+
+%  Time 01:
+%    Gate 00 toffoli(j0,j1,j2)
+%  Time 02:
+%    Gate 01 X(j0)
+%  Time 03:
+%    Gate 02 c-U(j2,j3,j0,j1)
+%  Time 04:
+%    Gate 03 H(j2)
+%    Gate 04 measure(j3)
+
+% Qubit circuit matrix:
+%
+% j0: gAA, gBA, gCA, n  , n  
+% j1: gAB, n  , gCB, n  , n  
+% j2: gAC, n  , gCC, gDC, n  
+% j3: n  , n  , gCD, gDD, N  
+
+\documentclass[11pt]{article}
+\input{xyqcirc.tex}
+
+% definitions for the circuit elements
+
+\def\gAA{\b\w\A{gAA}}
+\def\gAB{\b\w\A{gAB}}
+\def\gAC{\o\w\A{gAC}}
+\def\gBA{\op{X}\w\A{gBA}}
+\def\gCC{\b\w\A{gCC}}
+\def\gCD{\b\w\A{gCD}}
+\def\gCA{\b\w\A{gCA}}
+\def\gCB{\op{U}\w\A{gCB}}
+\def\gDC{\op{H}\w\A{gDC}}
+\def\gDD{\meter\w\A{gDD}}
+
+% definitions for bit labels and initial states
+
+\def\bA{ \q{j_{0}}}
+\def\bB{ \q{j_{1}}}
+\def\bC{ \q{j_{2}}}
+\def\bD{ \q{j_{3}}}
+
+% The quantum circuit as an xymatrix
+
+\xymatrix@R=5pt@C=10pt{
+    \bA & \gAA &\gBA &\gCA &\n   &\n  
+\\  \bB & \gAB &\n   &\gCB &\n   &\n  
+\\  \bC & \gAC &\n   &\gCC &\gDC &\n  
+\\  \bD & \n   &\n   &\gCD &\gDD &\N  
+%
+% Vertical lines and other post-xymatrix latex
+%
+\ar@{-}"gAC";"gAA"\ar@{-}"gAC";"gAB"
+\ar@{-}"gCB";"gCC"\ar@{-}"gCB";"gCD"\ar@{-}"gCB";"gCA"
+}
+
+\end{document}

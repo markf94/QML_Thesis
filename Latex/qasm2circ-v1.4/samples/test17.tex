@@ -1,0 +1,81 @@
+% 
+% File:	  test17.qasm
+% Date:	  24-Mar-04
+% Author: I. Chuang <ichuang@mit.edu>
+%
+% Sample qasm input file - example from Nielsen
+% paper on cluster states
+% 
+% 	def	MeasH,0,'\dmeter{H}'
+% 
+% 	qubit	q0,\psi
+% 	qubit	q1,+
+% 	qubit	q2,+
+% 	qubit	q3,\phi
+% 
+% 	nop	q0
+% 	nop	q2
+% 	ZZ	q0,q1
+% 	ZZ	q2,q3
+% 	ZZ	q1,q2
+% 	MeasH	q1
+% 	MeasH	q2
+
+%  Time 01:
+%    Gate 00 nop(q0)
+%    Gate 01 nop(q2)
+%  Time 02:
+%    Gate 02 ZZ(q0,q1)
+%    Gate 03 ZZ(q2,q3)
+%  Time 03:
+%    Gate 04 ZZ(q1,q2)
+%  Time 04:
+%    Gate 05 MeasH(q1)
+%    Gate 06 MeasH(q2)
+
+% Qubit circuit matrix:
+%
+% q0: gAA, gBA, n  , n  , n  
+% q1: n  , gBB, gCB, gDB, N  
+% q2: gAC, gBC, gCC, gDC, N  
+% q3: n  , gBD, n  , n  , n  
+
+\documentclass[11pt]{article}
+\input{xyqcirc.tex}
+
+% definitions for the circuit elements
+
+\def\gAA{*-{}\w\A{gAA}}
+\def\gAC{*-{}\w\A{gAC}}
+\def\gBA{\b\w\A{gBA}}
+\def\gBB{\b\w\A{gBB}}
+\def\gBC{\b\w\A{gBC}}
+\def\gBD{\b\w\A{gBD}}
+\def\gCB{\b\w\A{gCB}}
+\def\gCC{\b\w\A{gCC}}
+\def\gDB{\dmeter{H}\w\A{gDB}}
+\def\gDC{\dmeter{H}\w\A{gDC}}
+
+% definitions for bit labels and initial states
+
+\def\bA{\qv{q_{0}}{\psi}}
+\def\bB{\qv{q_{1}}{+}}
+\def\bC{\qv{q_{2}}{+}}
+\def\bD{\qv{q_{3}}{\phi}}
+
+% The quantum circuit as an xymatrix
+
+\xymatrix@R=5pt@C=10pt{
+    \bA & \gAA &\gBA &\n   &\n   &\n  
+\\  \bB & \n   &\gBB &\gCB &\gDB &\N  
+\\  \bC & \gAC &\gBC &\gCC &\gDC &\N  
+\\  \bD & \n   &\gBD &\n   &\n   &\n  
+%
+% Vertical lines and other post-xymatrix latex
+%
+\ar@{-}"gBA";"gBB"
+\ar@{-}"gBC";"gBD"
+\ar@{-}"gCB";"gCC"
+}
+
+\end{document}

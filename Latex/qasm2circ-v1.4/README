@@ -1,0 +1,142 @@
+#
+# File:   qasm2circ/README
+# Date:   23-Mar-04
+# Author: I. Chuang <ichuang@mit.edu>
+#
+# 23-mar-04: qasm2circ package Version 1.0
+# 24-mar-04: qasm2circ package Version 1.1
+
+QASM is a simple text-format language for describing acyclic quantum
+circuits composed from single qubit and multiply controlled
+single-qubit gates.
+
+qasm2circ is a package which converts a QASM file into a graphical
+depiction of the quantum circuit, using standard quantum gate symbols
+(and other user-defined symbols).  This is done using latex
+(specifically, xypic), to produce high-quality output in epsf, pdf,
+or png formats.  
+
+Figures of quantum circuits in the book "Quantum Computation and
+Quantum Information," by Nielsen and Chuang, were produced using an
+earlier version of this package.
+
+-----------------------------------------------------------------------------
+REQUIREMENTS:
+
+- latex2e with xypic (included in tetex)
+- python version 2.3 or greater
+- ghostscript (and epstopdf)
+- netpbm (for creation of png files)
+
+-----------------------------------------------------------------------------
+USAGE:
+
+qasm2pdf <qasmfile>
+qasm2png <qasmfile>
+
+Example: qasm2pdf test2.qasm
+
+-----------------------------------------------------------------------------
+
+See example files in the "samples" subdirectory.
+
+-----------------------------------------------------------------------------
+QASM FORMAT SPECIFICATION:
+
+QASM files contain comments and instructions in the following format.
+Lines begining with '#' are comments.  All other lines should be of
+the form <b>op<b>args where <b> is whitespace, and op-args pairs are:
+
+ qubit   name,initval
+ cbit    name,initval
+ measure qubit
+ H       qubit
+ X       qubit
+ Y       qubit
+ Z       qubit
+ S       qubit
+ T       qubit
+ nop     qubit
+ zero    qubit
+ discard qubit
+ slash   qubit
+ dmeter  qubit
+ cnot    ctrl,target
+ c-z     ctrl,target
+ c-x     ctrl,target
+ toffoli ctrl1,ctrl2,target
+ ZZ      b1,b2
+ SS      b1,b2
+ swap    b1,b2
+ Utwo    b1,b2
+ space   qubit
+ def     opname,nctrl,texsym
+ defbox  opname,nbits,nctrl,texsym
+
+ Where:
+
+ def     - define a custom controlled single-qubit operation, with
+           opname  = name of gate operation
+           nctrl   = number of control qubits
+           texsym  = latex symbol for the target qubit operation
+ defbox  - define a custom muti-qubit-controlled multi-qubit operation, with
+           opname  = name of gate operation
+           nbits   = number of qubits it acts upon
+           nctrl   = number of control qubits
+           texsym  = latex symbol for the target qubit operation
+ qubit   - define a qubit with a certain name (all qubits must be defined)
+           name    = name of the qubit, eg q0 or j2 etc
+           initval = initial value (optional), eg 0
+ cbit    - define a cbit with a certain name (all cbits must be defined)
+           name    = name of the cbit, eg c0
+           initval = initial value (optional), eg 0
+ H       - single qubit operator ("hadamard")
+ X       - single qubit operator 
+ Y       - single qubit operator 
+ Z       - single qubit operator
+ S       - single qubit operator
+ T       - single qubit operator
+ nop     - single qubit operator, just a wire
+ space   - single qubit operator, just an empty space
+ dmeter  - measure qubit, showing "D" style meter instead of rectangular box
+ zero    - replaces qubit with |0> state
+ discard - discard qubit (put "|" vertical bar on qubit wire)
+ slash   - put slash on qubit wire
+ measure - measurement of qubit, gives classical bit (double-wire) output
+ cnot    - two-qubit CNOT
+ c-z     - two-qubit controlled-Z gate
+ c-x     - two-qubit controlled-X gate
+ swap    - two-qubit swap operation 
+ Utwo    - two-qubit operation U
+ ZZ      - two-qubit controlled-Z gate, symmetric notation; two filled circles
+ SS      - two-qubit gate, symmetric; open squares
+ toffoli - three-qubit Toffoli gate
+
+-----------------------------------------------------------------------------
+LIST OF FILES:
+
+ README		- this file
+ meter.epsf     - picture of measurement meter
+ qasm2pdf	- script to create PDF from QASM file
+ qasm2png	- script to create PNG from QASM file
+ qasm2tex.py	- main python program to convert QASM to latex file
+ samples	- directory containing examples
+ xyqcirc.tex	- latex macros necessary to compile the latex files
+
+-----------------------------------------------------------------------------
+
+Copyright (c) 2004 Isaac L. Chuang <ichuang@mit.edu>
+
+qasm2circ is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+qasm2circ is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with qasm2circ; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA

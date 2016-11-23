@@ -1,0 +1,198 @@
+% 
+% File:	  test14.qasm
+% Date:	  22-Mar-04
+% Author: I. Chuang <ichuang@mit.edu>
+%
+% Sample qasm input file - three-qubit FT QEC
+% circuit with syndrome measurement
+% 
+% 	defbox	synd,4,0,'\txt{Process\\Syndrome}'
+% 	defbox	rop,7,4,'{\cal R}'
+% 
+% 	qubit	q0	% code data qubits
+% 	qubit	q1
+% 	qubit	q2
+% 	qubit	s0,0	% syndrome measurement qubits
+% 	qubit	s1,0
+% 	cbit	c0,0	% classical bits to store syndromes
+% 	cbit	c1,0
+% 
+% 	h	s0	% create EPR pair for FT meas
+% 	cnot	s0,s1
+% 	cnot	q0,s0	% measure parity of q0,q1
+% 	nop	s1	% prevent cnot's from colliding
+% 	cnot	q1,s1
+% 	cnot	s0,s1	% uncreate EPR
+% 	h	s0
+% 	measure	s0	% measure syndrome qubits
+% 	nop	s1
+% 	measure s1
+% 	cnot	s0,c0	% copy to classical bits
+% 	nop	s1
+% 	cnot	s1,c1
+% 	space	s0
+% 
+% 	zero	s0
+% 	zero	s1
+% 	h	s0	% create EPR pair for FT meas
+% 	cnot	s0,s1
+% 	cnot	q1,s0	% measure parity of q1,q2
+% 	nop	s1	% prevent cnot's from colliding
+% 	cnot	q2,s1
+% 	cnot	s0,s1	% uncreate EPR
+% 	h	s0
+% 	measure	s0	% measure syndrome qubits
+% 	nop	s1
+% 	measure s1
+% 
+% 	synd	s0,s1,c0,c1
+% 	rop	s0,s1,c0,c1,q0,q1,q2
+
+%  Time 01:
+%    Gate 00 h(s0)
+%  Time 02:
+%    Gate 01 cnot(s0,s1)
+%  Time 03:
+%    Gate 02 cnot(q0,s0)
+%    Gate 03 nop(s1)
+%  Time 04:
+%    Gate 04 cnot(q1,s1)
+%  Time 05:
+%    Gate 05 cnot(s0,s1)
+%  Time 06:
+%    Gate 06 h(s0)
+%    Gate 08 nop(s1)
+%  Time 07:
+%    Gate 07 measure(s0)
+%    Gate 09 measure(s1)
+%  Time 08:
+%    Gate 10 cnot(s0,c0)
+%    Gate 11 nop(s1)
+%  Time 09:
+%    Gate 12 cnot(s1,c1)
+%    Gate 13 space(s0)
+%  Time 10:
+%    Gate 14 zero(s0)
+%    Gate 15 zero(s1)
+%  Time 11:
+%    Gate 16 h(s0)
+%  Time 12:
+%    Gate 17 cnot(s0,s1)
+%  Time 13:
+%    Gate 18 cnot(q1,s0)
+%    Gate 19 nop(s1)
+%  Time 14:
+%    Gate 20 cnot(q2,s1)
+%  Time 15:
+%    Gate 21 cnot(s0,s1)
+%  Time 16:
+%    Gate 22 h(s0)
+%    Gate 24 nop(s1)
+%  Time 17:
+%    Gate 23 measure(s0)
+%    Gate 25 measure(s1)
+%  Time 18:
+%    Gate 26 synd(s0,s1,c0,c1)
+%  Time 19:
+%    Gate 27 rop(s0,s1,c0,c1,q0,q1,q2)
+
+% Qubit circuit matrix:
+%
+% q0: n  , n  , gCA, n  , n  , n  , n  , n  , n  , n  , n  , n  , n  , n  , n  , n  , n  , n  , gSA, n  
+% q1: n  , n  , n  , gDB, n  , n  , n  , n  , n  , n  , n  , n  , gMB, n  , n  , n  , n  , n  , gSB, n  
+% q2: n  , n  , n  , n  , n  , n  , n  , n  , n  , n  , n  , n  , n  , gNC, n  , n  , n  , n  , gSC, n  
+% s0: gAD, gBD, gCD, n  , gED, gFD, gGD, gHD, gID, gJD, gKD, gLD, gMD, n  , gOD, gPD, gQD, gRD, gSD, N  
+% s1: n  , gBE, gCE, gDE, gEE, gFE, gGE, gHE, gIE, gJE, n  , gLE, gME, gNE, gOE, gPE, gQE, gRE, gSE, N  
+% c0: N  , N  , N  , N  , N  , N  , N  , gHF, N  , N  , N  , N  , N  , N  , N  , N  , N  , gRF, gSF, N  
+% c1: N  , N  , N  , N  , N  , N  , N  , N  , gIG, N  , N  , N  , N  , N  , N  , N  , N  , gRG, gSG, N  
+
+\documentclass[11pt]{article}
+\input{xyqcirc.tex}
+
+% definitions for the circuit elements
+
+\def\gAD{\op{H}\w\A{gAD}}
+\def\gBD{\b\w\A{gBD}}
+\def\gBE{\o\w\A{gBE}}
+\def\gCA{\b\w\A{gCA}}
+\def\gCD{\o\w\A{gCD}}
+\def\gCE{*-{}\w\A{gCE}}
+\def\gDB{\b\w\A{gDB}}
+\def\gDE{\o\w\A{gDE}}
+\def\gED{\b\w\A{gED}}
+\def\gEE{\o\w\A{gEE}}
+\def\gFD{\op{H}\w\A{gFD}}
+\def\gGD{\meter\w\A{gGD}}
+\def\gFE{*-{}\w\A{gFE}}
+\def\gGE{\meter\w\A{gGE}}
+\def\gHD{\b\W\A{gHD}}
+\def\gHF{\o\W\A{gHF}}
+\def\gHE{*-{}\W\A{gHE}}
+\def\gIE{\b\W\A{gIE}}
+\def\gIG{\o\W\A{gIG}}
+\def\gID{\A{gID}}
+\def\gJD{\z\A{gJD}}
+\def\gJE{\z\A{gJE}}
+\def\gKD{\op{H}\w\A{gKD}}
+\def\gLD{\b\w\A{gLD}}
+\def\gLE{\o\w\A{gLE}}
+\def\gMB{\b\w\A{gMB}}
+\def\gMD{\o\w\A{gMD}}
+\def\gME{*-{}\w\A{gME}}
+\def\gNC{\b\w\A{gNC}}
+\def\gNE{\o\w\A{gNE}}
+\def\gOD{\b\w\A{gOD}}
+\def\gOE{\o\w\A{gOE}}
+\def\gPD{\op{H}\w\A{gPD}}
+\def\gQD{\meter\w\A{gQD}}
+\def\gPE{*-{}\w\A{gPE}}
+\def\gQE{\meter\w\A{gQE}}
+\def\gRD{\gnqubit{\txt{Process\\Syndrome}}{ddd}\W\A{gRD}}
+\def\gRE{\gspace{\txt{Process\\Syndrome}}\W\A{gRE}}
+\def\gRF{\gspace{\txt{Process\\Syndrome}}\W\A{gRF}}
+\def\gRG{\gspace{\txt{Process\\Syndrome}}\W\A{gRG}}
+\def\gSA{\gnqubit{{\cal R}}{dd}\w\A{gSA}}
+\def\gSB{\gspace{{\cal R}}\w\A{gSB}}
+\def\gSC{\gspace{{\cal R}}\w\A{gSC}}
+\def\gSD{\b\W\A{gSD}}
+\def\gSE{\b\W\A{gSE}}
+\def\gSF{\b\W\A{gSF}}
+\def\gSG{\b\W\A{gSG}}
+
+% definitions for bit labels and initial states
+
+\def\bA{ \q{q_{0}}}
+\def\bB{ \q{q_{1}}}
+\def\bC{ \q{q_{2}}}
+\def\bD{\qv{s_{0}}{0}}
+\def\bE{\qv{s_{1}}{0}}
+\def\bF{   {c_{0} = 0}}
+\def\bG{   {c_{1} = 0}}
+
+% The quantum circuit as an xymatrix
+
+\xymatrix@R=5pt@C=10pt{
+    \bA & \n   &\n   &\gCA &\n   &\n   &\n   &\n   &\n   &\n   &\n   &\n   &\n   &\n   &\n   &\n   &\n   &\n   &\n   &\gSA &\n  
+\\  \bB & \n   &\n   &\n   &\gDB &\n   &\n   &\n   &\n   &\n   &\n   &\n   &\n   &\gMB &\n   &\n   &\n   &\n   &\n   &\gSB &\n  
+\\  \bC & \n   &\n   &\n   &\n   &\n   &\n   &\n   &\n   &\n   &\n   &\n   &\n   &\n   &\gNC &\n   &\n   &\n   &\n   &\gSC &\n  
+\\  \bD & \gAD &\gBD &\gCD &\n   &\gED &\gFD &\gGD &\gHD &\gID &\gJD &\gKD &\gLD &\gMD &\n   &\gOD &\gPD &\gQD &\gRD &\gSD &\N  
+\\  \bE & \n   &\gBE &\gCE &\gDE &\gEE &\gFE &\gGE &\gHE &\gIE &\gJE &\n   &\gLE &\gME &\gNE &\gOE &\gPE &\gQE &\gRE &\gSE &\N  
+\\  \bF & \N   &\N   &\N   &\N   &\N   &\N   &\N   &\gHF &\N   &\N   &\N   &\N   &\N   &\N   &\N   &\N   &\N   &\gRF &\gSF &\N  
+\\  \bG & \N   &\N   &\N   &\N   &\N   &\N   &\N   &\N   &\gIG &\N   &\N   &\N   &\N   &\N   &\N   &\N   &\N   &\gRG &\gSG &\N  
+%
+% Vertical lines and other post-xymatrix latex
+%
+\ar@{-}"gBE";"gBD"
+\ar@{-}"gCD";"gCA"
+\ar@{-}"gDE";"gDB"
+\ar@{-}"gEE";"gED"
+\ar@{=}"gHF";"gHD"
+\ar@{=}"gIG";"gIE"
+\ar@{-}"gLE";"gLD"
+\ar@{-}"gMD";"gMB"
+\ar@{-}"gNE";"gNC"
+\ar@{-}"gOE";"gOD"
+\ar@{=}"gSC";"gSD"\ar@{=}"gSC";"gSE"\ar@{=}"gSC";"gSF"\ar@{=}"gSC";"gSG"
+}
+
+\end{document}

@@ -1,0 +1,51 @@
+% 
+% File:	  test5.qasm
+% Date:	  22-Mar-04
+% Author: I. Chuang <ichuang@mit.edu>
+%
+% Sample qasm input file - demonstrate arbitray qubit matrix ops
+% 
+% 	def	c-P,1,'\m{e^{i\alpha} & 0 \cr 0 & e^{-i\alpha}}'
+% 	def	Ryt,0,'\m{\cos{\theta}&-\sin{\theta}\cr\sin{\theta}&\cos{\theta}}'
+% 
+% 	qubit	j0
+% 	qubit	j1
+% 
+% 	c-P	j0,j1
+% 	Ryt	j0
+%  Time 01:
+%    Gate 00 c-P(j0,j1)
+%  Time 02:
+%    Gate 01 Ryt(j0)
+
+% Qubit circuit matrix:
+%
+% j0: gAA, gBA, n  
+% j1: gAB, n  , n  
+
+\documentclass[11pt]{article}
+\input{xyqcirc.tex}
+
+% definitions for the circuit elements
+
+\def\gAA{\b\w\A{gAA}}
+\def\gAB{\op{\m{e^{i\alpha} & 0 \cr 0 & e^{-i\alpha}}}\w\A{gAB}}
+\def\gBA{\op{\m{\cos{\theta}&-\sin{\theta}\cr\sin{\theta}&\cos{\theta}}}\w\A{gBA}}
+
+% definitions for bit labels and initial states
+
+\def\bA{ \q{j_{0}}}
+\def\bB{ \q{j_{1}}}
+
+% The quantum circuit as an xymatrix
+
+\xymatrix@R=5pt@C=10pt{
+    \bA & \gAA &\gBA &\n  
+\\  \bB & \gAB &\n   &\n  
+%
+% Vertical lines and other post-xymatrix latex
+%
+\ar@{-}"gAB";"gAA"
+}
+
+\end{document}

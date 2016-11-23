@@ -1,0 +1,61 @@
+% 
+% File:	  test10.qasm
+% Date:	  22-Mar-04
+% Author: I. Chuang <ichuang@mit.edu>
+%
+% Sample qasm input file - multi-qubit gates
+% also demonstrates use of classical bits 
+% 
+% 	qubit	q0	
+% 	cbit	c1
+% 	qubit	q2
+% 	
+% 	h	q0
+% 	Utwo	q0,c1
+% 	S	q2
+% 	Utwo	c1,q2
+
+%  Time 01:
+%    Gate 00 h(q0)
+%    Gate 02 S(q2)
+%  Time 02:
+%    Gate 01 Utwo(q0,c1)
+%  Time 03:
+%    Gate 03 Utwo(c1,q2)
+
+% Qubit circuit matrix:
+%
+% q0: gAA, gBA, n  , n  
+% c1: N  , gBB, gCB, N  
+% q2: gAC, n  , gCC, n  
+
+\documentclass[11pt]{article}
+\input{xyqcirc.tex}
+
+% definitions for the circuit elements
+
+\def\gAA{\op{H}\w\A{gAA}}
+\def\gBA{\gnqubit{U}{d}\w\A{gBA}}
+\def\gBB{\gspace{U}\W\A{gBB}}
+\def\gAC{\op{S}\w\A{gAC}}
+\def\gCB{\gnqubit{U}{d}\W\A{gCB}}
+\def\gCC{\gspace{U}\w\A{gCC}}
+
+% definitions for bit labels and initial states
+
+\def\bA{ \q{q_{0}}}
+\def\bB{   {c_{1}}}
+\def\bC{ \q{q_{2}}}
+
+% The quantum circuit as an xymatrix
+
+\xymatrix@R=5pt@C=10pt{
+    \bA & \gAA &\gBA &\n   &\n  
+\\  \bB & \N   &\gBB &\gCB &\N  
+\\  \bC & \gAC &\n   &\gCC &\n  
+%
+% Vertical lines and other post-xymatrix latex
+%
+}
+
+\end{document}

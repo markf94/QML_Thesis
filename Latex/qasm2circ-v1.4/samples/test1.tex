@@ -1,0 +1,49 @@
+% 
+% File:   test1.qasm
+% Date:   22-Mar-04
+% Author: I. Chuang <ichuang@mit.edu>
+%
+% Sample qasm input file - EPR creation
+%
+%         qubit 	q0
+%         qubit 	q1
+% 
+% 	h	q0	% create EPR pair
+% 	cnot	q0,q1
+
+%  Time 01:
+%    Gate 00 h(q0)
+%  Time 02:
+%    Gate 01 cnot(q0,q1)
+
+% Qubit circuit matrix:
+%
+% q0: gAA, gBA, n  
+% q1: n  , gBB, n  
+
+\documentclass[11pt]{article}
+\input{xyqcirc.tex}
+
+% definitions for the circuit elements
+
+\def\gAA{\op{H}\w\A{gAA}}
+\def\gBA{\b\w\A{gBA}}
+\def\gBB{\o\w\A{gBB}}
+
+% definitions for bit labels and initial states
+
+\def\bA{ \q{q_{0}}}
+\def\bB{ \q{q_{1}}}
+
+% The quantum circuit as an xymatrix
+
+\xymatrix@R=5pt@C=10pt{
+    \bA & \gAA &\gBA &\n  
+\\  \bB & \n   &\gBB &\n  
+%
+% Vertical lines and other post-xymatrix latex
+%
+\ar@{-}"gBB";"gBA"
+}
+
+\end{document}

@@ -13,8 +13,8 @@
 \usepackage[font=footnotesize,labelfont=bf]{caption}
 \usepackage{parskip}
 \usepackage{color}
+%\usepackage{xcolor}
 \usepackage{mathrsfs}
- 	
 \usepackage{xspace}
 \newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
 
@@ -180,6 +180,7 @@ showed that the distance between two vectors and their inner product can indeed 
 mechanically. Lastly, Ristè et al. (2015) solved a learning parity problem with five superconducting qubits
 and found that a quantum advantage can already be observed in non error-corrected systems.
 
+
 %Explain the experimental results that have been shown so far. Outline problems with non-error corrected qubits, gate times and small qubit numbers.
 
 %> only proof-of-concept so far
@@ -214,18 +215,73 @@ Some description goes here.
 \setbeamertemplate{frame footer}{References go here}
 \begin{frame}[fragile]{Quantum k-nearest neighbour}
  
-Two fundamentally different ways of doing it:
+Two different algorithms with respect to initial state preparation:
 
-\begin{alertblock}{Amplitude encoded data}
-		exponential speed up!
-give illustration of what I mean here
+\begin{alertblock}{Data encoded into qubits}
+%speed-up not very clear since the \# of qubits increases linearly with the \# of classical bits
+k-dimensional probability vector requires $4k$ classical bits which are encoded one-to-one into $4k$ qubits, e.g.\\
+\vspace{2mm}
+$\begin{pmatrix}
+ \textcolor{blue}{0.6} \\ 
+ \textcolor{orange}{0.4}
+ \end{pmatrix}*10 \rightarrow \begin{pmatrix}
+ \textcolor{blue}{6} \\ 
+ \textcolor{orange}{4}
+ \end{pmatrix} \rightarrow \begin{pmatrix}
+ \textcolor{blue}{0110} \\ 
+ \textcolor{orange}{0100}
+ \end{pmatrix} \rightarrow n=\textcolor{blue}{0110}\textcolor{orange}{0100} \rightarrow \ket{n} = \ket{\textcolor{blue}{0110}\textcolor{orange}{0100}}$\\
+%\textbf{Only slight speed up possible}
+\end{alertblock}
+\vspace{3mm}
+\begin{alertblock}{\textcolor{gray}{Data encoded into amplitudes}}
+\textcolor{gray}{k-dimensional probability vector is encoded into $log_{2}(k)$ qubits, e.g.\\ 
+\vspace{2mm}
+$\begin{pmatrix}
+ 0.6 \\ 
+ 0.4
+ \end{pmatrix} \quad \rightarrow \quad \ket{n} = \sqrt{0.6}\ket{0}+\sqrt{0.4}\ket{1}$\\
+%\textbf{Possibility of exponential speed up}
+}
 \end{alertblock}
 
-\begin{alertblock}{Qubit encoded data}
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{References go here}
+\begin{frame}[fragile]{Quantum k-nearest neighbour}
+ 
+Two different algorithms with respect to initial state preparation:
+
+\begin{alertblock}{\textcolor{gray}{Data encoded into qubits}}
 %speed-up not very clear since the \# of qubits increases linearly with the \# of classical bits
-$N$ classical bits are one-to-one encoded into $N$ qubits\\
-e.g. $n=1001 \quad \rightarrow \quad \ket{n} = \ket{1001}$
-\end{alertblock} 
+\textcolor{gray}{k-dimensional probability vector requires $4k$ classical bits which are encoded one-to-one into $4k$ qubits, e.g.\\
+\vspace{2mm}
+$\begin{pmatrix}
+ 0.6 \\ 
+ 0.4
+ \end{pmatrix}*10 \rightarrow \begin{pmatrix}
+ 6 \\ 
+ 4
+ \end{pmatrix} \rightarrow \begin{pmatrix}
+ 0110 \\ 
+ 0100
+ \end{pmatrix} \rightarrow n=01100100 \rightarrow \ket{n} = \ket{01100100}$\\
+%\textbf{Only slight speed up possible}
+}
+\end{alertblock}  
+\vspace{3mm}
+\begin{alertblock}{Data encoded into amplitudes}
+k-dimensional probability vector is encoded into $log_{2}(k)$ qubits, e.g.\\ 
+\vspace{2mm}
+$\begin{pmatrix}
+ \textcolor{blue}{0.6} \\ 
+ \textcolor{orange}{0.4}
+ \end{pmatrix} \quad \rightarrow \quad \ket{n} = \sqrt{\textcolor{blue}{0.6}}\ket{0}+\sqrt{\textcolor{orange}{0.4}}\ket{1}$\\
+%\textbf{Possibility of exponential speed up}
+\end{alertblock}
+
 
 \end{frame}
 }
@@ -243,8 +299,14 @@ e.g. $n=1001 \quad \rightarrow \quad \ket{n} = \ket{1001}$
 		\item ALLCAPS
 	\end{itemize}
 	They can either be set at once for every title type or individually.
+	
+	\metroset{block=fill}
+	\begin{alertblock}{Algorithmic complexity}
+	$\mathcal{O}(\frac{1}{p_{acc}})$
+	\end{alertblock}
 \end{frame}
 }
+
 {
 \setbeamertemplate{frame footer}{References go here}
 \begin{frame}{Implementation with IBM's quantum computer}
@@ -255,6 +317,24 @@ e.g. $n=1001 \quad \rightarrow \quad \ket{n} = \ket{1001}$
 	\end{alertblock}
 \end{frame}
 }
+
+{
+\setbeamertemplate{frame footer}{References go here}
+\begin{frame}{Controlled U gate}
+	This frame uses the \texttt{smallcaps} titleformat.
+
+	\begin{alertblock}{Potential Problems}
+		Be aware, that not every font supports small caps. If for example you typeset your presentation with pdfTeX and the Computer Modern Sans Serif font, every text in smallcaps will be typeset with the Computer Modern Serif font instead.
+	\end{alertblock}
+	
+	\metroset{block=fill}
+	\begin{alertblock}{Algorithmic complexity}
+	$\mathcal{O}(\frac{1}{p_{acc}})+\mathcal{O}(somestuff)$
+	\end{alertblock}
+\end{frame}
+
+}
+
 {
 \setbeamertemplate{frame footer}{References go here}
 \begin{frame}{Problems with universal gate sets}
@@ -262,8 +342,12 @@ e.g. $n=1001 \quad \rightarrow \quad \ket{n} = \ket{1001}$
 
 	\begin{alertblock}{Potential problems}
 		As this titleformat also uses smallcaps you face the same problems as with the \texttt{smallcaps} titleformat. Additionally this format can cause some other problems. Please refer to the documentation if you consider using it.
+\end{alertblock}
 
 		As a rule of thumb: Just use it for plaintext-only titles.
+\metroset{block=fill}
+	\begin{alertblock}{Algorithmic complexity}
+	$\mathcal{O}(\frac{1}{p_{acc}})+\mathcal{O}(somestuff)+\mathcal{O}(somemorestuff)$
 	\end{alertblock}
 \end{frame}
 }

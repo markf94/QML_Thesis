@@ -1,0 +1,74 @@
+% 
+% File:	  test7.qasm
+% Date:	  22-Mar-04
+% Author: I. Chuang <ichuang@mit.edu>
+%
+% Sample qasm input file - measurement
+% of operator with correction
+% 
+% 	def	c-U,1,'U'
+% 	def	c-V,1,'V'
+% 
+% 	qubit	q0
+% 	qubit	q1
+% 
+% 	H	q0
+% 	c-U	q0,q1
+% 	H	q0
+% 	measure	q0
+% 	c-V	q0,q1
+% 	nop	q0
+% 	nop	q1
+
+%  Time 01:
+%    Gate 00 H(q0)
+%  Time 02:
+%    Gate 01 c-U(q0,q1)
+%  Time 03:
+%    Gate 02 H(q0)
+%  Time 04:
+%    Gate 03 measure(q0)
+%  Time 05:
+%    Gate 04 c-V(q0,q1)
+%  Time 06:
+%    Gate 05 nop(q0)
+%    Gate 06 nop(q1)
+
+% Qubit circuit matrix:
+%
+% q0: gAA, gBA, gCA, gDA, gEA, gFA, N  
+% q1: n  , gBB, n  , n  , gEB, gFB, n  
+
+\documentclass[11pt]{article}
+\input{xyqcirc.tex}
+
+% definitions for the circuit elements
+
+\def\gAA{\op{H}\w\A{gAA}}
+\def\gBA{\b\w\A{gBA}}
+\def\gBB{\op{U}\w\A{gBB}}
+\def\gCA{\op{H}\w\A{gCA}}
+\def\gDA{\meter\w\A{gDA}}
+\def\gEA{\b\W\A{gEA}}
+\def\gEB{\op{V}\w\A{gEB}}
+\def\gFA{*-{}\W\A{gFA}}
+\def\gFB{*-{}\w\A{gFB}}
+
+% definitions for bit labels and initial states
+
+\def\bA{ \q{q_{0}}}
+\def\bB{ \q{q_{1}}}
+
+% The quantum circuit as an xymatrix
+
+\xymatrix@R=5pt@C=10pt{
+    \bA & \gAA &\gBA &\gCA &\gDA &\gEA &\gFA &\N  
+\\  \bB & \n   &\gBB &\n   &\n   &\gEB &\gFB &\n  
+%
+% Vertical lines and other post-xymatrix latex
+%
+\ar@{-}"gBB";"gBA"
+\ar@{=}"gEB";"gEA"
+}
+
+\end{document}

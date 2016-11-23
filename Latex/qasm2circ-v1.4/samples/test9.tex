@@ -1,0 +1,77 @@
+% 
+% File:	  test9.qasm
+% Date:	  22-Mar-04
+% Author: I. Chuang <ichuang@mit.edu>
+%
+% Sample qasm input file - two-qubit gate circuit
+% implementation of Toffoli 
+% 
+% 	def	c-X,1,'\sqrt{X}'
+% 	def	c-Xd,1,'{\sqrt{X}}^\dagger'
+% 
+% 	qubit	q0
+% 	qubit	q1
+% 	qubit	q2
+% 
+% 	c-X	q1,q2
+% 	cnot	q0,q1
+% 	c-Xd	q1,q2
+% 	cnot	q0,q1
+% 	c-X	q0,q2
+
+%  Time 01:
+%    Gate 00 c-X(q1,q2)
+%  Time 02:
+%    Gate 01 cnot(q0,q1)
+%  Time 03:
+%    Gate 02 c-Xd(q1,q2)
+%  Time 04:
+%    Gate 03 cnot(q0,q1)
+%  Time 05:
+%    Gate 04 c-X(q0,q2)
+
+% Qubit circuit matrix:
+%
+% q0: n  , gBA, n  , gDA, gEA, n  
+% q1: gAB, gBB, gCB, gDB, n  , n  
+% q2: gAC, n  , gCC, n  , gEC, n  
+
+\documentclass[11pt]{article}
+\input{xyqcirc.tex}
+
+% definitions for the circuit elements
+
+\def\gAB{\b\w\A{gAB}}
+\def\gAC{\op{\sqrt{X}}\w\A{gAC}}
+\def\gBA{\b\w\A{gBA}}
+\def\gBB{\o\w\A{gBB}}
+\def\gCB{\b\w\A{gCB}}
+\def\gCC{\op{{\sqrt{X}}^\dagger}\w\A{gCC}}
+\def\gDA{\b\w\A{gDA}}
+\def\gDB{\o\w\A{gDB}}
+\def\gEA{\b\w\A{gEA}}
+\def\gEC{\op{\sqrt{X}}\w\A{gEC}}
+
+% definitions for bit labels and initial states
+
+\def\bA{ \q{q_{0}}}
+\def\bB{ \q{q_{1}}}
+\def\bC{ \q{q_{2}}}
+
+% The quantum circuit as an xymatrix
+
+\xymatrix@R=5pt@C=10pt{
+    \bA & \n   &\gBA &\n   &\gDA &\gEA &\n  
+\\  \bB & \gAB &\gBB &\gCB &\gDB &\n   &\n  
+\\  \bC & \gAC &\n   &\gCC &\n   &\gEC &\n  
+%
+% Vertical lines and other post-xymatrix latex
+%
+\ar@{-}"gAC";"gAB"
+\ar@{-}"gBB";"gBA"
+\ar@{-}"gCC";"gCB"
+\ar@{-}"gDB";"gDA"
+\ar@{-}"gEC";"gEA"
+}
+
+\end{document}

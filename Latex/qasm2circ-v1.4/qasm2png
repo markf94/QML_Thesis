@@ -1,0 +1,29 @@
+#!/bin/csh
+#
+# File:   qasm2png
+# Date:   23-Mar-04
+# Author: I. Chuang <ichuang@mit.edu>
+#
+# Shell script to convert qasm files to png, using the qasm2tex python script
+#
+# Usage:  qasm2png foo.qasm
+#
+# Produces: foo.png  (and also foo.tex, foo.epsf)
+
+set GS = "gs -sDEVICE=pnmraw -r400 -dNOPAUSE"
+
+foreach i ($*)
+
+        set t = `echo $i | sed "s/.qasm//"`
+
+	python qasm2tex.py $i >! $t.tex
+	if (-z $t.tex) then
+	    echo "error in qasm2tex on $t.tex! aborting."
+	else
+	    latex $t
+	    dvips -D2400 -E -o $t.eps $t
+	    ${GS} -sOutputFile=$t.pbm $t.eps -c quit
+	    pnmcrop $t.pbm | pnmtopng >! $t.png
+	    rm -f $t.pbm
+	endif
+end
