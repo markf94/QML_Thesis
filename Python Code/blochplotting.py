@@ -4,18 +4,20 @@ import cmath
 b = qp.Bloch()
 
 #Add basis vectors
-#x_basis = (qp.basis(2,0)+(1+0j)*qp.basis(2,1)).unit()
-#y_basis = (qp.basis(2,0)+(0+1j)*qp.basis(2,1)).unit()
-#z_basis = (qp.basis(2,0)+(0+0j)*qp.basis(2,1)).unit()
-#b.add_states([x_basis,y_basis,z_basis])
-#vec = [[1.,0.,0.],[0.,1.,0.],[0.,0.,1.]]
-#vec = [[0.,1.,0.],[0.,-1.,0.]]
-#b.add_vectors(vec)
+b.vector_color = ['k']
+x_basis = (qp.basis(2,0)+(1+0j)*qp.basis(2,1)).unit()
+y_basis = (qp.basis(2,0)+(0+1j)*qp.basis(2,1)).unit()
+z_basis = (qp.basis(2,0)+(0+0j)*qp.basis(2,1)).unit()
+b.add_states([x_basis,y_basis,z_basis])
 
+b.vector_color = ['r','c','g','k','k']
+b.vector_width = 5
+onestate = [[1.,0.,0.],[0.,1.,0.],[0.,0.,-1.]]
+b.add_vectors(onestate)
 #Qubit amplitudes
 
-alpha = 0.353555+0.14644728j
-beta = -0.353555-0.85355728j
+alpha = 0.98079
+beta = 0.19509
 
 # #1 in Liquid (3/4 state)
 #alpha = 0.85355 - 0.35355j

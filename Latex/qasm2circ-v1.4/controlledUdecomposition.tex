@@ -1,0 +1,71 @@
+%
+% File:   controlledUdecomposition.qasm
+% Date:   22-Mar-04
+% Author: Mark Fingerhuth
+% 
+% Two-qubit controlled-U gate decomposition
+% 
+%   def C,0,'C'
+%   def B,0,'B'
+%   def A,0,'A'
+%   def Ryt,0,'\m{1&0\cr0&e^{i\alpha}}'
+% 
+% 	qubit	q0
+%   qubit q1
+% 
+%   C q1
+%   cnot q0,q1
+%   B q1
+%   cnot q0,q1
+%   A q1
+%   Ryt q0
+
+%  Time 01:
+%    Gate 00 C(q1)
+%  Time 02:
+%    Gate 01 cnot(q0,q1)
+%  Time 03:
+%    Gate 02 B(q1)
+%  Time 04:
+%    Gate 03 cnot(q0,q1)
+%  Time 05:
+%    Gate 04 A(q1)
+%    Gate 05 Ryt(q0)
+
+% Qubit circuit matrix:
+%
+% q0: n  , gBxA, n  , gDxA, gExA, n  
+% q1: gAxB, gBxB, gCxB, gDxB, gExB, n  
+
+\documentclass[11pt]{article}
+\input{xyqcirc.tex}
+
+% definitions for the circuit elements
+
+\def\gAxB{\op{C}\w\A{gAxB}}
+\def\gBxA{\b\w\A{gBxA}}
+\def\gBxB{\o\w\A{gBxB}}
+\def\gCxB{\op{B}\w\A{gCxB}}
+\def\gDxA{\b\w\A{gDxA}}
+\def\gDxB{\o\w\A{gDxB}}
+\def\gExB{\op{A}\w\A{gExB}}
+\def\gExA{\op{\m{1&0\cr0&e^{i\alpha}}}\w\A{gExA}}
+
+% definitions for bit labels and initial states
+
+\def\bA{ \q{q_{0}}}
+\def\bB{ \q{q_{1}}}
+
+% The quantum circuit as an xymatrix
+
+\xymatrix@R=5pt@C=10pt{
+    \bA & \n   &\gBxA &\n   &\gDxA &\gExA &\n  
+\\  \bB & \gAxB &\gBxB &\gCxB &\gDxB &\gExB &\n  
+%
+% Vertical lines and other post-xymatrix latex
+%
+\ar@{-}"gBxB";"gBxA"
+\ar@{-}"gDxB";"gDxA"
+}
+
+\end{document}

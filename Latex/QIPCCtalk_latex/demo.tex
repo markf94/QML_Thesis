@@ -9,13 +9,17 @@
 \usepackage{pgfplots}
 \usepgfplotslibrary{dateplot}
 
-\usepackage{braket}
+\usepackage{braket} %ket vectors
 \usepackage[font=footnotesize,labelfont=bf]{caption}
-\usepackage{parskip}
+\usepackage{parskip} %automatic paragraphing
 \usepackage{color}
-%\usepackage{xcolor}
+\usepackage{dsfont}%identity operator
 \usepackage{mathrsfs}
 \usepackage{xspace}
+\usepackage{amsmath} %for gathering equations
+
+\usepackage[cal=zapfc,calscaled=.96]{mathalfa}
+
 \newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
 
 \title{Putting quantum machine learning algorithms to the test}
@@ -38,7 +42,7 @@
 \section{Introduction}
 
 {
-\setbeamertemplate{frame footer}{\textit{\tiny{Reprinted from Wikipedia, n.d., Retrieved September 7, 2016, from \url{https://en.wikipedia.org/wiki/Bloch_Sphere}. Copyright 2012 by Glosser.ca. Reprinted with permission.}}}
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}Reprinted from Wikipedia, n.d., Retrieved September 7, 2016, from \url{https://en.wikipedia.org/wiki/Bloch_Sphere}. Copyright 2012 by Glosser.ca. Reprinted with permission.}}
 \begin{frame}[fragile]{Quantum Computing \& Qubits}
 
 \begin{minipage}[c]{.5\textwidth}
@@ -46,7 +50,7 @@
 		\hspace{2mm}
        \includegraphics[width=0.8\textwidth]{blochsphere.png}
        \captionsetup{justification=raggedright, singlelinecheck=false}
-       \captionof{figure}{\footnotesize{Arbitrary two-dimensional qubit $\ket{\psi}$ visualized on the Bloch sphere.} }
+       \captionof{figure}{\footnotesize{Arbitrary two-dimensional qubit $\ket{\psi}$ visualized on the Bloch sphere\textsuperscript{1}} }
 \end{minipage}%%%%%
 \begin{minipage}[c][][b]{.5\textwidth}
 Most general form of a 2-D qubit:
@@ -74,7 +78,7 @@ where $0 \leq \theta \leq \pi$ and $0 \leq \phi \leq 2\pi$
 {
 \setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}IBM. (2016). What is big data? https://www-01.ibm.com/software/data/bigdata/what-is-big
 -data.html. (Accessed: 2016-09-08) \newline
-\textsuperscript{2} Bekkerman, R., Bilenko, M., \& Langford, J. (2011). Scaling up machine learning: Parallel and distributed
+\textsuperscript{2}Bekkerman, R., Bilenko, M., \& Langford, J. (2011). Scaling up machine learning: Parallel and distributed
 approaches. Cambridge University Press.}}
 \begin{frame}[fragile]{Classical Machine Learning}
    
@@ -212,7 +216,7 @@ Some description goes here.
 }
 
 {
-\setbeamertemplate{frame footer}{References go here}
+\setbeamertemplate{frame footer}{}
 \begin{frame}[fragile]{Quantum k-nearest neighbour}
  
 Two different algorithms with respect to initial state preparation:
@@ -249,7 +253,7 @@ $\begin{pmatrix}
 }
 
 {
-\setbeamertemplate{frame footer}{References go here}
+\setbeamertemplate{frame footer}{}
 \begin{frame}[fragile]{Quantum k-nearest neighbour}
  
 Two different algorithms with respect to initial state preparation:
@@ -289,68 +293,172 @@ $\begin{pmatrix}
 
 \section{Amplitude-based kNN algorithm}
 {
-\setbeamertemplate{frame footer}{References go here}
+\setbeamertemplate{frame footer}{\vspace{-2mm}\tiny{Maria Schuld (2016), unpublished}}
 \begin{frame}{The algorithm}
-	\themename supports 4 different titleformats:
-	\begin{itemize}
-		\item Regular
-		\item \textsc{Smallcaps}
-		\item \textsc{allsmallcaps}
-		\item ALLCAPS
-	\end{itemize}
-	They can either be set at once for every title type or individually.
+
+\begin{equation}
+\frac{1}{\sqrt{2M}}\sum_{m=1}^{M} (\ket{0}\ket{\Psi_{\tilde{x}}}+\ket{1}\ket{\Psi_{x^{m}}})\ket{y^{m}}\ket{m}
+\end{equation}
+where
+\begin{equation}
+\ket{\Psi_{\tilde{x}}} = \sum_{i=1}^{N} \tilde{x}_i\ket{i} \quad \quad
+\ket{\Psi_{x^{m}}} = \sum_{i=1}^{N} x_i^m \ket{i}
+\end{equation}
+
+\begin{equation}
+\frac{1}{2\sqrt{M}}\sum_{m=1}^{M} (\ket{0}[\ket{\Psi_{\tilde{x}}}+\ket{\Psi_{x^{m}}}]+\ket{1}[\ket{\Psi_{\tilde{x}}}-\ket{\Psi_{x^{m}}}])\ket{y^{m}}\ket{m}
+\end{equation}
+After successful conditional measurement, the state is proportional to
+\begin{equation}
+\frac{1}{2\sqrt{M}}\sum_{m=1}^{M} \sum_{i=1}^{N} (\tilde{x}_i+x_i^m)\ket{0}\ket{i}\ket{y^{m}}\ket{m}
+\end{equation}
 	
 	\metroset{block=fill}
 	\begin{alertblock}{Algorithmic complexity}
-	$\mathcal{O}(\frac{1}{p_{acc}})$
+	\centering
+	$\mathcal{O}(\frac{1}{p_{acc}})$ where $p_{acc}$ is the probability of measuring ancilla in the $\ket{0}$ state
 	\end{alertblock}
 \end{frame}
 }
 
 {
-\setbeamertemplate{frame footer}{References go here}
+\setbeamertemplate{frame footer}{}
+\begin{frame}{Simple binary classification case}
+
+\begin{minipage}[c]{.4\textwidth}
+		%\centering
+		\hspace{-7mm}
+       \includegraphics[width=\textwidth]{bloch3over4.png}
+       \captionsetup{justification=raggedright, singlelinecheck=false}
+       \captionof{figure}{\footnotesize{Simple binary classification problem of a quantum state} }
+\end{minipage}%%%%
+\begin{minipage}[c][][b]{.6\textwidth}
+\scriptsize{
+\begin{equation}
+\frac{1}{\sqrt{2M}}\sum_{m=1}^{M} (\ket{0}\ket{\Psi_{\tilde{x}}}+\ket{1}\ket{\Psi_{x^{m}}})\ket{y^{m}}\ket{m}
+\end{equation}
+where
+\begin{equation}
+\ket{\Psi_{\tilde{x}}} = \sum_{i=1}^{N} \tilde{x}_i\ket{i} \quad \quad
+\ket{\Psi_{x^{m}}} = \sum_{i=1}^{N} x_i^m \ket{i}
+\end{equation}}
+Procedure to load the input vector $\tilde{x}$:
+\begin{equation}
+\ket{\Psi_0} = \frac{1}{2}\sum_{m=1}^{2} (\ket{0}\ket{0}+\ket{1}\ket{0})\ket{y^{m}}\ket{m}
+\end{equation}
+Apply controlled rotation $_0^1CR_y(\frac{\pi}{4})$ s.t.
+\begin{equation}
+_0^1CR_y(\frac{\pi}{4})\ket{\Psi_0} = \ket{\Psi_1} = \frac{1}{2}\sum_{m=1}^{2} (\ket{0}\ket{0}+\ket{1}\ket{\Psi_{\tilde{x}}})\ket{y^{m}}\ket{m}
+\end{equation}
+Flip the ancilla qubit in the first register
+\begin{equation}
+(X\otimes\mathds{1}\otimes\mathds{1}\otimes\mathds{1})\ket{\Psi_1} = \ket{\Psi_2} = \frac{1}{2}\sum_{m=1}^{2} (\ket{0}\ket{\Psi_{\tilde{x}}}+\ket{1}\ket{0})\ket{y^{m}}\ket{m}
+\end{equation}
+\null
+\par\xdef\tpd{\the\prevdepth}
+\end{minipage}
+
+	%\metroset{block=fill}
+	%\begin{alertblock}{Algorithmic complexity}
+	%\centering
+	%$\mathcal{O}(\frac{1}{p_{acc}})$
+	%\end{alertblock}
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{}
 \begin{frame}{Implementation with IBM's quantum computer}
-	This frame uses the \texttt{smallcaps} titleformat.
 
-	\begin{alertblock}{Potential Problems}
-		Be aware, that not every font supports small caps. If for example you typeset your presentation with pdfTeX and the Computer Modern Sans Serif font, every text in smallcaps will be typeset with the Computer Modern Serif font instead.
-	\end{alertblock}
+\begin{minipage}[c]{.4\textwidth}
+Minipage 1
+\end{minipage}%%%%
+\begin{minipage}[c][][b]{.6\textwidth}
+Minipage 2
+\end{minipage}
+
+
 \end{frame}
 }
 
 {
-\setbeamertemplate{frame footer}{References go here}
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}Nielsen, M. A., \& Chuang, I. L. (2010). Quantum computation and quantum information. Cambridge University Press.\newline \textsuperscript{2}Jat, R. N., \& Ruhela, D. S. (2011). Comparative study of complexity of algorithms for iterative solution of non-linear equations. Journal of International Academy Of Physical Sciences, 15(4).}}
 \begin{frame}{Controlled U gate}
-	This frame uses the \texttt{smallcaps} titleformat.
 
-	\begin{alertblock}{Potential Problems}
-		Be aware, that not every font supports small caps. If for example you typeset your presentation with pdfTeX and the Computer Modern Sans Serif font, every text in smallcaps will be typeset with the Computer Modern Serif font instead.
-	\end{alertblock}
-	
+\begin{minipage}[t]{.4\textwidth}
+	%\vspace{-20mm}
+	\includegraphics[height=0.5\textwidth]{controlledU.png}
+       \captionsetup{justification=raggedright, singlelinecheck=false}
+       \captionof{figure}{\footnotesize{Controlled U-gate} }
+\end{minipage}%%%%%
+\begin{minipage}[t]{.6\textwidth}
+%\vspace{-20mm}
+\includegraphics[width=1\textwidth]{controlledUdecomposition.png}
+       \captionsetup{justification=raggedright, singlelinecheck=false}
+       \captionof{figure}{\footnotesize{Decomposition of a controlled U-gate\textsuperscript{1}} }
+\end{minipage}
+
+Choose A,B,C and $\alpha$ s.t.
+\begin{equation}
+e^{i\alpha}*A*X*B*X*C = U \quad and \quad A*B*C = \mathds{1}
+\end{equation}
+Need to solve the following equation\textsuperscript{1}
+\begin{equation}
+U = \begin{pmatrix}
+ e^{i(\alpha-\frac{\beta}{2}-\frac{\delta}{2})}\cos{\frac{\gamma}{2}} & -e^{i(\alpha-\frac{\beta}{2}+\frac{\delta}{2})}\sin{\frac{\gamma}{2}} \\ 
+e^{i(\alpha+\frac{\beta}{2}-\frac{\delta}{2})}\sin{\frac{\gamma}{2}} & e^{i(\alpha+\frac{\beta}{2}+\frac{\delta}{2})}\cos{\frac{\gamma}{2}}
+ \end{pmatrix}
+\end{equation}
+
+%calculating a root of a function f(x) with n-digit precision, provided that a good initial approximation is known, is O((\log n) F(n)) where F(n) is the cost of calculating f(x)/f'(x)\, with n-digit precision.
+
 	\metroset{block=fill}
 	\begin{alertblock}{Algorithmic complexity}
-	$\mathcal{O}(\frac{1}{p_{acc}})+\mathcal{O}(somestuff)$
+	$\mathcal{O}(\frac{1}{p_{acc}})+\mathcal{O}(k)$ where $k$ is number of root finding iterations\textsuperscript{2}
 	\end{alertblock}
 \end{frame}
 
 }
 
 {
-\setbeamertemplate{frame footer}{References go here}
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}Dawson, C. M., \& Nielsen, M. A. (2005). The Solovay-Kitaev algorithm. arXiv preprint quant-ph/0505030.}}
 \begin{frame}{Problems with universal gate sets}
-	This frame uses the \texttt{allsmallcaps} titleformat.
 
-	\begin{alertblock}{Potential problems}
-		As this titleformat also uses smallcaps you face the same problems as with the \texttt{smallcaps} titleformat. Additionally this format can cause some other problems. Please refer to the documentation if you consider using it.
-\end{alertblock}
+In our case we need to find A, B, C and $\alpha$ for $_0^1CR_y(\frac{\pi}{4})$:
 
-		As a rule of thumb: Just use it for plaintext-only titles.
+Using a root finding algorithm for non-linear equations we find:
+
+\begin{equation}
+\alpha =  \pi; \quad 
+\beta = 2\pi;\quad 
+\delta = \frac{7}{8}\pi;\quad 
+\gamma = 0
+\end{equation}
+Then,
+\begin{align}
+A \quad= \quad R_z(\beta)R_y(\frac{\gamma}{2})\quad =& \quad R_z(2\pi) \quad = \quad \textcolor{green}{XZXZ} \\
+B\quad =\quad R_y(-\frac{\gamma}{2})R_z(-\frac{\delta+\beta}{2})\quad =& \quad R_z(-\frac{23}{16}\pi) \quad= \quad \textcolor{red}{???}  \\
+C \quad=\quad R_z(\frac{\delta-\beta}{2})\quad =& \quad R_z(-\frac{9}{16}\pi) \quad= \quad \textcolor{red}{???} \\
+\begin{pmatrix} 1&0\cr0&e^{i\alpha} \end{pmatrix}\quad=& \quad \begin{pmatrix} 1&0\cr0&e^{i\pi} \end{pmatrix}\quad= \quad \textcolor{green}{Z}
+\end{align}
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}Dawson, C. M., \& Nielsen, M. A. (2005). The Solovay-Kitaev algorithm. arXiv preprint quant-ph/0505030.}}
+\begin{frame}{The Solovay-Kitaev algorithm}
+
+
+
 \metroset{block=fill}
 	\begin{alertblock}{Algorithmic complexity}
-	$\mathcal{O}(\frac{1}{p_{acc}})+\mathcal{O}(somestuff)+\mathcal{O}(somemorestuff)$
+	$\mathcal{O}(\frac{1}{p_{acc}})+\mathcal{O}(k)+\mathcal{O}(m*log^{2.71}(\frac{m}{\epsilon}))$ for $\epsilon$-approximations of $m$ gates\textsuperscript{1}
 	\end{alertblock}
 \end{frame}
 }
+
 {
 \setbeamertemplate{frame footer}{References go here}
 \begin{frame}{All caps}
