@@ -23,11 +23,12 @@
 \begin{filecontents}{datax.dat}
 0.06941, 28, 0.44096, 30, 0.15165, 25
 0.04389, 146, 0.32707, 132,0.10722, 109
-0.04951, 728, 0.224107, 642, 0.020864, 601
 0.02823, 3622, 0.08416, 3478, 0.02086, 2997
 0.01008, 17838, 0.005179, 17566, 0.01494, 14721
 0.00165, 89130,0.0015799, 88216, 0.003327, 74009
-0.00156, 444646, 0.0015601, 439060, 0.001578, 370813
+%0.00156, 444646, 0.0015601, 439060, 0.001578, 370813
+%previous 3rd row: 0.04951, 728, 0.224107, 642, 0.020864, 601
+
 \end{filecontents}
 
 \usepackage[cal=zapfc,calscaled=.96]{mathalfa}
@@ -92,7 +93,7 @@ where $0 \leq \theta \leq \pi$ and $0 \leq \phi \leq 2\pi$
 -data.html. (Accessed: 2016-09-08) \newline
 \textsuperscript{2}Bekkerman, R., Bilenko, M., \& Langford, J. (2011). Scaling up machine learning: Parallel and distributed
 approaches. Cambridge University Press.}}
-\begin{frame}[fragile]{Classical Machine Learning}
+\begin{frame}[fragile]{Machine Learning}
    
 \begin{itemize}
 	\item Approximately 2.5 quintillion (${10}^{18}$) bytes of digital data are created every day\textsuperscript{1}
@@ -116,7 +117,7 @@ sets gets increasingly difficult\textsuperscript{2}
 
 {
 \setbeamertemplate{frame footer}{}
-\begin{frame}[fragile]{Classical Machine Learning}
+\begin{frame}[fragile]{Machine Learning}
    
 Machine learning can be subdivided into three major fields.
 
@@ -145,7 +146,7 @@ Machine learning can be subdivided into three major fields.
 
 {
 \setbeamertemplate{frame footer}{}
-\begin{frame}[fragile]{Classical Machine Learning}
+\begin{frame}[fragile]{Machine Learning}
    
 Machine learning can be subdivided into three major fields.$\mathcal{O}(input size)$
 
@@ -538,10 +539,98 @@ Qubit decoherence times:
 \setbeamertemplate{frame footer}{}
 \begin{frame}{Liqui$\ket{}$ simulations}
 	
-Show that the simple binary classification problem works in Liquid since we can directly implement 	
+Show that the simple binary classification problem works in Liquid since we can directly implement the controlled $R_z$ rotations
+
+%Run the command mono Liquid.exe "__BinaryAmplitudeKNN(10000)" in a terminal
+
+Could you also show what happens if I use approximated gate sequences?
 	
 \end{frame}
 }
+
+{
+\setbeamertemplate{frame footer}{}
+\begin{frame}{Liqui$\ket{}$ simulations: Taking it further}
+
+\begin{figure}
+\includegraphics[scale=0.35]{cube_notdiffused.png}
+       \caption{\footnotesize{Representation of hamming distance on 3D cube} }
+\end{figure}
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{}
+\begin{frame}{Liqui$\ket{}$ simulations: Taking it further}
+
+Applying the following matrix
+\begin{equation}
+\begin{pmatrix}
+ \sqrt{\delta} & 1-\sqrt{\delta} \\ 
+ 1-\sqrt{\delta} & -\sqrt{\delta}
+ \end{pmatrix}
+\end{equation}
+to all qubits in the data register leads to a gaussian distribution over the "Hamming distance" cube:
+
+\begin{figure}
+\includegraphics[scale=0.2]{4qubitdiffusion.png}
+       \caption{\footnotesize{Gaussian diffusion of a quantum state} }
+\end{figure}
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{}
+\begin{frame}{Liqui$\ket{}$ simulations: Taking it further}
+
+\begin{figure}
+\includegraphics[scale=0.33]{cube_diffused.png}
+       \caption{\footnotesize{Representation of gaussian diffusion on 3D cube} }
+\end{figure}
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{}
+\begin{frame}{Liqui$\ket{}$ simulations: Taking it further}
+
+\begin{figure}
+\includegraphics[scale=0.33]{4d_hypercube.png}
+       \caption{\footnotesize{Representation of gaussian diffusion on 3D cube} }
+\end{figure}
+\end{frame}
+}
+
+
+\section{Conclusion}
+
+\begin{frame}{Summary}
+
+sefsefesfsefsef
+\end{frame}
+
+\begin{frame}{References}
+  Some references to showcase [allowframebreaks] \cite{knuth92,ConcreteMath,Simpson,Er01,greenwade93}
+\end{frame}
+
+\begin{frame}[standout]
+  Questions?
+\end{frame}
+
+
+\appendix
+
+\begin{frame}[fragile]{Backup slide I}
+fefesfesfesfefesf
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Backup slide II}
+
+  \bibliography{demo}
+  \bibliographystyle{abbrv}
+
+\end{frame}
 
 \section{Qubit-based kNN quantum algorithm}
 
@@ -730,33 +819,5 @@ or show \textbf{bold} results.\end{verbatim}
   \end{quote}
 \end{frame}
 
-\section{Conclusion}
-
-\begin{frame}{Summary}
-
-sefsefesfsefsef
-\end{frame}
-
-\begin{frame}{References}
-  Some references to showcase [allowframebreaks] \cite{knuth92,ConcreteMath,Simpson,Er01,greenwade93}
-\end{frame}
-
-\begin{frame}[standout]
-  Questions?
-\end{frame}
-
-
-\appendix
-
-\begin{frame}[fragile]{Backup slide I}
-fefesfesfesfefesf
-\end{frame}
-
-\begin{frame}[allowframebreaks]{Backup slide II}
-
-  \bibliography{demo}
-  \bibliographystyle{abbrv}
-
-\end{frame}
 
 \end{document}

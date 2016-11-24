@@ -74,7 +74,7 @@ sk_set_axis(X_AXIS)
 sk_set_simplify_engine(simplify_engine)
 #sk_build_tree("su2", 9)
 #sk_build_tree("su2_withSSd", 5)
-sk_build_tree("su2_all_gates", 4)
+sk_build_tree("su2_all_gates", 3)
 
 Un = solovay_kitaev(op_U, n)
 print "Approximated U: " + str(Un)
