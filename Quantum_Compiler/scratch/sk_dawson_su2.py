@@ -20,7 +20,7 @@ print "Identity Name: " + H2.identity.name
 # Compose a unitary to compile
 #matrix_U = axis_to_unitary(axis, theta, H2)
 #matrix_U = matrixify([[1,0], [0,numpy.exp(1j * math.pi / 8)]])
-matrix_U = matrixify([[0.63439 + 0.77301j,0.0], [0.0,0.63439 - 0.77301j]])
+matrix_U = matrixify([[-0.63439 + 0.77301j,0.0], [0.0,-0.63439 - 0.77301j]])
 op_U = Operator(name="U", matrix=matrix_U)
 
 n = 7
@@ -74,7 +74,7 @@ sk_set_axis(X_AXIS)
 sk_set_simplify_engine(simplify_engine)
 #sk_build_tree("su2", 9)
 #sk_build_tree("su2_withSSd", 5)
-sk_build_tree("su2_all_gates", 5)
+sk_build_tree("su2_all_gates", 4)
 
 Un = solovay_kitaev(op_U, n)
 print "Approximated U: " + str(Un)

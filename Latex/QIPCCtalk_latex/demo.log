@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  23 NOV 2016 18:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  24 NOV 2016 16:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1010,6 +1010,311 @@ Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
+(/usr/share/texlive/texmf-dist/tex/latex/siunitx/siunitx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2016/01/19 v6377 L3 programming layer (loader) 
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3-code.tex
+Package: expl3 2016/01/19 v6377 L3 programming layer (code)
+L3 Module: l3bootstrap 2016/01/01 v6339 L3 Bootstrap code
+L3 Module: l3names 2015/12/21 v6328 L3 Namespace for primitives
+L3 Module: l3basics 2015/11/22 v6315 L3 Basic definitions
+L3 Module: l3expan 2015/09/10 v5983 L3 Argument expansion
+L3 Module: l3tl 2015/09/29 v6121 L3 Token lists
+L3 Module: l3str 2016/01/03 v6357 L3 Strings
+L3 Module: l3seq 2015/08/05 v5777 L3 Sequences and stacks
+L3 Module: l3int 2016/01/05 v6366 L3 Integers
+\c_max_int=\count181
+\l_tmpa_int=\count182
+\l_tmpb_int=\count183
+\g_tmpa_int=\count184
+\g_tmpb_int=\count185
+L3 Module: l3quark 2015/08/17 v5855 L3 Quarks
+L3 Module: l3prg 2015/11/01 v6216 L3 Control structures
+\g__prg_map_int=\count186
+L3 Module: l3clist 2015/09/02 v5901 L3 Comma separated lists
+L3 Module: l3token 2015/11/11 v6249 L3 Experimental token manipulation
+L3 Module: l3prop 2016/01/05 v6366 L3 Property lists
+L3 Module: l3msg 2015/09/28 v6113 L3 Messages
+L3 Module: l3file 2015/12/03 v6317 L3 File and I/O operations
+\l_iow_line_count_int=\count187
+\l__iow_target_count_int=\count188
+\l__iow_current_line_int=\count189
+\l__iow_current_word_int=\count190
+\l__iow_current_indentation_int=\count191
+L3 Module: l3skip 2016/01/05 v6366 L3 Dimensions and skips
+\c_zero_dim=\dimen291
+\c_max_dim=\dimen292
+\l_tmpa_dim=\dimen293
+\l_tmpb_dim=\dimen294
+\g_tmpa_dim=\dimen295
+\g_tmpb_dim=\dimen296
+\c_zero_skip=\skip66
+\c_max_skip=\skip67
+\l_tmpa_skip=\skip68
+\l_tmpb_skip=\skip69
+\g_tmpa_skip=\skip70
+\g_tmpb_skip=\skip71
+\c_zero_muskip=\muskip12
+\c_max_muskip=\muskip13
+\l_tmpa_muskip=\muskip14
+\l_tmpb_muskip=\muskip15
+\g_tmpa_muskip=\muskip16
+\g_tmpb_muskip=\muskip17
+L3 Module: l3keys 2015/11/17 v6284 L3 Key-value interfaces
+\g__keyval_level_int=\count192
+\l_keys_choice_int=\count193
+L3 Module: l3fp 2015/08/25 v5890 L3 Floating points
+\c__fp_leading_shift_int=\count194
+\c__fp_middle_shift_int=\count195
+\c__fp_trailing_shift_int=\count196
+\c__fp_big_leading_shift_int=\count197
+\c__fp_big_middle_shift_int=\count198
+\c__fp_big_trailing_shift_int=\count199
+\c__fp_Bigg_leading_shift_int=\count266
+\c__fp_Bigg_middle_shift_int=\count267
+\c__fp_Bigg_trailing_shift_int=\count268
+L3 Module: l3box 2015/08/09 v5822 L3 Experimental boxes
+\c_empty_box=\box59
+\l_tmpa_box=\box60
+\l_tmpb_box=\box61
+\g_tmpa_box=\box62
+\g_tmpb_box=\box63
+L3 Module: l3coffins 2015/08/06 v5789 L3 Coffin code layer
+\l__coffin_internal_box=\box64
+\l__coffin_internal_dim=\dimen297
+\l__coffin_offset_x_dim=\dimen298
+\l__coffin_offset_y_dim=\dimen299
+\l__coffin_x_dim=\dimen300
+\l__coffin_y_dim=\dimen301
+\l__coffin_x_prime_dim=\dimen302
+\l__coffin_y_prime_dim=\dimen303
+\c_empty_coffin=\box65
+\l__coffin_aligned_coffin=\box66
+\l__coffin_aligned_internal_coffin=\box67
+\l_tmpa_coffin=\box68
+\l_tmpb_coffin=\box69
+\l__coffin_display_coffin=\box70
+\l__coffin_display_coord_coffin=\box71
+\l__coffin_display_pole_coffin=\box72
+\l__coffin_display_offset_dim=\dimen304
+\l__coffin_display_x_dim=\dimen305
+\l__coffin_display_y_dim=\dimen306
+L3 Module: l3color 2014/08/23 v5354 L3 Experimental color support
+L3 Module: l3sys 2015/09/25 v6087 L3 Experimental system/runtime functions
+L3 Module: l3candidates 2016/01/14 v6376 L3 Experimental additions to l3kernel
+\l__box_top_dim=\dimen307
+\l__box_bottom_dim=\dimen308
+\l__box_left_dim=\dimen309
+\l__box_right_dim=\dimen310
+\l__box_top_new_dim=\dimen311
+\l__box_bottom_new_dim=\dimen312
+\l__box_left_new_dim=\dimen313
+\l__box_right_new_dim=\dimen314
+\l__box_internal_box=\box73
+\l__coffin_bounding_shift_dim=\dimen315
+\l__coffin_left_corner_dim=\dimen316
+\l__coffin_right_corner_dim=\dimen317
+\l__coffin_bottom_corner_dim=\dimen318
+\l__coffin_top_corner_dim=\dimen319
+\l__coffin_scaled_total_height_dim=\dimen320
+\l__coffin_scaled_width_dim=\dimen321
+L3 Module: l3luatex 2015/11/11 v6250 L3 Experimental LuaTeX-specific functions
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
+File: l3pdfmode.def 2015/11/11 v6250 L3 Experimental driver: PDF mode
+\l__driver_color_stack_int=\count269
+))
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2016/01/19 v6377 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count270
+\l__xparse_m_args_int=\count271
+\l__xparse_mandatory_args_int=\count272
+\l__xparse_processor_int=\count273
+\l__xparse_v_nesting_int=\count274
+)
+Package: siunitx 2016/03/01 v2.6q A comprehensive (SI) units package
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen322
+\extrarowheight=\dimen323
+\NC@list=\toks53
+\extratabsurround=\skip72
+\backup@length=\skip73
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2016/01/19 v6377 LaTeX2e option processing using LaTeX3 keys
+)
+\l__siunitx_tmp_box=\box74
+\l__siunitx_tmp_dim=\dimen324
+\l__siunitx_tmp_int=\count275
+\l__siunitx_number_mantissa_length_int=\count276
+\l__siunitx_number_uncert_length_int=\count277
+\l__siunitx_round_int=\count278
+\l__siunitx_process_decimal_int=\count279
+\l__siunitx_process_uncertainty_int=\count280
+\l__siunitx_process_fixed_int=\count281
+\l__siunitx_process_integer_min_int=\count282
+\l__siunitx_process_precision_int=\count283
+\l__siunitx_group_min_int=\count284
+\l__siunitx_angle_marker_box=\box75
+\l__siunitx_angle_unit_box=\box76
+\l__siunitx_angle_marker_dim=\dimen325
+\l__siunitx_angle_unit_dim=\dimen326
+\l__siunitx_unit_int=\count285
+\l__siunitx_unit_denominator_int=\count286
+\l__siunitx_unit_numerator_int=\count287
+\l__siunitx_unit_prefix_int=\count288
+\l__siunitx_unit_prefix_base_int=\count289
+\l__siunitx_unit_prefix_gram_int=\count290
+\l__siunitx_number_product_int=\count291
+\c__siunitx_one_fill_skip=\skip74
+\l__siunitx_table_unit_align_skip=\skip75
+\l__siunitx_table_exponent_dim=\dimen327
+\l__siunitx_table_integer_dim=\dimen328
+\l__siunitx_table_mantissa_dim=\dimen329
+\l__siunitx_table_marker_dim=\dimen330
+\l__siunitx_table_result_dim=\dimen331
+\l__siunitx_table_uncert_dim=\dimen332
+\l__siunitx_table_fill_pre_dim=\dimen333
+\l__siunitx_table_fill_post_dim=\dimen334
+\l__siunitx_table_fill_mid_dim=\dimen335
+\l__siunitx_table_pre_box=\box77
+\l__siunitx_table_post_box=\box78
+\l__siunitx_table_mantissa_box=\box79
+\l__siunitx_table_result_box=\box80
+\l__siunitx_table_number_align_skip=\skip76
+\l__siunitx_table_text_align_skip=\skip77
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareBinaryPrefix with sig. 'mmm' on line 7218.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareSIPostPower with sig. 'mm' on line 7221.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareSIPrefix with sig. 'mmm' on line 7224.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareSIPrePower with sig. 'mm' on line 7227.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareSIQualifier with sig. 'mm' on line 7230.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareSIUnit with sig. 'O{}mm' on line 7233.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareSIUnitWithOptions with sig. 'mmm' on line 7236.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \ang with sig. 'o>{\SplitArgument {2}{;}}m' on line 7251.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \num with sig. 'om' on line 7260.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \numlist with sig. 'o>{\SplitList {;}}m' on line 7269.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \numrange with sig. 'omm' on line 7278.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \SIlist with sig. 'o>{\SplitList {;}}mm' on line 7290.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \SIrange with sig. 'ommm' on line 7302.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \SI with sig. 'omom' on line 7314.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \sisetup with sig. 'm' on line 7317.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \tablenum with sig. 'om' on line 7332.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \si with sig. 'om' on line 7344.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__siunitx_bookmark_num:w with sig. 'om' on line 7391.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__siunitx_bookmark_numrange:w with sig. 'omm' on line
+. 7393.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__siunitx_bookmark_SI:w with sig. 'omom' on line 7395.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__siunitx_bookmark_SIlist:w with sig. 'omm' on line 7397.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__siunitx_bookmark_SIrange:w with sig. 'ommm' on line
+. 7399.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__siunitx_bookmark_si:w with sig. 'om' on line 7400.
+.................................................
+\g__file_internal_ior=\read2
+)
+(/usr/share/texlive/texmf-dist/tex/latex/filecontents/filecontents.sty
+Package: filecontents 2011/10/08 v1.3 Create an external file from within a LaT
+eX document
+)
+
+LaTeX Warning: Overwriting file `./datax.dat'.
+
+\openout15 = `datax.dat'.
+
+
 (/usr/share/texlive/texmf-dist/tex/latex/mathalfa/mathalfa.sty
 Package: mathalfa 2012/07/10 - 1.07mathalfa (License LPPL) Michael Sharpe
 LaTeX Font Info:    Redeclaring math alphabet \mathcal on input line 261.
@@ -1024,20 +1329,20 @@ LaTeX Warning: Label `equ: blochqubit' multiply defined.
 )
 \openout1 = `demo.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1075,17 +1380,17 @@ LaTeX Font Info:    ... okay on input line 33.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count181
-\scratchdimen=\dimen291
-\scratchbox=\box59
-\nofMPsegments=\count182
-\nofMParguments=\count183
-\everyMPshowfont=\toks53
-\MPscratchCnt=\count184
-\MPscratchDim=\dimen292
-\MPnumerator=\count185
-\makeMPintoPDFobject=\count186
-\everyMPtoPDFconversion=\toks54
+\scratchcounter=\count292
+\scratchdimen=\dimen336
+\scratchbox=\box81
+\nofMPsegments=\count293
+\nofMParguments=\count294
+\everyMPshowfont=\toks54
+\MPscratchCnt=\count295
+\MPscratchDim=\dimen337
+\MPnumerator=\count296
+\makeMPintoPDFobject=\count297
+\everyMPtoPDFconversion=\toks55
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -1102,8 +1407,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box60
-Package hyperref Info: Link coloring OFF on input line 33.
+\AtBeginShipoutBox=\box82
+Package hyperref Info: Link coloring OFF on input line 45.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1111,68 +1416,68 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count187
+\c@section@level=\count298
 )
-LaTeX Info: Redefining \ref on input line 33.
-LaTeX Info: Redefining \pageref on input line 33.
-LaTeX Info: Redefining \nameref on input line 33.
+LaTeX Info: Redefining \ref on input line 45.
+LaTeX Info: Redefining \pageref on input line 45.
+LaTeX Info: Redefining \nameref on input line 45.
 
 (./demo.out) (./demo.out)
 \@outlinefile=\write5
 \openout5 = `demo.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 33.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 45.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 33.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 45.
 \symnumbers=\mathgroup7
 \sympureletters=\mathgroup8
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 33.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 33.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 33.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 33.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 33.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 45.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 33.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 33.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 33.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 45.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 33.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 33.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 33.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 45.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 33.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 33.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 45.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 33.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 45.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 33.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 33.
+(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 33.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 33.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 33.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 45.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 33.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 33.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 45.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 45.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 3
-3.
+(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 4
+5.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/cmss/bx/it --> OT1/mathkerncmss/m/sl on input line 
-33.
+45.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 33.
+ut line 45.
 
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/translator/dicts/translator-bas
 ic-dictionary/translator-basic-dictionary-English.dict
@@ -1198,53 +1503,58 @@ Dictionary: translator-numbers-dictionary, Language: English
 orem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 33.
+LaTeX Info: Redefining \includegraphics on input line 45.
 
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.13} (current compat level: 1.9).
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
+(/usr/share/texlive/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
+File: siunitx-abbreviations.cfg 2016/03/01 v2.6q siunitx: Abbreviated units
+)
 (./demo.nav)
-Overfull \vbox (13.79993pt too high) detected at line 35
- []
-
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./demo.toc)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 40--40
-[][]  
- []
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 40.
-
-[2
-
-]
-LaTeX Font Info:    Try loading font information for U+msa on input line 42.
+\c__siunitx_mathsf_int=\count299
+LaTeX Font Info:    Try loading font information for U+msa on input line 45.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 42.
+LaTeX Font Info:    Try loading font information for U+msb on input line 45.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 42.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 45.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
-line 42.
+line 45.
 
 (/usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 )
-[3
+\c__siunitx_mathtt_int=\count300
+
+Overfull \vbox (13.79993pt too high) detected at line 47
+ []
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./demo.toc)
+Overfull \hbox (0.4pt too wide) in paragraph at lines 52--52
+[][]  
+ []
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
+(Font)              size <5> substituted on input line 52.
+
+[2
+
+] [3
 
 ]
 \openout4 = `demo.vrb'.
@@ -1266,7 +1576,7 @@ Underfull \hbox (badness 1348) in paragraph at lines 15--19
  []
 
 )
-Overfull \hbox (0.4pt too wide) in paragraph at lines 75--75
+Overfull \hbox (0.4pt too wide) in paragraph at lines 87--87
 [][]  
  []
 
@@ -1277,7 +1587,7 @@ qubit}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.75 \end{frame}
+l.87 \end{frame}
                  <./blochsphere.png>]
 \openout4 = `demo.vrb'.
 
@@ -1291,7 +1601,7 @@ LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              for symbol `textbullet' on input line 4.
 
 )
-Overfull \hbox (0.4pt too wide) in paragraph at lines 102--102
+Overfull \hbox (0.4pt too wide) in paragraph at lines 114--114
 [][]  
  []
 
@@ -1301,7 +1611,7 @@ Overfull \hbox (0.4pt too wide) in paragraph at lines 102--102
 \openout4 = `demo.vrb'.
 
  (./demo.vrb)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 131--131
+Overfull \hbox (0.4pt too wide) in paragraph at lines 143--143
 [][]  
  []
 
@@ -1318,7 +1628,7 @@ LaTeX Font Info:    Font shape `U/urwchancal/m/n' will be
 LaTeX Font Info:    Font shape `U/urwchancal/m/n' will be
 (Font)              scaled to size 4.80003pt on input line 3.
 )
-Overfull \hbox (0.4pt too wide) in paragraph at lines 162--162
+Overfull \hbox (0.4pt too wide) in paragraph at lines 174--174
 [][]  
  []
 
@@ -1328,7 +1638,7 @@ Overfull \hbox (0.4pt too wide) in paragraph at lines 162--162
 \openout4 = `demo.vrb'.
 
  (./demo.vrb)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 171--171
+Overfull \hbox (0.4pt too wide) in paragraph at lines 183--183
 [][]  
  []
 
@@ -1341,7 +1651,7 @@ Overfull \hbox (0.4pt too wide) in paragraph at lines 171--171
 Missing character: There is no Ã in font cmss10!
 Missing character: There is no ¨ in font cmss10!
 )
-Overfull \hbox (0.4pt too wide) in paragraph at lines 193--193
+Overfull \hbox (0.4pt too wide) in paragraph at lines 205--205
 [][]  
  []
 
@@ -1361,7 +1671,7 @@ LaTeX Font Info:    Font shape `U/urwchancal/m/n' will be
 LaTeX Font Info:    Font shape `U/urwchancal/m/n' will be
 (Font)              scaled to size 5.76004pt on input line 11.
 )
-Overfull \hbox (0.4pt too wide) in paragraph at lines 215--215
+Overfull \hbox (0.4pt too wide) in paragraph at lines 227--227
 [][]  
  []
 
@@ -1371,7 +1681,7 @@ Overfull \hbox (0.4pt too wide) in paragraph at lines 215--215
 \openout4 = `demo.vrb'.
 
  (./demo.vrb)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 252--252
+Overfull \hbox (0.4pt too wide) in paragraph at lines 264--264
 [][]  
  []
 
@@ -1381,7 +1691,7 @@ Overfull \hbox (0.4pt too wide) in paragraph at lines 252--252
 \openout4 = `demo.vrb'.
 
  (./demo.vrb)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 290--290
+Overfull \hbox (0.4pt too wide) in paragraph at lines 302--302
 [][]  
  []
 
@@ -1390,12 +1700,12 @@ Overfull \hbox (0.4pt too wide) in paragraph at lines 290--290
 ] [13
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 321--321
+Overfull \hbox (0.4pt too wide) in paragraph at lines 333--333
 [][]  
  []
 
 
-Overfull \vbox (9.33876pt too high) detected at line 321
+Overfull \vbox (9.33876pt too high) detected at line 333
  []
 
 [14
@@ -1403,20 +1713,20 @@ Overfull \vbox (9.33876pt too high) detected at line 321
 ] <bloch3over4.png, id=138, 703.62875pt x 618.31pt>
 File: bloch3over4.png Graphic file (type png)
  <use bloch3over4.png>
-Package pdftex.def Info: bloch3over4.png used on input line 367.
+Package pdftex.def Info: bloch3over4.png used on input line 379.
 (pdftex.def)             Requested size: 122.91406pt x 108.00774pt.
 
-Overfull \hbox (1.05978pt too wide) detected at line 367
+Overfull \hbox (1.05978pt too wide) detected at line 379
 []\OT1/mathkerncmss/m/sl/7 CR[]\OT1/cmss/m/n/7 ([]) [] = [] = [] []([] [] + [] 
 []) [] []
  []
 
-LaTeX Font Info:    Try loading font information for U+dsrom on input line 367.
+LaTeX Font Info:    Try loading font information for U+dsrom on input line 379.
 
 (/usr/share/texlive/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 )
-Overfull \hbox (15.7916pt too wide) detected at line 367
+Overfull \hbox (15.7916pt too wide) detected at line 379
 \OT1/cmss/m/n/7 (\OT1/mathkerncmss/m/sl/7 X \OMS/cmsy/m/n/7 
  \U/dsrom/m/n/7 1 \OMS/cmsy/m/n/7 
  \U/dsrom/m/n/7 1 \OMS/cmsy/m/n/7 
@@ -1424,18 +1734,18 @@ Overfull \hbox (15.7916pt too wide) detected at line 367
  []
 
 
-Overfull \hbox (0.4pt too wide) in paragraph at lines 367--367
+Overfull \hbox (0.4pt too wide) in paragraph at lines 379--379
 [][]  
  []
 
 
-Overfull \vbox (21.86188pt too high) detected at line 367
+Overfull \vbox (21.86188pt too high) detected at line 379
  []
 
 [15
 
  <./bloch3over4.png>]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 382--382
+Overfull \hbox (0.4pt too wide) in paragraph at lines 394--394
 [][]  
  []
 
@@ -1444,210 +1754,235 @@ Overfull \hbox (0.4pt too wide) in paragraph at lines 382--382
 ] <controlledU.png, id=153, 297.11pt x 201.75375pt>
 File: controlledU.png Graphic file (type png)
  <use controlledU.png>
-Package pdftex.def Info: controlledU.png used on input line 420.
+Package pdftex.def Info: controlledU.png used on input line 432.
 (pdftex.def)             Requested size: 90.5028pt x 61.45703pt.
 
 <controlledUdecomposition.png, id=154, 892.33376pt x 296.10625pt>
 File: controlledUdecomposition.png Graphic file (type png)
 
 <use controlledUdecomposition.png>
-Package pdftex.def Info: controlledUdecomposition.png used on input line 420.
+Package pdftex.def Info: controlledUdecomposition.png used on input line 432.
 (pdftex.def)             Requested size: 184.3758pt x 61.18109pt.
 
-Overfull \hbox (0.4pt too wide) in paragraph at lines 420--420
+Overfull \hbox (0.4pt too wide) in paragraph at lines 432--432
 [][]  
  []
 
 [17
 
  <./controlledU.png> <./controlledUdecomposition.png>]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 446--446
+Overfull \hbox (0.4pt too wide) in paragraph at lines 458--458
 [][]  
  []
 
 [18
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 459--459
+Overfull \hbox (0.4pt too wide) in paragraph at lines 475--475
 [][]  
  []
 
 [19
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 470--470
+PGFPlots: reading {datax.dat}
+PGFPlots: reading {datax.dat}
+
+Overfull \hbox (0.4pt too wide) in paragraph at lines 500--500
 [][]  
  []
 
 [20
 
-] [21
+]
+LaTeX Font Info:    Try loading font information for TS1+cmss on input line 534
+.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
+File: ts1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+Overfull \hbox (0.4pt too wide) in paragraph at lines 534--534
+[][]  
+ []
+
+[21
 
 ]
-\openout4 = `demo.vrb'.
+LaTeX Font Info:    Font shape `U/urwchancal/m/n' will be
+(Font)              scaled to size 11.52008pt on input line 543.
 
- (./demo.vrb)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 486--486
+Overfull \hbox (0.4pt too wide) in paragraph at lines 543--543
 [][]  
  []
 
 [22
 
-]
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 504.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 504.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/bx/sc' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 504.
-
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 504.
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/it' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 504.
-
-
-Overfull \hbox (0.4pt too wide) in paragraph at lines 504--504
-[][]  
- []
-
-[23
+] [23
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 527--527
+\openout4 = `demo.vrb'.
+
+ (./demo.vrb)
+Overfull \hbox (0.4pt too wide) in paragraph at lines 559--559
 [][]  
  []
 
 [24
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 534--534
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10> not available
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 577.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/bx/n' instead on input line 577.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/sc' undefined
+(Font)              using `OT1/cmss/bx/n' instead on input line 577.
+
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 577.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/it' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 577.
+
+
+Overfull \hbox (0.4pt too wide) in paragraph at lines 577--577
 [][]  
  []
 
 [25
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 534--534
+Overfull \hbox (0.4pt too wide) in paragraph at lines 600--600
 [][]  
  []
 
 [26
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 534--534
+Overfull \hbox (0.4pt too wide) in paragraph at lines 607--607
 [][]  
  []
 
 [27
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 534--534
+Overfull \hbox (0.4pt too wide) in paragraph at lines 607--607
 [][]  
  []
 
 [28
 
 ]
-\c@density=\count188
-
-Overfull \hbox (0.4pt too wide) in paragraph at lines 560--560
+Overfull \hbox (0.4pt too wide) in paragraph at lines 607--607
 [][]  
  []
 
 [29
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 575--575
+Overfull \hbox (0.4pt too wide) in paragraph at lines 607--607
 [][]  
  []
 
 [30
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 611--611
+\c@density=\count301
+
+Overfull \hbox (0.4pt too wide) in paragraph at lines 633--633
 [][]  
  []
 
 [31
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 616--616
+Overfull \hbox (0.4pt too wide) in paragraph at lines 648--648
 [][]  
  []
 
 [32
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 632--632
+Overfull \hbox (0.4pt too wide) in paragraph at lines 684--684
 [][]  
  []
 
 [33
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 653--653
+Overfull \hbox (0.4pt too wide) in paragraph at lines 689--689
 [][]  
  []
 
 [34
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 658--658
+Overfull \hbox (0.4pt too wide) in paragraph at lines 705--705
 [][]  
  []
 
 [35
 
-] [36
+]
+Overfull \hbox (0.4pt too wide) in paragraph at lines 726--726
+[][]  
+ []
+
+[36
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 665--665
+Overfull \hbox (0.4pt too wide) in paragraph at lines 731--731
 [][]  
  []
 
 [37
 
+] [38
+
 ]
-
-LaTeX Warning: Citation `knuth92' on page 38 undefined on input line 669.
-
-
-LaTeX Warning: Citation `ConcreteMath' on page 38 undefined on input line 669.
-
-
-LaTeX Warning: Citation `Simpson' on page 38 undefined on input line 669.
-
-
-LaTeX Warning: Citation `Er01' on page 38 undefined on input line 669.
-
-
-LaTeX Warning: Citation `greenwade93' on page 38 undefined on input line 669.
-
-
-Overfull \hbox (0.4pt too wide) in paragraph at lines 669--669
+Overfull \hbox (0.4pt too wide) in paragraph at lines 738--738
 [][]  
  []
 
-[38
+[39
 
-] [39
+]
+
+LaTeX Warning: Citation `knuth92' on page 40 undefined on input line 742.
+
+
+LaTeX Warning: Citation `ConcreteMath' on page 40 undefined on input line 742.
+
+
+LaTeX Warning: Citation `Simpson' on page 40 undefined on input line 742.
+
+
+LaTeX Warning: Citation `Er01' on page 40 undefined on input line 742.
+
+
+LaTeX Warning: Citation `greenwade93' on page 40 undefined on input line 742.
+
+
+Overfull \hbox (0.4pt too wide) in paragraph at lines 742--742
+[][]  
+ []
+
+[40
+
+] [41
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\translate ' on input line 676.
+(hyperref)                removing `\translate ' on input line 749.
 
 \openout4 = `demo.vrb'.
 
-(./demo.vrb) [40
+(./demo.vrb) [42
 
-] (./demo.bbl) [41
+] (./demo.bbl) [43
 
  </usr/share/texlive/texmf-dist/tex/latex/beamer/art/beamericonarticle.pdf>]
 \tf@nav=\write6
@@ -1659,11 +1994,11 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 \tf@snm=\write8
 \openout8 = `demo.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 689.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 689.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 762.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 762.
  (./demo.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 689.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 689.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 762.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 762.
 Package rerunfilecheck Info: File `demo.out' has not changed.
 (rerunfilecheck)             Checksum: A8B5D9699D45E4EDB9B5BC6DF1D04B18;265.
 
@@ -1680,44 +2015,46 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 689.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 762.
  ) 
 Here is how much of TeX's memory you used:
- 32406 strings out of 493029
- 776152 string characters out of 6136235
- 963973 words of memory out of 5000000
- 35136 multiletter control sequences out of 15000+600000
- 19572 words of font info for 71 fonts, out of 8000000 for 9000
+ 41586 strings out of 493029
+ 985105 string characters out of 6136235
+ 1120390 words of memory out of 5000000
+ 44266 multiletter control sequences out of 15000+600000
+ 23345 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,18n,102p,1750b,2116s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/doublestroke/ds
-rom10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/doublestroke/dsrom8
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on demo.pdf (41 pages, 486498 bytes).
+ 71i,18n,105p,10390b,2357s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texli
+ve/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/doublestroke/dsrom8.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/tex
+mf/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texlive/texmf-dist/font
+s/type1/urw/zapfchan/uzcmi8a.pfb>
+Output written on demo.pdf (43 pages, 494515 bytes).
 PDF statistics:
- 409 PDF objects out of 1000 (max. 8388607)
- 319 compressed objects within 4 object streams
- 90 named destinations out of 1000 (max. 500000)
+ 426 PDF objects out of 1000 (max. 8388607)
+ 333 compressed objects within 4 object streams
+ 94 named destinations out of 1000 (max. 500000)
  108 words of extra memory for PDF output out of 10000 (max. 10000000)
 

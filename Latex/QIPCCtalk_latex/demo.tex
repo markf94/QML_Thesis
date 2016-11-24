@@ -17,6 +17,18 @@
 \usepackage{mathrsfs}
 \usepackage{xspace}
 \usepackage{amsmath} %for gathering equations
+\usepackage{siunitx} %for SI units
+\usepackage{pgfplots} %for plotting
+\usepackage{filecontents} %for data loading
+\begin{filecontents}{datax.dat}
+0.06941, 28, 0.44096, 30, 0.15165, 25
+0.04389, 146, 0.32707, 132,0.10722, 109
+0.04951, 728, 0.224107, 642, 0.020864, 601
+0.02823, 3622, 0.08416, 3478, 0.02086, 2997
+0.01008, 17838, 0.005179, 17566, 0.01494, 14721
+0.00165, 89130,0.0015799, 88216, 0.003327, 74009
+0.00156, 444646, 0.0015601, 439060, 0.001578, 370813
+\end{filecontents}
 
 \usepackage[cal=zapfc,calscaled=.96]{mathalfa}
 
@@ -448,10 +460,14 @@ C \quad=\quad R_z(\frac{\delta-\beta}{2})\quad =& \quad R_z(-\frac{9}{16}\pi) \q
 
 {
 \setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}Dawson, C. M., \& Nielsen, M. A. (2005). The Solovay-Kitaev algorithm. arXiv preprint quant-ph/0505030.}}
-\begin{frame}{The Solovay-Kitaev algorithm}
+\begin{frame}{The Solovay-Kitaev theorem}
 
+The Solovay-Kitaev theorem guarantees that given a set of single-qubit quantum gates which generates a dense subset of $SU(2)$, then that set is guaranteed to fill $SU(2)$ quickly.\textsuperscript{1}
+ 
+$\rightarrow$ \textcolor{green}{\textbf{Hence, given any universal gate set it is possible to obtain good approximations to any desired gate.}}
 
-
+$\rightarrow$ \textcolor{red}{\textbf{But needs to be computed classically!}}
+\vspace{16mm}
 \metroset{block=fill}
 	\begin{alertblock}{Algorithmic complexity}
 	$\mathcal{O}(\frac{1}{p_{acc}})+\mathcal{O}(k)+\mathcal{O}(m*log^{2.71}(\frac{m}{\epsilon}))$ for $\epsilon$-approximations of $m$ gates\textsuperscript{1}
@@ -460,13 +476,70 @@ C \quad=\quad R_z(\frac{\delta-\beta}{2})\quad =& \quad R_z(-\frac{9}{16}\pi) \q
 }
 
 {
-\setbeamertemplate{frame footer}{References go here}
-\begin{frame}{All caps}
-	This frame uses the \texttt{allcaps} titleformat.
+\setbeamertemplate{frame footer}{}
+\begin{frame}{The Solovay-Kitaev algorithm}
 
-	\begin{alertblock}{Potential Problems}
-		This titleformat is not as problematic as the \texttt{allsmallcaps} format, but basically suffers from the same deficiencies. So please have a look at the documentation if you want to use it.
-	\end{alertblock}
+What is fowler distance?
+
+\begin{figure}
+    \begin{tikzpicture}
+\begin{axis}[xlabel={Gate count},ylabel={Fowler distance [$d(U,U_{approx})$]}]
+
+% Graph column 2 versus column 0
+\addplot table[x index=1,y index=0,col sep=comma] {datax.dat};
+\addlegendentry{$R_z(-\frac{9}{16}\pi)$}% y index+1 since humans count from 1
+
+% Graph column 1 versus column 0    
+\addplot table[x index=5,y index=4,col sep=comma] {datax.dat};
+\addlegendentry{$R_z(-\frac{23}{16}\pi)$}
+
+\end{axis}
+\end{tikzpicture}
+  \end{figure}
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{}
+\begin{frame}{The Solovay-Kitaev algorithm}
+
+%SK needs to be implemented for each gate that is not element of the universal gate set:
+%\begin{align}
+%R_z(-\frac{23}{16}\pi) \quad \rightarrow& \quad  %\\
+%R_z(-\frac{9}{16}\pi) \quad \rightarrow& \quad 121 gates \quad (d(U,U_{approx}) = 0.04389)
+%\end{align}
+
+IBM's quantum computer needs \textbf{130ns for single-qubit gates} and \textbf{500ns for CNOT gates.}
+
+Qubit decoherence times:
+
+\SI{49.5}{\micro\second} $\leq T1 \leq$ \SI{85.3}{\micro\second}\\
+\SI{56.0}{\micro\second} $\leq T2 \leq$ \SI{139.7}{\micro\second}
+\vspace{6mm}
+\begin{table}
+    \begin{tabular}{c| c |c |c}
+      \toprule
+      Approx. Gate & Distance & Gate count & Execution time\\
+      \midrule
+      $R_z(-\frac{9}{16}\pi)$ & 0.04389 & 121 & \textcolor{green}{\SI{15.7}{\micro\second}}\\
+       & 0.02823 & 3,622 & \textcolor{red}{\SI{470.9}{\micro\second}}\\
+       & 0.004698 & 20,496 & \textcolor{red}{\SI{2664.5}{\micro\second}}\\
+       %& 14,160,467 & 20,116,842 & 20,116,842\\
+      \bottomrule
+    \end{tabular}
+    \caption{SK algorithm results}
+  \end{table}
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{}
+\begin{frame}{Liqui$\ket{}$ simulations}
+	
+Show that the simple binary classification problem works in Liquid since we can directly implement 	
+	
 \end{frame}
 }
 

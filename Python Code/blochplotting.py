@@ -16,8 +16,8 @@ onestate = [[1.,0.,0.],[0.,1.,0.],[0.,0.,-1.]]
 b.add_vectors(onestate)
 #Qubit amplitudes
 
-alpha = 0.98079
-beta = 0.19509
+alpha = -0.44859 + 0.54660j
+beta = -0.44859 - 0.54660j
 
 # #1 in Liquid (3/4 state)
 #alpha = 0.85355 - 0.35355j
