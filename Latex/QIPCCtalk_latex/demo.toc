@@ -1,5 +1,5 @@
 \beamer@endinputifotherversion {3.36pt}
 \beamer@sectionintoc {1}{Introduction}{3}{0}{1}
 \beamer@sectionintoc {2}{Amplitude-based kNN algorithm}{12}{0}{2}
-\beamer@sectionintoc {3}{Conclusion}{24}{0}{3}
-\beamer@sectionintoc {4}{Qubit-based kNN quantum algorithm}{36}{1}{4}
+\beamer@sectionintoc {3}{Conclusion}{25}{0}{3}
+\beamer@sectionintoc {4}{Qubit-based kNN quantum algorithm}{37}{1}{4}

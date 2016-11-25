@@ -23,7 +23,7 @@ print "Identity Name: " + H2.identity.name
 matrix_U = matrixify([[-0.63439 + 0.77301j,0.0], [0.0,-0.63439 - 0.77301j]])
 op_U = Operator(name="U", matrix=matrix_U)
 
-n = 7
+n = 2
 print "U= " + str(matrix_U)
 
 ##############################################################################

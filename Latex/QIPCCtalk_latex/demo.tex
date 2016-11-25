@@ -37,10 +37,11 @@
 
 \title{Putting quantum machine learning algorithms to the test}
 \subtitle{4th QIPCC conference, 2016 \newline Cape Town, South Africa}
-% \date{\today}
+%\subtitle{25. November 2016}
+%\date{\today}
 \date{}
 \author{Mark Fingerhuth}
-\institute{Maastricht University, The Netherlands \newline Thesis work at Centre for Quantum Technology, UKZN, South Africa }
+\institute{Maastricht University, The Netherlands \newline BSc thesis work at Centre for Quantum Technology, UKZN, South Africa }
 % \titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.pdf}}
 
 \begin{document}
@@ -176,7 +177,7 @@ Machine learning can be subdivided into three major fields.
 }
 
 {
-\setbeamertemplate{frame footer}{References go here}
+\setbeamertemplate{frame footer}{}
 \begin{frame}[fragile]{Quantum Machine Learning}
 
 \begin{itemize}
@@ -329,7 +330,7 @@ After successful conditional measurement, the state is proportional to
 \end{equation}
 
 \begin{equation}
-p(\ket{y^m} = \ket{0})= \sum_{m \mid y^m=0} 1 - \frac{1}{4} \mid \tilde{x} - x^m \mid ^2
+p(\ket{y^m} = \ket{0})= \sum_{m \mid y^m=0} 1 - \frac{1}{4M} \mid \tilde{x} - x^m \mid ^2
 \end{equation}
 	\metroset{block=fill}
 	\begin{alertblock}{Overall algorithmic complexity}
@@ -338,10 +339,6 @@ p(\ket{y^m} = \ket{0})= \sum_{m \mid y^m=0} 1 - \frac{1}{4} \mid \tilde{x} - x^m
 	\end{alertblock}
 \end{frame}
 }
-
-
-
-
 
 
 {
@@ -529,6 +526,39 @@ dist(U,U_{approx}) = \sqrt{\frac{2-\mid tr(U\cdot U_{approx}^\dagger)\mid}{2}}
 \setbeamertemplate{frame footer}{}
 \begin{frame}{The Solovay-Kitaev algorithm}
 
+\begin{minipage}[c]{.8\textwidth}
+	%\vspace{-20mm}
+	\includegraphics[height=0.8\textwidth]{fowlerdistance.png}
+       \captionsetup{justification=raggedright, singlelinecheck=false}
+       \captionof{figure}{\footnotesize{Various Fowler distances visualized on Bloch sphere} }
+\end{minipage}%%%%%
+\begin{minipage}[c]{.2\textwidth}
+\scriptsize
+\begin{equation}
+\textcolor{cyan}{d = 0.22739}
+\end{equation}
+\begin{equation}
+\textcolor{green}{d = 0.15165}
+\end{equation}
+\begin{equation}
+\textcolor{blue}{d = 0.10722}
+\end{equation}
+\begin{equation}
+\textcolor{yellow}{d = 0.02086}
+\end{equation}
+\begin{equation}
+\textcolor{red}{d = 0.00156}
+\end{equation}
+
+\end{minipage}
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{}
+\begin{frame}{The Solovay-Kitaev algorithm}
+
 IBM's quantum computer needs \textbf{130ns for single-qubit gates} and \textbf{500ns for CNOT gates.}
 
 IBM qubit decoherence times:
@@ -600,8 +630,13 @@ In Liqui$\ket{}$ we can directly implement the controlled $R_y$ rotation!
 \section{Conclusion}
 
 \begin{frame}{Summary}
-
-sefsefesfsefsef
+\begin{itemize}
+\item Initial state preparation is non-trivial! (even for very simple examples)
+\item In this case, state preparation dominates the overall algorithmic complexity
+\item Universal gate sets are only useful when combined with long qubit lifetimes
+\item Solovay-Kitaev yields very long gate sequences for good approximations
+\item \textbf{Need for better quantum compiling and more general state preparation algorithms!}
+\end{itemize}
 \end{frame}
 
 \begin{frame}{Taking it further}
@@ -614,7 +649,20 @@ sefsefesfsefsef
 \end{frame}
 
 \begin{frame}{References}
-  Some references to showcase [allowframebreaks] \cite{knuth92,ConcreteMath,Simpson,Er01,greenwade93}
+
+\footnotesize{Bekkerman, R., Bilenko, M., \& Langford, J. (2011). Scaling up machine learning: Parallel and distributed
+approaches. Cambridge University Press.\newline
+
+Booth Jr, J. (2012). Quantum compiler optimizations. arXiv preprint arXiv:1206.3348.
+
+Dawson, C. M., \& Nielsen, M. A. (2005). The Solovay-Kitaev algorithm. arXiv preprint quant-ph/0505030.\newline
+
+IBM. (2016). What is big data? https://www-01.ibm.com/software/data/bigdata/what-is-big
+-data.html. (Accessed: 2016-09-08) \newline
+
+Jat, R. N., \& Ruhela, D. S. (2011). Comparative study of complexity of algorithms for iterative solution of non-linear equations. Journal of International Academy Of Physical Sciences, 15(4).\newline
+
+Nielsen, M. A., \& Chuang, I. L. (2010). Quantum computation and quantum information. Cambridge University Press.}
 \end{frame}
 
 \begin{frame}[standout]
@@ -623,33 +671,36 @@ sefsefesfsefsef
 
 
 \appendix
-
+{
+\setbeamertemplate{frame footer}{\vspace{-2mm}\tiny{Chuang I. (2003) MIT Lecture 19: How to Build Your Own Quantum Computer}}
 \begin{frame}[fragile]{Backup slide: Qubit decoherence times}
 
+We expect exponential decay:
+\begin{equation}
+e^{−t/T_i}
+\end{equation}
 
 \begin{block}{$T_1$: Longitudinal coherence time (amplitude damping)}
 
-- Prepare $\ket{0}$ state
-- Apply the X (NOT) gate s.t. qubit is in $\ket{1}$ state
-- Wait for time $t$
+- Prepare $\ket{0}$ state\\
+- Apply the X (NOT) gate s.t. qubit is in $\ket{1}$ state\\
+- Wait for time $t$\\
 - Measure the probability of being in $\ket{1}$ state
 
-More info here!
 \end{block}
-\vspace{5mm}
 \begin{block}{$T_2$: Transversal coherence time (phase damping)}
 
-- Prepare $\ket{0}$ state
-- Apply Hadamard $\rightarrow \quad \frac{\ket{0}+\ket{1}}{\sqrt{2}}$
-- Wait for time $t$
-- Apply Hadamard again
-- Measure the probability of being in $\ket{0}$ state
+- Prepare $\ket{0}$ state\\
+- Apply Hadamard $\rightarrow \quad \frac{\ket{0}+\ket{1}}{\sqrt{2}}$\\
+- Wait for time $t$\\
+- Apply Hadamard again\\
+- Measure the probability of being in $\ket{0}$ state\\
 
-After a long time, we expect this probability to go to 0.5 since it becomes more and more likely that something caused the qubit to move towards the $\ket{0}$ or $\ket{1}$.
+We expect this probability to go to 0.5 $\rightarrow$ qubit lost quantum behaviour
 \end{block}
 
 \end{frame}
-
+}
 {
 \setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}Li, Z., Liu, X., Xu, N., \& Du, J. (2015). Experimental realization of a quantum support vector machine. Physical Review Letters, 114 (14), 1–5. doi: 10.1103/PhysRevLett.114.140504 \newline\textsuperscript{2}Cai, X. D., Wu, D., Su, Z. E., Chen, M. C., Wang, X. L., Li, L., . . . Pan, J. W. (2015). Entanglement-
 based machine learning on a quantum computer. Physical Review Letters, 114 (11), 1–5. doi:10.1103/PhysRevLett.114.110504 \newline\textsuperscript{3}Ristè, D., da Silva, M. P., Ryan, C. A., Cross, A. W., Smolin, J. A., Gambetta, J. M., . . . Johnson,
