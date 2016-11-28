@@ -16,9 +16,15 @@
 \usepackage{dsfont}%identity operator
 \usepackage{mathrsfs}
 \usepackage{xspace}
+\usepackage{xcolor}
 \usepackage{amsmath} %for gathering equations
 \usepackage{siunitx} %for SI units
 \usepackage{pgfplots} %for plotting
+
+\definecolor{darkyellow}{HTML}{FFB600}
+\definecolor{emerald}{HTML}{32936F}
+
+
 \usepackage{filecontents} %for data loading
 \begin{filecontents}{datax.dat}
 0.06941, 28, 0.44096, 30, 0.15165, 25
@@ -118,78 +124,96 @@ sets gets increasingly difficult\textsuperscript{2}
 
 {
 \setbeamertemplate{frame footer}{}
-\begin{frame}[fragile]{Machine Learning}
-   
-Machine learning can be subdivided into three major fields.
-
-\metroset{block=fill}
-
-\begin{alertblock}{Supervised ML}
-- Based on \emph{input} and \emph{output} data\\
-\centering{
-"I know how to classify this data but I need the algorithm to do the computations for me."}
-\end{alertblock}
-
-\begin{exampleblock}{Unsupervised ML}
-- Based on \emph{input} data only\\
-\centering{
-"I have no clue how to classify this data, can the algorithm create a classifier for me?"}
-\end{exampleblock}
-
-\begin{block}{Reinforcement learning}
-- Based on \emph{input} data only\\
-\centering{
-"I have no clue how to classify this data, can the algorithm classify this data and I'll give it a reward if it's correct or I'll punish it if it's not."}
-\end{block}
-
-\end{frame}
-}
-
-{
-\setbeamertemplate{frame footer}{}
-\begin{frame}[fragile]{Machine Learning}
-   
-Machine learning can be subdivided into three major fields.
-
-\metroset{block=fill}
-
-\begin{alertblock}{Supervised ML}
-- Based on \emph{input} and \emph{output} data\\
-\centering{
-"I know how to classify this data but I need the algorithm to do the computations for me."}
-\end{alertblock}
-
-\begin{exampleblock}{\textcolor{gray}{Unsupervised ML}}
-\color{gray}
-- Based on \emph{input} data only\\
-\centering{
-"I have no clue how to classify this data, can the algorithm create a classifier for me?"}
-\end{exampleblock}
-
-\begin{block}{\textcolor{gray}{Reinforcement learning}}
-\color{gray}
-- Based on \emph{input} data only\\
-\centering{
-"I have no clue how to classify this data, can the algorithm classify this data and I'll give it a reward if it's correct or I'll punish it if it's not."}
-\end{block}
-
-\end{frame}
-}
-
-{
-\setbeamertemplate{frame footer}{}
 \begin{frame}[fragile]{Quantum Machine Learning}
 
-\begin{itemize}
+\begin{enumerate}
 \item ML involves manipulation of large vectors and matrices
 \item Quantum mechanics is about vectors $\in$ complex Hilbert spaces
 \item Quantum computers are performing linear operations on qubits
-\item Hence, we can manipulate large vectors in parallel on quantum computers
-\item So can we use QC to improve classical ML algorithms??
-\vspace{8mm}
+\end{enumerate}
+\hspace{3mm}$\rightarrow$ Hence, we can manipulate large vectors in parallel on quantum\\ \hspace{8mm}computers\\
+\vspace{3mm}
+\centering{\textcolor{orange}{So can we use QC to improve classical ML algorithms??}}
+\vspace{3mm}
+\begin{itemize}
 \item Classical ML is a very practical topic\\
 \item BUT, QML has been of almost entirely theoretical nature
 \end{itemize}
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{}
+\begin{frame}[fragile]{Quantum data encoding}
+ 
+There are two fundamentally different ways for state preparation:
+
+\begin{alertblock}{Data encoded into qubits}
+%speed-up not very clear since the \# of qubits increases linearly with the \# of classical bits
+k-dimensional probability vector requires $4k$ classical bits which are encoded one-to-one into $4k$ qubits, e.g.\\
+\vspace{2mm}
+$\begin{pmatrix}
+ \textcolor{blue}{0.6} \\ 
+ \textcolor{green}{0.4}
+ \end{pmatrix}*10 \rightarrow \begin{pmatrix}
+ \textcolor{blue}{6} \\ 
+ \textcolor{green}{4}
+ \end{pmatrix} \rightarrow \begin{pmatrix}
+ \textcolor{blue}{0110} \\ 
+ \textcolor{green}{0100}
+ \end{pmatrix} \rightarrow n=\textcolor{blue}{0110}\textcolor{green}{0100} \rightarrow \ket{n} = \ket{\textcolor{blue}{0110}\textcolor{green}{0100}}$\\
+%\textbf{Only slight speed up possible}
+\end{alertblock}
+\vspace{3mm}
+\begin{alertblock}{\textcolor{gray}{Data encoded into amplitudes}}
+\textcolor{gray}{k-dimensional probability vector is encoded into $log_{2}(k)$ qubits, e.g.\\ 
+\vspace{2mm}
+$\begin{pmatrix}
+ 0.6 \\ 
+ 0.4
+ \end{pmatrix} \quad \rightarrow \quad \ket{n} = \sqrt{0.6}\ket{0}+\sqrt{0.4}\ket{1}$\\
+%\textbf{Possibility of exponential speed up}
+}
+\end{alertblock}
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{}
+\begin{frame}[fragile]{Quantum data encoding}
+ 
+There are two fundamentally different ways for state preparation:
+
+\begin{alertblock}{\textcolor{gray}{Data encoded into qubits}}
+%speed-up not very clear since the \# of qubits increases linearly with the \# of classical bits
+\textcolor{gray}{k-dimensional probability vector requires $4k$ classical bits which are encoded one-to-one into $4k$ qubits, e.g.\\
+\vspace{2mm}
+$\begin{pmatrix}
+ 0.6 \\ 
+ 0.4
+ \end{pmatrix}*10 \rightarrow \begin{pmatrix}
+ 6 \\ 
+ 4
+ \end{pmatrix} \rightarrow \begin{pmatrix}
+ 0110 \\ 
+ 0100
+ \end{pmatrix} \rightarrow n=01100100 \rightarrow \ket{n} = \ket{01100100}$\\
+%\textbf{Only slight speed up possible}
+}
+\end{alertblock}  
+\vspace{3mm}
+\begin{alertblock}{Data encoded into amplitudes}
+k-dimensional probability vector is encoded into $log_{2}(k)$ qubits, e.g.\\ 
+\vspace{2mm}
+$\begin{pmatrix}
+ \textcolor{blue}{0.6} \\ 
+ \textcolor{green}{0.4}
+ \end{pmatrix} \quad \rightarrow \quad \ket{n} = \sqrt{\textcolor{blue}{0.6}}\ket{0}+\sqrt{\textcolor{green}{0.4}}\ket{1}$\\
+%\textbf{Possibility of exponential speed up}
+\end{alertblock}
+
+
 \end{frame}
 }
 
@@ -224,81 +248,6 @@ Given a new vector $\tilde{x}$ (red star):\\
 \end{frame}
 }
 
-{
-\setbeamertemplate{frame footer}{}
-\begin{frame}[fragile]{Quantum k-nearest neighbour}
- 
-Two different algorithms with respect to initial state preparation:
-
-\begin{alertblock}{Data encoded into qubits}
-%speed-up not very clear since the \# of qubits increases linearly with the \# of classical bits
-k-dimensional probability vector requires $4k$ classical bits which are encoded one-to-one into $4k$ qubits, e.g.\\
-\vspace{2mm}
-$\begin{pmatrix}
- \textcolor{blue}{0.6} \\ 
- \textcolor{orange}{0.4}
- \end{pmatrix}*10 \rightarrow \begin{pmatrix}
- \textcolor{blue}{6} \\ 
- \textcolor{orange}{4}
- \end{pmatrix} \rightarrow \begin{pmatrix}
- \textcolor{blue}{0110} \\ 
- \textcolor{orange}{0100}
- \end{pmatrix} \rightarrow n=\textcolor{blue}{0110}\textcolor{orange}{0100} \rightarrow \ket{n} = \ket{\textcolor{blue}{0110}\textcolor{orange}{0100}}$\\
-%\textbf{Only slight speed up possible}
-\end{alertblock}
-\vspace{3mm}
-\begin{alertblock}{\textcolor{gray}{Data encoded into amplitudes}}
-\textcolor{gray}{k-dimensional probability vector is encoded into $log_{2}(k)$ qubits, e.g.\\ 
-\vspace{2mm}
-$\begin{pmatrix}
- 0.6 \\ 
- 0.4
- \end{pmatrix} \quad \rightarrow \quad \ket{n} = \sqrt{0.6}\ket{0}+\sqrt{0.4}\ket{1}$\\
-%\textbf{Possibility of exponential speed up}
-}
-\end{alertblock}
-
-\end{frame}
-}
-
-{
-\setbeamertemplate{frame footer}{}
-\begin{frame}[fragile]{Quantum k-nearest neighbour}
- 
-Two different algorithms with respect to initial state preparation:
-
-\begin{alertblock}{\textcolor{gray}{Data encoded into qubits}}
-%speed-up not very clear since the \# of qubits increases linearly with the \# of classical bits
-\textcolor{gray}{k-dimensional probability vector requires $4k$ classical bits which are encoded one-to-one into $4k$ qubits, e.g.\\
-\vspace{2mm}
-$\begin{pmatrix}
- 0.6 \\ 
- 0.4
- \end{pmatrix}*10 \rightarrow \begin{pmatrix}
- 6 \\ 
- 4
- \end{pmatrix} \rightarrow \begin{pmatrix}
- 0110 \\ 
- 0100
- \end{pmatrix} \rightarrow n=01100100 \rightarrow \ket{n} = \ket{01100100}$\\
-%\textbf{Only slight speed up possible}
-}
-\end{alertblock}  
-\vspace{3mm}
-\begin{alertblock}{Data encoded into amplitudes}
-k-dimensional probability vector is encoded into $log_{2}(k)$ qubits, e.g.\\ 
-\vspace{2mm}
-$\begin{pmatrix}
- \textcolor{blue}{0.6} \\ 
- \textcolor{orange}{0.4}
- \end{pmatrix} \quad \rightarrow \quad \ket{n} = \sqrt{\textcolor{blue}{0.6}}\ket{0}+\sqrt{\textcolor{orange}{0.4}}\ket{1}$\\
-%\textbf{Possibility of exponential speed up}
-\end{alertblock}
-
-
-\end{frame}
-}
-
 
 \section{Amplitude-based kNN algorithm}
 {
@@ -306,17 +255,36 @@ $\begin{pmatrix}
 \begin{frame}{The algorithm}
 
 \begin{equation}
-\frac{1}{\sqrt{2M}}\sum_{m=1}^{M} (\ket{0}\ket{\Psi_{\tilde{x}}}+\ket{1}\ket{\Psi_{x^{m}}})\ket{y^{m}}\ket{m}
+\frac{1}{\sqrt{2M}}\sum_{m=1}^{M} (\textcolor{emerald}{\ket{0}}\ket{\textcolor{red}{\Psi_{\tilde{x}} (\star)}}+\textcolor{emerald}{\ket{1}}\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{x^{m}}}})\ket{y^{m}(\textcolor{darkyellow}{A} \ or \ \textcolor{purple}{B})}\ket{m}
 \end{equation}
 where
 \begin{equation}
-\ket{\Psi_{\tilde{x}}} = \sum_{i=1}^{N} \tilde{x}_i\ket{i} \quad \quad
-\ket{\Psi_{x^{m}}} = \sum_{i=1}^{N} x_i^m \ket{i}
+\ket{\textcolor{red}{\Psi_{\tilde{x}} (\star)}} = \sum_{i=1}^{N} \textcolor{red}{\tilde{x}_i}\ket{i} \quad \quad
+\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{x^{m}}}}	 = \sum_{i=1}^{N} \textcolor{darkyellow}{x}\textcolor{purple}{_i^m} \ket{i} 
 \end{equation}
 
 \begin{equation}
-\frac{1}{2\sqrt{M}}\sum_{m=1}^{M} (\ket{0}[\ket{\Psi_{\tilde{x}}}+\ket{\Psi_{x^{m}}}]+\ket{1}[\ket{\Psi_{\tilde{x}}}-\ket{\Psi_{x^{m}}}])\ket{y^{m}}\ket{m}
+e.g. \quad \begin{pmatrix}
+ \textcolor{blue}{0.6} \\ 
+ \textcolor{green}{0.4}
+ \end{pmatrix} \quad \rightarrow \quad \ket{n} =  \sqrt{\textcolor{blue}{0.6}}\ket{0}+\sqrt{\textcolor{green}{0.4}}\ket{1}
 \end{equation}
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{\vspace{-2mm}\tiny{Maria Schuld (2016), unpublished}}
+\begin{frame}{The algorithm}
+
+Applying the \textbf{Hadamard gate} interferes the input and the training vectors:
+
+\begin{equation}
+\frac{1}{2\sqrt{M}}\sum_{m=1}^{M} (\textcolor{emerald}{\ket{0}}[\ket{\textcolor{red}{\Psi_{\tilde{x}}}}+\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{x^{m}}}}]+\textcolor{emerald}{\ket{1}}[\ket{\textcolor{red}{\Psi_{\tilde{x}}}}-\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{x^{m}}}}])\ket{y^{m}(\textcolor{darkyellow}{A} \ or \ \textcolor{purple}{B})}\ket{m}
+\end{equation}
+
+Perform \textbf{conditional measurement} on ancilla qubit.\\
+Successful if $\ket{0}$ state is measured.
 \end{frame}
 }
 
@@ -326,11 +294,12 @@ where
 
 After successful conditional measurement, the state is proportional to
 \begin{equation}
-\frac{1}{2\sqrt{M}}\sum_{m=1}^{M} \sum_{i=1}^{N} (\tilde{x}_i+x_i^m)\ket{0}\ket{i}\ket{y^{m}}\ket{m}
+\frac{1}{2\sqrt{M}}\sum_{m=1}^{M} \sum_{i=1}^{N} (\textcolor{red}{\tilde{x}_i}+\textcolor{darkyellow}{x}\textcolor{purple}{_i^m})\ket{0}\ket{i}\ket{y^{m}(\textcolor{darkyellow}{A} \ or \ \textcolor{purple}{B})}\ket{m}
 \end{equation}
 
+Probability to measure class B:
 \begin{equation}
-p(\ket{y^m} = \ket{0})= \sum_{m \mid y^m=0} 1 - \frac{1}{4M} \mid \tilde{x} - x^m \mid ^2
+p(\ket{y^m} = \ket{1(\textcolor{purple}{B})})= \sum_{m \mid y^m=1(\textcolor{purple}{B})} 1 - \frac{1}{4M} \mid \textcolor{red}{\tilde{x}} - \textcolor{purple}{x^m} \mid ^2
 \end{equation}
 	\metroset{block=fill}
 	\begin{alertblock}{Overall algorithmic complexity}
@@ -348,31 +317,26 @@ p(\ket{y^m} = \ket{0})= \sum_{m \mid y^m=0} 1 - \frac{1}{4M} \mid \tilde{x} - x^
 \begin{minipage}[c]{.4\textwidth}
 		%\centering
 		\hspace{-7mm}
-       \includegraphics[width=\textwidth]{bloch3over4.png}
+       \includegraphics[width=1.1\textwidth]{bloch3over4.png}
        \captionsetup{justification=raggedright, singlelinecheck=false}
        \captionof{figure}{\footnotesize{Simple binary classification problem of a quantum state} }
 \end{minipage}%%%%
 \begin{minipage}[c][][b]{.6\textwidth}
 \scriptsize{
 \begin{equation}
-\frac{1}{\sqrt{2M}}\sum_{m=1}^{M} (\ket{0}\ket{\Psi_{\tilde{x}}}+\ket{1}\ket{\Psi_{x^{m}}})\ket{y^{m}}\ket{m}
-\end{equation}
-where
-\begin{equation}
-\ket{\Psi_{\tilde{x}}} = \sum_{i=1}^{N} \tilde{x}_i\ket{i} \quad \quad
-\ket{\Psi_{x^{m}}} = \sum_{i=1}^{N} x_i^m \ket{i}
+\frac{1}{\sqrt{2M}}\sum_{m=1}^{M} (\textcolor{emerald}{\ket{0}}\ket{\textcolor{red}{\Psi_{\tilde{x}} (\star)}}+\textcolor{emerald}{\ket{1}}\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{x^{m}}}})\ket{y^{m}(\textcolor{darkyellow}{A} \ or \ \textcolor{purple}{B})}\ket{m}
 \end{equation}}
 Procedure to load the input vector $\tilde{x}$:
 \begin{equation}
-\ket{\Psi_0} = \frac{1}{2}\sum_{m=1}^{2} (\ket{0}\ket{0}+\ket{1}\ket{0})\ket{y^{m}}\ket{m}
+\ket{\Psi_0} = \frac{1}{2}\sum_{m=1}^{2} (\textcolor{emerald}{\ket{0}}\ket{0}+\textcolor{emerald}{\ket{1}}\ket{0})\ket{y^{m}}\ket{m}
 \end{equation}
 Apply controlled rotation $_0^1CR_y(\frac{\pi}{4})$ s.t.
 \begin{equation}
-_0^1CR_y(\frac{\pi}{4})\ket{\Psi_0} = \ket{\Psi_1} = \frac{1}{2}\sum_{m=1}^{2} (\ket{0}\ket{0}+\ket{1}\ket{\Psi_{\tilde{x}}})\ket{y^{m}}\ket{m}
+_0^1CR_y(\frac{\pi}{4})\ket{\Psi_0} = \ket{\Psi_1} = \frac{1}{2}\sum_{m=1}^{2} (\textcolor{emerald}{\ket{0}}\ket{0}+\textcolor{emerald}{\ket{1}}\ket{\textcolor{red}{\Psi_{\tilde{x}}}})\ket{y^{m}}\ket{m}
 \end{equation}
 Flip the ancilla qubit in the first register
 \begin{equation}
-(X\otimes\mathds{1}\otimes\mathds{1}\otimes\mathds{1})\ket{\Psi_1} = \ket{\Psi_2} = \frac{1}{2}\sum_{m=1}^{2} (\ket{0}\ket{\Psi_{\tilde{x}}}+\ket{1}\ket{0})\ket{y^{m}}\ket{m}
+(X\otimes\mathds{1}\otimes\mathds{1}\otimes\mathds{1})\ket{\Psi_1} = \ket{\Psi_2} = \frac{1}{2}\sum_{m=1}^{2} (\textcolor{emerald}{\ket{0}}\ket{\textcolor{red}{\Psi_{\tilde{x}}}}+\textcolor{emerald}{\ket{1}}\ket{0})\ket{y^{m}}\ket{m}
 \end{equation}
 \null
 \par\xdef\tpd{\the\prevdepth}
@@ -409,6 +373,20 @@ Flip the ancilla qubit in the first register
 
 \end{itemize}
 \end{minipage}
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{}
+\begin{frame}{IBM's universal gate set}
+
+\begin{figure}
+\includegraphics[scale=0.45]{IBMgates.png}
+       \caption{\footnotesize{IBM's universal gate set} }
+\end{figure}
+\vspace{10mm}
+\centering{\textbf{How can we implement the $_0^1CR_y(\frac{\pi}{4})$ gate?}}
+
 \end{frame}
 }
 
@@ -724,6 +702,66 @@ mechanically\textsuperscript{2}
 
 %> only proof-of-concept so far
 %little is known about full procedure from crude data to final classification
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{}
+\begin{frame}[fragile]{Machine Learning}
+   
+Machine learning can be subdivided into three major fields.
+
+\metroset{block=fill}
+
+\begin{alertblock}{Supervised ML}
+- Based on \emph{input} and \emph{output} data\\
+\centering{
+"I know how to classify this data but I need the algorithm to do the computations for me."}
+\end{alertblock}
+
+\begin{exampleblock}{Unsupervised ML}
+- Based on \emph{input} data only\\
+\centering{
+"I have no clue how to classify this data, can the algorithm create a classifier for me?"}
+\end{exampleblock}
+
+\begin{block}{Reinforcement learning}
+- Based on \emph{input} data only\\
+\centering{
+"I have no clue how to classify this data, can the algorithm classify this data and I'll give it a reward if it's correct or I'll punish it if it's not."}
+\end{block}
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{}
+\begin{frame}[fragile]{Machine Learning}
+   
+Machine learning can be subdivided into three major fields.
+
+\metroset{block=fill}
+
+\begin{alertblock}{Supervised ML}
+- Based on \emph{input} and \emph{output} data\\
+\centering{
+"I know how to classify this data but I need the algorithm to do the computations for me."}
+\end{alertblock}
+
+\begin{exampleblock}{\textcolor{gray}{Unsupervised ML}}
+\color{gray}
+- Based on \emph{input} data only\\
+\centering{
+"I have no clue how to classify this data, can the algorithm create a classifier for me?"}
+\end{exampleblock}
+
+\begin{block}{\textcolor{gray}{Reinforcement learning}}
+\color{gray}
+- Based on \emph{input} data only\\
+\centering{
+"I have no clue how to classify this data, can the algorithm classify this data and I'll give it a reward if it's correct or I'll punish it if it's not."}
+\end{block}
 
 \end{frame}
 }
