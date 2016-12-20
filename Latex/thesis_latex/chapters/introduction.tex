@@ -2,6 +2,9 @@
 
 \section{Quantum Bits}
 \label{subsec:qubits}
+
+\section{Single Qubit Systems}
+\label{subsec:qubits}
 %Classical computers manipulate bits and the quantum equivalent is called a quantum bit, often abbreviated as qubit.
 Classical computers manipulate bits, whereas quantum computer's most fundamental unit is called a quantum bit, often abbreviated as qubit. Bits as well as qubits are binary entities, meaning they can only take the values 0 and 1. A classical non-probabilistic bit can only be in one of the two possible states at once. In contrast, qubits obey the laws of quantum mechanics, which gives rise to the powerful property that - besides being a definite 0 or 1 - they can also be in a superposition of the two states. Mathematically this is expressed as a linear combination of the states 0 and 1:
 \begin{equation}
@@ -27,7 +30,9 @@ Using spherical polar coordinates, a single qubit can be visualized on the so-ca
 \ket{q} = \cos\frac{\theta}{2} \ket{0} + e^{i \phi} \sin\frac{\theta}{2} \ket{1}
 \end{equation}
 
-The Bloch sphere has a radius of 1 and is therefore a unit sphere. The \0 qubit state is defined to lie along the positive z-axis ($\hat{z}$) and the \1 state is defined to lie along the negative z-axis ($-\hat{z}$) as labelled in Fig.~\ref{fig:blochsphere}. At this point, it is important to note that these two states are mutually orthogonal in $\mathcal{H}_{2}$ even though they are not orthogonal on the Bloch sphere. Furthermore, qubit states on the Bloch equator such as the $\hat{x}$ and $\hat{y}$ coordinate axes represent equal superpositions where \0 and \1 both have probabilities equal to $0.5$. The $\hat{x}$-axis for example represents the equal superposition $\ket{q} = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}$. As illustrated in Fig.~\ref{fig:blochsphere} any arbitrary 2-D qubit state $\ket{\psi}$ can be decomposed into the polar angles $\theta$ and $\phi$ and visualized on the Bloch sphere. The Bloch sphere will be the main visualization tool for qubit manipulations in this thesis.Fig.~\ref{fig:blochsphere}
+The Bloch sphere has a radius of 1 and is therefore a unit sphere. The \0 qubit state is defined to lie along the positive z-axis ($\hat{z}$) and the \1 state is defined to lie along the negative z-axis ($-\hat{z}$) as labelled in Fig.~\ref{fig:blochsphere}. At this point, it is important to note that these two states are mutually orthogonal in $\mathcal{H}_{2}$ even though they are not orthogonal on the Bloch sphere. 
+
+Qubit states on the Bloch equator such as the $\hat{x}$ and $\hat{y}$ coordinate axes represent equal superpositions where \0 and \1 both have measurement probabilities equal to $0.5$. The $\hat{x}$-axis for example represents the equal superposition $\ket{q} = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}$. As illustrated in Fig.~\ref{fig:blochsphere} any arbitrary 2-D qubit state $\ket{\psi}$ can be decomposed into the polar angles $\theta$ and $\phi$ and visualized as a vector on the Bloch sphere. Such an object is called the Bloch vector of the qubit state $\ket{q}$. The Bloch sphere will be the main visualization tool for qubit manipulations in this thesis.
 
 \begin{figure}[!ht]
        \centering
@@ -37,17 +42,30 @@ The Bloch sphere has a radius of 1 and is therefore a unit sphere. The \0 qubit 
 
 \footnotetext[1]{Reprinted from Wikipedia, n.d., Retrieved September 7, 2016, from \url{https://en.wikipedia.org/wiki/Bloch_Sphere}. Copyright 2012 by Glosser.ca. Reprinted with permission.}
 
+\subsection{Multiple Qubit Systems}
+\label{subsec:multiplequbitsystems}
+
+Introduce tensor products here!
+
+\subsection{Entanglement}
+\label{subsec:entanglement}
+
+Introduce entanglement and non-factorising tensor states here!
 
 %%%%% SECTION: Q LOGIC GATES
 
 
 \section{Quantum Logic Gates}
 \label{subsec:quantumlogicgates}
-In order to perform quantum computations, tools, analogous to the classical logic gates, are needed for qubit manipulation. 
+In order to perform quantum computations, tools, analogous to the classical logic gates, are needed for qubit manipulation. Quantum logic gates are square matrices that can be visualized as rotations on the Bloch sphere. The following subsections will introduce the major single and multi qubit logic gates.
 
 \subsection{Single Qubit Gates}
 \label{subsubsec:singlequbitgates}
+
+ADD THE CIRCUIT REPRESENTATIONS OF THE RESPECTIVE GATES!
+
 The four most basic single-qubit quantum gates are given by the four Pauli matrices listed below in Equ. ~\ref{equ: paulimatrices}.
+
 \begin{align}
 \label{equ: paulimatrices}
 \sigma_{0} &= \mathbb{1} = \begin{pmatrix}
@@ -72,23 +90,155 @@ The four most basic single-qubit quantum gates are given by the four Pauli matri
  \end{pmatrix}
 \end{align}
 
-\subsubsection{NOT (X) Gate}
+\subsubsection{Identity Gate}
+\label{subsubsubsec:identitygate}
+
+The simplest quantum gate is the identity or idle gate given by the 0\textsuperscript{th} Pauli matrix:
+
+\begin{equation}
+\sigma_{0} = \mathbb{1} = \begin{pmatrix}
+ 1 & 0 \\ 
+ 0 & 1
+ \end{pmatrix}
+\end{equation}
+
+The action of a quantum gate on a qubit state can be analysed using the gate's matrix and the qubit's vector representation. Applying some straightforward linear algebra in this case yields:
+
+\begin{equation}
+\label{equ:identityverification}
+\mathbb{1} \otimes (\alpha \ket{0} + \beta \ket{1}) = \begin{pmatrix}
+ 1 & 0 \\ 
+ 0 & 1
+ \end{pmatrix} \begin{pmatrix}
+ \alpha  \\ 
+ \beta
+ \end{pmatrix} = \begin{pmatrix}
+ \alpha  \\ 
+ \beta
+ \end{pmatrix} = \alpha \ket{0} + \beta \ket{1}
+\end{equation}
+
+Hence, applying the identity gate to an arbitrary qubit state $\ket{q} = \alpha \ket{0} + \beta \ket{1}$ leaves the state unchanged as shown in Equ.~\ref{equ:identityverification}. The idle gate is mainly used for measuring the error and lifetimes of qubits since it only evolves the qubit in time without actively rotating the Bloch vector.
+
+\subsubsection{Qubit Flip (X) Gate}
 \label{subsubsubsec:xgate}
+
+The quantum equivalent of the classical NOT gate is called X gate and is given by the 1\textsuperscript{st} Pauli matrix:
+
+\begin{equation}
+\sigma_{1} = \sigma_{x} = \begin{pmatrix}
+ 0 & 1 \\ 
+ 1 & 0
+ \end{pmatrix}
+\end{equation}
+
+The action of the X gate is easily verified using linear algebra,
+
+\begin{equation}
+\label{equ:xverification1}
+X \otimes (\alpha \ket{0} + \beta \ket{1}) = \begin{pmatrix}
+ 0 & 1 \\ 
+ 1 & 0
+ \end{pmatrix} \begin{pmatrix}
+ \alpha  \\ 
+ \beta
+ \end{pmatrix} = \begin{pmatrix}
+ \beta  \\ 
+ \alpha
+ \end{pmatrix} = \beta \ket{0} + \alpha \ket{1}
+\end{equation}
+
+
+\begin{equation}
+\label{equ:xverification2}
+X \otimes \ket{0} = \begin{pmatrix}
+ 0 & 1 \\ 
+ 1 & 0
+ \end{pmatrix} \begin{pmatrix}
+ 1  \\ 
+ 0
+ \end{pmatrix} = \begin{pmatrix}
+ 0  \\ 
+ 1 \end{pmatrix} =  \ket{1}
+\end{equation}
+
+\begin{equation}
+\label{equ:xverification3}
+X \otimes \ket{1} = \begin{pmatrix}
+ 0 & 1 \\ 
+ 1 & 0
+ \end{pmatrix} \begin{pmatrix}
+ 0  \\ 
+ 1
+ \end{pmatrix} = \begin{pmatrix}
+ 1  \\ 
+ 0 \end{pmatrix} =  \ket{0}
+\end{equation}
+
 
 \subsubsection{Phase Flip (Z) Gate}
 \label{subsubsubsec:zgate}
 
-\subsubsection{Bit and Phase Flip (Y) Gate}
+\begin{equation}
+\sigma_{3} = \sigma_{z} = \begin{pmatrix}
+ 1 & 0 \\ 
+ 0 & -1
+ \end{pmatrix}
+\end{equation}
+
+\subsubsection{Qubit and Phase Flip (Y) Gate}
 \label{subsubsubsec:ygate}
+
+\begin{equation}
+\sigma_{2} = \sigma_{y} = \begin{pmatrix}
+ 0 & -i \\ 
+ i & 0
+ \end{pmatrix}
+\end{equation}
 
 \subsubsection{Hadamard (H) Gate}
 \label{subsubsubsec:hadamardgate}
 
+\begin{equation}
+H = \begin{pmatrix}
+ \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\ 
+ \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}
+ \end{pmatrix}
+\end{equation}
+
 \subsubsection{Clifford (H,S,Sd) Gates}
 \label{subsubsubsec:cliffordgates}
 
+\begin{equation}
+S = \sqrt{Z} = \begin{pmatrix}
+ 1 & 0 \\ 
+ 0 & i
+ \end{pmatrix}
+\end{equation}
+
+\begin{equation}
+S^\dagger = \begin{pmatrix}
+ 1 & 0 \\ 
+ 0 & -i
+ \end{pmatrix}
+\end{equation}
+
 \subsubsection{Non-Clifford (T,Td) Gates}
 \label{subsubsubsec:noncliffordgates}
+
+\begin{equation}
+T = \sqrt{S} = \begin{pmatrix}
+ 1 & 0 \\ 
+ 0 & e^{\frac{i\pi}{4}}
+ \end{pmatrix}
+\end{equation}
+
+\begin{equation}
+T^\dagger = \begin{pmatrix}
+ 1 & 0 \\ 
+ 0 & e^{-\frac{i\pi}{4}}
+ \end{pmatrix}
+\end{equation}
 
 
 %%%%% SUBSECTION: MULTIPLE Q LOGIC GATES
@@ -100,11 +250,48 @@ The four most basic single-qubit quantum gates are given by the four Pauli matri
 \subsubsection{Controlled NOT Gate}
 \label{subsubsubsec:cnotgate}
 
+\begin{equation}
+CNOT = \begin{pmatrix}
+ \mathbb{1} & 0 \\ 
+ 0 & X
+ \end{pmatrix} = \begin{pmatrix}
+ 1 & 0 & 0 & 0 \\ 
+ 0 & 1 & 0 & 0 \\
+ 0 & 0 & 0 & 1 \\
+ 0 & 0 & 1 & 0 \\
+ \end{pmatrix}
+\end{equation}
+
 \subsubsection{Toffoli Gate}
 \label{subsubsubsec:toffoligate}
 
+\begin{equation}
+Toffoli = CCNOT = \begin{pmatrix}
+ \mathbb{1}_6 & 0 \\ 
+ 0 & X
+ \end{pmatrix} = \begin{pmatrix}
+ 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+ 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+ 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\ 
+ 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\ 
+ 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\ 
+ 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\ 
+ 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\ 
+ \end{pmatrix}
+\end{equation}
+
+where $\mathbb{1}_6$ is the 6x6 identity matrix.
+
 \subsubsection{Controlled U Gate}
 \label{subsubsubsec:controlledugate}
+
+\begin{equation}
+CU = \begin{pmatrix}
+ \mathbb{1} & 0 \\ 
+ 0 & U
+ \end{pmatrix}
+\end{equation}
 
 %%%%% SECTION: MEASUREMENTS
 
@@ -119,11 +306,17 @@ The four most basic single-qubit quantum gates are given by the four Pauli matri
 
 %%%%% SECTION: MACHINE LEARNING
 
-\section{Machine Learning}
-\label{subsec:qubitmeasurements}
+%\section{Machine Learning}
+%\label{subsec:machinelearning}
 
-\subsection{Classical Machine Learning}
-\label{subsubsec:standardbasismeasurement}
+\section{Classical Machine Learning}
+\label{subsec:classicalmachinelearning}
 
-\subsection{Quantum Machine Learning}
-\label{subsubsec:blochmeasurement}
+\subsection{k-nearest Neighbour Algorithm}
+\label{subsubsec:knearestneighbour}
+
+\section{Quantum Machine Learning}
+\label{subsec:quantummachinelearning}
+
+\subsection{Quantum k-nearest Neighbour Algorithm}
+\label{subsubsec:quantumknearestneighbour}
