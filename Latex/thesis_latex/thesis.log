@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  20 DEC 2016 14:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  20 DEC 2016 15:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -640,10 +640,7 @@ Package: apacite 2013/07/21 v6.03 APA citation
 \biblabelsep=\skip81
 ) (./thesis.aux
 
-LaTeX Warning: Label `subsec:qubits' multiply defined.
-
-
-LaTeX Warning: Label `equ:xverification2' multiply defined.
+LaTeX Warning: Label `equ:yverification' multiply defined.
 
 )
 \openout1 = `thesis.aux'.
@@ -851,91 +848,30 @@ img/UM_logo-eps-converted-to.pdf> <./img/logo.jpeg>] [2
 Chapter 1.
 [1
 
-] <img/blochsphere.png, id=58, 2007.5pt x 2278.5125pt>
+] <img/blochsphere.png, id=57, 2007.5pt x 2278.5125pt>
 File: img/blochsphere.png Graphic file (type png)
 
 <use img/blochsphere.png>
-Package pdftex.def Info: img/blochsphere.png used on input line 39.
+Package pdftex.def Info: img/blochsphere.png used on input line 41.
 (pdftex.def)             Requested size: 140.53935pt x 159.51216pt.
  [2 <./img/blochsphere.png>] [3] [4]) [5] [6
 
 ]
-(./chapters/materialsandmethods.tex
-Chapter 2.
-) [7
+(./thesis.bbl) [7
 
-] [8
-
-] (./chapters/resultsanddiscussion.tex
-Chapter 3.
-) [9
-
-] [10
-
-] (./chapters/outlook.tex
-Chapter 4.
-) [11
-
-] [12
-
-] (./chapters/conclusion.tex
-Chapter 5.
-) [13
-
-] [14
-
-] (./chapters/personalreflection.tex
-Chapter 6.
-) [15
-
-] [16
-
-] (./thesis.bbl) [17
-
-] [18
-
-]
-Package epstopdf Info: Source file: <img/ethlogo.eps>
-(epstopdf)                    date: 2016-11-09 15:39:34
-(epstopdf)                    size: 72851 bytes
-(epstopdf)             Output file: <img/ethlogo-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-11-09 17:44:49
-(epstopdf)                    size: 14327 bytes
-(epstopdf)             Command: <repstopdf --outfile=img/ethlogo-eps-converted-
-to.pdf img/ethlogo.eps>
-(epstopdf)             \includegraphics on input line 100.
-Package epstopdf Info: Output file is already uptodate.
-
-<img/ethlogo-eps-converted-to.pdf, id=123, 192.72pt x 59.22125pt>
-File: img/ethlogo-eps-converted-to.pdf Graphic file (type pdf)
-
-<use img/ethlogo-eps-converted-to.pdf>
-Package pdftex.def Info: img/ethlogo-eps-converted-to.pdf used on input line 10
-0.
-(pdftex.def)             Requested size: 185.18846pt x 56.9055pt.
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 100.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
-File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
-
- []
-
-[19 <./img/ethlogo-eps-converted-to.pdf>] (./thesis.aux)
+] (./thesis.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14214 strings out of 493029
- 233165 string characters out of 6136235
- 328385 words of memory out of 5000000
- 17413 multiletter control sequences out of 15000+600000
- 23163 words of font info for 60 fonts, out of 8000000 for 9000
+ 14167 strings out of 493029
+ 231894 string characters out of 6136235
+ 323329 words of memory out of 5000000
+ 17387 multiletter control sequences out of 15000+600000
+ 21321 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 49i,14n,76p,741b,412s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 49i,14n,76p,744b,412s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dis
@@ -954,14 +890,12 @@ e1/public/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
 frm0700.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/sh
 are/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type
 1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
-rm1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1000.pfb></usr/sha
-re/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1
-/public/cm-super/sftt0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sft
-t1000.pfb>
-Output written on thesis.pdf (29 pages, 524235 bytes).
+ti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0800.pfb></usr/sha
+re/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on thesis.pdf (17 pages, 472624 bytes).
 PDF statistics:
- 211 PDF objects out of 1000 (max. 8388607)
- 147 compressed objects within 2 object streams
+ 162 PDF objects out of 1000 (max. 8388607)
+ 113 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

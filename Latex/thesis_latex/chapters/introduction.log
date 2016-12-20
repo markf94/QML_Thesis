@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  20 DEC 2016 14:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  20 DEC 2016 15:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -81,9 +81,73 @@ Overfull \hbox (20.0pt too wide) in paragraph at lines 3--5
 []
  []
 
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6 I
+     NTRODUCE CONCEPT OF DROPPING GLOBAL PHASE SOMEWHERE!
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no I in font nullfont!
+Missing character: There is no N in font nullfont!
+Missing character: There is no T in font nullfont!
+Missing character: There is no R in font nullfont!
+Missing character: There is no O in font nullfont!
+Missing character: There is no D in font nullfont!
+Missing character: There is no U in font nullfont!
+Missing character: There is no C in font nullfont!
+Missing character: There is no E in font nullfont!
+Missing character: There is no C in font nullfont!
+Missing character: There is no O in font nullfont!
+Missing character: There is no N in font nullfont!
+Missing character: There is no C in font nullfont!
+Missing character: There is no E in font nullfont!
+Missing character: There is no P in font nullfont!
+Missing character: There is no T in font nullfont!
+Missing character: There is no O in font nullfont!
+Missing character: There is no F in font nullfont!
+Missing character: There is no D in font nullfont!
+Missing character: There is no R in font nullfont!
+Missing character: There is no O in font nullfont!
+Missing character: There is no P in font nullfont!
+Missing character: There is no P in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no N in font nullfont!
+Missing character: There is no G in font nullfont!
+Missing character: There is no G in font nullfont!
+Missing character: There is no L in font nullfont!
+Missing character: There is no O in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no A in font nullfont!
+Missing character: There is no L in font nullfont!
+Missing character: There is no P in font nullfont!
+Missing character: There is no H in font nullfont!
+Missing character: There is no A in font nullfont!
+Missing character: There is no S in font nullfont!
+Missing character: There is no E in font nullfont!
+Missing character: There is no S in font nullfont!
+Missing character: There is no O in font nullfont!
+Missing character: There is no M in font nullfont!
+Missing character: There is no E in font nullfont!
+Missing character: There is no W in font nullfont!
+Missing character: There is no H in font nullfont!
+Missing character: There is no E in font nullfont!
+Missing character: There is no R in font nullfont!
+Missing character: There is no E in font nullfont!
+Missing character: There is no ! in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 6--7
+[]
+ []
+
 ! Undefined control sequence.
-l.6 \section
-            {Single Qubit Systems}
+l.8 \subsection
+               {Single Qubit Systems}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -97,8 +161,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.6 \section{S
-              ingle Qubit Systems}
+l.8 \subsection{S
+                 ingle Qubit Systems}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -610,16 +674,16 @@ Missing character: There is no d in font nullfont!
 Missing character: There is no 1 in font nullfont!
 Missing character: There is no : in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 6--10
+Overfull \hbox (20.0pt too wide) in paragraph at lines 8--12
 []
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 10.
+(Font)              <7> on input line 12.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 10.
+(Font)              <5> on input line 12.
 ! Undefined control sequence.
-l.12 \ket
+l.14 \ket
          {q} = \alpha \ket{0} + \beta \ket{1}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -628,7 +692,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.12 \ket{q} = \alpha \ket
+l.14 \ket{q} = \alpha \ket
                           {0} + \beta \ket{1}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -637,7 +701,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.12 \ket{q} = \alpha \ket{0} + \beta \ket
+l.14 \ket{q} = \alpha \ket{0} + \beta \ket
                                           {1}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -646,7 +710,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (48.55202pt too wide) detected at line 13
+Overfull \hbox (48.55202pt too wide) detected at line 15
 []\OML/cmm/m/it/10 q \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 \OT1/cmr/m/n/10 0 + \O
 ML/cmm/m/it/10 ^^L\OT1/cmr/m/n/10 1
  []
@@ -718,7 +782,7 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
-l.14 ...are often referred to as phase factors. \0
+l.16 ...are often referred to as phase factors. \0
                                                    is the Dirac notation for...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -851,7 +915,7 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no ) in font nullfont!
 Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
-l.14 ...alled Hilbert space $\mathcal{H}_{2}$). \0
+l.16 ...alled Hilbert space $\mathcal{H}_{2}$). \0
                                                    and \1 are the the comput...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -863,7 +927,7 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no d in font nullfont!
 ! Undefined control sequence.
-l.14 ...ilbert space $\mathcal{H}_{2}$). \0 and \1
+l.16 ...ilbert space $\mathcal{H}_{2}$). \0 and \1
                                                    are the the computational...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -963,7 +1027,7 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no y in font nullfont!
 Missing character: There is no , in font nullfont!
 ! Undefined control sequence.
-l.14 ...thcal{H}_{2}$. For the sake of clarity, \0
+l.16 ...thcal{H}_{2}$. For the sake of clarity, \0
                                                    and \1 can be thought of ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -975,7 +1039,7 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no d in font nullfont!
 ! Undefined control sequence.
-l.14 ...}_{2}$. For the sake of clarity, \0 and \1
+l.16 ...}_{2}$. For the sake of clarity, \0 and \1
                                                    can be thought of as the ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1024,27 +1088,27 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no w in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (6.43404pt too wide) in paragraph at lines 13--15
+Overfull \hbox (6.43404pt too wide) in paragraph at lines 15--17
  $\OML/cmm/m/it/10 $
  []
 
 
-Overfull \hbox (6.18402pt too wide) in paragraph at lines 13--15
+Overfull \hbox (6.18402pt too wide) in paragraph at lines 15--17
 \OML/cmm/m/it/10 ^^L$
  []
 
 
-Overfull \hbox (12.9313pt too wide) in paragraph at lines 13--15
+Overfull \hbox (12.9313pt too wide) in paragraph at lines 15--17
 \OMS/cmsy/m/n/10 H[]$
  []
 
 
-Overfull \hbox (12.9313pt too wide) in paragraph at lines 13--15
+Overfull \hbox (12.9313pt too wide) in paragraph at lines 15--17
 \OMS/cmsy/m/n/10 H[]$
  []
 
 ! Undefined control sequence.
-l.17 \ket
+l.19 \ket
          {0} =  \colvec{1\\0} \quad \quad \ket{1} = \colvec{0\\1}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1053,7 +1117,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.17 \ket{0} =  \colvec
+l.19 \ket{0} =  \colvec
                        {1\\0} \quad \quad \ket{1} = \colvec{0\\1}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1062,7 +1126,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.17 \ket{0} =  \colvec{1\\0} \quad \quad \ket
+l.19 \ket{0} =  \colvec{1\\0} \quad \quad \ket
                                               {1} = \colvec{0\\1}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1071,7 +1135,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.17 ...colvec{1\\0} \quad \quad \ket{1} = \colvec
+l.19 ...colvec{1\\0} \quad \quad \ket{1} = \colvec
                                                   {0\\1}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1080,7 +1144,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (56.66653pt too wide) detected at line 18
+Overfull \hbox (56.66653pt too wide) detected at line 20
 []\OT1/cmr/m/n/10 0 = []  1 = []
  []
 
@@ -1133,7 +1197,7 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no f in font nullfont!
 ! Undefined control sequence.
-l.19 ...h a qubit can be in as superposition of \0
+l.21 ...h a qubit can be in as superposition of \0
                                                    and \1, when measured it ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1145,7 +1209,7 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no d in font nullfont!
 ! Undefined control sequence.
-l.19 ...it can be in as superposition of \0 and \1
+l.21 ...it can be in as superposition of \0 and \1
                                                   , when measured it will ta...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1185,7 +1249,7 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.19 ...1, when measured it will take the value \0
+l.21 ...1, when measured it will take the value \0
                                                    with a probability of ${|...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1215,7 +1279,7 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no d in font nullfont!
 ! Undefined control sequence.
-l.19 ...h a probability of ${|\alpha|}^{2}$ and \1
+l.21 ...h a probability of ${|\alpha|}^{2}$ and \1
                                                    with a probability of ${|...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1345,17 +1409,17 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no d in font nullfont!
 Missing character: There is no : in font nullfont!
 
-Overfull \hbox (16.47574pt too wide) in paragraph at lines 18--20
+Overfull \hbox (16.47574pt too wide) in paragraph at lines 20--22
                           $[][]$
  []
 
 
-Overfull \hbox (16.22572pt too wide) in paragraph at lines 18--20
+Overfull \hbox (16.22572pt too wide) in paragraph at lines 20--22
 [][]$
  []
 
 
-Overfull \hbox (58.8125pt too wide) detected at line 23
+Overfull \hbox (58.8125pt too wide) detected at line 25
 [][][] \OT1/cmr/m/n/10 + [][] = 1
  []
 
@@ -1709,12 +1773,12 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (6.43404pt too wide) in paragraph at lines 23--25
+Overfull \hbox (6.43404pt too wide) in paragraph at lines 25--27
                                    $\OML/cmm/m/it/10 $
  []
 
 
-Overfull \hbox (6.18402pt too wide) in paragraph at lines 23--25
+Overfull \hbox (6.18402pt too wide) in paragraph at lines 25--27
 \OML/cmm/m/it/10 ^^L$
  []
 
@@ -1725,7 +1789,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.26 U
+l.28 U
       sing spherical polar coordinates, a single qubit can be visualized on ...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -1842,7 +1906,7 @@ Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
 <write> ...ce `equ: simplequbit' on page \thepage 
                                                   \space undefined\on@line .
-l.26 ...and $\beta$ in Equ.~\ref{equ: simplequbit}
+l.28 ...and $\beta$ in Equ.~\ref{equ: simplequbit}
                                                    as follows:
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1851,7 +1915,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `equ: simplequbit' on page  undefined on input line 26
+LaTeX Warning: Reference `equ: simplequbit' on page  undefined on input line 28
 .
 
 Missing character: There is no a in font nullfont!
@@ -1865,22 +1929,22 @@ Missing character: There is no w in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no : in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 26--27
+Overfull \hbox (20.0pt too wide) in paragraph at lines 28--29
 []
  []
 
 
-Overfull \hbox (6.43404pt too wide) in paragraph at lines 26--27
+Overfull \hbox (6.43404pt too wide) in paragraph at lines 28--29
 \OML/cmm/m/it/10 $
  []
 
 
-Overfull \hbox (6.18402pt too wide) in paragraph at lines 26--27
+Overfull \hbox (6.18402pt too wide) in paragraph at lines 28--29
 \OML/cmm/m/it/10 ^^L$
  []
 
 
-Overfull \hbox (10.86105pt too wide) in paragraph at lines 26--27
+Overfull \hbox (10.86105pt too wide) in paragraph at lines 28--29
 []
  []
 
@@ -1891,18 +1955,18 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.28 \begin{equation}
+l.30 \begin{equation}
                      
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 28--28
+Overfull \hbox (20.0pt too wide) in paragraph at lines 30--30
 [] 
  []
 
 ! Undefined control sequence.
-l.30 \ket
+l.32 \ket
          {q} = \cos\frac{\theta}{2} \ket{0} + e^{i \phi} \sin\frac{\theta}{2...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1911,7 +1975,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.30 \ket{q} = \cos\frac{\theta}{2} \ket
+l.32 \ket{q} = \cos\frac{\theta}{2} \ket
                                         {0} + e^{i \phi} \sin\frac{\theta}{2...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1920,7 +1984,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.30 ...{0} + e^{i \phi} \sin\frac{\theta}{2} \ket
+l.32 ...{0} + e^{i \phi} \sin\frac{\theta}{2} \ket
                                                   {1}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1929,7 +1993,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (94.19444pt too wide) detected at line 31
+Overfull \hbox (94.19444pt too wide) detected at line 33
 []\OML/cmm/m/it/10 q \OT1/cmr/m/n/10 = [] []0 + \OML/cmm/m/it/10 e[] [] []\OT1/
 cmr/m/n/10 1
  []
@@ -1941,7 +2005,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.33 T
+l.35 T
       he Bloch sphere has a radius of 1 and is therefore a unit sphere. The ...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -2004,7 +2068,7 @@ Missing character: There is no T in font nullfont!
 Missing character: There is no h in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.33 ...f 1 and is therefore a unit sphere. The \0
+l.35 ...f 1 and is therefore a unit sphere. The \0
                                                    qubit state is defined to...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2067,7 +2131,7 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no h in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.33 ...the positive z-axis ($\hat{z}$) and the \1
+l.35 ...the positive z-axis ($\hat{z}$) and the \1
                                                    state is defined to lie a...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2137,7 +2201,7 @@ Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
 <write> ...nce `fig:blochsphere' on page \thepage 
                                                   \space undefined\on@line .
-l.33 ... as labelled in Fig.~\ref{fig:blochsphere}
+l.35 ... as labelled in Fig.~\ref{fig:blochsphere}
                                                   . At this point, it is imp...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2146,7 +2210,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `fig:blochsphere' on page  undefined on input line 33.
+LaTeX Warning: Reference `fig:blochsphere' on page  undefined on input line 35.
 
 
 Missing character: There is no . in font nullfont!
@@ -2270,27 +2334,27 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 33--34
+Overfull \hbox (20.0pt too wide) in paragraph at lines 35--36
 []
  []
 
 
-Overfull \hbox (5.0903pt too wide) in paragraph at lines 33--34
+Overfull \hbox (5.0903pt too wide) in paragraph at lines 35--36
 []$
  []
 
 
-Overfull \hbox (12.8681pt too wide) in paragraph at lines 33--34
+Overfull \hbox (12.8681pt too wide) in paragraph at lines 35--36
 \OMS/cmsy/m/n/10 ^^@[]$
  []
 
 
-Overfull \hbox (10.86105pt too wide) in paragraph at lines 33--34
+Overfull \hbox (10.86105pt too wide) in paragraph at lines 35--36
 []
  []
 
 
-Overfull \hbox (12.9313pt too wide) in paragraph at lines 33--34
+Overfull \hbox (12.9313pt too wide) in paragraph at lines 35--36
 \OMS/cmsy/m/n/10 H[]$
  []
 
@@ -2301,7 +2365,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.35 Q
+l.37 Q
       ubit states on the Bloch equator such as the $\hat{x}$ and $\hat{y}$ c...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -2395,7 +2459,7 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.35 ...es represent equal superpositions where \0
+l.37 ...es represent equal superpositions where \0
                                                    and \1 both have measurem...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2407,7 +2471,7 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no d in font nullfont!
 ! Undefined control sequence.
-l.35 ...esent equal superpositions where \0 and \1
+l.37 ...esent equal superpositions where \0 and \1
                                                    both have measurement pro...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2507,7 +2571,7 @@ Missing character: There is no n in font nullfont!
 ! Undefined control sequence.
 <recently read> \ket 
                      
-l.35 ...e represents the equal superposition $\ket
+l.37 ...e represents the equal superposition $\ket
                                                   {q} = \frac{1}{\sqrt{2}} \...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2516,7 +2580,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.35 ...osition $\ket{q} = \frac{1}{\sqrt{2}} \ket
+l.37 ...osition $\ket{q} = \frac{1}{\sqrt{2}} \ket
                                                   {0} + \frac{1}{\sqrt{2}} \...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2525,7 +2589,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.35 ...sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket
+l.37 ...sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket
                                                   {1}$. As illustrated in Fi...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2556,7 +2620,7 @@ Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
 <write> ...nce `fig:blochsphere' on page \thepage 
                                                   \space undefined\on@line .
-l.35 ... illustrated in Fig.~\ref{fig:blochsphere}
+l.37 ... illustrated in Fig.~\ref{fig:blochsphere}
                                                    any arbitrary 2-D qubit s...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2565,7 +2629,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `fig:blochsphere' on page  undefined on input line 35.
+LaTeX Warning: Reference `fig:blochsphere' on page  undefined on input line 37.
 
 
 Missing character: There is no a in font nullfont!
@@ -2596,7 +2660,7 @@ Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
 <recently read> \ket 
                      
-l.35 ...phere} any arbitrary 2-D qubit state $\ket
+l.37 ...phere} any arbitrary 2-D qubit state $\ket
                                                   {\psi}$ can be decomposed ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2731,8 +2795,8 @@ Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
 <recently read> \ket 
                      
-l.35 ... the Bloch vector of the qubit state $\ket
-                                                  {q}$. The Bloch sphere wil...
+l.37 ... the Bloch vector of the qubit state $\ket
+                                                  {\psi}$. The Bloch sphere ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2819,68 +2883,68 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 35--36
+Overfull \hbox (20.0pt too wide) in paragraph at lines 37--38
 []
  []
 
 
-Overfull \hbox (5.71527pt too wide) in paragraph at lines 35--36
+Overfull \hbox (5.71527pt too wide) in paragraph at lines 37--38
 []$
  []
 
 
-Overfull \hbox (5.2616pt too wide) in paragraph at lines 35--36
+Overfull \hbox (5.2616pt too wide) in paragraph at lines 37--38
 []$
  []
 
 
-Overfull \hbox (12.77782pt too wide) in paragraph at lines 35--36
+Overfull \hbox (12.77782pt too wide) in paragraph at lines 37--38
 \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5$
  []
 
 
-Overfull \hbox (5.71527pt too wide) in paragraph at lines 35--36
+Overfull \hbox (5.71527pt too wide) in paragraph at lines 37--38
 []$
  []
 
 
-Overfull \hbox (15.37842pt too wide) in paragraph at lines 35--36
+Overfull \hbox (15.37842pt too wide) in paragraph at lines 37--38
 \OML/cmm/m/it/10 q \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (25.73341pt too wide) in paragraph at lines 35--36
+Overfull \hbox (25.73341pt too wide) in paragraph at lines 37--38
 []\OT1/cmr/m/n/10 0 +
  []
 
 
-Overfull \hbox (17.95561pt too wide) in paragraph at lines 35--36
+Overfull \hbox (17.95561pt too wide) in paragraph at lines 37--38
 []\OT1/cmr/m/n/10 1$
  []
 
 
-Overfull \hbox (10.86105pt too wide) in paragraph at lines 35--36
+Overfull \hbox (10.86105pt too wide) in paragraph at lines 37--38
 []
  []
 
 
-Overfull \hbox (6.8727pt too wide) in paragraph at lines 35--36
+Overfull \hbox (6.8727pt too wide) in paragraph at lines 37--38
 \OML/cmm/m/it/10  $
  []
 
 
-Overfull \hbox (4.97223pt too wide) in paragraph at lines 35--36
+Overfull \hbox (4.97223pt too wide) in paragraph at lines 37--38
 \OML/cmm/m/it/10 ^^R$
  []
 
 
-Overfull \hbox (5.95834pt too wide) in paragraph at lines 35--36
+Overfull \hbox (5.95834pt too wide) in paragraph at lines 37--38
 \OML/cmm/m/it/10 ^^^$
  []
 
 
-Overfull \hbox (4.8229pt too wide) in paragraph at lines 35--36
-\OML/cmm/m/it/10 q$
+Overfull \hbox (6.8727pt too wide) in paragraph at lines 37--38
+\OML/cmm/m/it/10  $
  []
 
 
@@ -2890,7 +2954,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.37 \begin{figure}
+l.39 \begin{figure}
                    [!ht]
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2903,7 +2967,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.37 \begin{figure}[
+l.39 \begin{figure}[
                     !ht]
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2914,7 +2978,7 @@ Missing character: There is no h in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
-l.39        \includegraphics
+l.41        \includegraphics
                             [scale=0.07]{img/blochsphere.png}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2960,7 +3024,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.40        \caption
+l.42        \caption
                     {\label{fig:blochsphere} An arbitrary two-dimensional qu...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -3000,7 +3064,7 @@ Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
 <recently read> \ket 
                      
-l.40 ...} An arbitrary two-dimensional qubit $\ket
+l.42 ...} An arbitrary two-dimensional qubit $\ket
                                                   {\psi}$ visualized on the ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3042,31 +3106,31 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.41 \end{figure}
+l.43 \end{figure}
                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 37--42
+Overfull \hbox (20.0pt too wide) in paragraph at lines 39--44
 []
  []
 
 
-Overfull \hbox (6.8727pt too wide) in paragraph at lines 37--42
+Overfull \hbox (6.8727pt too wide) in paragraph at lines 39--44
 \OML/cmm/m/it/10  $
  []
 
 
-Overfull \hbox (4.48613pt too wide) in paragraph at lines 37--42
+Overfull \hbox (4.48613pt too wide) in paragraph at lines 39--44
 []$
  []
 
 ! Undefined control sequence.
 \@footnotetext ...tins {\reset@font \footnotesize 
                                                   \interlinepenalty \interfo...
-l.43 ...by Glosser.ca. Reprinted with permission.}
+l.45 ...by Glosser.ca. Reprinted with permission.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3077,7 +3141,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \@footnotetext ...}\color@begingroup \@makefntext 
                                                   {\rule \z@ \footnotesep \i...
-l.43 ...by Glosser.ca. Reprinted with permission.}
+l.45 ...by Glosser.ca. Reprinted with permission.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3088,7 +3152,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...rieved September 7, 2016, from \url 
                                                   {https://en.wikipedia.org/...
-l.43 ...by Glosser.ca. Reprinted with permission.}
+l.45 ...by Glosser.ca. Reprinted with permission.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3099,7 +3163,7 @@ and I'll forget about whatever was undefined.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.43 ...by Glosser.ca. Reprinted with permission.}
+l.45 ...by Glosser.ca. Reprinted with permission.}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -3107,7 +3171,7 @@ you left one out. Proceed, with fingers crossed.
 ! Extra }, or forgotten $.
 <argument> .../en.wikipedia.org/wiki/Bloch_Sphere}
                                                   . Copyright 2012 by Glosse...
-l.43 ...by Glosser.ca. Reprinted with permission.}
+l.45 ...by Glosser.ca. Reprinted with permission.}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -3118,7 +3182,7 @@ deleted material, e.g., by typing `I$}'.
 ! Extra }, or forgotten $.
 <recently read> }
                  
-l.43 ...by Glosser.ca. Reprinted with permission.}
+l.45 ...by Glosser.ca. Reprinted with permission.}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -3129,7 +3193,7 @@ deleted material, e.g., by typing `I$}'.
 ! Extra }, or forgotten $.
 \@footnotetext ...rut \strutbox }\color@endgroup }
                                                   
-l.43 ...by Glosser.ca. Reprinted with permission.}
+l.45 ...by Glosser.ca. Reprinted with permission.}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -3140,75 +3204,75 @@ deleted material, e.g., by typing `I$}'.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.44 
+l.46 
      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (43.22229pt too wide) in paragraph at lines 43--44
+Overfull \hbox (43.22229pt too wide) in paragraph at lines 45--46
 [][]\OT1/cmr/m/n/10 Reprinted
  []
 
 
-Overfull \hbox (20.30562pt too wide) in paragraph at lines 43--44
+Overfull \hbox (20.30562pt too wide) in paragraph at lines 45--46
 \OT1/cmr/m/n/10 from
  []
 
 
-Overfull \hbox (47.50014pt too wide) in paragraph at lines 43--44
+Overfull \hbox (47.50014pt too wide) in paragraph at lines 45--46
 \OT1/cmr/m/n/10 Wikipedia,
  []
 
 
-Overfull \hbox (19.4445pt too wide) in paragraph at lines 43--44
+Overfull \hbox (19.4445pt too wide) in paragraph at lines 45--46
 \OT1/cmr/m/n/10 n.d.,
  []
 
 
-Overfull \hbox (15.13889pt too wide) in paragraph at lines 43--44
+Overfull \hbox (15.13889pt too wide) in paragraph at lines 45--46
 \OT1/cmr/m/n/10 Re-
  []
 
 
-Overfull \hbox (30.02783pt too wide) in paragraph at lines 43--44
+Overfull \hbox (30.02783pt too wide) in paragraph at lines 45--46
 \OT1/cmr/m/n/10 trieved
  []
 
 
-Overfull \hbox (35.55562pt too wide) in paragraph at lines 43--44
+Overfull \hbox (35.55562pt too wide) in paragraph at lines 45--46
 \OT1/cmr/m/n/10 Septem-
  []
 
 
-Overfull \hbox (14.19447pt too wide) in paragraph at lines 43--44
+Overfull \hbox (14.19447pt too wide) in paragraph at lines 45--46
 \OT1/cmr/m/n/10 ber
  []
 
 
-Overfull \hbox (7.7778pt too wide) in paragraph at lines 43--44
+Overfull \hbox (7.7778pt too wide) in paragraph at lines 45--46
 \OT1/cmr/m/n/10 7,
  []
 
 
-Overfull \hbox (22.77785pt too wide) in paragraph at lines 43--44
+Overfull \hbox (22.77785pt too wide) in paragraph at lines 45--46
 \OT1/cmr/m/n/10 2016,
  []
 
 
-Overfull \hbox (20.30562pt too wide) in paragraph at lines 43--44
+Overfull \hbox (20.30562pt too wide) in paragraph at lines 45--46
 \OT1/cmr/m/n/10 from
  []
 
 
-Overfull \hbox (435.93329pt too wide) in paragraph at lines 43--44
+Overfull \hbox (435.93329pt too wide) in paragraph at lines 45--46
 \OT1/cmr/m/n/10 https://en.wikipedia.org/wiki/Bloch$[]\OML/cmm/m/it/10 phere:Co
 pyright\OT1/cmr/m/n/10 2012\OML/cmm/m/it/10 byGlosser:ca:Reprintedwithpermissio
 n:|$ 
  []
 
 ! Undefined control sequence.
-l.45 \subsection
+l.47 \subsection
                 {Multiple Qubit Systems}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3217,57 +3281,57 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (36.94453pt too wide) in paragraph at lines 45--47
+Overfull \hbox (36.94453pt too wide) in paragraph at lines 47--49
 []\OT1/cmr/m/n/10 Multiple
  []
 
 
-Overfull \hbox (25.55563pt too wide) in paragraph at lines 45--47
+Overfull \hbox (25.55563pt too wide) in paragraph at lines 47--49
 \OT1/cmr/m/n/10 Qubit
  []
 
 
-Overfull \hbox (18.11115pt too wide) in paragraph at lines 45--47
+Overfull \hbox (18.11115pt too wide) in paragraph at lines 47--49
 \OT1/cmr/m/n/10 Sys-
  []
 
 
-Overfull \hbox (20.61115pt too wide) in paragraph at lines 45--47
+Overfull \hbox (20.61115pt too wide) in paragraph at lines 47--49
 \OT1/cmr/m/n/10 tems
  []
 
 
-Overfull \hbox (41.9723pt too wide) in paragraph at lines 48--49
+Overfull \hbox (41.9723pt too wide) in paragraph at lines 50--51
 []\OT1/cmr/m/n/10 Introduce
  []
 
 
-Overfull \hbox (17.22224pt too wide) in paragraph at lines 48--49
+Overfull \hbox (17.22224pt too wide) in paragraph at lines 50--51
 \OT1/cmr/m/n/10 ten-
  []
 
 
-Overfull \hbox (12.86113pt too wide) in paragraph at lines 48--49
+Overfull \hbox (12.86113pt too wide) in paragraph at lines 50--51
 \OT1/cmr/m/n/10 sor
  []
 
 
-Overfull \hbox (23.63895pt too wide) in paragraph at lines 48--49
+Overfull \hbox (23.63895pt too wide) in paragraph at lines 50--51
 \OT1/cmr/m/n/10 prod-
  []
 
 
-Overfull \hbox (17.83336pt too wide) in paragraph at lines 48--49
+Overfull \hbox (17.83336pt too wide) in paragraph at lines 50--51
 \OT1/cmr/m/n/10 ucts
  []
 
 
-Overfull \hbox (21.13892pt too wide) in paragraph at lines 48--49
+Overfull \hbox (21.13892pt too wide) in paragraph at lines 50--51
 \OT1/cmr/m/n/10 here! 
  []
 
 ! Undefined control sequence.
-l.50 \subsection
+l.52 \subsection
                 {Entanglement}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3276,72 +3340,72 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (60.69458pt too wide) in paragraph at lines 50--52
+Overfull \hbox (60.69458pt too wide) in paragraph at lines 52--54
 []\OT1/cmr/m/n/10 Entanglement
  []
 
 
-Overfull \hbox (41.9723pt too wide) in paragraph at lines 53--54
+Overfull \hbox (41.9723pt too wide) in paragraph at lines 55--56
 []\OT1/cmr/m/n/10 Introduce
  []
 
 
-Overfull \hbox (13.33334pt too wide) in paragraph at lines 53--54
+Overfull \hbox (13.33334pt too wide) in paragraph at lines 55--56
 \OT1/cmr/m/n/10 en-
  []
 
 
-Overfull \hbox (17.77782pt too wide) in paragraph at lines 53--54
+Overfull \hbox (17.77782pt too wide) in paragraph at lines 55--56
 \OT1/cmr/m/n/10 tan-
  []
 
 
-Overfull \hbox (15.55557pt too wide) in paragraph at lines 53--54
+Overfull \hbox (15.55557pt too wide) in paragraph at lines 55--56
 \OT1/cmr/m/n/10 gle-
  []
 
 
-Overfull \hbox (21.94449pt too wide) in paragraph at lines 53--54
+Overfull \hbox (21.94449pt too wide) in paragraph at lines 55--56
 \OT1/cmr/m/n/10 ment
  []
 
 
-Overfull \hbox (16.11116pt too wide) in paragraph at lines 53--54
+Overfull \hbox (16.11116pt too wide) in paragraph at lines 55--56
 \OT1/cmr/m/n/10 and
  []
 
 
-Overfull \hbox (19.44449pt too wide) in paragraph at lines 53--54
+Overfull \hbox (19.44449pt too wide) in paragraph at lines 55--56
 \OT1/cmr/m/n/10 non-
  []
 
 
-Overfull \hbox (45.36122pt too wide) in paragraph at lines 53--54
+Overfull \hbox (45.36122pt too wide) in paragraph at lines 55--56
 \OT1/cmr/m/n/10 factorising
  []
 
 
-Overfull \hbox (17.22224pt too wide) in paragraph at lines 53--54
+Overfull \hbox (17.22224pt too wide) in paragraph at lines 55--56
 \OT1/cmr/m/n/10 ten-
  []
 
 
-Overfull \hbox (12.86113pt too wide) in paragraph at lines 53--54
+Overfull \hbox (12.86113pt too wide) in paragraph at lines 55--56
 \OT1/cmr/m/n/10 sor
  []
 
 
-Overfull \hbox (25.11115pt too wide) in paragraph at lines 53--54
+Overfull \hbox (25.11115pt too wide) in paragraph at lines 55--56
 \OT1/cmr/m/n/10 states
  []
 
 
-Overfull \hbox (21.13892pt too wide) in paragraph at lines 53--54
+Overfull \hbox (21.13892pt too wide) in paragraph at lines 55--56
 \OT1/cmr/m/n/10 here! 
  []
 
 ! Undefined control sequence.
-l.58 \section
+l.60 \section
              {Quantum Logic Gates}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3350,407 +3414,407 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (41.389pt too wide) in paragraph at lines 58--61
+Overfull \hbox (41.389pt too wide) in paragraph at lines 60--63
 []\OT1/cmr/m/n/10 Quantum
  []
 
 
-Overfull \hbox (23.47227pt too wide) in paragraph at lines 58--61
+Overfull \hbox (23.47227pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 Logic
  []
 
 
-Overfull \hbox (25.12503pt too wide) in paragraph at lines 58--61
+Overfull \hbox (25.12503pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 Gates
  []
 
 
-Overfull \hbox (9.16669pt too wide) in paragraph at lines 58--61
+Overfull \hbox (9.16669pt too wide) in paragraph at lines 60--63
 []\OT1/cmr/m/n/10 In
  []
 
 
-Overfull \hbox (12.25002pt too wide) in paragraph at lines 58--61
+Overfull \hbox (12.25002pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 or-
  []
 
 
-Overfull \hbox (13.91669pt too wide) in paragraph at lines 58--61
+Overfull \hbox (13.91669pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 der
  []
 
 
-Overfull \hbox (8.88892pt too wide) in paragraph at lines 58--61
+Overfull \hbox (8.88892pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 to
  []
 
 
-Overfull \hbox (17.5278pt too wide) in paragraph at lines 58--61
+Overfull \hbox (17.5278pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 per-
  []
 
 
-Overfull \hbox (20.30562pt too wide) in paragraph at lines 58--61
+Overfull \hbox (20.30562pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 form
  []
 
 
-Overfull \hbox (24.72227pt too wide) in paragraph at lines 58--61
+Overfull \hbox (24.72227pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 quan-
  []
 
 
-Overfull \hbox (17.77783pt too wide) in paragraph at lines 58--61
+Overfull \hbox (17.77783pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 tum
  []
 
 
-Overfull \hbox (21.11115pt too wide) in paragraph at lines 58--61
+Overfull \hbox (21.11115pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 com-
  []
 
 
-Overfull \hbox (14.44447pt too wide) in paragraph at lines 58--61
+Overfull \hbox (14.44447pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 pu-
  []
 
 
-Overfull \hbox (12.22224pt too wide) in paragraph at lines 58--61
+Overfull \hbox (12.22224pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 ta-
  []
 
 
-Overfull \hbox (23.9445pt too wide) in paragraph at lines 58--61
+Overfull \hbox (23.9445pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 tions,
  []
 
 
-Overfull \hbox (23.66673pt too wide) in paragraph at lines 58--61
+Overfull \hbox (23.66673pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 tools,
  []
 
 
-Overfull \hbox (21.66672pt too wide) in paragraph at lines 58--61
+Overfull \hbox (21.66672pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 anal-
  []
 
 
-Overfull \hbox (8.33334pt too wide) in paragraph at lines 58--61
+Overfull \hbox (8.33334pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 o-
  []
 
 
-Overfull \hbox (19.50005pt too wide) in paragraph at lines 58--61
+Overfull \hbox (19.50005pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 gous
  []
 
 
-Overfull \hbox (8.88892pt too wide) in paragraph at lines 58--61
+Overfull \hbox (8.88892pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 to
  []
 
 
-Overfull \hbox (13.88892pt too wide) in paragraph at lines 58--61
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 the
  []
 
 
-Overfull \hbox (19.50002pt too wide) in paragraph at lines 58--61
+Overfull \hbox (19.50002pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 clas-
  []
 
 
-Overfull \hbox (10.05556pt too wide) in paragraph at lines 58--61
+Overfull \hbox (10.05556pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 si-
  []
 
 
-Overfull \hbox (12.22224pt too wide) in paragraph at lines 58--61
+Overfull \hbox (12.22224pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 cal
  []
 
 
-Overfull \hbox (20.00005pt too wide) in paragraph at lines 58--61
+Overfull \hbox (20.00005pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 logic
  []
 
 
-Overfull \hbox (25.0556pt too wide) in paragraph at lines 58--61
+Overfull \hbox (25.0556pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 gates,
  []
 
 
-Overfull \hbox (13.36113pt too wide) in paragraph at lines 58--61
+Overfull \hbox (13.36113pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 are
  []
 
 
-Overfull \hbox (30.00005pt too wide) in paragraph at lines 58--61
+Overfull \hbox (30.00005pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 needed
  []
 
 
-Overfull \hbox (11.97226pt too wide) in paragraph at lines 58--61
+Overfull \hbox (11.97226pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 for
  []
 
 
-Overfull \hbox (23.05562pt too wide) in paragraph at lines 58--61
+Overfull \hbox (23.05562pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 qubit
  []
 
 
-Overfull \hbox (16.6667pt too wide) in paragraph at lines 58--61
+Overfull \hbox (16.6667pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 ma-
  []
 
 
-Overfull \hbox (17.22226pt too wide) in paragraph at lines 58--61
+Overfull \hbox (17.22226pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 nip-
  []
 
 
-Overfull \hbox (8.8889pt too wide) in paragraph at lines 58--61
+Overfull \hbox (8.8889pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 u-
  []
 
 
-Overfull \hbox (11.11113pt too wide) in paragraph at lines 58--61
+Overfull \hbox (11.11113pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 la-
  []
 
 
-Overfull \hbox (20.00006pt too wide) in paragraph at lines 58--61
+Overfull \hbox (20.00006pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 tion.
  []
 
 
-Overfull \hbox (27.22229pt too wide) in paragraph at lines 58--61
+Overfull \hbox (27.22229pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 Quan-
  []
 
 
-Overfull \hbox (17.77783pt too wide) in paragraph at lines 58--61
+Overfull \hbox (17.77783pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 tum
  []
 
 
-Overfull \hbox (20.00005pt too wide) in paragraph at lines 58--61
+Overfull \hbox (20.00005pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 logic
  []
 
 
-Overfull \hbox (22.27782pt too wide) in paragraph at lines 58--61
+Overfull \hbox (22.27782pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 gates
  []
 
 
-Overfull \hbox (13.36113pt too wide) in paragraph at lines 58--61
+Overfull \hbox (13.36113pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 are
  []
 
 
-Overfull \hbox (28.13893pt too wide) in paragraph at lines 58--61
+Overfull \hbox (28.13893pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 square
  []
 
 
-Overfull \hbox (16.6667pt too wide) in paragraph at lines 58--61
+Overfull \hbox (16.6667pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 ma-
  []
 
 
-Overfull \hbox (13.91669pt too wide) in paragraph at lines 58--61
+Overfull \hbox (13.91669pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 tri-
  []
 
 
-Overfull \hbox (12.83333pt too wide) in paragraph at lines 58--61
+Overfull \hbox (12.83333pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 ces
  []
 
 
-Overfull \hbox (18.33339pt too wide) in paragraph at lines 58--61
+Overfull \hbox (18.33339pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 that
  []
 
 
-Overfull \hbox (15.00003pt too wide) in paragraph at lines 58--61
+Overfull \hbox (15.00003pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 can
  []
 
 
-Overfull \hbox (10.2778pt too wide) in paragraph at lines 58--61
+Overfull \hbox (10.2778pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 be
  []
 
 
-Overfull \hbox (11.38892pt too wide) in paragraph at lines 58--61
+Overfull \hbox (11.38892pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 vi-
  []
 
 
-Overfull \hbox (12.83334pt too wide) in paragraph at lines 58--61
+Overfull \hbox (12.83334pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 su-
  []
 
 
-Overfull \hbox (11.11113pt too wide) in paragraph at lines 58--61
+Overfull \hbox (11.11113pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 al-
  []
 
 
-Overfull \hbox (17.22224pt too wide) in paragraph at lines 58--61
+Overfull \hbox (17.22224pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 ized
  []
 
 
-Overfull \hbox (8.94446pt too wide) in paragraph at lines 58--61
+Overfull \hbox (8.94446pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 as
  []
 
 
-Overfull \hbox (12.25002pt too wide) in paragraph at lines 58--61
+Overfull \hbox (12.25002pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 ro-
  []
 
 
-Overfull \hbox (12.22224pt too wide) in paragraph at lines 58--61
+Overfull \hbox (12.22224pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 ta-
  []
 
 
-Overfull \hbox (21.16672pt too wide) in paragraph at lines 58--61
+Overfull \hbox (21.16672pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 tions
  []
 
 
-Overfull \hbox (10.55559pt too wide) in paragraph at lines 58--61
+Overfull \hbox (10.55559pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 on
  []
 
 
-Overfull \hbox (13.88892pt too wide) in paragraph at lines 58--61
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 the
  []
 
 
-Overfull \hbox (24.86118pt too wide) in paragraph at lines 58--61
+Overfull \hbox (24.86118pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 Bloch
  []
 
 
-Overfull \hbox (30.63893pt too wide) in paragraph at lines 58--61
+Overfull \hbox (30.63893pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 sphere.
  []
 
 
-Overfull \hbox (17.22224pt too wide) in paragraph at lines 58--61
+Overfull \hbox (17.22224pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 The
  []
 
 
-Overfull \hbox (14.1667pt too wide) in paragraph at lines 58--61
+Overfull \hbox (14.1667pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 fol-
  []
 
 
-Overfull \hbox (18.05557pt too wide) in paragraph at lines 58--61
+Overfull \hbox (18.05557pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 low-
  []
 
 
-Overfull \hbox (13.33337pt too wide) in paragraph at lines 58--61
+Overfull \hbox (13.33337pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 ing
  []
 
 
-Overfull \hbox (18.38892pt too wide) in paragraph at lines 58--61
+Overfull \hbox (18.38892pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 sub-
  []
 
 
-Overfull \hbox (16.16666pt too wide) in paragraph at lines 58--61
+Overfull \hbox (16.16666pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 sec-
  []
 
 
-Overfull \hbox (21.16672pt too wide) in paragraph at lines 58--61
+Overfull \hbox (21.16672pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 tions
  []
 
 
-Overfull \hbox (15.55559pt too wide) in paragraph at lines 58--61
+Overfull \hbox (15.55559pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 will
  []
 
 
-Overfull \hbox (11.66669pt too wide) in paragraph at lines 58--61
+Overfull \hbox (11.66669pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 in-
  []
 
 
-Overfull \hbox (16.13892pt too wide) in paragraph at lines 58--61
+Overfull \hbox (16.13892pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 tro-
  []
 
 
-Overfull \hbox (20.00003pt too wide) in paragraph at lines 58--61
+Overfull \hbox (20.00003pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 duce
  []
 
 
-Overfull \hbox (13.88892pt too wide) in paragraph at lines 58--61
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 the
  []
 
 
-Overfull \hbox (16.6667pt too wide) in paragraph at lines 58--61
+Overfull \hbox (16.6667pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 ma-
  []
 
 
-Overfull \hbox (11.97226pt too wide) in paragraph at lines 58--61
+Overfull \hbox (11.97226pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 jor
  []
 
 
-Overfull \hbox (15.61113pt too wide) in paragraph at lines 58--61
+Overfull \hbox (15.61113pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 sin-
  []
 
 
-Overfull \hbox (12.22224pt too wide) in paragraph at lines 58--61
+Overfull \hbox (12.22224pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 gle
  []
 
 
-Overfull \hbox (16.11116pt too wide) in paragraph at lines 58--61
+Overfull \hbox (16.11116pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 and
  []
 
 
-Overfull \hbox (23.05562pt too wide) in paragraph at lines 58--61
+Overfull \hbox (23.05562pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 multi
  []
 
 
-Overfull \hbox (23.05562pt too wide) in paragraph at lines 58--61
+Overfull \hbox (23.05562pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 qubit
  []
 
 
-Overfull \hbox (20.00005pt too wide) in paragraph at lines 58--61
+Overfull \hbox (20.00005pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 logic
  []
 
 
-Overfull \hbox (25.0556pt too wide) in paragraph at lines 58--61
+Overfull \hbox (25.0556pt too wide) in paragraph at lines 60--63
 \OT1/cmr/m/n/10 gates. 
  []
 
 ! Undefined control sequence.
-l.62 \subsection
+l.64 \subsection
                 {Single Qubit Gates}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3759,99 +3823,99 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (26.11118pt too wide) in paragraph at lines 62--64
+Overfull \hbox (26.11118pt too wide) in paragraph at lines 64--66
 []\OT1/cmr/m/n/10 Single
  []
 
 
-Overfull \hbox (25.55563pt too wide) in paragraph at lines 62--64
+Overfull \hbox (25.55563pt too wide) in paragraph at lines 64--66
 \OT1/cmr/m/n/10 Qubit
  []
 
 
-Overfull \hbox (25.12503pt too wide) in paragraph at lines 62--64
+Overfull \hbox (25.12503pt too wide) in paragraph at lines 64--66
 \OT1/cmr/m/n/10 Gates
  []
 
 
-Overfull \hbox (22.77782pt too wide) in paragraph at lines 65--66
+Overfull \hbox (22.77782pt too wide) in paragraph at lines 67--68
 []\OT1/cmr/m/n/10 ADD
  []
 
 
-Overfull \hbox (21.52782pt too wide) in paragraph at lines 65--66
+Overfull \hbox (21.52782pt too wide) in paragraph at lines 67--68
 \OT1/cmr/m/n/10 THE
  []
 
 
-Overfull \hbox (21.52779pt too wide) in paragraph at lines 65--66
+Overfull \hbox (21.52779pt too wide) in paragraph at lines 67--68
 \OT1/cmr/m/n/10 CIR-
  []
 
 
-Overfull \hbox (25.55559pt too wide) in paragraph at lines 65--66
+Overfull \hbox (25.55559pt too wide) in paragraph at lines 67--68
 \OT1/cmr/m/n/10 CUIT
  []
 
 
-Overfull \hbox (24.30559pt too wide) in paragraph at lines 65--66
+Overfull \hbox (24.30559pt too wide) in paragraph at lines 67--68
 \OT1/cmr/m/n/10 REP-
  []
 
 
-Overfull \hbox (17.50002pt too wide) in paragraph at lines 65--66
+Overfull \hbox (17.50002pt too wide) in paragraph at lines 67--68
 \OT1/cmr/m/n/10 RE-
  []
 
 
-Overfull \hbox (23.19449pt too wide) in paragraph at lines 65--66
+Overfull \hbox (23.19449pt too wide) in paragraph at lines 67--68
 \OT1/cmr/m/n/10 SEN-
  []
 
 
-Overfull \hbox (17.22223pt too wide) in paragraph at lines 65--66
+Overfull \hbox (17.22223pt too wide) in paragraph at lines 67--68
 \OT1/cmr/m/n/10 TA-
  []
 
 
-Overfull \hbox (31.66673pt too wide) in paragraph at lines 65--66
+Overfull \hbox (31.66673pt too wide) in paragraph at lines 67--68
 \OT1/cmr/m/n/10 TIONS
  []
 
 
-Overfull \hbox (14.3056pt too wide) in paragraph at lines 65--66
+Overfull \hbox (14.3056pt too wide) in paragraph at lines 67--68
 \OT1/cmr/m/n/10 OF
  []
 
 
-Overfull \hbox (21.52782pt too wide) in paragraph at lines 65--66
+Overfull \hbox (21.52782pt too wide) in paragraph at lines 67--68
 \OT1/cmr/m/n/10 THE
  []
 
 
-Overfull \hbox (17.50002pt too wide) in paragraph at lines 65--66
+Overfull \hbox (17.50002pt too wide) in paragraph at lines 67--68
 \OT1/cmr/m/n/10 RE-
  []
 
 
-Overfull \hbox (29.72227pt too wide) in paragraph at lines 65--66
+Overfull \hbox (29.72227pt too wide) in paragraph at lines 67--68
 \OT1/cmr/m/n/10 SPEC-
  []
 
 
-Overfull \hbox (25.13893pt too wide) in paragraph at lines 65--66
+Overfull \hbox (25.13893pt too wide) in paragraph at lines 67--68
 \OT1/cmr/m/n/10 TIVE
  []
 
 
-Overfull \hbox (36.87506pt too wide) in paragraph at lines 65--66
+Overfull \hbox (36.87506pt too wide) in paragraph at lines 67--68
 \OT1/cmr/m/n/10 GATES! 
  []
 
 ! Undefined control sequence.
 <write> ... `equ: paulimatrices' on page \thepage 
                                                   \space undefined\on@line .
-l.67 ...ed below in Equ. ~\ref{equ: paulimatrices}
+l.69 ...ed below in Equ. ~\ref{equ: paulimatrices}
                                                   .
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3861,130 +3925,130 @@ and I'll forget about whatever was undefined.
 
 
 LaTeX Warning: Reference `equ: paulimatrices' on page  undefined on input line 
-67.
+69.
 
 
-Overfull \hbox (17.22224pt too wide) in paragraph at lines 67--68
+Overfull \hbox (17.22224pt too wide) in paragraph at lines 69--70
 []\OT1/cmr/m/n/10 The
  []
 
 
-Overfull \hbox (17.52783pt too wide) in paragraph at lines 67--68
+Overfull \hbox (17.52783pt too wide) in paragraph at lines 69--70
 \OT1/cmr/m/n/10 four
  []
 
 
-Overfull \hbox (21.16672pt too wide) in paragraph at lines 67--68
+Overfull \hbox (21.16672pt too wide) in paragraph at lines 69--70
 \OT1/cmr/m/n/10 most
  []
 
 
-Overfull \hbox (13.88892pt too wide) in paragraph at lines 67--68
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 69--70
 \OT1/cmr/m/n/10 ba-
  []
 
 
-Overfull \hbox (11.16667pt too wide) in paragraph at lines 67--68
+Overfull \hbox (11.16667pt too wide) in paragraph at lines 69--70
 \OT1/cmr/m/n/10 sic
  []
 
 
-Overfull \hbox (27.83337pt too wide) in paragraph at lines 67--68
+Overfull \hbox (27.83337pt too wide) in paragraph at lines 69--70
 \OT1/cmr/m/n/10 single-
  []
 
 
-Overfull \hbox (23.05562pt too wide) in paragraph at lines 67--68
+Overfull \hbox (23.05562pt too wide) in paragraph at lines 69--70
 \OT1/cmr/m/n/10 qubit
  []
 
 
-Overfull \hbox (24.72227pt too wide) in paragraph at lines 67--68
+Overfull \hbox (24.72227pt too wide) in paragraph at lines 69--70
 \OT1/cmr/m/n/10 quan-
  []
 
 
-Overfull \hbox (17.77783pt too wide) in paragraph at lines 67--68
+Overfull \hbox (17.77783pt too wide) in paragraph at lines 69--70
 \OT1/cmr/m/n/10 tum
  []
 
 
-Overfull \hbox (22.27782pt too wide) in paragraph at lines 67--68
+Overfull \hbox (22.27782pt too wide) in paragraph at lines 69--70
 \OT1/cmr/m/n/10 gates
  []
 
 
-Overfull \hbox (13.36113pt too wide) in paragraph at lines 67--68
+Overfull \hbox (13.36113pt too wide) in paragraph at lines 69--70
 \OT1/cmr/m/n/10 are
  []
 
 
-Overfull \hbox (22.77783pt too wide) in paragraph at lines 67--68
+Overfull \hbox (22.77783pt too wide) in paragraph at lines 69--70
 \OT1/cmr/m/n/10 given
  []
 
 
-Overfull \hbox (10.55559pt too wide) in paragraph at lines 67--68
+Overfull \hbox (10.55559pt too wide) in paragraph at lines 69--70
 \OT1/cmr/m/n/10 by
  []
 
 
-Overfull \hbox (13.88892pt too wide) in paragraph at lines 67--68
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 69--70
 \OT1/cmr/m/n/10 the
  []
 
 
-Overfull \hbox (17.52783pt too wide) in paragraph at lines 67--68
+Overfull \hbox (17.52783pt too wide) in paragraph at lines 69--70
 \OT1/cmr/m/n/10 four
  []
 
 
-Overfull \hbox (22.63895pt too wide) in paragraph at lines 67--68
+Overfull \hbox (22.63895pt too wide) in paragraph at lines 69--70
 \OT1/cmr/m/n/10 Pauli
  []
 
 
-Overfull \hbox (16.6667pt too wide) in paragraph at lines 67--68
+Overfull \hbox (16.6667pt too wide) in paragraph at lines 69--70
 \OT1/cmr/m/n/10 ma-
  []
 
 
-Overfull \hbox (13.91669pt too wide) in paragraph at lines 67--68
+Overfull \hbox (13.91669pt too wide) in paragraph at lines 69--70
 \OT1/cmr/m/n/10 tri-
  []
 
 
-Overfull \hbox (12.83333pt too wide) in paragraph at lines 67--68
+Overfull \hbox (12.83333pt too wide) in paragraph at lines 69--70
 \OT1/cmr/m/n/10 ces
  []
 
 
-Overfull \hbox (23.38893pt too wide) in paragraph at lines 67--68
+Overfull \hbox (23.38893pt too wide) in paragraph at lines 69--70
 \OT1/cmr/m/n/10 listed
  []
 
 
-Overfull \hbox (13.61113pt too wide) in paragraph at lines 67--68
+Overfull \hbox (13.61113pt too wide) in paragraph at lines 69--70
 \OT1/cmr/m/n/10 be-
  []
 
 
-Overfull \hbox (14.72224pt too wide) in paragraph at lines 67--68
+Overfull \hbox (14.72224pt too wide) in paragraph at lines 69--70
 \OT1/cmr/m/n/10 low
  []
 
 
-Overfull \hbox (8.33336pt too wide) in paragraph at lines 67--68
+Overfull \hbox (8.33336pt too wide) in paragraph at lines 69--70
 \OT1/cmr/m/n/10 in
  []
 
 
-Overfull \hbox (20.41672pt too wide) in paragraph at lines 67--68
+Overfull \hbox (20.41672pt too wide) in paragraph at lines 69--70
 \OT1/cmr/m/n/10 Equ.
  []
 
 
-Overfull \hbox (13.63884pt too wide) in paragraph at lines 67--68
+Overfull \hbox (13.63884pt too wide) in paragraph at lines 69--70
 []\OT1/cmr/m/n/10 . 
  []
 
@@ -3995,7 +4059,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.69 \begin{align}
+l.71 \begin{align}
                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -4004,13 +4068,13 @@ or  <return>  to continue without it.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.71 \sigma
+l.73 \sigma
            _{0} &= \mathbb{1} = \begin{pmatrix}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Misplaced alignment tab character &.
-l.71 \sigma_{0} &
+l.73 \sigma_{0} &
                  = \mathbb{1} = \begin{pmatrix}
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -4020,7 +4084,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Undefined control sequence.
-l.71 \sigma_{0} &= \mathbb
+l.73 \sigma_{0} &= \mathbb
                           {1} = \begin{pmatrix}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4029,7 +4093,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Misplaced alignment tab character &.
-l.72  1 &
+l.74  1 &
           0 \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -4039,7 +4103,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Misplaced alignment tab character &.
-l.73  0 &
+l.75  0 &
           1
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -4049,7 +4113,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Misplaced alignment tab character &.
-l.76  &
+l.78  &
        &\sigma_{1} = \sigma_{x} = \begin{pmatrix}
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -4059,7 +4123,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Misplaced alignment tab character &.
-l.76  &&
+l.78  &&
         \sigma_{1} = \sigma_{x} = \begin{pmatrix}
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -4069,7 +4133,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Misplaced alignment tab character &.
-l.77  0 &
+l.79  0 &
           1 \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -4079,7 +4143,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Misplaced alignment tab character &.
-l.78  1 &
+l.80  1 &
           0
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -4089,7 +4153,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Misplaced alignment tab character &.
-l.82  \sigma_{2} &
+l.84  \sigma_{2} &
                   = \sigma_{y} = \begin{pmatrix}
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -4099,7 +4163,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Misplaced alignment tab character &.
-l.83  0 &
+l.85  0 &
           -i \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -4109,7 +4173,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Misplaced alignment tab character &.
-l.84  i &
+l.86  i &
           0
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -4119,7 +4183,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Misplaced alignment tab character &.
-l.87  &
+l.89  &
        &\sigma_{3} = \sigma_{z} = \begin{pmatrix}
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -4129,7 +4193,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Misplaced alignment tab character &.
-l.87  &&
+l.89  &&
         \sigma_{3} = \sigma_{z} = \begin{pmatrix}
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -4139,7 +4203,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Misplaced alignment tab character &.
-l.88  1 &
+l.90  1 &
           0 \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -4149,7 +4213,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Misplaced alignment tab character &.
-l.89  0 &
+l.91  0 &
           -1
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -4165,7 +4229,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.91 \end{align}
+l.93 \end{align}
                 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -4174,7 +4238,7 @@ or  <return>  to continue without it.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.91 \end{align}
+l.93 \end{align}
                 
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -4183,87 +4247,87 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Overfull \hbox (20.75577pt too wide) in paragraph at lines 71--92
+Overfull \hbox (20.75577pt too wide) in paragraph at lines 73--94
 []$\OML/cmm/m/it/10 ^^[[] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (15.55553pt too wide) in paragraph at lines 71--92
+Overfull \hbox (15.55553pt too wide) in paragraph at lines 73--94
 \OT1/cmr/m/n/10 1 =
  []
 
 
-Overfull \hbox (22.77771pt too wide) in paragraph at lines 71--92
+Overfull \hbox (22.77771pt too wide) in paragraph at lines 73--94
 [] \OT1/cmr/m/n/10 0[] 
  []
 
 
-Overfull \hbox (40.75581pt too wide) in paragraph at lines 71--92
+Overfull \hbox (40.75581pt too wide) in paragraph at lines 73--94
 \OT1/cmr/m/n/10 01 \OML/cmm/m/it/10 ^^[[] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (21.30437pt too wide) in paragraph at lines 71--92
+Overfull \hbox (21.30437pt too wide) in paragraph at lines 73--94
 \OML/cmm/m/it/10 ^^[[] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (22.77771pt too wide) in paragraph at lines 71--92
+Overfull \hbox (22.77771pt too wide) in paragraph at lines 73--94
 [] \OT1/cmr/m/n/10 1[] 
  []
 
 
-Overfull \hbox (10.00003pt too wide) in paragraph at lines 71--92
+Overfull \hbox (10.00003pt too wide) in paragraph at lines 73--94
 \OT1/cmr/m/n/10 10[] 
  []
 
 
-Overfull \hbox (20.75577pt too wide) in paragraph at lines 71--92
+Overfull \hbox (20.75577pt too wide) in paragraph at lines 73--94
 \OML/cmm/m/it/10 ^^[[] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (21.07639pt too wide) in paragraph at lines 71--92
+Overfull \hbox (21.07639pt too wide) in paragraph at lines 73--94
 \OML/cmm/m/it/10 ^^[[] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (23.88887pt too wide) in paragraph at lines 71--92
+Overfull \hbox (23.88887pt too wide) in paragraph at lines 73--94
 [] \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (3.44513pt too wide) in paragraph at lines 71--92
+Overfull \hbox (3.44513pt too wide) in paragraph at lines 73--94
 \OML/cmm/m/it/10 i[] 
  []
 
 
-Overfull \hbox (39.20093pt too wide) in paragraph at lines 71--92
+Overfull \hbox (39.20093pt too wide) in paragraph at lines 73--94
 \OML/cmm/m/it/10 i\OT1/cmr/m/n/10 0 \OML/cmm/m/it/10 ^^[[] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (20.87732pt too wide) in paragraph at lines 71--92
+Overfull \hbox (20.87732pt too wide) in paragraph at lines 73--94
 \OML/cmm/m/it/10 ^^[[] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (22.77771pt too wide) in paragraph at lines 71--92
+Overfull \hbox (22.77771pt too wide) in paragraph at lines 73--94
 [] \OT1/cmr/m/n/10 0[] 
  []
 
 
-Overfull \hbox (12.77782pt too wide) in paragraph at lines 71--92
+Overfull \hbox (12.77782pt too wide) in paragraph at lines 73--94
 \OT1/cmr/m/n/10 0 \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 71--92
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 73--94
 \OT1/cmr/m/n/10 1$ 
  []
 
 ! Undefined control sequence.
-l.93 \subsubsection
+l.95 \subsubsection
                    {Identity Gate}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4272,118 +4336,118 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (34.44452pt too wide) in paragraph at lines 93--95
+Overfull \hbox (34.44452pt too wide) in paragraph at lines 95--97
 []\OT1/cmr/m/n/10 Identity
  []
 
 
-Overfull \hbox (21.18059pt too wide) in paragraph at lines 93--95
+Overfull \hbox (21.18059pt too wide) in paragraph at lines 95--97
 \OT1/cmr/m/n/10 Gate
  []
 
 
-Overfull \hbox (17.22224pt too wide) in paragraph at lines 96--97
+Overfull \hbox (17.22224pt too wide) in paragraph at lines 98--99
 []\OT1/cmr/m/n/10 The
  []
 
 
-Overfull \hbox (18.38892pt too wide) in paragraph at lines 96--97
+Overfull \hbox (18.38892pt too wide) in paragraph at lines 98--99
 \OT1/cmr/m/n/10 sim-
  []
 
 
-Overfull \hbox (20.61115pt too wide) in paragraph at lines 96--97
+Overfull \hbox (20.61115pt too wide) in paragraph at lines 98--99
 \OT1/cmr/m/n/10 plest
  []
 
 
-Overfull \hbox (24.72227pt too wide) in paragraph at lines 96--97
+Overfull \hbox (24.72227pt too wide) in paragraph at lines 98--99
 \OT1/cmr/m/n/10 quan-
  []
 
 
-Overfull \hbox (17.77783pt too wide) in paragraph at lines 96--97
+Overfull \hbox (17.77783pt too wide) in paragraph at lines 98--99
 \OT1/cmr/m/n/10 tum
  []
 
 
-Overfull \hbox (18.33337pt too wide) in paragraph at lines 96--97
+Overfull \hbox (18.33337pt too wide) in paragraph at lines 98--99
 \OT1/cmr/m/n/10 gate
  []
 
 
-Overfull \hbox (6.72223pt too wide) in paragraph at lines 96--97
+Overfull \hbox (6.72223pt too wide) in paragraph at lines 98--99
 \OT1/cmr/m/n/10 is
  []
 
 
-Overfull \hbox (13.88892pt too wide) in paragraph at lines 96--97
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 98--99
 \OT1/cmr/m/n/10 the
  []
 
 
-Overfull \hbox (21.6667pt too wide) in paragraph at lines 96--97
+Overfull \hbox (21.6667pt too wide) in paragraph at lines 98--99
 \OT1/cmr/m/n/10 iden-
  []
 
 
-Overfull \hbox (15.5556pt too wide) in paragraph at lines 96--97
+Overfull \hbox (15.5556pt too wide) in paragraph at lines 98--99
 \OT1/cmr/m/n/10 tity
  []
 
 
-Overfull \hbox (8.91669pt too wide) in paragraph at lines 96--97
+Overfull \hbox (8.91669pt too wide) in paragraph at lines 98--99
 \OT1/cmr/m/n/10 or
  []
 
 
-Overfull \hbox (15.55559pt too wide) in paragraph at lines 96--97
+Overfull \hbox (15.55559pt too wide) in paragraph at lines 98--99
 \OT1/cmr/m/n/10 idle
  []
 
 
-Overfull \hbox (18.33337pt too wide) in paragraph at lines 96--97
+Overfull \hbox (18.33337pt too wide) in paragraph at lines 98--99
 \OT1/cmr/m/n/10 gate
  []
 
 
-Overfull \hbox (22.77783pt too wide) in paragraph at lines 96--97
+Overfull \hbox (22.77783pt too wide) in paragraph at lines 98--99
 \OT1/cmr/m/n/10 given
  []
 
 
-Overfull \hbox (10.55559pt too wide) in paragraph at lines 96--97
+Overfull \hbox (10.55559pt too wide) in paragraph at lines 98--99
 \OT1/cmr/m/n/10 by
  []
 
 
-Overfull \hbox (13.88892pt too wide) in paragraph at lines 96--97
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 98--99
 \OT1/cmr/m/n/10 the
  []
 
 
-Overfull \hbox (13.04172pt too wide) in paragraph at lines 96--97
+Overfull \hbox (13.04172pt too wide) in paragraph at lines 98--99
 \OT1/cmr/m/n/10 0$[]$
  []
 
 
-Overfull \hbox (22.63895pt too wide) in paragraph at lines 96--97
+Overfull \hbox (22.63895pt too wide) in paragraph at lines 98--99
 \OT1/cmr/m/n/10 Pauli
  []
 
 
-Overfull \hbox (16.6667pt too wide) in paragraph at lines 96--97
+Overfull \hbox (16.6667pt too wide) in paragraph at lines 98--99
 \OT1/cmr/m/n/10 ma-
  []
 
 
-Overfull \hbox (18.63895pt too wide) in paragraph at lines 96--97
+Overfull \hbox (18.63895pt too wide) in paragraph at lines 98--99
 \OT1/cmr/m/n/10 trix: 
  []
 
 ! Undefined control sequence.
-l.99 \sigma_{0} = \mathbb
-                         {1} = \begin{pmatrix}
+l.101 \sigma_{0} = \mathbb
+                          {1} = \begin{pmatrix}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4391,7 +4455,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Misplaced alignment tab character &.
-l.100  1 &
+l.102  1 &
            0 \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -4401,7 +4465,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Misplaced alignment tab character &.
-l.101  0 &
+l.103  0 &
            1
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -4411,252 +4475,252 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-Overfull \hbox (74.64445pt too wide) detected at line 103
+Overfull \hbox (74.64445pt too wide) detected at line 105
 \OML/cmm/m/it/10 ^^[[] \OT1/cmr/m/n/10 = 1 = [] 0[] 01
  []
 
 
-Overfull \hbox (17.22224pt too wide) in paragraph at lines 105--106
+Overfull \hbox (17.22224pt too wide) in paragraph at lines 107--108
 []\OT1/cmr/m/n/10 The
  []
 
 
-Overfull \hbox (12.77779pt too wide) in paragraph at lines 105--106
+Overfull \hbox (12.77779pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 ac-
  []
 
 
-Overfull \hbox (17.22227pt too wide) in paragraph at lines 105--106
+Overfull \hbox (17.22227pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 tion
  []
 
 
-Overfull \hbox (8.05559pt too wide) in paragraph at lines 105--106
+Overfull \hbox (8.05559pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 of
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 105--106
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (24.72227pt too wide) in paragraph at lines 105--106
+Overfull \hbox (24.72227pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 quan-
  []
 
 
-Overfull \hbox (17.77783pt too wide) in paragraph at lines 105--106
+Overfull \hbox (17.77783pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 tum
  []
 
 
-Overfull \hbox (18.33337pt too wide) in paragraph at lines 105--106
+Overfull \hbox (18.33337pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 gate
  []
 
 
-Overfull \hbox (10.55559pt too wide) in paragraph at lines 105--106
+Overfull \hbox (10.55559pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 on
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 105--106
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 a
  []
 
 
-Overfull \hbox (23.05562pt too wide) in paragraph at lines 105--106
+Overfull \hbox (23.05562pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 qubit
  []
 
 
-Overfull \hbox (21.1667pt too wide) in paragraph at lines 105--106
+Overfull \hbox (21.1667pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 state
  []
 
 
-Overfull \hbox (15.00003pt too wide) in paragraph at lines 105--106
+Overfull \hbox (15.00003pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 can
  []
 
 
-Overfull \hbox (10.2778pt too wide) in paragraph at lines 105--106
+Overfull \hbox (10.2778pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 be
  []
 
 
-Overfull \hbox (21.66672pt too wide) in paragraph at lines 105--106
+Overfull \hbox (21.66672pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 anal-
  []
 
 
-Overfull \hbox (19.22226pt too wide) in paragraph at lines 105--106
+Overfull \hbox (19.22226pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 ysed
  []
 
 
-Overfull \hbox (12.83334pt too wide) in paragraph at lines 105--106
+Overfull \hbox (12.83334pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 us-
  []
 
 
-Overfull \hbox (13.33337pt too wide) in paragraph at lines 105--106
+Overfull \hbox (13.33337pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 ing
  []
 
 
-Overfull \hbox (13.88892pt too wide) in paragraph at lines 105--106
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 the
  []
 
 
-Overfull \hbox (25.0556pt too wide) in paragraph at lines 105--106
+Overfull \hbox (25.0556pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 gate's
  []
 
 
-Overfull \hbox (16.6667pt too wide) in paragraph at lines 105--106
+Overfull \hbox (16.6667pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 ma-
  []
 
 
-Overfull \hbox (15.86116pt too wide) in paragraph at lines 105--106
+Overfull \hbox (15.86116pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 trix
  []
 
 
-Overfull \hbox (16.11116pt too wide) in paragraph at lines 105--106
+Overfull \hbox (16.11116pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 and
  []
 
 
-Overfull \hbox (13.88892pt too wide) in paragraph at lines 105--106
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 the
  []
 
 
-Overfull \hbox (29.77785pt too wide) in paragraph at lines 105--106
+Overfull \hbox (29.77785pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 qubit's
  []
 
 
-Overfull \hbox (17.22223pt too wide) in paragraph at lines 105--106
+Overfull \hbox (17.22223pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 vec-
  []
 
 
-Overfull \hbox (12.80559pt too wide) in paragraph at lines 105--106
+Overfull \hbox (12.80559pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 tor
  []
 
 
-Overfull \hbox (17.25002pt too wide) in paragraph at lines 105--106
+Overfull \hbox (17.25002pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 rep-
  []
 
 
-Overfull \hbox (11.69444pt too wide) in paragraph at lines 105--106
+Overfull \hbox (11.69444pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 re-
  []
 
 
-Overfull \hbox (17.27779pt too wide) in paragraph at lines 105--106
+Overfull \hbox (17.27779pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 sen-
  []
 
 
-Overfull \hbox (12.22224pt too wide) in paragraph at lines 105--106
+Overfull \hbox (12.22224pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 ta-
  []
 
 
-Overfull \hbox (20.00006pt too wide) in paragraph at lines 105--106
+Overfull \hbox (20.00006pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 tion.
  []
 
 
-Overfull \hbox (16.38892pt too wide) in paragraph at lines 105--106
+Overfull \hbox (16.38892pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 Ap-
  []
 
 
-Overfull \hbox (16.94449pt too wide) in paragraph at lines 105--106
+Overfull \hbox (16.94449pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 ply-
  []
 
 
-Overfull \hbox (13.33337pt too wide) in paragraph at lines 105--106
+Overfull \hbox (13.33337pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 ing
  []
 
 
-Overfull \hbox (21.72226pt too wide) in paragraph at lines 105--106
+Overfull \hbox (21.72226pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 some
  []
 
 
-Overfull \hbox (37.02785pt too wide) in paragraph at lines 105--106
+Overfull \hbox (37.02785pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 straight-
  []
 
 
-Overfull \hbox (15.30559pt too wide) in paragraph at lines 105--106
+Overfull \hbox (15.30559pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 for-
  []
 
 
-Overfull \hbox (21.4167pt too wide) in paragraph at lines 105--106
+Overfull \hbox (21.4167pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 ward
  []
 
 
-Overfull \hbox (14.44447pt too wide) in paragraph at lines 105--106
+Overfull \hbox (14.44447pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 lin-
  []
 
 
-Overfull \hbox (13.36113pt too wide) in paragraph at lines 105--106
+Overfull \hbox (13.36113pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 ear
  []
 
 
-Overfull \hbox (11.11113pt too wide) in paragraph at lines 105--106
+Overfull \hbox (11.11113pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 al-
  []
 
 
-Overfull \hbox (12.77779pt too wide) in paragraph at lines 105--106
+Overfull \hbox (12.77779pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 ge-
  []
 
 
-Overfull \hbox (14.47226pt too wide) in paragraph at lines 105--106
+Overfull \hbox (14.47226pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 bra
  []
 
 
-Overfull \hbox (8.33336pt too wide) in paragraph at lines 105--106
+Overfull \hbox (8.33336pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 in
  []
 
 
-Overfull \hbox (16.1667pt too wide) in paragraph at lines 105--106
+Overfull \hbox (16.1667pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 this
  []
 
 
-Overfull \hbox (17.83334pt too wide) in paragraph at lines 105--106
+Overfull \hbox (17.83334pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 case
  []
 
 
-Overfull \hbox (27.55562pt too wide) in paragraph at lines 105--106
+Overfull \hbox (27.55562pt too wide) in paragraph at lines 107--108
 \OT1/cmr/m/n/10 yields: 
  []
 
 ! Undefined control sequence.
-l.109 \mathbb
+l.111 \mathbb
              {1} \otimes (\alpha \ket{0} + \beta \ket{1}) = \begin{pmatrix}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4665,7 +4729,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.109 \mathbb{1} \otimes (\alpha \ket
+l.111 \mathbb{1} \otimes (\alpha \ket
                                      {0} + \beta \ket{1}) = \begin{pmatrix}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4674,7 +4738,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.109 ...b{1} \otimes (\alpha \ket{0} + \beta \ket
+l.111 ...b{1} \otimes (\alpha \ket{0} + \beta \ket
                                                   {1}) = \begin{pmatrix}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4683,7 +4747,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Misplaced alignment tab character &.
-l.110  1 &
+l.112  1 &
            0 \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -4693,7 +4757,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Misplaced alignment tab character &.
-l.111  0 &
+l.113  0 &
            1
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -4703,7 +4767,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Undefined control sequence.
-l.118  \end{pmatrix} = \alpha \ket
+l.120  \end{pmatrix} = \alpha \ket
                                   {0} + \beta \ket{1}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4712,7 +4776,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.118  \end{pmatrix} = \alpha \ket{0} + \beta \ket
+l.120  \end{pmatrix} = \alpha \ket{0} + \beta \ket
                                                   {1}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4721,7 +4785,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (206.5829pt too wide) detected at line 119
+Overfull \hbox (206.5829pt too wide) detected at line 121
 []\OT1/cmr/m/n/10 1 \OMS/cmsy/m/n/10 
  \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 \OT1/cmr/m/n/10 0 + \OML/cmm/m/it/10 ^^L\OT
 1/cmr/m/n/10 1) = [] 0[] 01 [] [] \OML/cmm/m/it/10 ^^L \OT1/cmr/m/n/10 = [] [] 
@@ -4732,7 +4796,7 @@ ML/cmm/m/it/10 ^^L\OT1/cmr/m/n/10 1
 ! Undefined control sequence.
 <recently read> \ket 
                      
-l.121 ...ty gate to an arbitrary qubit state $\ket
+l.123 ...ty gate to an arbitrary qubit state $\ket
                                                   {q} = \alpha \ket{0} + \be...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4741,7 +4805,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.121 ...itrary qubit state $\ket{q} = \alpha \ket
+l.123 ...itrary qubit state $\ket{q} = \alpha \ket
                                                   {0} + \beta \ket{1}$ leave...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4750,7 +4814,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.121 ...te $\ket{q} = \alpha \ket{0} + \beta \ket
+l.123 ...te $\ket{q} = \alpha \ket{0} + \beta \ket
                                                   {1}$ leaves the state unch...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4761,7 +4825,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <write> ...identityverification' on page \thepage 
                                                   \space undefined\on@line .
-l.121 ...wn in Equ.~\ref{equ:identityverification}
+l.123 ...wn in Equ.~\ref{equ:identityverification}
                                                   . The idle gate is mainly ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4771,331 +4835,331 @@ and I'll forget about whatever was undefined.
 
 
 LaTeX Warning: Reference `equ:identityverification' on page  undefined on input
- line 121.
+ line 123.
 
 
-Overfull \hbox (29.1667pt too wide) in paragraph at lines 121--122
+Overfull \hbox (29.1667pt too wide) in paragraph at lines 123--124
 []\OT1/cmr/m/n/10 Hence,
  []
 
 
-Overfull \hbox (13.88892pt too wide) in paragraph at lines 121--122
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 ap-
  []
 
 
-Overfull \hbox (16.94449pt too wide) in paragraph at lines 121--122
+Overfull \hbox (16.94449pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 ply-
  []
 
 
-Overfull \hbox (13.33337pt too wide) in paragraph at lines 121--122
+Overfull \hbox (13.33337pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 ing
  []
 
 
-Overfull \hbox (13.88892pt too wide) in paragraph at lines 121--122
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 the
  []
 
 
-Overfull \hbox (21.6667pt too wide) in paragraph at lines 121--122
+Overfull \hbox (21.6667pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 iden-
  []
 
 
-Overfull \hbox (15.5556pt too wide) in paragraph at lines 121--122
+Overfull \hbox (15.5556pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 tity
  []
 
 
-Overfull \hbox (18.33337pt too wide) in paragraph at lines 121--122
+Overfull \hbox (18.33337pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 gate
  []
 
 
-Overfull \hbox (8.88892pt too wide) in paragraph at lines 121--122
+Overfull \hbox (8.88892pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 to
  []
 
 
-Overfull \hbox (10.55559pt too wide) in paragraph at lines 121--122
+Overfull \hbox (10.55559pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 an
  []
 
 
-Overfull \hbox (12.25002pt too wide) in paragraph at lines 121--122
+Overfull \hbox (12.25002pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 ar-
  []
 
 
-Overfull \hbox (11.66669pt too wide) in paragraph at lines 121--122
+Overfull \hbox (11.66669pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 bi-
  []
 
 
-Overfull \hbox (22.00006pt too wide) in paragraph at lines 121--122
+Overfull \hbox (22.00006pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 trary
  []
 
 
-Overfull \hbox (23.05562pt too wide) in paragraph at lines 121--122
+Overfull \hbox (23.05562pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 qubit
  []
 
 
-Overfull \hbox (21.1667pt too wide) in paragraph at lines 121--122
+Overfull \hbox (21.1667pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 state
  []
 
 
-Overfull \hbox (15.37842pt too wide) in paragraph at lines 121--122
+Overfull \hbox (15.37842pt too wide) in paragraph at lines 123--124
 \OML/cmm/m/it/10 q \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (19.21185pt too wide) in paragraph at lines 121--122
+Overfull \hbox (19.21185pt too wide) in paragraph at lines 123--124
 \OML/cmm/m/it/10 \OT1/cmr/m/n/10 0 +
  []
 
 
-Overfull \hbox (11.18404pt too wide) in paragraph at lines 121--122
+Overfull \hbox (11.18404pt too wide) in paragraph at lines 123--124
 \OML/cmm/m/it/10 ^^L\OT1/cmr/m/n/10 1$
  []
 
 
-Overfull \hbox (25.33336pt too wide) in paragraph at lines 121--122
+Overfull \hbox (25.33336pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 leaves
  []
 
 
-Overfull \hbox (13.88892pt too wide) in paragraph at lines 121--122
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 the
  []
 
 
-Overfull \hbox (21.1667pt too wide) in paragraph at lines 121--122
+Overfull \hbox (21.1667pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 state
  []
 
 
-Overfull \hbox (14.44447pt too wide) in paragraph at lines 121--122
+Overfull \hbox (14.44447pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 un-
  []
 
 
-Overfull \hbox (35.27785pt too wide) in paragraph at lines 121--122
+Overfull \hbox (35.27785pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 changed
  []
 
 
-Overfull \hbox (8.94446pt too wide) in paragraph at lines 121--122
+Overfull \hbox (8.94446pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 as
  []
 
 
-Overfull \hbox (27.00005pt too wide) in paragraph at lines 121--122
+Overfull \hbox (27.00005pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 shown
  []
 
 
-Overfull \hbox (8.33336pt too wide) in paragraph at lines 121--122
+Overfull \hbox (8.33336pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 in
  []
 
 
-Overfull \hbox (36.27777pt too wide) in paragraph at lines 121--122
+Overfull \hbox (36.27777pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 Equ. [].
  []
 
 
-Overfull \hbox (17.22224pt too wide) in paragraph at lines 121--122
+Overfull \hbox (17.22224pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 The
  []
 
 
-Overfull \hbox (15.55559pt too wide) in paragraph at lines 121--122
+Overfull \hbox (15.55559pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 idle
  []
 
 
-Overfull \hbox (18.33337pt too wide) in paragraph at lines 121--122
+Overfull \hbox (18.33337pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 gate
  []
 
 
-Overfull \hbox (6.72223pt too wide) in paragraph at lines 121--122
+Overfull \hbox (6.72223pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 is
  []
 
 
-Overfull \hbox (29.72232pt too wide) in paragraph at lines 121--122
+Overfull \hbox (29.72232pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 mainly
  []
 
 
-Overfull \hbox (19.50003pt too wide) in paragraph at lines 121--122
+Overfull \hbox (19.50003pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 used
  []
 
 
-Overfull \hbox (11.97226pt too wide) in paragraph at lines 121--122
+Overfull \hbox (11.97226pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 for
  []
 
 
-Overfull \hbox (21.11115pt too wide) in paragraph at lines 121--122
+Overfull \hbox (21.11115pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 mea-
  []
 
 
-Overfull \hbox (16.75002pt too wide) in paragraph at lines 121--122
+Overfull \hbox (16.75002pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 sur-
  []
 
 
-Overfull \hbox (13.33337pt too wide) in paragraph at lines 121--122
+Overfull \hbox (13.33337pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 ing
  []
 
 
-Overfull \hbox (13.88892pt too wide) in paragraph at lines 121--122
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 the
  []
 
 
-Overfull \hbox (11.69444pt too wide) in paragraph at lines 121--122
+Overfull \hbox (11.69444pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 er-
  []
 
 
-Overfull \hbox (12.83336pt too wide) in paragraph at lines 121--122
+Overfull \hbox (12.83336pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 ror
  []
 
 
-Overfull \hbox (16.11116pt too wide) in paragraph at lines 121--122
+Overfull \hbox (16.11116pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 and
  []
 
 
-Overfull \hbox (16.38892pt too wide) in paragraph at lines 121--122
+Overfull \hbox (16.38892pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 life-
  []
 
 
-Overfull \hbox (23.38893pt too wide) in paragraph at lines 121--122
+Overfull \hbox (23.38893pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 times
  []
 
 
-Overfull \hbox (8.05559pt too wide) in paragraph at lines 121--122
+Overfull \hbox (8.05559pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 of
  []
 
 
-Overfull \hbox (27.00006pt too wide) in paragraph at lines 121--122
+Overfull \hbox (27.00006pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 qubits
  []
 
 
-Overfull \hbox (21.16669pt too wide) in paragraph at lines 121--122
+Overfull \hbox (21.16669pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 since
  []
 
 
-Overfull \hbox (6.66669pt too wide) in paragraph at lines 121--122
+Overfull \hbox (6.66669pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 it
  []
 
 
-Overfull \hbox (18.61118pt too wide) in paragraph at lines 121--122
+Overfull \hbox (18.61118pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 only
  []
 
 
-Overfull \hbox (30.61116pt too wide) in paragraph at lines 121--122
+Overfull \hbox (30.61116pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 evolves
  []
 
 
-Overfull \hbox (13.88892pt too wide) in paragraph at lines 121--122
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 the
  []
 
 
-Overfull \hbox (23.05562pt too wide) in paragraph at lines 121--122
+Overfull \hbox (23.05562pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 qubit
  []
 
 
-Overfull \hbox (8.33336pt too wide) in paragraph at lines 121--122
+Overfull \hbox (8.33336pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 in
  []
 
 
-Overfull \hbox (19.44449pt too wide) in paragraph at lines 121--122
+Overfull \hbox (19.44449pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 time
  []
 
 
-Overfull \hbox (22.77782pt too wide) in paragraph at lines 121--122
+Overfull \hbox (22.77782pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 with-
  []
 
 
-Overfull \hbox (14.44449pt too wide) in paragraph at lines 121--122
+Overfull \hbox (14.44449pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 out
  []
 
 
-Overfull \hbox (12.77779pt too wide) in paragraph at lines 121--122
+Overfull \hbox (12.77779pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 ac-
  []
 
 
-Overfull \hbox (24.16673pt too wide) in paragraph at lines 121--122
+Overfull \hbox (24.16673pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 tively
  []
 
 
-Overfull \hbox (12.25002pt too wide) in paragraph at lines 121--122
+Overfull \hbox (12.25002pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 ro-
  []
 
 
-Overfull \hbox (16.11115pt too wide) in paragraph at lines 121--122
+Overfull \hbox (16.11115pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 tat-
  []
 
 
-Overfull \hbox (13.33337pt too wide) in paragraph at lines 121--122
+Overfull \hbox (13.33337pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 ing
  []
 
 
-Overfull \hbox (13.88892pt too wide) in paragraph at lines 121--122
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 the
  []
 
 
-Overfull \hbox (24.86118pt too wide) in paragraph at lines 121--122
+Overfull \hbox (24.86118pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 Bloch
  []
 
 
-Overfull \hbox (17.22223pt too wide) in paragraph at lines 121--122
+Overfull \hbox (17.22223pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 vec-
  []
 
 
-Overfull \hbox (15.58337pt too wide) in paragraph at lines 121--122
+Overfull \hbox (15.58337pt too wide) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 tor. 
  []
 
 ! Undefined control sequence.
-l.123 \subsubsection
-                    {NOT (X) Gate}
+l.125 \subsubsection
+                    {Qubit Flip (X) Gate}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -5103,152 +5167,157 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (22.50005pt too wide) in paragraph at lines 123--125
-[]\OT1/cmr/m/n/10 NOT
+Overfull \hbox (25.55563pt too wide) in paragraph at lines 125--127
+[]\OT1/cmr/m/n/10 Qubit
  []
 
 
-Overfull \hbox (15.27782pt too wide) in paragraph at lines 123--125
+Overfull \hbox (17.63895pt too wide) in paragraph at lines 125--127
+\OT1/cmr/m/n/10 Flip
+ []
+
+
+Overfull \hbox (15.27782pt too wide) in paragraph at lines 125--127
 \OT1/cmr/m/n/10 (X)
  []
 
 
-Overfull \hbox (21.18059pt too wide) in paragraph at lines 123--125
+Overfull \hbox (21.18059pt too wide) in paragraph at lines 125--127
 \OT1/cmr/m/n/10 Gate
  []
 
 
-Overfull \hbox (17.22224pt too wide) in paragraph at lines 126--127
+Overfull \hbox (17.22224pt too wide) in paragraph at lines 128--129
 []\OT1/cmr/m/n/10 The
  []
 
 
-Overfull \hbox (24.72227pt too wide) in paragraph at lines 126--127
+Overfull \hbox (24.72227pt too wide) in paragraph at lines 128--129
 \OT1/cmr/m/n/10 quan-
  []
 
 
-Overfull \hbox (17.77783pt too wide) in paragraph at lines 126--127
+Overfull \hbox (17.77783pt too wide) in paragraph at lines 128--129
 \OT1/cmr/m/n/10 tum
  []
 
 
-Overfull \hbox (26.66672pt too wide) in paragraph at lines 126--127
+Overfull \hbox (26.66672pt too wide) in paragraph at lines 128--129
 \OT1/cmr/m/n/10 equiv-
  []
 
 
-Overfull \hbox (8.33334pt too wide) in paragraph at lines 126--127
+Overfull \hbox (8.33334pt too wide) in paragraph at lines 128--129
 \OT1/cmr/m/n/10 a-
  []
 
 
-Overfull \hbox (16.38892pt too wide) in paragraph at lines 126--127
+Overfull \hbox (16.38892pt too wide) in paragraph at lines 128--129
 \OT1/cmr/m/n/10 lent
  []
 
 
-Overfull \hbox (8.05559pt too wide) in paragraph at lines 126--127
+Overfull \hbox (8.05559pt too wide) in paragraph at lines 128--129
 \OT1/cmr/m/n/10 of
  []
 
 
-Overfull \hbox (13.88892pt too wide) in paragraph at lines 126--127
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 128--129
 \OT1/cmr/m/n/10 the
  []
 
 
-Overfull \hbox (19.50002pt too wide) in paragraph at lines 126--127
+Overfull \hbox (19.50002pt too wide) in paragraph at lines 128--129
 \OT1/cmr/m/n/10 clas-
  []
 
 
-Overfull \hbox (10.05556pt too wide) in paragraph at lines 126--127
+Overfull \hbox (10.05556pt too wide) in paragraph at lines 128--129
 \OT1/cmr/m/n/10 si-
  []
 
 
-Overfull \hbox (12.22224pt too wide) in paragraph at lines 126--127
+Overfull \hbox (12.22224pt too wide) in paragraph at lines 128--129
 \OT1/cmr/m/n/10 cal
  []
 
 
-Overfull \hbox (22.50005pt too wide) in paragraph at lines 126--127
+Overfull \hbox (22.50005pt too wide) in paragraph at lines 128--129
 \OT1/cmr/m/n/10 NOT
  []
 
 
-Overfull \hbox (18.33337pt too wide) in paragraph at lines 126--127
+Overfull \hbox (18.33337pt too wide) in paragraph at lines 128--129
 \OT1/cmr/m/n/10 gate
  []
 
 
-Overfull \hbox (6.72223pt too wide) in paragraph at lines 126--127
+Overfull \hbox (6.72223pt too wide) in paragraph at lines 128--129
 \OT1/cmr/m/n/10 is
  []
 
 
-Overfull \hbox (25.00005pt too wide) in paragraph at lines 126--127
+Overfull \hbox (25.00005pt too wide) in paragraph at lines 128--129
 \OT1/cmr/m/n/10 called
  []
 
 
-Overfull \hbox (7.50002pt too wide) in paragraph at lines 126--127
+Overfull \hbox (7.50002pt too wide) in paragraph at lines 128--129
 \OT1/cmr/m/n/10 X
  []
 
 
-Overfull \hbox (18.33337pt too wide) in paragraph at lines 126--127
+Overfull \hbox (18.33337pt too wide) in paragraph at lines 128--129
 \OT1/cmr/m/n/10 gate
  []
 
 
-Overfull \hbox (16.11116pt too wide) in paragraph at lines 126--127
+Overfull \hbox (16.11116pt too wide) in paragraph at lines 128--129
 \OT1/cmr/m/n/10 and
  []
 
 
-Overfull \hbox (6.72223pt too wide) in paragraph at lines 126--127
+Overfull \hbox (6.72223pt too wide) in paragraph at lines 128--129
 \OT1/cmr/m/n/10 is
  []
 
 
-Overfull \hbox (22.77783pt too wide) in paragraph at lines 126--127
+Overfull \hbox (22.77783pt too wide) in paragraph at lines 128--129
 \OT1/cmr/m/n/10 given
  []
 
 
-Overfull \hbox (10.55559pt too wide) in paragraph at lines 126--127
+Overfull \hbox (10.55559pt too wide) in paragraph at lines 128--129
 \OT1/cmr/m/n/10 by
  []
 
 
-Overfull \hbox (13.88892pt too wide) in paragraph at lines 126--127
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 128--129
 \OT1/cmr/m/n/10 the
  []
 
 
-Overfull \hbox (11.7931pt too wide) in paragraph at lines 126--127
+Overfull \hbox (11.7931pt too wide) in paragraph at lines 128--129
 \OT1/cmr/m/n/10 1$[]$
  []
 
 
-Overfull \hbox (22.63895pt too wide) in paragraph at lines 126--127
+Overfull \hbox (22.63895pt too wide) in paragraph at lines 128--129
 \OT1/cmr/m/n/10 Pauli
  []
 
 
-Overfull \hbox (16.6667pt too wide) in paragraph at lines 126--127
+Overfull \hbox (16.6667pt too wide) in paragraph at lines 128--129
 \OT1/cmr/m/n/10 ma-
  []
 
 
-Overfull \hbox (18.63895pt too wide) in paragraph at lines 126--127
+Overfull \hbox (18.63895pt too wide) in paragraph at lines 128--129
 \OT1/cmr/m/n/10 trix: 
  []
 
 ! Misplaced alignment tab character &.
-l.130  0 &
+l.132  0 &
            1 \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -5258,7 +5327,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Misplaced alignment tab character &.
-l.131  1 &
+l.133  1 &
            0
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -5268,113 +5337,128 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-Overfull \hbox (80.3933pt too wide) detected at line 133
-\OML/cmm/m/it/10 ^^[[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 ^^[[] \OT1/cmr/m/n/10
- = [] 1[] 10
+Overfull \hbox (78.71387pt too wide) detected at line 135
+\OML/cmm/m/it/10 ^^[[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 X \OT1/cmr/m/n/10 = [
+] 1[] 10
  []
 
 
-Overfull \hbox (17.22224pt too wide) in paragraph at lines 135--136
+Overfull \hbox (17.22224pt too wide) in paragraph at lines 137--138
 []\OT1/cmr/m/n/10 The
  []
 
 
-Overfull \hbox (12.77779pt too wide) in paragraph at lines 135--136
+Overfull \hbox (12.77779pt too wide) in paragraph at lines 137--138
 \OT1/cmr/m/n/10 ac-
  []
 
 
-Overfull \hbox (17.22227pt too wide) in paragraph at lines 135--136
+Overfull \hbox (17.22227pt too wide) in paragraph at lines 137--138
 \OT1/cmr/m/n/10 tion
  []
 
 
-Overfull \hbox (8.05559pt too wide) in paragraph at lines 135--136
+Overfull \hbox (8.05559pt too wide) in paragraph at lines 137--138
 \OT1/cmr/m/n/10 of
  []
 
 
-Overfull \hbox (13.88892pt too wide) in paragraph at lines 135--136
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 137--138
 \OT1/cmr/m/n/10 the
  []
 
 
-Overfull \hbox (7.50002pt too wide) in paragraph at lines 135--136
+Overfull \hbox (7.50002pt too wide) in paragraph at lines 137--138
 \OT1/cmr/m/n/10 X
  []
 
 
-Overfull \hbox (18.33337pt too wide) in paragraph at lines 135--136
+Overfull \hbox (18.33337pt too wide) in paragraph at lines 137--138
 \OT1/cmr/m/n/10 gate
  []
 
 
-Overfull \hbox (6.72223pt too wide) in paragraph at lines 135--136
+Overfull \hbox (6.72223pt too wide) in paragraph at lines 137--138
 \OT1/cmr/m/n/10 is
  []
 
 
-Overfull \hbox (16.72223pt too wide) in paragraph at lines 135--136
+Overfull \hbox (16.72223pt too wide) in paragraph at lines 137--138
 \OT1/cmr/m/n/10 eas-
  []
 
 
-Overfull \hbox (10.83337pt too wide) in paragraph at lines 135--136
+Overfull \hbox (10.83337pt too wide) in paragraph at lines 137--138
 \OT1/cmr/m/n/10 ily
  []
 
 
-Overfull \hbox (16.69446pt too wide) in paragraph at lines 135--136
+Overfull \hbox (16.69446pt too wide) in paragraph at lines 137--138
 \OT1/cmr/m/n/10 ver-
  []
 
 
-Overfull \hbox (6.11111pt too wide) in paragraph at lines 135--136
+Overfull \hbox (6.11111pt too wide) in paragraph at lines 137--138
 \OT1/cmr/m/n/10 i-
  []
 
 
-Overfull \hbox (15.55559pt too wide) in paragraph at lines 135--136
+Overfull \hbox (15.55559pt too wide) in paragraph at lines 137--138
 \OT1/cmr/m/n/10 fied
  []
 
 
-Overfull \hbox (12.83334pt too wide) in paragraph at lines 135--136
-\OT1/cmr/m/n/10 us-
+Overfull \hbox (10.55559pt too wide) in paragraph at lines 137--138
+\OT1/cmr/m/n/10 by
  []
 
 
-Overfull \hbox (13.33337pt too wide) in paragraph at lines 135--136
+Overfull \hbox (17.5278pt too wide) in paragraph at lines 137--138
+\OT1/cmr/m/n/10 per-
+ []
+
+
+Overfull \hbox (23.63895pt too wide) in paragraph at lines 137--138
+\OT1/cmr/m/n/10 form-
+ []
+
+
+Overfull \hbox (13.33337pt too wide) in paragraph at lines 137--138
 \OT1/cmr/m/n/10 ing
  []
 
 
-Overfull \hbox (14.44447pt too wide) in paragraph at lines 135--136
+Overfull \hbox (21.72226pt too wide) in paragraph at lines 137--138
+\OT1/cmr/m/n/10 some
+ []
+
+
+Overfull \hbox (14.44447pt too wide) in paragraph at lines 137--138
 \OT1/cmr/m/n/10 lin-
  []
 
 
-Overfull \hbox (13.36113pt too wide) in paragraph at lines 135--136
+Overfull \hbox (13.36113pt too wide) in paragraph at lines 137--138
 \OT1/cmr/m/n/10 ear
  []
 
 
-Overfull \hbox (11.11113pt too wide) in paragraph at lines 135--136
+Overfull \hbox (11.11113pt too wide) in paragraph at lines 137--138
 \OT1/cmr/m/n/10 al-
  []
 
 
-Overfull \hbox (12.77779pt too wide) in paragraph at lines 135--136
+Overfull \hbox (12.77779pt too wide) in paragraph at lines 137--138
 \OT1/cmr/m/n/10 ge-
  []
 
 
-Overfull \hbox (17.25005pt too wide) in paragraph at lines 135--136
+Overfull \hbox (17.25005pt too wide) in paragraph at lines 137--138
 \OT1/cmr/m/n/10 bra, 
  []
 
 ! Undefined control sequence.
-l.139 X \otimes (\alpha \ket
+l.141 X \otimes (\alpha \ket
                             {0} + \beta \ket{1}) = \begin{pmatrix}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5383,7 +5467,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.139 X \otimes (\alpha \ket{0} + \beta \ket
+l.141 X \otimes (\alpha \ket{0} + \beta \ket
                                             {1}) = \begin{pmatrix}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5392,7 +5476,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Misplaced alignment tab character &.
-l.140  0 &
+l.142  0 &
            1 \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -5402,7 +5486,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Misplaced alignment tab character &.
-l.141  1 &
+l.143  1 &
            0
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -5412,7 +5496,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Undefined control sequence.
-l.148  \end{pmatrix} = \beta \ket
+l.150  \end{pmatrix} = \beta \ket
                                  {0} + \alpha \ket{1}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5421,7 +5505,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.148  \end{pmatrix} = \beta \ket{0} + \alpha \ket
+l.150  \end{pmatrix} = \beta \ket{0} + \alpha \ket
                                                   {1}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5430,7 +5514,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (210.65231pt too wide) detected at line 149
+Overfull \hbox (210.65231pt too wide) detected at line 151
 []\OML/cmm/m/it/10 X \OMS/cmsy/m/n/10 
  \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 \OT1/cmr/m/n/10 0 + \OML/cmm/m/it/10 ^^L\OT
 1/cmr/m/n/10 1) = [] 1[] 10 [] [] \OML/cmm/m/it/10 ^^L \OT1/cmr/m/n/10 = [] [] 
@@ -5439,7 +5523,229 @@ ML/cmm/m/it/10 \OT1/cmr/m/n/10 1
  []
 
 ! Undefined control sequence.
-l.154 X \otimes \ket
+<recently read> \ket 
+                     
+l.153 ... applying the X gate to qubit state $\ket
+                                                  {q}$ swaps the amplitudes ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.153 ...tate $\ket{q}$ swaps the amplitudes of \0
+                                                   and \1. More specifically...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.153 ...ket{q}$ swaps the amplitudes of \0 and \1
+                                                  . More specifically, apply...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.153 .... More specifically, applying X to the \0
+                                                   state results in the \1 s...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.153 ...lying X to the \0 state results in the \1
+                                                   state,
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (24.77782pt too wide) in paragraph at lines 153--154
+[]\OT1/cmr/m/n/10 Thus,
+ []
+
+
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 ap-
+ []
+
+
+Overfull \hbox (16.94449pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 ply-
+ []
+
+
+Overfull \hbox (13.33337pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 ing
+ []
+
+
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 the
+ []
+
+
+Overfull \hbox (7.50002pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 X
+ []
+
+
+Overfull \hbox (18.33337pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 gate
+ []
+
+
+Overfull \hbox (8.88892pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 to
+ []
+
+
+Overfull \hbox (23.05562pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 qubit
+ []
+
+
+Overfull \hbox (21.1667pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 state
+ []
+
+
+Overfull \hbox (4.8229pt too wide) in paragraph at lines 153--154
+\OML/cmm/m/it/10 q$
+ []
+
+
+Overfull \hbox (25.38892pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 swaps
+ []
+
+
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 the
+ []
+
+
+Overfull \hbox (16.6667pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 am-
+ []
+
+
+Overfull \hbox (14.44447pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 pli-
+ []
+
+
+Overfull \hbox (23.38893pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 tudes
+ []
+
+
+Overfull \hbox (8.05559pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 of
+ []
+
+
+Overfull \hbox (16.11116pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 and
+ []
+
+
+Overfull \hbox (2.77779pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 .
+ []
+
+
+Overfull \hbox (22.52782pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 More
+ []
+
+
+Overfull \hbox (27.83337pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 specif-
+ []
+
+
+Overfull \hbox (6.11111pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 i-
+ []
+
+
+Overfull \hbox (22.22227pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 cally,
+ []
+
+
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 ap-
+ []
+
+
+Overfull \hbox (16.94449pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 ply-
+ []
+
+
+Overfull \hbox (13.33337pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 ing
+ []
+
+
+Overfull \hbox (7.50002pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 X
+ []
+
+
+Overfull \hbox (8.88892pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 to
+ []
+
+
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 the
+ []
+
+
+Overfull \hbox (21.1667pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 state
+ []
+
+
+Overfull \hbox (11.69444pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 re-
+ []
+
+
+Overfull \hbox (20.11115pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 sults
+ []
+
+
+Overfull \hbox (8.33336pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 in
+ []
+
+
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 the
+ []
+
+
+Overfull \hbox (23.94449pt too wide) in paragraph at lines 153--154
+\OT1/cmr/m/n/10 state, 
+ []
+
+! Undefined control sequence.
+l.157 X \otimes \ket
                     {0} = \begin{pmatrix}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5448,7 +5754,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Misplaced alignment tab character &.
-l.155  0 &
+l.158  0 &
            1 \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -5458,7 +5764,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Misplaced alignment tab character &.
-l.156  1 &
+l.159  1 &
            0
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -5468,7 +5774,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Undefined control sequence.
-l.162  1 \end{pmatrix} =  \ket
+l.165  1 \end{pmatrix} =  \ket
                               {1}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5477,13 +5783,111 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (146.84671pt too wide) detected at line 163
+Overfull \hbox (146.84671pt too wide) detected at line 166
 []\OML/cmm/m/it/10 X \OMS/cmsy/m/n/10 
  \OT1/cmr/m/n/10 0 = [] 1[] 10 [] [] 0 = [] [] 1 = 1
  []
 
 ! Undefined control sequence.
-l.167 X \otimes \ket
+l.168 And the \0
+                 state is recovered when applying X again to the \1 state,
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.168 ...recovered when applying X again to the \1
+                                                   state,
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (18.61116pt too wide) in paragraph at lines 168--169
+[]\OT1/cmr/m/n/10 And
+ []
+
+
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 168--169
+\OT1/cmr/m/n/10 the
+ []
+
+
+Overfull \hbox (21.1667pt too wide) in paragraph at lines 168--169
+\OT1/cmr/m/n/10 state
+ []
+
+
+Overfull \hbox (6.72223pt too wide) in paragraph at lines 168--169
+\OT1/cmr/m/n/10 is
+ []
+
+
+Overfull \hbox (11.69444pt too wide) in paragraph at lines 168--169
+\OT1/cmr/m/n/10 re-
+ []
+
+
+Overfull \hbox (17.7778pt too wide) in paragraph at lines 168--169
+\OT1/cmr/m/n/10 cov-
+ []
+
+
+Overfull \hbox (18.36113pt too wide) in paragraph at lines 168--169
+\OT1/cmr/m/n/10 ered
+ []
+
+
+Overfull \hbox (22.77782pt too wide) in paragraph at lines 168--169
+\OT1/cmr/m/n/10 when
+ []
+
+
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 168--169
+\OT1/cmr/m/n/10 ap-
+ []
+
+
+Overfull \hbox (16.94449pt too wide) in paragraph at lines 168--169
+\OT1/cmr/m/n/10 ply-
+ []
+
+
+Overfull \hbox (13.33337pt too wide) in paragraph at lines 168--169
+\OT1/cmr/m/n/10 ing
+ []
+
+
+Overfull \hbox (7.50002pt too wide) in paragraph at lines 168--169
+\OT1/cmr/m/n/10 X
+ []
+
+
+Overfull \hbox (23.3334pt too wide) in paragraph at lines 168--169
+\OT1/cmr/m/n/10 again
+ []
+
+
+Overfull \hbox (8.88892pt too wide) in paragraph at lines 168--169
+\OT1/cmr/m/n/10 to
+ []
+
+
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 168--169
+\OT1/cmr/m/n/10 the
+ []
+
+
+Overfull \hbox (23.94449pt too wide) in paragraph at lines 168--169
+\OT1/cmr/m/n/10 state, 
+ []
+
+! Undefined control sequence.
+l.172 X \otimes \ket
                     {1} = \begin{pmatrix}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5492,7 +5896,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Misplaced alignment tab character &.
-l.168  0 &
+l.173  0 &
            1 \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -5502,7 +5906,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Misplaced alignment tab character &.
-l.169  1 &
+l.174  1 &
            0
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -5512,7 +5916,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Undefined control sequence.
-l.175  0 \end{pmatrix} =  \ket
+l.180  0 \end{pmatrix} =  \ket
                               {0}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5521,13 +5925,227 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (146.84671pt too wide) detected at line 176
+Overfull \hbox (146.84671pt too wide) detected at line 181
 []\OML/cmm/m/it/10 X \OMS/cmsy/m/n/10 
  \OT1/cmr/m/n/10 1 = [] 1[] 10 [] [] 1 = [] [] 0 = 0
  []
 
 ! Undefined control sequence.
-l.179 \subsubsection
+<write> ... `equ:xverification1' on page \thepage 
+                                                  \space undefined\on@line .
+l.183 From Equ.~\ref{equ:xverification1}
+                                        ,~\ref{equ:xverification2} and~\ref{...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `equ:xverification1' on page  undefined on input line 
+183.
+
+! Undefined control sequence.
+<write> ... `equ:xverification2' on page \thepage 
+                                                  \space undefined\on@line .
+l.183 ...xverification1},~\ref{equ:xverification2}
+                                                   and~\ref{equ:xverificatio...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `equ:xverification2' on page  undefined on input line 
+183.
+
+! Undefined control sequence.
+<write> ... `equ:xverification3' on page \thepage 
+                                                  \space undefined\on@line .
+l.183 ...rification2} and~\ref{equ:xverification3}
+                                                   it follows that X is its ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `equ:xverification3' on page  undefined on input line 
+183.
+
+
+! LaTeX Error: Environment align undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.184 \begin{align}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Misplaced alignment tab character &.
+l.185 XX &
+          = \mathbb{1} \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Undefined control sequence.
+l.185 XX &= \mathbb
+                   {1} \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Misplaced alignment tab character &.
+l.186 X &
+         = X^{-1}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.186 X &= X^
+             {-1}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+! LaTeX Error: \begin{document} ended by \end{align}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.187 \end{align}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.187 \end{align}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (22.9445pt too wide) in paragraph at lines 183--188
+[]\OT1/cmr/m/n/10 From
+ []
+
+
+Overfull \hbox (49.36104pt too wide) in paragraph at lines 183--188
+\OT1/cmr/m/n/10 Equ. [], []
+ []
+
+
+Overfull \hbox (29.19443pt too wide) in paragraph at lines 183--188
+\OT1/cmr/m/n/10 and []
+ []
+
+
+Overfull \hbox (6.66669pt too wide) in paragraph at lines 183--188
+\OT1/cmr/m/n/10 it
+ []
+
+
+Overfull \hbox (14.1667pt too wide) in paragraph at lines 183--188
+\OT1/cmr/m/n/10 fol-
+ []
+
+
+Overfull \hbox (18.66669pt too wide) in paragraph at lines 183--188
+\OT1/cmr/m/n/10 lows
+ []
+
+
+Overfull \hbox (18.33339pt too wide) in paragraph at lines 183--188
+\OT1/cmr/m/n/10 that
+ []
+
+
+Overfull \hbox (7.50002pt too wide) in paragraph at lines 183--188
+\OT1/cmr/m/n/10 X
+ []
+
+
+Overfull \hbox (6.72223pt too wide) in paragraph at lines 183--188
+\OT1/cmr/m/n/10 is
+ []
+
+
+Overfull \hbox (10.61113pt too wide) in paragraph at lines 183--188
+\OT1/cmr/m/n/10 its
+ []
+
+
+Overfull \hbox (17.50003pt too wide) in paragraph at lines 183--188
+\OT1/cmr/m/n/10 own
+ []
+
+
+Overfull \hbox (11.66669pt too wide) in paragraph at lines 183--188
+\OT1/cmr/m/n/10 in-
+ []
+
+
+Overfull \hbox (24.5278pt too wide) in paragraph at lines 183--188
+\OT1/cmr/m/n/10 verse:
+ []
+
+
+Overfull \hbox (15.00003pt too wide) in paragraph at lines 183--188
+\OT1/cmr/m/n/10 XX
+ []
+
+
+Overfull \hbox (7.7778pt too wide) in paragraph at lines 183--188
+\OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 183--188
+\OT1/cmr/m/n/10 1 
+ []
+
+
+Overfull \hbox (7.50002pt too wide) in paragraph at lines 183--188
+\OT1/cmr/m/n/10 X
+ []
+
+
+Overfull \hbox (7.7778pt too wide) in paragraph at lines 183--188
+\OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (18.23616pt too wide) in paragraph at lines 183--188
+\OT1/cmr/m/n/10 X$[]$ 
+ []
+
+! Undefined control sequence.
+l.189 \subsubsection
                     {Phase Flip (Z) Gate}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5536,27 +6154,222 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (25.75005pt too wide) in paragraph at lines 179--181
+Overfull \hbox (25.75005pt too wide) in paragraph at lines 189--191
 []\OT1/cmr/m/n/10 Phase
  []
 
 
-Overfull \hbox (17.63895pt too wide) in paragraph at lines 179--181
+Overfull \hbox (17.63895pt too wide) in paragraph at lines 189--191
 \OT1/cmr/m/n/10 Flip
  []
 
 
-Overfull \hbox (13.88892pt too wide) in paragraph at lines 179--181
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 189--191
 \OT1/cmr/m/n/10 (Z)
  []
 
 
-Overfull \hbox (21.18059pt too wide) in paragraph at lines 179--181
+Overfull \hbox (21.18059pt too wide) in paragraph at lines 189--191
 \OT1/cmr/m/n/10 Gate
  []
 
+
+Overfull \hbox (17.22224pt too wide) in paragraph at lines 192--193
+[]\OT1/cmr/m/n/10 The
+ []
+
+
+Overfull \hbox (24.50005pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 phase
+ []
+
+
+Overfull \hbox (13.88893pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 flip
+ []
+
+
+Overfull \hbox (21.11116pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 gate,
+ []
+
+
+Overfull \hbox (11.38892pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 of-
+ []
+
+
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 ten
+ []
+
+
+Overfull \hbox (25.00005pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 called
+ []
+
+
+Overfull \hbox (6.11111pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 Z
+ []
+
+
+Overfull \hbox (21.11116pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 gate,
+ []
+
+
+Overfull \hbox (6.72223pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 is
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 a
+ []
+
+
+Overfull \hbox (24.72227pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 quan-
+ []
+
+
+Overfull \hbox (17.77783pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 tum
+ []
+
+
+Overfull \hbox (20.00005pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 logic
+ []
+
+
+Overfull \hbox (18.33337pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 gate
+ []
+
+
+Overfull \hbox (22.77782pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 with-
+ []
+
+
+Overfull \hbox (14.44449pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 out
+ []
+
+
+Overfull \hbox (19.50002pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 clas-
+ []
+
+
+Overfull \hbox (10.05556pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 si-
+ []
+
+
+Overfull \hbox (12.22224pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 cal
+ []
+
+
+Overfull \hbox (26.66672pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 equiv-
+ []
+
+
+Overfull \hbox (8.33334pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 a-
+ []
+
+
+Overfull \hbox (19.1667pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 lent.
+ []
+
+
+Overfull \hbox (11.44446pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 Its
+ []
+
+
+Overfull \hbox (16.6667pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 ma-
+ []
+
+
+Overfull \hbox (15.86116pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 trix
+ []
+
+
+Overfull \hbox (17.25002pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 rep-
+ []
+
+
+Overfull \hbox (11.69444pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 re-
+ []
+
+
+Overfull \hbox (17.27779pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 sen-
+ []
+
+
+Overfull \hbox (12.22224pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 ta-
+ []
+
+
+Overfull \hbox (17.22227pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 tion
+ []
+
+
+Overfull \hbox (6.72223pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 is
+ []
+
+
+Overfull \hbox (22.77783pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 given
+ []
+
+
+Overfull \hbox (10.55559pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 by
+ []
+
+
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 the
+ []
+
+
+Overfull \hbox (13.04172pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 3$[]$
+ []
+
+
+Overfull \hbox (22.63895pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 Pauli
+ []
+
+
+Overfull \hbox (16.6667pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 ma-
+ []
+
+
+Overfull \hbox (18.63895pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 trix: 
+ []
+
 ! Misplaced alignment tab character &.
-l.184  1 &
+l.196  1 &
            0 \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -5566,7 +6379,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Misplaced alignment tab character &.
-l.185  0 &
+l.197  0 &
            -1
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -5576,14 +6389,61 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-Overfull \hbox (87.74405pt too wide) detected at line 187
-\OML/cmm/m/it/10 ^^[[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 ^^[[] \OT1/cmr/m/n/10
- = [] 0[] 0 \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 1
+Overfull \hbox (84.96391pt too wide) detected at line 199
+\OML/cmm/m/it/10 ^^[[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 Z \OT1/cmr/m/n/10 = [
+] 0[] 0 \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 1
  []
 
 ! Undefined control sequence.
-l.189 \subsubsection
-                    {Bit and Phase Flip (Y) Gate}
+l.205 Z \otimes (\alpha \ket
+                            {0} + \beta \ket{1}) = \begin{pmatrix}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.205 Z \otimes (\alpha \ket{0} + \beta \ket
+                                            {1}) = \begin{pmatrix}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Misplaced alignment tab character &.
+l.206  1 &
+           0 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.207  0 &
+           -1
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Undefined control sequence.
+l.214  \end{pmatrix} = \alpha \ket
+                                  {0} - \beta \ket{1}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.214  \end{pmatrix} = \alpha \ket{0} - \beta \ket
+                                                  {1}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -5591,37 +6451,316 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (13.75005pt too wide) in paragraph at lines 189--191
-[]\OT1/cmr/m/n/10 Bit
+Overfull \hbox (224.68016pt too wide) detected at line 215
+[]\OML/cmm/m/it/10 Z \OMS/cmsy/m/n/10 
+ \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 \OT1/cmr/m/n/10 0 + \OML/cmm/m/it/10 ^^L\OT
+1/cmr/m/n/10 1) = [] 0[] 0 \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 1 [] [] \OML/cm
+m/m/it/10 ^^L \OT1/cmr/m/n/10 = [] []  \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^
+L \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 \OT1/cmr/m/n/10 0 \OMS/cmsy/m/n/10 ^^@ \O
+ML/cmm/m/it/10 ^^L\OT1/cmr/m/n/10 1
+ []
+
+! Undefined control sequence.
+l.217 \subsubsection
+                    {Qubit and Phase Flip (Y) Gate}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (25.55563pt too wide) in paragraph at lines 217--219
+[]\OT1/cmr/m/n/10 Qubit
  []
 
 
-Overfull \hbox (16.11116pt too wide) in paragraph at lines 189--191
+Overfull \hbox (16.11116pt too wide) in paragraph at lines 217--219
 \OT1/cmr/m/n/10 and
  []
 
 
-Overfull \hbox (25.75005pt too wide) in paragraph at lines 189--191
+Overfull \hbox (25.75005pt too wide) in paragraph at lines 217--219
 \OT1/cmr/m/n/10 Phase
  []
 
 
-Overfull \hbox (17.63895pt too wide) in paragraph at lines 189--191
+Overfull \hbox (17.63895pt too wide) in paragraph at lines 217--219
 \OT1/cmr/m/n/10 Flip
  []
 
 
-Overfull \hbox (15.27782pt too wide) in paragraph at lines 189--191
+Overfull \hbox (15.27782pt too wide) in paragraph at lines 217--219
 \OT1/cmr/m/n/10 (Y)
  []
 
 
-Overfull \hbox (21.18059pt too wide) in paragraph at lines 189--191
+Overfull \hbox (21.18059pt too wide) in paragraph at lines 217--219
 \OT1/cmr/m/n/10 Gate
  []
 
+
+Overfull \hbox (17.22224pt too wide) in paragraph at lines 220--221
+[]\OT1/cmr/m/n/10 The
+ []
+
+
+Overfull \hbox (21.11115pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 com-
+ []
+
+
+Overfull \hbox (23.88895pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 bined
+ []
+
+
+Overfull \hbox (23.05562pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 qubit
+ []
+
+
+Overfull \hbox (16.11116pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 and
+ []
+
+
+Overfull \hbox (24.50005pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 phase
+ []
+
+
+Overfull \hbox (13.88893pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 flip
+ []
+
+
+Overfull \hbox (21.11116pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 gate,
+ []
+
+
+Overfull \hbox (16.72226pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 also
+ []
+
+
+Overfull \hbox (25.00005pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 called
+ []
+
+
+Overfull \hbox (7.50002pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 Y
+ []
+
+
+Overfull \hbox (21.11116pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 gate,
+ []
+
+
+Overfull \hbox (6.72223pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 is
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 a
+ []
+
+
+Overfull \hbox (24.72227pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 quan-
+ []
+
+
+Overfull \hbox (17.77783pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 tum
+ []
+
+
+Overfull \hbox (20.00005pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 logic
+ []
+
+
+Overfull \hbox (18.33337pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 gate
+ []
+
+
+Overfull \hbox (22.77782pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 with-
+ []
+
+
+Overfull \hbox (14.44449pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 out
+ []
+
+
+Overfull \hbox (19.50002pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 clas-
+ []
+
+
+Overfull \hbox (10.05556pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 si-
+ []
+
+
+Overfull \hbox (12.22224pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 cal
+ []
+
+
+Overfull \hbox (26.66672pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 equiv-
+ []
+
+
+Overfull \hbox (8.33334pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 a-
+ []
+
+
+Overfull \hbox (16.38892pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 lent
+ []
+
+
+Overfull \hbox (21.16669pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 since
+ []
+
+
+Overfull \hbox (6.66669pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 it
+ []
+
+
+Overfull \hbox (11.66669pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 in-
+ []
+
+
+Overfull \hbox (26.16672pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 volves
+ []
+
+
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 the
+ []
+
+
+Overfull \hbox (21.11115pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 com-
+ []
+
+
+Overfull \hbox (18.0556pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 plex
+ []
+
+
+Overfull \hbox (22.50005pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 num-
+ []
+
+
+Overfull \hbox (14.19447pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 ber
+ []
+
+
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 i.
+ []
+
+
+Overfull \hbox (11.44446pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 Its
+ []
+
+
+Overfull \hbox (16.6667pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 ma-
+ []
+
+
+Overfull \hbox (15.86116pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 trix
+ []
+
+
+Overfull \hbox (17.25002pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 rep-
+ []
+
+
+Overfull \hbox (11.69444pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 re-
+ []
+
+
+Overfull \hbox (17.27779pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 sen-
+ []
+
+
+Overfull \hbox (12.22224pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 ta-
+ []
+
+
+Overfull \hbox (17.22227pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 tion
+ []
+
+
+Overfull \hbox (6.72223pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 is
+ []
+
+
+Overfull \hbox (22.77783pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 given
+ []
+
+
+Overfull \hbox (10.55559pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 by
+ []
+
+
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 the
+ []
+
+
+Overfull \hbox (14.33339pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 2$[]$
+ []
+
+
+Overfull \hbox (22.63895pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 Pauli
+ []
+
+
+Overfull \hbox (16.6667pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 ma-
+ []
+
+
+Overfull \hbox (18.63895pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 trix: 
+ []
+
 ! Misplaced alignment tab character &.
-l.194  0 &
+l.224  0 &
            -i \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -5631,7 +6770,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Misplaced alignment tab character &.
-l.195  i &
+l.225  i &
            0
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -5641,13 +6780,79 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-Overfull \hbox (83.16672pt too wide) detected at line 197
-\OML/cmm/m/it/10 ^^[[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 ^^[[] \OT1/cmr/m/n/10
- = [] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 i[] i\OT1/cmr/m/n/10 0
+Overfull \hbox (80.67363pt too wide) detected at line 227
+\OML/cmm/m/it/10 ^^[[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 Y \OT1/cmr/m/n/10 = [
+] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 i[] i\OT1/cmr/m/n/10 0
  []
 
 ! Undefined control sequence.
-l.199 \subsubsection
+l.231 Y \otimes (\alpha \ket
+                            {0} + \beta \ket{1}) = \begin{pmatrix}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.231 Y \otimes (\alpha \ket{0} + \beta \ket
+                                            {1}) = \begin{pmatrix}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Misplaced alignment tab character &.
+l.232  0 &
+           -i \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.233  i &
+           0
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Undefined control sequence.
+l.240  \end{pmatrix} = -i\beta \ket
+                                   {0} + i\alpha \ket{1}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.240 ...pmatrix} = -i\beta \ket{0} + i\alpha \ket
+                                                  {1}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (241.9482pt too wide) detected at line 241
+[]\OML/cmm/m/it/10 Y \OMS/cmsy/m/n/10 
+ \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 \OT1/cmr/m/n/10 0 + \OML/cmm/m/it/10 ^^L\OT
+1/cmr/m/n/10 1) = [] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 i[] i\OT1/cmr/m/n/10
+ 0 [] [] \OML/cmm/m/it/10 ^^L \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 i^^L[] i \
+OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 i^^L\OT1/cmr/m/n/10 0 + \
+OML/cmm/m/it/10 i\OT1/cmr/m/n/10 1
+ []
+
+! Undefined control sequence.
+l.243 \subsubsection
                     {Hadamard (H) Gate}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5656,24 +6861,24 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (45.86124pt too wide) in paragraph at lines 199--201
+Overfull \hbox (45.86124pt too wide) in paragraph at lines 243--245
 []\OT1/cmr/m/n/10 Hadamard
  []
 
 
-Overfull \hbox (15.27782pt too wide) in paragraph at lines 199--201
+Overfull \hbox (15.27782pt too wide) in paragraph at lines 243--245
 \OT1/cmr/m/n/10 (H)
  []
 
 
-Overfull \hbox (21.18059pt too wide) in paragraph at lines 199--201
+Overfull \hbox (21.18059pt too wide) in paragraph at lines 243--245
 \OT1/cmr/m/n/10 Gate
  []
 
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -5682,7 +6887,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -5693,7 +6898,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -5702,7 +6907,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -5713,7 +6918,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -5722,7 +6927,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -5733,7 +6938,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -5742,7 +6947,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -5753,7 +6958,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -5762,7 +6967,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -5773,7 +6978,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -5782,7 +6987,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -5793,7 +6998,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -5802,7 +7007,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -5813,7 +7018,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -5822,7 +7027,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -5833,7 +7038,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -5842,7 +7047,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -5853,7 +7058,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -5862,7 +7067,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -5873,7 +7078,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -5882,7 +7087,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -5893,7 +7098,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -5902,7 +7107,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -5913,7 +7118,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -5922,7 +7127,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -5933,7 +7138,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -5942,7 +7147,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -5953,7 +7158,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -5962,7 +7167,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -5973,7 +7178,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -5982,7 +7187,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -5993,7 +7198,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6002,7 +7207,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6013,7 +7218,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6022,7 +7227,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6033,7 +7238,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6042,7 +7247,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6053,7 +7258,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6062,7 +7267,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6073,7 +7278,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6082,7 +7287,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6093,7 +7298,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6102,7 +7307,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6113,7 +7318,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6122,7 +7327,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6133,7 +7338,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6142,7 +7347,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6153,7 +7358,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6162,7 +7367,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6173,7 +7378,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6182,7 +7387,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6193,7 +7398,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6202,7 +7407,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6213,7 +7418,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6222,7 +7427,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6233,7 +7438,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6242,7 +7447,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6253,7 +7458,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6262,7 +7467,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6273,7 +7478,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6282,7 +7487,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6293,7 +7498,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6302,7 +7507,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6313,7 +7518,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6322,7 +7527,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6333,7 +7538,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6342,7 +7547,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6353,7 +7558,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6362,7 +7567,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6373,7 +7578,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6382,7 +7587,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6393,7 +7598,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6402,7 +7607,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6413,7 +7618,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6422,7 +7627,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6433,7 +7638,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6442,7 +7647,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6453,7 +7658,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6462,7 +7667,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6473,7 +7678,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6482,7 +7687,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6493,7 +7698,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6502,7 +7707,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6513,7 +7718,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6522,7 +7727,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6533,7 +7738,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6542,7 +7747,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6553,7 +7758,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6562,7 +7767,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6573,7 +7778,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6582,7 +7787,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6593,7 +7798,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6602,7 +7807,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6613,7 +7818,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6622,7 +7827,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6633,7 +7838,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6642,7 +7847,7 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -6653,7 +7858,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -6662,16 +7867,16 @@ Try to go on, since this might almost work.
 ! Extra }, or forgotten \endgroup.
 <inserted text> }
                  
-l.204  \frac
+l.248  \frac
             {1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 (That makes 100 errors; please try again.) 
 Here is how much of TeX's memory you used:
- 21 strings out of 493029
- 332 string characters out of 6136235
- 74063 words of memory out of 5000000
- 3656 multiletter control sequences out of 15000+600000
+ 24 strings out of 493029
+ 392 string characters out of 6136235
+ 81063 words of memory out of 5000000
+ 3659 multiletter control sequences out of 15000+600000
  3948 words of font info for 15 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 18i,12n,14p,717b,165s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 18i,12n,14p,720b,168s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 !  ==> Fatal error occurred, no output PDF file produced!

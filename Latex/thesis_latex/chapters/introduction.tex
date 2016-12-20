@@ -3,8 +3,10 @@
 \section{Quantum Bits}
 \label{subsec:qubits}
 
-\section{Single Qubit Systems}
-\label{subsec:qubits}
+INTRODUCE CONCEPT OF DROPPING GLOBAL PHASE SOMEWHERE!
+
+\subsection{Single Qubit Systems}
+\label{subsubsec:qubits}
 %Classical computers manipulate bits and the quantum equivalent is called a quantum bit, often abbreviated as qubit.
 Classical computers manipulate bits, whereas quantum computer's most fundamental unit is called a quantum bit, often abbreviated as qubit. Bits as well as qubits are binary entities, meaning they can only take the values 0 and 1. A classical non-probabilistic bit can only be in one of the two possible states at once. In contrast, qubits obey the laws of quantum mechanics, which gives rise to the powerful property that - besides being a definite 0 or 1 - they can also be in a superposition of the two states. Mathematically this is expressed as a linear combination of the states 0 and 1:
 \begin{equation}
@@ -32,7 +34,7 @@ Using spherical polar coordinates, a single qubit can be visualized on the so-ca
 
 The Bloch sphere has a radius of 1 and is therefore a unit sphere. The \0 qubit state is defined to lie along the positive z-axis ($\hat{z}$) and the \1 state is defined to lie along the negative z-axis ($-\hat{z}$) as labelled in Fig.~\ref{fig:blochsphere}. At this point, it is important to note that these two states are mutually orthogonal in $\mathcal{H}_{2}$ even though they are not orthogonal on the Bloch sphere. 
 
-Qubit states on the Bloch equator such as the $\hat{x}$ and $\hat{y}$ coordinate axes represent equal superpositions where \0 and \1 both have measurement probabilities equal to $0.5$. The $\hat{x}$-axis for example represents the equal superposition $\ket{q} = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}$. As illustrated in Fig.~\ref{fig:blochsphere} any arbitrary 2-D qubit state $\ket{\psi}$ can be decomposed into the polar angles $\theta$ and $\phi$ and visualized as a vector on the Bloch sphere. Such an object is called the Bloch vector of the qubit state $\ket{q}$. The Bloch sphere will be the main visualization tool for qubit manipulations in this thesis.
+Qubit states on the Bloch equator such as the $\hat{x}$ and $\hat{y}$ coordinate axes represent equal superpositions where \0 and \1 both have measurement probabilities equal to $0.5$. The $\hat{x}$-axis for example represents the equal superposition $\ket{q} = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}$. As illustrated in Fig.~\ref{fig:blochsphere} any arbitrary 2-D qubit state $\ket{\psi}$ can be decomposed into the polar angles $\theta$ and $\phi$ and visualized as a vector on the Bloch sphere. Such an object is called the Bloch vector of the qubit state $\ket{\psi}$. The Bloch sphere will be the main visualization tool for qubit manipulations in this thesis.
 
 \begin{figure}[!ht]
        \centering
@@ -126,13 +128,13 @@ Hence, applying the identity gate to an arbitrary qubit state $\ket{q} = \alpha 
 The quantum equivalent of the classical NOT gate is called X gate and is given by the 1\textsuperscript{st} Pauli matrix:
 
 \begin{equation}
-\sigma_{1} = \sigma_{x} = \begin{pmatrix}
+\sigma_{1} = X = \begin{pmatrix}
  0 & 1 \\ 
  1 & 0
  \end{pmatrix}
 \end{equation}
 
-The action of the X gate is easily verified using linear algebra,
+The action of the X gate is easily verified by performing some linear algebra,
 
 \begin{equation}
 \label{equ:xverification1}
@@ -148,6 +150,7 @@ X \otimes (\alpha \ket{0} + \beta \ket{1}) = \begin{pmatrix}
  \end{pmatrix} = \beta \ket{0} + \alpha \ket{1}
 \end{equation}
 
+Thus, applying the X gate to qubit state $\ket{q}$ swaps the amplitudes of \0 and \1. More specifically, applying X to the \0 state results in the \1 state,
 
 \begin{equation}
 \label{equ:xverification2}
@@ -162,6 +165,8 @@ X \otimes \ket{0} = \begin{pmatrix}
  1 \end{pmatrix} =  \ket{1}
 \end{equation}
 
+And the \0 state is recovered when applying X again to the \1 state,
+
 \begin{equation}
 \label{equ:xverification3}
 X \otimes \ket{1} = \begin{pmatrix}
@@ -175,25 +180,64 @@ X \otimes \ket{1} = \begin{pmatrix}
  0 \end{pmatrix} =  \ket{0}
 \end{equation}
 
+From Equ.~\ref{equ:xverification1},~\ref{equ:xverification2} and~\ref{equ:xverification3} it follows that X is its own inverse:
+\begin{align}
+XX &= \mathbb{1} \\
+X &= X^{-1}
+\end{align}
 
 \subsubsection{Phase Flip (Z) Gate}
 \label{subsubsubsec:zgate}
 
+The phase flip gate, often called Z gate, is a quantum logic gate without classical equivalent. Its matrix representation is given by the 3\textsuperscript{rd} Pauli matrix:
+
 \begin{equation}
-\sigma_{3} = \sigma_{z} = \begin{pmatrix}
+\sigma_{3} = Z = \begin{pmatrix}
  1 & 0 \\ 
  0 & -1
  \end{pmatrix}
 \end{equation}
 
+
+
+\begin{equation}
+\label{equ:yverification}
+Z \otimes (\alpha \ket{0} + \beta \ket{1}) = \begin{pmatrix}
+ 1 & 0 \\ 
+ 0 & -1
+ \end{pmatrix} \begin{pmatrix}
+ \alpha  \\ 
+ \beta
+ \end{pmatrix} = \begin{pmatrix}
+ \alpha  \\ 
+ -\beta
+ \end{pmatrix} = \alpha \ket{0} - \beta \ket{1}
+\end{equation}
+
 \subsubsection{Qubit and Phase Flip (Y) Gate}
 \label{subsubsubsec:ygate}
 
+The combined qubit and phase flip gate, also called Y gate, is a quantum logic gate without classical equivalent since it involves the complex number i. Its matrix representation is given by the 2\textsuperscript{nd} Pauli matrix:
+
 \begin{equation}
-\sigma_{2} = \sigma_{y} = \begin{pmatrix}
+\sigma_{2} = Y = \begin{pmatrix}
  0 & -i \\ 
  i & 0
  \end{pmatrix}
+\end{equation}
+
+\begin{equation}
+\label{equ:yverification}
+Y \otimes (\alpha \ket{0} + \beta \ket{1}) = \begin{pmatrix}
+ 0 & -i \\ 
+ i & 0
+ \end{pmatrix} \begin{pmatrix}
+ \alpha  \\ 
+ \beta
+ \end{pmatrix} = \begin{pmatrix}
+ -i\beta  \\ 
+ i\alpha
+ \end{pmatrix} = -i\beta \ket{0} + i\alpha \ket{1}
 \end{equation}
 
 \subsubsection{Hadamard (H) Gate}
