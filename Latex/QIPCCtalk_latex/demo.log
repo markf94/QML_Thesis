@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  28 NOV 2016 22:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  29 NOV 2016 14:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1329,20 +1329,20 @@ LaTeX Warning: Label `equ: blochqubit' multiply defined.
 )
 \openout1 = `demo.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1408,7 +1408,7 @@ e
 ))
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box82
-Package hyperref Info: Link coloring OFF on input line 53.
+Package hyperref Info: Link coloring OFF on input line 57.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1418,66 +1418,66 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count298
 )
-LaTeX Info: Redefining \ref on input line 53.
-LaTeX Info: Redefining \pageref on input line 53.
-LaTeX Info: Redefining \nameref on input line 53.
+LaTeX Info: Redefining \ref on input line 57.
+LaTeX Info: Redefining \pageref on input line 57.
+LaTeX Info: Redefining \nameref on input line 57.
 
 (./demo.out) (./demo.out)
 \@outlinefile=\write5
 \openout5 = `demo.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 53.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 57.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 53.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 57.
 \symnumbers=\mathgroup7
 \sympureletters=\mathgroup8
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 53.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 53.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 57.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 57.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 53.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 57.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 53.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 53.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 57.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 57.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 53.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 57.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 53.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 53.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 57.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 57.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 53.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 57.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 53.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 53.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 57.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 57.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 53.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 57.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 53.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 57.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 53.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 57.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 53.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 57.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 53.
+(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 57.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 53.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 57.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 53.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 57.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 53.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 57.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 53.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 53.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 57.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 57.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
 (Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 5
-3.
+7.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/cmss/bx/it --> OT1/mathkerncmss/m/sl on input line 
-53.
+57.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 53.
+ut line 57.
 
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/translator/dicts/translator-bas
 ic-dictionary/translator-basic-dictionary-English.dict
@@ -1503,7 +1503,7 @@ Dictionary: translator-numbers-dictionary, Language: English
 orem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 53.
+LaTeX Info: Redefining \includegraphics on input line 57.
 
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.13} (current compat level: 1.9).
@@ -1515,22 +1515,22 @@ File: siunitx-abbreviations.cfg 2016/03/01 v2.6q siunitx: Abbreviated units
 )
 (./demo.nav)
 \c__siunitx_mathsf_int=\count299
-LaTeX Font Info:    Try loading font information for U+msa on input line 53.
+LaTeX Font Info:    Try loading font information for U+msa on input line 57.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 53.
+LaTeX Font Info:    Try loading font information for U+msb on input line 57.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 53.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 57.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
-line 53.
+line 57.
 
 (/usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
@@ -1538,19 +1538,26 @@ thkerncmss.
 )
 \c__siunitx_mathtt_int=\count300
 
-Overfull \vbox (13.79993pt too high) detected at line 55
+<logo.jpeg, id=33, 334.6101pt x 144.54pt>
+File: logo.jpeg Graphic file (type jpg)
+ <use logo.jpeg>
+Package pdftex.def Info: logo.jpeg used on input line 59.
+(pdftex.def)             Requested size: 133.84166pt x 57.81496pt.
+
+Overfull \vbox (13.79993pt too high) detected at line 59
  []
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./demo.toc)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 60--60
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logo.jpeg>]
+(./demo.toc)
+Overfull \hbox (0.4pt too wide) in paragraph at lines 64--64
 [][]  
  []
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 60.
+(Font)              size <5> substituted on input line 64.
 
 [2
 
@@ -1559,7 +1566,7 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 ]
 \openout4 = `demo.vrb'.
 
- (./demo.vrb <blochsphere.png, id=60, 2007.5pt x 2278.5125pt>
+ (./demo.vrb <blochsphere.png, id=61, 2007.5pt x 2278.5125pt>
 File: blochsphere.png Graphic file (type png)
 
 <use blochsphere.png>
@@ -1576,7 +1583,7 @@ Underfull \hbox (badness 1348) in paragraph at lines 15--19
  []
 
 )
-Overfull \hbox (0.4pt too wide) in paragraph at lines 95--95
+Overfull \hbox (0.4pt too wide) in paragraph at lines 99--99
 [][]  
  []
 
@@ -1587,7 +1594,7 @@ qubit}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.95 \end{frame}
+l.99 \end{frame}
                  <./blochsphere.png>]
 \openout4 = `demo.vrb'.
 
@@ -1601,7 +1608,7 @@ LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              for symbol `textbullet' on input line 4.
 
 )
-Overfull \hbox (0.4pt too wide) in paragraph at lines 122--122
+Overfull \hbox (0.4pt too wide) in paragraph at lines 126--126
 [][]  
  []
 
@@ -1611,7 +1618,7 @@ Overfull \hbox (0.4pt too wide) in paragraph at lines 122--122
 \openout4 = `demo.vrb'.
 
  (./demo.vrb)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 142--142
+Overfull \hbox (0.4pt too wide) in paragraph at lines 146--146
 [][]  
  []
 
@@ -1621,7 +1628,7 @@ Overfull \hbox (0.4pt too wide) in paragraph at lines 142--142
 \openout4 = `demo.vrb'.
 
  (./demo.vrb)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 179--179
+Overfull \hbox (0.4pt too wide) in paragraph at lines 183--183
 [][]  
  []
 
@@ -1631,7 +1638,7 @@ Overfull \hbox (0.4pt too wide) in paragraph at lines 179--179
 \openout4 = `demo.vrb'.
 
  (./demo.vrb)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 217--217
+Overfull \hbox (0.4pt too wide) in paragraph at lines 221--221
 [][]  
  []
 
@@ -1640,19 +1647,19 @@ Overfull \hbox (0.4pt too wide) in paragraph at lines 217--217
 ]
 \openout4 = `demo.vrb'.
 
- (./demo.vrb <knn-concept.png, id=102, 385.44pt x 289.08pt>
+ (./demo.vrb <knn-concept.png, id=103, 385.44pt x 289.08pt>
 File: knn-concept.png Graphic file (type png)
 
 <use knn-concept.png>
 Package pdftex.def Info: knn-concept.png used on input line 21.
 (pdftex.def)             Requested size: 153.64493pt x 115.23296pt.
 )
-Overfull \hbox (0.4pt too wide) in paragraph at lines 248--248
+Overfull \hbox (0.4pt too wide) in paragraph at lines 252--252
 [][]  
  []
 
 
-Overfull \vbox (7.29341pt too high) detected at line 248
+Overfull \vbox (7.29341pt too high) detected at line 252
  []
 
 [9
@@ -1660,14 +1667,23 @@ Overfull \vbox (7.29341pt too high) detected at line 248
  <./knn-concept.png>] [10
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 273--273
+File: knn-concept.png Graphic file (type png)
+ <use knn-concept.png>
+Package pdftex.def Info: knn-concept.png used on input line 282.
+(pdftex.def)             Requested size: 96.35976pt x 72.26982pt.
+
+Overfull \hbox (0.4pt too wide) in paragraph at lines 282--282
 [][]  
+ []
+
+
+Overfull \vbox (19.85799pt too high) detected at line 282
  []
 
 [11
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 288--288
+Overfull \hbox (0.4pt too wide) in paragraph at lines 297--297
 [][]  
  []
 
@@ -1675,35 +1691,35 @@ Overfull \hbox (0.4pt too wide) in paragraph at lines 288--288
 
 ]
 LaTeX Font Info:    Font shape `U/urwchancal/m/n' will be
-(Font)              scaled to size 9.60007pt on input line 309.
+(Font)              scaled to size 9.60007pt on input line 318.
 LaTeX Font Info:    Font shape `U/urwchancal/m/n' will be
-(Font)              scaled to size 6.72005pt on input line 309.
+(Font)              scaled to size 6.72005pt on input line 318.
 LaTeX Font Info:    Font shape `U/urwchancal/m/n' will be
-(Font)              scaled to size 4.80003pt on input line 309.
+(Font)              scaled to size 4.80003pt on input line 318.
 
-Overfull \hbox (0.4pt too wide) in paragraph at lines 309--309
+Overfull \hbox (0.4pt too wide) in paragraph at lines 318--318
 [][]  
  []
 
 [13
 
-] <bloch3over4.png, id=131, 703.62875pt x 618.31pt>
+] <bloch3over4.png, id=132, 703.62875pt x 618.31pt>
 File: bloch3over4.png Graphic file (type png)
  <use bloch3over4.png>
-Package pdftex.def Info: bloch3over4.png used on input line 351.
+Package pdftex.def Info: bloch3over4.png used on input line 360.
 (pdftex.def)             Requested size: 135.2062pt x 118.8104pt.
 
-Overfull \hbox (1.05978pt too wide) detected at line 351
+Overfull \hbox (1.05978pt too wide) detected at line 360
 []\OT1/mathkerncmss/m/sl/7 CR[]\OT1/cmss/m/n/7 ([]) [] = [] = [] []([][] [] + [
 ][] []) [] []
  []
 
-LaTeX Font Info:    Try loading font information for U+dsrom on input line 351.
+LaTeX Font Info:    Try loading font information for U+dsrom on input line 360.
 
 (/usr/share/texlive/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 )
-Overfull \hbox (15.7916pt too wide) detected at line 351
+Overfull \hbox (15.7916pt too wide) detected at line 360
 \OT1/cmss/m/n/7 (\OT1/mathkerncmss/m/sl/7 X \OMS/cmsy/m/n/7 
  \U/dsrom/m/n/7 1 \OMS/cmsy/m/n/7 
  \U/dsrom/m/n/7 1 \OMS/cmsy/m/n/7 
@@ -1711,86 +1727,86 @@ Overfull \hbox (15.7916pt too wide) detected at line 351
  []
 
 
-Overfull \hbox (0.4pt too wide) in paragraph at lines 351--351
+Overfull \hbox (0.4pt too wide) in paragraph at lines 360--360
 [][]  
  []
 
 [14
 
  <./bloch3over4.png>]
-<IBMamplitudecomposer.png, id=140, 1255.69125pt x 594.22pt>
+<IBMamplitudecomposer.png, id=141, 1255.69125pt x 594.22pt>
 File: IBMamplitudecomposer.png Graphic file (type png)
 
 <use IBMamplitudecomposer.png>
-Package pdftex.def Info: IBMamplitudecomposer.png used on input line 376.
+Package pdftex.def Info: IBMamplitudecomposer.png used on input line 385.
 (pdftex.def)             Requested size: 324.67096pt x 153.64493pt.
 
-Overfull \hbox (17.38109pt too wide) in paragraph at lines 376--376
+Overfull \hbox (17.38109pt too wide) in paragraph at lines 385--385
  [] 
  []
 
 
-Overfull \hbox (0.4pt too wide) in paragraph at lines 376--376
+Overfull \hbox (0.4pt too wide) in paragraph at lines 385--385
 [][]  
  []
 
 
-Overfull \vbox (15.34602pt too high) detected at line 376
+Overfull \vbox (15.34602pt too high) detected at line 385
  []
 
 [15
 
  <./IBMamplitudecomposer.png>]
-<IBMgates.png, id=146, 691.58376pt x 83.31125pt>
+<IBMgates.png, id=147, 691.58376pt x 83.31125pt>
 File: IBMgates.png Graphic file (type png)
  <use IBMgates.png>
-Package pdftex.def Info: IBMgates.png used on input line 390.
+Package pdftex.def Info: IBMgates.png used on input line 399.
 (pdftex.def)             Requested size: 311.20981pt x 37.4897pt.
 
-Overfull \hbox (3.91994pt too wide) in paragraph at lines 390--390
+Overfull \hbox (3.91994pt too wide) in paragraph at lines 399--399
  [] 
  []
 
 
-Overfull \hbox (0.4pt too wide) in paragraph at lines 390--390
+Overfull \hbox (0.4pt too wide) in paragraph at lines 399--399
 [][]  
  []
 
 [16
 
- <./IBMgates.png>] <controlledU.png, id=152, 297.11pt x 201.75375pt>
+ <./IBMgates.png>] <controlledU.png, id=153, 297.11pt x 201.75375pt>
 File: controlledU.png Graphic file (type png)
 
 <use controlledU.png>
-Package pdftex.def Info: controlledU.png used on input line 428.
+Package pdftex.def Info: controlledU.png used on input line 437.
 (pdftex.def)             Requested size: 90.5028pt x 61.45703pt.
 
-<controlledUdecomposition.png, id=153, 892.33376pt x 296.10625pt>
+<controlledUdecomposition.png, id=154, 892.33376pt x 296.10625pt>
 File: controlledUdecomposition.png Graphic file (type png)
 
 <use controlledUdecomposition.png>
-Package pdftex.def Info: controlledUdecomposition.png used on input line 428.
+Package pdftex.def Info: controlledUdecomposition.png used on input line 437.
 (pdftex.def)             Requested size: 184.3758pt x 61.18109pt.
 LaTeX Font Info:    Font shape `U/urwchancal/m/n' will be
-(Font)              scaled to size 7.68005pt on input line 428.
+(Font)              scaled to size 7.68005pt on input line 437.
 LaTeX Font Info:    Font shape `U/urwchancal/m/n' will be
-(Font)              scaled to size 5.76004pt on input line 428.
+(Font)              scaled to size 5.76004pt on input line 437.
 
-Overfull \hbox (0.4pt too wide) in paragraph at lines 428--428
+Overfull \hbox (0.4pt too wide) in paragraph at lines 437--437
 [][]  
  []
 
 [17
 
  <./controlledU.png> <./controlledUdecomposition.png>]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 454--454
+Overfull \hbox (0.4pt too wide) in paragraph at lines 463--463
 [][]  
  []
 
 [18
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 472--472
+Overfull \hbox (0.4pt too wide) in paragraph at lines 481--481
 [][]  
  []
 
@@ -1800,44 +1816,44 @@ Overfull \hbox (0.4pt too wide) in paragraph at lines 472--472
 PGFPlots: reading {datax.dat}
 PGFPlots: reading {datax.dat}
 
-Overfull \hbox (0.4pt too wide) in paragraph at lines 500--500
+Overfull \hbox (0.4pt too wide) in paragraph at lines 509--509
 [][]  
  []
 
 [20
 
-] <fowlerdistance.png, id=179, 798.985pt x 695.59875pt>
+] <fowlerdistance.png, id=180, 798.985pt x 695.59875pt>
 File: fowlerdistance.png Graphic file (type png)
 
 <use fowlerdistance.png>
-Package pdftex.def Info: fowlerdistance.png used on input line 533.
+Package pdftex.def Info: fowlerdistance.png used on input line 542.
 (pdftex.def)             Requested size: 225.89655pt x 196.667pt.
 
-Overfull \hbox (0.4pt too wide) in paragraph at lines 533--533
+Overfull \hbox (0.4pt too wide) in paragraph at lines 542--542
 [][]  
  []
 
 [21
 
  <./fowlerdistance.png>]
-LaTeX Font Info:    Try loading font information for TS1+cmss on input line 566
+LaTeX Font Info:    Try loading font information for TS1+cmss on input line 575
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
 File: ts1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-Overfull \hbox (0.4pt too wide) in paragraph at lines 566--566
+Overfull \hbox (0.4pt too wide) in paragraph at lines 575--575
 [][]  
  []
 
 
-Overfull \vbox (22.60918pt too high) detected at line 566
+Overfull \vbox (22.60918pt too high) detected at line 575
  []
 
 [22
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 590--590
+Overfull \hbox (0.4pt too wide) in paragraph at lines 599--599
 [][]  
  []
 
@@ -1845,9 +1861,9 @@ Overfull \hbox (0.4pt too wide) in paragraph at lines 590--590
 
 ]
 LaTeX Font Info:    Font shape `U/urwchancal/m/n' will be
-(Font)              scaled to size 11.52008pt on input line 605.
+(Font)              scaled to size 11.52008pt on input line 614.
 
-Overfull \hbox (0.4pt too wide) in paragraph at lines 605--605
+Overfull \hbox (0.4pt too wide) in paragraph at lines 614--614
 [][]  
  []
 
@@ -1856,21 +1872,21 @@ Overfull \hbox (0.4pt too wide) in paragraph at lines 605--605
 ] [25
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 618--618
+Overfull \hbox (0.4pt too wide) in paragraph at lines 627--627
 [][]  
  []
 
 [26
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 627--627
+Overfull \hbox (0.4pt too wide) in paragraph at lines 637--637
 [][]  
  []
 
 [27
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 644--644
+Overfull \hbox (0.4pt too wide) in paragraph at lines 654--654
 [][]  
  []
 
@@ -1881,7 +1897,7 @@ Overfull \hbox (0.4pt too wide) in paragraph at lines 644--644
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\translate ' on input line 651.
+(hyperref)                removing `\translate ' on input line 661.
 
 \openout4 = `demo.vrb'.
 
@@ -1922,48 +1938,48 @@ Missing character: There is no “ in font cmss8!
  (./demo.vrb) [33
 
 ]
-<cube_notdiffused.png, id=249, 677.53125pt x 639.38875pt>
+<cube_notdiffused.png, id=250, 677.53125pt x 639.38875pt>
 File: cube_notdiffused.png Graphic file (type png)
 
 <use cube_notdiffused.png>
-Package pdftex.def Info: cube_notdiffused.png used on input line 777.
+Package pdftex.def Info: cube_notdiffused.png used on input line 787.
 (pdftex.def)             Requested size: 237.13948pt x 223.78941pt.
 
-Overfull \vbox (31.55025pt too high) detected at line 777
+Overfull \vbox (31.55025pt too high) detected at line 787
  []
 
 [34
 
  <./cube_notdiffused.png>]
-<4qubitdiffusion.png, id=255, 1351.0475pt x 773.89125pt>
+<4qubitdiffusion.png, id=256, 1351.0475pt x 773.89125pt>
 File: 4qubitdiffusion.png Graphic file (type png)
 
 <use 4qubitdiffusion.png>
-Package pdftex.def Info: 4qubitdiffusion.png used on input line 798.
+Package pdftex.def Info: 4qubitdiffusion.png used on input line 808.
 (pdftex.def)             Requested size: 270.20471pt x 154.7755pt.
 
-Overfull \vbox (48.9698pt too high) detected at line 798
+Overfull \vbox (48.9698pt too high) detected at line 808
  []
 
 [35
 
  <./4qubitdiffusion.png>]
-<cube_diffused.png, id=261, 747.79375pt x 665.48625pt>
+<cube_diffused.png, id=262, 747.79375pt x 665.48625pt>
 File: cube_diffused.png Graphic file (type png)
  <use cube_diffused.png>
-Package pdftex.def Info: cube_diffused.png used on input line 809.
+Package pdftex.def Info: cube_diffused.png used on input line 819.
 (pdftex.def)             Requested size: 246.77269pt x 219.61113pt.
 
-Overfull \vbox (27.37196pt too high) detected at line 809
+Overfull \vbox (27.37196pt too high) detected at line 819
  []
 
 [36
 
- <./cube_diffused.png>] <4d_hypercube.png, id=267, 662.475pt x 551.05875pt>
+ <./cube_diffused.png>] <4d_hypercube.png, id=268, 662.475pt x 551.05875pt>
 File: 4d_hypercube.png Graphic file (type png)
 
 <use 4d_hypercube.png>
-Package pdftex.def Info: 4d_hypercube.png used on input line 820.
+Package pdftex.def Info: 4d_hypercube.png used on input line 830.
 (pdftex.def)             Requested size: 218.61742pt x 181.84995pt.
  [37
 
@@ -1980,20 +1996,20 @@ Package pdftex.def Info: 4d_hypercube.png used on input line 820.
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 861.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 871.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 861.
+(Font)              using `OT1/cmss/bx/n' instead on input line 871.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/sc' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 861.
+(Font)              using `OT1/cmss/bx/n' instead on input line 871.
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 861.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 871.
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/it' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 861.
+(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 871.
 
 [41
 
@@ -2033,11 +2049,11 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/it' in size <10> not available
 \tf@snm=\write8
 \openout8 = `demo.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1018.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1018.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1028.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1028.
  (./demo.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1018.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1018.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1028.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1028.
 
 Package rerunfilecheck Info: File `demo.out' has not changed.
 (rerunfilecheck)             Checksum: C4BF828607B36C89038172EA1CAFF0DD;273.
@@ -2052,13 +2068,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1018.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1028.
  ) 
 Here is how much of TeX's memory you used:
- 41660 strings out of 493029
- 986253 string characters out of 6136235
- 1119513 words of memory out of 5000000
- 44313 multiletter control sequences out of 15000+600000
+ 41665 strings out of 493029
+ 986317 string characters out of 6136235
+ 1119645 words of memory out of 5000000
+ 44317 multiletter control sequences out of 15000+600000
  23345 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,18n,105p,10390b,2381s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2088,10 +2104,10 @@ re/texlive/texmf-dist/fonts/type1/public/doublestroke/dsrom8.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/tex
 mf/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texlive/texmf-dist/font
 s/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on demo.pdf (53 pages, 829481 bytes).
+Output written on demo.pdf (53 pages, 854633 bytes).
 PDF statistics:
- 487 PDF objects out of 1000 (max. 8388607)
+ 488 PDF objects out of 1000 (max. 8388607)
  377 compressed objects within 4 object streams
  114 named destinations out of 1000 (max. 500000)
- 143 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 148 words of extra memory for PDF output out of 10000 (max. 10000000)
 

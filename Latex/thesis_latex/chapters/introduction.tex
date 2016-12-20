@@ -1,49 +1,129 @@
 \chapter{Introduction}\label{sec:introduction}
-This template is meant to be used for semester, bachelor, and master theses written at the Institute for Dynamic Systems and Control (IDSC), ETH Zurich. The template includes several examples of equations, figures, tables, etc. in order to act as a {\it very} short introduction to \TeX\! and \LaTeX. Yet, the template is also provided to ensure that all written work at IDSC shares identical formatting.
 
-\section{The Preamble}\label{sec:preamble}
-The preamble of the \LaTeX\! template defines the font size, page layout, language, report type, title, and author(s) of the report. The preamble of the current template is shown below. It should be more or less clear how you need to modify the preamble to fit your needs; if not, consult your supervisor.
-%\lstset{language=TeX,numbers=none}
-%\begin{lstlisting}[frame=lines]
-\begin{verbatim}
- \documentclass[10pt,twoside,a4paper,fleqn]{report}
+\section{Quantum Bits}
+\label{subsec:qubits}
+%Classical computers manipulate bits and the quantum equivalent is called a quantum bit, often abbreviated as qubit.
+Classical computers manipulate bits, whereas quantum computer's most fundamental unit is called a quantum bit, often abbreviated as qubit. Bits as well as qubits are binary entities, meaning they can only take the values 0 and 1. A classical non-probabilistic bit can only be in one of the two possible states at once. In contrast, qubits obey the laws of quantum mechanics, which gives rise to the powerful property that - besides being a definite 0 or 1 - they can also be in a superposition of the two states. Mathematically this is expressed as a linear combination of the states 0 and 1:
+\begin{equation}
+\label{equ: simplequbit}
+\ket{q} = \alpha \ket{0} + \beta \ket{1}
+\end{equation}
+where $\alpha$ and $\beta$ are complex coefficients and are often referred to as phase factors. \0 is the Dirac notation for the qubit being in state 0 and it represents a two-dimensional vector in a complex 2-D vector space (called Hilbert space $\mathcal{H}_{2}$). \0 and \1 are the the computational basis states and they constitute an orthonormal basis of $\mathcal{H}_{2}$. For the sake of clarity, \0 and \1 can be thought of as the 2-D vectors shown below.
+\begin{equation}
+\label{equ: 0and1kets}
+\ket{0} =  \colvec{1\\0} \quad \quad \ket{1} = \colvec{0\\1}
+\end{equation}
+However, even though a qubit can be in as superposition of \0 and \1, when measured it will take the value \0 with a probability of ${|\alpha|}^{2}$ and \1 with a probability of ${|\beta|}^{2}$. Since the total probability of measuring any value has to be 1, the following normalization condition must be satisfied:
+\begin{equation}
+\label{equ: normalization}
+{|\alpha|}^{2} + {|\beta|}^{2} =  1
+\end{equation}
+Therefore, a qubit is inherently probabilistic but when measured it collapses into a single classical bit (0 or 1). It follows that a measurement destroys information about the superposition of the qubit (the values of $\alpha$ and $\beta$). This constitutes one of the main difficulties when designing quantum algorithms since only limited information can be obtained about the final states of the qubits in the quantum computer.
 
- \usepackage[german,st]{ethidsc}             % IDSC style
-                                             % {german}/english: language
-                                             % {st}/bt/mt: thesis type
+Using spherical polar coordinates, a single qubit can be visualized on the so-called Bloch sphere by parameterising $\alpha$ and $\beta$ in Equ.~\ref{equ: simplequbit} as follows:
 
- % Page header (don't change)
- \setlength{\parindent}{0em}                 % Disable parindent
- \rhead[\nouppercase{\rightmark}]{\thepage}  % Special headings
- \lhead[\thepage]{\nouppercase{\leftmark}}   % Special headings
- \cfoot{}                                    % Special headings
+\begin{equation}
+\label{equ: blochqubit}
+\ket{q} = \cos\frac{\theta}{2} \ket{0} + e^{i \phi} \sin\frac{\theta}{2} \ket{1}
+\end{equation}
 
- % Title page (please fill in)
- \title{\LaTeX\ Thesis Template v.1.4}       % Report title
+The Bloch sphere has a radius of 1 and is therefore a unit sphere. The \0 qubit state is defined to lie along the positive z-axis ($\hat{z}$) and the \1 state is defined to lie along the negative z-axis ($-\hat{z}$) as labelled in Fig.~\ref{fig:blochsphere}. At this point, it is important to note that these two states are mutually orthogonal in $\mathcal{H}_{2}$ even though they are not orthogonal on the Bloch sphere. Furthermore, qubit states on the Bloch equator such as the $\hat{x}$ and $\hat{y}$ coordinate axes represent equal superpositions where \0 and \1 both have probabilities equal to $0.5$. The $\hat{x}$-axis for example represents the equal superposition $\ket{q} = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}$. As illustrated in Fig.~\ref{fig:blochsphere} any arbitrary 2-D qubit state $\ket{\psi}$ can be decomposed into the polar angles $\theta$ and $\phi$ and visualized on the Bloch sphere. The Bloch sphere will be the main visualization tool for qubit manipulations in this thesis.Fig.~\ref{fig:blochsphere}
 
- \studentA{Hans Muster}
- \ethidA{97-906-739}
- \semesterA{5}
- \emailA{muster@student.ethz.ch}
+\begin{figure}[!ht]
+       \centering
+       \includegraphics[scale=0.07]{img/blochsphere.png}
+       \caption{\label{fig:blochsphere} An arbitrary two-dimensional qubit $\ket{\psi}$ visualized on the Bloch sphere.$^{1}$}
+\end{figure}
 
- % \studentB{Second Student}
- % \ethidB{12-345-678}
- % \semesterB{9}
- % \emailB{second@student.ethz.ch}
+\footnotetext[1]{Reprinted from Wikipedia, n.d., Retrieved September 7, 2016, from \url{https://en.wikipedia.org/wiki/Bloch_Sphere}. Copyright 2012 by Glosser.ca. Reprinted with permission.}
 
- \supervision{First Supervisor\\ Prof. Dr. Second Supervisor}
- \date{March 2011}
 
- \identification{IDSC-XX-YY-ZZ}              % Project identifier
+%%%%% SECTION: Q LOGIC GATES
 
- \infopage
- \declaration
- \end{verbatim}
-%\end{lstlisting}
 
-The style \texttt{ethidsc.sty} enforces certain changes to the original \texttt{report} class, e.g., the title page. The style accepts two options. The first option lets you choose the language of your report, i.e., the language of the title page, headings, info-page, etc. Valid options are: \texttt{german} (default) and \texttt{english}. The second option defines the type of report which will be printed on the title and info page. Valid options are: \texttt{st} (default), \texttt{bt}, and \texttt{mt} for semester, bachelor and master thesis, respectively. For instance, if you will be writing a master thesis in English, use
-\begin{verbatim}
- \usepackage[english,mt]{ethidsc}
-\end{verbatim}
-The command \texttt{\textbackslash infopage} prints an information page at the end of the document which you must sign before handing in the report.
+\section{Quantum Logic Gates}
+\label{subsec:quantumlogicgates}
+In order to perform quantum computations, tools, analogous to the classical logic gates, are needed for qubit manipulation. 
 
+\subsection{Single Qubit Gates}
+\label{subsubsec:singlequbitgates}
+The four most basic single-qubit quantum gates are given by the four Pauli matrices listed below in Equ. ~\ref{equ: paulimatrices}.
+\begin{align}
+\label{equ: paulimatrices}
+\sigma_{0} &= \mathbb{1} = \begin{pmatrix}
+ 1 & 0 \\ 
+ 0 & 1
+ \end{pmatrix}
+ \quad
+ &&\sigma_{1} = \sigma_{x} = \begin{pmatrix}
+ 0 & 1 \\ 
+ 1 & 0
+ \end{pmatrix}
+ \nonumber
+ \\
+ \sigma_{2} &= \sigma_{y} = \begin{pmatrix}
+ 0 & -i \\ 
+ i & 0
+ \end{pmatrix}
+ \quad
+ &&\sigma_{3} = \sigma_{z} = \begin{pmatrix}
+ 1 & 0 \\ 
+ 0 & -1
+ \end{pmatrix}
+\end{align}
+
+\subsubsection{NOT (X) Gate}
+\label{subsubsubsec:xgate}
+
+\subsubsection{Phase Flip (Z) Gate}
+\label{subsubsubsec:zgate}
+
+\subsubsection{Bit and Phase Flip (Y) Gate}
+\label{subsubsubsec:ygate}
+
+\subsubsection{Hadamard (H) Gate}
+\label{subsubsubsec:hadamardgate}
+
+\subsubsection{Clifford (H,S,Sd) Gates}
+\label{subsubsubsec:cliffordgates}
+
+\subsubsection{Non-Clifford (T,Td) Gates}
+\label{subsubsubsec:noncliffordgates}
+
+
+%%%%% SUBSECTION: MULTIPLE Q LOGIC GATES
+
+
+\subsection{Multiple Qubit Gates}
+\label{subsubsec:multiqubitgates}
+
+\subsubsection{Controlled NOT Gate}
+\label{subsubsubsec:cnotgate}
+
+\subsubsection{Toffoli Gate}
+\label{subsubsubsec:toffoligate}
+
+\subsubsection{Controlled U Gate}
+\label{subsubsubsec:controlledugate}
+
+%%%%% SECTION: MEASUREMENTS
+
+\section{Qubit Measurements}
+\label{subsec:qubitmeasurements}
+
+\subsection{Standard Basis Measurement}
+\label{subsubsec:standardbasismeasurement}
+
+\subsection{Bloch Measurement (?)}
+\label{subsubsec:blochmeasurement}
+
+%%%%% SECTION: MACHINE LEARNING
+
+\section{Machine Learning}
+\label{subsec:qubitmeasurements}
+
+\subsection{Classical Machine Learning}
+\label{subsubsec:standardbasismeasurement}
+
+\subsection{Quantum Machine Learning}
+\label{subsubsec:blochmeasurement}

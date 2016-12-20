@@ -47,7 +47,11 @@
 %\date{\today}
 \date{}
 \author{Mark Fingerhuth}
-\institute{Maastricht University, The Netherlands \newline BSc thesis work at Centre for Quantum Technology, UKZN, South Africa }
+\institute{Maastricht University, The Netherlands \newline Thesis work at Centre for Quantum Technology, UKZN, South Africa
+\begin{figure}
+\includegraphics[scale=0.4]{logo.jpeg}   
+\end{figure}
+}
 % \titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.pdf}}
 
 \begin{document}
@@ -154,14 +158,14 @@ k-dimensional probability vector requires $4k$ classical bits which are encoded 
 \vspace{2mm}
 $\begin{pmatrix}
  \textcolor{blue}{0.6} \\ 
- \textcolor{green}{0.4}
+ \textcolor{emerald}{0.4}
  \end{pmatrix}*10 \rightarrow \begin{pmatrix}
  \textcolor{blue}{6} \\ 
- \textcolor{green}{4}
+ \textcolor{emerald}{4}
  \end{pmatrix} \rightarrow \begin{pmatrix}
  \textcolor{blue}{0110} \\ 
- \textcolor{green}{0100}
- \end{pmatrix} \rightarrow n=\textcolor{blue}{0110}\textcolor{green}{0100} \rightarrow \ket{n} = \ket{\textcolor{blue}{0110}\textcolor{green}{0100}}$\\
+ \textcolor{emerald}{0100}
+ \end{pmatrix} \rightarrow n=\textcolor{blue}{0110}\textcolor{emerald}{0100} \rightarrow \ket{n} = \ket{\textcolor{blue}{0110}\textcolor{emerald}{0100}}$\\
 %\textbf{Only slight speed up possible}
 \end{alertblock}
 \vspace{3mm}
@@ -208,8 +212,8 @@ k-dimensional probability vector is encoded into $log_{2}(k)$ qubits, e.g.\\
 \vspace{2mm}
 $\begin{pmatrix}
  \textcolor{blue}{0.6} \\ 
- \textcolor{green}{0.4}
- \end{pmatrix} \quad \rightarrow \quad \ket{n} = \sqrt{\textcolor{blue}{0.6}}\ket{0}+\sqrt{\textcolor{green}{0.4}}\ket{1}$\\
+ \textcolor{emerald}{0.4}
+ \end{pmatrix} \quad \rightarrow \quad \ket{n} = \sqrt{\textcolor{blue}{0.6}}\ket{0}+\sqrt{\textcolor{emerald}{0.4}}\ket{1}$\\
 %\textbf{Possibility of exponential speed up}
 \end{alertblock}
 
@@ -266,9 +270,14 @@ where
 \begin{equation}
 e.g. \quad \begin{pmatrix}
  \textcolor{blue}{0.6} \\ 
- \textcolor{green}{0.4}
- \end{pmatrix} \quad \rightarrow \quad \ket{n} =  \sqrt{\textcolor{blue}{0.6}}\ket{0}+\sqrt{\textcolor{green}{0.4}}\ket{1}
+ \textcolor{emerald}{0.4}
+ \end{pmatrix} \quad \rightarrow \quad \ket{n} =  \sqrt{\textcolor{blue}{0.6}}\ket{0}+\sqrt{\textcolor{emerald}{0.4}}\ket{1}
 \end{equation}
+
+\begin{figure}
+       \includegraphics[scale=.25]{knn-concept.png}
+      \caption{\footnotesize{Visualization of a kNN classifier\footnotemark[1]}}
+\end{figure}
 
 \end{frame}
 }
@@ -283,7 +292,7 @@ Applying the \textbf{Hadamard gate} interferes the input and the training vector
 \frac{1}{2\sqrt{M}}\sum_{m=1}^{M} (\textcolor{emerald}{\ket{0}}[\ket{\textcolor{red}{\Psi_{\tilde{x}}}}+\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{x^{m}}}}]+\textcolor{emerald}{\ket{1}}[\ket{\textcolor{red}{\Psi_{\tilde{x}}}}-\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{x^{m}}}}])\ket{y^{m}(\textcolor{darkyellow}{A} \ or \ \textcolor{purple}{B})}\ket{m}
 \end{equation}
 
-Perform \textbf{conditional measurement} on ancilla qubit.\\
+$\rightarrow$ Perform \textbf{conditional measurement} on ancilla qubit.\\
 Successful if $\ket{0}$ state is measured.
 \end{frame}
 }
@@ -423,7 +432,7 @@ e^{i(\alpha+\frac{\beta}{2}-\frac{\delta}{2})}\sin{\frac{\gamma}{2}} & e^{i(\alp
 
 	\metroset{block=fill}
 	\begin{alertblock}{Overall algorithmic complexity}
-	$\mathcal{O}(\frac{1}{p_{acc}})+\mathcal{O}(k)$ where $k$ is number of root finding iterations\textsuperscript{2}
+	$\mathcal{O}(\frac{1}{p_{acc}})+\textcolor{red}{\mathcal{O}(k)}$ where $k$ is number of root finding iterations\textsuperscript{2}
 	\end{alertblock}
 \end{frame}
 
@@ -445,10 +454,10 @@ Using a root finding algorithm for non-linear equations we find:
 \end{equation}
 Then,
 \begin{align}
-A \quad= \quad R_z(\beta)R_y(\frac{\gamma}{2})\quad =& \quad R_z(2\pi) \quad = \quad \textcolor{green}{\mathds{1}} \\
+A \quad= \quad R_z(\beta)R_y(\frac{\gamma}{2})\quad =& \quad R_z(2\pi) \quad = \quad \textcolor{emerald}{\mathds{1}} \\
 B\quad =\quad R_y(-\frac{\gamma}{2})R_z(-\frac{\delta+\beta}{2})\quad =& \quad R_z(-\frac{23}{16}\pi) \quad= \quad \textcolor{red}{???}  \\
 C \quad=\quad R_z(\frac{\delta-\beta}{2})\quad =& \quad R_z(-\frac{9}{16}\pi) \quad= \quad \textcolor{red}{???} \\
-\begin{pmatrix} 1&0\cr0&e^{i\alpha} \end{pmatrix}\quad=& \quad \begin{pmatrix} 1&0\cr0&e^{i\pi} \end{pmatrix}\quad= \quad \textcolor{green}{Z}
+\begin{pmatrix} 1&0\cr0&e^{i\alpha} \end{pmatrix}\quad=& \quad \begin{pmatrix} 1&0\cr0&e^{i\pi} \end{pmatrix}\quad= \quad \textcolor{emerald}{Z}
 \end{align}
 
 \end{frame}
@@ -465,7 +474,7 @@ C \quad=&\quad R_z(-\frac{9}{16}\pi) \quad= \quad \textcolor{red}{???}
 
 The Solovay-Kitaev theorem guarantees that given a set of single-qubit quantum gates which generates a dense subset of $SU(2)$, then that set is guaranteed to fill $SU(2)$ quickly.\textsuperscript{1}
  
-$\rightarrow$ \textcolor{green}{\textbf{Hence, given any universal gate set it is possible to obtain good approximations to any desired gate.}}
+$\rightarrow$ \textcolor{emerald}{\textbf{Hence, given any universal gate set it is possible to obtain good approximations to any desired gate.}}
 
 $\rightarrow$ \textcolor{red}{\textbf{But needs to be computed classically!}}
 
@@ -516,13 +525,13 @@ dist(U,U_{approx}) = \sqrt{\frac{2-\mid tr(U\cdot U_{approx}^\dagger)\mid}{2}}
 \textcolor{cyan}{d = 0.22739}
 \end{equation}
 \begin{equation}
-\textcolor{green}{d = 0.15165}
+\textcolor{emerald}{d = 0.15165}
 \end{equation}
 \begin{equation}
 \textcolor{blue}{d = 0.10722}
 \end{equation}
 \begin{equation}
-\textcolor{yellow}{d = 0.02086}
+\textcolor{darkyellow}{d = 0.02086}
 \end{equation}
 \begin{equation}
 \textcolor{red}{d = 0.00156}
@@ -551,8 +560,8 @@ IBM qubit decoherence times:
       \toprule
       Approx. Gate & Distance & Gate count & Execution time\\
       \midrule
-      $R_z(-\frac{23}{16}\pi)$ & 0.15165 & 25 & \textcolor{green}{$\sim$\SI{3}{\micro\second}}\\
-       & 0.10722 & 109 & \textcolor{green}{$\sim$\SI{14}{\micro\second}}\\
+      $R_z(-\frac{23}{16}\pi)$ & 0.15165 & 25 & \textcolor{emerald}{$\sim$\SI{3}{\micro\second}}\\
+       & 0.10722 & 109 & \textcolor{emerald}{$\sim$\SI{14}{\micro\second}}\\
        & 0.02086 & 2997 & \textcolor{red}{$\sim$\SI{390}{\micro\second}}\\
        & 0.01494 & 14721 & \textcolor{red}{$\sim$\SI{1914}{\micro\second}}\\
        & 0.003327 & 74009 & \textcolor{red}{$\sim$\SI{9621}{\micro\second}}\\
@@ -574,7 +583,7 @@ Executing the SK algorithm adds to our overall algorithmic complexity:
 
 \metroset{block=fill}
 	\begin{alertblock}{Overall algorithmic complexity}
-	$\mathcal{O}(\frac{1}{p_{acc}})+\mathcal{O}(k)+\mathcal{O}(m*log^{2.71}(\frac{m}{\epsilon}))$ for $\epsilon$-approximations of $m$ gates\textsuperscript{1}
+	$\mathcal{O}(\frac{1}{p_{acc}})+\mathcal{O}(k)+\textcolor{red}{\mathcal{O}(m*log^{2.71}(\frac{m}{\epsilon}))}$ for $\epsilon$-approximations of $m$ gates\textsuperscript{1}
 	\end{alertblock}
 	
 Due to state preparation we went from
@@ -611,8 +620,8 @@ In Liqui$\ket{}$ we can directly implement the controlled $R_y$ rotation!
 \begin{itemize}
 \item Initial state preparation is non-trivial! (even for very simple examples)
 \item In this case, state preparation dominates the overall algorithmic complexity
-\item Universal gate sets are only useful when combined with long qubit lifetimes
-\item Solovay-Kitaev yields very long gate sequences for good approximations
+\item Solovay-Kitaev yields long gate sequences for good approximations
+\item Some universal gate sets are only useful when combined with long qubit lifetimes
 \item \textbf{Need for better quantum compiling and more general state preparation algorithms!}
 \end{itemize}
 \end{frame}
@@ -623,6 +632,7 @@ In Liqui$\ket{}$ we can directly implement the controlled $R_y$ rotation!
 \item Complexity analysis of the qubit-based kNN algorithm
 \item Classification of gaussian probability distributions
 \item Implementing more general state preparation algorithms
+\item Waiting for IBM QASM 2.0 ...
 \end{itemize}
 \end{frame}
 

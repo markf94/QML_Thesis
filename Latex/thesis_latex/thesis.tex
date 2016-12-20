@@ -1,23 +1,21 @@
-% http://www.idsc.ethz.ch/education/theses-semester-projects.html
-% IDSC LaTeX Thesis Template
-% 
-% Author(s):	Eric Müller
-% 				Institute for Dynamic Systems and Control
-% 				Swiss Federal Institute of Technology (ETH) Zurich
-% 
-% Created:		2004/04/02  (Eric Mueller)
-% 
-% Notes: Has been tested on Windows 7 + MikTeX + TeXnicCenter
-%
-% Revisions: 	2009/05/29  (Soren Ebbesen)
-% 				    2011/03/22	(Soren Ebbesen)
-%             2013/03/08	(Soren Ebbesen)
-%             2014/03/13	(Soren Ebbesen)
-% ______________________________________________________________________________
 \documentclass[10pt,twoside,a4paper,fleqn]{report}
 
+\usepackage{braket}
+\usepackage{graphicx}
+\usepackage{parskip}
+\usepackage{amssymb}
+\usepackage{mathbbol}
+\usepackage{enumerate}
+\usepackage{ragged2e}
+\usepackage{eurosym}
+\usepackage{amsmath}
 
-\usepackage[english,st]{ethidsc} % Special IDSC styles and commands      	
+% Defining some new mathematics commands
+\newcommand*{\colvec}[1]{\begin{pmatrix}#1\end{pmatrix}}
+\newcommand*{\0}{$\ket{0}$}
+\newcommand*{\1}{$\ket{1}$}
+
+\usepackage[english,bt]{ethidsc} % Special IDSC styles and commands      	
 \usepackage{apacite}
 								 % {german}/english: language of headings, etc.
 								 % {st}/bt/mt: {semester}/bachelor/master thesis
@@ -30,25 +28,25 @@
 
 
 % Title page (please fill in)___________________________________________________
-\title{\LaTeX\ Thesis Template v.1.4}
+\title{Quantum Machine Learning}
 
 
-\studentA{Hans Muster}
-\ethidA{97-906-739}
+\studentA{Mark Fingerhuth}
+\ethidA{I6082973}
 \semesterA{5}
-\emailA{muster@student.ethz.ch}
+\emailA{m.fingerhuth@student.maastrichtuniversity.nl}
 
 %\studentB{Second Student}
 %\ethidB{12-345-678}
 %\semesterB{9}
 %\emailB{second@student.ethz.ch}
 
-\supervision{First Supervisor\\ Prof. Dr. Second Supervisor}
-\date{March 2011}
+\supervision{Prof. Francesco Petruccione\\ Dr. Fabrice Birembaut}
+\date{January 2017}
 
 \identification{IDSC-XX-YY-ZZ} 		% Project identifier
 
-\infopage
+\infopage %includes the last page
 \declaration
 
 % Begin document________________________________________________________________
@@ -70,8 +68,16 @@
 
 \input{chapters/introduction}
 \cleardoublepage
-\input{chapters/howto}
+\input{chapters/materialsandmethods}
 \cleardoublepage
+\input{chapters/resultsanddiscussion}
+\cleardoublepage
+\input{chapters/outlook}
+\cleardoublepage
+\input{chapters/conclusion}
+\cleardoublepage
+%\input{chapters/howto}
+%\cleardoublepage
 % \input{}
 % \cleardoublepage
 % \input{}
@@ -79,8 +85,8 @@
 % ...
 
 % Appendix______________________________________________________________________
-\appendix
-\input{chapters/appendix}
+%\appendix
+%\input{chapters/appendix}
 
 
 % Bibliography__________________________________________________________________

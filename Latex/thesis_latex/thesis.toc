@@ -1,17 +1,27 @@
-\contentsline {chapter}{Zusammenfassung}{v}
-\contentsline {chapter}{Abstract}{vii}
-\contentsline {chapter}{Nomenclature}{ix}
+\contentsline {chapter}{Abstract}{v}
+\contentsline {chapter}{Nomenclature}{vii}
 \contentsline {chapter}{\numberline {1}Introduction}{1}
-\contentsline {section}{\numberline {1.1}The Preamble}{1}
-\contentsline {chapter}{\numberline {2}Working with \LaTeX \ }{3}
-\contentsline {section}{\numberline {2.1}Headings}{3}
-\contentsline {section}{\numberline {2.2}References and Footnotes}{3}
-\contentsline {section}{\numberline {2.3}Lists}{3}
-\contentsline {section}{\numberline {2.4}Tables}{4}
-\contentsline {section}{\numberline {2.5}Working with Units}{5}
-\contentsline {section}{\numberline {2.6}Including Graphics}{5}
-\contentsline {section}{\numberline {2.7}Equations}{6}
-\contentsline {section}{\numberline {2.8}Including Code in your Document}{6}
-\contentsline {chapter}{\numberline {A}Something}{9}
-\contentsline {chapter}{\numberline {B}Again Something}{11}
+\contentsline {section}{\numberline {1.1}Quantum Bits}{1}
+\contentsline {section}{\numberline {1.2}Quantum Logic Gates}{2}
+\contentsline {subsection}{\numberline {1.2.1}Single Qubit Gates}{2}
+\contentsline {subsubsection}{NOT (X) Gate}{3}
+\contentsline {subsubsection}{Phase Flip (Z) Gate}{3}
+\contentsline {subsubsection}{Bit and Phase Flip (Y) Gate}{3}
+\contentsline {subsubsection}{Hadamard (H) Gate}{3}
+\contentsline {subsubsection}{Clifford (H,S,Sd) Gates}{3}
+\contentsline {subsubsection}{Non-Clifford (T,Td) Gates}{3}
+\contentsline {subsection}{\numberline {1.2.2}Multiple Qubit Gates}{3}
+\contentsline {subsubsection}{Controlled NOT Gate}{3}
+\contentsline {subsubsection}{Toffoli Gate}{3}
+\contentsline {subsubsection}{Controlled U Gate}{3}
+\contentsline {section}{\numberline {1.3}Qubit Measurements}{3}
+\contentsline {subsection}{\numberline {1.3.1}Standard Basis Measurement}{3}
+\contentsline {subsection}{\numberline {1.3.2}Bloch Measurement (?)}{3}
+\contentsline {section}{\numberline {1.4}Machine Learning}{3}
+\contentsline {subsection}{\numberline {1.4.1}Classical Machine Learning}{3}
+\contentsline {subsection}{\numberline {1.4.2}Quantum Machine Learning}{3}
+\contentsline {chapter}{\numberline {2}Materials and Methods}{5}
+\contentsline {chapter}{\numberline {3}Results and Discussion}{7}
+\contentsline {chapter}{\numberline {4}Outlook}{9}
+\contentsline {chapter}{\numberline {5}Conclusion}{11}
 \contentsline {chapter}{References}{13}

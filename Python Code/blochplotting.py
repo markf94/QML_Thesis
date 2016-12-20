@@ -4,12 +4,12 @@ import cmath
 b = qp.Bloch()
 
 #Add basis vectors
-b.vector_color = ['k']
-#x_basis = (qp.basis(2,0)+(1+0j)*qp.basis(2,1)).unit()
-#y_basis = (qp.basis(2,0)+(0+1j)*qp.basis(2,1)).unit()
+#b.vector_color = ['k']
+x_basis = (qp.basis(2,0)+(1+0j)*qp.basis(2,1)).unit()
+y_basis = (qp.basis(2,0)+(0+1j)*qp.basis(2,1)).unit()
 z_basis = (qp.basis(2,0)+(0+0j)*qp.basis(2,1)).unit()
-#b.add_states([x_basis,y_basis,z_basis])
-b.add_states([z_basis]);
+b.add_states([x_basis,y_basis,z_basis])
+#b.add_states([z_basis]);
 
 # color vector for 3/4 state visualization
 #b.vector_color = ['r','c','g','k','k']
@@ -18,9 +18,10 @@ b.vector_width = 3
 #onestate = [[1.,0.,0.],[0.,1.,0.],[0.,0.,-1.]]
 #b.add_vectors(onestate)
 #Qubit amplitudes
-
+'''
 alpha = -0.70711
 beta = 0.70711
+'''
 '''
 #original -23/16pi z-rotation
 x = -0.195075369355
@@ -73,8 +74,8 @@ b.show()
 
 '''
 # #1 in Liquid (3/4 state)
-#alpha = 0.85355 - 0.35355j
-#beta = 0.35355 - 0.14645j
+alpha = 0.85355 - 0.35355j
+beta = 0.35355 - 0.14645j
 
 # #2 in Liquid (7/8 state)
 #alpha = 0.96194 - 0.19134j
