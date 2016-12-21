@@ -4,25 +4,27 @@
 \contentsline {section}{\numberline {1.1}Quantum Bits}{1}
 \contentsline {subsection}{\numberline {1.1.1}Single Qubit Systems}{1}
 \contentsline {subsection}{\numberline {1.1.2}Multiple Qubit Systems}{2}
-\contentsline {subsection}{\numberline {1.1.3}Entanglement}{2}
-\contentsline {section}{\numberline {1.2}Quantum Logic Gates}{2}
+\contentsline {subsection}{\numberline {1.1.3}Entanglement}{3}
+\contentsline {section}{\numberline {1.2}Quantum Logic Gates}{3}
 \contentsline {subsection}{\numberline {1.2.1}Single Qubit Gates}{3}
 \contentsline {subsubsection}{Identity Gate}{3}
 \contentsline {subsubsection}{Qubit Flip (X) Gate}{3}
 \contentsline {subsubsection}{Phase Flip (Z) Gate}{4}
-\contentsline {subsubsection}{Qubit and Phase Flip (Y) Gate}{4}
-\contentsline {subsubsection}{Hadamard (H) Gate}{4}
-\contentsline {subsubsection}{Clifford (H,S,Sd) Gates}{4}
-\contentsline {subsubsection}{Non-Clifford (T,Td) Gates}{5}
-\contentsline {subsection}{\numberline {1.2.2}Multiple Qubit Gates}{5}
-\contentsline {subsubsection}{Controlled NOT Gate}{5}
-\contentsline {subsubsection}{Toffoli Gate}{5}
-\contentsline {subsubsection}{Controlled U Gate}{5}
-\contentsline {section}{\numberline {1.3}Qubit Measurements}{5}
-\contentsline {subsection}{\numberline {1.3.1}Standard Basis Measurement}{5}
-\contentsline {subsection}{\numberline {1.3.2}Bloch Measurement (?)}{5}
-\contentsline {section}{\numberline {1.4}Classical Machine Learning}{5}
-\contentsline {subsection}{\numberline {1.4.1}k-nearest Neighbour Algorithm}{5}
-\contentsline {section}{\numberline {1.5}Quantum Machine Learning}{5}
-\contentsline {subsection}{\numberline {1.5.1}Quantum k-nearest Neighbour Algorithm}{5}
-\contentsline {chapter}{References}{7}
+\contentsline {subsubsection}{Qubit and Phase Flip (Y) Gate}{5}
+\contentsline {subsubsection}{Hadamard (H) Gate}{7}
+\contentsline {subsubsection}{$\frac {\pi }{2}$ Rotation (S,S$^\dagger $) Gates}{8}
+\contentsline {subsubsection}{$\frac {\pi }{4}$ Rotation (T,T$^\dagger $) Gates}{8}
+\contentsline {subsection}{\numberline {1.2.2}Multiple Qubit Gates}{9}
+\contentsline {subsubsection}{Controlled NOT Gate}{9}
+\contentsline {subsubsection}{Toffoli Gate}{10}
+\contentsline {subsubsection}{n-CNOT Gate}{10}
+\contentsline {subsubsection}{Controlled U Gate}{11}
+\contentsline {section}{\numberline {1.3}Qubit Measurements}{11}
+\contentsline {subsection}{\numberline {1.3.1}Standard Basis Measurement}{11}
+\contentsline {subsection}{\numberline {1.3.2}Bloch Measurement (?)}{11}
+\contentsline {section}{\numberline {1.4}Classical Machine Learning}{11}
+\contentsline {subsection}{\numberline {1.4.1}k-nearest Neighbour Algorithm}{11}
+\contentsline {section}{\numberline {1.5}Quantum Machine Learning}{11}
+\contentsline {subsection}{\numberline {1.5.1}Quantum k-nearest Neighbour Algorithm}{11}
+\contentsline {section}{\numberline {1.6}Research Question}{11}
+\contentsline {chapter}{References}{13}

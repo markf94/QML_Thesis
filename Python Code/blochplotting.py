@@ -1,5 +1,7 @@
 import qutip as qp
 import cmath
+import numpy as np
+import math
 
 b = qp.Bloch()
 
@@ -8,16 +10,38 @@ b = qp.Bloch()
 x_basis = (qp.basis(2,0)+(1+0j)*qp.basis(2,1)).unit()
 y_basis = (qp.basis(2,0)+(0+1j)*qp.basis(2,1)).unit()
 z_basis = (qp.basis(2,0)+(0+0j)*qp.basis(2,1)).unit()
-b.add_states([x_basis,y_basis,z_basis])
-#b.add_states([z_basis]);
+#b.add_states([x_basis,y_basis,z_basis])
+b.add_states([x_basis]);
 
 # color vector for 3/4 state visualization
-#b.vector_color = ['r','c','g','k','k']
-b.vector_color = ['k','w','c','g','b','y','r']
+#b.vector_color = ['k','r','g','k','k']
+b.vector_color = ['k','r']
+#b.vector_color = ['k','w','c','g','b','y','r']
 b.vector_width = 3
-#onestate = [[1.,0.,0.],[0.,1.,0.],[0.,0.,-1.]]
+#onestate = [[0.,0.,-1.]]
 #b.add_vectors(onestate)
 #Qubit amplitudes
+
+xp = [np.cos(th)-0.05 for th in np.linspace(math.pi/4, math.pi/2, 20)]
+
+yp = [np.sin(th)-0.2 for th in np.linspace(math.pi/4, math.pi/2, 20)]
+
+#zp = np.zeros(10)
+zp = [np.sin(th) for th in np.linspace(0, math.pi/4, 20)]
+#zp = np.append(zp1,zp2)
+pnts = [xp, yp, zp]
+b.add_points(pnts)
+
+zp = [np.cos(th) for th in np.linspace(0.25*math.pi, -0.25*math.pi, 20)]
+
+yp = [np.sin(th) for th in np.linspace(0.25*math.pi, -0.25*math.pi, 20)]
+
+#zp = np.zeros(10)
+xp = np.zeros(20)
+#zp = np.append(zp1,zp2)
+pnts = [xp, yp, zp]
+
+b.add_points(pnts)
 '''
 alpha = -0.70711
 beta = 0.70711
@@ -71,11 +95,13 @@ z = 3.26698397897e-05
 new_vec = [x.real,y.real,z.real] #works only for the right half sphere....
 b.add_vectors(new_vec)
 b.show()
-
 '''
+
 # #1 in Liquid (3/4 state)
-alpha = 0.85355 - 0.35355j
-beta = 0.35355 - 0.14645j
+#alpha = 0.85355 - 0.35355j
+#beta = 0.35355 - 0.14645j
+alpha = 1/math.sqrt(2)
+beta = 1/math.sqrt(2)*cmath.exp(1j*math.pi/4)
 
 # #2 in Liquid (7/8 state)
 #alpha = 0.96194 - 0.19134j
@@ -136,4 +162,6 @@ else:
 	#Create the new state vector and plot it onto the Bloch sphere
 	new_vec = [x.real,y.real,z.real] #works only for the right half sphere....
 	b.add_vectors(new_vec)
+
+
 b.show()
