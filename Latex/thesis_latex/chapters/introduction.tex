@@ -539,7 +539,7 @@ Now consider applying the CNOT to this state whereby the control qubit is colour
 CNOT(\textcolor{red}{0},\textcolor{green}{1}) \otimes (\frac{1}{\sqrt{2}} \ket{\textcolor{red}{0}\textcolor{green}{0}} + \frac{1}{\sqrt{2}} \ket{\textcolor{red}{1}\textcolor{green}{0}}) = \frac{1}{\sqrt{2}} \ket{\textcolor{red}{0}\textcolor{green}{0}} + \frac{1}{\sqrt{2}} (\mathbb{1} \otimes X) \ket{\textcolor{red}{1}\textcolor{green}{0}} = \frac{1}{\sqrt{2}} \ket{\textcolor{red}{0}\textcolor{green}{0}} + \frac{1}{\sqrt{2}} \ket{\textcolor{red}{1}\textcolor{green}{1}}
 \end{equation}
 
-The last expression in Equ.~\ref{equ:cnotexamples} is one of the famous Bell states which are maximally entangled states. Thus, this example demonstrates how the CNOT gate is crucial for the generation of entangled states since it applies the X gate dependending on the state of a second qubit.
+The last expression in Equ.~\ref{equ:cnotexamples} is one of the famous Bell states which are four maximally entangled states. Thus, this example demonstrates how the CNOT gate is crucial for the generation of entangled states since it applies the X gate to a qubit depending on the state of a second qubit.
 
 \subsubsection{Toffoli Gate}
 \label{subsubsubsec:toffoligate}
@@ -563,12 +563,13 @@ Toffoli = CCNOT = \begin{pmatrix}
 
 where $\mathbb{1}_6$ is the 6x6 identity matrix.
 
-The Toffoli gate takes three inputs specified in parantheses, first the two control qubits and lastly the target qubit.
+The Toffoli gate takes three inputs specified in parantheses, first the two control qubits and lastly the target qubit. If and only if both control qubits are in the \1 state the X gate is applied to the target qubit.
 
-TRUTH TABLE???
-
-\subsubsection{n-CNOT Gate}
+\subsubsection{nCNOT Gate}
 \label{subsubsubsec:ncnotgate}
+
+The nCNOT gate is the generalization of the CNOT and the Toffoli gate. It takes $n$ control qubits and one target qubit as input and if and only if all control qubits are in the \1 state the X gate is applied to the target. The nCNOT matrix representation is given by:
+ 
 \begin{equation}
 nCNOT = \begin{pmatrix}
  \mathbb{1}_{2^n-2} & 0 \\ 
@@ -579,12 +580,18 @@ nCNOT = \begin{pmatrix}
 \subsubsection{Controlled U Gate}
 \label{subsubsubsec:controlledugate}
 
+Often there is a need for applying certain quantum gates in a controlled manner. Thus a controlled U (CU) gate is required whereby U can be any unitary quantum gate. The CU gate is defined as:
+
 \begin{equation}
 CU = \begin{pmatrix}
  \mathbb{1} & 0 \\ 
  0 & U
  \end{pmatrix}
 \end{equation}
+
+It is important to note that the CNOT gate is essentially a CU gate in the case of U = X. 
+
+INTRODUCE THE DECOMPOSITION OF A CONTROLLED U Q CIRCUIT HERE.
 
 %%%%% SECTION: MEASUREMENTS
 
