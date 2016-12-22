@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  22 DEC 2016 01:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  22 DEC 2016 11:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -852,54 +852,62 @@ Chapter 1.
 File: img/blochsphere.png Graphic file (type png)
 
 <use img/blochsphere.png>
-Package pdftex.def Info: img/blochsphere.png used on input line 59.
+Package pdftex.def Info: img/blochsphere.png used on input line 78.
 (pdftex.def)             Requested size: 140.53935pt x 159.51216pt.
- [2 <./img/blochsphere.png>] [3]
-<img/blochxgate.png, id=73, 439.6425pt x 380.42125pt>
+ [2] [3 <./img/blochsphere.png>] [4]
+<img/blochxgate.png, id=76, 439.6425pt x 380.42125pt>
 File: img/blochxgate.png Graphic file (type png)
  <use img/blochxgate.png>
-Package pdftex.def Info: img/blochxgate.png used on input line 207.
+Package pdftex.def Info: img/blochxgate.png used on input line 298.
 (pdftex.def)             Requested size: 213.39566pt x 184.64919pt.
 
-[4 <./img/blochxgate.png>]
-<img/blochzgate.png, id=77, 436.63126pt x 373.395pt>
+[5 <./img/blochxgate.png>]
+<img/blochzgate.png, id=80, 436.63126pt x 373.395pt>
 File: img/blochzgate.png Graphic file (type png)
  <use img/blochzgate.png>
-Package pdftex.def Info: img/blochzgate.png used on input line 257.
+Package pdftex.def Info: img/blochzgate.png used on input line 348.
 (pdftex.def)             Requested size: 213.39566pt x 182.48656pt.
 
-[5 <./img/blochzgate.png>]
-<img/blochygate.png, id=81, 434.62375pt x 370.38374pt>
+[6 <./img/blochzgate.png>]
+<img/blochygate.png, id=84, 434.62375pt x 370.38374pt>
 File: img/blochygate.png Graphic file (type png)
 
 <use img/blochygate.png>
-Package pdftex.def Info: img/blochygate.png used on input line 323.
+Package pdftex.def Info: img/blochygate.png used on input line 414.
 (pdftex.def)             Requested size: 213.39566pt x 181.85696pt.
- [6 <./img/blochygate.png>]
-<img/blochhadamardnielsenchuang.png, id=85, 714.67pt x 251.94125pt>
+ [7]
+<img/blochhadamardnielsenchuang.png, id=88, 714.67pt x 251.94125pt>
 File: img/blochhadamardnielsenchuang.png Graphic file (type png)
 
 <use img/blochhadamardnielsenchuang.png>
 Package pdftex.def Info: img/blochhadamardnielsenchuang.png used on input line 
-384.
+475.
 (pdftex.def)             Requested size: 341.43436pt x 120.36531pt.
- [7 <./img/blochhadamardnielsenchuang.png>] <img/blochsgate.png, id=89, 435.627
-5pt x 376.40625pt>
+ [8 <./img/blochygate.png> <./img/blochhadamardnielsenchuang.png>]
+<img/blochsgate.png, id=92, 435.6275pt x 376.40625pt>
 File: img/blochsgate.png Graphic file (type png)
-
-<use img/blochsgate.png>
-Package pdftex.def Info: img/blochsgate.png used on input line 442.
+ <use img/blochsgate.png>
+Package pdftex.def Info: img/blochsgate.png used on input line 533.
 (pdftex.def)             Requested size: 213.39566pt x 184.38322pt.
- [8 <./img/blochsgate.png>]
-<img/blochtgate.png, id=93, 429.605pt x 378.41376pt>
+
+[9 <./img/blochsgate.png>]
+<img/blochtgate.png, id=97, 429.605pt x 378.41376pt>
 File: img/blochtgate.png Graphic file (type png)
  <use img/blochtgate.png>
-Package pdftex.def Info: img/blochtgate.png used on input line 474.
+Package pdftex.def Info: img/blochtgate.png used on input line 565.
 (pdftex.def)             Requested size: 213.39566pt x 187.97075pt.
 
-[9 <./img/blochtgate.png>] [10]) [11] [12
+[10 <./img/blochtgate.png>] [11]
+<img/controlledudecomp.png, id=106, 687.56876pt x 221.82875pt>
+File: img/controlledudecomp.png Graphic file (type png)
 
-] (./thesis.bbl) [13
+<use img/controlledudecomp.png>
+Package pdftex.def Info: img/controlledudecomp.png used on input line 691.
+(pdftex.def)             Requested size: 298.75262pt x 96.3864pt.
+ [12 <./img/controlledudecomp.png>]) [13]
+[14
+
+] (./thesis.bbl) [15
 
 ] (./thesis.aux)
 
@@ -907,13 +915,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14217 strings out of 493029
- 232986 string characters out of 6136235
- 324542 words of memory out of 5000000
- 17431 multiletter control sequences out of 15000+600000
+ 14233 strings out of 493029
+ 233445 string characters out of 6136235
+ 324664 words of memory out of 5000000
+ 17446 multiletter control sequences out of 15000+600000
  21321 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 49i,12n,76p,744b,412s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 49i,16n,76p,744b,412s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dis
@@ -934,10 +942,10 @@ are/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type
 1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
 ti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0800.pfb></usr/sha
 re/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on thesis.pdf (23 pages, 825730 bytes).
+Output written on thesis.pdf (25 pages, 840467 bytes).
 PDF statistics:
- 187 PDF objects out of 1000 (max. 8388607)
- 126 compressed objects within 2 object streams
+ 195 PDF objects out of 1000 (max. 8388607)
+ 131 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

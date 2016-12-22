@@ -1,53 +1,55 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
-Geering%
+Nielsen%
+\ \BBA {} Chuang%
 }{%
-Geering%
+Nielsen%
+\ \BBA {} Chuang%
 }{%
-{\protect \APACyear {2007}}%
+{\protect \APACyear {2010}}%
 }]{%
-optreg}
+nielsen2010quantum}
 \APACinsertmetastar {%
-optreg}%
+nielsen2010quantum}%
 \begin{APACrefauthors}%
-Geering, H\BPBI P.%
+Nielsen, M\BPBI A.%
+\BCBT {}\ \BBA {} Chuang, I\BPBI L.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYear{2007}.
+\APACrefYear{2010}.
 \newblock
-\APACrefbtitle {{Optimal Control with Engineering Applications}} {{Optimal
-  Control with Engineering Applications}}.
+\APACrefbtitle {Quantum computation and quantum information} {Quantum
+  computation and quantum information}.
 \newblock
-\APACaddressPublisher{}{Springer}.
+\APACaddressPublisher{}{Cambridge university press}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Guzzella%
-\ \BBA {} Onder%
+Shende%
+\ \BBA {} Markov%
 }{%
-Guzzella%
-\ \BBA {} Onder%
+Shende%
+\ \BBA {} Markov%
 }{%
-{\protect \APACyear {2004}}%
+{\protect \APACyear {2008}}%
 }]{%
-motsys}
+shende2008cnot}
 \APACinsertmetastar {%
-motsys}%
+shende2008cnot}%
 \begin{APACrefauthors}%
-Guzzella, L.%
-\BCBT {}\ \BBA {} Onder, C.%
+Shende, V\BPBI V.%
+\BCBT {}\ \BBA {} Markov, I\BPBI L.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYear{2004}.
+\APACrefYearMonthDay{2008}{}{}.
 \newblock
-\APACrefbtitle {{Introduction To Modeling And Control Of Internal Combustion
-  Engine Systems}} {{Introduction To Modeling And Control Of Internal
-  Combustion Engine Systems}}.
+{\BBOQ}\APACrefatitle {On the CNOT-cost of TOFFOLI gates} {On the cnot-cost of
+  toffoli gates}.{\BBCQ}
 \newblock
-\APACaddressPublisher{}{Springer}.
+\APACjournalVolNumPages{arXiv preprint arXiv:0803.2316}{}{}{}.
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}

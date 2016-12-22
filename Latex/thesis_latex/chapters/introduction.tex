@@ -1,9 +1,9 @@
 \chapter{Introduction}\label{sec:introduction}
 
+SOME MORE GENERAL INTRO TEXT HERE?
+
 \section{Quantum Bits}
 \label{subsec:qubits}
-
-INTRODUCE CONCEPT OF DROPPING GLOBAL PHASE SOMEWHERE!
 
 \subsection{Single Qubit Systems}
 \label{subsubsec:qubits}
@@ -43,6 +43,25 @@ The fact that the probability of measuring a particular state is equal the absol
 \end{equation}
 Therefore, a qubit is inherently probabilistic but when measured it collapses into a single classical bit (0 or 1). It follows that a measurement destroys information about the superposition of the qubit (the values of $\alpha$ and $\beta$). This constitutes one of the main difficulties when designing quantum algorithms since only limited information can be obtained about the final states of the qubits in the quantum computer.
 
+Similar to logic gates in a classical computer, a QC manipulates qubit by means of quantum logic gates which will be introduced in detail in Section~\ref{subsec:quantumlogicgates}. Generally, an arbitrary quantum logic gate U acting on a single qubit state is a linear transformation given by a 2x2 matrix whose action on $\ket{\psi}$ is defined as:
+
+\begin{equation}
+\label{equ:unitarytransformation}
+U \ket{\psi} = \begin{pmatrix}
+ a & b \\ 
+ c & d
+ \end{pmatrix} \colvec{\alpha\\\beta} = \colvec{a*\alpha+b*\beta\\c*\alpha+d*\beta}
+\end{equation}
+
+Matrix $U$ must be unitary which means that a) its determinant is equal to unity and b) its Hermitian conjugate $U^\dagger$ must be equal to its inverse. These properties are expressed in Equ.~\ref{equ:unitarydef1} and ~\ref{equ:unitarydef2} below. All quantum logic gates must be unitary since this preserves the normalization of the qubit state it is acting on.
+
+\begin{align}
+\label{equ:unitarydef1}
+a)& \mid det(U) \mid = 1 \\ 
+\label{equ:unitarydef2}
+b)& \quad UU^\dagger = U^\dagger U = \mathbb{1} = UU^{-1} = U^{-1}U
+\end{align} 
+
 Using spherical polar coordinates, a single qubit can be visualized on the so-called Bloch sphere by parameterising $\alpha$ and $\beta$ in Equ.~\ref{equ: simplequbit} as follows:
 
 \begin{equation}
@@ -65,7 +84,79 @@ Qubit states on the Bloch equator such as the $\hat{x}$ and $\hat{y}$ coordinate
 \subsection{Multiple Qubit Systems}
 \label{subsec:multiplequbitsystems}
 
-Introduce tensor products here!
+When moving from single to multi qubit systems a new mathematical tool, the so-called tensor product (symbol $\otimes$), is needed. A tensor product of two qubits is written as:
+
+\begin{equation}
+\ket{\psi} \otimes \ket{\psi} = \ket{0} \otimes \ket{0} = \ket{00}
+\end{equation}
+ 
+whereby the last expression omits the $\otimes$ symbol which is the shorthand form of a tensor product between two qubits.
+
+In vector notation a tensor product of two vectors (\textcolor{red}{red} and \textcolor{green}{green}) is defined as shown below:
+
+\begin{equation}
+\label{equ:tensor2qubits}
+\ket{\textcolor{red}{0}\textcolor{green}{0}} = \textcolor{red}{\ket{0}} \otimes \textcolor{green}{\ket{0}} = \textcolor{red}{\colvec{1\\0}} \otimes \textcolor{green}{\colvec{1\\0}} = \colvec{\textcolor{red}{1}*\textcolor{green}{\colvec{1\\0}}\\\textcolor{red}{0}*\textcolor{green}{\colvec{1\\0}}} = \colvec{1\\0\\0\\0}
+\end{equation}
+
+The last expression in Equ.~\ref{equ:tensor2qubits} shows that the two-qubit state $\ket{00}$ is no longer two but four-dimensional. Hence, it lives in a four-dimensional Hilbert space $\mathcal{H}_{4}$. A quantum gate acting on multiple qubits can therefore not have the same dimensions as a single-qubit gate (Equ.~\ref{equ:unitarytransformation}) which demands for a new gate formalism for multi qubit systems.
+
+Consider wanting to apply an arbitrary single-qubit gate U (Equ.~\ref{equ:unitarytransformation}) to the first qubit and leaving the second qubit unchanged, essentially applying the identity matrix $\mathbb{1}$ to it. To do this, one defines the tensor product of two matrices as follows,
+
+\begin{equation}
+\label{equ:matrixtensorproduct}
+\textcolor{red}{U} \otimes \textcolor{green}{\mathbb{1}} =\textcolor{red}{\begin{pmatrix}
+ a & b \\ 
+ c & d
+ \end{pmatrix}} \otimes \textcolor{green}{\begin{pmatrix}
+ 1 & 0 \\ 
+ 0 & 1
+ \end{pmatrix}} = \begin{pmatrix}
+ \textcolor{red}{a}*\textcolor{green}{\begin{pmatrix}
+ 1 & 0 \\ 
+ 0 & 1
+ \end{pmatrix}} & \textcolor{red}{b}*\textcolor{green}{\begin{pmatrix}
+ 1 & 0 \\ 
+ 0 & 1
+ \end{pmatrix}} \\ 
+ \textcolor{red}{c}*\textcolor{green}{\begin{pmatrix}
+ 1 & 0 \\ 
+ 0 & 1
+ \end{pmatrix}} & \textcolor{red}{d}*\textcolor{green}{\begin{pmatrix}
+ 1 & 0 \\ 
+ 0 & 1
+ \end{pmatrix}}
+ \end{pmatrix} = \begin{pmatrix}
+ a & 0 & b & 0 \\ 
+ 0 & a & 0 & b \\ 
+ c & 0 & d & 0 \\ 
+ 0 & c & 0 & d 
+ \end{pmatrix}
+\end{equation}
+
+Thus, the result of the tensor product $U \otimes \mathbb{1}$ is a unitary 4x4 matrix which can now be used to linearly transform the 4x1 vector representing the $\ket{00}$ state in Equ.~\ref{equ:tensor2qubits}:
+
+\begin{equation}
+\label{equ:2qubitlineartransform1}
+U \otimes \mathbb{1} \ket{00} = \begin{pmatrix}
+ a & 0 & b & 0 \\ 
+ 0 & a & 0 & b \\ 
+ c & 0 & d & 0 \\ 
+ 0 & c & 0 & d 
+ \end{pmatrix} \colvec{1\\0\\0\\0} = \colvec{a\\0\\c\\0}
+\end{equation}
+
+One can also first perform the single qubit operations followed by the tensor product of the two resulting vectors:
+\begin{equation}
+\label{equ:2qubitlineartransform2}
+(U \otimes \mathbb{1})(\ket{0} \otimes \ket{0})= U\ket{0} \otimes \mathbb{1}\ket{0} = \begin{pmatrix}
+ a & b \\ 
+ c & d
+ \end{pmatrix} \colvec{1\\0} \otimes \begin{pmatrix}
+ 1 & 0 \\ 
+ 0 & 1
+ \end{pmatrix} \colvec{1\\0} = \colvec{a\\c} \otimes \colvec{1\\0} = \colvec{a\\0\\c\\0}
+\end{equation}
 
 \subsection{Entanglement}
 \label{subsec:entanglement}
@@ -84,7 +175,7 @@ In order to perform quantum computations, tools, analogous to the classical logi
 
 ADD THE CIRCUIT REPRESENTATIONS OF THE RESPECTIVE GATES!
 
-In the following section we will evaluate the action of the most common single qubit gates on an arbitrary qubit state $\ket{\psi}$ defined in Equ.~\ref{equ: simplequbitvector}.
+In the following section we will evaluate the action of the most common single qubit gates on the arbitrary qubit state $\ket{\psi}$ defined in Equ.~\ref{equ: simplequbitvector}.
 
 %The four most basic single-qubit quantum gates are given by the four Pauli matrices listed below in Equ. ~\ref{equ: paulimatrices}.
 
@@ -544,7 +635,7 @@ The last expression in Equ.~\ref{equ:cnotexamples} is one of the famous Bell sta
 \subsubsection{Toffoli Gate}
 \label{subsubsubsec:toffoligate}
 
-Of course one can create a controlled controlled NOT (CCNOT) quantum gate which is often referred to as the Toffoli gate. It is defined by the following 8x8 matrix:
+The most important three-qubit gate is a controlled controlled NOT (CCNOT) quantum gate which is often referred to as the Toffoli gate. It is defined by the following 8x8 matrix:
 \begin{equation}
 Toffoli = CCNOT = \begin{pmatrix}
  \mathbb{1}_6 & 0 \\ 
@@ -563,7 +654,7 @@ Toffoli = CCNOT = \begin{pmatrix}
 
 where $\mathbb{1}_6$ is the 6x6 identity matrix.
 
-The Toffoli gate takes three inputs specified in parantheses, first the two control qubits and lastly the target qubit. If and only if both control qubits are in the \1 state the X gate is applied to the target qubit.
+The Toffoli gate takes three inputs specified in parantheses, first the two control qubits and lastly the target qubit. If and only if both control qubits are in the \1 state the X gate is applied to the target qubit. Toffoli gates are usually decomposed into quantum circuits with CNOT and single-qubit gates in order to keep the set of quantum gates small \cite{shende2008cnot}.
 
 \subsubsection{nCNOT Gate}
 \label{subsubsubsec:ncnotgate}
@@ -577,10 +668,12 @@ nCNOT = \begin{pmatrix}
  \end{pmatrix}
 \end{equation}
 
+In practise, nCNOT gates are usually not implemented directly but decomposed into larger quantum circuits consisting only of CNOT and single-qubit gates \cite{nielsen2010quantum}. However, such decompositions will not be relevant for this work.
+
 \subsubsection{Controlled U Gate}
 \label{subsubsubsec:controlledugate}
 
-Often there is a need for applying certain quantum gates in a controlled manner. Thus a controlled U (CU) gate is required whereby U can be any unitary quantum gate. The CU gate is defined as:
+Often there is a need for applying certain quantum gates in a controlled manner. Thus a controlled U (CU) gate is required whereby U can be any unitary single-qubit gate. The CU gate is defined as:
 
 \begin{equation}
 CU = \begin{pmatrix}
@@ -591,7 +684,38 @@ CU = \begin{pmatrix}
 
 It is important to note that the CNOT gate is essentially a CU gate in the case of U = X. 
 
-INTRODUCE THE DECOMPOSITION OF A CONTROLLED U Q CIRCUIT HERE.
+Most of the time the CU gate cannot be implemented directly and has to be realized through larger quantum circuits consisting of CNOT and single-qubit gates. \cite{nielsen2010quantum} describe such a decomposition as shown in Fig.~\ref{img:cudecomposition}.
+
+\begin{figure}[ht]
+   \centering
+   \includegraphics[width=0.7\textwidth]{img/controlledudecomp.png}
+   \caption{Circuit decomposition for a controlled-U operation for single-qubit gate U.\textsuperscript{3}}
+   \label{img:cudecomposition}
+\end{figure}
+
+\footnotetext[3]{Reprinted from Michael A. Nielsen and Isaac L. Chuang. Quantum Computation and Quantum Information. Cambridge University Press, 2000. Copyright 2010 by Nielsen \& Chuang.}
+
+The idea is that when the control qubit is \0 the gate combination ABC is applied to the target qubit and has to equal the identity gate:
+
+\begin{equation}
+ABC = \mathbb{1}
+\end{equation}
+
+If and only if the control qubit is \1 then the gate sequence $e^{i\alpha}AXBXC$ is applied to the target. Since the goal is to apply the unitary U to the target qubit the following equation must be satified,
+
+\begin{equation}
+e^{i\alpha}AXBXC = U
+\end{equation}
+
+In order to find the matrices A,B,C and the additional parameter $\alpha$ the following equation has to be solved:
+
+\begin{equation}
+U = \begin{pmatrix}
+ e^{i(\alpha-\frac{\beta}{2}-\frac{\delta}{2})}\cos{\frac{\gamma}{2}} & -e^{i(\alpha-\frac{\beta}{2}+\frac{\delta}{2})}\sin{\frac{\gamma}{2}} \\ 
+e^{i(\alpha+\frac{\beta}{2}-\frac{\delta}{2})}\sin{\frac{\gamma}{2}} & e^{i(\alpha+\frac{\beta}{2}+\frac{\delta}{2})}\cos{\frac{\gamma}{2}}
+ \end{pmatrix}
+\end{equation}
+
 
 %%%%% SECTION: MEASUREMENTS
 
@@ -615,11 +739,26 @@ INTRODUCE THE DECOMPOSITION OF A CONTROLLED U Q CIRCUIT HERE.
 \subsection{k-nearest Neighbour Algorithm}
 \label{subsubsec:knearestneighbour}
 
+Use text from proposal and slightly adapt.
+
 \section{Quantum Machine Learning}
 \label{subsec:quantummachinelearning}
 
 \subsection{Quantum k-nearest Neighbour Algorithm}
 \label{subsubsec:quantumknearestneighbour}
 
+\subsection{Quantum State Preparation Algorithms}
+\label{subsubsec:quantumstatepreparation}
+
+Grover \& Rudolph
+
+Diffusion matrix from quantum random walks
+
+Trugenberger et al.
+
+Schack paper Maria mentioned but which I haven't used and looked at.
+
 \section{Research Question}
 \label{subsec:researchquestion}
+
+Matthias Troyer citation about q software engineering needed?
