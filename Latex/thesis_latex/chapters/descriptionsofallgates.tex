@@ -1,0 +1,399 @@
+ADD THE CIRCUIT REPRESENTATIONS OF THE RESPECTIVE GATES!
+
+In the following section we will evaluate the action of the most common single qubit gates on the arbitrary qubit state $\ket{\psi}$ defined in Equ.~\ref{equ: simplequbitvector}.
+
+%The four most basic single-qubit quantum gates are given by the four Pauli matrices listed below in Equ. ~\ref{equ: paulimatrices}.
+
+%\begin{align}
+%\label{equ: paulimatrices}
+%\sigma_{0} &= \mathbb{1} = \begin{pmatrix}
+% 1 & 0 \\ 
+% 0 & 1
+% \end{pmatrix}
+% \quad
+% &&\sigma_{1} = \sigma_{x} = \begin{pmatrix}
+% 0 & 1 \\ 
+% 1 & 0
+% \end{pmatrix}
+% \nonumber
+% \\
+% \sigma_{2} &= \sigma_{y} = \begin{pmatrix}
+% 0 & -i \\ 
+% i & 0
+% \end{pmatrix}
+% \quad
+% &&\sigma_{3} = \sigma_{z} = \begin{pmatrix}
+% 1 & 0 \\ 
+% 0 & -1
+% \end{pmatrix}
+%\end{align}
+
+\subsubsection{Identity Gate}
+\label{subsubsubsec:identitygate}
+
+The simplest quantum gate is the identity or idle gate given by the 0\textsuperscript{th} Pauli matrix:
+
+\begin{equation}
+\sigma_{0} = \mathbb{1} = \begin{pmatrix}
+ 1 & 0 \\ 
+ 0 & 1
+ \end{pmatrix}
+\end{equation}
+
+The action of a quantum gate on a qubit state can be analysed using the gate's matrix and the qubit's vector representation. Applying some straightforward linear algebra in this case yields:
+
+\begin{equation}
+\label{equ:identityverification}
+\mathbb{1} \otimes \ket{\psi} = \mathbb{1} \otimes (\alpha \ket{0} + \beta \ket{1}) = \begin{pmatrix}
+ 1 & 0 \\ 
+ 0 & 1
+ \end{pmatrix} \begin{pmatrix}
+ \alpha  \\ 
+ \beta
+ \end{pmatrix} = \begin{pmatrix}
+ \alpha  \\ 
+ \beta
+ \end{pmatrix} = \alpha \ket{0} + \beta \ket{1} = \ket{\psi}
+\end{equation}
+
+Hence, applying the identity gate to an arbitrary qubit state $\ket{\psi}$ leaves the state unchanged as shown in Equ.~\ref{equ:identityverification}. The idle gate is mainly used for measuring the error and lifetimes of qubits since it only evolves the qubit in time without actively rotating its Bloch vector.
+
+\subsubsection{Qubit Flip (X) Gate}
+\label{subsubsubsec:xgate}
+
+The quantum equivalent of the classical NOT gate is called X gate and is given by the 1\textsuperscript{st} Pauli matrix:
+
+\begin{equation}
+\sigma_{1} = X = \begin{pmatrix}
+ 0 & 1 \\ 
+ 1 & 0
+ \end{pmatrix}
+\end{equation}
+
+The action of the X gate is easily verified by performing some linear algebra,
+
+\begin{equation}
+\label{equ:xverification1}
+X \otimes \ket{\psi} = X \otimes (\alpha \ket{0} + \beta \ket{1}) = \begin{pmatrix}
+ 0 & 1 \\ 
+ 1 & 0
+ \end{pmatrix} \begin{pmatrix}
+ \alpha  \\ 
+ \beta
+ \end{pmatrix} = \begin{pmatrix}
+ \beta  \\ 
+ \alpha
+ \end{pmatrix} = \beta \ket{0} + \alpha \ket{1}
+\end{equation}
+
+Thus, applying the X gate to qubit state $\ket{\psi}$ swaps the amplitudes of \0 and \1. More specifically, applying X to the \0 state results in the \1 state,
+
+\begin{equation}
+\label{equ:xverification2}
+X \otimes \ket{0} = \begin{pmatrix}
+ 0 & 1 \\ 
+ 1 & 0
+ \end{pmatrix} \begin{pmatrix}
+ 1  \\ 
+ 0
+ \end{pmatrix} = \begin{pmatrix}
+ 0  \\ 
+ 1 \end{pmatrix} =  \ket{1}
+\end{equation}
+
+And the \0 state is recovered when applying X again to the \1 state,
+
+\begin{equation}
+\label{equ:xverification3}
+X \otimes \ket{1} = \begin{pmatrix}
+ 0 & 1 \\ 
+ 1 & 0
+ \end{pmatrix} \begin{pmatrix}
+ 0  \\ 
+ 1
+ \end{pmatrix} = \begin{pmatrix}
+ 1  \\ 
+ 0 \end{pmatrix} =  \ket{0}
+\end{equation}
+
+On the Bloch sphere, the X gate corresponds to a anti-clockwise $\pi$ rotation around the x-axis as shown in Fig.~\ref{img:blochxgate}.
+
+\begin{figure}[ht]
+   \centering
+   \includegraphics[width=0.5\textwidth]{img/blochxgate.png}
+   \caption{Visualization of the X gate on the Bloch sphere. Initial state (black) transformed to final state (red).}
+   \label{img:blochxgate}
+\end{figure}
+
+From Equ.~\ref{equ:xverification1},~\ref{equ:xverification2} and~\ref{equ:xverification3} it follows that X is its own inverse as well as its own Hermitian conjugate:
+\begin{align}
+XX &= XX^\dagger = \mathbb{1} \\
+X &= X^{-1} = X^\dagger
+\end{align}
+
+\subsubsection{Phase Flip (Z) Gate}
+\label{subsubsubsec:zgate}
+
+The phase flip gate, often called Z gate, is a quantum logic gate without classical equivalent. Its matrix representation is given by the 3\textsuperscript{rd} Pauli matrix:
+
+\begin{equation}
+\sigma_{3} = Z = \begin{pmatrix}
+ 1 & 0 \\ 
+ 0 & -1
+ \end{pmatrix}
+\end{equation}
+
+It acts on $\ket{\psi}$ as follows:
+
+\begin{equation}
+\label{equ:zverification1}
+Z \otimes \ket{\psi} = Z \otimes (\alpha \ket{0} + \beta \ket{1}) = \begin{pmatrix}
+ 1 & 0 \\ 
+ 0 & -1
+ \end{pmatrix} \begin{pmatrix}
+ \alpha  \\ 
+ \beta
+ \end{pmatrix} = \begin{pmatrix}
+ \alpha  \\ 
+ -\beta
+ \end{pmatrix} = \alpha \ket{0} - \beta \ket{1}
+\end{equation}
+
+Applying Z again recovers the initial state,
+
+\begin{equation}
+\label{equ:zverification2}
+Z \otimes (\alpha \ket{0} - \beta \ket{1}) = \alpha \ket{0} + \beta \ket{1} = \ket{\psi}
+\end{equation}
+
+Fig.~\ref{img:blochzgate} visualizes that the Z gate corresponds to a anti-clockwise $\pi$ rotation around the z-axis.
+
+\begin{figure}[ht]
+   \centering
+   \includegraphics[width=0.5\textwidth]{img/blochzgate.png}
+   \caption{Visualization of the Z gate on the Bloch sphere. Initial state (black) transformed to final state (red).}
+   \label{img:blochzgate}
+\end{figure}
+
+From Equ.~\ref{equ:zverification1} and Equ.~\ref{equ:zverification2}, it follows that also Z is its own inverse as well as Hermitian conjugate:
+\begin{align}
+ZZ &= ZZ^\dagger = \mathbb{1} \\
+Z &= Z^{-1} = Z^\dagger
+\end{align}
+
+\subsubsection{Qubit and Phase Flip (Y) Gate}
+\label{subsubsubsec:ygate}
+
+The combined qubit and phase flip gate, also called Y gate, is a quantum logic gate without classical equivalent since it involves the complex number i ($\sqrt{-1}$). Its matrix representation is given by the 2\textsuperscript{nd} Pauli matrix:
+
+\begin{equation}
+\sigma_{2} = Y = \begin{pmatrix}
+ 0 & -i \\ 
+ i & 0
+ \end{pmatrix}
+\end{equation}
+
+It essentially combines the action of the X and the Z gate since it exchanges the amplitudes and adds a phase to the qubit state:
+
+\begin{equation}
+\label{equ:yverification1}
+Y \otimes \ket{\psi} = Y \otimes (\alpha \ket{0} + \beta \ket{1}) = \begin{pmatrix}
+ 0 & -i \\ 
+ i & 0
+ \end{pmatrix} \begin{pmatrix}
+ \alpha  \\ 
+ \beta
+ \end{pmatrix} = \begin{pmatrix}
+ -i\beta  \\ 
+ i\alpha
+ \end{pmatrix} = -i\beta \ket{0} + i\alpha \ket{1}
+\end{equation}
+
+One can simplify the last expression since a so-called global phase of $i$ is present which can be factored out:
+
+\begin{equation}
+\label{equ:yverification2}
+-i\beta \ket{0} + i\alpha \ket{1} = i(-\beta \ket{0} + \alpha \ket{1}) = -\beta \ket{0} + \alpha \ket{1}
+\end{equation}
+
+To proof this, one calculates the probability of measuring the \0 state including the global phase (last expression in Equ.~\ref{equ:yverification1}) by taking the absolute value squared of the amplitude of the \0 state:
+
+\begin{equation}
+\label{equ:globalphase}
+Prob(\ket{0}) = \mid-i\beta\mid^2 = (-i\beta)(i\beta) = -i^2\beta^2 = -(\sqrt{-1})^2\beta^2 = \beta^2
+\end{equation}
+
+When calculating the probability whilst omitting the global phase of $i$ one arrives at the same result: 
+
+\begin{equation}
+\label{equ:globalphase}
+Prob(\ket{0}) = \mid-\beta\mid^2 = \beta^2
+\end{equation}
+
+It follows that a global phase is immeasurable in experiments and can therefore be left out.
+
+The Y gate corresponds to a $\pi$ rotation around the y-axis of the Bloch sphere as shown in Fig.~\ref{img:blochygate}.
+
+\begin{figure}[ht]
+   \centering
+   \includegraphics[width=0.5\textwidth]{img/blochygate.png}
+   \caption{Visualization of the Y gate on the Bloch sphere. Initial state (black) transformed to final state (red).}
+   \label{img:blochygate}
+\end{figure}
+
+From Equ.~\ref{equ:yverification1} it follows that, similar to the X and Z gate, the Y gate is its own inverse and Hermitian conjugate:
+
+\begin{align}
+YY &= YY^\dagger = \mathbb{1} \\
+Y &= Y^{-1} = Y^\dagger
+\end{align}
+
+
+\subsubsection{Hadamard (H) Gate}
+\label{subsubsubsec:hadamardgate}
+
+In order to create superpositions from an initial \0 or \1 state the Hadamard or H gate is required. It is defined by the following matrix:
+
+\begin{equation}
+H = \begin{pmatrix}
+ \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\ 
+ \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}
+ \end{pmatrix}
+\end{equation}
+
+The action of the H gate is best understood when applying it to the \0 state,
+
+\begin{equation}
+\label{equ:hadamardverification1}
+H \otimes \ket{0} = \begin{pmatrix}
+ \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\ 
+ \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}
+ \end{pmatrix} \begin{pmatrix}
+ 1 \\ 
+ 0
+ \end{pmatrix} = \begin{pmatrix}
+ \frac{1}{\sqrt{2}} \\ 
+ \frac{1}{\sqrt{2}}
+ \end{pmatrix} = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}
+\end{equation}
+
+Thus, the H gate has transformed the \0 state into an equal superposition of \0 and \1. Similarly applying the H gate to the \1 state creates an equal superposition of \0 and \1 with an additional negative sign on the \1 state:
+
+\begin{equation}
+\label{equ:hadamardverification2}
+H \otimes \ket{1} = \begin{pmatrix}
+ \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\ 
+ \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}
+ \end{pmatrix} \begin{pmatrix}
+ 0 \\ 
+ 1
+ \end{pmatrix} = \begin{pmatrix}
+ \frac{1}{\sqrt{2}} \\ 
+ -\frac{1}{\sqrt{2}}
+ \end{pmatrix} = \frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}
+\end{equation}
+
+Fig.~\ref{img:blochhgate} illustrates how the H gate first rotates the qubit around the y-axis by $\frac{\pi}{2}$ radians followed by a $\pi$ rotation around the x-axis.
+
+\begin{figure}[ht]
+   \centering
+   \includegraphics[width=0.8\textwidth]{img/blochhadamardnielsenchuang.png}
+   \caption{Visualization of the Hadamard gate on the Bloch sphere, acting on the input state $\ket{q} = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}$.\textsuperscript{2}}
+   \label{img:blochhgate}
+\end{figure}
+
+\footnotetext[2]{Reprinted from Michael A. Nielsen and Isaac L. Chuang. Quantum Computation and Quantum Information. Cambridge University Press, 2000. Copyright 2010 by Nielsen \& Chuang.}
+
+%\begin{figure}[ht]
+%   \centering
+%   \includegraphics[width=0.5\textwidth]{img/blochhadamard.png}
+%   \caption{Visualization of the H gate on the Bloch sphere. Initial state (black) transformed to final state (red).}
+%   \label{img:blochhgate}
+%\end{figure}
+
+Omitting the proof, from Equ.~\ref{equ:hadamardverification1} and Equ.~\ref{equ:hadamardverification2} one can easily see that the H gate is a Hermitian matrix which means it is its own Hermitian conjugate and inverse:
+
+\begin{align}
+HH &= HH^\dagger = \mathbb{1} \\
+H &= H^{-1} = H^\dagger
+\end{align}
+
+\subsubsection{$\frac{\pi}{2}$ Rotation (S,S$^\dagger$) Gates}
+\label{subsubsubsec:cliffordgates}
+
+The S and S$^\dagger$ gates make it possible to reach more points on the Bloch sphere since they introduce $\frac{\pi}{2}$ rotations around the z-axis. The S gate is defined to be the square root of the Z gate and it is not Hermitian giving rise to the following two matrices: 
+
+\begin{equation}
+S = \sqrt{Z} = \begin{pmatrix}
+ 1 & 0 \\ 
+ 0 & i
+ \end{pmatrix}
+ \quad \quad \quad \quad
+S^\dagger = \begin{pmatrix}
+ 1 & 0 \\ 
+ 0 & -i
+ \end{pmatrix}
+\end{equation}
+
+The S gate simply adds an imaginary phase to the \1 state,
+
+\begin{equation}
+\label{equ:sverification}
+S \otimes \ket{\psi} = S \otimes (\alpha \ket{0} + \beta \ket{1}) = \begin{pmatrix}
+ 1 & 0 \\ 
+ 0 & i
+ \end{pmatrix} \begin{pmatrix}
+ \alpha  \\ 
+ \beta
+ \end{pmatrix} = \begin{pmatrix}
+ \alpha  \\ 
+ i\beta
+ \end{pmatrix} = \alpha \ket{0} + i\beta \ket{1}
+\end{equation}
+
+Visually this corresponds to a $\frac{\pi}{2}$ rotation around the z-axis as shown in Fig.~\ref{img:blochsgate}. In contrast, the S$^\dagger$ gate performs the inverse action and therefore rotates the qubit by $-\frac{\pi}{2}$ radians around the z-axis.
+
+\begin{figure}[ht]
+   \centering
+   \includegraphics[width=0.5\textwidth]{img/blochsgate.png}
+   \caption{Visualization of the S gate on the Bloch sphere. Initial state (black) transformed to final state (red).}
+   \label{img:blochsgate}
+\end{figure}
+
+In contrast to all previously introduced gates, the S gate is not its own inverse or Hermitian conjugate. However, applying the S gate four times yields the identity matrix since it corresponds to a $2\pi$ rotation around the z-axis,
+
+\begin{equation}
+SSSS = \mathbb{1} = SS^\dagger
+\end{equation}
+
+\subsubsection{$\frac{\pi}{4}$ Rotation (T,T$^\dagger$) Gates}
+\label{subsubsubsec:noncliffordgates}
+
+Until this point, all introduced single qubit gates are part of the so-called Clifford group. The Gottesmann-Knill theorem states that all quantum circuits consisting only of Clifford gates can be efficiently simulated on a classical computer (citation!). To harness the full potential of quantum computation, one needs to add a non-Clifford gate to the quantum gate set. The T and T$^\dagger$ gates are such non-Clifford gates and are defined as follows,
+
+\begin{equation}
+T = \sqrt{S} = \begin{pmatrix}
+ 1 & 0 \\ 
+ 0 & e^{\frac{i\pi}{4}}
+ \end{pmatrix}
+\quad \quad \quad \quad
+T^\dagger = \begin{pmatrix}
+ 1 & 0 \\ 
+ 0 & e^{-\frac{i\pi}{4}}
+ \end{pmatrix}
+\end{equation}
+
+On the Bloch sphere, the T gate corresponds to a $\frac{\pi}{4}$ rotation around the z-axis as it can be seen in Fig.~\ref{img:blochtgate}. Consequently, the T$^\dagger$ gate constitutes a $-\frac{\pi}{4}$ rotation around the z-axis.
+
+\begin{figure}[ht]
+   \centering
+   \includegraphics[width=0.5\textwidth]{img/blochtgate.png}
+   \caption{Visualization of the T gate on the Bloch sphere. Initial state (black) transformed to final state (red).}
+   \label{img:blochtgate}
+\end{figure}
+
+Similar to the S gate, applying the T gate eight times yields the identity matrix since eight $\frac{\pi}{4}$ rotations make a full $2\pi$ z-rotation.
+
+\begin{equation}
+TTTTTTTT = \mathbb{1} = TT^\dagger
+\end{equation}

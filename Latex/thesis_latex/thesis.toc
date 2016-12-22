@@ -1,31 +1,33 @@
 \contentsline {chapter}{Abstract}{v}
 \contentsline {chapter}{Nomenclature}{vii}
 \contentsline {chapter}{\numberline {1}Introduction}{1}
-\contentsline {section}{\numberline {1.1}Quantum Bits}{1}
-\contentsline {subsection}{\numberline {1.1.1}Single Qubit Systems}{1}
-\contentsline {subsection}{\numberline {1.1.2}Multiple Qubit Systems}{3}
-\contentsline {subsection}{\numberline {1.1.3}Entanglement}{4}
-\contentsline {section}{\numberline {1.2}Quantum Logic Gates}{4}
-\contentsline {subsection}{\numberline {1.2.1}Single Qubit Gates}{4}
-\contentsline {subsubsection}{Identity Gate}{4}
-\contentsline {subsubsection}{Qubit Flip (X) Gate}{5}
-\contentsline {subsubsection}{Phase Flip (Z) Gate}{6}
-\contentsline {subsubsection}{Qubit and Phase Flip (Y) Gate}{6}
-\contentsline {subsubsection}{Hadamard (H) Gate}{7}
-\contentsline {subsubsection}{$\frac {\pi }{2}$ Rotation (S,S$^\dagger $) Gates}{9}
-\contentsline {subsubsection}{$\frac {\pi }{4}$ Rotation (T,T$^\dagger $) Gates}{10}
-\contentsline {subsection}{\numberline {1.2.2}Multiple Qubit Gates}{10}
-\contentsline {subsubsection}{Controlled NOT Gate}{10}
-\contentsline {subsubsection}{Toffoli Gate}{11}
-\contentsline {subsubsection}{nCNOT Gate}{12}
-\contentsline {subsubsection}{Controlled U Gate}{12}
-\contentsline {section}{\numberline {1.3}Qubit Measurements}{13}
-\contentsline {subsection}{\numberline {1.3.1}Standard Basis Measurement}{13}
-\contentsline {subsection}{\numberline {1.3.2}Bloch Measurement (?)}{13}
-\contentsline {section}{\numberline {1.4}Classical Machine Learning}{13}
-\contentsline {subsection}{\numberline {1.4.1}k-nearest Neighbour Algorithm}{13}
-\contentsline {section}{\numberline {1.5}Quantum Machine Learning}{13}
-\contentsline {subsection}{\numberline {1.5.1}Quantum k-nearest Neighbour Algorithm}{13}
-\contentsline {subsection}{\numberline {1.5.2}Quantum State Preparation Algorithms}{13}
-\contentsline {section}{\numberline {1.6}Research Question}{13}
-\contentsline {chapter}{References}{15}
+\contentsline {section}{\numberline {1.1}Research Question}{1}
+\contentsline {chapter}{\numberline {2}Theoretical Foundations and Methods}{3}
+\contentsline {section}{\numberline {2.1}Quantum Bits}{3}
+\contentsline {subsection}{\numberline {2.1.1}Single Qubit Systems}{3}
+\contentsline {subsection}{\numberline {2.1.2}Multiple Qubit Systems}{5}
+\contentsline {subsection}{\numberline {2.1.3}Entanglement}{6}
+\contentsline {section}{\numberline {2.2}Quantum Logic Gates}{6}
+\contentsline {subsection}{\numberline {2.2.1}Single Qubit Gates}{6}
+\contentsline {subsection}{\numberline {2.2.2}Multiple Qubit Gates}{6}
+\contentsline {subsubsection}{Controlled NOT Gate}{6}
+\contentsline {subsubsection}{Toffoli Gate}{7}
+\contentsline {subsubsection}{nCNOT Gate}{7}
+\contentsline {section}{\numberline {2.3}Classical Machine Learning}{8}
+\contentsline {subsection}{\numberline {2.3.1}k-nearest Neighbour Algorithm}{8}
+\contentsline {section}{\numberline {2.4}Methods (own chapter?)}{8}
+\contentsline {subsection}{\numberline {2.4.1}Programming environment}{8}
+\contentsline {subsection}{\numberline {2.4.2}IBMs QC}{8}
+\contentsline {chapter}{\numberline {3}Quantum-enhanced Machine Learning}{11}
+\contentsline {subsection}{\numberline {3.0.1}Quantum k-nearest Neighbour Algorithm}{11}
+\contentsline {subsection}{\numberline {3.0.2}Quantum State Preparation Algorithms}{11}
+\contentsline {chapter}{\numberline {4}Working with \LaTeX \ }{13}
+\contentsline {section}{\numberline {4.1}Headings}{13}
+\contentsline {section}{\numberline {4.2}References and Footnotes}{13}
+\contentsline {section}{\numberline {4.3}Lists}{13}
+\contentsline {section}{\numberline {4.4}Tables}{14}
+\contentsline {section}{\numberline {4.5}Working with Units}{15}
+\contentsline {section}{\numberline {4.6}Including Graphics}{15}
+\contentsline {section}{\numberline {4.7}Equations}{17}
+\contentsline {section}{\numberline {4.8}Including Code in your Document}{17}
+\contentsline {chapter}{References}{18}

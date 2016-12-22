@@ -9,11 +9,19 @@
 \usepackage{ragged2e}
 \usepackage{eurosym}
 \usepackage{amsmath}
+\usepackage{array}
 
 % Defining some new mathematics commands
 \newcommand*{\colvec}[1]{\begin{pmatrix}#1\end{pmatrix}}
 \newcommand*{\0}{$\ket{0}$}
 \newcommand*{\1}{$\ket{1}$}
+\newcommand*{\Title}{A very long table heading}%
+\newcommand*{\TitleInParbox}{\parbox[c]{0.3\linewidth}{\Title}}%
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
 
 \usepackage[english,bt]{ethidsc} % Special IDSC styles and commands      	
 \usepackage{apacite}
@@ -28,7 +36,8 @@
 
 
 % Title page (please fill in)___________________________________________________
-\title{Quantum Machine Learning}
+\title{Quantum-enhanced machine learning:
+Implementing a quantum k-nearest neighbour algorithm}
 
 
 \studentA{Mark Fingerhuth}
@@ -44,7 +53,7 @@
 \supervision{Prof. Francesco Petruccione\\ Dr. Fabrice Birembaut}
 \date{January 2017}
 
-\identification{IDSC-XX-YY-ZZ} 		% Project identifier
+%\identification{} 		% Project identifier
 
 %\infopage %includes the last page
 %\declaration
@@ -68,8 +77,10 @@
 
 \input{chapters/introduction}
 \cleardoublepage
-%\input{chapters/materialsandmethods}
-%\cleardoublepage
+\input{chapters/theoreticalfoundationsandmethods}
+\cleardoublepage
+\input{chapters/quantummachinelearning}
+\cleardoublepage
 %\input{chapters/resultsanddiscussion}
 %\cleardoublepage
 %\input{chapters/outlook}
@@ -78,7 +89,7 @@
 %\cleardoublepage
 %\input{chapters/personalreflection}
 %\cleardoublepage
-%\input{chapters/howto}
+\input{chapters/howto}
 %\cleardoublepage
 % \input{}
 % \cleardoublepage

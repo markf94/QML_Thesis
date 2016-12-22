@@ -1,0 +1,46 @@
+%
+% File:   cnotcircuit.qasm
+% Date:   22-Mar-04
+% Author: Mark Fingerhuth
+% 
+% Two-qubit controlled-U gate
+% 
+% 
+% 	qubit	q0
+% 	qubit	q1
+% 
+% 	cnot	q0,q1
+
+%  Time 01:
+%    Gate 00 cnot(q0,q1)
+
+% Qubit circuit matrix:
+%
+% q0: gAxA, n  
+% q1: gAxB, n  
+
+\documentclass[11pt]{article}
+\input{xyqcirc.tex}
+
+% definitions for the circuit elements
+
+\def\gAxA{\b\w\A{gAxA}}
+\def\gAxB{\o\w\A{gAxB}}
+
+% definitions for bit labels and initial states
+
+\def\bA{ \q{q_{0}}}
+\def\bB{ \q{q_{1}}}
+
+% The quantum circuit as an xymatrix
+
+\xymatrix@R=5pt@C=10pt{
+    \bA & \gAxA &\n  
+\\  \bB & \gAxB &\n  
+%
+% Vertical lines and other post-xymatrix latex
+%
+\ar@{-}"gAxB";"gAxA"
+}
+
+\end{document}

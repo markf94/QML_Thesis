@@ -1,0 +1,51 @@
+%
+% File:   ccnotcircuit.qasm
+% Date:   22-Mar-04
+% Author: Mark Fingerhuth
+% 
+% Two-qubit controlled-U gate
+% 
+% 
+% 	qubit	q0
+% 	qubit	q1
+% 	qubit	q2
+% 
+% 	toffoli q0,q1,q2
+
+%  Time 01:
+%    Gate 00 toffoli(q0,q1,q2)
+
+% Qubit circuit matrix:
+%
+% q0: gAxA, n  
+% q1: gAxB, n  
+% q2: gAxC, n  
+
+\documentclass[11pt]{article}
+\input{xyqcirc.tex}
+
+% definitions for the circuit elements
+
+\def\gAxA{\b\w\A{gAxA}}
+\def\gAxB{\b\w\A{gAxB}}
+\def\gAxC{\o\w\A{gAxC}}
+
+% definitions for bit labels and initial states
+
+\def\bA{ \q{q_{0}}}
+\def\bB{ \q{q_{1}}}
+\def\bC{ \q{q_{2}}}
+
+% The quantum circuit as an xymatrix
+
+\xymatrix@R=5pt@C=10pt{
+    \bA & \gAxA &\n  
+\\  \bB & \gAxB &\n  
+\\  \bC & \gAxC &\n  
+%
+% Vertical lines and other post-xymatrix latex
+%
+\ar@{-}"gAxC";"gAxA"\ar@{-}"gAxC";"gAxB"
+}
+
+\end{document}

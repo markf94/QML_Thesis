@@ -1,0 +1,40 @@
+%
+% File:   hcircuit.qasm
+% Date:   22-Mar-04
+% Author: Mark Fingerhuth
+% 
+% Two-qubit controlled-U gate
+% 
+% 
+% 	qubit	q0
+% 
+% 	H	q0
+
+%  Time 01:
+%    Gate 00 H(q0)
+
+% Qubit circuit matrix:
+%
+% q0: gAxA, n  
+
+\documentclass[11pt]{article}
+\input{xyqcirc.tex}
+
+% definitions for the circuit elements
+
+\def\gAxA{\op{H}\w\A{gAxA}}
+
+% definitions for bit labels and initial states
+
+\def\bA{ \q{q_{0}}}
+
+% The quantum circuit as an xymatrix
+
+\xymatrix@R=5pt@C=10pt{
+    \bA & \gAxA &\n  
+%
+% Vertical lines and other post-xymatrix latex
+%
+}
+
+\end{document}
