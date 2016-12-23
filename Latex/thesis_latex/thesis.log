@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  22 DEC 2016 17:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  23 DEC 2016 20:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -646,28 +646,31 @@ Package: apacite 2013/07/21 v6.03 APA citation
 \bibparsep=\skip81
 \bibitemsep=\skip82
 \biblabelsep=\skip83
-) (./thesis.aux)
+) (./thesis.aux
+
+LaTeX Warning: Label `equ: simplequbit' multiply defined.
+
+)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 62.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 62.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 57.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 57.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    ... okay on input line 57.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -727,7 +730,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 62.
+LaTeX Info: Redefining \selectfont on input line 57.
 \c@lstlisting=\count162
 
 *geometry* detected driver: dvipdfm
@@ -777,39 +780,39 @@ Package epstopdf Info: Source file: <img/UM_logo.eps>
 (epstopdf)                    size: 11108 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/UM_logo-eps-converted-
 to.pdf img/UM_logo.eps>
-(epstopdf)             \includegraphics on input line 64.
+(epstopdf)             \includegraphics on input line 59.
 Package epstopdf Info: Output file is already uptodate.
 
 <img/UM_logo-eps-converted-to.pdf, id=1, 445.665pt x 114.4275pt>
 File: img/UM_logo-eps-converted-to.pdf Graphic file (type pdf)
 
 <use img/UM_logo-eps-converted-to.pdf>
-Package pdftex.def Info: img/UM_logo-eps-converted-to.pdf used on input line 64
+Package pdftex.def Info: img/UM_logo-eps-converted-to.pdf used on input line 59
 .
 (pdftex.def)             Requested size: 221.6283pt x 56.9055pt.
 
-Overfull \hbox (10.45692pt too wide) in paragraph at lines 64--64
+Overfull \hbox (10.45692pt too wide) in paragraph at lines 59--59
 |  []  
  []
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 64.
+LaTeX Font Info:    Try loading font information for U+msa on input line 59.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 64.
+LaTeX Font Info:    Try loading font information for U+msb on input line 59.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+bbold on input line 64.
+LaTeX Font Info:    Try loading font information for U+bbold on input line 59.
 
 (/usr/share/texlive/texmf-dist/tex/latex/bbold/Ubbold.fd)
 <img/logo.jpeg, id=2, 334.6101pt x 144.54pt>
 File: img/logo.jpeg Graphic file (type jpg)
  <use img/logo.jpeg>
-Package pdftex.def Info: img/logo.jpeg used on input line 64.
+Package pdftex.def Info: img/logo.jpeg used on input line 59.
 (pdftex.def)             Requested size: 131.733pt x 56.9055pt.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 64.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 59.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -851,317 +854,249 @@ img/UM_logo-eps-converted-to.pdf> <./img/logo.jpeg>] [2
 ])
 (./chapters/introduction.tex
 Chapter 1.
-) [1
 
-] [2
+LaTeX Warning: Citation `bigdata' undefined on input line 8.
 
-] (./chapters/theoreticalfoundationsandmethods.tex
+
+LaTeX Warning: Citation `bekkerman2011scaling' undefined on input line 8.
+
+
+LaTeX Warning: Citation `shor1994' undefined on input line 18.
+
+[1
+
+]) [2] (./chapters/theoreticalfoundationsandmethods.tex
 Chapter 2.
 [3
 
-] <img/blochsphere.png, id=64, 2007.5pt x 2278.5125pt>
+
+] <img/blochsphere.png, id=63, 2007.5pt x 2278.5125pt>
 File: img/blochsphere.png Graphic file (type png)
 
 <use img/blochsphere.png>
-Package pdftex.def Info: img/blochsphere.png used on input line 76.
+Package pdftex.def Info: img/blochsphere.png used on input line 78.
 (pdftex.def)             Requested size: 140.53935pt x 159.51216pt.
  [4] [5 <./img/blochsphere.png>]
-Overfull \hbox (12.63948pt too wide) in paragraph at lines 181--181
+Overfull \hbox (12.63948pt too wide) in paragraph at lines 183--183
  \T1/cmr/m/n/10 Gate| 
  []
 
-<img/identitycircuit.png, id=78, 900.36375pt x 410.53375pt>
+<img/identitycircuit.png, id=77, 900.36375pt x 410.53375pt>
 File: img/identitycircuit.png Graphic file (type png)
 
 <use img/identitycircuit.png>
-Package pdftex.def Info: img/identitycircuit.png used on input line 182.
+Package pdftex.def Info: img/identitycircuit.png used on input line 184.
 (pdftex.def)             Requested size: 42.68173pt x 19.4567pt.
 
-<img/xcircuit.png, id=79, 911.405pt x 418.56375pt>
+<img/xcircuit.png, id=78, 911.405pt x 418.56375pt>
 File: img/xcircuit.png Graphic file (type png)
  <use img/xcircuit.png>
-Package pdftex.def Info: img/xcircuit.png used on input line 186.
+Package pdftex.def Info: img/xcircuit.png used on input line 188.
 (pdftex.def)             Requested size: 42.68173pt x 19.60095pt.
 
-<img/blochxgate.png, id=80, 439.6425pt x 380.42125pt>
+<img/blochxgate.png, id=79, 439.6425pt x 380.42125pt>
 File: img/blochxgate.png Graphic file (type png)
  <use img/blochxgate.png>
-Package pdftex.def Info: img/blochxgate.png used on input line 189.
+Package pdftex.def Info: img/blochxgate.png used on input line 191.
 (pdftex.def)             Requested size: 85.35696pt x 73.85387pt.
 
-<img/ycircuit.png, id=81, 870.25125pt x 413.545pt>
+<img/ycircuit.png, id=80, 870.25125pt x 413.545pt>
 File: img/ycircuit.png Graphic file (type png)
  <use img/ycircuit.png>
-Package pdftex.def Info: img/ycircuit.png used on input line 190.
+Package pdftex.def Info: img/ycircuit.png used on input line 192.
 (pdftex.def)             Requested size: 42.68173pt x 20.28091pt.
 
-<img/blochygate.png, id=82, 434.62375pt x 370.38374pt>
+<img/blochygate.png, id=81, 434.62375pt x 370.38374pt>
 File: img/blochygate.png Graphic file (type png)
 
 <use img/blochygate.png>
-Package pdftex.def Info: img/blochygate.png used on input line 193.
+Package pdftex.def Info: img/blochygate.png used on input line 195.
 (pdftex.def)             Requested size: 85.35696pt x 72.736pt.
- <img/zcircuit.png, id=83, 852.18375pt x 415.5525pt>
+ <img/zcircuit.png, id=82, 852.18375pt x 415.5525pt>
 File: img/zcircuit.png Graphic file (type png)
 
 <use img/zcircuit.png>
-Package pdftex.def Info: img/zcircuit.png used on input line 194.
+Package pdftex.def Info: img/zcircuit.png used on input line 196.
 (pdftex.def)             Requested size: 42.68173pt x 20.81053pt.
- <img/blochzgate.png, id=84, 436.63126pt x 373.395pt>
+ <img/blochzgate.png, id=83, 436.63126pt x 373.395pt>
 File: img/blochzgate.png Graphic file (type png)
 
 <use img/blochzgate.png>
-Package pdftex.def Info: img/blochzgate.png used on input line 197.
+Package pdftex.def Info: img/blochzgate.png used on input line 199.
 (pdftex.def)             Requested size: 85.35696pt x 72.9912pt.
- <img/hcircuit.png, id=85, 897.3525pt x 413.545pt>
+ <img/hcircuit.png, id=84, 897.3525pt x 413.545pt>
 File: img/hcircuit.png Graphic file (type png)
 
 <use img/hcircuit.png>
-Package pdftex.def Info: img/hcircuit.png used on input line 198.
+Package pdftex.def Info: img/hcircuit.png used on input line 200.
 (pdftex.def)             Requested size: 42.68173pt x 19.66882pt.
 
-Overfull \hbox (16.84325pt too wide) in paragraph at lines 198--201
+Overfull \hbox (16.84325pt too wide) in paragraph at lines 200--203
  []$| 
  []
 
-<img/blochhadamard.png, id=86, 438.63875pt x 380.42125pt>
+<img/blochhadamard.png, id=85, 438.63875pt x 380.42125pt>
 File: img/blochhadamard.png Graphic file (type png)
 
 <use img/blochhadamard.png>
-Package pdftex.def Info: img/blochhadamard.png used on input line 201.
+Package pdftex.def Info: img/blochhadamard.png used on input line 203.
 (pdftex.def)             Requested size: 85.35696pt x 74.02802pt.
 
-<img/scircuit.png, id=87, 781.92125pt x 394.47375pt>
+<img/scircuit.png, id=86, 781.92125pt x 394.47375pt>
 File: img/scircuit.png Graphic file (type png)
  <use img/scircuit.png>
-Package pdftex.def Info: img/scircuit.png used on input line 202.
+Package pdftex.def Info: img/scircuit.png used on input line 204.
 (pdftex.def)             Requested size: 42.68173pt x 21.5306pt.
 
-<img/blochsgate.png, id=88, 435.6275pt x 376.40625pt>
+<img/blochsgate.png, id=87, 435.6275pt x 376.40625pt>
 File: img/blochsgate.png Graphic file (type png)
  <use img/blochsgate.png>
-Package pdftex.def Info: img/blochsgate.png used on input line 205.
+Package pdftex.def Info: img/blochsgate.png used on input line 207.
 (pdftex.def)             Requested size: 85.35696pt x 73.75214pt.
 
-Overfull \hbox (1.18497pt too wide) in paragraph at lines 206--206
+Overfull \hbox (1.18497pt too wide) in paragraph at lines 208--208
  \T1/cmr/m/n/10 S$[]$| 
  []
 
-<img/sdcircuit.png, id=89, 896.34875pt x 416.55624pt>
+<img/sdcircuit.png, id=88, 896.34875pt x 416.55624pt>
 File: img/sdcircuit.png Graphic file (type png)
  <use img/sdcircuit.png>
-Package pdftex.def Info: img/sdcircuit.png used on input line 206.
+Package pdftex.def Info: img/sdcircuit.png used on input line 208.
 (pdftex.def)             Requested size: 42.68173pt x 19.83112pt.
 
-<img/tcircuit.png, id=90, 844.15375pt x 414.54875pt>
+<img/tcircuit.png, id=89, 844.15375pt x 414.54875pt>
 File: img/tcircuit.png Graphic file (type png)
  <use img/tcircuit.png>
-Package pdftex.def Info: img/tcircuit.png used on input line 210.
+Package pdftex.def Info: img/tcircuit.png used on input line 212.
 (pdftex.def)             Requested size: 42.68173pt x 20.95636pt.
 
-Overfull \hbox (1.6024pt too wide) in paragraph at lines 210--213
+Overfull \hbox (1.6024pt too wide) in paragraph at lines 212--215
  []$| 
  []
 
-<img/blochtgate.png, id=91, 429.605pt x 378.41376pt>
+<img/blochtgate.png, id=90, 429.605pt x 378.41376pt>
 File: img/blochtgate.png Graphic file (type png)
  <use img/blochtgate.png>
-Package pdftex.def Info: img/blochtgate.png used on input line 213.
+Package pdftex.def Info: img/blochtgate.png used on input line 215.
 (pdftex.def)             Requested size: 85.35696pt x 75.18483pt.
 
-Overfull \hbox (2.85123pt too wide) in paragraph at lines 214--214
+Overfull \hbox (2.85123pt too wide) in paragraph at lines 216--216
  \T1/cmr/m/n/10 T$[]$| 
  []
 
-<img/tdcircuit.png, id=92, 920.43875pt x 421.575pt>
+<img/tdcircuit.png, id=91, 920.43875pt x 421.575pt>
 File: img/tdcircuit.png Graphic file (type png)
  <use img/tdcircuit.png>
-Package pdftex.def Info: img/tdcircuit.png used on input line 214.
+Package pdftex.def Info: img/tdcircuit.png used on input line 216.
 (pdftex.def)             Requested size: 42.68173pt x 19.54256pt.
 
-Overfull \hbox (7.85242pt too wide) in paragraph at lines 214--217
+Overfull \hbox (7.85242pt too wide) in paragraph at lines 216--219
  []$| 
  []
 
 
-Overfull \hbox (6.73814pt too wide) in paragraph at lines 218--218
+Overfull \hbox (6.73814pt too wide) in paragraph at lines 220--220
  \T1/cmr/m/n/10 ZM| 
  []
 
-<img/measurecircuit.png, id=93, 931.48pt x 405.515pt>
+<img/measurecircuit.png, id=92, 931.48pt x 405.515pt>
 File: img/measurecircuit.png Graphic file (type png)
 
 <use img/measurecircuit.png>
-Package pdftex.def Info: img/measurecircuit.png used on input line 218.
+Package pdftex.def Info: img/measurecircuit.png used on input line 220.
 (pdftex.def)             Requested size: 42.68173pt x 18.57533pt.
 
-Overfull \hbox (35.63034pt too wide) in paragraph at lines 180--222
+Overfull \hbox (35.63034pt too wide) in paragraph at lines 182--224
 [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 60.51422pt on input line 222.
+LaTeX Warning: Float too large for page by 60.51422pt on input line 224.
 
-[6] <img/cnotcircuit.png, id=97, 472.76625pt x 710.655pt>
+[6] <img/cnotcircuit.png, id=96, 472.76625pt x 710.655pt>
 File: img/cnotcircuit.png Graphic file (type png)
 
 <use img/cnotcircuit.png>
-Package pdftex.def Info: img/cnotcircuit.png used on input line 289.
+Package pdftex.def Info: img/cnotcircuit.png used on input line 291.
 (pdftex.def)             Requested size: 42.68173pt x 64.15137pt.
 
-<img/ccnotcircuit.png, id=98, 235.88126pt x 586.19pt>
+<img/ccnotcircuit.png, id=97, 235.88126pt x 586.19pt>
 File: img/ccnotcircuit.png Graphic file (type png)
 
 <use img/ccnotcircuit.png>
-Package pdftex.def Info: img/ccnotcircuit.png used on input line 298.
+Package pdftex.def Info: img/ccnotcircuit.png used on input line 300.
 (pdftex.def)             Requested size: 42.68173pt x 106.06421pt.
-File: img/identitycircuit.png Graphic file (type png)
- <use img/identitycircuit.png>
-Package pdftex.def Info: img/identitycircuit.png used on input line 311.
-(pdftex.def)             Requested size: 42.68173pt x 19.4567pt.
 
-Overfull \hbox (46.62343pt too wide) in paragraph at lines 287--317
+Overfull \hbox (46.62343pt too wide) in paragraph at lines 289--319
 [][] 
  []
 
-[7]) [8] [9 <./img/identitycircuit.png> <./img/xcircuit.png> <./img/blochxgate.
-png> <./img/ycircuit.png> <./img/blochygate.png> <./img/zcircuit.png> <./img/bl
-ochzgate.png> <./img/hcircuit.png> <./img/blochhadamard.png> <./img/scircuit.pn
-g> <./img/blochsgate.png> <./img/sdcircuit.png> <./img/tcircuit.png> <./img/blo
-chtgate.png> <./img/tdcircuit.png> <./img/measurecircuit.png>] [10 <./img/cnotc
-ircuit.png> <./img/ccnotcircuit.png>] (./chapters/quantummachinelearning.tex
+
+LaTeX Warning: Citation `Schuld2014' undefined on input line 368.
+
+
+LaTeX Warning: Citation `Schuld2016' undefined on input line 368.
+
+[7] <img/knn-concept.png, id=102, 385.44pt x 289.08pt>
+File: img/knn-concept.png Graphic file (type png)
+
+<use img/knn-concept.png>
+Package pdftex.def Info: img/knn-concept.png used on input line 372.
+(pdftex.def)             Requested size: 211.99265pt x 158.99448pt.
+) [8 <./img/knn-concept.png>] [9 <./img/identitycircuit.png> <./img/xcircuit.pn
+g> <./img/blochxgate.png> <./img/ycircuit.png> <./img/blochygate.png> <./img/zc
+ircuit.png> <./img/blochzgate.png> <./img/hcircuit.png> <./img/blochhadamard.pn
+g> <./img/scircuit.png> <./img/blochsgate.png> <./img/sdcircuit.png> <./img/tci
+rcuit.png> <./img/blochtgate.png> <./img/tdcircuit.png> <./img/measurecircuit.p
+ng>] [10 <./img/cnotcircuit.png> <./img/ccnotcircuit.png>] (./chapters/quantumm
+achinelearning.tex
 Chapter 3.
 ) [11
 
 
 ] [12
 
-] (./chapters/howto.tex
-Chapter 4.
-
-LaTeX Warning: Citation `optreg' undefined on input line 9.
-
-
-LaTeX Warning: Citation `motsys' undefined on input line 9.
-
-[13
-
-] [14]
-Package epstopdf Info: Source file: <img/k_surf.eps>
-(epstopdf)                    date: 2016-11-09 15:39:34
-(epstopdf)                    size: 49147 bytes
-(epstopdf)             Output file: <img/k_surf-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-11-09 17:44:50
-(epstopdf)                    size: 12465 bytes
-(epstopdf)             Command: <repstopdf --outfile=img/k_surf-eps-converted-t
-o.pdf img/k_surf.eps>
-(epstopdf)             \includegraphics on input line 137.
-Package epstopdf Info: Output file is already uptodate.
- <img/k_surf-eps-converted-to.pdf, id=130, 321.2pt x 245.91875pt>
-File: img/k_surf-eps-converted-to.pdf Graphic file (type pdf)
-
-<use img/k_surf-eps-converted-to.pdf>
-Package pdftex.def Info: img/k_surf-eps-converted-to.pdf used on input line 137
-.
-(pdftex.def)             Requested size: 320.09349pt x 245.07759pt.
- [15]
-Package epstopdf Info: Source file: <img/cycle_we.eps>
-(epstopdf)                    date: 2016-11-09 15:39:34
-(epstopdf)                    size: 46382 bytes
-(epstopdf)             Output file: <img/cycle_we-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-11-09 17:44:51
-(epstopdf)                    size: 14734 bytes
-(epstopdf)             Command: <repstopdf --outfile=img/cycle_we-eps-converted
--to.pdf img/cycle_we.eps>
-(epstopdf)             \includegraphics on input line 159.
-Package epstopdf Info: Output file is already uptodate.
-
-<img/cycle_we-eps-converted-to.pdf, id=138, 346.29375pt x 248.93pt>
-File: img/cycle_we-eps-converted-to.pdf Graphic file (type pdf)
-
-<use img/cycle_we-eps-converted-to.pdf>
-Package pdftex.def Info: img/cycle_we-eps-converted-to.pdf used on input line 1
-59.
-(pdftex.def)             Requested size: 204.85802pt x 147.26245pt.
-Package epstopdf Info: Source file: <img/cycle_ml.eps>
-(epstopdf)                    date: 2016-11-09 15:39:34
-(epstopdf)                    size: 47147 bytes
-(epstopdf)             Output file: <img/cycle_ml-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-11-09 17:44:51
-(epstopdf)                    size: 14706 bytes
-(epstopdf)             Command: <repstopdf --outfile=img/cycle_ml-eps-converted
--to.pdf img/cycle_ml.eps>
-(epstopdf)             \includegraphics on input line 163.
-Package epstopdf Info: Output file is already uptodate.
-
-<img/cycle_ml-eps-converted-to.pdf, id=139, 341.275pt x 248.93pt>
-File: img/cycle_ml-eps-converted-to.pdf Graphic file (type pdf)
-
-<use img/cycle_ml-eps-converted-to.pdf>
-Package pdftex.def Info: img/cycle_ml-eps-converted-to.pdf used on input line 1
-63.
-(pdftex.def)             Requested size: 204.85802pt x 149.4275pt.
- [16 <./img/k_surf-eps-converted-to.pdf> <./img/cycle_we-eps-converted-to.pdf> 
-<./img/cycle_ml-eps-converted-to.pdf>]
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2015/06/04 1.6 listings language file
-)
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 196.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
-LaTeX Font Info:    Try loading font information for TS1+pcr on input line 200.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pcr.fd
-File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
-)) (./thesis.bbl
-[17]) [18
+] (./thesis.bbl) [13
 
 ] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 15318 strings out of 493029
- 245726 string characters out of 6136235
- 389407 words of memory out of 5000000
- 18475 multiletter control sequences out of 15000+600000
- 34496 words of font info for 98 fonts, out of 8000000 for 9000
+ 14337 strings out of 493029
+ 234984 string characters out of 6136235
+ 351285 words of memory out of 5000000
+ 17530 multiletter control sequences out of 15000+600000
+ 21321 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 49i,20n,76p,764b,1899s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/
-fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/fonts/enc/dvips/cm-s
-uper/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/bbold-t
-ype1/bbold10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0
-700.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0900.pfb></usr/share/
-texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/pu
-blic/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx14
-40.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/t
-exmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/pub
-lic/cm-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm060
-0.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/te
-xmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/publ
-ic/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000
-.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/tex
-mf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/publi
-c/cm-super/sftt0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on thesis.pdf (28 pages, 1020983 bytes).
+ 49i,20n,76p,1126b,412s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/
+share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/ty
+pe1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/
+sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/s
+hare/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/typ
+e1/public/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
+frm0700.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/sh
+are/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type
+1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
+ti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0800.pfb>
+Output written on thesis.pdf (23 pages, 918170 bytes).
 PDF statistics:
- 261 PDF objects out of 1000 (max. 8388607)
- 171 compressed objects within 2 object streams
+ 196 PDF objects out of 1000 (max. 8388607)
+ 123 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 121 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 111 words of extra memory for PDF output out of 10000 (max. 10000000)
 

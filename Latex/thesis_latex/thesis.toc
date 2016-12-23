@@ -1,7 +1,7 @@
 \contentsline {chapter}{Abstract}{v}
 \contentsline {chapter}{Nomenclature}{vii}
 \contentsline {chapter}{\numberline {1}Introduction}{1}
-\contentsline {section}{\numberline {1.1}Research Question}{1}
+\contentsline {section}{\numberline {1.1}Research Question}{2}
 \contentsline {chapter}{\numberline {2}Theoretical Foundations and Methods}{3}
 \contentsline {section}{\numberline {2.1}Quantum Bits}{3}
 \contentsline {subsection}{\numberline {2.1.1}Single Qubit Systems}{3}
@@ -21,13 +21,4 @@
 \contentsline {chapter}{\numberline {3}Quantum-enhanced Machine Learning}{11}
 \contentsline {subsection}{\numberline {3.0.1}Quantum k-nearest Neighbour Algorithm}{11}
 \contentsline {subsection}{\numberline {3.0.2}Quantum State Preparation Algorithms}{11}
-\contentsline {chapter}{\numberline {4}Working with \LaTeX \ }{13}
-\contentsline {section}{\numberline {4.1}Headings}{13}
-\contentsline {section}{\numberline {4.2}References and Footnotes}{13}
-\contentsline {section}{\numberline {4.3}Lists}{13}
-\contentsline {section}{\numberline {4.4}Tables}{14}
-\contentsline {section}{\numberline {4.5}Working with Units}{15}
-\contentsline {section}{\numberline {4.6}Including Graphics}{15}
-\contentsline {section}{\numberline {4.7}Equations}{17}
-\contentsline {section}{\numberline {4.8}Including Code in your Document}{17}
-\contentsline {chapter}{References}{18}
+\contentsline {chapter}{References}{13}

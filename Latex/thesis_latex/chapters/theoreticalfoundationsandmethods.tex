@@ -3,6 +3,8 @@
 \section{Quantum Bits}
 \label{subsec:qubits}
 
+Give a very easy to understand example of an actual implementation of a physical qubit such that the reader can visualise what I am talking about.
+
 \subsection{Single Qubit Systems}
 \label{subsubsec:qubits}
 %Classical computers manipulate bits and the quantum equivalent is called a quantum bit, often abbreviated as qubit.
@@ -282,7 +284,7 @@ CNOT(\textcolor{red}{0},\textcolor{green}{1}) \otimes (\frac{1}{\sqrt{2}} \ket{\
 The last expression in Equ.~\ref{equ:cnotexamples} is one of the famous Bell states which are four maximally entangled states. Thus, this example demonstrates how the CNOT gate is crucial for the generation of entangled states since it applies the X gate to a qubit depending on the state of a second qubit.
 
 \begin{table}[ht!]
-\caption{Table of major multi-qubit quantum logic gates.}\vspace{1em}
+\caption{Table of major multi-qubit quantum logic gates. $c_j$ stands for the j\textsuperscript{th} control and $\mathbb{1}_k$ stands for the kxk identity matrix.}\vspace{1em}
 \label{tab:multiqubitgates}
 \begin{tabular}{ c  C{1.8cm}  C{2cm}  c C{3cm}}\hline
 Gate & Name & Circuit representation & Matrix & Description \\ \midrule
@@ -308,7 +310,7 @@ Toffoli & Controlled controlled NOT & \includegraphics[width=0.1\textwidth]{img/
  0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\ 
  0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\ 
  \end{pmatrix}$ & CCNOT($c_1$, $c_2$, target)\\\midrule
-nCNOT & n-controlled NOT & \includegraphics[width=0.1\textwidth]{img/identitycircuit.png}  & $\begin{pmatrix}
+nCNOT & n-controlled NOT & -  & $\begin{pmatrix}
  \mathbb{1}_{2^n-2} & 0 \\ 
  0 & X
  \end{pmatrix}$ & nCNOT($c_1$,..,$c_n$, target) \\\midrule
@@ -363,7 +365,17 @@ In practise, nCNOT gates are usually not implemented directly but decomposed int
 \subsection{k-nearest Neighbour Algorithm}
 \label{subsubsec:knearestneighbour}
 
-Use text from proposal and slightly adapt.
+The proposed research will be solely based on the two QML algorithms described in \cite{Schuld2014, Schuld2016}. Firstly, \cite{Schuld2014} is a quantum version of the distance weighted $k$-nearest neighbour (kNN) algorithm. For clarification, let us consider a training data set ${D}_{T}$ consisting of ten vectors ${v}_{0}, {v}_{1},..,{v}_{10}$ that are each assigned to either class $A$ or $B$. The training vectors are visualized as yellow and purple circles in Fig.~\ref{fig:knnconcept}. kNN is a non-parametric classifier that given a new unclassified input vector $x$ (red star in Fig.~\ref{fig:knnconcept}) considers the $k$ nearest neighbours (using a predefined measure of distance) and classifies $x$, based on a majority vote, as either $A$ or $B$. Thereby, $k$ is a positive integer, usually chosen to be small and its value determines the classification outcome. Namely, in the case $k = 3$ in Fig.~\ref{fig:knnconcept}, vector $x$ will be classified as class B (purple) but in the case $k = 6$ it will be labelled class A (yellow).
+
+\begin{figure}[!ht]
+      \centering
+       \includegraphics[scale=0.55]{img/knn-concept.png}
+       \caption[caption for kNN]{\label{fig:knnconcept} Visualization of a kNN classifier\footnotemark[1]}
+\end{figure}
+
+\footnotetext[1]{Reprinted from GitHub, Burton de Wilde, Retrieved September 13, 2016, from \url{http://bdewilde.github.io/blog/blogger/2012/10/26/classification-of-hand-written-digits-3/}. Copyright 2012 by Burton de Wilde. Reprinted with permission.}
+
+In the case of $k = 10$, $x$ would simply be assigned to the class with the most members. In this case, the training vectors should be given distance-dependent weights (such as $\frac{1}{distance}$) to increase the influence of closer vectors over more distant ones. Hereby, the advantages of the quantum version are the parallel computation of the distances between each training vector and the input vector as well as contracting distance computation and distance weighting into one computational step.
 
 \section{Methods (own chapter?)}
 \label{subsec:methods}
