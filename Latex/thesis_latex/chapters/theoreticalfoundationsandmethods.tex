@@ -1,9 +1,22 @@
 \chapter{Theoretical Foundations and Methods}\label{sec:theoryandmethods}
 
+CHECK FOOTNOTE NUMBERS IN WHOLE DOCUMENT!
 \section{Quantum Bits}
 \label{subsec:qubits}
 
 Give a very easy to understand example of an actual implementation of a physical qubit such that the reader can visualise what I am talking about.
+
+A good example for a physical implementation of a qubit is the single electron of a hydrogen atom sketched in Fig.~\ref{img:qubitatom}. Usually, the electron is found in its ground state which one can define as the \0 state of the qubit. Using a laser pulse the electron can be excited into the next highest valence shell which one can define as the \1 state of the qubit. 
+
+\begin{figure}[!ht]
+       \centering
+       \includegraphics[scale=0.07]{img/qubitimplementation.jpeg}
+       \caption{\label{fig:qubitatom} A simple example of a physical qubit using}
+\end{figure}
+
+\footnotetext[1]{Reprinted from RF Wireless World, n.d., Retrieved December 23, 2016, from \url{http://www.rfwireless-world.com/Terminology/Difference-between-Bit-and-Qubit.html}. Copyright 2012 by RF Wireless World. Reprinted with permission.}
+
+INTRODUCE CONCEPT OF SUPERPOSITION AND T1 and T2!
 
 \subsection{Single Qubit Systems}
 \label{subsubsec:qubits}
@@ -76,10 +89,10 @@ Qubit states on the Bloch equator such as the $\hat{x}$ and $\hat{y}$ coordinate
 \begin{figure}[!ht]
        \centering
        \includegraphics[scale=0.07]{img/blochsphere.png}
-       \caption{\label{fig:blochsphere} An arbitrary two-dimensional qubit $\ket{\psi}$ visualized on the Bloch sphere.$^{1}$}
+       \caption{\label{fig:blochsphere} An arbitrary two-dimensional qubit $\ket{\psi}$ visualized on the Bloch sphere.$^{2}$}
 \end{figure}
 
-\footnotetext[1]{Reprinted from Wikipedia, n.d., Retrieved September 7, 2016, from \url{https://en.wikipedia.org/wiki/Bloch_Sphere}. Copyright 2012 by Glosser.ca. Reprinted with permission.}
+\footnotetext[2]{Reprinted from Wikipedia, n.d., Retrieved September 7, 2016, from \url{https://en.wikipedia.org/wiki/Bloch_Sphere}. Copyright 2012 by Glosser.ca. Reprinted with permission.}
 
 \subsection{Multiple Qubit Systems}
 \label{subsec:multiplequbitsystems}
@@ -161,9 +174,6 @@ One can also first perform the single qubit operations on the respective qubits 
 
 This formalism can be extended to any number of qubits and 
 
-\subsection{Entanglement}
-\label{subsec:entanglement}
-
 Introduce entanglement and non-factorising tensor states here!
 
 %%%%% SECTION: Q LOGIC GATES
@@ -175,6 +185,81 @@ In order to perform quantum computations, tools, analogous to the classical logi
 
 \subsection{Single Qubit Gates}
 \label{subsubsec:singlequbitgates}
+
+
+
+\subsubsection{Qubit Flip (X) Gate}
+\label{subsubsubsec:xgate}
+
+The quantum equivalent of the classical NOT gate is called X gate and is given by the 1\textsuperscript{st} Pauli matrix:
+
+\begin{equation}
+\sigma_{1} = X = \begin{pmatrix}
+ 0 & 1 \\ 
+ 1 & 0
+ \end{pmatrix}
+\end{equation}
+
+The action of the X gate is easily verified by performing some linear algebra,
+
+\begin{equation}
+\label{equ:xverification1}
+X \otimes \ket{\psi} = X \otimes (\alpha \ket{0} + \beta \ket{1}) = \begin{pmatrix}
+ 0 & 1 \\ 
+ 1 & 0
+ \end{pmatrix} \begin{pmatrix}
+ \alpha  \\ 
+ \beta
+ \end{pmatrix} = \begin{pmatrix}
+ \beta  \\ 
+ \alpha
+ \end{pmatrix} = \beta \ket{0} + \alpha \ket{1}
+\end{equation}
+
+Thus, applying the X gate to qubit state $\ket{\psi}$ swaps the amplitudes of \0 and \1. More specifically, applying X to the \0 state results in the \1 state,
+
+\begin{equation}
+\label{equ:xverification2}
+X \otimes \ket{0} = \begin{pmatrix}
+ 0 & 1 \\ 
+ 1 & 0
+ \end{pmatrix} \begin{pmatrix}
+ 1  \\ 
+ 0
+ \end{pmatrix} = \begin{pmatrix}
+ 0  \\ 
+ 1 \end{pmatrix} =  \ket{1}
+\end{equation}
+
+And the \0 state is recovered when applying X again to the \1 state,
+
+\begin{equation}
+\label{equ:xverification3}
+X \otimes \ket{1} = \begin{pmatrix}
+ 0 & 1 \\ 
+ 1 & 0
+ \end{pmatrix} \begin{pmatrix}
+ 0  \\ 
+ 1
+ \end{pmatrix} = \begin{pmatrix}
+ 1  \\ 
+ 0 \end{pmatrix} =  \ket{0}
+\end{equation}
+
+On the Bloch sphere, the X gate corresponds to a anti-clockwise $\pi$ rotation around the x-axis as shown in Fig.~\ref{img:blochxgate}.
+
+\begin{figure}[ht]
+   \centering
+   \includegraphics[width=0.5\textwidth]{img/blochxgate.png}
+   \caption{Visualization of the X gate on the Bloch sphere. Initial state (black) transformed to final state (red).}
+   \label{img:blochxgate}
+\end{figure}
+
+From Equ.~\ref{equ:xverification1},~\ref{equ:xverification2} and~\ref{equ:xverification3} it follows that X is its own inverse as well as its own Hermitian conjugate:
+\begin{align}
+XX &= XX^\dagger = \mathbb{1} \\
+X &= X^{-1} = X^\dagger
+\end{align}
 
 \begin{table}[ht!]
 \caption{Table of major single-qubit quantum logic gates.}\vspace{1em}
@@ -370,10 +455,10 @@ The proposed research will be solely based on the two QML algorithms described i
 \begin{figure}[!ht]
       \centering
        \includegraphics[scale=0.55]{img/knn-concept.png}
-       \caption[caption for kNN]{\label{fig:knnconcept} Visualization of a kNN classifier\footnotemark[1]}
+       \caption[caption for kNN]{\label{fig:knnconcept} Visualization of a kNN classifier\footnotemark[3]}
 \end{figure}
 
-\footnotetext[1]{Reprinted from GitHub, Burton de Wilde, Retrieved September 13, 2016, from \url{http://bdewilde.github.io/blog/blogger/2012/10/26/classification-of-hand-written-digits-3/}. Copyright 2012 by Burton de Wilde. Reprinted with permission.}
+\footnotetext[3]{Reprinted from GitHub, Burton de Wilde, Retrieved September 13, 2016, from \url{http://bdewilde.github.io/blog/blogger/2012/10/26/classification-of-hand-written-digits-3/}. Copyright 2012 by Burton de Wilde. Reprinted with permission.}
 
 In the case of $k = 10$, $x$ would simply be assigned to the class with the most members. In this case, the training vectors should be given distance-dependent weights (such as $\frac{1}{distance}$) to increase the influence of closer vectors over more distant ones. Hereby, the advantages of the quantum version are the parallel computation of the distances between each training vector and the input vector as well as contracting distance computation and distance weighting into one computational step.
 
