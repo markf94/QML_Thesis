@@ -397,3 +397,98 @@ Similar to the S gate, applying the T gate eight times yields the identity matri
 \begin{equation}
 TTTTTTTT = \mathbb{1} = TT^\dagger
 \end{equation}
+
+\subsection{Multiple Qubit Gates}
+\label{subsubsec:multiqubitgates}
+
+\subsubsection{Controlled NOT Gate}
+\label{subsubsubsec:cnotgate}
+
+The most important two-qubit quantum gate is the controlled NOT or CNOT gate given by the following 4x4 matrix:
+\begin{equation}
+CNOT = \begin{pmatrix}
+ \mathbb{1} & 0 \\ 
+ 0 & X
+ \end{pmatrix} = \begin{pmatrix}
+ 1 & 0 & 0 & 0 \\ 
+ 0 & 1 & 0 & 0 \\
+ 0 & 0 & 0 & 1 \\
+ 0 & 0 & 1 & 0 \\
+ \end{pmatrix}
+\end{equation}
+
+The CNOT gate takes two qubits, control and target qubit, as input. If and only if the control qubit is in the \1 state, the NOT (X) gate is applied to the target qubit. In equations, the CNOT will always be followed by parantheses containing the control qubit followed by the target qubit (e.g. CNOT(0,1)). The input-output relation for the CNOT gate is given in the truth table~\ref{tab:cnottruthtable} below.
+
+\begin{table}[ht!]
+\begin{center}
+\caption{CNOT truth table with first qubit as control, second qubit as target.}\vspace{1ex}
+\label{tab:cnottruthtable}
+\begin{tabular}{llccc}\hline
+Input & Output \\ \hline
+00 & 00 \\
+01 & 01 \\
+10 & 11 \\
+11 & 10 \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+To demonstrate the usefulness of the CNOT gate consider starting with two unentangled qubits both in the \0 state,
+
+\begin{equation}
+\ket{\phi} = \ket{0} \otimes \ket{0} = \ket{00}
+\end{equation}
+
+Applying the H gate onto the first qubit yields the following (still unentangled) state:
+
+\begin{equation}
+(H \otimes \mathbb{1}) \ket{\phi} = (H \otimes \mathbb{1}) \ket{00} = \frac{1}{\sqrt{2}} \ket{00} + \frac{1}{\sqrt{2}} \ket{10} 
+\end{equation}
+
+Now consider applying the CNOT to this state whereby the control qubit is coloured \textcolor{red}{red} and the target qubit \textcolor{green}{green}.
+
+\begin{equation}
+\label{equ:cnotexamples}
+CNOT(\textcolor{red}{0},\textcolor{green}{1}) \otimes (\frac{1}{\sqrt{2}} \ket{\textcolor{red}{0}\textcolor{green}{0}} + \frac{1}{\sqrt{2}} \ket{\textcolor{red}{1}\textcolor{green}{0}}) = \frac{1}{\sqrt{2}} \ket{\textcolor{red}{0}\textcolor{green}{0}} + \frac{1}{\sqrt{2}} (\mathbb{1} \otimes X) \ket{\textcolor{red}{1}\textcolor{green}{0}} = \frac{1}{\sqrt{2}} \ket{\textcolor{red}{0}\textcolor{green}{0}} + \frac{1}{\sqrt{2}} \ket{\textcolor{red}{1}\textcolor{green}{1}}
+\end{equation}
+
+The last expression in Equ.~\ref{equ:cnotexamples} is one of the famous Bell states which are four maximally entangled states. Thus, this example demonstrates how the CNOT gate is crucial for the generation of entangled states since it applies the X gate to a qubit depending on the state of a second qubit.
+
+\subsubsection{Toffoli Gate}
+\label{subsubsubsec:toffoligate}
+
+The most important three-qubit gate is a controlled controlled NOT (CCNOT) quantum gate which is often referred to as the Toffoli gate. It is defined by the following 8x8 matrix:
+\begin{equation}
+Toffoli = CCNOT = \begin{pmatrix}
+ \mathbb{1}_6 & 0 \\ 
+ 0 & X
+ \end{pmatrix} = \begin{pmatrix}
+ 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+ 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
+ 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\ 
+ 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\ 
+ 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\ 
+ 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\ 
+ 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\ 
+ \end{pmatrix}
+\end{equation}
+
+where $\mathbb{1}_6$ is the 6x6 identity matrix.
+
+The Toffoli gate takes three inputs specified in parantheses, first the two control qubits and lastly the target qubit. If and only if both control qubits are in the \1 state the X gate is applied to the target qubit. Toffoli gates are usually decomposed into quantum circuits with CNOT and single-qubit gates in order to keep the set of quantum gates small \cite{shende2008cnot}.
+
+\subsubsection{nCNOT Gate}
+\label{subsubsubsec:ncnotgate}
+
+The nCNOT gate is the generalization of the CNOT and the Toffoli gate. It takes $n$ control qubits and one target qubit as input and if and only if all control qubits are in the \1 state the X gate is applied to the target. The nCNOT matrix representation is given by:
+ 
+\begin{equation}
+nCNOT = \begin{pmatrix}
+ \mathbb{1}_{2^n-2} & 0 \\ 
+ 0 & X
+ \end{pmatrix}
+\end{equation}
+
+In practise, nCNOT gates are usually not implemented directly but decomposed into larger quantum circuits consisting only of CNOT and single-qubit gates \cite{nielsen2010quantum}. However, such decompositions will not be relevant for this work.
+

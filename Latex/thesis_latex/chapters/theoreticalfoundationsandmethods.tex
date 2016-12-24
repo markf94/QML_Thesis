@@ -4,28 +4,30 @@ CHECK FOOTNOTE NUMBERS IN WHOLE DOCUMENT!
 \section{Quantum Bits}
 \label{subsec:qubits}
 
-Give a very easy to understand example of an actual implementation of a physical qubit such that the reader can visualise what I am talking about.
-
-A good example for a physical implementation of a qubit is the single electron of a hydrogen atom sketched in Fig.~\ref{img:qubitatom}. Usually, the electron is found in its ground state which one can define as the \0 state of the qubit. Using a laser pulse the electron can be excited into the next highest valence shell which one can define as the \1 state of the qubit. 
-
-\begin{figure}[!ht]
-       \centering
-       \includegraphics[scale=0.07]{img/qubitimplementation.jpeg}
-       \caption{\label{fig:qubitatom} A simple example of a physical qubit using}
-\end{figure}
-
-\footnotetext[1]{Reprinted from RF Wireless World, n.d., Retrieved December 23, 2016, from \url{http://www.rfwireless-world.com/Terminology/Difference-between-Bit-and-Qubit.html}. Copyright 2012 by RF Wireless World. Reprinted with permission.}
-
-INTRODUCE CONCEPT OF SUPERPOSITION AND T1 and T2!
+INTRODUCE CONCEPT OF T1 and T2!
 
 \subsection{Single Qubit Systems}
 \label{subsubsec:qubits}
 %Classical computers manipulate bits and the quantum equivalent is called a quantum bit, often abbreviated as qubit.
-Classical computers manipulate bits, whereas quantum computer's most fundamental unit is called a quantum bit, often abbreviated as qubit. Bits as well as qubits are binary entities, meaning they can only take the values 0 and 1. A classical non-probabilistic bit can only be in one of the two possible states at once. In contrast, qubits obey the laws of quantum mechanics, which gives rise to the powerful property that - besides being a definite 0 or 1 - they can also be in a superposition of the two states. Mathematically this is expressed as a linear combination of the states 0 and 1:
+Classical computers manipulate bits, whereas quantum computer's most fundamental unit is called a quantum bit, often abbreviated as qubit. Bits as well as qubits are binary entities, meaning they can only take the values 0 and 1.
+
+A good example for a physical implementation of a qubit is the single electron of a hydrogen atom sketched in Fig.~\ref{img:qubitatom}. Usually, the electron is found in its ground state which one can define as the \0 state of the qubit. Using a laser pulse the electron can be excited into the next highest valence shell which one can define as the \1 state of the qubit. After some time $t$ the electron will decohere to its ground state (\0) which is called the longitudinal coherence or amplitude damping time and is an important parameter for measuring qubit lifetimes.
+
+\begin{figure}[!ht]
+       \centering
+       \includegraphics[width=0.9\textwidth]{img/qubitimplementation.jpeg}
+       \caption{\label{fig:qubitatom} A simple example of a physical qubit using the electron of a hydrogen atom}
+\end{figure}
+
+\footnotetext[1]{Reprinted from RF Wireless World, n.d., Retrieved December 23, 2016, from \url{http://www.rfwireless-world.com/Terminology/Difference-between-Bit-and-Qubit.html}. Copyright 2012 by RF Wireless World. Reprinted with permission.}
+
+A classical non-probabilistic bit can only be in one of the two possible states at once. In contrast, qubits obey the laws of quantum mechanics, which gives rise to the powerful property that - besides being a definite 0 or 1 - they can also be in a superposition of the two states. Mathematically this is expressed as a linear combination of the states 0 and 1:
+
 \begin{equation}
 \label{equ: simplequbit}
 \ket{\psi} = \alpha \ket{0} + \beta \ket{1}
 \end{equation}
+
 where $\alpha$ and $\beta$ are complex coefficients ($\alpha, \beta \in \mathbb{C}$) and are often referred to as phase factors or amplitudes. \0 is the Dirac notation for the qubit being in state 0 and it represents a two-dimensional vector in a complex 2-D vector space (called Hilbert space $\mathcal{H}_{2}$). \0 and \1 are the computational basis states and they constitute an orthonormal basis of $\mathcal{H}_{2}$. For the sake of clarity, \0 and \1 can be thought of as the 2-D vectors shown below.
 \begin{equation}
 \label{equ: 0and1kets}
@@ -38,6 +40,8 @@ Subbing these vectors into Equ.~\ref{equ: simplequbit} yields the vector represe
 \ket{\psi} = \alpha \colvec{1\\0} + \beta \colvec{0\\1} = \colvec{\alpha\\\beta}
 \end{equation}
 
+Another important qubit lifetime parameter is the transversal coherence or phase damping time. It is measured by preparing the equal superposition $\frac{\ket{0}+\ket{1}}{\sqrt{2}}$ and due to inavoidable interaction with the environment after some time $t$ the quantum behaviour will be lost and the state will either be a definite \0 or \1.
+
 However, even though a qubit can be in a superposition of \0 and \1, when measured it will take the value \0 with a probability of
 \begin{equation}
 \label{equ:bornrule0}
@@ -49,7 +53,7 @@ and \1 with a probability of
 Prob(\ket{1}) = {|\beta|}^{2}
 \end{equation}
 
-The fact that the probability of measuring a particular state is equal the absolute value squared of the respective amplitude is called Born's rule (citation). Since the total probability of measuring any value has to be 1, the following normalization condition must be satisfied:
+The fact that the probability of measuring a particular state is equal the absolute value squared of the respective amplitude is called Born rule (citation). Since the total probability of measuring any value has to be 1, the following normalization condition must be satisfied:
 \begin{equation}
 \label{equ: normalization}
 {|\alpha|}^{2} + {|\beta|}^{2} =  1
@@ -184,14 +188,12 @@ Introduce entanglement and non-factorising tensor states here!
 In order to perform quantum computations, tools, analogous to the classical logic gates, are needed for qubit manipulation. Quantum logic gates are square matrices that can be visualized as rotations on the Bloch sphere. The following subsections will introduce the major single and multi qubit logic gates.
 
 \subsection{Single Qubit Gates}
-\label{subsubsec:singlequbitgates}
-
-
+\label{subsubsec:singlequbitgates} 
 
 \subsubsection{Qubit Flip (X) Gate}
 \label{subsubsubsec:xgate}
 
-The quantum equivalent of the classical NOT gate is called X gate and is given by the 1\textsuperscript{st} Pauli matrix:
+The quantum equivalent of the classical NOT logic gate is called X gate and is given by the 1\textsuperscript{st} Pauli matrix:
 
 \begin{equation}
 \sigma_{1} = X = \begin{pmatrix}
@@ -200,7 +202,7 @@ The quantum equivalent of the classical NOT gate is called X gate and is given b
  \end{pmatrix}
 \end{equation}
 
-The action of the X gate is easily verified by performing some linear algebra,
+The action of a quantum gate on a qubit state can be analysed using the gate's matrix and the qubit's vector representation. Applying some straightforward linear algebra yields:
 
 \begin{equation}
 \label{equ:xverification1}
@@ -231,7 +233,9 @@ X \otimes \ket{0} = \begin{pmatrix}
  1 \end{pmatrix} =  \ket{1}
 \end{equation}
 
-And the \0 state is recovered when applying X again to the \1 state,
+In terms of the example with the electron of a hydrogen atom shown in Fig.~\ref{img:qubitatom} consider the qubit initially being in state \0. Applying an X gate will flip the qubit into the \1 state which can be implemented in the lab by exciting the electron into the next highest electron valence shell using a controlled laser pulse.
+
+The \0 state is recovered when applying X again to the \1 state,
 
 \begin{equation}
 \label{equ:xverification3}
@@ -261,7 +265,9 @@ XX &= XX^\dagger = \mathbb{1} \\
 X &= X^{-1} = X^\dagger
 \end{align}
 
-\begin{table}[ht!]
+The action, circuit \& matrix representation and Bloch sphere visualization for the most important single-qubit quantum logic gates are summarised in Table~\ref{tab:singlequbitgates}  below.
+
+\begin{table}[H]
 \caption{Table of major single-qubit quantum logic gates.}\vspace{1em}
 \label{tab:singlequbitgates}
 \begin{tabular}{ C{0.3cm}  C{2cm}  C{1.5cm}  C{1.5cm} C{2.5cm} C{2cm} C{3.5cm}}\hline
@@ -331,9 +337,9 @@ CNOT = \begin{pmatrix}
  \end{pmatrix}
 \end{equation}
 
-The CNOT gate takes two qubits, control and target qubit, as input. If and only if the control qubit is in the \1 state, the NOT (X) gate is applied to the target qubit. In equations, the CNOT will always be followed by parantheses containing the control qubit followed by the target qubit (e.g. CNOT(0,1)). The input-output relation for the CNOT gate is given in Table~\ref{tab:cnottruthtable} below.
+The CNOT gate takes two qubits, control and target qubit, as input. If and only if the control qubit is in the \1 state, the NOT (X) gate is applied to the target qubit. In equations, the CNOT will always be followed by parantheses containing the control qubit followed by the target qubit (e.g. CNOT(0,1)). The input-output relation for the CNOT gate is given in the truth table~\ref{tab:cnottruthtable} below.
 
-\begin{table}[ht!]
+\begin{table}[H]
 \begin{center}
 \caption{CNOT truth table with first qubit as control, second qubit as target.}\vspace{1ex}
 \label{tab:cnottruthtable}
@@ -368,8 +374,10 @@ CNOT(\textcolor{red}{0},\textcolor{green}{1}) \otimes (\frac{1}{\sqrt{2}} \ket{\
 
 The last expression in Equ.~\ref{equ:cnotexamples} is one of the famous Bell states which are four maximally entangled states. Thus, this example demonstrates how the CNOT gate is crucial for the generation of entangled states since it applies the X gate to a qubit depending on the state of a second qubit.
 
-\begin{table}[ht!]
-\caption{Table of major multi-qubit quantum logic gates. $c_j$ stands for the j\textsuperscript{th} control and $\mathbb{1}_k$ stands for the kxk identity matrix.}\vspace{1em}
+The three most important multi qubit quantum gates CNOT, Toffoli and nCNOT are characterised in Table~\ref{tab:multiqubitgates}.
+
+\begin{table}[H]
+\caption{Table of major multi-qubit quantum logic gates where $c_j$ stands for the j\textsuperscript{th} control and $\mathbb{1}_k$ for the kxk identity matrix.}\vspace{1em}
 \label{tab:multiqubitgates}
 \begin{tabular}{ c  C{1.8cm}  C{2cm}  c C{3cm}}\hline
 Gate & Name & Circuit representation & Matrix & Description \\ \midrule
@@ -403,54 +411,35 @@ nCNOT & n-controlled NOT & -  & $\begin{pmatrix}
 \end{tabular}
 \end{table}
 
-\subsubsection{Toffoli Gate}
-\label{subsubsubsec:toffoligate}
-
-The most important three-qubit gate is a controlled controlled NOT (CCNOT) quantum gate which is often referred to as the Toffoli gate. It is defined by the following 8x8 matrix:
-\begin{equation}
-Toffoli = CCNOT = \begin{pmatrix}
- \mathbb{1}_6 & 0 \\ 
- 0 & X
- \end{pmatrix} = \begin{pmatrix}
- 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
- 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
- 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\ 
- 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\ 
- 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\ 
- 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
- 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\ 
- 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\ 
- \end{pmatrix}
-\end{equation}
-
-where $\mathbb{1}_6$ is the 6x6 identity matrix.
-
-The Toffoli gate takes three inputs specified in parantheses, first the two control qubits and lastly the target qubit. If and only if both control qubits are in the \1 state the X gate is applied to the target qubit. Toffoli gates are usually decomposed into quantum circuits with CNOT and single-qubit gates in order to keep the set of quantum gates small \cite{shende2008cnot}.
-
-\subsubsection{nCNOT Gate}
-\label{subsubsubsec:ncnotgate}
-
-The nCNOT gate is the generalization of the CNOT and the Toffoli gate. It takes $n$ control qubits and one target qubit as input and if and only if all control qubits are in the \1 state the X gate is applied to the target. The nCNOT matrix representation is given by:
- 
-\begin{equation}
-nCNOT = \begin{pmatrix}
- \mathbb{1}_{2^n-2} & 0 \\ 
- 0 & X
- \end{pmatrix}
-\end{equation}
-
-In practise, nCNOT gates are usually not implemented directly but decomposed into larger quantum circuits consisting only of CNOT and single-qubit gates \cite{nielsen2010quantum}. However, such decompositions will not be relevant for this work.
-
-
 %%%%% SECTION: MACHINE LEARNING
 
 \section{Classical Machine Learning}
 \label{subsec:classicalmachinelearning}
 
+Introduce the three different types of ML!
+
+
+
 \subsection{k-nearest Neighbour Algorithm}
 \label{subsubsec:knearestneighbour}
 
-The proposed research will be solely based on the two QML algorithms described in \cite{Schuld2014, Schuld2016}. Firstly, \cite{Schuld2014} is a quantum version of the distance weighted $k$-nearest neighbour (kNN) algorithm. For clarification, let us consider a training data set ${D}_{T}$ consisting of ten vectors ${v}_{0}, {v}_{1},..,{v}_{10}$ that are each assigned to either class $A$ or $B$. The training vectors are visualized as yellow and purple circles in Fig.~\ref{fig:knnconcept}. kNN is a non-parametric classifier that given a new unclassified input vector $x$ (red star in Fig.~\ref{fig:knnconcept}) considers the $k$ nearest neighbours (using a predefined measure of distance) and classifies $x$, based on a majority vote, as either $A$ or $B$. Thereby, $k$ is a positive integer, usually chosen to be small and its value determines the classification outcome. Namely, in the case $k = 3$ in Fig.~\ref{fig:knnconcept}, vector $x$ will be classified as class B (purple) but in the case $k = 6$ it will be labelled class A (yellow).
+In this thesis a quantum version of the distance weighted $k$-nearest neighbour (kNN) algorithm as described in \cite{Schuld2014} will be implemented. Understanding the QML algorithm requires knowledge of the classical version of the distance weighted kNN algorithm which will be introduced in this subsection.
+
+\begin{figure}[ht]
+  \begin{minipage}[t]{0.48\textwidth}
+    \includegraphics[width = \textwidth]{img/apple.jpg}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.48\textwidth}
+    \includegraphics[width = \textwidth]{img/banana.png}
+  \end{minipage}
+  \caption{Pictures of apple and banana from training data set.}
+  \label{img:appleandbanana}
+\end{figure}
+
+Imagine working for a search engine company and you are given the task of classifying unknown pictures of fruits as either apples or bananas. To train your classification algorithm you are given 5 pictures of apples and 5 pictures of bananas - this will be called the training data set ${D}_{T}$. Mathematically, the training data set ${D}_{T}$ consists of ten vectors ${v}_{0}, {v}_{1},..,{v}_{10}$ that are each assigned to either class $A$ (apple) or $B$ (banana). The training vectors are visualized as yellow and purple circles in Fig.~\ref{fig:knnconcept}.
+
+kNN is a non-parametric classifier that given a new unclassified input vector $x$ (red star in Fig.~\ref{fig:knnconcept}) considers the $k$ nearest neighbours (using a predefined measure of distance) and classifies $x$, based on a majority vote, as either $A$ or $B$. Thereby, $k$ is a positive integer, usually chosen to be small and its value determines the classification outcome. Namely, in the case $k = 3$ in Fig.~\ref{fig:knnconcept}, vector $x$ will be classified as class B (purple) but in the case $k = 6$ it will be labelled class A (yellow).
 
 \begin{figure}[!ht]
       \centering
@@ -460,7 +449,7 @@ The proposed research will be solely based on the two QML algorithms described i
 
 \footnotetext[3]{Reprinted from GitHub, Burton de Wilde, Retrieved September 13, 2016, from \url{http://bdewilde.github.io/blog/blogger/2012/10/26/classification-of-hand-written-digits-3/}. Copyright 2012 by Burton de Wilde. Reprinted with permission.}
 
-In the case of $k = 10$, $x$ would simply be assigned to the class with the most members. In this case, the training vectors should be given distance-dependent weights (such as $\frac{1}{distance}$) to increase the influence of closer vectors over more distant ones. Hereby, the advantages of the quantum version are the parallel computation of the distances between each training vector and the input vector as well as contracting distance computation and distance weighting into one computational step.
+In the case of $k = 10$, $x$ would simply be assigned to the class with the most members. In this case, the training vectors should be given distance-dependent weights (such as $\frac{1}{distance}$) to increase the influence of closer vectors over more distant ones.
 
 \section{Methods (own chapter?)}
 \label{subsec:methods}
@@ -468,5 +457,10 @@ In the case of $k = 10$, $x$ would simply be assigned to the class with the most
 \subsection{Programming environment}
 \label{subsubsec:programming}
 
+Python
+Liquid
+
 \subsection{IBMs QC}
 \label{subsubsec:ibmqc}
+
+IBM QASM
