@@ -3,7 +3,7 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}
 \contentsline {section}{\numberline {1.1}Motivation}{2}
 \contentsline {section}{\numberline {1.2}Research Question}{2}
-\contentsline {chapter}{\numberline {2}Theoretical Foundations and Methods}{3}
+\contentsline {chapter}{\numberline {2}Theoretical Foundations}{3}
 \contentsline {section}{\numberline {2.1}Quantum Bits}{3}
 \contentsline {subsection}{\numberline {2.1.1}Single Qubit Systems}{3}
 \contentsline {subsection}{\numberline {2.1.2}Multiple Qubit Systems}{6}
@@ -14,10 +14,17 @@
 \contentsline {subsubsection}{Controlled NOT Gate}{10}
 \contentsline {section}{\numberline {2.3}Classical Machine Learning}{11}
 \contentsline {subsection}{\numberline {2.3.1}k-nearest Neighbour Algorithm}{11}
-\contentsline {section}{\numberline {2.4}Methods (own chapter?)}{13}
-\contentsline {subsection}{\numberline {2.4.1}Programming environment}{13}
-\contentsline {subsection}{\numberline {2.4.2}IBMs QC}{13}
-\contentsline {chapter}{\numberline {3}Quantum-enhanced Machine Learning}{15}
-\contentsline {subsection}{\numberline {3.0.1}Quantum k-nearest Neighbour Algorithm}{15}
-\contentsline {subsection}{\numberline {3.0.2}Quantum State Preparation Algorithms}{15}
-\contentsline {chapter}{References}{17}
+\contentsline {chapter}{\numberline {3}Methods}{15}
+\contentsline {section}{\numberline {3.1}Liqui$\mathinner {|{}\delimiter "526930B }$}{15}
+\contentsline {section}{\numberline {3.2}IBM Quantum Experience}{16}
+\contentsline {chapter}{\numberline {4}Literature Review: Quantum-enhanced Machine Learning}{17}
+\contentsline {subsection}{\numberline {4.0.1}Quantum State Preparation Algorithms}{17}
+\contentsline {subsubsection}{Encoding classical data into qubits}{18}
+\contentsline {subsubsection}{Encoding classical data into amplitudes}{18}
+\contentsline {subsection}{\numberline {4.0.2}Quantum k-nearest Neighbour Algorithm}{19}
+\contentsline {chapter}{\numberline {5}Results and Discussion}{21}
+\contentsline {subsubsection}{Controlled U Gate}{21}
+\contentsline {chapter}{\numberline {6}Outlook}{23}
+\contentsline {chapter}{\numberline {7}Conclusion}{25}
+\contentsline {chapter}{\numberline {8}Personal reflection}{27}
+\contentsline {chapter}{References}{28}

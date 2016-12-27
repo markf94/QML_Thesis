@@ -1,17 +1,140 @@
-\chapter{Quantum-enhanced Machine Learning}\label{sec:qml}
+\chapter{Literature Review: Quantum-enhanced Machine Learning}\label{sec:qml}
 
-\subsection{Quantum k-nearest Neighbour Algorithm}
-\label{subsubsec:quantumknearestneighbour}
+Classical machine learning takes classical data as input and learns from it using classical algorithms executed on classical computers - this will be referred to as C/C (classical data with classical algorithm). One enters the field of quantum machine learning when either quantum data or quantum algorithms are combined with ideas from classical machine learning. Thus, quantum machine learning can be subdivided into three different subfields: 1) C/Q - classical data with quantum algorithm, 2) Q/C - quantum data with classical algorithm and 3) Q/Q - quantum data with quantum algorithm.
 
-Hereby, the advantages of the quantum version are the parallel computation of the distances between each training vector and the input vector as well as contracting distance computation and distance weighting into one computational step.
+\emph{Quantum data} includes any data describing a quantum mechanical system such as e.g. the Hamiltonian of a system or the state vector of a certain quantum state. A \emph{quantum algorithm} is any algorithm that can only be executed on a quantum computer. 
+
+C/Q is the topic of this thesis
+
+Analogously, Q/C is the subfield where quantum data is being processed using a classical machine learning algorithm. Examples for Q/C:
+
+used genetic algorithms to reduce digi-
+tal and experimental errors in quantum gates
+
+A tantamount task is then to
+find a model (a.k.a. effective) Hamiltonian of the system
+and to determine properties of the present noise sources.
+By computing likelihood functions in an adaptation of
+Bayesian inference, Wiebe et al. found that quan-
+tum Hamiltonian learning can be performed using realis-
+tic resources such as depolarizing noise.
+
+Q/Q would include learning a model Hamiltonian of a system implemented in a lab using a quantum learning algorithm.
 
 \subsection{Quantum State Preparation Algorithms}
 \label{subsubsec:quantumstatepreparation}
+
+\emph{Quantum state preparation} is the process of preparing a quantum state that accurately represents a vector containing classical (normalized) data. There are two fundamentally different ways of preparing a quantum state representing the classical vector v:
+
+\begin{equation}
+v = \begin{pmatrix}0.6 \\ 0.4 \end{pmatrix}
+\end{equation}
+
+\subsubsection{Encoding classical data into qubits}
+\label{subsubsec:classicaldataqubits}
+%speed-up not very clear since the \# of qubits increases linearly with the \# of classical bits
+A $k$-dimensional probability vector requires $4k$ classical bits which are encoded one-to-one into $4k$ qubits, e.g.\\
+\newline
+Multiply vector by ten such that probabilities can easily be represented in binary,
+\begin{equation}
+\begin{pmatrix}
+ \textcolor{blue}{0.6} \\ 
+ \textcolor{emerald}{0.4}
+ \end{pmatrix}*10 \rightarrow \begin{pmatrix}
+ \textcolor{blue}{6} \\ 
+ \textcolor{emerald}{4}
+ \end{pmatrix}
+\end{equation}
+ Convert each entry to binary,
+ \begin{equation}
+ \begin{pmatrix}
+ \textcolor{blue}{6} \\ 
+ \textcolor{emerald}{4}
+ \end{pmatrix} \rightarrow \begin{pmatrix}
+ \textcolor{blue}{0110} \\ 
+ \textcolor{emerald}{0100}
+ \end{pmatrix}
+ \end{equation}
+
+ Rewrite 2-D vector as 1-D bit string,
+ \begin{equation}
+ \begin{pmatrix}
+ \textcolor{blue}{0110} \\ 
+ \textcolor{emerald}{0100}
+ \end{pmatrix} \rightarrow n=\textcolor{blue}{0110}\textcolor{emerald}{0100}
+\end{equation}
+Apply X gate to respective qubits:
+\begin{equation}
+n=\textcolor{blue}{0110}\textcolor{emerald}{0100}  \rightarrow \ket{n} = \ket{\textcolor{blue}{0110}\textcolor{emerald}{0100}}
+\end{equation}
+%\textbf{Only slight speed up possible}
+
+\begin{redbox}
+Only slight speed up possible\\
+Number of qubits increases linearly with size of classical data
+\end{redbox}
+
+
+\subsubsection{Encoding classical data into amplitudes}
+\label{subsubsec:classicaldataamplitudes}
+$k$-dimensional probability vector is encoded into only $log_{2}(k)$ qubits since the number of amplitudes grows exponentially with the number of qubits e.g.
+\begin{equation}
+\begin{pmatrix}
+ \textcolor{blue}{0.6} \\ 
+ \textcolor{emerald}{0.4}
+ \end{pmatrix} \quad \rightarrow \quad \ket{n} = \sqrt{\textcolor{blue}{0.6}}\ket{0}+\sqrt{\textcolor{emerald}{0.4}}\ket{1}
+\end{equation}
+\begin{greenbox}
+Possibility of exponential speed up\\
+Number of qubits only grows logarithmically with size of classical data\\
+Non-trivial algorithms needed to initialize amplitude distribution
+\end{greenbox}
 
 Grover \& Rudolph
 
 Diffusion matrix from quantum random walks
 
-Trugenberger et al.
+Trugenberger et al. -> qubit encoding?
 
 Schack paper Maria mentioned but which I haven't used and looked at.
+
+\subsection{Quantum k-nearest Neighbour Algorithm}
+\label{subsubsec:quantumknearestneighbour}
+
+\
+\begin{equation}
+\frac{1}{\sqrt{2M}}\sum_{m=1}^{M} (\textcolor{emerald}{\ket{0}}\ket{\textcolor{red}{\Psi_{\tilde{x}} (\star)}}+\textcolor{emerald}{\ket{1}}\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{x^{m}}}})\ket{y^{m}(\textcolor{darkyellow}{A} \ or \ \textcolor{purple}{B})}\ket{m}
+\end{equation}
+where
+\begin{equation}
+\ket{\textcolor{red}{\Psi_{\tilde{x}} (\star)}} = \sum_{i=1}^{N} \textcolor{red}{\tilde{x}_i}\ket{i} \quad \quad
+\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{x^{m}}}}	 = \sum_{i=1}^{N} \textcolor{darkyellow}{x}\textcolor{purple}{_i^m} \ket{i} 
+\end{equation}
+
+\begin{equation}
+e.g. \quad \begin{pmatrix}
+ \textcolor{blue}{0.6} \\ 
+ \textcolor{emerald}{0.4}
+ \end{pmatrix} \quad \rightarrow \quad \ket{n} =  \sqrt{\textcolor{blue}{0.6}}\ket{0}+\sqrt{\textcolor{emerald}{0.4}}\ket{1}
+\end{equation}
+
+Applying the \textbf{Hadamard gate} interferes the input and the training vectors:
+
+\begin{equation}
+\frac{1}{2\sqrt{M}}\sum_{m=1}^{M} (\textcolor{emerald}{\ket{0}}[\ket{\textcolor{red}{\Psi_{\tilde{x}}}}+\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{x^{m}}}}]+\textcolor{emerald}{\ket{1}}[\ket{\textcolor{red}{\Psi_{\tilde{x}}}}-\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{x^{m}}}}])\ket{y^{m}(\textcolor{darkyellow}{A} \ or \ \textcolor{purple}{B})}\ket{m}
+\end{equation}
+
+$\rightarrow$ Perform \textbf{conditional measurement} on ancilla qubit.\\
+Successful if $\ket{0}$ state is measured.
+
+After successful conditional measurement, the state is proportional to
+\begin{equation}
+\frac{1}{2\sqrt{M}}\sum_{m=1}^{M} \sum_{i=1}^{N} (\textcolor{red}{\tilde{x}_i}+\textcolor{darkyellow}{x}\textcolor{purple}{_i^m})\ket{0}\ket{i}\ket{y^{m}(\textcolor{darkyellow}{A} \ or \ \textcolor{purple}{B})}\ket{m}
+\end{equation}
+
+Probability to measure class B:
+\begin{equation}
+p(\ket{y^m} = \ket{1(\textcolor{purple}{B})})= \sum_{m \mid y^m=1(\textcolor{purple}{B})} 1 - \frac{1}{4M} \mid \textcolor{red}{\tilde{x}} - \textcolor{purple}{x^m} \mid ^2
+\end{equation}
+
+Hereby, the advantages of the quantum version are the parallel computation of the distances between each training vector and the input vector as well as contracting distance computation and distance weighting into one computational step.

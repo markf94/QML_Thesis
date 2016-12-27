@@ -1,10 +1,69 @@
-\chapter{Theoretical Foundations and Methods}\label{sec:theoryandmethods}
+\chapter{Introduction}\label{sec:introduction}
+
+SOME MORE GENERAL INTRO TEXT HERE?
+
+The ability to understand spoken language, to recognize faces and to distinguish types of fruit comes naturally to humans, even though these processes of pattern recognition and classification are inherently complex. Machine learning (ML), a subtopic of artificial intelligence, is concerned with the development of algorithms that perform these types of tasks, thus enabling computers to find and recognise patterns in data and classify unknown inputs based on previous training with labelled inputs. Such algorithms make the core of e.g. human speech recognition and recommendation engines as used by Amazon.
+% and algorithms that can predict heart disease from real-time electrocardiograms \citep{acharya2015integrated, pazzani2007content}.
+
+According to \cite{bigdata}, approximately 2.5 quintillion (${10}^{18}$) bytes of digital data are created every day. This growing number implies that every area dealing with data will eventually require advanced algorithms that can make sense of data content, retrieve patterns and reveal correlations. However, most ML algorithms involve the execution of computationally expensive operations and doing so on large data sets inevitably takes a lot of time \cite{bekkerman2011scaling}. Thus, it becomes increasingly important to find efficient ways of dealing with big data.
+%and/or reduce the computational complexity of the algorithms.
+
+A promising solution is the use of quantum computation which has been researched intensively in the last few decades. Quantum computers (QCs) use quantum mechanical systems and their special properties to manipulate and process information in ways that are impossible to implement on classical computers. The quantum equivalent to a classical bit is called a quantum bit (qubit) and additionally to being in either state \0 or \1 it can be in their linear superposition.
+
+%\begin{equation}
+%\label{equ: simplequbit}
+%\ket{q} = \alpha \ket{0} + \beta \ket{1}
+%\end{equation}
+%where $\alpha$ and $\beta$ are complex numbers and often referred to as amplitudes. When measuring qubit $\ket{q}$ it will take the value \0 with a probability of ${|\alpha|}^{2}$ and \1 with a probability of ${|\beta|}^{2}$. Since the total probability has to sum to unity, the normalization condition ${|\alpha|}^{2} + {|\beta|}^{2} =  1$ must be satisfied at all times.
+
+This peculiar property gives rise to so-called quantum parallelism, which enables the execution of certain operations on many quantum states at the same time. Despite this advantage, the difficulty in quantum computation lies in the retrieval of the computed solution since a measurement of a qubit collapses it into a single classical bit and thereby destroys information about its previous superposition. Several quantum algorithms have been proposed that provide exponential speed-ups when compared to their classical counterparts with Shor's prime factorization algorithm being the most famous \cite{shor1994}.
+%As another example, Grover's quantum database search algorithm enables finding a single element in a list of $N$ elements within roughly $\sqrt{N}$ quantum mechanical steps instead of $N$ classical steps \citep{grover}.
+Hence, quantum computation has the potential to vastly improve computational power, speed up the processing of big data and solve certain problems that are practically unsolvable on classical computers. 
+
+%for the QML toolbox to be complete a quantum algorithm to solve systems of linear equations is needed since most ML algorithms rely on solving those.
+
+Considering these advantages, the combination of quantum computation and classical ML into the new field of quantum machine learning (QML) seems almost natural. There are currently two main ideas on how to merge quantum computation with ML, namely a) running the classical algorithm on a classical computer and outsourcing only the computationally intensive task to a QC or b) executing the quantum version of the entire algorithm on a QC. Current QML research mostly focusses on the latter approach by developing quantum algorithms that tap into the full potential of quantum parallelism.
+
+\section{Motivation}
+\label{sec:motivation}
+
+Classical ML is a very practical topic since it can be directly tested, verified and implemented on any commercial classical computer. So far, QML has been of almost entirely theoretical nature since the required computational resources are not in place yet. To yield reliable solutions QML algorithms often require a relatively large number of error-corrected qubits and some sort of quantum data storage such as the proposed quantum random access memory (qRAM) \cite{qRAM}. However, to date the maximum number of superconducting qubits reportedly used for calculation is nine, the D-Wave II quantum annealing device delivers 1152 qubits but can only solve a narrow class of problems and a qRAM has not been developed yet \cite{hydrogensimulation, dwave2}. Furthermore, qubit error-correction is still a very active research field and most of the described preliminary QCs deal with non error-corrected qubits with short lifetimes and are, thus, impractical for large QML implementations.
+
+Until now there have been only few experimental verifications of QML algorithms that establish proof-of-concept. \cite{Li2015} successfully distinguished a handwritten six from a nine using a quantum support vector machine on a four-qubit nuclear magnetic resonance test bench. In addition, \cite{Cai2015} were first to experimentally demonstrate quantum machine learning on a photonic QC and showed that the distance between two vectors and their inner product can indeed be computed quantum mechanically. Lastly, \cite{Riste2015} solved a learning parity problem with five superconducting qubits and found that a quantum advantage can already be observed in non error-corrected systems.
+
+%Consequently,
+Considering the gap between the number of proposed QML algorithms and the few experimental realisations, it remains important to find QML problems which can already be implemented on small-scale QCs. Hence, the purpose of this study is to provide proof-of-concept implementation of selected QML algorithms on small datasets. This is an important step in the attempt to shift QML from a purely theoretical research area to a more applied field such as classical ML. 
+
+\section{Research Question}
+\label{sec:researchquestion}
+
+
+Don't know where this should go!
+
+Matthias Troyer citation for this part:
+
+There are many different ways of realising a QC such as using trapped ions, single photon sources or superconducting Josephon junctions, etc. Depending on the chosen substrate, different sets of quantum logic gates can be implemented and in order to run a quantum algorithm  it has to be mapped to the available hardware. Thus, quantum algorithms have to be translated (compiled) into a series of gates consisting only of quantum gates from the available gate set. This is referred to as \emph{quantum compilation}.
+
+Finding optimal ways of compiling a given quantum algorithm as well as designing a high-level programming language or environment similar to that of classical computer code editors is called \emph{quantum software engineering}.
+
+
+In light of the theoretical nature of current QML research and the small number of experimental realizations, this research will address the following question:
+
+%NARROW DOWN THE RESEARCH QUESTION!
+\centering\textbf{How can a theoretically proposed k-nearest neighbour quantum machine learning algorithm be implemented on small-scale quantum computers?}
+
+%Alternatives:
+%Is it possible to experimentally demonstrate that two QML algorithms proposed by \cite{Schuld2014, Schuld2016} can already solve a small ML problem using classical simulation or IBMs quantum processor?
+%Is it possible to already implement and solve a small ML problem on IBMs publicly available quantum computer?
+
+\justify
+The following sections will outline the steps required and the tools used in order to answer this research question. 
+
+\chapter{Theoretical Foundations}\label{sec:theory}
 
 CHECK FOOTNOTE NUMBERS IN WHOLE DOCUMENT!
 \section{Quantum Bits}
 \label{subsec:qubits}
-
-INTRODUCE CONCEPT OF T1 and T2!
 
 \subsection{Single Qubit Systems}
 \label{subsubsec:qubits}
@@ -509,16 +568,35 @@ The kNN algorithm is a non-parametric classifier that given a new unclassified i
 
 In the case of $k = 10$, $x$ would simply be assigned to the class with the most members. In this case, the training vectors should be given distance-dependent weights (such as $\frac{1}{distance}$) to increase the influence of closer vectors over more distant ones.
 
-\section{Methods (own chapter?)}
-\label{subsec:methods}
+\chapter{Methods}\label{sec:methods}
 
-\subsection{Programming environment}
-\label{subsubsec:programming}
+All the calculations and plots for this thesis are done in the programming language Python which has a very intuitive syntax and comes with large libraries for scientific computing and plotting.
 
-Python
-Liquid
+For the implementation of the quantum kNN algorithm there are two fundamentally different ways: Running it 1) by simulating a QC or 2) by actually executing it on a real QC. The required tools for both possibilities will be explained in the following subsections.
 
-\subsection{IBMs QC}
-\label{subsubsec:ibmqc}
+\section{Liqui$\ket{}$}
+\label{subsec:simulation}
+
+Classical computers can be used to simulate the behaviour of small quantum computers. Such simulations are associated with exponential computational costs thereby limiting the number of simulated qubits. Since current state-of-the-art quantum technology uses around ten qubits, a classical computer can still be used for simulation.
+
+For the quantum computing simulations in this thesis the quantum simulation toolsuite Liqui$\ket{}$ developed by Microsoft Research will be used. Liqui$\ket{}$ is based on the functional programming language F\# and allows for simulation of up to 30 qubits (verify and cite!). It comes with a large palette of predefined single and multi quantum logic gates and allows for custom-defined quantum gates such as nCNOT and rotation gates controlled by $n$ qubits which is crucial for some of the work done in this thesis.
+
+\begin{figure}[H]
+      \centering
+       \includegraphics[scale=0.55]{img/liquidcodesnippet.png}
+       \caption{\label{fig:liquidsnippet} F\# code snippet from Microsoft's quantum simulation toolsuite Liqui$\ket{}$}
+\end{figure}
+
+\section{IBM Quantum Experience}
+\label{subsec:ibmqc}
 
 IBM QASM
+
+Earlier this year IBM has enabled public cloud access to their experimental quantum processor containing five non error-corrected superconducting qubits located at the Watson Research Center in New York (VERIFY AND CITATION). Instead of only simulating on classical hardware, this opens up the possibility of executing the QML algorithm on actual quantum hardware.
+
+The so-called IBM Quantum Experience provides the user with access to the "Quantum Composer" which is the main tool for algorithm design. The quantum composer shown in Fig.~\ref{????} consists of 5 horizontal lines, one for each qubit, and enables the user to choose from a universal gate set consisting of 10 quantum logic gates (VERIFY!). Additionally, there are two different measurement types: a) A measurement in the standard z-basis ($\ket{0}$ / $\ket{1}$) resulting in a probability distribution over all possible states and b) a Bloch measurement that visually projects the state onto the Bloch sphere. The user can compose an algorithm by applying up to 40 quantum logic and measurement gates to the five qubits by means of drag-and-drop.
+
+By spending limited user coins the gate sequence of a composed algorithm is then send to IBM's QC in New York and depending on the waiting queue and the availability of the QC the results will be sent back via mail within a few minutes or days. IBM Quantum Experience also allows for free quantum simulations under ideal or real conditions which provides a great tool for experimentation without spending user coins.
+
+The main limitation of the IBM Quantum Experience are the qubit decoherence times since they restrict the maximum number of possible operations before the qubits lose their quantum behaviour and their quantum information. Thus, the number of quantum gates is currently limited to only 40 which essentially means 39 logic gates and 1 measurement gate. The amplitude damping times of the five qubits range from \SI{49.5}{\micro\second} to \SI{85.3}{\micro\second}. Furthermore, the phase damping times range from \SI{56.0}{\micro\second} to \SI{139.7}{\micro\second}. The implementation of a single qubit quantum logic gate takes 130ns and applying a CNOT gate takes 500ns. CITATIONS FOR ALL THESE NUMBERS!
+

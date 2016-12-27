@@ -5,12 +5,17 @@
 \usepackage{parskip}
 \usepackage{amssymb}
 \usepackage{mathbbol}
+\usepackage{xcolor}
+\definecolor{darkyellow}{HTML}{FFB600}
+\definecolor{emerald}{HTML}{32936F}
 \usepackage{enumerate}
 \usepackage{ragged2e}
 \usepackage{eurosym}
 \usepackage{amsmath}
+\usepackage{apacite}
 \usepackage{array}
 \usepackage{float}
+\usepackage{siunitx} %for SI units
 \usepackage{tcolorbox}
 \newtcolorbox{redbox}{colback=red!5!white,colframe=red!75!black}
 \newtcolorbox{bluebox}{colback=blue!5!white,colframe=blue!75!black}
@@ -28,8 +33,7 @@
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
 
-\usepackage[english,bt]{ethidsc} % Special IDSC styles and commands      	
-\usepackage{apacite}
+\usepackage[english,bt]{ethidsc} % Special IDSC styles and commands      
 								 % {german}/english: language of headings, etc.
 								 % {st}/bt/mt: {semester}/bachelor/master thesis
 							
@@ -77,17 +81,19 @@ Implementing a quantum k-nearest neighbour algorithm}
 
 \input{chapters/introduction}
 \cleardoublepage
-\input{chapters/theoreticalfoundationsandmethods}
+\input{chapters/theoreticalfoundations}
+\cleardoublepage
+\input{chapters/methods}
 \cleardoublepage
 \input{chapters/quantummachinelearning}
 \cleardoublepage
-%\input{chapters/resultsanddiscussion}
-%\cleardoublepage
-%\input{chapters/outlook}
-%\cleardoublepage
-%\input{chapters/conclusion}
-%\cleardoublepage
-%\input{chapters/personalreflection}
+\input{chapters/resultsanddiscussion}
+\cleardoublepage
+\input{chapters/outlook}
+\cleardoublepage
+\input{chapters/conclusion}
+\cleardoublepage
+\input{chapters/personalreflection}
 %\cleardoublepage
 %\input{chapters/howto}
 %\cleardoublepage

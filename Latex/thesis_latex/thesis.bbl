@@ -1,55 +1,293 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
-Nielsen%
-\ \BBA {} Chuang%
+Bekkerman%
+, Bilenko%
+\BCBL {}\ \BBA {} Langford%
 }{%
-Nielsen%
-\ \BBA {} Chuang%
-}{%
-{\protect \APACyear {2010}}%
+Bekkerman%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2011}}%
 }]{%
-nielsen2010quantum}
+bekkerman2011scaling}
 \APACinsertmetastar {%
-nielsen2010quantum}%
+bekkerman2011scaling}%
 \begin{APACrefauthors}%
-Nielsen, M\BPBI A.%
-\BCBT {}\ \BBA {} Chuang, I\BPBI L.%
+Bekkerman, R.%
+, Bilenko, M.%
+\BCBL {}\ \BBA {} Langford, J.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYear{2010}.
+\APACrefYear{2011}.
 \newblock
-\APACrefbtitle {Quantum computation and quantum information} {Quantum
-  computation and quantum information}.
+\APACrefbtitle {Scaling up machine learning: Parallel and distributed
+  approaches} {Scaling up machine learning: Parallel and distributed
+  approaches}.
 \newblock
-\APACaddressPublisher{}{Cambridge university press}.
+\APACaddressPublisher{}{Cambridge University Press}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Shende%
-\ \BBA {} Markov%
+Cai%
+\ \protect \BOthers {.}}{%
+Cai%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+Cai2015}
+\APACinsertmetastar {%
+Cai2015}%
+\begin{APACrefauthors}%
+Cai, X\BPBI D.%
+, Wu, D.%
+, Su, Z\BPBI E.%
+, Chen, M\BPBI C.%
+, Wang, X\BPBI L.%
+, Li, L.%
+\BDBL {}Pan, J\BPBI W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Entanglement-based machine learning on a quantum
+  computer}} {{Entanglement-based machine learning on a quantum
+  computer}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Physical Review Letters}{114}{11}{1--5}.
+\newblock
+\begin{APACrefDOI} \doi{10.1103/PhysRevLett.114.110504} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+D-Wave%
 }{%
-Shende%
-\ \BBA {} Markov%
+D-Wave%
 }{%
+{\protect \APACyear {2015}}%
+}]{%
+dwave2}
+\APACinsertmetastar {%
+dwave2}%
+\begin{APACrefauthors}%
+D-Wave.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+\APACrefbtitle {Breaking through 1000 Qubits.} {Breaking through 1000 qubits.}
+\newblock
+\APAChowpublished
+  {\url{http://www.dwavesys.com/blog/2015/06/breaking-through-1000-qubits}}.
+\newblock
+\APACrefnote{Accessed: 2016-09-09}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Giovannetti%
+, Lloyd%
+\BCBL {}\ \BBA {} Maccone%
+}{%
+Giovannetti%
+\ \protect \BOthers {.}}{%
 {\protect \APACyear {2008}}%
 }]{%
-shende2008cnot}
+qRAM}
 \APACinsertmetastar {%
-shende2008cnot}%
+qRAM}%
 \begin{APACrefauthors}%
-Shende, V\BPBI V.%
-\BCBT {}\ \BBA {} Markov, I\BPBI L.%
+Giovannetti, V.%
+, Lloyd, S.%
+\BCBL {}\ \BBA {} Maccone, L.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
 \APACrefYearMonthDay{2008}{}{}.
 \newblock
-{\BBOQ}\APACrefatitle {On the CNOT-cost of TOFFOLI gates} {On the cnot-cost of
-  toffoli gates}.{\BBCQ}
+{\BBOQ}\APACrefatitle {Quantum random access memory} {Quantum random access
+  memory}.{\BBCQ}
 \newblock
-\APACjournalVolNumPages{arXiv preprint arXiv:0803.2316}{}{}{}.
+\APACjournalVolNumPages{Physical review letters}{100}{16}{160501}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+IBM%
+}{%
+IBM%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+bigdata}
+\APACinsertmetastar {%
+bigdata}%
+\begin{APACrefauthors}%
+IBM.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+\APACrefbtitle {What is big data?} {What is big data?}
+\newblock
+\APAChowpublished
+  {\url{https://www-01.ibm.com/software/data/bigdata/what-is-big-data.html}}.
+\newblock
+\APACrefnote{Accessed: 2016-09-08}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Li%
+, Liu%
+, Xu%
+\BCBL {}\ \BBA {} Du%
+}{%
+Li%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+Li2015}
+\APACinsertmetastar {%
+Li2015}%
+\begin{APACrefauthors}%
+Li, Z.%
+, Liu, X.%
+, Xu, N.%
+\BCBL {}\ \BBA {} Du, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Experimental realization of a quantum support vector
+  machine}} {{Experimental realization of a quantum support vector
+  machine}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Physical Review Letters}{114}{14}{1--5}.
+\newblock
+\begin{APACrefDOI} \doi{10.1103/PhysRevLett.114.140504} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+O'Malley%
+\ \protect \BOthers {.}}{%
+O'Malley%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2016}}%
+}]{%
+hydrogensimulation}
+\APACinsertmetastar {%
+hydrogensimulation}%
+\begin{APACrefauthors}%
+O'Malley, P\BPBI J\BPBI J.%
+, Babbush, R.%
+, Kivlichan, I\BPBI D.%
+, Romero, J.%
+, McClean, J\BPBI R.%
+, Barends, R.%
+\BDBL {}Martinis, J\BPBI M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{Jul}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Scalable Quantum Simulation of Molecular Energies}
+  {Scalable quantum simulation of molecular energies}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Phys. Rev. X}{6}{}{031007}.
+\newblock
+\begin{APACrefURL} \url{http://link.aps.org/doi/10.1103/PhysRevX.6.031007}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1103/PhysRevX.6.031007} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Rist{\`{e}}%
+\ \protect \BOthers {.}}{%
+Rist{\`{e}}%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+Riste2015}
+\APACinsertmetastar {%
+Riste2015}%
+\begin{APACrefauthors}%
+Rist{\`{e}}, D.%
+, da Silva, M\BPBI P.%
+, Ryan, C\BPBI A.%
+, Cross, A\BPBI W.%
+, Smolin, J\BPBI A.%
+, Gambetta, J\BPBI M.%
+\BDBL {}Johnson, B\BPBI R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Demonstration of quantum advantage in machine
+  learning}} {{Demonstration of quantum advantage in machine learning}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{arXiv:1512.06069}{}{}{1--12}.
+\newblock
+\begin{APACrefURL} \url{http://arxiv.org/abs/1512.06069} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Schuld%
+, Sinayskiy%
+\BCBL {}\ \BBA {} Petruccione%
+}{%
+Schuld%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2014}}%
+}]{%
+Schuld2014}
+\APACinsertmetastar {%
+Schuld2014}%
+\begin{APACrefauthors}%
+Schuld, M.%
+, Sinayskiy, I.%
+\BCBL {}\ \BBA {} Petruccione, F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Quantum computing for pattern classification}}
+  {{Quantum computing for pattern classification}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{}{}{}{14}.
+\newblock
+\begin{APACrefURL} \url{http://arxiv.org/abs/1412.3646} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1007/978-3-319-13560-1} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Shor%
+}{%
+Shor%
+}{%
+{\protect \APACyear {1994}}%
+}]{%
+shor1994}
+\APACinsertmetastar {%
+shor1994}%
+\begin{APACrefauthors}%
+Shor, P\BPBI W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1994}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Polynomial-Time Algorithm For Prime Factorization And
+  Discrete Logarithms On A Quantum Computer: Proc} {Polynomial-time algorithm
+  for prime factorization and discrete logarithms on a quantum computer:
+  Proc}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{}{}{}{124}.
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}
