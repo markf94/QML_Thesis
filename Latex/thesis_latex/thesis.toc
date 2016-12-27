@@ -1,22 +1,23 @@
 \contentsline {chapter}{Abstract}{v}
 \contentsline {chapter}{Nomenclature}{vii}
 \contentsline {chapter}{\numberline {1}Introduction}{1}
-\contentsline {section}{\numberline {1.1}Research Question}{2}
+\contentsline {section}{\numberline {1.1}Motivation}{2}
+\contentsline {section}{\numberline {1.2}Research Question}{2}
 \contentsline {chapter}{\numberline {2}Theoretical Foundations and Methods}{3}
 \contentsline {section}{\numberline {2.1}Quantum Bits}{3}
 \contentsline {subsection}{\numberline {2.1.1}Single Qubit Systems}{3}
-\contentsline {subsection}{\numberline {2.1.2}Multiple Qubit Systems}{5}
+\contentsline {subsection}{\numberline {2.1.2}Multiple Qubit Systems}{6}
 \contentsline {section}{\numberline {2.2}Quantum Logic Gates}{7}
-\contentsline {subsection}{\numberline {2.2.1}Single Qubit Gates}{7}
-\contentsline {subsubsection}{Qubit Flip (X) Gate}{7}
+\contentsline {subsection}{\numberline {2.2.1}Single Qubit Gates}{8}
+\contentsline {subsubsection}{Qubit Flip (X) Gate}{8}
 \contentsline {subsection}{\numberline {2.2.2}Multiple Qubit Gates}{10}
 \contentsline {subsubsection}{Controlled NOT Gate}{10}
 \contentsline {section}{\numberline {2.3}Classical Machine Learning}{11}
 \contentsline {subsection}{\numberline {2.3.1}k-nearest Neighbour Algorithm}{11}
-\contentsline {section}{\numberline {2.4}Methods (own chapter?)}{12}
-\contentsline {subsection}{\numberline {2.4.1}Programming environment}{12}
-\contentsline {subsection}{\numberline {2.4.2}IBMs QC}{12}
-\contentsline {chapter}{\numberline {3}Quantum-enhanced Machine Learning}{13}
-\contentsline {subsection}{\numberline {3.0.1}Quantum k-nearest Neighbour Algorithm}{13}
-\contentsline {subsection}{\numberline {3.0.2}Quantum State Preparation Algorithms}{13}
-\contentsline {chapter}{References}{15}
+\contentsline {section}{\numberline {2.4}Methods (own chapter?)}{13}
+\contentsline {subsection}{\numberline {2.4.1}Programming environment}{13}
+\contentsline {subsection}{\numberline {2.4.2}IBMs QC}{13}
+\contentsline {chapter}{\numberline {3}Quantum-enhanced Machine Learning}{15}
+\contentsline {subsection}{\numberline {3.0.1}Quantum k-nearest Neighbour Algorithm}{15}
+\contentsline {subsection}{\numberline {3.0.2}Quantum State Preparation Algorithms}{15}
+\contentsline {chapter}{References}{17}

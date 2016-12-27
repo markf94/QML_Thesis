@@ -29,6 +29,8 @@ A classical non-probabilistic bit can only be in one of the two possible states 
 \end{equation}
 
 where $\alpha$ and $\beta$ are complex coefficients ($\alpha, \beta \in \mathbb{C}$) and are often referred to as phase factors or amplitudes. \0 is the Dirac notation for the qubit being in state 0 and it represents a two-dimensional vector in a complex 2-D vector space (called Hilbert space $\mathcal{H}_{2}$). \0 and \1 are the computational basis states and they constitute an orthonormal basis of $\mathcal{H}_{2}$. For the sake of clarity, \0 and \1 can be thought of as the 2-D vectors shown below.
+
+APPROXIMATELY EQUAL SIGN!
 \begin{equation}
 \label{equ: 0and1kets}
 \ket{0} =  \colvec{1\\0} \quad \quad \ket{1} = \colvec{0\\1}
@@ -40,7 +42,7 @@ Subbing these vectors into Equ.~\ref{equ: simplequbit} yields the vector represe
 \ket{\psi} = \alpha \colvec{1\\0} + \beta \colvec{0\\1} = \colvec{\alpha\\\beta}
 \end{equation}
 
-Another important qubit lifetime parameter is the transversal coherence or phase damping time. It is measured by preparing the equal superposition $\frac{\ket{0}+\ket{1}}{\sqrt{2}}$ and due to inavoidable interaction with the environment after some time $t$ the quantum behaviour will be lost and the state will either be a definite \0 or \1.
+In the cases $\alpha = 1$ or $\beta = 1$ there is no quantum behaviour since the qubit is not in a superposition. However, if for example $\alpha = \beta = \frac{1}{\sqrt{2}}$ the qubit is in an equal quantum superposition which is impossible to achieve with a classical computer. This leads to another important qubit lifetime parameter - the transversal coherence or phase damping time. It is measured by preparing the equal superposition $\frac{\ket{0}+\ket{1}}{\sqrt{2}}$ and due to unavoidable interaction with the environment after some time $t$ the quantum behaviour will be lost and the state will either be a definite \0 or \1. The process of losing quantum behaviour is called \emph{decoherence}.
 
 However, even though a qubit can be in a superposition of \0 and \1, when measured it will take the value \0 with a probability of
 \begin{equation}
@@ -70,7 +72,7 @@ U \ket{\psi} = \begin{pmatrix}
  \end{pmatrix} \colvec{\alpha\\\beta} = \colvec{a*\alpha+b*\beta\\c*\alpha+d*\beta}
 \end{equation}
 
-Matrix $U$ must be unitary which means that a) its determinant is equal to unity and b) its Hermitian conjugate $U^\dagger$ must be equal to its inverse. These properties are expressed in Equ.~\ref{equ:unitarydef1} and ~\ref{equ:unitarydef2} below. All quantum logic gates must be unitary since this preserves the normalization of the qubit state it is acting on.
+Matrix $U$ must be unitary which means that a) its determinant is equal to unity and b) its Hermitian conjugate $U^\dagger$ must be equal to its inverse (see Equ.~\ref{equ:unitarydef1} and ~\ref{equ:unitarydef2}). All quantum logic gates must be unitary since this preserves the normalization of the qubit state it is acting on.
 
 \begin{align}
 \label{equ:unitarydef1}
@@ -101,7 +103,7 @@ Qubit states on the Bloch equator such as the $\hat{x}$ and $\hat{y}$ coordinate
 \subsection{Multiple Qubit Systems}
 \label{subsec:multiplequbitsystems}
 
-When moving from single to multi qubit systems a new mathematical tool, the so-called tensor product (symbol $\otimes$), is needed. A tensor product of two qubits is written as:
+A classical computer with one bit of memory is not particularly useful and equally a QC with one qubit is rather useless. In order to be able to perform large and complicated computations many individual qubits need to be combined to create a large QC. When moving from single to multi qubit systems a new mathematical tool, the so-called tensor product (symbol $\otimes$), is needed. A tensor product of two qubits is written as:
 
 \begin{equation}
 \ket{\psi} \otimes \ket{\psi} = \ket{0} \otimes \ket{0} = \ket{00}
@@ -176,9 +178,40 @@ One can also first perform the single qubit operations on the respective qubits 
  \end{pmatrix} \colvec{1\\0} = \colvec{a\\c} \otimes \colvec{1\\0} = \colvec{a\\0\\c\\0}
 \end{equation}
 
-This formalism can be extended to any number of qubits and 
+This formalism can be extended to any number of qubits and the use of tensor products leads to an exponential increase in the dimensionality of the Hilbert space. Hence, $n$ qubits live in a $2^n$-dimensional Hilbert space ($\mathcal{H}_{2}^\otimes n$) and can store the content of $2^n$ classical bits. As an example, only 33 qubits can store the equivalent of $2^33 = 8,589,934,592$ bits (1 gigabyte) which bears the potential for enourmous speed-ups in computations as will be demonstrated later.
 
-Introduce entanglement and non-factorising tensor states here!
+Lastly, when considering multi qubit systems one will find composite states that can or cannot be factorized. Consider for example the last expression in Equ.~\ref{equ:2qubitlineartransform2} which can be reexpressed as follows,
+
+\begin{equation}
+\label{equ:2qubitreexpressed}
+\colvec{a\\0\\c\\0} = a\colvec{1\\0\\0\\0} + 0\colvec{0\\1\\0\\0} + c \colvec{0\\0\\1\\0} + 0\colvec{0\\0\\0\\1} =  a\ket{00} + 0 \ket{01} + c \ket{10} + 0\ket{11}
+\end{equation}
+
+This can be factorized into the following tensor product:
+
+\begin{equation}
+\label{equ:2qubitfactorized}
+a\ket{00} + c \ket{10} = (a\ket{0} + c \ket{1})\otimes \ket{0}
+\end{equation}
+
+In contrast, consider the following state:
+
+\begin{equation}
+\label{equ:2qubitnonfactorized}
+\ket{\phi} = \frac{\ket{00} + \ket{11}}{\sqrt{2}}
+\end{equation}
+
+It is straightforward to see that there is no way to factorize the state $\ket{\phi}$ into a tensor product of two states.
+Now imagine, two people Andy and Beatrice are given two electrons prepared in the quantum state $\ket{\phi}$. Andy keeps the first electron in the lab and Beatrice takes the second electron to her house. Andy gets interested in measuring if his electron is in the $\ket{0}$ or $\ket{1}$ state and performs a measurement. He finds the electron to be in the $\ket{1}$ state. From Equ.~\ref{equ:2qubitnonfactorized} and knowing that measurement collapses a superposition the post-measurement (PM) state $\ket{\phi}_{PM}$ is given by:
+
+\begin{equation}
+\label{equ:2qubitcollapsed}
+\ket{\phi}_{PM} = \ket{11}
+\end{equation}
+
+Looking at this expression tells Andy that Beatrice's electron must be in state $\ket{1}$ as well without having measured her electron! Even more suprising is the fact that the second electron was nowhere close to Andy and he was still able to determine its state. 
+
+Non-local correlations between qubit measurement outcomes is a peculiar quantum property of non-factorising quantum states and is called \emph{entanglement}. It is an integral part of quantum computation and Section~\ref{subsubsubsec:cnotgate} will give a concrete example of how to create such a state in a QC.
 
 %%%%% SECTION: Q LOGIC GATES
 
@@ -202,7 +235,8 @@ The quantum equivalent of the classical NOT logic gate is called X gate and is g
  \end{pmatrix}
 \end{equation}
 
-The action of a quantum gate on a qubit state can be analysed using the gate's matrix and the qubit's vector representation. Applying some straightforward linear algebra yields:
+
+The action of a quantum gate on the arbitrary qubit state $\ket{\psi}$ (Equ.~\ref{equ: simplequbitvector}) can be analysed using the gate's matrix and the qubit's vector representation. Applying some straightforward linear algebra yields:
 
 \begin{equation}
 \label{equ:xverification1}
@@ -233,7 +267,9 @@ X \otimes \ket{0} = \begin{pmatrix}
  1 \end{pmatrix} =  \ket{1}
 \end{equation}
 
-In terms of the example with the electron of a hydrogen atom shown in Fig.~\ref{img:qubitatom} consider the qubit initially being in state \0. Applying an X gate will flip the qubit into the \1 state which can be implemented in the lab by exciting the electron into the next highest electron valence shell using a controlled laser pulse.
+In terms of the example with the electron of a hydrogen atom shown in Fig.~\ref{img:qubitatom} an X gate can be implemented by exciting the electron from the ground state ($\ket{0}$) into the next highest electron valence shell ($\ket{1}$) using a controlled laser pulse.
+
+%consider the qubit initially being in state \0. Applying an X gate will flip the qubit into the \1 state which can be implemented in the lab by exciting the electron into the next highest electron valence shell using a controlled laser pulse.
 
 The \0 state is recovered when applying X again to the \1 state,
 
@@ -250,7 +286,7 @@ X \otimes \ket{1} = \begin{pmatrix}
  0 \end{pmatrix} =  \ket{0}
 \end{equation}
 
-On the Bloch sphere, the X gate corresponds to a anti-clockwise $\pi$ rotation around the x-axis as shown in Fig.~\ref{img:blochxgate}.
+On the Bloch sphere, the X gate corresponds to an anti-clockwise $\pi$ rotation around the x-axis as shown in Fig.~\ref{img:blochxgate}.
 
 \begin{figure}[ht]
    \centering
@@ -337,7 +373,7 @@ CNOT = \begin{pmatrix}
  \end{pmatrix}
 \end{equation}
 
-The CNOT gate takes two qubits, control and target qubit, as input. If and only if the control qubit is in the \1 state, the NOT (X) gate is applied to the target qubit. In equations, the CNOT will always be followed by parantheses containing the control qubit followed by the target qubit (e.g. CNOT(0,1)). The input-output relation for the CNOT gate is given in the truth table~\ref{tab:cnottruthtable} below.
+The CNOT gate takes two qubits, a control and a target qubit, as input. If and only if the control qubit is in the \1 state, the NOT (X) gate is applied to the target qubit. In equations, the CNOT will always be followed by parantheses containing the control (c) qubit followed by the target (t) qubit: CNOT(c,t). The input-output relation (truth table) for the CNOT gate is given in Table~\ref{tab:cnottruthtable} below.
 
 \begin{table}[H]
 \begin{center}
@@ -372,12 +408,12 @@ Now consider applying the CNOT to this state whereby the control qubit is colour
 CNOT(\textcolor{red}{0},\textcolor{green}{1}) \otimes (\frac{1}{\sqrt{2}} \ket{\textcolor{red}{0}\textcolor{green}{0}} + \frac{1}{\sqrt{2}} \ket{\textcolor{red}{1}\textcolor{green}{0}}) = \frac{1}{\sqrt{2}} \ket{\textcolor{red}{0}\textcolor{green}{0}} + \frac{1}{\sqrt{2}} (\mathbb{1} \otimes X) \ket{\textcolor{red}{1}\textcolor{green}{0}} = \frac{1}{\sqrt{2}} \ket{\textcolor{red}{0}\textcolor{green}{0}} + \frac{1}{\sqrt{2}} \ket{\textcolor{red}{1}\textcolor{green}{1}}
 \end{equation}
 
-The last expression in Equ.~\ref{equ:cnotexamples} is one of the famous Bell states which are four maximally entangled states. Thus, this example demonstrates how the CNOT gate is crucial for the generation of entangled states since it applies the X gate to a qubit depending on the state of a second qubit.
+The last expression in Equ.~\ref{equ:cnotexamples} was used as an example (Equ.~\ref{equ:2qubitnonfactorized}) for entanglement in Section~\ref{subsec:multiplequbitsystems} and it is one of the famous Bell states which are a set of four maximally entangled states (CITATION). Thus, this example demonstrates how the CNOT gate is crucial for the generation of entangled states since it applies the X gate to a qubit depending on the state of a second qubit.
 
 The three most important multi qubit quantum gates CNOT, Toffoli and nCNOT are characterised in Table~\ref{tab:multiqubitgates}.
 
 \begin{table}[H]
-\caption{Table of major multi-qubit quantum logic gates where $c_j$ stands for the j\textsuperscript{th} control and $\mathbb{1}_k$ for the kxk identity matrix.}\vspace{1em}
+\caption{Table of major multi-qubit quantum logic gates where $c_j$ stands for the j\textsuperscript{th} control qubit and $\mathbb{1}_k$ for the kxk identity matrix.}\vspace{1em}
 \label{tab:multiqubitgates}
 \begin{tabular}{ c  C{1.8cm}  C{2cm}  c C{3cm}}\hline
 Gate & Name & Circuit representation & Matrix & Description \\ \midrule
@@ -416,16 +452,34 @@ nCNOT & n-controlled NOT & -  & $\begin{pmatrix}
 \section{Classical Machine Learning}
 \label{subsec:classicalmachinelearning}
 
-Introduce the three different types of ML!
+Machine learning can be subdivided into three major fields.
 
+\begin{redbox}
+Supervised ML\\
+- Based on \emph{input} and \emph{output} data\\
+"I know how to classify this data but I need the algorithm to do the computations for me."
+\end{redbox}
+\begin{greenbox}
+Unsupervised ML\\
+- Based on \emph{input} data only\\
+"I have no clue how to classify this data, can the algorithm create a classifier for me?"
+\end{greenbox}
+\begin{bluebox}
+Reinforcement learning\\
+- Based on \emph{input} data only\\
+"I have no clue how to classify this data, can the algorithm classify this data and I'll give it a reward if it's correct or I'll punish it if it's not."
+\end{bluebox}
 
+This thesis is focussing on quantum-enhancements in the field of supervised machine learning only.
 
 \subsection{k-nearest Neighbour Algorithm}
 \label{subsubsec:knearestneighbour}
 
-In this thesis a quantum version of the distance weighted $k$-nearest neighbour (kNN) algorithm as described in \cite{Schuld2014} will be implemented. Understanding the QML algorithm requires knowledge of the classical version of the distance weighted kNN algorithm which will be introduced in this subsection.
+Understanding the quantum version of the distance weighted $k$-nearest neighbour (kNN) algorithm as described in \cite{Schuld2014} requires prior knowledge of the classical version of the algorithm that will be introduced in this subsection.
 
-\begin{figure}[ht]
+Imagine working for a search engine company and you are given the task of classifying unknown pictures of fruits as either apples or bananas. To train your classification algorithm you are given 5 different pictures of apples and 5 different pictures of bananas and will be called the \emph{training data set} ${D}_{T}$. The pictures in ${D}_{T}$ may be taken from different angles, in varying light settings and include different coloured apples and bananas. Two examples of such pictures are shown in Fig.~\ref{img:appleandbanana}. 
+
+\begin{figure}[H]
   \begin{minipage}[t]{0.48\textwidth}
     \includegraphics[width = \textwidth]{img/apple.jpg}
   \end{minipage}
@@ -433,21 +487,25 @@ In this thesis a quantum version of the distance weighted $k$-nearest neighbour 
   \begin{minipage}[t]{0.48\textwidth}
     \includegraphics[width = \textwidth]{img/banana.png}
   \end{minipage}
-  \caption{Pictures of apple and banana from training data set.}
+  \caption{Pictures of apple and banana from training data set.\textsuperscript{3}}
   \label{img:appleandbanana}
 \end{figure}
 
-Imagine working for a search engine company and you are given the task of classifying unknown pictures of fruits as either apples or bananas. To train your classification algorithm you are given 5 pictures of apples and 5 pictures of bananas - this will be called the training data set ${D}_{T}$. Mathematically, the training data set ${D}_{T}$ consists of ten vectors ${v}_{0}, {v}_{1},..,{v}_{10}$ that are each assigned to either class $A$ (apple) or $B$ (banana). The training vectors are visualized as yellow and purple circles in Fig.~\ref{fig:knnconcept}.
+\footnotetext[3]{Reprinted from Pixabay, Retrieved December 24, 2016, from \url{https://pixabay.com/en/apple-red-fruit-frisch-vitamins-1632016/} and \url{https://pixabay.com/en/banana-fruit-yellow-1504956/}. Creative Commons Licence 2016 by Pixabay. Reprinted with permission.}
 
-kNN is a non-parametric classifier that given a new unclassified input vector $x$ (red star in Fig.~\ref{fig:knnconcept}) considers the $k$ nearest neighbours (using a predefined measure of distance) and classifies $x$, based on a majority vote, as either $A$ or $B$. Thereby, $k$ is a positive integer, usually chosen to be small and its value determines the classification outcome. Namely, in the case $k = 3$ in Fig.~\ref{fig:knnconcept}, vector $x$ will be classified as class B (purple) but in the case $k = 6$ it will be labelled class A (yellow).
+Most of the time, using the full pixel representation of each picture for classification does not lead to optimal results. Therefore, the next step is to select a certain number of characteristic \emph{features} extracted from the pictures in the training set that can be used to differentiate apples from bananas. Such features might be the RGB value of the most frequent pixel colour since bananas and apples have different colour spectra or a measure of the curvature of the main object in the picture since an apple is almost spherical whereas a banana looks more like a bend line. Through the selection \& extraction of features the dimension of the training data set is drastically reduced from a few thousand pixels to a handful of features. The $m$ extracted features for the j\textsuperscript{th} picture are stored in the $m$-dimensional \emph{feature vector} ${v}_{j}$.
 
-\begin{figure}[!ht]
+Mathematically, the training data set ${D}_{T}$ consists of ten feature vectors ${v}_{0}, {v}_{1},..,{v}_{10}$ that are each assigned to either class $A$ (apple) or $B$ (banana). The training vectors are visualized as yellow and purple circles in Fig.~\ref{fig:knnconcept}.
+
+The kNN algorithm is a non-parametric classifier that given a new unclassified input vector $x$ (red star in Fig.~\ref{fig:knnconcept}) considers the $k$ nearest neighbours within the training set (using a predefined measure of distance) and classifies $x$, based on a majority vote, as either $A$ or $B$. Thereby, $k$ is a positive integer, usually chosen to be small and its value determines the classification outcome. Namely, in the case $k = 3$ in Fig.~\ref{fig:knnconcept}, vector $x$ will be classified as class B (purple) but in the case $k = 6$ it will be labelled class A (yellow).
+
+\begin{figure}[H]
       \centering
        \includegraphics[scale=0.55]{img/knn-concept.png}
-       \caption[caption for kNN]{\label{fig:knnconcept} Visualization of a kNN classifier\footnotemark[3]}
+       \caption[caption for kNN]{\label{fig:knnconcept} Visualization of a kNN classifier\footnotemark[4]}
 \end{figure}
 
-\footnotetext[3]{Reprinted from GitHub, Burton de Wilde, Retrieved September 13, 2016, from \url{http://bdewilde.github.io/blog/blogger/2012/10/26/classification-of-hand-written-digits-3/}. Copyright 2012 by Burton de Wilde. Reprinted with permission.}
+\footnotetext[4]{Reprinted from GitHub, Burton de Wilde, Retrieved September 13, 2016, from \url{http://bdewilde.github.io/blog/blogger/2012/10/26/classification-of-hand-written-digits-3/}. Copyright 2012 by Burton de Wilde. Reprinted with permission.}
 
 In the case of $k = 10$, $x$ would simply be assigned to the class with the most members. In this case, the training vectors should be given distance-dependent weights (such as $\frac{1}{distance}$) to increase the influence of closer vectors over more distant ones.
 

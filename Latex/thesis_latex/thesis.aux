@@ -1,17 +1,25 @@
 \relax 
+\providecommand\tcolorbox@label[2]{}
 \@writefile{toc}{\contentsline {chapter}{Abstract}{v}}
 \newlabel{chap:symbole}{{}{vii}}
 \@writefile{toc}{\contentsline {chapter}{Nomenclature}{vii}}
 \citation{bigdata}
 \citation{bekkerman2011scaling}
 \citation{shor1994}
+\citation{qRAM}
+\citation{hydrogensimulation}
+\citation{dwave2}
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{1}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{sec:introduction}{{1}{1}}
-\newlabel{equ: simplequbit}{{1.1}{1}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.1}Research Question}{2}}
-\newlabel{subsec:researchquestion}{{1.1}{2}}
+\citation{Li2015}
+\citation{Cai2015}
+\citation{Riste2015}
+\@writefile{toc}{\contentsline {section}{\numberline {1.1}Motivation}{2}}
+\newlabel{sec:motivation}{{1.1}{2}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Research Question}{2}}
+\newlabel{sec:researchquestion}{{1.2}{2}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {2}Theoretical Foundations and Methods}{3}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -28,29 +36,33 @@
 \newlabel{equ:bornrule0}{{2.4}{4}}
 \newlabel{equ:bornrule1}{{2.5}{4}}
 \newlabel{equ: normalization}{{2.6}{4}}
-\newlabel{equ:unitarytransformation}{{2.7}{4}}
+\newlabel{equ:unitarytransformation}{{2.7}{5}}
 \newlabel{equ:unitarydef1}{{2.8}{5}}
 \newlabel{equ:unitarydef2}{{2.9}{5}}
 \newlabel{equ: blochqubit}{{2.10}{5}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces  An arbitrary two-dimensional qubit $\mathinner {|{\psi }\delimiter "526930B }$ visualized on the Bloch sphere.$^{2}$}}{5}}
 \newlabel{fig:blochsphere}{{2.2}{5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}Multiple Qubit Systems}{5}}
-\newlabel{subsec:multiplequbitsystems}{{2.1.2}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}Multiple Qubit Systems}{6}}
+\newlabel{subsec:multiplequbitsystems}{{2.1.2}{6}}
 \newlabel{equ:tensor2qubits}{{2.12}{6}}
 \newlabel{equ:matrixtensorproduct}{{2.13}{6}}
 \newlabel{equ:2qubitlineartransform1}{{2.14}{6}}
 \newlabel{equ:2qubitlineartransform2}{{2.15}{6}}
+\newlabel{equ:2qubitreexpressed}{{2.16}{7}}
+\newlabel{equ:2qubitfactorized}{{2.17}{7}}
+\newlabel{equ:2qubitnonfactorized}{{2.18}{7}}
+\newlabel{equ:2qubitcollapsed}{{2.19}{7}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.2}Quantum Logic Gates}{7}}
 \newlabel{subsec:quantumlogicgates}{{2.2}{7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Single Qubit Gates}{7}}
-\newlabel{subsubsec:singlequbitgates}{{2.2.1}{7}}
-\@writefile{toc}{\contentsline {subsubsection}{Qubit Flip (X) Gate}{7}}
-\newlabel{subsubsubsec:xgate}{{2.2.1}{7}}
-\newlabel{equ:xverification1}{{2.17}{7}}
-\newlabel{equ:xverification2}{{2.18}{7}}
-\newlabel{equ:xverification3}{{2.19}{7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Visualization of the X gate on the Bloch sphere. Initial state (black) transformed to final state (red).}}{8}}
-\newlabel{img:blochxgate}{{2.3}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Single Qubit Gates}{8}}
+\newlabel{subsubsec:singlequbitgates}{{2.2.1}{8}}
+\@writefile{toc}{\contentsline {subsubsection}{Qubit Flip (X) Gate}{8}}
+\newlabel{subsubsubsec:xgate}{{2.2.1}{8}}
+\newlabel{equ:xverification1}{{2.21}{8}}
+\newlabel{equ:xverification2}{{2.22}{8}}
+\newlabel{equ:xverification3}{{2.23}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Visualization of the X gate on the Bloch sphere. Initial state (black) transformed to final state (red).}}{9}}
+\newlabel{img:blochxgate}{{2.3}{9}}
 \@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Table of major single-qubit quantum logic gates.}}{9}}
 \newlabel{tab:singlequbitgates}{{2.1}{9}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Multiple Qubit Gates}{10}}
@@ -59,36 +71,36 @@
 \newlabel{subsubsubsec:cnotgate}{{2.2.2}{10}}
 \@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces CNOT truth table with first qubit as control, second qubit as target.}}{10}}
 \newlabel{tab:cnottruthtable}{{2.2}{10}}
-\newlabel{equ:cnotexamples}{{2.25}{10}}
+\newlabel{equ:cnotexamples}{{2.29}{10}}
 \citation{Schuld2014}
-\@writefile{lot}{\contentsline {table}{\numberline {2.3}{\ignorespaces Table of major multi-qubit quantum logic gates where $c_j$ stands for the j\textsuperscript  {th} control and $\mathbb  {1}_k$ for the kxk identity matrix.}}{11}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.3}{\ignorespaces Table of major multi-qubit quantum logic gates where $c_j$ stands for the j\textsuperscript  {th} control qubit and $\mathbb  {1}_k$ for the kxk identity matrix.}}{11}}
 \newlabel{tab:multiqubitgates}{{2.3}{11}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.3}Classical Machine Learning}{11}}
 \newlabel{subsec:classicalmachinelearning}{{2.3}{11}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}k-nearest Neighbour Algorithm}{11}}
 \newlabel{subsubsec:knearestneighbour}{{2.3.1}{11}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Pictures of apple and banana from training data set.}}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Pictures of apple and banana from training data set.\textsuperscript  {3}}}{12}}
 \newlabel{img:appleandbanana}{{2.4}{12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces caption for kNN}}{12}}
-\newlabel{fig:knnconcept}{{2.5}{12}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.4}Methods (own chapter?)}{12}}
-\newlabel{subsec:methods}{{2.4}{12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}Programming environment}{12}}
-\newlabel{subsubsec:programming}{{2.4.1}{12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}IBMs QC}{12}}
-\newlabel{subsubsec:ibmqc}{{2.4.2}{12}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Quantum-enhanced Machine Learning}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces caption for kNN}}{13}}
+\newlabel{fig:knnconcept}{{2.5}{13}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Methods (own chapter?)}{13}}
+\newlabel{subsec:methods}{{2.4}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}Programming environment}{13}}
+\newlabel{subsubsec:programming}{{2.4.1}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}IBMs QC}{13}}
+\newlabel{subsubsec:ibmqc}{{2.4.2}{13}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Quantum-enhanced Machine Learning}{15}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{sec:qml}{{3}{13}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.0.1}Quantum k-nearest Neighbour Algorithm}{13}}
-\newlabel{subsubsec:quantumknearestneighbour}{{3.0.1}{13}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.0.2}Quantum State Preparation Algorithms}{13}}
-\newlabel{subsubsec:quantumstatepreparation}{{3.0.2}{13}}
+\newlabel{sec:qml}{{3}{15}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.0.1}Quantum k-nearest Neighbour Algorithm}{15}}
+\newlabel{subsubsec:quantumknearestneighbour}{{3.0.1}{15}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.0.2}Quantum State Preparation Algorithms}{15}}
+\newlabel{subsubsec:quantumstatepreparation}{{3.0.2}{15}}
 \bibstyle{apacite}
 \bibdata{thesis}
 \bibcite{nielsen2010quantum}{\citeauthoryear {Nielsen\ \BBA{} Chuang}{Nielsen\ \BBA{} Chuang}{{\APACyear {2010}}}}
 \APACbibcite{nielsen2010quantum}{\citeauthoryear {Nielsen\ \BBA{} Chuang}{Nielsen\ \BBA{} Chuang}{{\APACyear {2010}}}}
 \bibcite{shende2008cnot}{\citeauthoryear {Shende\ \BBA{} Markov}{Shende\ \BBA{} Markov}{{\APACyear {2008}}}}
 \APACbibcite{shende2008cnot}{\citeauthoryear {Shende\ \BBA{} Markov}{Shende\ \BBA{} Markov}{{\APACyear {2008}}}}
-\@writefile{toc}{\contentsline {chapter}{References}{15}}
+\@writefile{toc}{\contentsline {chapter}{References}{17}}
