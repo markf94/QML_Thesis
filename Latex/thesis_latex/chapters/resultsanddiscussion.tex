@@ -1,5 +1,102 @@
 \chapter{Results and Discussion}\label{sec:resultsanddiscussion}
 
+
+\subsubsection{Diffusion matrix from quantum random walks}
+\label{subsubsubsec:diffusion}
+
+For the simplest case, consider the entries in the classical probability vector v to be normal distributed, e.g.
+
+CHECK THE ORDER!
+\begin{equation}
+v = \colvec{0.064180\\0.146860\\0.146770\\0.341590\\0.026840\\0.063590\\0.061700\\0.148470}
+\end{equation}
+
+The goal is to encode this classical data into a quantum memory state $\ket{M}$ of the form,
+
+\begin{align}
+\ket{M} = \quad &0.064180 \ket{000} +
+0.146860 \ket{100} +
+0.146770 \ket{010} +
+0.341590 \ket{001}\notag\\
+&+ 0.026840 \ket{110}
++ 0.063590 \ket{011} +
+0.061700 \ket{101} +
+0.148470 \ket{111}
+\end{align}
+
+%Before outlining how to prepare state $\ket{M}$ the notion of Hamming distance needs to be introduced.
+
+Furthermore, a useful tool of visualizing the HDs between binary patterns made from three qubits is a 3-D cube as shown in Fig.~\ref{img:cubenoprobs}. On the cube, adjacent qubit patterns have a HD of 1 and the HD increases by 1 for every additional corner. For example, the qubit state $\ket{000}$ is adjacent to $\ket{100}$ since they only differ in one qubit ($HD=1$). Moving one more corner yields the state $\ket{101}$ or $\ket{110}$ which both have a HD of 2 compared to $\ket{000}$.
+
+\begin{figure}[!ht]
+       \centering
+       \includegraphics[width=0.5\textwidth]{img/cubewithoutprobs.png}
+       \caption{\label{img:cubenoprobs} Visualizing Hamming distances on a 3-D cube}
+\end{figure}
+
+This way of visualizing HDs can be extended to the 16 binary patterns made by four qubits that can be visualized on a 4-D cube, also called tesseract, as illustrated in Fig.~\ref{img:hypercubenoprobs}.
+
+\begin{figure}[!ht]
+       \centering
+       \includegraphics[width=0.5\textwidth]{img/hypercubewithoutprobs.png}
+       \caption{\label{img:hypercubenoprobs} Visualizing Hamming distances on a 4-D cube (tesseract)}
+\end{figure}
+
+The idea of a coin operator $C$ can be borrowed from the theory of quantum random walks to initialize a gaussian distribution centered around a chosen binary qubit pattern. For this purpose, the coin operator is defined as,
+
+\begin{equation}
+C = \begin{pmatrix}
+\sqrt{\delta} & 1-\sqrt{\delta} \\
+1-\sqrt{\delta} & -\sqrt{\delta}
+\end{pmatrix}
+\end{equation}
+
+where $0 \leq \delta \leq 1$.
+
+
+\subsubsection{Amplitude-based quantum kNN algorithm}
+\label{subsubsubsec:quantumknearestneighbouramplitudes}
+
+\begin{equation}
+\frac{1}{\sqrt{2M}}\sum_{m=1}^{M} (\textcolor{emerald}{\ket{0}}\ket{\textcolor{red}{\Psi_{\tilde{x}} (\star)}}+\textcolor{emerald}{\ket{1}}\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{x^{m}}}})\ket{y^{m}(\textcolor{darkyellow}{A} \ or \ \textcolor{purple}{B})}\ket{m}
+\end{equation}
+where
+\begin{equation}
+\ket{\textcolor{red}{\Psi_{\tilde{x}} (\star)}} = \sum_{i=1}^{N} \textcolor{red}{\tilde{x}_i}\ket{i} \quad \quad
+\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{x^{m}}}}	 = \sum_{i=1}^{N} \textcolor{darkyellow}{x}\textcolor{purple}{_i^m} \ket{i} 
+\end{equation}
+
+\begin{equation}
+e.g. \quad \begin{pmatrix}
+ \textcolor{blue}{0.6} \\ 
+ \textcolor{emerald}{0.4}
+ \end{pmatrix} \quad \rightarrow \quad \ket{n} =  \sqrt{\textcolor{blue}{0.6}}\ket{0}+\sqrt{\textcolor{emerald}{0.4}}\ket{1}
+\end{equation}
+
+Applying the \textbf{Hadamard gate} interferes the input and the training vectors:
+
+\begin{equation}
+\frac{1}{2\sqrt{M}}\sum_{m=1}^{M} (\textcolor{emerald}{\ket{0}}[\ket{\textcolor{red}{\Psi_{\tilde{x}}}}+\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{x^{m}}}}]+\textcolor{emerald}{\ket{1}}[\ket{\textcolor{red}{\Psi_{\tilde{x}}}}-\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{x^{m}}}}])\ket{y^{m}(\textcolor{darkyellow}{A} \ or \ \textcolor{purple}{B})}\ket{m}
+\end{equation}
+
+$\rightarrow$ Perform \textbf{conditional measurement} on ancilla qubit.\\
+Successful if $\ket{0}$ state is measured.
+
+After successful conditional measurement, the state is proportional to
+\begin{equation}
+\frac{1}{2\sqrt{M}}\sum_{m=1}^{M} \sum_{i=1}^{N} (\textcolor{red}{\tilde{x}_i}+\textcolor{darkyellow}{x}\textcolor{purple}{_i^m})\ket{0}\ket{i}\ket{y^{m}(\textcolor{darkyellow}{A} \ or \ \textcolor{purple}{B})}\ket{m}
+\end{equation}
+
+Probability to measure class B:
+\begin{equation}
+p(\ket{y^m} = \ket{1(\textcolor{purple}{B})})= \sum_{m \mid y^m=1(\textcolor{purple}{B})} 1 - \frac{1}{4M} \mid \textcolor{red}{\tilde{x}} - \textcolor{purple}{x^m} \mid ^2
+\end{equation}
+
+Hereby, the advantages of the quantum version are the parallel computation of the distances between each training vector and the input vector as well as contracting distance computation and distance weighting into one computational step.
+
+The quantum advantage of the algorithm is the simultaneous computation of the HD between the input vector and each training vector which is impossible to do classically. For example, if the training set contains 1,000,000 vectors with 10 entries each, the quantum algorithm performs all 1,000,000 distance computations with the application of only 10 X and 10 CNOT gates. In contrast, the classical algorithm would need to perform  1,000,000 individual computations in order to be able to apply distance-dependent weights to each training vector. 
+
+
 \subsubsection{Controlled U Gate}
 \label{subsubsubsec:controlledugate}
 
@@ -14,7 +111,7 @@ CU = \begin{pmatrix}
 
 It is important to note that the CNOT gate is essentially a CU gate in the case of U = X. 
 
-Most of the time the CU gate cannot be implemented directly and has to be realized through larger quantum circuits consisting of CNOT and single-qubit gates. \cite{nielsen2010quantum} describe such a decomposition as shown in Fig.~\ref{img:cudecomposition}.
+Most of the time the CU gate cannot be implemented directly and has to be realized through larger quantum circuits consisting of CNOT and single-qubit gates. \citeA{nielsen2010quantum} describe such a decomposition as shown in Fig.~\ref{img:cudecomposition}.
 
 \begin{figure}[ht]
    \centering

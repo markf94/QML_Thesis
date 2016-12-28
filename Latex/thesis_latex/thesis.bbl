@@ -113,6 +113,35 @@ Giovannetti, V.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Grover%
+\ \BBA {} Rudolph%
+}{%
+Grover%
+\ \BBA {} Rudolph%
+}{%
+{\protect \APACyear {2002}}%
+}]{%
+Grover2002}
+\APACinsertmetastar {%
+Grover2002}%
+\begin{APACrefauthors}%
+Grover, L\BPBI K.%
+\BCBT {}\ \BBA {} Rudolph, T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2002}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Creating superpositions that correspond to efficiently
+  integrable probability distributions}} {{Creating superpositions that
+  correspond to efficiently integrable probability distributions}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Arxiv preprint}{}{}{2}.
+\newblock
+\begin{APACrefURL} \url{http://arxiv.org/abs/quant-ph/0208112} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 IBM%
 }{%
 IBM%
@@ -167,6 +196,32 @@ Li, Z.%
 \APACjournalVolNumPages{Physical Review Letters}{114}{14}{1--5}.
 \newblock
 \begin{APACrefDOI} \doi{10.1103/PhysRevLett.114.140504} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Nielsen%
+\ \BBA {} Chuang%
+}{%
+Nielsen%
+\ \BBA {} Chuang%
+}{%
+{\protect \APACyear {2010}}%
+}]{%
+nielsen2010quantum}
+\APACinsertmetastar {%
+nielsen2010quantum}%
+\begin{APACrefauthors}%
+Nielsen, M\BPBI A.%
+\BCBT {}\ \BBA {} Chuang, I\BPBI L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2010}.
+\newblock
+\APACrefbtitle {Quantum computation and quantum information} {Quantum
+  computation and quantum information}.
+\newblock
+\APACaddressPublisher{}{Cambridge university press}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -288,6 +343,33 @@ Shor, P\BPBI W.%
   Proc}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{}{}{}{124}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Trugenberger%
+}{%
+Trugenberger%
+}{%
+{\protect \APACyear {2001}}%
+}]{%
+Trugenberger2001}
+\APACinsertmetastar {%
+Trugenberger2001}%
+\begin{APACrefauthors}%
+Trugenberger, C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2001}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Probabilistic Quantum Memories}} {{Probabilistic
+  Quantum Memories}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Physical Review Letters}{87}{6}{067901}.
+\newblock
+\begin{APACrefURL} \url{http://arxiv.org/abs/quant-ph/0012100} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1103/PhysRevLett.87.067901} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}
