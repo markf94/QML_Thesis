@@ -15,45 +15,45 @@ Database file #1: thesis.bib
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
 Warning--No journal in Schuld2014
 Warning--No journal in shor1994
-You've used 13 entries,
+You've used 14 entries,
             6951 wiz_defined-function locations,
-            1356 strings with 13466 characters,
-and the built_in function-call counts, 24734 in all, are:
-= -- 3000
-> -- 229
-< -- 1097
-+ -- 1217
-- -- 30
-* -- 1581
-:= -- 4347
-add.period$ -- 51
-call.type$ -- 13
-change.case$ -- 223
+            1363 strings with 13616 characters,
+and the built_in function-call counts, 26528 in all, are:
+= -- 3223
+> -- 243
+< -- 1180
++ -- 1302
+- -- 32
+* -- 1697
+:= -- 4675
+add.period$ -- 55
+call.type$ -- 14
+change.case$ -- 240
 chr.to.int$ -- 0
-cite$ -- 28
-duplicate$ -- 771
-empty$ -- 1033
-format.name$ -- 415
-if$ -- 4716
+cite$ -- 30
+duplicate$ -- 819
+empty$ -- 1105
+format.name$ -- 439
+if$ -- 5061
 int.to.chr$ -- 0
-int.to.str$ -- 39
+int.to.str$ -- 42
 missing$ -- 0
-newline$ -- 355
-num.names$ -- 104
-pop$ -- 494
+newline$ -- 380
+num.names$ -- 112
+pop$ -- 518
 preamble$ -- 1
-purify$ -- 54
+purify$ -- 58
 quote$ -- 0
-skip$ -- 1530
+skip$ -- 1652
 stack$ -- 0
-substring$ -- 1339
-swap$ -- 409
-text.length$ -- 30
+substring$ -- 1433
+swap$ -- 439
+text.length$ -- 32
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 1040
+type$ -- 1120
 warning$ -- 2
-while$ -- 143
+while$ -- 150
 width$ -- 0
-write$ -- 442
+write$ -- 473
 (There were 2 warnings)

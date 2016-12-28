@@ -522,20 +522,26 @@ In the case of $k = 10$, $\vec{x}$ would simply be assigned to the class with th
 \label{subsubsubsec:bigO}
 
 CITATIONS!
-In the fields of computer science and quantum information, the so-called Big-O notation is often used to describe the limiting behaviour of an algorithm. It quantifies how an algorithm reacts to varying input size
+In the fields of computer science and quantum information, the so-called Big-O notation is often used to describe how the limiting behaviour of an algorithm depends on variables such as the number of input vectors and their size for example.
 
-For any monotonic functions $f(n)$ and $g(n)$ from the positive integers to the positive integers, we say that $f(n) = \mathcal{O}(g(n))$ when there exist constants $c > 0$ and $n0 > 0$ such that
+\begin{redbox}
+\textbf{Formal definition of Big-O}\\
+\newline
+For any monotonic functions $f(x)$ and $g(x)$ defined on a subset of the real numbers (${\rm I\!R}$), one says that $f(x) = \mathcal{O}(g(x))$ if and only if when there exists constants $c \geq 0$ and $n_0 \geq 0$ such that
 
 \begin{equation}
-f(n) ≤ c * g(n), for all n ≥ n0
+\mid f(x) \mid \quad \leq \quad c\text{ }*\mid g(x) \mid \quad \text{for all } n \geq n_0
 \end{equation}
 
-Intuitively, this means that function $f(n)$ does not grow faster than $g(n)$, or that function $g(n)$ is an upper bound for $f(n)$, for all sufficiently large $n→∞$.
+This implies that the function $f(x)$ does not grow at a faster rate than $g(x)$, or in other words that function $g(x)$ is an upper bound for the function $f(x)$, for all $n\rightarrow \infty$.
+\end{redbox}
+
+Briefly introduce constant, linear, poly, logarithmic and exponential and reference the figure
 
 \begin{figure}[H]
       \centering
        \includegraphics[scale=0.35]{img/bigocomplexity.png}
-       \caption[caption for kNN]{\label{fig:knnconcept} Overview of algorithmic complexity classes\footnotemark[5]}
+       \caption[]{\label{fig:algcomplexities} Overview of algorithmic complexity classes\footnotemark[5]}
 \end{figure}
 
 \footnotetext[5]{Reprinted from Big-O Cheatsheet, Retrieved December 28, 2016, from \url{http://bigocheatsheet.com/}. Copyright 2016 by Big-O Cheatsheet. Reprinted with permission.}

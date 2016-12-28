@@ -346,6 +346,32 @@ Shor, P\BPBI W.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Soklakov%
+\ \BBA {} Schack%
+}{%
+Soklakov%
+\ \BBA {} Schack%
+}{%
+{\protect \APACyear {2006}}%
+}]{%
+soklakov2006efficient}
+\APACinsertmetastar {%
+soklakov2006efficient}%
+\begin{APACrefauthors}%
+Soklakov, A\BPBI N.%
+\BCBT {}\ \BBA {} Schack, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2006}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Efficient state preparation for a register of quantum
+  bits} {Efficient state preparation for a register of quantum bits}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Physical Review A}{73}{1}{012307}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Trugenberger%
 }{%
 Trugenberger%
