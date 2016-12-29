@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  29 DEC 2016 18:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  29 DEC 2016 18:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -818,7 +818,7 @@ and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
 l.20        \cellcolor
-                      {red1} & $R_z(-\frac{23}{16}\pi)$ & Red ($\ket{0}$)\\\...
+                      {red1} & 111 000 000 & Red ($\ket{0}$)\\\midrule
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -829,6 +829,15 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no d in font nullfont!
 Missing character: There is no 1 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
 Missing character: There is no R in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no d in font nullfont!
@@ -836,7 +845,7 @@ Missing character: There is no ( in font nullfont!
 ! Undefined control sequence.
 <recently read> \ket 
                      
-l.20 ...1} & $R_z(-\frac{23}{16}\pi)$ & Red ($\ket
+l.20 ...cellcolor{red1} & 111 000 000 & Red ($\ket
                                                   {0}$)\\\midrule
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -848,7 +857,7 @@ Missing character: There is no ) in font nullfont!
 ! Undefined control sequence.
 <recently read> \midrule 
                          
-l.20 ...c{23}{16}\pi)$ & Red ($\ket{0}$)\\\midrule
+l.20 ... & 111 000 000 & Red ($\ket{0}$)\\\midrule
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -858,20 +867,26 @@ and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
 l.21        \cellcolor
-                      {blue!25} & $R_z(-\frac{23}{16}\pi)$ & Red ($\ket{0}$)...
+                      {red2} & 101 000 000 & Red ($\ket{0}$)\\\midrule
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-Missing character: There is no b in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no u in font nullfont!
+Missing character: There is no r in font nullfont!
 Missing character: There is no e in font nullfont!
-Missing character: There is no ! in font nullfont!
+Missing character: There is no d in font nullfont!
 Missing character: There is no 2 in font nullfont!
-Missing character: There is no 5 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
 Missing character: There is no R in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no d in font nullfont!
@@ -879,7 +894,7 @@ Missing character: There is no ( in font nullfont!
 ! Undefined control sequence.
 <recently read> \ket 
                      
-l.21 ...5} & $R_z(-\frac{23}{16}\pi)$ & Red ($\ket
+l.21 ...cellcolor{red2} & 101 000 000 & Red ($\ket
                                                   {0}$)\\\midrule
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -891,7 +906,7 @@ Missing character: There is no ) in font nullfont!
 ! Undefined control sequence.
 <recently read> \midrule 
                          
-l.21 ...c{23}{16}\pi)$ & Red ($\ket{0}$)\\\midrule
+l.21 ... & 101 000 000 & Red ($\ket{0}$)\\\midrule
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -901,20 +916,26 @@ and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
 l.22        \cellcolor
-                      {blue!25} & $R_z(-\frac{23}{16}\pi)$ & Red ($\ket{0}$)...
+                      {red3} & 110 000 000 & Red ($\ket{0}$)\\\midrule
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-Missing character: There is no b in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no u in font nullfont!
+Missing character: There is no r in font nullfont!
 Missing character: There is no e in font nullfont!
-Missing character: There is no ! in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no 5 in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
 Missing character: There is no R in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no d in font nullfont!
@@ -922,7 +943,7 @@ Missing character: There is no ( in font nullfont!
 ! Undefined control sequence.
 <recently read> \ket 
                      
-l.22 ...5} & $R_z(-\frac{23}{16}\pi)$ & Red ($\ket
+l.22 ...cellcolor{red3} & 110 000 000 & Red ($\ket
                                                   {0}$)\\\midrule
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -934,7 +955,7 @@ Missing character: There is no ) in font nullfont!
 ! Undefined control sequence.
 <recently read> \midrule 
                          
-l.22 ...c{23}{16}\pi)$ & Red ($\ket{0}$)\\\midrule
+l.22 ... & 110 000 000 & Red ($\ket{0}$)\\\midrule
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -944,7 +965,7 @@ and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
 l.23        \cellcolor
-                      {blue!25} & $R_z(-\frac{23}{16}\pi)$ & Red ($\ket{0}$)...
+                      {blue1} & 000 000 111 & Blue ($\ket{1}$)\\\midrule
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -955,18 +976,26 @@ Missing character: There is no b in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no e in font nullfont!
-Missing character: There is no ! in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no R in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no u in font nullfont!
 Missing character: There is no e in font nullfont!
-Missing character: There is no d in font nullfont!
 Missing character: There is no ( in font nullfont!
 ! Undefined control sequence.
 <recently read> \ket 
                      
-l.23 ...5} & $R_z(-\frac{23}{16}\pi)$ & Red ($\ket
-                                                  {0}$)\\\midrule
+l.23 ...llcolor{blue1} & 000 000 111 & Blue ($\ket
+                                                  {1}$)\\\midrule
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -977,7 +1006,7 @@ Missing character: There is no ) in font nullfont!
 ! Undefined control sequence.
 <recently read> \midrule 
                          
-l.23 ...c{23}{16}\pi)$ & Red ($\ket{0}$)\\\midrule
+l.23 ...& 000 000 111 & Blue ($\ket{1}$)\\\midrule
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -986,7 +1015,109 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.24       \bottomrule
+l.24        \cellcolor
+                      {blue2} & 000 000 101 & Blue ($\ket{1}$)\\\midrule
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no b in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no ( in font nullfont!
+! Undefined control sequence.
+<recently read> \ket 
+                     
+l.24 ...llcolor{blue2} & 000 000 101 & Blue ($\ket
+                                                  {1}$)\\\midrule
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no ) in font nullfont!
+! Undefined control sequence.
+<recently read> \midrule 
+                         
+l.24 ...& 000 000 101 & Blue ($\ket{1}$)\\\midrule
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.25        \cellcolor
+                      {blue3} & 000 000 100 & Blue ($\ket{1}$)\\\midrule
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no b in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no ( in font nullfont!
+! Undefined control sequence.
+<recently read> \ket 
+                     
+l.25 ...llcolor{blue3} & 000 000 100 & Blue ($\ket
+                                                  {1}$)\\\midrule
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no ) in font nullfont!
+! Undefined control sequence.
+<recently read> \midrule 
+                         
+l.25 ...& 000 000 100 & Blue ($\ket{1}$)\\\midrule
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.26       \bottomrule
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1001,7 +1132,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.26     \caption
+l.28     \caption
                  {Training data set of six 9-bit RGB colour codes}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1052,14 +1183,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.27 \end{table}
+l.29 \end{table}
                 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (69.1875pt too wide) in paragraph at lines 16--28
+Overfull \hbox (25.00002pt too wide) in paragraph at lines 16--30
 [][]
  []
 

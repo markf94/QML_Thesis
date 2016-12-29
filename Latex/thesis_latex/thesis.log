@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  29 DEC 2016 18:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  29 DEC 2016 19:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1649,12 +1649,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 300--303
 
 ) (./chapters/resultsanddiscussion.tex [26] [27]
 Chapter 5.
-
-LaTeX Warning: Reference `' on page 28 undefined on input line 41.
-
 [28
 
-] [29] [30] <img/cubewithoutprobs.png, id=193, 658.46pt x 598.235pt>
+]
+
+LaTeX Warning: Reference `' on page 29 undefined on input line 41.
+
+[29] [30] <img/cubewithoutprobs.png, id=193, 658.46pt x 598.235pt>
 File: img/cubewithoutprobs.png Graphic file (type png)
 
 <use img/cubewithoutprobs.png>
@@ -1716,10 +1717,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27995 strings out of 493029
- 544812 string characters out of 6136235
- 597470 words of memory out of 5000000
- 30970 multiletter control sequences out of 15000+600000
+ 27994 strings out of 493029
+ 544798 string characters out of 6136235
+ 597449 words of memory out of 5000000
+ 30969 multiletter control sequences out of 15000+600000
  28337 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  54i,22n,76p,10379b,744s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1745,7 +1746,7 @@ frm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0600.pfb></usr/sh
 are/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type
 1/public/cm-super/sftt0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
 tt1000.pfb>
-Output written on thesis.pdf (48 pages, 2349830 bytes).
+Output written on thesis.pdf (48 pages, 2349575 bytes).
 PDF statistics:
  303 PDF objects out of 1000 (max. 8388607)
  188 compressed objects within 2 object streams
