@@ -19,16 +19,17 @@
 \contentsline {chapter}{\numberline {3}Methods}{17}
 \contentsline {section}{\numberline {3.1}Liqui$\mathinner {|{}\delimiter "526930B }$}{17}
 \contentsline {section}{\numberline {3.2}IBM Quantum Experience}{18}
-\contentsline {chapter}{\numberline {4}Literature Review: Quantum-enhanced Machine Learning}{19}
-\contentsline {subsection}{\numberline {4.0.1}Quantum State Preparation Algorithms}{19}
-\contentsline {subsubsection}{Encoding classical data into qubits}{20}
-\contentsline {subsubsection}{Encoding classical data into amplitudes}{22}
-\contentsline {subsection}{\numberline {4.0.2}Quantum k-nearest Neighbour Algorithm}{23}
-\contentsline {chapter}{\numberline {5}Results and Discussion}{27}
-\contentsline {subsubsection}{Diffusion matrix from quantum random walks}{27}
-\contentsline {subsubsection}{Amplitude-based quantum kNN algorithm}{28}
-\contentsline {subsubsection}{Controlled U Gate}{29}
-\contentsline {chapter}{\numberline {6}Outlook}{31}
-\contentsline {chapter}{\numberline {7}Conclusion}{33}
-\contentsline {chapter}{\numberline {8}Personal reflection}{35}
-\contentsline {chapter}{References}{36}
+\contentsline {chapter}{\numberline {4}Literature Review: Quantum-enhanced Machine Learning}{20}
+\contentsline {subsection}{\numberline {4.0.1}Quantum State Preparation Algorithms}{20}
+\contentsline {subsubsection}{Encoding classical data into qubits}{21}
+\contentsline {subsubsection}{Encoding classical data into amplitudes}{23}
+\contentsline {subsection}{\numberline {4.0.2}Quantum k-nearest Neighbour Algorithm}{24}
+\contentsline {chapter}{\numberline {5}Results and Discussion}{28}
+\contentsline {section}{\numberline {5.1}Simulating the qubit-based kNN algorithm}{28}
+\contentsline {section}{\numberline {5.2}Development of an amplitude-based kNN algorithm}{30}
+\contentsline {subsubsection}{Diffusion matrix from quantum random walks}{31}
+\contentsline {subsubsection}{Controlled U Gate}{32}
+\contentsline {chapter}{\numberline {6}Outlook}{34}
+\contentsline {chapter}{\numberline {7}Conclusion}{35}
+\contentsline {chapter}{\numberline {8}Personal reflection}{36}
+\contentsline {chapter}{References}{37}

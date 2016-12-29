@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  29 DEC 2016 15:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  29 DEC 2016 18:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -214,6 +214,11 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks24
 \@floatcapt=\box30
 )
+(/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
+\everycr=\toks25
+\minrowclearance=\skip67
+)
 (/usr/share/texlive/texmf-dist/tex/latex/siunitx/siunitx.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2016/01/19 v6377 L3 programming layer (loader) 
@@ -253,12 +258,12 @@ L3 Module: l3skip 2016/01/05 v6366 L3 Dimensions and skips
 \l_tmpb_dim=\dimen120
 \g_tmpa_dim=\dimen121
 \g_tmpb_dim=\dimen122
-\c_zero_skip=\skip67
-\c_max_skip=\skip68
-\l_tmpa_skip=\skip69
-\l_tmpb_skip=\skip70
-\g_tmpa_skip=\skip71
-\g_tmpb_skip=\skip72
+\c_zero_skip=\skip68
+\c_max_skip=\skip69
+\l_tmpa_skip=\skip70
+\l_tmpb_skip=\skip71
+\g_tmpa_skip=\skip72
+\g_tmpb_skip=\skip73
 \c_zero_muskip=\muskip11
 \c_max_muskip=\muskip12
 \l_tmpa_muskip=\muskip13
@@ -365,8 +370,8 @@ Package: l3keys2e 2016/01/19 v6377 LaTeX2e option processing using LaTeX3 keys
 \l__siunitx_unit_prefix_base_int=\count145
 \l__siunitx_unit_prefix_gram_int=\count146
 \l__siunitx_number_product_int=\count147
-\c__siunitx_one_fill_skip=\skip73
-\l__siunitx_table_unit_align_skip=\skip74
+\c__siunitx_one_fill_skip=\skip74
+\l__siunitx_table_unit_align_skip=\skip75
 \l__siunitx_table_exponent_dim=\dimen151
 \l__siunitx_table_integer_dim=\dimen152
 \l__siunitx_table_mantissa_dim=\dimen153
@@ -380,8 +385,8 @@ Package: l3keys2e 2016/01/19 v6377 LaTeX2e option processing using LaTeX3 keys
 \l__siunitx_table_post_box=\box50
 \l__siunitx_table_mantissa_box=\box51
 \l__siunitx_table_result_box=\box52
-\l__siunitx_table_number_align_skip=\skip75
-\l__siunitx_table_text_align_skip=\skip76
+\l__siunitx_table_number_align_skip=\skip76
+\l__siunitx_table_text_align_skip=\skip77
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
@@ -512,7 +517,7 @@ Package: tcolorbox 2016/02/29 version 3.90 text color boxes
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks25
+\pgfutil@everybye=\toks26
 \pgfutil@tempdima=\dimen160
 \pgfutil@tempdimb=\dimen161
 
@@ -533,12 +538,12 @@ Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
 Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks26
-\pgfkeys@temptoks=\toks27
+\pgfkeys@pathtoks=\toks27
+\pgfkeys@temptoks=\toks28
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
 ex
-\pgfkeys@tmptoks=\toks28
+\pgfkeys@tmptoks=\toks29
 ))
 \pgf@x=\dimen162
 \pgf@y=\dimen163
@@ -554,9 +559,9 @@ ex
 \c@pgf@countb=\count149
 \c@pgf@countc=\count150
 \c@pgf@countd=\count151
-\t@pgf@toka=\toks29
-\t@pgf@tokb=\toks30
-\t@pgf@tokc=\toks31
+\t@pgf@toka=\toks30
+\t@pgf@tokb=\toks31
+\t@pgf@tokc=\toks32
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
@@ -589,9 +594,9 @@ Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
 \pgfmath@dimen=\dimen170
 \pgfmath@count=\count154
 \pgfmath@box=\box54
-\pgfmath@toks=\toks32
-\pgfmath@stack@operand=\toks33
-\pgfmath@stack@operation=\toks34
+\pgfmath@toks=\toks33
+\pgfmath@stack@operand=\toks34
+\pgfmath@stack@operation=\toks35
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
@@ -721,8 +726,8 @@ Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
 Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
 )) (/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks35
-\verbatim@line=\toks36
+\every@verbatim=\toks36
+\verbatim@line=\toks37
 \verbatim@in@stream=\read3
 )
 (/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
@@ -762,23 +767,23 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
-\inpenc@prehook=\toks37
-\inpenc@posthook=\toks38
+\inpenc@prehook=\toks38
+\inpenc@posthook=\toks39
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2015/03/04 v2.20.2
-\thm@style=\toks39
-\thm@bodyfont=\toks40
-\thm@headfont=\toks41
-\thm@notefont=\toks42
-\thm@headpunct=\toks43
-\thm@preskip=\skip77
-\thm@postskip=\skip78
-\thm@headsep=\skip79
-\dth@everypar=\toks44
+\thm@style=\toks40
+\thm@bodyfont=\toks41
+\thm@headfont=\toks42
+\thm@notefont=\toks43
+\thm@headpunct=\toks44
+\thm@preskip=\skip78
+\thm@postskip=\skip79
+\thm@headsep=\skip80
+\dth@everypar=\toks45
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/epsfig.sty
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
@@ -786,15 +791,15 @@ Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 \epsfysize=\dimen198
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-\fancy@headwidth=\skip80
-\f@ncyO@elh=\skip81
-\f@ncyO@erh=\skip82
-\f@ncyO@olh=\skip83
-\f@ncyO@orh=\skip84
-\f@ncyO@elf=\skip85
-\f@ncyO@erf=\skip86
-\f@ncyO@olf=\skip87
-\f@ncyO@orf=\skip88
+\fancy@headwidth=\skip81
+\f@ncyO@elh=\skip82
+\f@ncyO@erh=\skip83
+\f@ncyO@olh=\skip84
+\f@ncyO@orh=\skip85
+\f@ncyO@elf=\skip86
+\f@ncyO@erf=\skip87
+\f@ncyO@olf=\skip88
+\f@ncyO@orf=\skip89
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pstricks/pstricks.sty
 Package: pstricks 2015/11/14 v0.62 LaTeX wrapper for `PSTricks' (RN,HV)
@@ -808,8 +813,8 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 
 (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks45
-\XKV@tempa@toks=\toks46
+\XKV@toks=\toks46
+\XKV@tempa@toks=\toks47
 )
 \XKV@depth=\count162
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
@@ -827,7 +832,7 @@ File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 \pstFP@times=\count171
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks47
+\pgfutil@everybye=\toks48
 \pgfutil@tempdima=\dimen199
 \pgfutil@tempdimb=\dimen256
 
@@ -837,8 +842,8 @@ ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
 \pgffor@iter=\dimen257
 \pgffor@skip=\dimen258
-\pgffor@stack=\toks48
-\pgffor@toks=\toks49
+\pgffor@stack=\toks49
+\pgffor@toks=\toks50
 )
 \psLoopIndex=\count172
 
@@ -867,7 +872,7 @@ ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
 \pst@cnto=\count181
 \pst@cntp=\count182
 \@zero=\count183
-\pst@toks=\toks50
+\pst@toks=\toks51
 (/usr/share/texlive/texmf-dist/tex/generic/pstricks/pstricks.con)
 \psunit=\dimen269
 \psxunit=\dimen270
@@ -876,12 +881,12 @@ ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
 \pslinewidth=\dimen272
 \psk@startLW=\dimen273
 \psk@endLW=\dimen274
-\pst@customdefs=\toks51
+\pst@customdefs=\toks52
 \pslinearc=\dimen275
 \pst@symbolStep=\dimen276
 \pst@symbolWidth=\dimen277
 \pst@symbolLinewidth=\dimen278
-\everypsbox=\toks52
+\everypsbox=\toks53
 \psframesep=\dimen279
 \pslabelsep=\dimen280
 \sh@wgridXunit=\dimen281
@@ -907,7 +912,7 @@ Package: multido 2004/05/17 package wrapper for PSTricks `multido.tex', (HV/RN)
  v1.42, 2010/05/14 <tvz>
 \multido@count=\count185
 \multidocount=\count186
-\multido@stuff=\toks53
+\multido@stuff=\toks54
 )
 File: multido.tex 2010/05/14 v1.42 `multido' (tvz,hv)
 )
@@ -955,10 +960,10 @@ Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \c@r@tfl@t=\count191
-\rotFPtop=\skip89
-\rotFPbot=\skip90
+\rotFPtop=\skip90
+\rotFPbot=\skip91
 \rot@float@box=\box71
-\rot@mess@toks=\toks54
+\rot@mess@toks=\toks55
 ) (./mcode.sty
 -- Package: `mcode' 2.0 <2011/03/15> --
 Package: mcode 2011/03/15 2.0
@@ -966,7 +971,7 @@ Package: mcode 2011/03/15 2.0
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count192
 \lst@gtempboxa=\box72
-\lst@token=\toks55
+\lst@token=\toks56
 \lst@length=\count193
 \lst@currlwidth=\dimen302
 \lst@column=\count194
@@ -1075,9 +1080,9 @@ Package: units 1998/08/04 v0.9b Typesetting units
 
 (/usr/share/texlive/texmf-dist/tex/latex/units/nicefrac.sty
 Package: nicefrac 1998/08/04 v0.9b Nice fractions
-\L@UnitsRaiseDisplaystyle=\skip91
-\L@UnitsRaiseTextstyle=\skip92
-\L@UnitsRaiseScriptstyle=\skip93
+\L@UnitsRaiseDisplaystyle=\skip92
+\L@UnitsRaiseTextstyle=\skip93
+\L@UnitsRaiseScriptstyle=\skip94
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
@@ -1124,7 +1129,7 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutheight=\dimen324
 \Gm@layouthoffset=\dimen325
 \Gm@layoutvoffset=\dimen326
-\Gm@dimlist=\toks56
+\Gm@dimlist=\toks57
 )
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
@@ -1139,24 +1144,24 @@ LaTeX Warning: Label `equ:sumoperator' multiply defined.
 )
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 66.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 66.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 74.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 74.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    ... okay on input line 74.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1165,12 +1170,12 @@ LaTeX Font Info:    ... okay on input line 66.
 \scratchbox=\box74
 \nofMPsegments=\count274
 \nofMParguments=\count275
-\everyMPshowfont=\toks57
+\everyMPshowfont=\toks58
 \MPscratchCnt=\count276
 \MPscratchDim=\dimen328
 \MPnumerator=\count277
 \makeMPintoPDFobject=\count278
-\everyMPtoPDFconversion=\toks58
+\everyMPtoPDFconversion=\toks59
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -1216,7 +1221,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 66.
+LaTeX Info: Redefining \selectfont on input line 74.
 \c@maskedRefs=\count279
 
 (/usr/share/texlive/texmf-dist/tex/latex/apacite/english.apc
@@ -1268,16 +1273,16 @@ ABD: EveryShipout initializing macros
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c__siunitx_mathsf_int=\count281
-LaTeX Font Info:    Try loading font information for U+msa on input line 66.
+LaTeX Font Info:    Try loading font information for U+msa on input line 74.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 66.
+LaTeX Font Info:    Try loading font information for U+msb on input line 74.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+bbold on input line 66.
+LaTeX Font Info:    Try loading font information for U+bbold on input line 74.
 
 (/usr/share/texlive/texmf-dist/tex/latex/bbold/Ubbold.fd)
 \c__siunitx_mathtt_int=\count282
@@ -1289,27 +1294,27 @@ Package epstopdf Info: Source file: <img/UM_logo.eps>
 (epstopdf)                    size: 11108 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/UM_logo-eps-converted-
 to.pdf img/UM_logo.eps>
-(epstopdf)             \includegraphics on input line 68.
+(epstopdf)             \includegraphics on input line 76.
 Package epstopdf Info: Output file is already uptodate.
 
 <img/UM_logo-eps-converted-to.pdf, id=4, 445.665pt x 114.4275pt>
 File: img/UM_logo-eps-converted-to.pdf Graphic file (type pdf)
 
 <use img/UM_logo-eps-converted-to.pdf>
-Package pdftex.def Info: img/UM_logo-eps-converted-to.pdf used on input line 68
+Package pdftex.def Info: img/UM_logo-eps-converted-to.pdf used on input line 76
 .
 (pdftex.def)             Requested size: 221.6283pt x 56.9055pt.
 
-Overfull \hbox (10.45692pt too wide) in paragraph at lines 68--68
+Overfull \hbox (10.45692pt too wide) in paragraph at lines 76--76
 |  []  
  []
 
 <img/logo.jpeg, id=5, 334.6101pt x 144.54pt>
 File: img/logo.jpeg Graphic file (type jpg)
  <use img/logo.jpeg>
-Package pdftex.def Info: img/logo.jpeg used on input line 68.
+Package pdftex.def Info: img/logo.jpeg used on input line 76.
 (pdftex.def)             Requested size: 131.733pt x 56.9055pt.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 68.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 76.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -1353,7 +1358,7 @@ img/UM_logo-eps-converted-to.pdf> <./img/logo.jpeg>] [2
 Chapter 1.
 [1
 
-]) [2] (./chapters/theoreticalfoundations.tex
+]) (./chapters/theoreticalfoundations.tex [2]
 Chapter 2.
 <img/qubitimplementation.jpeg, id=61, 1055.945pt x 395.4775pt>
 File: img/qubitimplementation.jpeg Graphic file (type jpg)
@@ -1362,7 +1367,6 @@ File: img/qubitimplementation.jpeg Graphic file (type jpg)
 Package pdftex.def Info: img/qubitimplementation.jpeg used on input line 16.
 (pdftex.def)             Requested size: 384.10959pt x 143.85628pt.
  [3
-
 
  <./img/qubitimplementation.jpeg>]
 [4] <img/blochsphere.png, id=76, 2007.5pt x 2278.5125pt>
@@ -1581,108 +1585,129 @@ File: img/bigocomplexity.png Graphic file (type png)
 <use img/bigocomplexity.png>
 Package pdftex.def Info: img/bigocomplexity.png used on input line 550.
 (pdftex.def)             Requested size: 202.25513pt x 132.7456pt.
-) [15 <./img/asymptoticupperbound.png> <./img/bigocomplexity.png>] [16
+) (./chapters/methods.tex [15 <./img/asymptoticupperbound.png> <./img/bigocompl
+exity.png>] [16
 
-] (./chapters/methods.tex
+]
 Chapter 3.
 <img/liquidcodesnippet.png, id=145, 615.29875pt x 338.26375pt>
 File: img/liquidcodesnippet.png Graphic file (type png)
 
 <use img/liquidcodesnippet.png>
-Package pdftex.def Info: img/liquidcodesnippet.png used on input line 16.
+Package pdftex.def Info: img/liquidcodesnippet.png used on input line 18.
 (pdftex.def)             Requested size: 338.41536pt x 186.04562pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [17
 
-
 ]
+<img/ibmcomposer.png, id=149, 1175.39125pt x 511.9125pt>
+File: img/ibmcomposer.png Graphic file (type png)
 
-LaTeX Warning: Reference `????' on page 18 undefined on input line 27.
+<use img/ibmcomposer.png>
+Package pdftex.def Info: img/ibmcomposer.png used on input line 33.
+(pdftex.def)             Requested size: 423.14053pt x 184.28836pt.
 
-) [18 <./img/liquidcodesnippet.png>] (./chapters/quantummachinelearning.tex
-Chapter 4.
-[19
-
-
-] [20]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21]
-[22] [23]
-Underfull \hbox (badness 10000) in paragraph at lines 211--220
+ [18 <./img/liquidcodesnippet.png>]
+<img/ibmcalibration.png, id=153, 1332.98pt x 271.0125pt>
+File: img/ibmcalibration.png Graphic file (type png)
+
+<use img/ibmcalibration.png>
+Package pdftex.def Info: img/ibmcalibration.png used on input line 43.
+(pdftex.def)             Requested size: 439.88477pt x 89.43439pt.
+
+Overfull \hbox (13.09343pt too wide) in paragraph at lines 43--44
+ [][] 
+ []
+
+) (./chapters/quantummachinelearning.tex [19 <./img/ibmcomposer.png> <./img/ibm
+calibration.png>]
+Chapter 4.
+[20
+
+] [21]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22]
+[23] [24]
+Underfull \hbox (badness 10000) in paragraph at lines 212--221
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--220
+Underfull \hbox (badness 10000) in paragraph at lines 212--221
 
  []
 
-[24]
-Underfull \hbox (badness 10000) in paragraph at lines 299--302
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 300--303
 
  []
 
-) [25] [26] (./chapters/resultsanddiscussion.tex
+) (./chapters/resultsanddiscussion.tex [26] [27]
 Chapter 5.
-<img/cubewithoutprobs.png, id=178, 658.46pt x 598.235pt>
+
+LaTeX Warning: Reference `' on page 28 undefined on input line 41.
+
+[28
+
+] [29] [30] <img/cubewithoutprobs.png, id=193, 658.46pt x 598.235pt>
 File: img/cubewithoutprobs.png Graphic file (type png)
 
 <use img/cubewithoutprobs.png>
-Package pdftex.def Info: img/cubewithoutprobs.png used on input line 33.
+Package pdftex.def Info: img/cubewithoutprobs.png used on input line 128.
 (pdftex.def)             Requested size: 213.39566pt x 193.87637pt.
 
-<img/hypercubewithoutprobs.png, id=179, 648.4225pt x 557.08125pt>
+<img/hypercubewithoutprobs.png, id=194, 648.4225pt x 557.08125pt>
 File: img/hypercubewithoutprobs.png Graphic file (type png)
 
 <use img/hypercubewithoutprobs.png>
-Package pdftex.def Info: img/hypercubewithoutprobs.png used on input line 41.
+Package pdftex.def Info: img/hypercubewithoutprobs.png used on input line 136.
 (pdftex.def)             Requested size: 213.39566pt x 183.33586pt.
- [27
-
-
-] [28 <./img/cubewithoutprobs.png> <./img/hypercubewithoutprobs.png>]
-<img/controlledudecomp.png, id=187, 687.56876pt x 221.82875pt>
+ [31 <./img/cubewithoutprobs.png>]
+<img/controlledudecomp.png, id=198, 687.56876pt x 221.82875pt>
 File: img/controlledudecomp.png Graphic file (type png)
 
 <use img/controlledudecomp.png>
-Package pdftex.def Info: img/controlledudecomp.png used on input line 118.
+Package pdftex.def Info: img/controlledudecomp.png used on input line 173.
 (pdftex.def)             Requested size: 298.75262pt x 96.3864pt.
- [29]) [30 <./img/controlledudecomp.png>]
-(./chapters/outlook.tex
+ [32 <./img/hypercubewithoutprobs.png>])
+(./chapters/outlook.tex [33 <./img/controlledudecomp.png>]
 Chapter 6.
-) [31
-
-
-] [32
-
-] (./chapters/conclusion.tex
-Chapter 7.
-) [33
-
-] [34
-
-] (./chapters/personalreflection.tex
-Chapter 8.
-) (./thesis.bbl [35
+) (./chapters/conclusion.tex [34
 
 ]
-Underfull \hbox (badness 6063) in paragraph at lines 235--248
-[]\T1/cmr/m/n/10 Microsoft Re-search.  (2016).  \T1/cmr/m/it/10 Language-Integr
-ated Quan-tum Op-er-a-tions: LIQUi|>.
+Chapter 7.
+) (./chapters/personalreflection.tex [35
+
+]
+Chapter 8.
+) (./thesis.bbl [36
+
+]
+Underfull \hbox (badness 3058) in paragraph at lines 65--78
+[]\T1/cmr/m/n/10 Bishop, L.  (2016).  \T1/cmr/m/it/10 Quan-tum gate times on IB
+M quan-tum com-puter.  \T1/cmr/m/n/10 Re-trieved
  []
 
 
-Underfull \hbox (badness 7704) in paragraph at lines 235--248
-\T1/cmr/m/n/10 Re-trieved 2016-12-29, from $\T1/cmtt/m/n/10 https :// www [] .m
-icrosoft [] .com / en [] -us / research / project /
+Underfull \hbox (badness 10000) in paragraph at lines 65--78
+\T1/cmr/m/n/10 2016-12-29, from $\T1/cmtt/m/n/10 https :// quantumexperience []
+ .ng [] .bluemix [] .net / qstage / # /
  []
 
-) [36
 
-] (./thesis.aux)
+Underfull \hbox (badness 10000) in paragraph at lines 65--78
+\T1/cmtt/m/n/10 community / question [] ?questionId = 71b344418d724f8ec1088bafc
+75eb334&answerId =
+ []
+
+[37
+
+]) [38] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1691,13 +1716,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27921 strings out of 493029
- 543706 string characters out of 6136235
- 593758 words of memory out of 5000000
- 30902 multiletter control sequences out of 15000+600000
+ 27995 strings out of 493029
+ 544812 string characters out of 6136235
+ 597470 words of memory out of 5000000
+ 30970 multiletter control sequences out of 15000+600000
  28337 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 54i,20n,76p,10379b,744s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 54i,22n,76p,10379b,744s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/
 fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/
 type1/public/bbold-type1/bbold10.pfb></usr/share/texlive/texmf-dist/fonts/type1
@@ -1720,10 +1745,10 @@ frm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0600.pfb></usr/sh
 are/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type
 1/public/cm-super/sftt0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
 tt1000.pfb>
-Output written on thesis.pdf (46 pages, 2246860 bytes).
+Output written on thesis.pdf (48 pages, 2349830 bytes).
 PDF statistics:
- 295 PDF objects out of 1000 (max. 8388607)
- 184 compressed objects within 2 object streams
+ 303 PDF objects out of 1000 (max. 8388607)
+ 188 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 156 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 166 words of extra memory for PDF output out of 10000 (max. 10000000)
 

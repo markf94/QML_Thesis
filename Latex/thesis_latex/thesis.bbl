@@ -52,6 +52,31 @@ Bekkerman, R.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Bishop%
+}{%
+Bishop%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+ibmgatetimes}
+\APACinsertmetastar {%
+ibmgatetimes}%
+\begin{APACrefauthors}%
+Bishop, L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+\APACrefbtitle {{Quantum gate times on IBM quantum computer}.} {{Quantum gate
+  times on IBM quantum computer}.}
+\newblock
+\begin{APACrefURL}
+  [{2016-12-29}]\url{https://quantumexperience.ng.bluemix.net/qstage/#/community/question?questionId=71b344418d724f8ec1088bafc75eb334&answerId=3a2f15c989b2aa752f563cfaf53ae240}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Cai%
 \ \protect \BOthers {.}}{%
 Cai%
@@ -170,7 +195,30 @@ IBM%
 IBM%
 }{%
 {\protect \APACyear {2016}}%
-}]{%
+{\protect \APACexlab {{\protect \BCnt {1}}}}}]{%
+ibmquantumcomputer}
+\APACinsertmetastar {%
+ibmquantumcomputer}%
+\begin{APACrefauthors}%
+IBM.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016{\protect \BCnt {1}}}{}{}.
+\newblock
+\APACrefbtitle {{The IBM Quantum Experience}.} {{The IBM Quantum Experience}.}
+\newblock
+\begin{APACrefURL} [{2016-12-29}]\url{http://www.research.ibm.com/quantum/}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+IBM%
+}{%
+IBM%
+}{%
+{\protect \APACyear {2016}}%
+{\protect \APACexlab {{\protect \BCnt {2}}}}}]{%
 bigdata}
 \APACinsertmetastar {%
 bigdata}%
@@ -179,14 +227,13 @@ IBM.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2016}{}{}.
+\APACrefYearMonthDay{2016{\protect \BCnt {2}}}{}{}.
 \newblock
-\APACrefbtitle {What is big data?} {What is big data?}
+\APACrefbtitle {{What is big data?}} {{What is big data?}}
 \newblock
-\APAChowpublished
-  {\url{https://www-01.ibm.com/software/data/bigdata/what-is-big-data.html}}.
-\newblock
-\APACrefnote{Accessed: 2016-09-08}
+\begin{APACrefURL}
+  [{2016-09-08}]\url{https://www-01.ibm.com/software/data/bigdata/what-is-big-data.html}
+  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -219,31 +266,6 @@ Li, Z.%
 \APACjournalVolNumPages{Physical Review Letters}{114}{14}{1--5}.
 \newblock
 \begin{APACrefDOI} \doi{10.1103/PhysRevLett.114.140504} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-{Microsoft Research}%
-}{%
-{Microsoft Research}%
-}{%
-{\protect \APACyear {2016}}%
-}]{%
-liquid}
-\APACinsertmetastar {%
-liquid}%
-\begin{APACrefauthors}%
-{Microsoft Research}.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2016}{}{}.
-\newblock
-\APACrefbtitle {{Language-Integrated Quantum Operations: LIQUi|>}.}
-  {{Language-Integrated Quantum Operations: LIQUi|>}.}
-\newblock
-\begin{APACrefURL}
-  [{2016-12-29}]\url{https://www.microsoft.com/en-us/research/project/language-integrated-quantum-operations-liqui/}
-  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -304,6 +326,31 @@ O'Malley, P\BPBI J\BPBI J.%
   \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1103/PhysRevX.6.031007} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Research%
+}{%
+Research%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+liquid}
+\APACinsertmetastar {%
+liquid}%
+\begin{APACrefauthors}%
+Research, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+\APACrefbtitle {{Language-Integrated Quantum Operations: LIQUi|>}.}
+  {{Language-Integrated Quantum Operations: LIQUi|>}.}
+\newblock
+\begin{APACrefURL}
+  [{2016-12-29}]\url{https://www.microsoft.com/en-us/research/project/language-integrated-quantum-operations-liqui/}
+  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

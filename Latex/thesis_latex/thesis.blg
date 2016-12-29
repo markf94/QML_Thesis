@@ -13,49 +13,77 @@ Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: thesis.bib
 Warning--entry type for "liquid" isn't style-file defined
+--line 219 of file thesis.bib
+Warning--entry type for "ibmgatetimes" isn't style-file defined
 --line 227 of file thesis.bib
+Warning--entry type for "ibmquantumcomputer" isn't style-file defined
+--line 235 of file thesis.bib
+Warning--entry type for "bigdata" isn't style-file defined
+--line 243 of file thesis.bib
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
+Name 1 in "Microsoft Research," has a comma at the end for entry liquid
+while executing---line 5062 of file apacite.bst
+Name 1 in "Microsoft Research," has a comma at the end for entry liquid
+while executing---line 5066 of file apacite.bst
+Name 1 in "Microsoft Research," has a comma at the end for entry liquid
+while executing---line 5066 of file apacite.bst
+Name 1 in "Microsoft Research," has a comma at the end for entry liquid
+while executing---line 5068 of file apacite.bst
+Name 1 in "Microsoft Research," has a comma at the end for entry liquid
+while executing---line 5068 of file apacite.bst
+Name 1 in "Microsoft Research," has a comma at the end for entry liquid
+while executing---line 5072 of file apacite.bst
+Name 1 in "Microsoft Research," has a comma at the end for entry liquid
+while executing---line 5075 of file apacite.bst
+Name 1 in "Microsoft Research," has a comma at the end for entry liquid
+while executing---line 5076 of file apacite.bst
+Name 1 in "Microsoft Research," has a comma at the end for entry liquid
+while executing---line 5079 of file apacite.bst
+Name 1 in "Microsoft Research," has a comma at the end for entry liquid
+while executing---line 5079 of file apacite.bst
+Name 1 in "Microsoft Research," has a comma at the end for entry liquid
+while executing---line 5079 of file apacite.bst
 Warning--No journal in Schuld2014
 Warning--No journal in shor1994
-You've used 16 entries,
+You've used 18 entries,
             6951 wiz_defined-function locations,
-            1373 strings with 13872 characters,
-and the built_in function-call counts, 29586 in all, are:
-= -- 3639
-> -- 264
-< -- 1293
-+ -- 1394
-- -- 38
-* -- 1854
-:= -- 5153
-add.period$ -- 63
-call.type$ -- 16
-change.case$ -- 274
+            1380 strings with 14159 characters,
+and the built_in function-call counts, 33271 in all, are:
+= -- 4240
+> -- 285
+< -- 1405
++ -- 1483
+- -- 43
+* -- 2025
+:= -- 5597
+add.period$ -- 70
+call.type$ -- 18
+change.case$ -- 324
 chr.to.int$ -- 0
-cite$ -- 34
-duplicate$ -- 892
-empty$ -- 1245
-format.name$ -- 467
-if$ -- 5708
+cite$ -- 38
+duplicate$ -- 960
+empty$ -- 1387
+format.name$ -- 495
+if$ -- 6548
 int.to.chr$ -- 0
-int.to.str$ -- 48
+int.to.str$ -- 58
 missing$ -- 0
-newline$ -- 424
-num.names$ -- 128
-pop$ -- 577
+newline$ -- 466
+num.names$ -- 144
+pop$ -- 567
 preamble$ -- 1
-purify$ -- 66
+purify$ -- 74
 quote$ -- 0
-skip$ -- 1919
+skip$ -- 2387
 stack$ -- 0
-substring$ -- 1534
-swap$ -- 479
-text.length$ -- 39
+substring$ -- 1633
+swap$ -- 511
+text.length$ -- 43
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 1352
+type$ -- 1728
 warning$ -- 2
-while$ -- 161
+while$ -- 171
 width$ -- 0
-write$ -- 521
-(There were 3 warnings)
+write$ -- 567
+(There were 11 error messages)

@@ -183,6 +183,7 @@ Additionally, \citeA{soklakov2006efficient} proposed a quantum algorithm for the
 The quantum distance-weighted kNN algorithm outlined in this section was proposed by \citeA{Schuld2014} and is based on classical data being encoded into qubits rather than amplitudes. The first step is to prepare an equal superposition $\ket{T}$ over $N$ training vectors $\vec{v}$ of length $n$ with binary entries $v_1,v_2,...v_n$ each assigned to a class $c$ as follows,
 
 \begin{equation}
+\label{equ:qubitknninitial}
 \ket{T} = \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket{v_1^p,v_2^p,...v_n^p;c^p}
 \end{equation}
 
