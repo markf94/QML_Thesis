@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  28 DEC 2016 22:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  29 DEC 2016 15:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1131,6 +1131,9 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )) (./thesis.aux
 
+LaTeX Warning: Label `fig:algcomplexities' multiply defined.
+
+
 LaTeX Warning: Label `equ:sumoperator' multiply defined.
 
 )
@@ -1555,27 +1558,34 @@ File: img/knn-concept.png Graphic file (type png)
 Package pdftex.def Info: img/knn-concept.png used on input line 510.
 (pdftex.def)             Requested size: 211.99265pt x 158.99448pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1776) has occurred while \output is active []
 
  [13 <./img/apple.jpg> <./img/banana.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 528--531
+Underfull \hbox (badness 10000) in paragraph at lines 527--530
 
  []
 
-<img/bigocomplexity.png, id=132, 809.0225pt x 530.98375pt>
+<img/asymptoticupperbound.png, id=132, 413.545pt x 319.1925pt>
+File: img/asymptoticupperbound.png Graphic file (type png)
+
+<use img/asymptoticupperbound.png>
+Package pdftex.def Info: img/asymptoticupperbound.png used on input line 537.
+(pdftex.def)             Requested size: 103.38599pt x 79.79793pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14 <./img/knn-concept.png>] <img/bigocomplexity.png, id=136, 809.0225pt x 530
+.98375pt>
 File: img/bigocomplexity.png Graphic file (type png)
 
 <use img/bigocomplexity.png>
-Package pdftex.def Info: img/bigocomplexity.png used on input line 543.
-(pdftex.def)             Requested size: 283.16212pt x 185.84709pt.
-
-Underfull \vbox (badness 6944) has occurred while \output is active []
-
- [14 <./img/knn-concept.png>]) [15 <./img/bigocomplexity.png>] [16
+Package pdftex.def Info: img/bigocomplexity.png used on input line 550.
+(pdftex.def)             Requested size: 202.25513pt x 132.7456pt.
+) [15 <./img/asymptoticupperbound.png> <./img/bigocomplexity.png>] [16
 
 ] (./chapters/methods.tex
 Chapter 3.
-<img/liquidcodesnippet.png, id=143, 615.29875pt x 338.26375pt>
+<img/liquidcodesnippet.png, id=145, 615.29875pt x 338.26375pt>
 File: img/liquidcodesnippet.png Graphic file (type png)
 
 <use img/liquidcodesnippet.png>
@@ -1586,6 +1596,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [17
 
+
 ]
 
 LaTeX Warning: Reference `????' on page 18 undefined on input line 27.
@@ -1595,65 +1606,81 @@ Chapter 4.
 [19
 
 
-] [20] [21]
-Underfull \hbox (badness 10000) in paragraph at lines 139--148
+] [20]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 139--148
-
- []
-
+ [21]
 [22] [23]
-Underfull \hbox (badness 10000) in paragraph at lines 227--230
+Underfull \hbox (badness 10000) in paragraph at lines 211--220
 
  []
 
-) [24] (./chapters/resultsanddiscussion.tex
+
+Underfull \hbox (badness 10000) in paragraph at lines 211--220
+
+ []
+
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 299--302
+
+ []
+
+) [25] [26] (./chapters/resultsanddiscussion.tex
 Chapter 5.
-<img/cubewithoutprobs.png, id=170, 658.46pt x 598.235pt>
+<img/cubewithoutprobs.png, id=178, 658.46pt x 598.235pt>
 File: img/cubewithoutprobs.png Graphic file (type png)
 
 <use img/cubewithoutprobs.png>
 Package pdftex.def Info: img/cubewithoutprobs.png used on input line 33.
 (pdftex.def)             Requested size: 213.39566pt x 193.87637pt.
 
-<img/hypercubewithoutprobs.png, id=171, 648.4225pt x 557.08125pt>
+<img/hypercubewithoutprobs.png, id=179, 648.4225pt x 557.08125pt>
 File: img/hypercubewithoutprobs.png Graphic file (type png)
 
 <use img/hypercubewithoutprobs.png>
 Package pdftex.def Info: img/hypercubewithoutprobs.png used on input line 41.
 (pdftex.def)             Requested size: 213.39566pt x 183.33586pt.
- [25
+ [27
 
 
-] [26 <./img/cubewithoutprobs.png> <./img/hypercubewithoutprobs.png>]
-<img/controlledudecomp.png, id=178, 687.56876pt x 221.82875pt>
+] [28 <./img/cubewithoutprobs.png> <./img/hypercubewithoutprobs.png>]
+<img/controlledudecomp.png, id=187, 687.56876pt x 221.82875pt>
 File: img/controlledudecomp.png Graphic file (type png)
 
 <use img/controlledudecomp.png>
 Package pdftex.def Info: img/controlledudecomp.png used on input line 118.
 (pdftex.def)             Requested size: 298.75262pt x 96.3864pt.
- [27]) [28 <./img/controlledudecomp.png>]
+ [29]) [30 <./img/controlledudecomp.png>]
 (./chapters/outlook.tex
 Chapter 6.
-) [29
-
-
-] [30
-
-] (./chapters/conclusion.tex
-Chapter 7.
 ) [31
+
 
 ] [32
 
+] (./chapters/conclusion.tex
+Chapter 7.
+) [33
+
+] [34
+
 ] (./chapters/personalreflection.tex
 Chapter 8.
-) (./thesis.bbl [33
+) (./thesis.bbl [35
 
-]) [34
+]
+Underfull \hbox (badness 6063) in paragraph at lines 235--248
+[]\T1/cmr/m/n/10 Microsoft Re-search.  (2016).  \T1/cmr/m/it/10 Language-Integr
+ated Quan-tum Op-er-a-tions: LIQUi|>.
+ []
+
+
+Underfull \hbox (badness 7704) in paragraph at lines 235--248
+\T1/cmr/m/n/10 Re-trieved 2016-12-29, from $\T1/cmtt/m/n/10 https :// www [] .m
+icrosoft [] .com / en [] -us / research / project /
+ []
+
+) [36
 
 ] (./thesis.aux)
 
@@ -1664,11 +1691,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27895 strings out of 493029
- 543237 string characters out of 6136235
- 593466 words of memory out of 5000000
- 30878 multiletter control sequences out of 15000+600000
- 27650 words of font info for 80 fonts, out of 8000000 for 9000
+ 27921 strings out of 493029
+ 543706 string characters out of 6136235
+ 593758 words of memory out of 5000000
+ 30902 multiletter control sequences out of 15000+600000
+ 28337 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  54i,20n,76p,10379b,744s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/
@@ -1689,13 +1716,14 @@ pe1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/
 sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/s
 hare/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/typ
 e1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
-frm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/sh
-are/texmf/fonts/type1/public/cm-super/sftt0800.pfb></usr/share/texmf/fonts/type
-1/public/cm-super/sftt1000.pfb>
-Output written on thesis.pdf (44 pages, 2223173 bytes).
+frm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0600.pfb></usr/sh
+are/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type
+1/public/cm-super/sftt0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
+tt1000.pfb>
+Output written on thesis.pdf (46 pages, 2246860 bytes).
 PDF statistics:
- 284 PDF objects out of 1000 (max. 8388607)
- 177 compressed objects within 2 object streams
+ 295 PDF objects out of 1000 (max. 8388607)
+ 184 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 151 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 156 words of extra memory for PDF output out of 10000 (max. 10000000)
 

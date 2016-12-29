@@ -481,9 +481,9 @@ This thesis is focussing on quantum-enhancements in the field of supervised mach
 \subsection{k-nearest Neighbour Algorithm}
 \label{subsubsec:knearestneighbour}
 
-Understanding the quantum version of the distance weighted $k$-nearest neighbour (kNN) algorithm as described in \cite{Schuld2014} requires prior knowledge of the classical version of the algorithm that will be introduced in this subsection.
+Understanding the quantum version of the distance weighted $k$-nearest neighbour (kNN) algorithm as proposed by \citeA{Schuld2014} requires prior knowledge of the classical version of the algorithm that will be introduced in this subsection.
 
-Imagine working for a search engine company and you are given the task of classifying unknown pictures of fruits as either apples or bananas. To train your classification algorithm you are given 5 different pictures of apples and 5 different pictures of bananas and will be called the \emph{training data set} ${D}_{T}$. The pictures in ${D}_{T}$ may be taken from different angles, in varying light settings and include different coloured apples and bananas. Two examples of such pictures are shown in Fig.~\ref{img:appleandbanana}. 
+Imagine working for a search engine company and you are given the task of classifying unknown pictures of fruits as either apples or bananas. To train your classification algorithm you are given 5 different pictures of apples and 5 different pictures of bananas. This will be called the \emph{training data set} ${D}_{T}$. The pictures in ${D}_{T}$ may be taken from different angles, in varying light settings and include different coloured apples and bananas. Two examples of such pictures are shown in Fig.~\ref{img:appleandbanana}. 
 
 \begin{figure}[H]
   \begin{minipage}[t]{0.48\textwidth}
@@ -493,17 +493,17 @@ Imagine working for a search engine company and you are given the task of classi
   \begin{minipage}[t]{0.48\textwidth}
     \includegraphics[width = \textwidth]{img/banana.png}
   \end{minipage}
-  \caption{Pictures of apple and banana from training data set.\textsuperscript{3}}
+  \caption{Pictures of apple and banana from training data set ${D}_{T}$.\textsuperscript{3}}
   \label{img:appleandbanana}
 \end{figure}
 
 \footnotetext[3]{Reprinted from Pixabay, Retrieved December 24, 2016, from \url{https://pixabay.com/en/apple-red-fruit-frisch-vitamins-1632016/} and \url{https://pixabay.com/en/banana-fruit-yellow-1504956/}. Creative Commons Licence 2016 by Pixabay. Reprinted with permission.}
 
-Most of the time, using the full pixel representation of each picture for classification does not lead to optimal results. Therefore, the next step is to select a certain number of characteristic \emph{features} extracted from the pictures in the training set that can be used to differentiate apples from bananas. Such features might be the RGB value of the most frequent pixel colour since bananas and apples have different colour spectra or a measure of the curvature of the main object in the picture since an apple is almost spherical whereas a banana looks more like a bend line. Through the selection \& extraction of features the dimension of the training data set is drastically reduced from a few thousand pixels to a handful of features. The $m$ extracted features for the j\textsuperscript{th} picture are stored in the $m$-dimensional \emph{feature vector} $\vec{v}_{j}$.
+Most of the time, using the full pixel representation of each picture for classification does not lead to optimal results. Therefore, the next step is to select a certain number of characteristic \emph{features} extracted from the pictures in the training set that can be used to differentiate apples from bananas. Such a feature might be the RGB value of the most frequent pixel colour since bananas and apples have different colour spectra. Using a measure of the curvature of the main object in the picture is another possibility since an apple is almost spherical whereas a banana looks more like a bend line.
 
-Mathematically, the training data set ${D}_{T}$ consists of ten feature vectors $\vec{v}_{0}, \vec{v}_{1},..,\vec{v}_{10}$ that are each assigned to either class $A$ (apple) or $B$ (banana). The training vectors are visualized as yellow and purple circles in Fig.~\ref{fig:knnconcept}.
+By selecting and extracting features, the dimensionality of the training data set is drastically reduced from a few thousand pixels to a handful of features. The $m$ extracted features for the j\textsuperscript{th} picture are stored in the $m$-dimensional \emph{feature vector} $\vec{v}_{j}$. Mathematically, the training data set ${D}_{T}$ consists of ten feature vectors $\vec{v}_{0}, \vec{v}_{1},..,\vec{v}_{10}$ that are each assigned to either class $A$ (apple) or $B$ (banana). The training vectors are visualized as yellow and purple circles in Fig.~\ref{fig:knnconcept}.
 
-The kNN algorithm is a non-parametric classifier that given a new unclassified input vector $\vec{x}$ (red star in Fig.~\ref{fig:knnconcept}) considers the $k$ nearest neighbours within the training set (using a predefined measure of distance) and classifies $\vec{x}$, based on a majority vote, as either $A$ or $B$. Thereby, $k$ is a positive integer, usually chosen to be small and its value determines the classification outcome. Namely, in the case $k = 3$ in Fig.~\ref{fig:knnconcept}, vector $\vec{x}$ will be classified as class B (purple) but in the case $k = 6$ it will be labelled class A (yellow).
+Given a new picture of either a banana or an apple, you first extract the same $m$ features from it and store it in the input vector $\vec{x}$. From many algorithms you decide to use the kNN algorithm since it is a non-parametric classifier meaning it makes no prior assumption about the class of the new picture. Given a new unclassified input vector $\vec{x}$ (red star in Fig.~\ref{fig:knnconcept}), the algorithm considers the $k$ nearest neighbours within the training set (using a predefined measure of distance) and classifies $\vec{x}$, based on a majority vote, as either $A$ or $B$. Thereby, $k$ is a positive integer, usually chosen to be small and its value determines the classification outcome. Namely, in the case $k = 3$ in Fig.~\ref{fig:knnconcept}, vector $\vec{x}$ will be classified as class B (purple) but in the case $k = 6$ it will be labelled class A (yellow).
 
 \begin{figure}[H]
       \centering
@@ -521,27 +521,34 @@ In the case of $k = 10$, $\vec{x}$ would simply be assigned to the class with th
 \subsubsection{Big-O Notation}
 \label{subsubsubsec:bigO}
 
-CITATIONS!
-In the fields of computer science and quantum information, the so-called Big-O notation is often used to describe how the limiting behaviour of an algorithm depends on variables such as the number of input vectors and their size for example.
+In the fields of computer science and quantum information, the so-called Big-O notation, first described by \citeA{bachmann1894analytische}, is often used to describe how the runtime of an algorithm depends on variables such as the desired accuracy, the number of input vectors or their size.
 
 \begin{redbox}
-\textbf{Formal definition of Big-O}\\
+\textbf{Definition of Big-O}\\
 \newline
-For any monotonic functions $f(x)$ and $g(x)$ defined on a subset of the real numbers (${\rm I\!R}$), one says that $f(x) = \mathcal{O}(g(x))$ if and only if when there exists constants $c \geq 0$ and $n_0 \geq 0$ such that
+For any monotonic functions $t(n)$ and $g(n)$ defined on a subset of the real numbers (${\rm I\!R}$), one says that $t(n) = \mathcal{O}(g(n))$ if and only if when there exists constants $c \geq 0$ and $n_0 \geq 0$ such that
 
 \begin{equation}
-\mid f(x) \mid \quad \leq \quad c\text{ }*\mid g(x) \mid \quad \text{for all } n \geq n_0
+\mid f(n) \mid \quad \leq \quad c\text{ }*\mid g(n) \mid \quad \text{for all } n \geq n_0
 \end{equation}
-
-This implies that the function $f(x)$ does not grow at a faster rate than $g(x)$, or in other words that function $g(x)$ is an upper bound for the function $f(x)$, for all $n\rightarrow \infty$.
-\end{redbox}
-
-Briefly introduce constant, linear, poly, logarithmic and exponential and reference the figure
 
 \begin{figure}[H]
       \centering
-       \includegraphics[scale=0.35]{img/bigocomplexity.png}
-       \caption[]{\label{fig:algcomplexities} Overview of algorithmic complexity classes\footnotemark[5]}
+       \includegraphics[scale=0.25]{img/asymptoticupperbound.png}
+       \caption[]{\label{fig:algcomplexities} Visualization of $c\text{ }*g(n)$ being an upper asymptotic bound of $t(n)$\footnotemark[5]}
 \end{figure}
 
-\footnotetext[5]{Reprinted from Big-O Cheatsheet, Retrieved December 28, 2016, from \url{http://bigocheatsheet.com/}. Copyright 2016 by Big-O Cheatsheet. Reprinted with permission.}
+\footnotetext[5]{Reprinted from Anany Levitin and Soumen Mukherjee. Introduction to the Design \& Analysis of Algorithms. Reading, MA: Addison-Wesley, 2003. Copyright 2012 by Levitin \& Mukherjee.}
+
+This implies that the function $f(n)$ does not grow at a faster rate than $g(n)$, or in other words that some constant multiple of the function $g(n)$ is an upper asymptotic bound for the function $f(n)$, for all $n\rightarrow \infty$.
+\end{redbox}
+
+Fig.~\ref{fig:algcomplexities} provides a good visual comparison between common algorithmic complexity classes regarding their relation to the input size $n$. It can be seen that the best possible algorithmic time complexity is constant time, $\mathcal{O}(1)$, that is being independent of the size of the input data e.g. determining if a binary number is even or odd. An algorithm is still considered excellent if it runs in logarithmic time $\mathcal{O}(log(n))$. Linear search algorithms for example are linear in time expressed as $\mathcal{O}(n)$. More complex sort algorithms like "bubble sort" have a higher time complexity and often run in quadratic time ($\mathcal{O}(n^2)$). Furthermore, algorithms with complexity $\mathcal{O}(n^c)$ are said to run in polynomial time for some $c > 2$. If an algorithm has time complexity $\mathcal{O}((log(n))^c)$ for some $c \geq 1$ it is called polylogarithmic. The highest complexity classes are exponential $\mathcal{O}(c^n)$ with $c \geq 1$ and factorial time $\mathcal{O}(n!)$. For example, solving the travelling salesman problem using brute-force search runs in factorial time.
+
+\begin{figure}[H]
+      \centering
+       \includegraphics[scale=0.25]{img/bigocomplexity.png}
+       \caption[]{\label{fig:algcomplexities} Overview of algorithmic complexity classes\footnotemark[6]}
+\end{figure}
+
+\footnotetext[6]{Reprinted from Big-O Cheatsheet, Retrieved December 28, 2016, from \url{http://bigocheatsheet.com/}. Copyright 2016 by Big-O Cheatsheet. Reprinted with permission.}

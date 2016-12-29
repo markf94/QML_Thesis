@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  28 DEC 2016 19:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  29 DEC 2016 12:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1006,8 +1006,29 @@ Missing character: There is no p in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no e in font nullfont!
+Missing character: There is no F in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no ! in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no * in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no * in font nullfont!
+Missing character: There is no 1 in font nullfont!
 ! Undefined control sequence.
-l.51 \section
+l.52 \section
              *{Indicies}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1025,7 +1046,7 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 51--52
+Overfull \hbox (20.0pt too wide) in paragraph at lines 52--53
 [] 
  []
 
@@ -1044,7 +1065,7 @@ Missing character: There is no A in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no r in font nullfont!
 ! Undefined control sequence.
-l.58 \section
+l.59 \section
              *{Acronyms and Abbreviations}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1078,7 +1099,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no s in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 58--59
+Overfull \hbox (20.0pt too wide) in paragraph at lines 59--60
 []
  []
 
@@ -1323,7 +1344,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.72  \cleardoublepage
+l.73  \cleardoublepage
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1335,7 +1356,7 @@ or  <return>  to continue without it.
 ! Undefined control sequence.
 <write> \newlabel{chap:symbole}{{}{\thepage 
                                             }}
-l.72  \cleardoublepage
+l.73  \cleardoublepage
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1347,7 +1368,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <write> ...sline {chapter}{Nomenclature}{\thepage 
                                                   }}
-l.72  \cleardoublepage
+l.73  \cleardoublepage
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have

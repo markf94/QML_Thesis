@@ -12,48 +12,50 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: thesis.bib
+Warning--entry type for "liquid" isn't style-file defined
+--line 227 of file thesis.bib
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
 Warning--No journal in Schuld2014
 Warning--No journal in shor1994
-You've used 14 entries,
+You've used 16 entries,
             6951 wiz_defined-function locations,
-            1363 strings with 13616 characters,
-and the built_in function-call counts, 26528 in all, are:
-= -- 3223
-> -- 243
-< -- 1180
-+ -- 1302
-- -- 32
-* -- 1697
-:= -- 4675
-add.period$ -- 55
-call.type$ -- 14
-change.case$ -- 240
+            1373 strings with 13872 characters,
+and the built_in function-call counts, 29586 in all, are:
+= -- 3639
+> -- 264
+< -- 1293
++ -- 1394
+- -- 38
+* -- 1854
+:= -- 5153
+add.period$ -- 63
+call.type$ -- 16
+change.case$ -- 274
 chr.to.int$ -- 0
-cite$ -- 30
-duplicate$ -- 819
-empty$ -- 1105
-format.name$ -- 439
-if$ -- 5061
+cite$ -- 34
+duplicate$ -- 892
+empty$ -- 1245
+format.name$ -- 467
+if$ -- 5708
 int.to.chr$ -- 0
-int.to.str$ -- 42
+int.to.str$ -- 48
 missing$ -- 0
-newline$ -- 380
-num.names$ -- 112
-pop$ -- 518
+newline$ -- 424
+num.names$ -- 128
+pop$ -- 577
 preamble$ -- 1
-purify$ -- 58
+purify$ -- 66
 quote$ -- 0
-skip$ -- 1652
+skip$ -- 1919
 stack$ -- 0
-substring$ -- 1433
-swap$ -- 439
-text.length$ -- 32
+substring$ -- 1534
+swap$ -- 479
+text.length$ -- 39
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 1120
+type$ -- 1352
 warning$ -- 2
-while$ -- 150
+while$ -- 161
 width$ -- 0
-write$ -- 473
-(There were 2 warnings)
+write$ -- 521
+(There were 3 warnings)

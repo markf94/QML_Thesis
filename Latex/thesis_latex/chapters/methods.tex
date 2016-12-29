@@ -2,14 +2,14 @@
 
 All the calculations and plots for this thesis are done in the programming language Python which has a very intuitive syntax and comes with large libraries for scientific computing and plotting.
 
-For the implementation of the quantum kNN algorithm there are two fundamentally different ways: Running it 1) by simulating a QC or 2) by actually executing it on a real QC. The required tools for both possibilities will be explained in the following subsections.
+For the implementation of the quantum kNN algorithm there are two fundamentally different ways: Running it a) by simulating a QC or b) by actually executing it on a real QC. The required tools for both possibilities will be explained in the following subsections.
 
 \section{Liqui$\ket{}$}
 \label{subsec:simulation}
 
 Classical computers can be used to simulate the behaviour of small quantum computers. Such simulations are associated with exponential computational costs thereby limiting the number of simulated qubits. Since current state-of-the-art quantum technology uses around ten qubits, a classical computer can still be used for simulation.
 
-For the quantum computing simulations in this thesis the quantum simulation toolsuite Liqui$\ket{}$ developed by Microsoft Research will be used. Liqui$\ket{}$ is based on the functional programming language F\# and allows for simulation of up to 30 qubits (verify and cite!). It comes with a large palette of predefined single and multi quantum logic gates and allows for custom-defined quantum gates such as nCNOT and rotation gates controlled by $n$ qubits which is crucial for some of the work done in this thesis.
+For the quantum computing simulations in this thesis the quantum simulation toolsuite Liqui$\ket{}$ developed by Microsoft Research will be used. Liqui$\ket{}$ is based on the functional programming language F\# and allows for simulation of up to 30 qubits \cite{liquid}. It comes with a large palette of predefined single and multi qubit quantum logic gates and allows for custom-defined quantum gates such as nCNOT and rotation gates controlled by $n$ qubits which is crucial for some of the work done in this thesis. A short piece of example code from Liqui$\ket{}$ written in F\# is shown in Fig.~\ref{fig:liquidsnippet}.
 
 \begin{figure}[H]
       \centering

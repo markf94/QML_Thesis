@@ -22,13 +22,13 @@
 \contentsline {chapter}{\numberline {4}Literature Review: Quantum-enhanced Machine Learning}{19}
 \contentsline {subsection}{\numberline {4.0.1}Quantum State Preparation Algorithms}{19}
 \contentsline {subsubsection}{Encoding classical data into qubits}{20}
-\contentsline {subsubsection}{Encoding classical data into amplitudes}{20}
-\contentsline {subsection}{\numberline {4.0.2}Quantum k-nearest Neighbour Algorithm}{21}
-\contentsline {chapter}{\numberline {5}Results and Discussion}{25}
-\contentsline {subsubsection}{Diffusion matrix from quantum random walks}{25}
-\contentsline {subsubsection}{Amplitude-based quantum kNN algorithm}{26}
-\contentsline {subsubsection}{Controlled U Gate}{27}
-\contentsline {chapter}{\numberline {6}Outlook}{29}
-\contentsline {chapter}{\numberline {7}Conclusion}{31}
-\contentsline {chapter}{\numberline {8}Personal reflection}{33}
-\contentsline {chapter}{References}{34}
+\contentsline {subsubsection}{Encoding classical data into amplitudes}{22}
+\contentsline {subsection}{\numberline {4.0.2}Quantum k-nearest Neighbour Algorithm}{23}
+\contentsline {chapter}{\numberline {5}Results and Discussion}{27}
+\contentsline {subsubsection}{Diffusion matrix from quantum random walks}{27}
+\contentsline {subsubsection}{Amplitude-based quantum kNN algorithm}{28}
+\contentsline {subsubsection}{Controlled U Gate}{29}
+\contentsline {chapter}{\numberline {6}Outlook}{31}
+\contentsline {chapter}{\numberline {7}Conclusion}{33}
+\contentsline {chapter}{\numberline {8}Personal reflection}{35}
+\contentsline {chapter}{References}{36}

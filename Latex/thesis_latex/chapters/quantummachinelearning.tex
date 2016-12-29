@@ -27,20 +27,21 @@ Q/Q would include learning a model Hamiltonian of a system implemented in a lab 
 \emph{Quantum state preparation} is the process of preparing a quantum state that accurately represents a vector containing classical (normalized) data. There are two fundamentally different ways of preparing a quantum state representing the classical example vector v:
 
 \begin{equation}
+\label{equ:v}
 v = \begin{pmatrix}0.6 \\ 0.4 \end{pmatrix}
 \end{equation}
 
 \subsubsection{Encoding classical data into qubits}
 \label{subsubsec:classicaldataqubits}
 %speed-up not very clear since the \# of qubits increases linearly with the \# of classical bits
-The most straightforward type of quantum state preparation does not make use of quantum superpositions but only uses the definite \0 or \1 states to store information in a multi qubit system as outlined in the example below.
+The most straightforward type of quantum state preparation does not make use of quantum superpositions but only uses the definite \0 or \1 states to store binary information in a multi qubit system as outlined in the example below.
 
-Multiply vector v by ten such that probabilities can easily be represented in binary,
+Multiply vector v by ten such that the normalized entries can easily be represented in binary,
 \begin{equation}
 \begin{pmatrix}
  \textcolor{blue}{0.6} \\ 
  \textcolor{emerald}{0.4}
- \end{pmatrix}*10 \rightarrow \begin{pmatrix}
+ \end{pmatrix}*10 = \begin{pmatrix}
  \textcolor{blue}{6} \\ 
  \textcolor{emerald}{4}
  \end{pmatrix}
@@ -56,39 +57,110 @@ Multiply vector v by ten such that probabilities can easily be represented in bi
  \end{pmatrix}
  \end{equation}
 
- Rewrite 2-D vector as 1-D bit string,
+ Rewrite the 2-D vector as a 1-D bit string,
  \begin{equation}
  \begin{pmatrix}
  \textcolor{blue}{0110} \\ 
  \textcolor{emerald}{0100}
  \end{pmatrix} \rightarrow n=\textcolor{blue}{0110}\textcolor{emerald}{0100}
 \end{equation}
-For $n$ bits initialize $n$ qubits \& apply X gate to respective qubits:
+For $g$ bits initialize $g$ qubits in the \0 state \& apply the X gate to the respective qubits:
 \begin{equation}
-n=\textcolor{blue}{0110}\textcolor{emerald}{0100}  \rightarrow \ket{n} = \ket{\textcolor{blue}{0110}\textcolor{emerald}{0100}}
+n=\textcolor{blue}{0110}\textcolor{emerald}{0100}  \rightarrow \ket{n} = (\textcolor{blue}{\mathbb{1} \otimes X \otimes X \otimes \mathbb{1}}\otimes\textcolor{emerald}{\mathbb{1} \otimes X \otimes \mathbb{1} \otimes \mathbb{1}})\ket{00000000} = \ket{\textcolor{blue}{0110}\textcolor{emerald}{0100}}
 \end{equation}
 %\textbf{Only slight speed up possible}
 
-When encoding classical data into qubit states, a $k$-dimensional probability vector requires $4k$ classical bits which are encoded one-to-one into $4k$ qubits. Thus, the number of qubits increases linearly with the size of the classical data vector. Due to this one-to-one correspondence between classical bits and qubits there is no improvement with respect to data storage. Only slight (up to quadratic) speed-ups are possible through clever quantum algorithm design.
+When encoding classical data into qubit states, a $k$-dimensional probability vector requires $4k$ classical bits which are encoded one-to-one into $4k$ qubits. Thus, the number of qubits increases linearly with the size of the classical data vector. Due to this one-to-one correspondence between classical bits and qubits there is no data compression improvement compared to classical data storage. Only slight (up to quadratic) speed-ups are possible through clever quantum algorithm design (CITATION).
 
-
-Qubit-based quantum state preparation becomes slightly more complicated when aiming to achieve an equal superposition of $l$ binary patterns of the form
+Qubit-based quantum state preparation becomes slightly more complicated when aiming to achieve a quantum memory state $\ket{M}$ in an equal superposition of $l$ binary patterns $l^j$ of the form
 
 \begin{equation}
+\label{equ:memorysuperpos}
 \ket{M} = \frac{1}{\sqrt{l}}\sum^l_{j=1} \ket{l^j}
+\text{where } \ket{l^j} = \ket{l^j_1,l^j_2,...l^j_n} \text{and } l^j_k \in \left\{0,1\right\}
 \end{equation}
 
-which is a requirement for the later used qubit-encoded kNN quantum algorithm by \citeA{Schuld2014}. \citeA{Trugenberger2001} describe a quantum routine that can efficiently prepare such a state as will be explained in detail below.
+Preparing this quantum state is a requirement for the later used qubit-encoded kNN quantum algorithm by \citeA{Schuld2014}. \citeA{Trugenberger2001} describe a quantum routine that can efficiently prepare such a state as will be explained in detail below.
 
-Describe
-Trugenberger et al.
-here
+First, \citeA{Trugenberger2001} defines the new unitary quantum gate $S^j$,
 
+\begin{equation}
+S^j = \begin{pmatrix}
+\sqrt{\frac{j-1}{j}} & \frac{1}{\sqrt{j}} \\
+-\frac{1}{\sqrt{j}} & \sqrt{\frac{j-1}{j}}
+\end{pmatrix}
+\end{equation}
+
+and introduces its controlled version $CS^j$:
+
+\begin{equation}
+CS^j = \begin{pmatrix}
+\mathbb{1} & 0 \\
+0 & S^j
+\end{pmatrix}
+\end{equation}
+
+The initial quantum state is given in Equ.~\ref{equ:truginitial} and consists of three registers; the first being the pattern register containing the first pattern $l^1$, the second register $u$ is a utility register initialized in state $\ket{01}$ and the third register $m$ represents the memory register initialized with $n$ zeros in which all patterns $l^j$ will be loaded one after the other.
+
+\begin{equation}
+\label{equ:truginitial}
+\ket{\Psi^1_0} = \ket{l^1;u;m} = \ket{l^1_1,l^1_1,...,l^1_n;01;0_1,...,0_n} 
+\end{equation}
+
+The routine will use the second utility qubit $u_2$ to separate the intial state into two terms whereby $u_2 = \ket{0}$ flags the already stored patterns and $u_2 = \ket{1}$ indicates the processing term. In order to store a pattern $l^j$ in the memory register one has to perform the following operations:
+
+\begin{bluebox}
+Step 1: Using $u_2$ as one of the control qubits for the CCNOT gate, copy the pattern $l^j$ into the memory register of the processing term ($u_2=\ket{1}$):
+\begin{equation}
+\label{equ:trug1}
+\ket{\Psi^j_1} = \prod_{r=1}^n CCNOT(l^j_r,u_2,m_r)\ket{\Psi^j_0} 
+\end{equation}
+
+Step 2: If the qubits in the pattern and memory register are identical (true only for the processing term) then overwrite all qubits in the memory register with ones:
+\begin{equation}
+\label{equ:trug2}
+\ket{\Psi^j_2} = \prod_{r=1}^n X(m_r)CNOT(l^j_r,m_r)\ket{\Psi^j_1} 
+\end{equation}
+
+Step 3: Apply a nCNOT gate controlled by all $n$ qubits in the $m$ register and flip $u_2$ if and only if all $n$ qubits are ones (true only for the processing term):
+\begin{equation}
+\label{equ:trug3}
+\ket{\Psi^j_3} = nCNOT(m_1,m_2,...,m_n,u_2)\ket{\Psi^j_2} 
+\end{equation}
+
+Step 4: Using the previously defined $CS^j$ operation, with control $u_1$ and target $u_2$ , the new pattern is transferred from the processing term into the term containing the already stored patterns ($u_2 = \ket{0}$):
+\begin{equation}
+\label{equ:trug4}
+\ket{\Psi^j_4} = CS^{l+1-j}(u_1,u_2) \ket{\Psi^j_3} 
+\end{equation}
+
+Step 5 \& 6: In Step 2 \& 3 all qubits in the memory register were overwritten with ones and these steps can be undone by applying their inverse operations:
+\begin{align}
+\label{equ:trug56}
+\ket{\Psi^j_5} &= nCNOT(m_1,m_2,...,m_n,u_2)\ket{\Psi^j_4} \\
+\ket{\Psi^j_6} &= \prod_{r=n}^1 CNOT(l^j_r,m_r)X(m_r)\ket{\Psi^j_5} 
+\end{align}
+
+The resulting state is now given by the following equation:
+
+\begin{equation}
+\label{equ:trug6}
+\ket{\Psi^j_6} = \frac{1}{\sqrt{l}} \sum^{j}_{w=1} \ket{l^j;00;l^w} + \sqrt{\frac{l-j}{l}} \ket{l^j;01;l^j}
+\end{equation}
+
+Step 7: Finally, by applying the inverse operation of Step 1 the memory register of the processing term is restored to zeros only:
+\begin{equation}
+\label{equ:trug7}
+\ket{\Psi^j_7} = \prod_{r=n}^1 CCNOT(l^j_r,u_2,m_r) \ket{\Psi^j_6} 
+\end{equation}
+\end{bluebox}
+
+At the end of Step 7 the next pattern can be loaded into the first register and by applying Steps 1-7 again the pattern gets added to the memory register. After repeating this procedure $l$ times the memory register $m$ will be in the desired state $\ket{M}$ defined by Equ.~\ref{equ:memorysuperpos}.
 
 \subsubsection{Encoding classical data into amplitudes}
 \label{subsubsec:classicaldataamplitudes}
 
-A more sophisticated way of representing the classical vector $v$ as a quantum state makes use of the large number of available amplitudes in a multi qubit system. The general idea is demonstrated in Equ.~\ref{equ:amplitudedata} below.
+A more sophisticated way of representing the classical vector $v$ (Equ.~\ref{equ:v}) as a quantum state makes use of the large number of available amplitudes in a multi qubit system. The general idea is demonstrated in Equ.~\ref{equ:amplitudedata} below.
 
 \begin{equation}
 \label{equ:amplitudedata}
@@ -98,12 +170,12 @@ A more sophisticated way of representing the classical vector $v$ as a quantum s
  \end{pmatrix} \quad \rightarrow \quad \ket{n} = \sqrt{\textcolor{blue}{0.6}}\ket{0}+\sqrt{\textcolor{emerald}{0.4}}\ket{1}
 \end{equation}
 
-Using amplitude-based quantum state preparation, a $k$-dimensional probability vector is encoded into only $log_{2}(k)$ qubits since the number of amplitudes grows exponentially with the number of qubits. This type of quantum data storage makes exponential compression of classical data possible. Since applying a quantum gate acts on all amplitudes in the superposition at once there is the possibility of exponential speed-ups in quantum algorithms compared to their classical counterparts. Amplitude-encoding requires much a smaller number of qubits that grow logarithmically with the size of the classical data vector compared to the one-to-one correspondence in qubit-encoded state preparation. However, initializing an arbitrary amplitude distribution is still an active field of research and requires the implementation of non-trivial quantum algorithms.
+Using amplitude-based quantum state preparation, a $k$-dimensional probability vector is encoded into only $log_{2}(k)$ qubits since the number of amplitudes grows exponentially with the number of qubits. This type of quantum data storage makes exponential compression of classical data possible. Since a quantum gate acts on all amplitudes in the superposition at once there is the possibility of exponential speed-ups in quantum algorithms compared to their classical counterparts. Compared to the one-to-one correspondence in qubit-encoded state preparation, amplitude-encoding requires a much smaller number of qubits that grows logarithmically with the size of the classical data vector. However, initializing an arbitrary amplitude distribution is still an active field of research and requires the implementation of non-trivial quantum algorithms.
 
 For the case when the classical data vectors represent discrete probability distributions which are efficiently integrable on a classical computer, \citeA{Grover2002} developed a quantum routine to initialize the corresponding amplitude distribution.
 %The main idea in their algorithm is subdividing the respective probability distribution and encoding the probabilty
 %VERY COMPLICATED AND MOST GENERAL
-Additionally, \citeA{soklakov2006efficient} proposed a quantum algorithm for the the more general case that also includes classical data vectors representing non-efficiently integrable probability distributions.
+Additionally, \citeA{soklakov2006efficient} proposed a quantum algorithm for the more general case that includes initializing amplitude distributions for classical data vectors representing non-efficiently integrable probability distributions.
 
 \subsection{Quantum k-nearest Neighbour Algorithm}
 \label{subsubsec:quantumknearestneighbour}
@@ -111,29 +183,29 @@ Additionally, \citeA{soklakov2006efficient} proposed a quantum algorithm for the
 The quantum distance-weighted kNN algorithm outlined in this section was proposed by \citeA{Schuld2014} and is based on classical data being encoded into qubits rather than amplitudes. The first step is to prepare an equal superposition $\ket{T}$ over $N$ training vectors $\vec{v}$ of length $n$ with binary entries $v_1,v_2,...v_n$ each assigned to a class $c$ as follows,
 
 \begin{equation}
-\ket{T} = \frac{1}{\sqrt{N}}\sum_p^N \ket{v_1^p,v_2^p,...v_n^p;c^p}
+\ket{T} = \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket{v_1^p,v_2^p,...v_n^p;c^p}
 \end{equation}
 
 The unknown vector $\vec{x}$ of length $n$ and binary entries $x_1,x_2,...x_n$ needs to be classified and is added to the training superposition resulting in the initial state $\ket{\psi_0}$:
 
 \begin{equation}
-\ket{\psi_0} = \frac{1}{\sqrt{N}}\sum_p^N \ket{x_1^p,x_2^p,...x_n^p;v_1^p,v_2^p,...v_n^p;c^p}
+\ket{\psi_0} = \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket{x_1^p,x_2^p,...x_n^p;v_1^p,v_2^p,...v_n^p;c^p}
 \end{equation}
 
 An ancilla qubit initially in state \0 is added to the state such that the superposition is now described by,
 
 \begin{equation}
-\ket{\psi_1} = \frac{1}{\sqrt{N}}\sum_p^N \ket{x_1^p,x_2^p,...x_n^p;v_1^p,v_2^p,...v_n^p;c^p} \otimes \ket{0}
+\ket{\psi_1} = \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket{x_1^p,x_2^p,...x_n^p;v_1^p,v_2^p,...v_n^p;c^p} \otimes \ket{0}
 \end{equation}
 
 The state now consists of four registers: 1) input($x$) register, 2) training($v$) register, 3) class($c$) register and 4) ancilla($\ket{0}$) register. Next, the ancilla register is put into an equal superposition by applying an H gate to it,
 
 \begin{align}
-\ket{\psi_2} &= \frac{1}{\sqrt{N}}\sum_p^N \ket{x_1^p,x_2^p,...x_n^p;v_1^p,v_2^p,...v_n^p;c^p} \otimes H\ket{0}\notag\\
-&= \frac{1}{\sqrt{N}}\sum_p^N \ket{x_1^p,x_2^p,...x_n^p;v_1^p,v_2^p,...v_n^p;c^p} \otimes \frac{(\ket{0}+\ket{1})}{\sqrt{2}}
+\ket{\psi_2} &= \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket{x_1^p,x_2^p,...x_n^p;v_1^p,v_2^p,...v_n^p;c^p} \otimes H\ket{0}\notag\\
+&= \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket{x_1^p,x_2^p,...x_n^p;v_1^p,v_2^p,...v_n^p;c^p} \otimes \frac{(\ket{0}+\ket{1})}{\sqrt{2}}
 \end{align}
 
-The main step in any kNN algorithm is calculating some measure of distance between each training vector $\vec{v}$ and the input vector $\vec{x}$ which in this quantum algorithm is taken to be the Hamming distance as defined in the box below.
+The main step in any kNN algorithm is calculating some measure of distance between each training vector $\vec{v}$ and the input vector $\vec{x}$ which in this quantum algorithm is taken to be the Hamming distance defined in the red box below.
 
 \begin{redbox}
 \textbf{Hamming distance (CITATION?)}\\
@@ -147,22 +219,22 @@ $--------$\\
 HD $= 1+0+0 = 1$
 \end{redbox}
 
-Given quantum state $\ket{\psi_2}$ the HD between the input and each training register can be calculated by applying CNOT($x_s,v_s$) gates to all qubits in the first and second register using the input vector qubits ($x_s$) as controls and the training vector qubits ($v_s$) as targets. This will change the qubits in the second register according to the rules specified in Equ.~\ref{equ:distancerules}. 
+Given quantum state $\ket{\psi_2}$ the HD between the input and each training register can be calculated by applying CNOT($x_s,v_s^p$) gates to all qubits in the first and second register using the input vector qubits $x_s$ as controls and the training vector qubits $v_s^p$ as targets. This will change the qubits in the second register according to the rules specified in Equ.~\ref{equ:distancerules}. 
 
 \begin{equation}
 \label{equ:distancerules}
-d^p_k =
+d^p_s =
     \begin{cases}
-      0, & \text{if}\ \ket{v_k^p} = \ket{x_k} \\
+      0, & \text{if}\ \ket{v_s^p} = \ket{x_s} \\
       1, & \text{otherwise}
     \end{cases}
 \end{equation}
 
-The sum of the qubits in the second register now represents the total HD between each training register and the input. Applying an X gate to each qubit in the second register reverses the HD such that small HDs become large and vice versa. This is crucial since training vectors close to the input should be get larger weights than more distant ones. The quantum state is now given by,
+The sum of the qubits in the second register now represents the total HD between each training register and the input. Applying an X gate to each qubit in the second register reverses the HD such that small HDs become large and vice versa. This is crucial since training vectors close to the input should get larger weights than more distant vectors. The quantum state is now given by,
 
 \begin{align}
-\ket{\psi_3} &= \prod_{s=1}^n X(x_s)CNOT(x_s,v_s)\ket{\psi_2}\notag\\
-&= \frac{1}{\sqrt{N}}\sum_p^N \ket{x_1^p,x_2^p,...x_n^p;d_1^p,d_2^p,...d_n^p;c^p} \otimes \frac{(\ket{0}+\ket{1})}{\sqrt{2}}
+\ket{\psi_3} &= \prod_{s=1}^n X(v^p_s)CNOT(x_s,v^p_s)\ket{\psi_2}\notag\\
+&= \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket{x_1^p,x_2^p,...x_n^p;d_1^p,d_2^p,...d_n^p;c^p} \otimes \frac{(\ket{0}+\ket{1})}{\sqrt{2}}
 \end{align}
 
 By applying the unitary operator $U$ defined by,
@@ -176,10 +248,10 @@ where
 
 \begin{equation}
 \label{equ:sumoperator}
-K = \mathbb{1} \otimes \sum_k (\frac{\sigma_z+1}{2})_{d_k} \otimes \mathbb{1} \otimes (\sigma_z)_c
+K = \mathbb{1} \otimes \sum_s (\frac{\sigma_z+1}{2})_{d_s} \otimes \mathbb{1} \otimes (\sigma_z)_c
 \end{equation}
 
-the sum over the second register is computed. As a result, the total reverse HD, denoted $d_H(\vec{x},\vec{v}^p)$, between the $p$th training vector $\vec{v}^p$ and the input vector $\vec{x}$ is written into the amplitude of the p$th$ term in the superposition. The ancilla register is now separating the superposition into two terms due to a sign difference in the amplitudes (negative sign when ancilla is \1). The result is given by, 
+the sum over the second register is computed. As a result, the total reverse HD, denoted $d_H(\vec{x},\vec{v}^p)$, between the $p$th training vector $\vec{v}^p$ and the input vector $\vec{x}$ is written into the complex phase of the p$th$ term in the superposition. The ancilla register is now separating the superposition into two terms due to a sign difference in the amplitudes (negative sign when ancilla is \1). The result is given by, 
 
 \begin{align}
 \ket{\psi_4} &= U\ket{\psi_3}\notag\\
@@ -196,21 +268,11 @@ Applying an H gate to the ancilla register transfers the $d_H(\vec{x},\vec{v}^p)
 &\quad\quad\quad\quad\quad\quad + sin\big[\frac{\pi}{2n}d_H(\vec{x},\vec{v}^p)\big] \ket{x_1^p,x_2^p,...x_n^p;d_1^p,d_2^p,...d_n^p;c^p;1}
 \end{align}
 
-At this point the ancilla qubit is measured along the standard basis and all previous steps have to be repeated until the ancilla is measured in the \0 state. Since it is conditioned on a particular outcome, this type of measurement is called \emph{conditional measurement} (CM). The probability of a successful CM is given by the square of the absolute value of the amplitude and is dependent on the average distance between all training vectors and the input vector:
+At this point the ancilla qubit is measured along the standard basis and all previous steps have to be repeated until the ancilla is measured in the \0 state. Since it is conditioned on a particular outcome, this type of measurement is called \emph{conditional measurement} (CM). The probability of a successful CM is given by the square of the absolute value of the amplitude and is dependent on the average reverse HD between all training vectors and the input vector:
 
 \begin{equation}
 Prob(\ket{a} = \ket{0}) = \sum_p^N cos^2\big[\frac{\pi}{2n}d_H(\vec{x},\vec{v}^p)\big]
 \end{equation}
-
-When rewriting Equ.~\ref{equ:beforecm} into the following form,
-
-\begin{align}
-\label{equ:beforecm2}
-\ket{\psi_5} &= \frac{1}{\sqrt{N}}\sum_{c=1}^d \ket{c} \otimes \sum_{l \in c} cos\big[\frac{\pi}{2n}d_H(\vec{x},\vec{v}^l)\big] \ket{x_1^l,x_2^l,...x_n^l;d_1^l,d_2^l,...d_n^l;0} \notag\\
-&\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad + sin\big[\frac{\pi}{2n}d_H(\vec{x},\vec{v}^l)\big] \ket{x_1^l,x_2^l,...x_n^l;d_1^l,d_2^l,...d_n^l;1}
-\end{align}
-
-where $l$ runs over all vectors $\vec{v}$ of a particular class c.
 
 Finally, to classify the input vector $\vec{x}$ the class register is measured along the standard basis. The probability of measuring a specific class c is then given by the following expression:
 
@@ -219,9 +281,19 @@ Finally, to classify the input vector $\vec{x}$ the class register is measured a
 Prob(c) = \frac{1}{NProb(\ket{a} = \ket{0})} \sum_{l \in c} cos^2\big[\frac{\pi}{2n}d_H(\vec{x},\vec{v}^l)\big]
 \end{equation}
 
-From Equ.~\ref{equ:beforecm2} and~\ref{equ:classprobs} it is evident that the probability of measuring a certain class $c$ is dependent on the average total reverse HD between all training vectors belonging to class $c$ and the input vector $\vec{x}$. Since the total reverse HD represent distance-dependent weights it gets clear why this is the quantum equivalent to a classical distance-weighted kNN algorithm.
+%When rewriting Equ.~\ref{equ:beforecm} into the following form,
 
-In order to obtain a full picture of the probability distribution over the different classes a sufficient number of copies of $\ket{\psi_5}$ need to be prepared and the class qubit needs to be measured after a successful CM on the ancilla qubit.
+%\begin{align}
+%\label{equ:beforecm2}
+%\ket{\psi_5} &= \frac{1}{\sqrt{N}}\sum_{c=1}^d \ket{c} \otimes \sum_{l \in c} cos\big[\frac{\pi}{2n}d_H(\vec{x},\vec{v}^l)\big] \ket{x_1^l,x_2^l,...x_n^l;d_1^l,d_2^l,...d_n^l;0} \notag\\
+%&\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad + sin\big[\frac{\pi}{2n}d_H(\vec{x},\vec{v}^l)\big] \ket{x_1^l,x_2^l,...x_n^l;d_1^l,d_2^l,...d_n^l;1}
+%\end{align}
+
+%where $l$ runs over all vectors $\vec{v}$ of a particular class c.
+
+From Equ.~\ref{equ:classprobs} it is evident that the probability of measuring a certain class $c$ is dependent on the average total reverse HD between all training vectors belonging to class $c$ and the input vector $\vec{x}$. Since the total reverse HD represent distance-dependent weights it gets clear why this is the quantum equivalent to a classical distance-weighted kNN algorithm.
+
+In order to obtain a full picture of the probability distribution over the different classes a sufficient number of copies of $\ket{\psi_5}$ needs to be prepared and after successful CM on the ancilla qubit the class qubit needs to be measured.
 
 \begin{redbox}
 \textbf{Algorithmic complexity}\\

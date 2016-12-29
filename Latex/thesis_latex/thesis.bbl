@@ -1,6 +1,29 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
+Bachmann%
+}{%
+Bachmann%
+}{%
+{\protect \APACyear {1894}}%
+}]{%
+bachmann1894analytische}
+\APACinsertmetastar {%
+bachmann1894analytische}%
+\begin{APACrefauthors}%
+Bachmann, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{1894}.
+\newblock
+\APACrefbtitle {Die analytische zahlentheorie} {Die analytische zahlentheorie}\
+  (\BVOL~2).
+\newblock
+\APACaddressPublisher{}{Teubner}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Bekkerman%
 , Bilenko%
 \BCBL {}\ \BBA {} Langford%
@@ -196,6 +219,31 @@ Li, Z.%
 \APACjournalVolNumPages{Physical Review Letters}{114}{14}{1--5}.
 \newblock
 \begin{APACrefDOI} \doi{10.1103/PhysRevLett.114.140504} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{Microsoft Research}%
+}{%
+{Microsoft Research}%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+liquid}
+\APACinsertmetastar {%
+liquid}%
+\begin{APACrefauthors}%
+{Microsoft Research}.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+\APACrefbtitle {{Language-Integrated Quantum Operations: LIQUi|>}.}
+  {{Language-Integrated Quantum Operations: LIQUi|>}.}
+\newblock
+\begin{APACrefURL}
+  [{2016-12-29}]\url{https://www.microsoft.com/en-us/research/project/language-integrated-quantum-operations-liqui/}
+  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
