@@ -13,13 +13,13 @@ Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: thesis.bib
 Warning--entry type for "liquid" isn't style-file defined
---line 219 of file thesis.bib
+--line 221 of file thesis.bib
 Warning--entry type for "ibmgatetimes" isn't style-file defined
---line 227 of file thesis.bib
+--line 229 of file thesis.bib
 Warning--entry type for "ibmquantumcomputer" isn't style-file defined
---line 235 of file thesis.bib
+--line 237 of file thesis.bib
 Warning--entry type for "bigdata" isn't style-file defined
---line 243 of file thesis.bib
+--line 245 of file thesis.bib
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
 Name 1 in "Microsoft Research," has a comma at the end for entry liquid
 while executing---line 5062 of file apacite.bst
@@ -45,46 +45,45 @@ Name 1 in "Microsoft Research," has a comma at the end for entry liquid
 while executing---line 5079 of file apacite.bst
 Warning--No journal in SchuldFingerhuth
 Warning--No journal in Schuld2014
-Warning--No journal in shor1994
-You've used 19 entries,
+You've used 21 entries,
             6951 wiz_defined-function locations,
-            1384 strings with 14335 characters,
-and the built_in function-call counts, 35290 in all, are:
-= -- 4486
-> -- 304
-< -- 1517
-+ -- 1591
-- -- 45
-* -- 2161
-:= -- 5989
-add.period$ -- 74
-call.type$ -- 19
-change.case$ -- 341
+            1395 strings with 14567 characters,
+and the built_in function-call counts, 38240 in all, are:
+= -- 4895
+> -- 333
+< -- 1583
++ -- 1661
+- -- 49
+* -- 2296
+:= -- 6371
+add.period$ -- 84
+call.type$ -- 21
+change.case$ -- 376
 chr.to.int$ -- 0
-cite$ -- 41
-duplicate$ -- 1006
-empty$ -- 1455
-format.name$ -- 527
-if$ -- 6919
+cite$ -- 44
+duplicate$ -- 1097
+empty$ -- 1603
+format.name$ -- 565
+if$ -- 7578
 int.to.chr$ -- 0
-int.to.str$ -- 61
+int.to.str$ -- 67
 missing$ -- 0
-newline$ -- 492
-num.names$ -- 152
-pop$ -- 589
+newline$ -- 539
+num.names$ -- 168
+pop$ -- 673
 preamble$ -- 1
-purify$ -- 78
+purify$ -- 86
 quote$ -- 0
-skip$ -- 2515
+skip$ -- 2775
 stack$ -- 0
-substring$ -- 1747
-swap$ -- 538
-text.length$ -- 45
+substring$ -- 1843
+swap$ -- 589
+text.length$ -- 55
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 1808
-warning$ -- 3
-while$ -- 183
+type$ -- 2032
+warning$ -- 2
+while$ -- 196
 width$ -- 0
-write$ -- 602
+write$ -- 657
 (There were 11 error messages)

@@ -2,6 +2,9 @@
 
 Some more general text
 Why are some parts simulating and some parts using IBM?
+All the code can be found on GitHub\textsuperscript[7]
+
+\footnotetext[7]{Link to GitHub folder.}
 
 \section{Simulating the qubit-based kNN algorithm}
 \label{subsec:qubitKNNresults}
@@ -323,10 +326,7 @@ B\quad =&\quad R_z(-\frac{23}{16}\pi) \quad= \quad \textcolor{red}{???}  \\
 C \quad=&\quad R_z(-\frac{9}{16}\pi) \quad= \quad \textcolor{red}{???}
 \end{align}
 
-The Solovay-Kitaev theorem guarantees that given a set of single-qubit quantum gates which generates a dense subset of $SU(2)$, then that set is guaranteed to fill $SU(2)$ quickly.\textsuperscript{1}
-
-Cite
- \textsuperscript{1}Dawson, C. M., \& Nielsen, M. A. (2005). The Solovay-Kitaev algorithm. arXiv preprint quant-ph/0505030.
+The Solovay-Kitaev theorem guarantees that given a set of single-qubit quantum gates which generates a dense subset of $SU(2)$, then that set is guaranteed to fill $SU(2)$ quickly.\cite{dawson2005solovay}.
  
 $\rightarrow$ \textcolor{emerald}{\textbf{Hence, given any universal gate set it is possible to obtain good approximations to any desired gate.}}
 
@@ -337,8 +337,7 @@ Fowler distance\textsuperscript{1}:
 \begin{equation}
 dist(U,U_{approx}) = \sqrt{\frac{2-\mid tr(U\cdot U_{approx}^\dagger)\mid}{2}}
 \end{equation}
-Cite
-\textsuperscript{1}Booth Jr, J. (2012). Quantum compiler optimizations. arXiv preprint arXiv:1206.3348.
+\cite{booth2012quantum}
 \end{redbox}
 
 \begin{figure}
@@ -410,10 +409,10 @@ Overall algorithmic complexity
 
 	$\mathcal{O}(\frac{1}{p_{acc}})+\mathcal{O}(k)+\textcolor{red}{\mathcal{O}(m*log^{2.71}(\frac{m}{\epsilon}))}$ for $\epsilon$-approximations of $m$ gates
 	
-Cite \textsuperscript{1}Dawson, C. M., \& Nielsen, M. A. (2005). The Solovay-Kitaev algorithm. arXiv preprint quant-ph/0505030.
+Cite \cite{dawson2005solovay}
 	
 Due to state preparation we went from
-\begin{equation}
+\begin{equation}  
 \mathcal{O}(\frac{1}{p_{acc}})
 \end{equation}
 suddenly to 
@@ -426,7 +425,7 @@ where $m$ is the number of gates that need approximation to $\epsilon$-accuracy
 \newpage
 
 STEPPING UP THE GAME SINCE IBM DOESN'T WORK SO FAR
-\subsection{Simulations of amplitude-based kNN algorithm}
+\subsection{Simulating the amplitude-based kNN algorithm}
 \label{subsubsec:simulationamplitudeKNN}
 
 \subsubsection{Diffusion matrix from quantum random walks}

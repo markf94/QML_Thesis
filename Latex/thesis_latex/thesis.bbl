@@ -17,8 +17,8 @@ Bachmann, P.%
 \newblock
 \APACrefYear{1894}.
 \newblock
-\APACrefbtitle {Die analytische zahlentheorie} {Die analytische zahlentheorie}\
-  (\BVOL~2).
+\APACrefbtitle {{Die analytische Zahlentheorie}} {{Die analytische
+  Zahlentheorie}}\ (\BVOL~2).
 \newblock
 \APACaddressPublisher{}{Teubner}.
 \PrintBackRefs{\CurrentBib}
@@ -44,9 +44,9 @@ Bekkerman, R.%
 \newblock
 \APACrefYear{2011}.
 \newblock
-\APACrefbtitle {Scaling up machine learning: Parallel and distributed
-  approaches} {Scaling up machine learning: Parallel and distributed
-  approaches}.
+\APACrefbtitle {{Scaling up machine learning: Parallel and distributed
+  approaches}} {{Scaling up machine learning: Parallel and distributed
+  approaches}}.
 \newblock
 \APACaddressPublisher{}{Cambridge University Press}.
 \PrintBackRefs{\CurrentBib}
@@ -74,6 +74,29 @@ Bishop, L.%
 \begin{APACrefURL}
   [{2016-12-29}]\url{https://quantumexperience.ng.bluemix.net/qstage/#/community/question?questionId=71b344418d724f8ec1088bafc75eb334&answerId=3a2f15c989b2aa752f563cfaf53ae240}
   \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Booth~Jr%
+}{%
+Booth~Jr%
+}{%
+{\protect \APACyear {2012}}%
+}]{%
+booth2012quantum}
+\APACinsertmetastar {%
+booth2012quantum}%
+\begin{APACrefauthors}%
+Booth~Jr, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2012}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Quantum compiler optimizations} {Quantum compiler
+  optimizations}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{arXiv preprint arXiv:1206.3348}{}{}{}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -109,6 +132,32 @@ Cai, X\BPBI D.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Dawson%
+\ \BBA {} Nielsen%
+}{%
+Dawson%
+\ \BBA {} Nielsen%
+}{%
+{\protect \APACyear {2005}}%
+}]{%
+dawson2005solovay}
+\APACinsertmetastar {%
+dawson2005solovay}%
+\begin{APACrefauthors}%
+Dawson, C\BPBI M.%
+\BCBT {}\ \BBA {} Nielsen, M\BPBI A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2005}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{The Solovay-Kitaev algorithm}} {{The Solovay-Kitaev
+  algorithm}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{arXiv preprint quant-ph/0505030}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 D-Wave%
 }{%
 D-Wave%
@@ -125,7 +174,8 @@ D-Wave.%
 \newblock
 \APACrefYearMonthDay{2015}{}{}.
 \newblock
-\APACrefbtitle {Breaking through 1000 Qubits.} {Breaking through 1000 qubits.}
+\APACrefbtitle {{Breaking through 1000 Qubits}.} {{Breaking through 1000
+  Qubits}.}
 \newblock
 \APAChowpublished
   {\url{http://www.dwavesys.com/blog/2015/06/breaking-through-1000-qubits}}.
@@ -154,8 +204,8 @@ Giovannetti, V.%
 \newblock
 \APACrefYearMonthDay{2008}{}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Quantum random access memory} {Quantum random access
-  memory}.{\BBCQ}
+{\BBOQ}\APACrefatitle {{Quantum random access memory}} {{Quantum random access
+  memory}}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{Physical review letters}{100}{16}{160501}.
 \PrintBackRefs{\CurrentBib}
@@ -317,8 +367,8 @@ O'Malley, P\BPBI J\BPBI J.%
 \newblock
 \APACrefYearMonthDay{2016}{Jul}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Scalable Quantum Simulation of Molecular Energies}
-  {Scalable quantum simulation of molecular energies}.{\BBCQ}
+{\BBOQ}\APACrefatitle {{Scalable Quantum Simulation of Molecular Energies}}
+  {{Scalable Quantum Simulation of Molecular Energies}}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{Phys. Rev. X}{6}{}{031007}.
 \newblock
@@ -460,12 +510,13 @@ Shor, P\BPBI W.%
 \newblock
 \APACrefYearMonthDay{1994}{}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Polynomial-Time Algorithm For Prime Factorization And
-  Discrete Logarithms On A Quantum Computer: Proc} {Polynomial-time algorithm
-  for prime factorization and discrete logarithms on a quantum computer:
-  Proc}.{\BBCQ}
+{\BBOQ}\APACrefatitle {{Algorithms for quantum computation: Discrete logarithms
+  and factoring}} {{Algorithms for quantum computation: Discrete logarithms and
+  factoring}}.{\BBCQ}
 \newblock
-\APACjournalVolNumPages{}{}{}{124}.
+\BIn{} \APACrefbtitle {Foundations of Computer Science, 1994 Proceedings., 35th
+  Annual Symposium on} {Foundations of computer science, 1994 proceedings.,
+  35th annual symposium on}\ (\BPGS\ 124--134).
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
