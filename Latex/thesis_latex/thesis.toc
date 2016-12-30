@@ -26,11 +26,12 @@
 \contentsline {subsection}{\numberline {4.0.2}Quantum k-nearest Neighbour Algorithm}{24}
 \contentsline {chapter}{\numberline {5}Results and Discussion}{28}
 \contentsline {section}{\numberline {5.1}Simulating the qubit-based kNN algorithm}{28}
-\contentsline {section}{\numberline {5.2}Development of an amplitude-based kNN algorithm}{32}
-\contentsline {subsection}{\numberline {5.2.1}Simulations of amplitude-based kNN algorithm}{33}
-\contentsline {subsubsection}{Diffusion matrix from quantum random walks}{33}
-\contentsline {subsubsection}{Controlled U Gate}{34}
-\contentsline {chapter}{\numberline {6}Outlook}{36}
-\contentsline {chapter}{\numberline {7}Conclusion}{37}
-\contentsline {chapter}{\numberline {8}Personal reflection}{38}
-\contentsline {chapter}{References}{39}
+\contentsline {section}{\numberline {5.2}Development of an amplitude-based kNN algorithm}{33}
+\contentsline {subsection}{\numberline {5.2.1}Implementing the amplitude-based kNN algorithm}{34}
+\contentsline {subsubsection}{Controlled U Gate}{35}
+\contentsline {subsection}{\numberline {5.2.2}Simulations of amplitude-based kNN algorithm}{39}
+\contentsline {subsubsection}{Diffusion matrix from quantum random walks}{39}
+\contentsline {chapter}{\numberline {6}Outlook}{41}
+\contentsline {chapter}{\numberline {7}Conclusion}{42}
+\contentsline {chapter}{\numberline {8}Personal reflection}{43}
+\contentsline {chapter}{References}{44}

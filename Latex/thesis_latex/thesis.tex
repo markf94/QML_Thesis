@@ -12,9 +12,13 @@
 \usepackage{ragged2e}
 \usepackage{eurosym}
 \usepackage{amsmath}
+\usepackage{amsmath,array}
 \usepackage{apacite}
 \usepackage{array}
+\usepackage{caption}
+\usepackage{fancyvrb}
 \usepackage{float}
+\usepackage{pgfplots} %for plotting
 \usepackage{xcolor,colortbl}
 \definecolor{red1}{HTML}{FF0000}
 \definecolor{red2}{HTML}{B20000}
@@ -33,6 +37,18 @@
 \newtcolorbox{redbox}{colback=red!5!white,colframe=red!75!black}
 \newtcolorbox{bluebox}{colback=blue!5!white,colframe=blue!75!black}
 \newtcolorbox{greenbox}{colback=green!5!white,colframe=green!75!black}
+
+\usepackage{filecontents} %for data loading
+\begin{filecontents}{datax.dat}
+0.06941, 28, 0.44096, 30, 0.15165, 25
+0.04389, 146, 0.32707, 132,0.10722, 109
+0.02823, 3622, 0.08416, 3478, 0.02086, 2997
+0.01008, 17838, 0.005179, 17566, 0.01494, 14721
+0.00165, 89130,0.0015799, 88216, 0.003327, 74009
+0.00156, 444646, 0.0015601, 439060, 0.001578, 370813
+%previous 3rd row: 0.04951, 728, 0.224107, 642, 0.020864, 601
+
+\end{filecontents}
 
 % Defining some new mathematics commands
 \newcommand*{\colvec}[1]{\begin{pmatrix}#1\end{pmatrix}}
