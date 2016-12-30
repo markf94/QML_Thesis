@@ -26,10 +26,10 @@
 \contentsline {subsection}{\numberline {4.0.2}Quantum k-nearest Neighbour Algorithm}{24}
 \contentsline {chapter}{\numberline {5}Results and Discussion}{28}
 \contentsline {section}{\numberline {5.1}Simulating the qubit-based kNN algorithm}{28}
-\contentsline {section}{\numberline {5.2}Development of an amplitude-based kNN algorithm}{30}
-\contentsline {subsubsection}{Diffusion matrix from quantum random walks}{31}
-\contentsline {subsubsection}{Controlled U Gate}{32}
-\contentsline {chapter}{\numberline {6}Outlook}{34}
-\contentsline {chapter}{\numberline {7}Conclusion}{35}
-\contentsline {chapter}{\numberline {8}Personal reflection}{36}
-\contentsline {chapter}{References}{37}
+\contentsline {section}{\numberline {5.2}Development of an amplitude-based kNN algorithm}{31}
+\contentsline {subsubsection}{Diffusion matrix from quantum random walks}{32}
+\contentsline {subsubsection}{Controlled U Gate}{33}
+\contentsline {chapter}{\numberline {6}Outlook}{35}
+\contentsline {chapter}{\numberline {7}Conclusion}{36}
+\contentsline {chapter}{\numberline {8}Personal reflection}{37}
+\contentsline {chapter}{References}{38}

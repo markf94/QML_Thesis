@@ -6,55 +6,103 @@ Why are some parts simulating and some parts using IBM?
 \section{Simulating the qubit-based kNN algorithm}
 \label{subsec:qubitKNNresults}
 
-Introduce a 9-bit RGB colour classification problem!
+The computer used for the Liqui$\ket{}$ quantum simulations in this thesis only provides 8GB of RAM, thereby limiting the maximum number of simulated qubits to 24. Unfortunately, real-world machine learning problems usually involve large datasets that would require much more qubits such that a small artificial dataset needs to be constructed. For this reason, the classification of 9-bit, little-endian RGB colour codes into the classes \emph{red} and \emph{blue} will be considered. A 9-bit RGB colour code uses three bits to encode the content of each RGB colour; red, green and blue. Three binary bits $b_0,b_1,b_2$ can encode any of the numbers 0-7 according to the formula,
 
-The computer used for the Liqui$\ket{}$ quantum simulations in this thesis only provides 8GB of RAM limiting the maximum number of simulated qubits to 24. Unfortunately, real-world machine learning problems usually involve large datasets that would require much more qubits a small artificial dataset needs to be constructed. For this reason, the classification of 9-bit, little-endian RGB colour codes will be considered.
+\begin{equation}
+b_0*2^0 + b_1*2^1 + b_2*2^2 \text{ where } b_0,b_1,b_2 \in \left\{0,1\right\}
+\end{equation}
 
-The training data set is shown in Table ? and consists of three red and three blue 9-bit RGB colour codes.
+For example, the 9-bit RGB code 111 100 100 can be written in roman numerals as 7,1,1 (full red, little green, little blue) and represents \colorbox{examplered}{this red tone}.
+
+Since the class qubit $\ket{c}$ can only take binary values, class red is defined as $\ket{c} = \ket{0}$ and class blue is defined as $\ket{c} = \ket{1}$. The training set consists of 3 randomly chosen red and blue tones listed in Table~\ref{table:trainingcolours}.
 
 \begin{table}
+\centering
     \begin{tabular}{| c| c |c |}
       %\toprule
       Colour & Binary 9-bit RGB string & Class\\
       \midrule
-       \cellcolor{red1} & 111 000 000 & Red ($\ket{0}$)\\\midrule
-       \cellcolor{red2} & 101 000 000 & Red ($\ket{0}$)\\\midrule
-       \cellcolor{red3} & 110 000 000 & Red ($\ket{0}$)\\\midrule
-       \cellcolor{blue1} & 000 000 111 & Blue ($\ket{1}$)\\\midrule
-       \cellcolor{blue2} & 000 000 101 & Blue ($\ket{1}$)\\\midrule
-       \cellcolor{blue3} & 000 000 100 & Blue ($\ket{1}$)\\\midrule
+       \cellcolor{red1} & 111 000 000 & red ($\ket{0}$)\\\midrule
+       \cellcolor{red2} & 101 000 000 & red ($\ket{0}$)\\\midrule
+       \cellcolor{red3} & 110 000 000 & red ($\ket{0}$)\\\midrule
+       \cellcolor{blue1} & 000 000 111 & blue ($\ket{1}$)\\\midrule
+       \cellcolor{blue2} & 000 000 101 & blue ($\ket{1}$)\\\midrule
+       \cellcolor{blue3} & 000 000 100 & blue ($\ket{1}$)\\\midrule
       \bottomrule
     \end{tabular}
+    \label{table:trainingcolours}
     \caption{Training data set of six 9-bit RGB colour codes}
 \end{table}
 
+The quantum classifier will then be tested on four new colour tones (two red, two blue) listed in Table~\ref{table:inputcolours}. Note that all training colours are either pure red colours (without green or blue content) or pure blue colours (without green or red content). The input colours, however, also include colours with additional green content testing how the classifier reacts in cases that are not included in the training set.
+
 \begin{table}
+\centering
     \begin{tabular}{| c| c |c |}
       %\toprule
-      Colour & Binary 9-bit RGB string & Class\\
+      Colour & Binary 9-bit RGB string & Expected classification outcome\\
       \midrule
-       \cellcolor{redinput} & 111 000 000 & Red ($\ket{0}$)\\\midrule
-       \cellcolor{blueinput} & 101 000 000 & Red ($\ket{0}$)\\\midrule
+       \cellcolor{inputred1} & 100 000 000 & red ($\ket{0}$)\\\midrule
+              \cellcolor{inputmixred2} & 110 100 000 & red ($\ket{0}$)\\\midrule
+
+       \cellcolor{inputblue1} & 000 000 110 & blue ($\ket{1}$)\\\midrule
+       \cellcolor{inputmixblue2} & 000 100 111 & blue ($\ket{1}$)\\\midrule
       \bottomrule
     \end{tabular}
-    \caption{Input data set of two 9-bit RGB colour codes}
+    \label{table:inputcolours}
+    \caption{Input data set containing 9-bit RGB colour codes that require classification}
 \end{table}
 
-Implementation of Trugenberger Storage
-
-The first step towards simulating the qubit-based kNN algorithm proposed by \citeA{Schuld2014} as described in detail in Section~\ref{subsubsec:quantumknearestneighbour} is preparing the initial superposition over all training vectors:
+The first step towards the classification of RGB colour codes using the qubit-based kNN algorithm proposed by \citeA{Schuld2014} as described in detail in Section~\ref{subsubsec:quantumknearestneighbour} is preparing the initial superposition over all six 9-bit RGB training patterns $t^j$:
 
 \begin{equation}
-\ket{T} = \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket{v_1^p,v_2^p,...v_n^p;c^p}
+\label{equ:trainingsup}
+\ket{T} = \frac{1}{\sqrt{6}}\sum_{j=1}^N \ket{t_1^j,t_2^j,...t_9^j;c^j}
 \end{equation}
 
-This can be done using the quantum state preparation algorithm by \citeA{Trugenberger2001} outlined in Section~\ref{subsubsec:classicaldataqubits}. First, the training feature vectors $v_1,v_2,...,v_n$ containing classical data are first reexpressed 
+This can be done using the quantum state preparation algorithm by \citeA{Trugenberger2001} outlined in Section~\ref{subsubsec:classicaldataqubits}. In this case, the seven steps (see blue box in Section~\ref{subsubsec:classicaldataqubits}) of the state preparation algorithm have to be repeated six times in order to load the six RGB training patterns $t^j$ into the memory register $m$ defined in Equ.~\ref{equ:truginitial}. Afterwards, the state is given by,
 
-redefine the $m$ register from Equ.~\ref{} as the 
+\begin{equation}
+\label{equ:trugcolours}
+\ket{\phi_0} = \frac{1}{\sqrt{6}} \sum^6_{j=1} \ket{t^6_1,t^6_2,...,t^6_9;u_1=0,u_2=0;t^j_1,t^j_2,...,t^j_9}
+\end{equation}
 
-Combined implementation of Trugenberger Storage and Schuld qubit kNN
+Equ.~\ref{equ:trugcolours} shows that the first register still contains the last stored RGB colour code $t^6$, the second register consists of the utility qubits $\ket{u_1}$ and $\ket{u_2}$ that are both in the \0 state and the last register is in an equal superposition over all six RGB training colours. Thus, besides the missing class qubit $\ket{c}$ the last register is in the desired superposition defined in Equ.~\ref{equ:trainingsup}.
 
-More concrete example needed!
+In the next step of the quantum kNN the yet unclassified 9-bit RGB input pattern $x$ and an ancilla qubit $\ket{a}$ initialized in state \0 are added to the training superposition $\ket{T}$ to result in the full initial state $\ket{\psi_0}$:
+
+\begin{equation}
+\label{equ:fullinitialstate}
+\ket{\psi_0} = \frac{1}{\sqrt{6}}\sum_{j=1}^6 \ket{x_1,x_2,...x_9;t_1^j,t_2^j,...t_9^j;c^j;0}
+\end{equation}
+
+The trick now is to realize that Equ.~\ref{equ:trugcolours} and ~\ref{equ:fullinitialstate} contain the same number of qubits. Firstly, each of them has nine qubits in the first register. Secondly, Equ.~\ref{equ:trugcolours} has two utility qubits that are balanced by the ancilla and the class qubit in Equ.~\ref{equ:fullinitialstate}. Lastly, there are again nine qubits in the third register in Equ.~\ref{equ:trugcolours} and the second register in Equ.~\ref{equ:fullinitialstate}. Thus, $\ket{\psi_0}$ and $\ket{\phi}$ both contain $9+9+2 = 20$ qubits. Since $\ket{\phi}$ is the current state of the qubits in the simulation, one simply needs to redefine the utility qubits such that the first one becomes the class qubit $\ket{u_1} = \ket{c^j}$ and the second utility qubit becomes the ancilla $\ket{u_2} = \ket{a}$. Note that class and ancilla qubit are currently still in the \0 state as indicated in the current quantum state $\ket{\phi_1}$:
+
+\begin{equation}
+\label{equ:trugcolours2}
+\ket{\phi_1} = \frac{1}{\sqrt{6}} \sum^6_{j=1} \ket{t^6_1,t^6_2,...,t^6_9;c^j=0;a=0;t^j_1,t^j_2,...,t^j_9}
+\end{equation}
+
+Equ.~\ref{equ:trugcolours2} shows a quantum state with four registers as desired but the first register still contains the last training colour code $t^6$. However, it can simply be overwritten with the desired input pattern by comparing the two patterns and flipping qubits at positions where the patterns do not match up. For example, if the last training pattern was 000 000 100 and the input pattern is 000 000 110 one simply needs to flip the 8\textsuperscript{th} qubit through the application of an X gate. The state is now given by,
+
+\begin{equation}
+\label{equ:trugcolours3}
+\ket{\phi_2} = \frac{1}{\sqrt{6}} \sum^6_{j=1} \ket{x_1,x_2,...,x_9;c^j=0;a=0;t^j_1,t^j_2,...,t^j_9}
+\end{equation}
+
+The l
+
+\begin{equation}
+\label{equ:trugcolours4}
+\ket{\phi_2} = \frac{1}{\sqrt{6}} \sum^6_{j=1} \ket{x_1,x_2,...,x_9;c^j=0;a=0;t^j_1,t^j_2,...,t^j_9}
+\end{equation}
+
+
+
+
+
+
+
 
 \newpage
 

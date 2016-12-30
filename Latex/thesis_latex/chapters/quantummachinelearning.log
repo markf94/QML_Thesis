@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  29 DEC 2016 17:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  30 DEC 2016 13:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -8631,7 +8631,7 @@ Overfull \hbox (20.0pt too wide) in paragraph at lines 192--192
 
 ! Undefined control sequence.
 l.193 \ket
-          {\psi_0} = \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket{x_1^p,x_2^p,...x_n^...
+          {\psi_0} = \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket{x_1,x_2,...x_n;v_1^...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -8640,7 +8640,7 @@ and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
 l.193 ..._0} = \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket
-                                                  {x_1^p,x_2^p,...x_n^p;v_1^...
+                                                  {x_1,x_2,...x_n;v_1^p,v_2^...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -8648,7 +8648,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (176.03351pt too wide) detected at line 194
+Overfull \hbox (175.76108pt too wide) detected at line 194
 [] \OT1/cmr/m/n/10 = [] [] []
  []
 
@@ -8786,7 +8786,7 @@ Overfull \hbox (20.0pt too wide) in paragraph at lines 198--198
 
 ! Undefined control sequence.
 l.199 \ket
-          {\psi_1} = \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket{x_1^p,x_2^p,...x_n^...
+          {\psi_1} = \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket{x_1,x_2,...x_n;v_1^...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -8795,7 +8795,7 @@ and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
 l.199 ..._1} = \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket
-                                                  {x_1^p,x_2^p,...x_n^p;v_1^...
+                                                  {x_1,x_2,...x_n;v_1^p,v_2^...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -8803,7 +8803,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.199 ...^p;v_1^p,v_2^p,...v_n^p;c^p} \otimes \ket
+l.199 ..._n;v_1^p,v_2^p,...v_n^p;c^p} \otimes \ket
                                                   {0}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -8812,7 +8812,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (188.81133pt too wide) detected at line 200
+Overfull \hbox (188.5389pt too wide) detected at line 200
 [] \OT1/cmr/m/n/10 = [] [] [] \OMS/cmsy/m/n/10 
  \OT1/cmr/m/n/10 0
  []
@@ -9069,7 +9069,7 @@ or  <return>  to continue without it.
 
 ! Undefined control sequence.
 l.205 \ket
-          {\psi_2} &= \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket{x_1^p,x_2^p,...x_n...
+          {\psi_2} &= \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket{x_1,x_2,...x_n;v_1...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -9080,7 +9080,7 @@ and I'll forget about whatever was undefined.
 <inserted text> 
                 $
 l.205 \ket{\psi
-               _2} &= \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket{x_1^p,x_2^p,...x_n...
+               _2} &= \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket{x_1,x_2,...x_n;v_1...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
@@ -9092,14 +9092,14 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.205 \ket{\psi
-               _2} &= \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket{x_1^p,x_2^p,...x_n...
+               _2} &= \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket{x_1,x_2,...x_n;v_1...
 
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Extra }, or forgotten $.
 l.205 \ket{\psi_2}
-                   &= \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket{x_1^p,x_2^p,...x_n...
+                   &= \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket{x_1,x_2,...x_n;v_1...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -9108,7 +9108,7 @@ deleted material, e.g., by typing `I$}'.
 
 ! Misplaced alignment tab character &.
 l.205 \ket{\psi_2} &
-                    = \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket{x_1^p,x_2^p,...x_n...
+                    = \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket{x_1,x_2,...x_n;v_1...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -9118,7 +9118,7 @@ might try typing `S' now just to see what is salvageable.
 
 ! Undefined control sequence.
 l.205 ...2} &= \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket
-                                                  {x_1^p,x_2^p,...x_n^p;v_1^...
+                                                  {x_1,x_2,...x_n;v_1^p,v_2^...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -9126,7 +9126,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.205 ...p;v_1^p,v_2^p,...v_n^p;c^p} \otimes H\ket
+l.205 ...n;v_1^p,v_2^p,...v_n^p;c^p} \otimes H\ket
                                                   {0}\notag\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -9147,7 +9147,7 @@ and I'll forget about whatever was undefined.
 <recently read> &
                  
 l.206 &
-       = \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket{x_1^p,x_2^p,...x_n^p;v_1^p,v_2^...
+       = \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket{x_1,x_2,...x_n;v_1^p,v_2^p,...v...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -9157,7 +9157,7 @@ might try typing `S' now just to see what is salvageable.
 
 ! Undefined control sequence.
 l.206 &= \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket
-                                            {x_1^p,x_2^p,...x_n^p;v_1^p,v_2^...
+                                            {x_1,x_2,...x_n;v_1^p,v_2^p,...v...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -9227,7 +9227,7 @@ Overfull \hbox (41.55556pt too wide) in paragraph at lines 205--208
  []
 
 
-Overfull \hbox (166.53242pt too wide) in paragraph at lines 205--208
+Overfull \hbox (166.26pt too wide) in paragraph at lines 205--208
 [] [][] [] \OMS/cmsy/m/n/10 
 
  []
@@ -9243,7 +9243,7 @@ Overfull \hbox (7.7778pt too wide) in paragraph at lines 205--208
  []
 
 
-Overfull \hbox (166.53242pt too wide) in paragraph at lines 205--208
+Overfull \hbox (166.26pt too wide) in paragraph at lines 205--208
 [] [][] [] \OMS/cmsy/m/n/10 
 
  []
@@ -10599,7 +10599,7 @@ and I'll forget about whatever was undefined.
 <recently read> &
                  
 l.238 &
-       = \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket{x_1^p,x_2^p,...x_n^p;d_1^p,d_2^...
+       = \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket{x_1,x_2,...x_n;d_1^p,d_2^p,...d...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -10609,7 +10609,7 @@ might try typing `S' now just to see what is salvageable.
 
 ! Undefined control sequence.
 l.238 &= \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket
-                                            {x_1^p,x_2^p,...x_n^p;d_1^p,d_2^...
+                                            {x_1,x_2,...x_n;d_1^p,d_2^p,...d...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -10691,7 +10691,7 @@ Overfull \hbox (7.7778pt too wide) in paragraph at lines 237--240
  []
 
 
-Overfull \hbox (166.88777pt too wide) in paragraph at lines 237--240
+Overfull \hbox (166.61534pt too wide) in paragraph at lines 237--240
 [] [][] [] \OMS/cmsy/m/n/10 
 
  []
@@ -11310,7 +11310,7 @@ might try typing `S' now just to see what is salvageable.
 
 ! Undefined control sequence.
 l.259 ...frac{\pi}{2n}d_H(\vec{x},\vec{v}^p)} \ket
-                                                  {x_1^p,x_2^p,...x_n^p;d_1^...
+                                                  {x_1,x_2,...x_n;d_1^p,d_2^...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -11318,7 +11318,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.259 ....x_n^p;d_1^p,d_2^p,...d_n^p;c^p;0} \notag
+l.259 ......x_n;d_1^p,d_2^p,...d_n^p;c^p;0} \notag
                                                   \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11340,7 +11340,7 @@ might try typing `S' now just to see what is salvageable.
 
 ! Undefined control sequence.
 l.260 ...frac{\pi}{2n}d_H(\vec{x},\vec{v}^p)} \ket
-                                                  {x_1^p,x_2^p,...x_n^p;d_1^...
+                                                  {x_1,x_2,...x_n;d_1^p,d_2^...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -11398,7 +11398,7 @@ Overfull \hbox (7.7778pt too wide) in paragraph at lines 258--262
  []
 
 
-Overfull \hbox (215.76627pt too wide) in paragraph at lines 258--262
+Overfull \hbox (215.49384pt too wide) in paragraph at lines 258--262
 [] [][] \OML/cmm/m/it/10 e[][][] 
  []
 
@@ -11408,7 +11408,7 @@ Overfull \hbox (7.7778pt too wide) in paragraph at lines 258--262
  []
 
 
-Overfull \hbox (180.50238pt too wide) in paragraph at lines 258--262
+Overfull \hbox (180.22995pt too wide) in paragraph at lines 258--262
 \OML/cmm/m/it/10 e[][]$ 
  []
 
@@ -11673,7 +11673,7 @@ might try typing `S' now just to see what is salvageable.
 
 ! Undefined control sequence.
 l.268 ...{\pi}{2n}d_H(\vec{x},\vec{v}^p)\big] \ket
-                                                  {x_1^p,x_2^p,...x_n^p;d_1^...
+                                                  {x_1,x_2,...x_n;d_1^p,d_2^...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -11681,7 +11681,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.268 ....x_n^p;d_1^p,d_2^p,...d_n^p;c^p;0} \notag
+l.268 ......x_n;d_1^p,d_2^p,...d_n^p;c^p;0} \notag
                                                   \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11703,7 +11703,7 @@ might try typing `S' now just to see what is salvageable.
 
 ! Undefined control sequence.
 l.269 ...{\pi}{2n}d_H(\vec{x},\vec{v}^p)\big] \ket
-                                                  {x_1^p,x_2^p,...x_n^p;d_1^...
+                                                  {x_1,x_2,...x_n;d_1^p,d_2^...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -11779,7 +11779,7 @@ Overfull \hbox (7.7778pt too wide) in paragraph at lines 267--271
  []
 
 
-Overfull \hbox (235.47229pt too wide) in paragraph at lines 267--271
+Overfull \hbox (235.19986pt too wide) in paragraph at lines 267--271
 [] [][] \OML/cmm/m/it/10 cos[][]d[]\OT1/cmr/m/n/10 ([]\OML/cmm/m/it/10 ; []\OT1
 /cmr/m/n/10 )[][][] 
  []
@@ -11790,7 +11790,7 @@ Overfull \hbox (7.7778pt too wide) in paragraph at lines 267--271
  []
 
 
-Overfull \hbox (198.21721pt too wide) in paragraph at lines 267--271
+Overfull \hbox (197.94478pt too wide) in paragraph at lines 267--271
 \OML/cmm/m/it/10 sin[][]d[]\OT1/cmr/m/n/10 ([]\OML/cmm/m/it/10 ; []\OT1/cmr/m/n
 /10 )[][]$ 
  []
