@@ -386,6 +386,34 @@ Rist{\`{e}}, D.%
 
 \bibitem [\protect \citeauthoryear {%
 Schuld%
+, Fingerhuth%
+\BCBL {}\ \BBA {} Petruccione%
+}{%
+Schuld%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2016}}%
+}]{%
+SchuldFingerhuth}
+\APACinsertmetastar {%
+SchuldFingerhuth}%
+\begin{APACrefauthors}%
+Schuld, M.%
+, Fingerhuth, M.%
+\BCBL {}\ \BBA {} Petruccione, F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Amplitude-based quantum k-nearest neighbour algorithm.
+  Manuscript in preparation.}} {{Amplitude-based quantum k-nearest neighbour
+  algorithm. Manuscript in preparation.}}{\BBCQ}
+\newblock
+
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Schuld%
 , Sinayskiy%
 \BCBL {}\ \BBA {} Petruccione%
 }{%

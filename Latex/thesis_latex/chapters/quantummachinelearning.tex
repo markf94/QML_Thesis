@@ -220,18 +220,18 @@ $--------$\\
 HD $= 1+0+0 = 1$
 \end{redbox}
 
-Given quantum state $\ket{\psi_2}$ the HD between the input and each training register can be calculated by applying CNOT($x_s,v_s^p$) gates to all qubits in the first and second register using the input vector qubits $x_s$ as controls and the training vector qubits $v_s^p$ as targets. This will change the qubits in the second register according to the rules specified in Equ.~\ref{equ:distancerules}. 
+Given quantum state $\ket{\psi_2}$ the HD between the input and each training register can be calculated by applying CNOT($x_s,v_s^p$) gates to all qubits in the first and second register using the input vector qubits $x_s$ as controls and the training vector qubits $v_s^p$ as targets. The sum of the qubits in the second register now represents the total HD between each training register and the input. Applying an X gate to each qubit in the second register reverses the HD such that small HDs become large and vice versa. This is crucial since training vectors close to the input should get larger weights than more distant vectors. This procedure will change the qubits in the second register according to the rules specified in Equ.~\ref{equ:distancerules}. 
 
 \begin{equation}
 \label{equ:distancerules}
 d^p_s =
     \begin{cases}
-      0, & \text{if}\ \ket{v_s^p} = \ket{x_s} \\
-      1, & \text{otherwise}
+      1, & \text{if}\ \ket{v_s^p} = \ket{x_s} \\
+      0, & \text{otherwise}
     \end{cases}
 \end{equation}
 
-The sum of the qubits in the second register now represents the total HD between each training register and the input. Applying an X gate to each qubit in the second register reverses the HD such that small HDs become large and vice versa. This is crucial since training vectors close to the input should get larger weights than more distant vectors. The quantum state is now given by,
+The quantum state is now given by,
 
 \begin{align}
 \ket{\psi_3} &= \prod_{s=1}^n X(v^p_s)CNOT(x_s,v^p_s)\ket{\psi_2}\notag\\
@@ -248,7 +248,7 @@ U = e^{-i\frac{\pi}{2n}K}
 where
 
 \begin{equation}
-\label{equ:sumoperator}
+\label{equ:sumoperator2}
 K = \mathbb{1} \otimes \sum_s (\frac{\sigma_z+1}{2})_{d_s} \otimes \mathbb{1} \otimes (\sigma_z)_c
 \end{equation}
 

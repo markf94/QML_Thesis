@@ -43,47 +43,48 @@ Name 1 in "Microsoft Research," has a comma at the end for entry liquid
 while executing---line 5079 of file apacite.bst
 Name 1 in "Microsoft Research," has a comma at the end for entry liquid
 while executing---line 5079 of file apacite.bst
+Warning--No journal in SchuldFingerhuth
 Warning--No journal in Schuld2014
 Warning--No journal in shor1994
-You've used 18 entries,
+You've used 19 entries,
             6951 wiz_defined-function locations,
-            1380 strings with 14159 characters,
-and the built_in function-call counts, 33271 in all, are:
-= -- 4240
-> -- 285
-< -- 1405
-+ -- 1483
-- -- 43
-* -- 2025
-:= -- 5597
-add.period$ -- 70
-call.type$ -- 18
-change.case$ -- 324
+            1384 strings with 14335 characters,
+and the built_in function-call counts, 35290 in all, are:
+= -- 4486
+> -- 304
+< -- 1517
++ -- 1591
+- -- 45
+* -- 2161
+:= -- 5989
+add.period$ -- 74
+call.type$ -- 19
+change.case$ -- 341
 chr.to.int$ -- 0
-cite$ -- 38
-duplicate$ -- 960
-empty$ -- 1387
-format.name$ -- 495
-if$ -- 6548
+cite$ -- 41
+duplicate$ -- 1006
+empty$ -- 1455
+format.name$ -- 527
+if$ -- 6919
 int.to.chr$ -- 0
-int.to.str$ -- 58
+int.to.str$ -- 61
 missing$ -- 0
-newline$ -- 466
-num.names$ -- 144
-pop$ -- 567
+newline$ -- 492
+num.names$ -- 152
+pop$ -- 589
 preamble$ -- 1
-purify$ -- 74
+purify$ -- 78
 quote$ -- 0
-skip$ -- 2387
+skip$ -- 2515
 stack$ -- 0
-substring$ -- 1633
-swap$ -- 511
-text.length$ -- 43
+substring$ -- 1747
+swap$ -- 538
+text.length$ -- 45
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 1728
-warning$ -- 2
-while$ -- 171
+type$ -- 1808
+warning$ -- 3
+while$ -- 183
 width$ -- 0
-write$ -- 567
+write$ -- 602
 (There were 11 error messages)

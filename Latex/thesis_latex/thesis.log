@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  30 DEC 2016 13:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  30 DEC 2016 18:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1138,9 +1138,6 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 
 LaTeX Warning: Label `fig:algcomplexities' multiply defined.
 
-
-LaTeX Warning: Label `equ:sumoperator' multiply defined.
-
 )
 \openout1 = `thesis.aux'.
 
@@ -1651,38 +1648,48 @@ Underfull \hbox (badness 10000) in paragraph at lines 300--303
 Chapter 5.
 [28
 
-] [29] [30] [31] <img/cubewithoutprobs.png, id=196, 658.46pt x 598.235pt>
+] [29]
+Overfull \hbox (58.22597pt too wide) in paragraph at lines 115--115
+[] 
+ []
+
+[30] [31]
+Underfull \hbox (badness 10000) in paragraph at lines 177--180
+
+ []
+
+[32] <img/cubewithoutprobs.png, id=199, 658.46pt x 598.235pt>
 File: img/cubewithoutprobs.png Graphic file (type png)
 
 <use img/cubewithoutprobs.png>
-Package pdftex.def Info: img/cubewithoutprobs.png used on input line 181.
+Package pdftex.def Info: img/cubewithoutprobs.png used on input line 239.
 (pdftex.def)             Requested size: 213.39566pt x 193.87637pt.
 
-<img/hypercubewithoutprobs.png, id=197, 648.4225pt x 557.08125pt>
+<img/hypercubewithoutprobs.png, id=200, 648.4225pt x 557.08125pt>
 File: img/hypercubewithoutprobs.png Graphic file (type png)
 
 <use img/hypercubewithoutprobs.png>
-Package pdftex.def Info: img/hypercubewithoutprobs.png used on input line 189.
+Package pdftex.def Info: img/hypercubewithoutprobs.png used on input line 247.
 (pdftex.def)             Requested size: 213.39566pt x 183.33586pt.
- [32 <./img/cubewithoutprobs.png>]
-<img/controlledudecomp.png, id=201, 687.56876pt x 221.82875pt>
+ [33]
+<img/controlledudecomp.png, id=205, 687.56876pt x 221.82875pt>
 File: img/controlledudecomp.png Graphic file (type png)
 
 <use img/controlledudecomp.png>
-Package pdftex.def Info: img/controlledudecomp.png used on input line 226.
+Package pdftex.def Info: img/controlledudecomp.png used on input line 284.
 (pdftex.def)             Requested size: 298.75262pt x 96.3864pt.
- [33 <./img/hypercubewithoutprobs.png>])
-(./chapters/outlook.tex [34 <./img/controlledudecomp.png>]
+ [34 <./img/cubewithoutprobs.png> <./img/hypercubewithoutprobs.png>]) (./chapte
+rs/outlook.tex [35 <./img/controlledudecomp.png>]
 Chapter 6.
-) (./chapters/conclusion.tex [35
+) (./chapters/conclusion.tex [36
 
 ]
 Chapter 7.
-) (./chapters/personalreflection.tex [36
+) (./chapters/personalreflection.tex [37
 
 ]
 Chapter 8.
-) (./thesis.bbl [37
+) (./thesis.bbl [38
 
 ]
 Underfull \hbox (badness 3058) in paragraph at lines 65--78
@@ -1702,18 +1709,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--78
 75eb334&answerId =
  []
 
-[38
+[39
 
-]) [39] (./thesis.aux)
+]) [40] (./thesis.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 28005 strings out of 493029
- 545020 string characters out of 6136235
- 597838 words of memory out of 5000000
- 30980 multiletter control sequences out of 15000+600000
+ 28019 strings out of 493029
+ 545300 string characters out of 6136235
+ 598081 words of memory out of 5000000
+ 30994 multiletter control sequences out of 15000+600000
  28337 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  54i,22n,76p,10379b,744s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1739,10 +1746,10 @@ frm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0600.pfb></usr/sh
 are/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type
 1/public/cm-super/sftt0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
 tt1000.pfb>
-Output written on thesis.pdf (49 pages, 2354843 bytes).
+Output written on thesis.pdf (50 pages, 2363974 bytes).
 PDF statistics:
- 307 PDF objects out of 1000 (max. 8388607)
- 191 compressed objects within 2 object streams
+ 310 PDF objects out of 1000 (max. 8388607)
+ 193 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  166 words of extra memory for PDF output out of 10000 (max. 10000000)
 
