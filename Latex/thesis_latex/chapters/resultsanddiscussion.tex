@@ -299,13 +299,12 @@ Independent of number and size of the input and training vectors, the algorithm 
 
 The akNN algorithm was developed with an actual implementation, using the IBM QC, in mind. Since the IBM Quantum Experience only provides five qubits and a relatively small gate set, a very simple low-dimensional classification problem should be selected. 
 
-Perhaps the simplest problem is the classification of a 2-D quantum state vector as either \0 or \1 depending on its position on the Bloch sphere. This choice also enables easy visualization throughout the discussion since any single qubit vector has a well defined position on the Bloch sphere (see Section~\ref{subsubsec:qubits}). The training set is listed in Table~\ref{tab:trainingset} and consists only of the \0 and the \1 vector depicted in Fig.~\ref{fig:3over4state} as the yellow and purple vector respectively. The red vector in Fig.~\ref{fig:3over4state} will be the input vector and its qubit state and vector representation are given in Table~\ref{tab:inputvectors}.
+Perhaps the simplest problem is the classification of a 2-D quantum state vector as either \0 or \1 depending on its position on the Bloch sphere. This choice also enables easy visualization throughout the discussion since any single qubit vector has a well defined position on the Bloch sphere (see Section~\ref{subsubsec:qubits}). The training set is listed in Table~\ref{tab:trainingset} and consists only of the \0 and the \1 vector depicted in Fig.~\ref{fig:3over4} as the yellow and purple vector respectively. The red vector in Fig.~\ref{fig:3over4} will be the input vector and its qubit state and vector representation are given in Table~\ref{tab:inputvectors}.
 
 \begin{figure}
 \centering
-\label{fig:3over4state}
        \includegraphics[scale=0.5]{img/3over4state.png}
-       \caption{Simple binary classification problem of a quantum state}
+       \caption{\label{fig:3over4}Simple binary classification problem of a quantum state}
 \end{figure}
 
 \begin{minipage}[c]{.49\textwidth}
@@ -323,7 +322,7 @@ Perhaps the simplest problem is the classification of a 2-D quantum state vector
 \end{minipage}%%%%
 \begin{minipage}[c][][b]{.49\textwidth}
 \flushright
-    \begin{tabular}{| C{2.7cm} | C{2.1cm} |C{1.6cm}|}
+    \begin{tabular}{| C{2.7cm} | C{2.3cm} |C{2cm}|}
       \toprule
       Qubit state & Vector representation & Expected class\\
       \midrule
@@ -377,10 +376,11 @@ Next, the input vector $\ket{\textcolor{red}{\Psi_{x}}}$ should be loaded into t
 &= \frac{1}{2} \sum_{m=0}^1 \Big[ \ket{0}\textcolor{red}{e^{-i\frac{\pi}{8}}\big[0.92388\ket{0} + 0.38268\ket{1}\big]} + \ket{1}\ket{0}\Big] \ket{0}\ket{m}
 \end{align}
 
-By looking closely at Fig.~\ref{fig:3over4state} one can deduce that the red input vector can be reached by simply rotating the \0 vector by an angle of $\frac{\pi}{4}$ around the y-axis. A y-rotation by an arbitrary angle $\vartheta$ can be achieved with the rotation operator $R_y(\vartheta)$. As described by \citeA{nielsen2010quantum}, $R_y(\vartheta)$ can be represented as a unitary 2x2 matrix and is obtained from exponentiating the Y gate as follows,
+By looking closely at Fig.~\ref{fig:3over4} one can deduce that the red input vector can be reached by simply rotating the \0 vector by an angle of $\frac{\pi}{4}$ around the y-axis. A y-rotation by an arbitrary angle $\vartheta$ can be achieved with the rotation operator $R_y(\vartheta)$. As described by \citeA{nielsen2010quantum}, $R_y(\vartheta)$ can be represented as a unitary 2x2 matrix and is obtained from exponentiating the Y gate as follows,
 
 \begin{equation}
-R_y(\vartheta) = e^{-i\vartheta\frac{Y}{2}} = \text{cos}\frac{\vartheta}{2} - i\text{sin}\frac{\vartheta}{2}Y = \begin{pmatrix}
+\label{equ:rydef}
+R_y(\vartheta) = e^{-i\vartheta\frac{Y}{2}} = \text{cos}\frac{\vartheta}{2}\mathbb{1} - i\text{sin}\frac{\vartheta}{2}Y = \begin{pmatrix}
 \text{cos}\frac{\vartheta}{2} & -\text{sin}\frac{\vartheta}{2} \\
 \text{sin}\frac{\vartheta}{2} & \text{cos}\frac{\vartheta}{2}
 \end{pmatrix}
@@ -440,7 +440,7 @@ and can be rewritten as:
 &= \frac{1}{2} \sum_{m=1}^{2} \big[\ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{\textcolor{darkyellow}{\Psi_{\textcolor{purple}{t^{m}}}}}\big]\ket{c^{m}}\ket{m}
 \end{align}
 
-When Equ.~\ref{equ:chi5psi0} to $\ket{\psi_0}$ in Equ.~\ref{equ:ampinitial} it becomes clear that $\ket{\chi_5}$ is in the form of the desired initial quantum state $\ket{\psi_0}$. The quantum state preparation is therefore theoretically completed.
+When comparing Equ.~\ref{equ:chi5psi0} to $\ket{\psi_0}$ in Equ.~\ref{equ:ampinitial} it becomes clear that $\ket{\chi_5}$ is in the form of the desired initial quantum state $\ket{\psi_0}$. The quantum state preparation is therefore theoretically completed.
 
 \subsubsection{Controlled U Gate}
 \label{subsubsubsec:controlledugate}
@@ -464,59 +464,120 @@ P = \begin{pmatrix}
 \begin{figure}[ht]
    \centering
    \includegraphics[width=0.7\textwidth]{img/controlledudecomp.png}
-   \caption{Circuit decomposition for a controlled-U operation for single-qubit gate U.\textsuperscript{3}}
+   \caption{Circuit decomposition of controlled-U quantum gate.\textsuperscript{3}}
    \label{img:cudecomposition}
 \end{figure}
 
 \footnotetext[3]{Reprinted from Michael A. Nielsen and Isaac L. Chuang. Quantum Computation and Quantum Information. Cambridge University Press, 2000. Copyright 2010 by Nielsen \& Chuang.}
 
-The idea of this decomposition is that when the control (top) qubit is \0 the gate combination $ABC$ is applied to the target qubit and has to equal the identity gate:
+The idea of this decomposition is that when the control qubit (top qubit in Fig.~\ref{img:cudecomposition}) is \0 the gate combination $ABC$ is applied to the target qubit (bottom qubit in Fig.~\ref{img:cudecomposition}) and has to equal the identity gate:
 
 \begin{equation}
+\label{equ:abcidentity}
 ABC = \mathbb{1}
 \end{equation}
 
-If and only if the control (top) qubit is \1 then the gate sequence $e^{i\alpha}AXBXC$ is applied to the target. Since the goal is to apply the unitary U to the target qubit the following equation must be satified,
-
+If and only if the control qubit is \1 then the gate sequence $e^{i\alpha}AXBXC$ is applied to the target. Since the goal is to apply the unitary U to the target qubit the following equation must be satified:
 \begin{equation}
+\label{equ:UAXBXC}
 e^{i\alpha}AXBXC = U
 \end{equation}
 
-In order to find the matrices A,B,C and the additional parameter $\alpha$ the following equation has to be solved:
+\citeA{nielsen2010quantum} make the following choices for the unitary gates $A,B,C$:
+
+\begin{align}\label{equ:abc}
+A &=  R_z(\beta)R_y(\frac{\gamma}{2})\\
+B &= R_y(-\frac{\gamma}{2})R_z(-\frac{\delta+\beta}{2})\\
+C &= R_z(\frac{\delta-\beta}{2})
+\end{align}
+
+where $R_z(\varrho)$ is the general rotation gate about the z-axis of the Bloch sphere. Similary to the $R_y(\vartheta)$ gate it can be obtained by exponentiating the Z gate as shown below in Equ.~\ref{equ:rzdef}.
 
 \begin{equation}
+\label{equ:rzdef}
+R_z(\varrho) = e^{-i\varrho\frac{Z}{2}} = \text{cos}\frac{\varrho}{2} \mathbb{1}- i\text{sin}\frac{\varrho}{2}Z = \begin{pmatrix}
+e^{-i\frac{\varrho}{2}} & 0 \\
+0 & e^{i\frac{\varrho}{2}}
+\end{pmatrix}
+\end{equation}
+
+When subbing the expressions for $A,B,C$ from Equ.~\ref{equ:abc} into Equ.~\ref{equ:abcidentity} one will indeed obtain the identity operation (proof omitted). These choices of $A,B,C$ are also a solution to Equ.~\ref{equ:UAXBXC}. Subbing into Equ.~\ref{equ:UAXBXC} leads to the following expression for matrix $U$:
+
+\begin{equation}
+\label{equ:udecompdef}
 U = \begin{pmatrix}
  e^{i(\alpha-\frac{\beta}{2}-\frac{\delta}{2})}\cos{\frac{\gamma}{2}} & -e^{i(\alpha-\frac{\beta}{2}+\frac{\delta}{2})}\sin{\frac{\gamma}{2}} \\ 
 e^{i(\alpha+\frac{\beta}{2}-\frac{\delta}{2})}\sin{\frac{\gamma}{2}} & e^{i(\alpha+\frac{\beta}{2}+\frac{\delta}{2})}\cos{\frac{\gamma}{2}}
  \end{pmatrix}
 \end{equation}
+%Furthermore, \citeA{nielsen2010quantum} show that any unitary matrix U can be decomposed as,
+%\begin{equation}
+%\label{equ:URzRyRz}
+%U = e^{i\alpha}R_z(\beta)R_y(\gamma)R_z(\delta)
+%\end{equation}
+%\begin{equation}
+%\label{equ:UAXBXC}
+%e^{i\alpha}AR_x(\pi)BR_x(\pi)C = U
+%\end{equation}
 
-In our case we need to find A, B, C and $\alpha$ for $_0^1CR_y(\frac{\pi}{4})$:
+To decompose $CR_y(\frac{\pi}{4})$, one simply chooses $U = R_y(\frac{\pi}{4})$. Subbing $\vartheta = \frac{\pi}{4}$ into Equ.~\ref{equ:rydef} the matrix representation of $R_y(\frac{\pi}{4})$ is obtained:
 
-Using a root finding algorithm for non-linear equations we find:
+\begin{equation}
+U = R_y(\frac{\pi}{4}) = \begin{pmatrix}
+\text{cos}\frac{\pi}{8} & -\text{sin}\frac{\pi}{8} \\
+\text{sin}\frac{\pi}{8} & \text{cos}\frac{\pi}{8}
+\end{pmatrix}
+\end{equation}
 
+Subbing this expression for $U$ into Equ.~\ref{equ:udecompdef} leads to:
+
+\begin{equation}
+\label{equ:udecompsubbed}
+U = \begin{pmatrix}
+\text{cos}\frac{\pi}{8} & -\text{sin}\frac{\pi}{8} \\
+\text{sin}\frac{\pi}{8} & \text{cos}\frac{\pi}{8}
+\end{pmatrix} = \begin{pmatrix}
+ e^{i(\alpha-\frac{\beta}{2}-\frac{\delta}{2})}\cos{\frac{\gamma}{2}} & -e^{i(\alpha-\frac{\beta}{2}+\frac{\delta}{2})}\sin{\frac{\gamma}{2}} \\ 
+e^{i(\alpha+\frac{\beta}{2}-\frac{\delta}{2})}\sin{\frac{\gamma}{2}} & e^{i(\alpha+\frac{\beta}{2}+\frac{\delta}{2})}\cos{\frac{\gamma}{2}}
+ \end{pmatrix}
+\end{equation}
+
+When setting the expressions for the respective matrix entries in Equ.~\ref{equ:udecompsubbed} equal the following system of non-linear complex equations is obtained :
+
+\begin{align}
+\label{equ:nlsystem}
+\text{cos}\frac{\pi}{8} &= e^{i(\alpha-\frac{\beta}{2}-\frac{\delta}{2})}\cos{\frac{\gamma}{2}}\\
+-\text{sin}\frac{\pi}{8} &= -e^{i(\alpha-\frac{\beta}{2}+\frac{\delta}{2})}\sin{\frac{\gamma}{2}}  \\
+\text{sin}\frac{\pi}{8} &= e^{i(\alpha+\frac{\beta}{2}-\frac{\delta}{2})}\sin{\frac{\gamma}{2}}\\
+\text{cos}\frac{\pi}{8} &= e^{i(\alpha+\frac{\beta}{2}+\frac{\delta}{2})}\cos{\frac{\gamma}{2}}\\
+\end{align}
+
+This is a system of four non-linear complex equations with four unknowns. In order to solve for the parameters $\alpha,\beta,\gamma$ and $\delta$ one can use any root finding algorithm for non-linear equations such as Secant or Newton's method. Using Newton's method the solutions are found to be:
 \begin{equation}
 \alpha =  \pi; \quad 
 \beta = 2\pi;\quad 
 \delta = \frac{7}{8}\pi;\quad 
 \gamma = 0
 \end{equation}
-Then,
+
+Subbing these parameters into the expressions for $A,B$ and $C$ defined in Equ.~\ref{equ:abc} yields,
+
 \begin{align}
+\label{equ:abcsubbed1}
 A \quad= \quad R_z(\beta)R_y(\frac{\gamma}{2})\quad =& \quad R_z(2\pi) \quad = \quad \textcolor{emerald}{\mathbb{1}} \\
-B\quad =\quad R_y(-\frac{\gamma}{2})R_z(-\frac{\delta+\beta}{2})\quad =& \quad R_z(-\frac{23}{16}\pi) \quad= \quad \textcolor{red}{???}  \\
-C \quad=\quad R_z(\frac{\delta-\beta}{2})\quad =& \quad R_z(-\frac{9}{16}\pi) \quad= \quad \textcolor{red}{???} \\
-\begin{pmatrix} 1&0\cr0&e^{i\alpha} \end{pmatrix}\quad=& \quad \begin{pmatrix} 1&0\cr0&e^{i\pi} \end{pmatrix}\quad= \quad \textcolor{emerald}{Z}
+\label{equ:abcsubbed2}
+B\quad =\quad R_y(-\frac{\gamma}{2})R_z(-\frac{\delta+\beta}{2})\quad =& \quad R_z(-\frac{23}{16}\pi) \quad= \quad \textcolor{red}{?}  \\
+\label{equ:abcsubbed3}
+C \quad=\quad R_z(\frac{\delta-\beta}{2})\quad =& \quad R_z(-\frac{9}{16}\pi) \quad= \quad \textcolor{red}{?} \\
+\label{equ:abcsubbed4}
+P\quad =\quad \begin{pmatrix} 1&0\cr0&e^{i\alpha} \end{pmatrix}\quad=& \quad \begin{pmatrix} 1&0\cr0&e^{i\pi} \end{pmatrix}\quad= \quad \textcolor{emerald}{Z}
 \end{align}
 
+Quantum gate $A$ is just equal to the identity gate which certainly is element of IBM's universal gate set. The phase-adjusting gate $P$ is equal to the Z gate that also is within IBM's gate set. Only gates $B$ and $C$ result in more complex z-rotations of $-\frac{23}{16}\pi$ and $-\frac{9}{16}\pi$ radians respectively. Unfortunately, these quantum gates are not found in IBM's gate set as indicated by the red question marks in Equ.~\ref{equ:abcsubbed2} and \ref{equ:abcsubbed3}.
 
 \subsubsection{The Solovay-Kitaev theorem}
 \label{subsubsubsec:solovaykitaev}
 
-\begin{align}
-B\quad =&\quad R_z(-\frac{23}{16}\pi) \quad= \quad \textcolor{red}{???}  \\
-C \quad=&\quad R_z(-\frac{9}{16}\pi) \quad= \quad \textcolor{red}{???}
-\end{align}
 
 The Solovay-Kitaev theorem guarantees that given a set of single-qubit quantum gates which generates a dense subset of $SU(2)$, then that set is guaranteed to fill $SU(2)$ quickly.\cite{dawson2005solovay}.
  
@@ -525,11 +586,14 @@ $\rightarrow$ \textcolor{emerald}{\textbf{Hence, given any universal gate set it
 $\rightarrow$ \textcolor{red}{\textbf{But needs to be computed classically!}}
 
 \begin{redbox}
-Fowler distance\textsuperscript{1}:
+\textbf{Definition: Fowler distance}\\
+\newline
+When approximating a unitary gate $U$ with a gate sequence yielding another unitary gate $U_{approx}$ it is important to quantify how 'close' the action of $U_{approx}$ is to $U$. The Fowler distance makes use of the matrix representations of $U$ and $U_{approx}$ and is defined by \citeA{booth2012quantum} as:
 \begin{equation}
-dist(U,U_{approx}) = \sqrt{\frac{2-\mid tr(U\cdot U_{approx}^\dagger)\mid}{2}}
+d(U,U_{approx}) = \sqrt{\frac{2-\mid tr(U\cdot U_{approx}^\dagger)\mid}{2}}
 \end{equation}
-\cite{booth2012quantum}
+
+In contrast to $U$, $U_{approx}$ might introduce a shift in the global phase of the quantum state it is acting on. However, since the global phase of a quantum state is immeasurable in experiment it can be neglected. As a result, the Fowler distance is defined in such a way that possible global phase differences are ignored.
 \end{redbox}
 
 \begin{figure}
@@ -597,22 +661,27 @@ Adding complexities
 Executing the SK algorithm adds to our overall algorithmic complexity:
 
 \begin{greenbox}
-Overall algorithmic complexity
-
-	$\mathcal{O}(\frac{1}{p_{acc}})+\mathcal{O}(k)+\textcolor{red}{\mathcal{O}(m*log^{2.71}(\frac{m}{\epsilon}))}$ for $\epsilon$-approximations of $m$ gates
-	
-Cite \cite{dawson2005solovay}
-	
-Due to state preparation we went from
-\begin{equation}  
-\mathcal{O}(\frac{1}{p_{acc}})
+\textbf{Complexity analysis}\\
+\newline
+The akNN algorithm itself was found to run in constant time $\mathcal{O}(\frac{1}{Prob(CM)})$. However, to determine the overall algorithmic complexity all steps required to prepare the initial quantum state $\ket{\psi_0}$ from Equ.~\ref{equ:ampinitial} need to be included. The decomposition of the $CR_y(\frac{\pi}{4})$ gate involved solving a system of non-linear equations by means of a root-finding algorithm. Any iterative root-finding algorithm e.g. Secant or Newton's method has a complexity of $\mathcal{O}(k)$ where $k$ is the number of root finding iterations. Furthermore, the Solovay-Kitaev algorithm was required to find two single-qubit gate sequences approximating the two gates $B = R_z(-\frac{23}{16}\pi)$ and $C = R_z(-\frac{9}{16}\pi)$. According to \citeA{dawson2005solovay} the Solovay-Kitaev algorithm has a complexity of $\mathcal{O}(m*log^{2.71}(\frac{m}{\epsilon}))$ for $\epsilon$-approximations of $m$ gates. Thus the total complexity is given by:
+\begin{equation}
+\mathcal{O}(\frac{1}{Prob(CM)})+\mathcal{O}(k)+\mathcal{O}(m*log^{2.71}(\frac{m}{\epsilon}))
 \end{equation}
-suddenly to 
+	
+When adding algorithmic complexities only the most dominant term is considered. Thus, the overall complexity including state preparation is found to be $\mathcal{O}(m*log^{2.71}(\frac{m}{\epsilon}))$.\\
+\newline
+In conclusion, solely due to state preparation the initial constant complexity of
+\begin{equation}  
+\mathcal{O}(\frac{1}{Prob(CM)})
+\end{equation}
+increased to polylogarithmic complexity of
 \begin{equation}
 \mathcal{O}(m*log^{2.71}(\frac{m}{\epsilon}))
 \end{equation}
-where $m$ is the number of gates that need approximation to $\epsilon$-accuracy
+dependening on the number of gates $m$ that need $\epsilon$-approximations by means of the Solovay-Kitaev algorithm.
 \end{greenbox}
+
+In summary, in this particular classification problem the constant complexity of the algorithm is dominated by the complexity of so-called quantum compiling: preparing the initial quantum state using the universal gate set at hand.
 
 \newpage
 

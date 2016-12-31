@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  31 DEC 2016 21:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  31 DEC 2016 23:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1755,4 +1755,324 @@ File: img/ccnotcircuit.png Graphic file (type png)
 Package pdftex.def Info: img/ccnotcircuit.png used on input line 438.
 (pdftex.def)             Requested size: 42.68173pt x 106.06421pt.
 
-Overfull \hbox (46.62343
+Overfull \hbox (46.62343pt too wide) in paragraph at lines 427--457
+[][] 
+ []
+
+[11] [12 <./img/cnotcircuit.png> <./img/ccnotcircuit.png>]
+<img/apple.jpg, id=125, 217.0509pt x 173.448pt>
+File: img/apple.jpg Graphic file (type jpg)
+ <use img/apple.jpg>
+Package pdftex.def Info: img/apple.jpg used on input line 493.
+(pdftex.def)             Requested size: 204.85802pt x 163.70543pt.
+
+<img/banana.png, id=126, 1284.8pt x 849.1725pt>
+File: img/banana.png Graphic file (type png)
+ <use img/banana.png>
+Package pdftex.def Info: img/banana.png used on input line 497.
+(pdftex.def)             Requested size: 204.85802pt x 135.39095pt.
+
+<img/knn-concept.png, id=127, 385.44pt x 289.08pt>
+File: img/knn-concept.png Graphic file (type png)
+ <use img/knn-concept.png>
+Package pdftex.def Info: img/knn-concept.png used on input line 513.
+(pdftex.def)             Requested size: 211.99265pt x 158.99448pt.
+
+Underfull \vbox (badness 2042) has occurred while \output is active []
+
+ [13 <./img/apple.jpg> <./img/banana.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 530--533
+
+ []
+
+<img/asymptoticupperbound.png, id=132, 413.545pt x 319.1925pt>
+File: img/asymptoticupperbound.png Graphic file (type png)
+
+<use img/asymptoticupperbound.png>
+Package pdftex.def Info: img/asymptoticupperbound.png used on input line 540.
+(pdftex.def)             Requested size: 103.38599pt x 79.79793pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14 <./img/knn-concept.png>] <img/bigocomplexity.png, id=136, 809.0225pt x 530
+.98375pt>
+File: img/bigocomplexity.png Graphic file (type png)
+
+<use img/bigocomplexity.png>
+Package pdftex.def Info: img/bigocomplexity.png used on input line 553.
+(pdftex.def)             Requested size: 202.25513pt x 132.7456pt.
+) (./chapters/methods.tex [15 <./img/asymptoticupperbound.png> <./img/bigocompl
+exity.png>] [16
+
+]
+Chapter 3.
+<img/liquidcodesnippet.png, id=145, 615.29875pt x 338.26375pt>
+File: img/liquidcodesnippet.png Graphic file (type png)
+
+<use img/liquidcodesnippet.png>
+Package pdftex.def Info: img/liquidcodesnippet.png used on input line 19.
+(pdftex.def)             Requested size: 338.41536pt x 186.04562pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17
+
+]
+<img/ibmcomposer.png, id=149, 1175.39125pt x 511.9125pt>
+File: img/ibmcomposer.png Graphic file (type png)
+
+<use img/ibmcomposer.png>
+Package pdftex.def Info: img/ibmcomposer.png used on input line 38.
+(pdftex.def)             Requested size: 423.14053pt x 184.28836pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18 <./img/liquidcodesnippet.png>]
+<img/ibmcalibration.png, id=153, 1332.98pt x 271.0125pt>
+File: img/ibmcalibration.png Graphic file (type png)
+
+<use img/ibmcalibration.png>
+Package pdftex.def Info: img/ibmcalibration.png used on input line 48.
+(pdftex.def)             Requested size: 439.88477pt x 89.43439pt.
+
+Overfull \hbox (13.09343pt too wide) in paragraph at lines 48--49
+ [][] 
+ []
+
+) (./chapters/quantummachinelearning.tex [19 <./img/ibmcomposer.png> <./img/ibm
+calibration.png>]
+Chapter 4.
+[20
+
+] [21]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22]
+[23] [24]
+Underfull \hbox (badness 10000) in paragraph at lines 212--221
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 212--221
+
+ []
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 300--303
+
+ []
+
+) (./chapters/resultsanddiscussion.tex [26] [27]
+Chapter 5.
+
+Overfull \hbox (1.01228pt too wide) in paragraph at lines 26--26
+ \T1/cmr/m/n/10 Colour| 
+ []
+
+
+Overfull \hbox (1.01228pt too wide) in paragraph at lines 44--44
+ \T1/cmr/m/n/10 Colour| 
+ []
+
+
+Underfull \vbox (badness 1478) has occurred while \output is active []
+
+ [28
+
+]
+Overfull \hbox (1.01228pt too wide) in paragraph at lines 66--66
+ \T1/cmr/m/n/10 Colour| 
+ []
+
+
+Overfull \hbox (1.01228pt too wide) in paragraph at lines 88--88
+ \T1/cmr/m/n/10 Colour| 
+ []
+
+[29]
+
+LaTeX Warning: Reference `table:trainingcolours' on page 30 undefined on input 
+line 143.
+
+[30] [31]
+
+LaTeX Warning: Reference `' on page 32 undefined on input line 195.
+
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 251--254
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--273
+
+ []
+
+
+Underfull \vbox (badness 6859) has occurred while \output is active []
+
+ [33]
+Underfull \hbox (badness 10000) in paragraph at lines 292--295
+
+ []
+
+[34] <img/3over4state.png, id=207, 648.4225pt x 570.13pt>
+File: img/3over4state.png Graphic file (type png)
+
+<use img/3over4state.png>
+Package pdftex.def Info: img/3over4state.png used on input line 306.
+(pdftex.def)             Requested size: 324.21045pt x 285.0643pt.
+
+Overfull \hbox (2.78703pt too wide) in paragraph at lines 313--313
+ \T1/cmr/m/n/10 Qubit 
+ []
+
+
+Overfull \hbox (2.20403pt too wide) in paragraph at lines 329--329
+ \OML/cmm/m/it/10 e[][]\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 92388
+ [] + 
+ []
+
+
+Overfull \hbox (4.69604pt too wide) in paragraph at lines 329--329
+ \OML/cmm/m/it/10 e[] []$| 
+ []
+
+
+Overfull \hbox (27.63914pt too wide) in paragraph at lines 325--334
+ []
+ []
+
+[35 <./img/3over4state.png>] [36] [37]
+<img/controlledudecomp.png, id=217, 687.56876pt x 221.82875pt>
+File: img/controlledudecomp.png Graphic file (type png)
+
+<use img/controlledudecomp.png>
+Package pdftex.def Info: img/controlledudecomp.png used on input line 466.
+(pdftex.def)             Requested size: 298.75262pt x 96.3864pt.
+ [38 <./img/controlledudecomp.png>] [39]
+Underfull \hbox (badness 10000) in paragraph at lines 589--592
+
+ []
+
+PGFPlots: reading {datax.dat}
+PGFPlots: reading {datax.dat}
+
+Underfull \vbox (badness 2846) has occurred while \output is active []
+
+ [40]
+<img/fowlerdistance.png, id=229, 798.985pt x 695.59875pt>
+File: img/fowlerdistance.png Graphic file (type png)
+
+<use img/fowlerdistance.png>
+Package pdftex.def Info: img/fowlerdistance.png used on input line 618.
+(pdftex.def)             Requested size: 313.7364pt x 273.14851pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [41]
+Underfull \hbox (badness 10000) in paragraph at lines 664--667
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 671--674
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [42 <./img/fowlerdistance.png>] [43]
+<img/cubewithoutprobs.png, id=239, 658.46pt x 598.235pt>
+File: img/cubewithoutprobs.png Graphic file (type png)
+
+<use img/cubewithoutprobs.png>
+Package pdftex.def Info: img/cubewithoutprobs.png used on input line 727.
+(pdftex.def)             Requested size: 213.39566pt x 193.87637pt.
+
+<img/hypercubewithoutprobs.png, id=240, 648.4225pt x 557.08125pt>
+File: img/hypercubewithoutprobs.png Graphic file (type png)
+
+<use img/hypercubewithoutprobs.png>
+Package pdftex.def Info: img/hypercubewithoutprobs.png used on input line 735.
+(pdftex.def)             Requested size: 213.39566pt x 183.33586pt.
+) (./chapters/outlook.tex [44] [45 <./img/cubewithoutprobs.png> <./img/hypercub
+ewithoutprobs.png>]
+Chapter 6.
+) (./chapters/conclusion.tex [46
+
+]
+Chapter 7.
+) (./chapters/personalreflection.tex [47
+
+]
+Chapter 8.
+) (./thesis.bbl [48
+
+]
+Underfull \hbox (badness 3058) in paragraph at lines 65--78
+[]\T1/cmr/m/n/10 Bishop, L.  (2016).  \T1/cmr/m/it/10 Quan-tum gate times on IB
+M quan-tum com-puter.  \T1/cmr/m/n/10 Re-trieved
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--78
+\T1/cmr/m/n/10 2016-12-29, from $\T1/cmtt/m/n/10 https :// quantumexperience []
+ .ng [] .bluemix [] .net / qstage / # /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--78
+\T1/cmtt/m/n/10 community / question [] ?questionId = 71b344418d724f8ec1088bafc
+75eb334&answerId =
+ []
+
+[49
+
+]) [50] (./thesis.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 41425 strings out of 493029
+ 950241 string characters out of 6136235
+ 1075286 words of memory out of 5000000
+ 44211 multiletter control sequences out of 15000+600000
+ 28337 words of font info for 81 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 62i,22n,103p,10379b,2280s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/
+fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/
+type1/public/bbold-type1/bbold10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf/fonts/t
+ype1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super
+/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/
+share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/ty
+pe1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/
+sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/s
+hare/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/typ
+e1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
+frm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0600.pfb></usr/sh
+are/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type
+1/public/cm-super/sftt0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
+tt1000.pfb>
+Output written on thesis.pdf (60 pages, 2598094 bytes).
+PDF statistics:
+ 344 PDF objects out of 1000 (max. 8388607)
+ 214 compressed objects within 3 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 176 words of extra memory for PDF output out of 10000 (max. 10000000)
+
