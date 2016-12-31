@@ -313,8 +313,8 @@ Perhaps the simplest problem is the classification of a 2-D quantum state vector
       \toprule
       Qubit state & Vector representation & Class\\
       \midrule
-       $\ket{0}$ & $\colvec{1\\0}$ & green ($\ket{0}$)\\\midrule
-       $\ket{1}$ & $\colvec{0\\1}$ & red ($\ket{1}$)\\\midrule
+       $\ket{0}$ & $\colvec{1\\0}$ & yellow ($\ket{0}$)\\\midrule
+       $\ket{1}$ & $\colvec{0\\1}$ & purple ($\ket{1}$)\\\midrule
       \bottomrule
     \end{tabular}
         \label{tab:trainingset}
@@ -327,7 +327,7 @@ Perhaps the simplest problem is the classification of a 2-D quantum state vector
       \toprule
       Qubit state & Vector representation & Expected class\\
       \midrule
-       $e^{-i\frac{\pi}{8}}\big[0.92388\ket{0} + 0.38268\ket{1}\big]$ & $e^{-i\frac{\pi}{8}}\colvec{0.92388\\0.38268}$ & green ($\ket{0}$)\\\midrule
+       $e^{-i\frac{\pi}{8}}\big[0.92388\ket{0} + 0.38268\ket{1}\big]$ & $e^{-i\frac{\pi}{8}}\colvec{0.92388\\0.38268}$ & yellow ($\ket{0}$)\\\midrule
       \bottomrule
     \end{tabular}
         \label{tab:inputvectors}
@@ -338,7 +338,7 @@ Perhaps the simplest problem is the classification of a 2-D quantum state vector
 \subsubsection{Initial state preparation}
 \label{subsubsubsec:initialstatepreparation}
 
-The first step towards an actual implementation of this problem is to prepare the initial quantum state $\ket{\psi_0}$ previously defined to be of the form,
+The first step towards an actual implementation of this problem is to prepare the initial quantum state $\ket{\psi_0}$ previously defined in Equ.~\ref{equ:ampinitial} to be of the form,
 \begin{equation}
 \label{equ:ampinitial2}
 \ket{\psi_0} = \frac{1}{\sqrt{2M}}\sum_{m=1}^{M} (\textcolor{emerald}{\ket{0}}\ket{\textcolor{red}{\Psi_{x}}}+\textcolor{emerald}{\ket{1}}\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{m}}}})\ket{c^{m}}\ket{m}
@@ -348,8 +348,8 @@ where in the case of the selected classification problem:
 \begin{align} 
 \label{equ:vectordefs}
 &\ket{\textcolor{red}{\Psi_{x}}} = e^{-i\frac{\pi}{8}}\big[0.92388\ket{0} + 0.38268\ket{1}\big]\\
-&\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{1}}}} = \ket{0} \\
-&\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{2}}}} = \ket{1}
+&\ket{\textcolor{darkyellow}{\Psi_{t^{1}}}} = \ket{0} \\
+&\ket{\textcolor{purple}{\Psi_{t^{2}}}} = \ket{1}
 \end{align}
  
 Since there are only two training vectors the index $m$ in Equ.~\ref{equ:ampinitial2} only takes the values 1 and 2. However, the $m$ qubit can only take binary values such that we need to redefine $1\rightarrow 0$ and $2\rightarrow 1$. With this observation, the required number of qubits can be deduced from Equ.~\ref{equ:ampinitial2}: one ancilla, one qubit for input and training vectors, one class qubit and one $m$ qubit making a total of four qubits. In the subsequent discussion the quantum state of the IBM QC in the $i^{th}$ step will be denoted $\ket{\chi_i}$. Since all qubits in the IBM Quantum Composer are initialized in state \0 the initial state $\ket{\chi_0}$ is simply,
@@ -407,29 +407,45 @@ subbing into Equ.~\ref{equ:chi3}:
 
 It is important to note that also $CR_y(\frac{\pi}{4})(c,t)$ is not an element of IBM's universal gate set. Its implementation on the IBM QC will be discussed in the next subsection.
 
-The next step is to entangle the first training vector $\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{0}}}}$  with the \1 state of the ancilla and the \0 state of the $m$ qubit. Additionally, the second training vector $\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{1}}}}$ should be entangled with the \1 states of the ancilla and the $m$ qubit. Note that $\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{1}}}}$ and $\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{2}}}}$ defined in Equ.~\ref{equ:vectordefs} were redefined to $\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{0}}}}$ and $\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{1}}}}$ respectively. Expanding the sum in Equ.~\ref{equ:chi3prepared} demonstrates that $\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{0}}}} = \ket{0}$ is already at its desired place:
+The next step is to entangle the first training vector $\ket{\textcolor{darkyellow}{\Psi_{t^{0}}}}$  with the \1 state of the ancilla and the \0 state of the $m$ qubit. Additionally, the second training vector $\ket{\textcolor{purple}{\Psi_{t^{1}}}}$ should be entangled with the \1 states of the ancilla and the $m$ qubit. Note that $\ket{\textcolor{darkyellow}{\Psi_{t^{1}}}}$ and $\ket{\textcolor{purple}{\Psi_{t^{2}}}}$ defined in Equ.~\ref{equ:vectordefs} were redefined to $\ket{\textcolor{darkyellow}{\Psi_{t^{0}}}}$ and $\ket{\textcolor{purple}{\Psi_{t^{1}}}}$ respectively. Expanding the sum in Equ.~\ref{equ:chi3prepared} demonstrates that $\ket{\textcolor{darkyellow}{\Psi_{t^{0}}}} = \ket{0}$ is already at its desired place:
 
 \begin{align}
 \label{equ:chi3expanded}
 \ket{\chi_3} &= \frac{1}{2}\Big[ \big[\ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{0}\big] \ket{0}\ket{0} + \big[ \ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{0}\big] \ket{0}\ket{1}\Big]\notag\\
-&= \frac{1}{2}\Big[ \big[\ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{0}}}}\big] \ket{0}\ket{0} + \big[ \ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{0}\big] \ket{0}\ket{1}\Big]
+&= \frac{1}{2}\Big[ \big[\ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{\textcolor{darkyellow}{\Psi_{t^{0}}}}\big] \ket{0}\ket{0} + \big[ \ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{0}\big] \ket{0}\ket{1}\Big]
 \end{align}
 
-In order to entangle $\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{1}}}} = \ket{1}$ with the \1 states of the ancilla and $m$ qubit a Toffoli (CCNOT) gate needs to be implemented. Using the ancilla ($a$) and $m$ qubit as controls and choosing the data ($d$) qubit as target one obtains the following state:
+In order to entangle $\ket{\textcolor{purple}{\Psi_{t^{1}}}}$ with the \1 states of the ancilla and $m$ qubit a Toffoli (CCNOT) gate needs to be implemented. Using the ancilla ($a$) and $m$ qubit as controls and choosing the data ($d$) qubit as target one obtains the following state:
 
 \begin{align}
-\label{equ:chi3expanded}
+\label{equ:chi4}
 \ket{\chi_4} &= CCNOT(a,m,d)\ket{\chi_3}\notag\\
-&= \frac{1}{2}\Big[ \big[\ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{0}\big] \ket{0}\ket{0} + \big[ \ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{1}\big] \ket{0}\ket{1}\Big]\notag\\
-&= \frac{1}{2}\Big[ \big[\ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{0}}}}\big] \ket{0}\ket{0} + \big[ \ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{1}}}}\big] \ket{0}\ket{1}\Big]
+&= \frac{1}{2}\Big[ \big[\ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{\textcolor{darkyellow}{\Psi_{t^{0}}}}\big] \ket{0}\ket{0} + \big[ \ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{1}\big] \ket{0}\ket{1}\Big]\notag\\
+&= \frac{1}{2}\Big[ \big[\ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{\textcolor{darkyellow}{\Psi_{t^{0}}}}\big] \ket{0}\ket{0} + \big[ \ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{\textcolor{purple}{\Psi_{t^{1}}}}\big] \ket{0}\ket{1}\Big]
 \end{align}
 
+The class qubit for the first training vector is already in the correct \0 state. It remains to flip the class qubit for the second training vector by applying a CNOT gate using the $d$ qubit as control and the class($c$) qubit as target. The resulting state is then given by,
+
+\begin{align}
+\label{equ:chi5}
+\ket{\chi_5} &= CNOT(d,c)\ket{\chi_4}\notag\\
+&= \frac{1}{2}\Big[ \big[\ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{\textcolor{darkyellow}{\Psi_{t^{0}}}}\big] \ket{\textcolor{darkyellow}{0}}\ket{0} + \big[ \ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{\textcolor{purple}{\Psi_{t^{1}}}}\big] \ket{\textcolor{purple}{1}}\ket{1}\Big]
+\end{align}
+
+and can be rewritten as:
+
+\begin{align}
+\label{equ:chi5psi0}
+\ket{\chi_5} &= \frac{1}{2} \sum_{m=1}^{2} \big[\ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{\textcolor{darkyellow}{\Psi_{t^{0}}}}\big] + \big[ \ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{\textcolor{purple}{\Psi_{t^{1}}}}\big]\ket{c^{m}}\ket{m}\notag\\
+&= \frac{1}{2} \sum_{m=1}^{2} \big[\ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{\textcolor{darkyellow}{\Psi_{\textcolor{purple}{t^{m}}}}}\big]\ket{c^{m}}\ket{m}
+\end{align}
+
+When Equ.~\ref{equ:chi5psi0} to $\ket{\psi_0}$ in Equ.~\ref{equ:ampinitial} it becomes clear that $\ket{\chi_5}$ is in the form of the desired initial quantum state $\ket{\psi_0}$. The quantum state preparation is therefore theoretically completed.
 
 \subsubsection{Controlled U Gate}
 \label{subsubsubsec:controlledugate}
 
-Often there is a need for applying certain quantum gates in a controlled manner. Thus a controlled U (CU) gate is required whereby U can be any unitary single-qubit gate. The CU gate is defined as:
-
+To implement the quantum state preparation on the IBM QC, it remains to find a way of realizing the controlled y-rotation $CR_y(\frac{\pi}{4})(c,t)$ using only the ten gates from IBM's universal gate set. In their book \citeA{nielsen2010quantum} describe how a controlled U (CU) gate can be decomposed into a sequence of CNOT and single qubit gates. Thereby, U can be any unitary single-qubit gate. A CU gate is then defined as:
 \begin{equation}
 CU = \begin{pmatrix}
  \mathbb{1} & 0 \\ 
@@ -437,9 +453,13 @@ CU = \begin{pmatrix}
  \end{pmatrix}
 \end{equation}
 
-It is important to note that the CNOT gate is essentially a CU gate in the case of U = X. 
-
-Most of the time the CU gate cannot be implemented directly and has to be realized through larger quantum circuits consisting of CNOT and single-qubit gates. \citeA{nielsen2010quantum} describe such a decomposition as shown in Fig.~\ref{img:cudecomposition}.
+Most of the time the CU gate cannot be implemented directly since it is not element of the universal gate set at hand and it has to be realized through larger quantum circuits. Fig.~\ref{img:cudecomposition} shows the decomposition described by \citeA{nielsen2010quantum} into two CNOTs, three unitary single-qubit gates $A,B,C$ and a phase-adjusting matrix which will be denoted $P$ of the form:
+\begin{equation}
+P = \begin{pmatrix}
+ 1 & 0 \\ 
+ 0 & e^{i\alpha}
+ \end{pmatrix}
+\end{equation}
 
 \begin{figure}[ht]
    \centering
@@ -450,13 +470,13 @@ Most of the time the CU gate cannot be implemented directly and has to be realiz
 
 \footnotetext[3]{Reprinted from Michael A. Nielsen and Isaac L. Chuang. Quantum Computation and Quantum Information. Cambridge University Press, 2000. Copyright 2010 by Nielsen \& Chuang.}
 
-The idea is that when the control qubit is \0 the gate combination ABC is applied to the target qubit and has to equal the identity gate:
+The idea of this decomposition is that when the control (top) qubit is \0 the gate combination $ABC$ is applied to the target qubit and has to equal the identity gate:
 
 \begin{equation}
 ABC = \mathbb{1}
 \end{equation}
 
-If and only if the control qubit is \1 then the gate sequence $e^{i\alpha}AXBXC$ is applied to the target. Since the goal is to apply the unitary U to the target qubit the following equation must be satified,
+If and only if the control (top) qubit is \1 then the gate sequence $e^{i\alpha}AXBXC$ is applied to the target. Since the goal is to apply the unitary U to the target qubit the following equation must be satified,
 
 \begin{equation}
 e^{i\alpha}AXBXC = U
@@ -490,7 +510,8 @@ C \quad=\quad R_z(\frac{\delta-\beta}{2})\quad =& \quad R_z(-\frac{9}{16}\pi) \q
 \end{align}
 
 
-The Solovay-Kitaev theorem
+\subsubsection{The Solovay-Kitaev theorem}
+\label{subsubsubsec:solovaykitaev}
 
 \begin{align}
 B\quad =&\quad R_z(-\frac{23}{16}\pi) \quad= \quad \textcolor{red}{???}  \\
