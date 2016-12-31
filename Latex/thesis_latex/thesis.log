@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  31 DEC 2016 14:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  31 DEC 2016 16:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1822,7 +1822,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: img/ibmcomposer.png Graphic file (type png)
 
 <use img/ibmcomposer.png>
-Package pdftex.def Info: img/ibmcomposer.png used on input line 34.
+Package pdftex.def Info: img/ibmcomposer.png used on input line 38.
 (pdftex.def)             Requested size: 423.14053pt x 184.28836pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1832,10 +1832,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: img/ibmcalibration.png Graphic file (type png)
 
 <use img/ibmcalibration.png>
-Package pdftex.def Info: img/ibmcalibration.png used on input line 44.
+Package pdftex.def Info: img/ibmcalibration.png used on input line 48.
 (pdftex.def)             Requested size: 439.88477pt x 89.43439pt.
 
-Overfull \hbox (13.09343pt too wide) in paragraph at lines 44--45
+Overfull \hbox (13.09343pt too wide) in paragraph at lines 48--49
  [][] 
  []
 
@@ -1905,65 +1905,130 @@ Underfull \hbox (badness 10000) in paragraph at lines 251--254
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [33]
-Underfull \hbox (badness 10000) in paragraph at lines 291--294
+Underfull \hbox (badness 10000) in paragraph at lines 270--273
 
  []
 
-<img/bloch3over4.png, id=204, 703.62875pt x 618.31pt>
-File: img/bloch3over4.png Graphic file (type png)
 
-<use img/bloch3over4.png>
-Package pdftex.def Info: img/bloch3over4.png used on input line 301.
-(pdftex.def)             Requested size: 351.8135pt x 309.15424pt.
- [34] [35 <./img/bloch3over4.png>]
-<img/controlledudecomp.png, id=211, 687.56876pt x 221.82875pt>
+Underfull \vbox (badness 6859) has occurred while \output is active []
+
+ [33]
+Underfull \hbox (badness 10000) in paragraph at lines 292--295
+
+ []
+
+
+Package caption Warning: \label without proper reference on input line 306.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:3over4state' on page 34 undefined on input line 3
+02.
+
+
+Package caption Warning: \label without proper reference on input line 306.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:3over4state' on page 34 undefined on input line 3
+02.
+
+[34] <img/3over4state.png, id=207, 648.4225pt x 570.13pt>
+File: img/3over4state.png Graphic file (type png)
+
+<use img/3over4state.png>
+Package pdftex.def Info: img/3over4state.png used on input line 307.
+(pdftex.def)             Requested size: 324.21045pt x 285.0643pt.
+
+Overfull \hbox (2.78703pt too wide) in paragraph at lines 314--314
+ \T1/cmr/m/n/10 Qubit 
+ []
+
+
+Overfull \hbox (2.20403pt too wide) in paragraph at lines 330--330
+ \OML/cmm/m/it/10 e[][]\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 92388
+ [] + 
+ []
+
+
+Overfull \hbox (10.38652pt too wide) in paragraph at lines 330--330
+ \OML/cmm/m/it/10 e[] []$| 
+ []
+
+
+Overfull \hbox (10.56775pt too wide) in paragraph at lines 326--335
+ []
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [35 <./img/3over4state.png>]
+Overfull \hbox (5.64833pt too wide) detected at line 372
+ $[] \OT1/cmr/m/n/10 = [] [] [] [] [] + [] [] [] [] [] = [] [] [] [] [][] + [] 
+[] [] [] []$  
+ []
+
+
+Package caption Warning: \label without proper reference on input line 306.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:3over4state' on page 36 undefined on input line 3
+74.
+
+
+Overfull \hbox (43.73691pt too wide) detected at line 389
+ $[] \OT1/cmr/m/n/10 =[] \OML/cmm/m/it/10 R[]\OT1/cmr/m/n/10 ([])(0\OML/cmm/m/i
+t/10 ; \OT1/cmr/m/n/10 1) [] = [] [] [] [] [] + [] [] [] [] [] = [] [] [] [] []
+[] + [] [] [] [] []$  
+ []
+
+[36] <img/controlledudecomp.png, id=214, 687.56876pt x 221.82875pt>
 File: img/controlledudecomp.png Graphic file (type png)
 
 <use img/controlledudecomp.png>
-Package pdftex.def Info: img/controlledudecomp.png used on input line 339.
+Package pdftex.def Info: img/controlledudecomp.png used on input line 417.
 (pdftex.def)             Requested size: 298.75262pt x 96.3864pt.
- [36 <./img/controlledudecomp.png>]
+ [37 <./img/controlledudecomp.png>]
 PGFPlots: reading {datax.dat}
 PGFPlots: reading {datax.dat}
 
-<img/fowlerdistance.png, id=215, 798.985pt x 695.59875pt>
+<img/fowlerdistance.png, id=218, 798.985pt x 695.59875pt>
 File: img/fowlerdistance.png Graphic file (type png)
 
 <use img/fowlerdistance.png>
-Package pdftex.def Info: img/fowlerdistance.png used on input line 426.
+Package pdftex.def Info: img/fowlerdistance.png used on input line 504.
 (pdftex.def)             Requested size: 313.7364pt x 273.14851pt.
- [37]
+ [38]
 Underfull \vbox (badness 2245) has occurred while \output is active []
 
- [38 <./img/fowlerdistance.png>] [39]
-<img/cubewithoutprobs.png, id=227, 658.46pt x 598.235pt>
+ [39 <./img/fowlerdistance.png>] [40]
+<img/cubewithoutprobs.png, id=230, 658.46pt x 598.235pt>
 File: img/cubewithoutprobs.png Graphic file (type png)
 
 <use img/cubewithoutprobs.png>
-Package pdftex.def Info: img/cubewithoutprobs.png used on input line 530.
+Package pdftex.def Info: img/cubewithoutprobs.png used on input line 608.
 (pdftex.def)             Requested size: 213.39566pt x 193.87637pt.
 
-<img/hypercubewithoutprobs.png, id=228, 648.4225pt x 557.08125pt>
+<img/hypercubewithoutprobs.png, id=231, 648.4225pt x 557.08125pt>
 File: img/hypercubewithoutprobs.png Graphic file (type png)
 
 <use img/hypercubewithoutprobs.png>
-Package pdftex.def Info: img/hypercubewithoutprobs.png used on input line 538.
+Package pdftex.def Info: img/hypercubewithoutprobs.png used on input line 616.
 (pdftex.def)             Requested size: 213.39566pt x 183.33586pt.
-) (./chapters/outlook.tex [40] [41 <./img/cubewithoutprobs.png> <./img/hypercub
+) (./chapters/outlook.tex [41] [42 <./img/cubewithoutprobs.png> <./img/hypercub
 ewithoutprobs.png>]
 Chapter 6.
-) (./chapters/conclusion.tex [42
+) (./chapters/conclusion.tex [43
 
 ]
 Chapter 7.
-) (./chapters/personalreflection.tex [43
+) (./chapters/personalreflection.tex [44
 
 ]
 Chapter 8.
-) (./thesis.bbl [44
+) (./thesis.bbl [45
 
 ]
 Underfull \hbox (badness 3058) in paragraph at lines 65--78
@@ -1983,21 +2048,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--78
 75eb334&answerId =
  []
 
-[45
+[46
 
-]) [46] (./thesis.aux)
+]) [47] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 41400 strings out of 493029
- 949855 string characters out of 6136235
- 1073386 words of memory out of 5000000
- 44186 multiletter control sequences out of 15000+600000
+ 41404 strings out of 493029
+ 949924 string characters out of 6136235
+ 1073453 words of memory out of 5000000
+ 44190 multiletter control sequences out of 15000+600000
  28337 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,22n,103p,10379b,2280s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2023,10 +2085,10 @@ frm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0600.pfb></usr/sh
 are/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type
 1/public/cm-super/sftt0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
 tt1000.pfb>
-Output written on thesis.pdf (56 pages, 2588232 bytes).
+Output written on thesis.pdf (57 pages, 2586408 bytes).
 PDF statistics:
- 332 PDF objects out of 1000 (max. 8388607)
- 206 compressed objects within 3 object streams
+ 335 PDF objects out of 1000 (max. 8388607)
+ 208 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  176 words of extra memory for PDF output out of 10000 (max. 10000000)
 

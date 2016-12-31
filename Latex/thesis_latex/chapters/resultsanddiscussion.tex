@@ -226,7 +226,7 @@ It was shown that for this classification problem the quantum kNN algorithm by \
 %quantum simulations of the qubit-based kNN algorithm 
 %shortcomings )
 
-To enable an implementation of the quantum kNN algorithm using the IBM Quantum Experience platform a new amplitude-based kNN algorithm was developed for this thesis. This algorithm by \citeA{SchuldFingerhuth} will be introduced in this section using colours for input \& training vectors and classes $A$ and $B$ based on the schematic Fig.~\ref{fig:knnconcept} in Section~\ref{subsubsec:knearestneighbour}.
+To enable an implementation of the quantum kNN algorithm using the IBM Quantum Experience platform a new amplitude-based kNN (aKNN) algorithm was developed for this thesis. This algorithm by \citeA{SchuldFingerhuth} will be introduced in this section using colours for input \& training vectors and classes $A$ and $B$ based on the schematic Fig.~\ref{fig:knnconcept} in Section~\ref{subsubsec:knearestneighbour}.
 
 \begin{bluebox}
 The algorithm starts with the assumption that the following initial state can be constructed from $M$ training vectors with $N$ entries:
@@ -252,23 +252,22 @@ The first qubit in Equ.~\ref{equ:ampinitial} is an ancilla qubit already in an e
 \newline
 Having prepared the initial state $\ket{\psi_0}$ one has to simply apply an H gate to the ancilla qubit. This causes the amplitudes of $\ket{\textcolor{red}{\Psi_{x}}}$ and $\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{m}}}}$ to interfere. One can think of this like water waves travelling towards each other; constructive interference happens when two crests add up producing a larger wave and destructive interference takes place when a crest and a trough cancel each other out. In this case, constructive ($+$) interference happens when the ancilla qubit is \0 and destructive ($-$) interference when the ancilla is \1. The interference of input and training vectors yields the following state,
 
-\begin{equation}
+\begin{align}
 \label{equ:vectorinterference}
-\frac{1}{2\sqrt{M}}\sum_{m=1}^{M} (\textcolor{emerald}{\ket{0}}[\ket{\textcolor{red}{\Psi_{x}}}+\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{m}}}}]+\textcolor{emerald}{\ket{1}}[\ket{\textcolor{red}{\Psi_{x}}}-\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{m}}}}])\ket{c^{m}(\textcolor{darkyellow}{A} \ or \ \textcolor{purple}{B})}\ket{m}
-\end{equation}
+\ket{\psi_1} &= (H \otimes \mathbb{1} \otimes \mathbb{1} \otimes \mathbb{1})\ket{\psi_0} \notag\\
+&= \frac{1}{2\sqrt{M}}\sum_{m=1}^{M} (\textcolor{emerald}{\ket{0}}[\ket{\textcolor{red}{\Psi_{x}}}+\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{m}}}}]+\textcolor{emerald}{\ket{1}}[\ket{\textcolor{red}{\Psi_{x}}}-\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{m}}}}])\ket{c^{m}(\textcolor{darkyellow}{A} \ or \ \textcolor{purple}{B})}\ket{m}
+\end{align}
 
 To only select the constructive interference, a CM has to be performed on the ancilla qubit. All previous steps have to be repeated until the ancilla is measured in the \0 state. The probability for this to happen is:
 
 \begin{equation}
 \label{equ:probancilla}
-Prob(\ket{a} = \ket{0})= 1 - \frac{1}{4M} \sum_{m=1}^M \sum_{i=1}^N \mid \textcolor{red}{x_i} - \textcolor{purple}{t_i^m} \mid ^2
+Prob(CM) = Prob(\ket{a} = \ket{0})= 1 - \frac{1}{4M} \sum_{m=1}^M \sum_{i=1}^N \mid \textcolor{red}{x_i} - \textcolor{purple}{t_i^m} \mid ^2
 \end{equation}
-
-Note that $\mid \textcolor{red}{x} - \textcolor{purple}{t^m} \mid ^2$ is the squared Euclidean distance between the input vector and each training vector.
 \end{bluebox}
 
 \begin{bluebox}
-Equ.~\ref{equ:probancilla} shows that the probability for the CM to succeed is higher when the average distance between input and training vectors is small. If all training vectors are relatively far from the input the training set can be regarded as suboptimal. Therefore, $Prob(\ket{a} = \ket{0})$ is a measure of how suitable the training vectors are to classify the new input.\\
+Note that $\sum_{i=1}^N \mid \textcolor{red}{x_i} - \textcolor{purple}{t^m_i} \mid ^2$ is the squared Euclidean distance between the input vector and the $m^{th}$ training vector. Equ.~\ref{equ:probancilla} shows that the probability for the CM to succeed is higher when the average distance between input and training vectors is small. If all training vectors are relatively far from the input the training set can be regarded as suboptimal. Therefore, $Prob(\ket{a} = \ket{0})$ is a measure of how suitable the training vectors are to classify the new input.\\
 \newline
 After the successful CM, the state is proportional to:
 
@@ -279,10 +278,10 @@ After the successful CM, the state is proportional to:
 
 The probability of measuring e.g. class $\ket{1}$ (B) is given by the following expression:
 \begin{equation}
-Prob_{CM} = Prob(\ket{c^m} = \ket{1(\textcolor{purple}{B})})= \sum_{m \mid c^m=1(\textcolor{purple}{B})} 1 - \frac{1}{4M} \sum_{i=1}^N \mid \textcolor{red}{x_i} - \textcolor{purple}{t^m_i} \mid ^2
+Prob(\ket{c^m} = \ket{1(\textcolor{purple}{B})})= \sum_{m \mid c^m=1(\textcolor{purple}{B})} 1 - \frac{1}{4M} \sum_{i=1}^N \mid \textcolor{red}{x_i} - \textcolor{purple}{t^m_i} \mid ^2
 \end{equation}
 
-Note that $\mid \textcolor{red}{x} - \textcolor{purple}{t^m} \mid ^2$ is the squared Euclidean distance between the input vector and each training vector belonging to class \textcolor{purple}{$B$}. Thus, if the average of these squared Euclidean distances is small, the probability of measuring the class qubit in the \1 state is greater. This quantum routine therefore resembles a kNN algorithm with $k=all$ and without distance-weighting.
+Note that the probability of measuring class \1 (B) is dependent on the squared Euclidean distance between the input vector and each training vector belonging to class \textcolor{purple}{$B$}. Thus, if the average of these squared Euclidean distances is small, the probability of measuring the class qubit in the \1 state is greater. This quantum routine therefore resembles a kNN algorithm with $k=all$ and without distance-weighting.
 
 All previous steps need to be repeated $y$ times in order to generate a sufficiently accurate picture of the probability distribution of $\ket{c}$.
 \end{bluebox}
@@ -292,28 +291,109 @@ The quantum advantage of the algorithm is the parallel computation of the square
 \begin{greenbox}
 \textbf{Complexity analysis}\\
 \newline
-Independent of number and size of the input and training vectors, the algorithm only requires the application of a single H gate. However, the routine has to be repeated $y$ times of which only $Prob_{CM}*y$ lead to a measurement of the class qubit. Thus, the time complexity of this algorithm is $\mathcal{O}(\frac{1}{Prob_{CM}})$ where $Prob_{CM}$ is the probability of a successful CM (measuring ancilla in the $\ket{0}$ state). Therefore, the algorithm is said to run in constant time. This means it is independent of the number of training vectors and their size. For example, executing this quantum routine with 10 or 100,000,000 training vectors each with 1,000,000 entries does not make a difference in the run time.
+Independent of number and size of the input and training vectors, the algorithm only requires the application of a single H gate. However, the routine has to be repeated $y$ times of which only $Prob(CM)*y$ lead to a measurement of the class qubit. Thus, the time complexity of this algorithm is $\mathcal{O}(\frac{1}{Prob(CM)})$ where $Prob(CM)$ is the probability of a successful CM (measuring ancilla in the $\ket{0}$ state). Therefore, the algorithm is said to run in constant time. This means it is independent of the number of training vectors and their size. For example, executing this quantum routine with 10 or 100,000,000 training vectors each with 1,000,000 entries does not make a difference in the run time.
 \end{greenbox}
 
 \subsection{Implementing the amplitude-based kNN algorithm}
 \label{subsubsec:implementationamplitudeKNN}
 
-The amplitude-based kNN algorithm was developed with an implementation on the IBM QC in mind. Since the IBM Quantum Experience only provides five qubits and a relatively small gate set with ten gates a very simple low-dimensional classification problem should be considered.
+The akNN algorithm was developed with an actual implementation, using the IBM QC, in mind. Since the IBM Quantum Experience only provides five qubits and a relatively small gate set, a very simple low-dimensional classification problem should be selected. 
+
+Perhaps the simplest problem is the classification of a 2-D quantum state vector as either \0 or \1 depending on its position on the Bloch sphere. This choice also enables easy visualization throughout the discussion since any single qubit vector has a well defined position on the Bloch sphere (see Section~\ref{subsubsec:qubits}). The training set is listed in Table~\ref{tab:trainingset} and consists only of the \0 and the \1 vector depicted in Fig.~\ref{fig:3over4state} as the yellow and purple vector respectively. The red vector in Fig.~\ref{fig:3over4state} will be the input vector and its qubit state and vector representation are given in Table~\ref{tab:inputvectors}.
 
 \begin{figure}
 \centering
-       \includegraphics[scale=0.5]{img/bloch3over4.png}
+\label{fig:3over4state}
+       \includegraphics[scale=0.5]{img/3over4state.png}
        \caption{Simple binary classification problem of a quantum state}
 \end{figure}
 
+\begin{minipage}[c]{.49\textwidth}
+    \begin{tabular}{| C{0.8cm} | C{1.7cm} |C{2cm}|}
+      \toprule
+      Qubit state & Vector representation & Class\\
+      \midrule
+       $\ket{0}$ & $\colvec{1\\0}$ & green ($\ket{0}$)\\\midrule
+       $\ket{1}$ & $\colvec{0\\1}$ & red ($\ket{1}$)\\\midrule
+      \bottomrule
+    \end{tabular}
+        \label{tab:trainingset}
+        \captionsetup{justification=raggedright, singlelinecheck=false}
+    \captionof{table}{Training set}
+\end{minipage}%%%%
+\begin{minipage}[c][][b]{.49\textwidth}
+\flushright
+    \begin{tabular}{| C{2.7cm} | C{2.1cm} |C{1.6cm}|}
+      \toprule
+      Qubit state & Vector representation & Expected class\\
+      \midrule
+       $e^{-i\frac{\pi}{8}}\big[0.92388\ket{0} + 0.38268\ket{1}\big]$ & $e^{-i\frac{\pi}{8}}\colvec{0.92388\\0.38268}$ & green ($\ket{0}$)\\\midrule
+      \bottomrule
+    \end{tabular}
+        \label{tab:inputvectors}
+        \captionsetup{justification=raggedleft, singlelinecheck=false}
+    \captionof{table}{Input vector}
+\end{minipage}
+
+The first step towards an actual implementation of this problem is to prepare the initial quantum state $\ket{\psi_0}$ previously defined to be of the form,
 \begin{equation}
-\frac{1}{\sqrt{2M}}\sum_{m=1}^{M} (\textcolor{emerald}{\ket{0}}\ket{\textcolor{red}{\Psi_{\tilde{x}} (\star)}}+\textcolor{emerald}{\ket{1}}\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{x^{m}}}})\ket{y^{m}(\textcolor{darkyellow}{A} \ or \ \textcolor{purple}{B})}\ket{m}
+\label{equ:ampinitial2}
+\ket{\psi_0} = \frac{1}{\sqrt{2M}}\sum_{m=1}^{M} (\textcolor{emerald}{\ket{0}}\ket{\textcolor{red}{\Psi_{x}}}+\textcolor{emerald}{\ket{1}}\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{m}}}})\ket{c^{m}}\ket{m}
 \end{equation}
-Procedure to load the input vector $\tilde{x}$:
+
+where in the case of the selected classification problem:
+\begin{align} 
+&\ket{\textcolor{red}{\Psi_{x}}} = e^{-i\frac{\pi}{8}}\big[0.92388\ket{0} + 0.38268\ket{1}\big]\\
+&\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{1}}}} = \ket{0} \\
+&\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{2}}}} = \ket{1}
+\end{align}
+ 
+Since there are only two training vectors the index $m$ in Equ.~\ref{equ:ampinitial2} only takes the values 1 and 2. However, the $m$ qubit can only take binary values such that we need to redefine $1\rightarrow 0$ and $2\rightarrow 1$. With this observation, the required number of qubits can be deduced from Equ.~\ref{equ:ampinitial2}: one ancilla, one qubit for input and training vectors, one class qubit and one $m$ qubit making a total of four qubits. In the subsequent discussion the quantum state of the IBM QC in the $i^{th}$ step will be denoted $\ket{\chi_i}$. Since all qubits in the IBM Quantum Composer are initialized in state \0 the initial state $\ket{\chi_0}$ is simply,
 \begin{equation}
-\ket{\Psi_0} = \frac{1}{2}\sum_{m=1}^{2} (\textcolor{emerald}{\ket{0}}\ket{0}+\textcolor{emerald}{\ket{1}}\ket{0})\ket{y^{m}}\ket{m}
+\ket{\chi_0} = \ket{a}\ket{d}\ket{c}\ket{m} = \ket{0}\ket{0}\ket{0}\ket{0}
 \end{equation}
-Apply controlled rotation $_0^1CR_y(\frac{\pi}{4})$ s.t.
+
+where $a$ stands for ancilla, $d$ for data, $c$ for class and $m$ for the $m$ qubit. The sum over $m$ is introduced by simply acting an H gate on the $m$ qubit:
+\begin{equation}
+\ket{\chi_1} = (\mathbb{1} \otimes \mathbb{1} \otimes \mathbb{1} \otimes H)\ket{0}\ket{0}\ket{0}\ket{0} = \frac{1}{\sqrt{2}} \sum_{m=0}^1 \ket{0}\ket{0}\ket{0}\ket{m}
+\end{equation}
+%ADD CIRCUIT REPRESENTATION?
+
+Using another H gate, the ancilla qubit is put in superposition:
+\begin{equation}
+\ket{\chi_2} = (H \otimes \mathbb{1} \otimes \mathbb{1} \otimes \mathbb{1})\ket{\chi_1} = \frac{1}{2} \sum_{m=0}^1 \ket{0}\ket{0}\ket{0}\ket{m} + \ket{1}\ket{0}\ket{0}\ket{m} = \frac{1}{2} \sum_{m=0}^1 \big[ \ket{0}\ket{0} + \ket{1}\ket{0}\big] \ket{0}\ket{m}
+\end{equation}
+%ADD CIRCUIT REPRESENTATION?
+
+Next, the input vector $\ket{\textcolor{red}{\Psi_{x}}}$ should be loaded by some procedure such that the state is described by,
+
+\begin{equation}
+\ket{\chi} = \frac{1}{2} \sum_{m=0}^1 \big[ \ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{0}\big] \ket{0}\ket{m} = \frac{1}{2} \sum_{m=0}^1 \Big[ \ket{0}\textcolor{red}{e^{-i\frac{\pi}{8}}\big[0.92388\ket{0} + 0.38268\ket{1}\big]} + \ket{1}\ket{0}\Big] \ket{0}\ket{m}
+\end{equation}
+
+By looking closely at Fig.~\ref{fig:3over4state} one can deduce that the red input vector can be reached by simply rotating the \0 vector by an angle of $\frac{\pi}{4}$ around the y-axis. A y-rotation by an arbitrary angle $\vartheta$ can be achieved with the rotation operator $R_y(\vartheta)$. As described by \citeA{nielsen2010quantum}, $R_y(\vartheta)$ can be represented as a unitary 2x2 matrix and is obtained from exponentiating the Y gate as follows,
+
+\begin{equation}
+R_y(\vartheta) = e^{-i\vartheta\frac{Y}{2}} = \text{cos}\frac{\vartheta}{2} - i\text{sin}\frac{\vartheta}{2}Y = \begin{pmatrix}
+\text{cos}\frac{\vartheta}{2} & -\text{sin}\frac{\vartheta}{2} \\
+\text{sin}\frac{\vartheta}{2} & \text{cos}\frac{\vartheta}{2}
+\end{pmatrix}
+\end{equation}
+
+At this point, note that $R_y(\vartheta)$ is not an element of IBM's universal gate set. The discussion how to implement $R_y(\vartheta)$ on the IBM QC will be addressed later. For now, suppose $R_y(\frac{\pi}{4})$ can be implemented. Acting it on the data qubit results in the state:
+
+\begin{equation}
+\ket{\chi_3} = (\mathbb{1} \otimes R_y(\frac{\pi}{4}) \otimes \mathbb{1} \otimes \mathbb{1})\ket{\chi_2} = \frac{1}{2} \sum_{m=0}^1 \big[ \ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{\textcolor{red}{\Psi_{x}}}\big] \ket{0}\ket{m}
+\end{equation}
+
+
+
+This can be achieved by first applying the controlled rotation $CR_y(\frac{\pi}{4})(0,1)$ around the y-axis of the Bloch sphere.
+
+\begin{equation}
+\ket{\chi_3} = _CR_y(\frac{\pi}{4})(0,1)\ket{\chi_2} = \frac{1}{2} \sum_{m=0}^1 \big[ \ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{0}\big] \ket{0}\ket{m} = \frac{1}{2} \sum_{m=0}^1 \Big[ \ket{0}\textcolor{red}{\big[\frac{1}{\sqrt{2}}\big[\ket{0} + e^{i \frac{\pi}{4}}\ket{1}\big]} + \ket{1}\ket{0}\Big] \ket{0}\ket{m}
+\end{equation}
+
 \begin{equation}
 _0^1CR_y(\frac{\pi}{4})\ket{\Psi_0} = \ket{\Psi_1} = \frac{1}{2}\sum_{m=1}^{2} (\textcolor{emerald}{\ket{0}}\ket{0}+\textcolor{emerald}{\ket{1}}\ket{\textcolor{red}{\Psi_{\tilde{x}}}})\ket{y^{m}}\ket{m}
 \end{equation}
