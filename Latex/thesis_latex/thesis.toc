@@ -28,10 +28,10 @@
 \contentsline {section}{\numberline {5.1}Simulating the qubit-based kNN algorithm}{28}
 \contentsline {section}{\numberline {5.2}Development of an amplitude-based kNN algorithm}{33}
 \contentsline {subsection}{\numberline {5.2.1}Implementing the amplitude-based kNN algorithm}{34}
-\contentsline {subsubsection}{Controlled U Gate}{35}
-\contentsline {subsection}{\numberline {5.2.2}Simulating the amplitude-based kNN algorithm}{38}
-\contentsline {subsubsection}{Diffusion matrix from quantum random walks}{38}
-\contentsline {chapter}{\numberline {6}Outlook}{40}
-\contentsline {chapter}{\numberline {7}Conclusion}{41}
-\contentsline {chapter}{\numberline {8}Personal reflection}{42}
-\contentsline {chapter}{References}{43}
+\contentsline {subsubsection}{Controlled U Gate}{36}
+\contentsline {subsection}{\numberline {5.2.2}Simulating the amplitude-based kNN algorithm}{40}
+\contentsline {subsubsection}{Diffusion matrix from quantum random walks}{40}
+\contentsline {chapter}{\numberline {6}Outlook}{42}
+\contentsline {chapter}{\numberline {7}Conclusion}{43}
+\contentsline {chapter}{\numberline {8}Personal reflection}{44}
+\contentsline {chapter}{References}{45}

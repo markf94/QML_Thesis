@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  30 DEC 2016 22:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  31 DEC 2016 14:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1343,25 +1343,26 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )) (./thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 95.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 95.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 104.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 104.
+
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    ... okay on input line 104.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1421,7 +1422,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 95.
+LaTeX Info: Redefining \selectfont on input line 104.
 \c@maskedRefs=\count300
 
 (/usr/share/texlive/texmf-dist/tex/latex/apacite/english.apc
@@ -1440,7 +1441,7 @@ ABD: EveryShipout initializing macros
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.13} into 
 your preamble.
- on input line 95.
+ on input line 104.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/translator/dicts/translator-bas
@@ -1486,16 +1487,17 @@ File: siunitx-abbreviations.cfg 2016/03/01 v2.6q siunitx: Abbreviated units
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c__siunitx_mathsf_int=\count302
-LaTeX Font Info:    Try loading font information for U+msa on input line 95.
+LaTeX Font Info:    Try loading font information for U+msa on input line 104.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 95.
+LaTeX Font Info:    Try loading font information for U+msb on input line 104.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+bbold on input line 95.
+LaTeX Font Info:    Try loading font information for U+bbold on input line 104.
+
 
 (/usr/share/texlive/texmf-dist/tex/latex/bbold/Ubbold.fd)
 \c__siunitx_mathtt_int=\count303
@@ -1507,27 +1509,28 @@ Package epstopdf Info: Source file: <img/UM_logo.eps>
 (epstopdf)                    size: 11108 bytes
 (epstopdf)             Command: <repstopdf --outfile=img/UM_logo-eps-converted-
 to.pdf img/UM_logo.eps>
-(epstopdf)             \includegraphics on input line 97.
+(epstopdf)             \includegraphics on input line 106.
 Package epstopdf Info: Output file is already uptodate.
 
 <img/UM_logo-eps-converted-to.pdf, id=4, 445.665pt x 114.4275pt>
 File: img/UM_logo-eps-converted-to.pdf Graphic file (type pdf)
 
 <use img/UM_logo-eps-converted-to.pdf>
-Package pdftex.def Info: img/UM_logo-eps-converted-to.pdf used on input line 97
-.
+Package pdftex.def Info: img/UM_logo-eps-converted-to.pdf used on input line 10
+6.
 (pdftex.def)             Requested size: 221.6283pt x 56.9055pt.
 
-Overfull \hbox (10.45692pt too wide) in paragraph at lines 97--97
+Overfull \hbox (10.45692pt too wide) in paragraph at lines 106--106
 |  []  
  []
 
 <img/logo.jpeg, id=5, 334.6101pt x 144.54pt>
 File: img/logo.jpeg Graphic file (type jpg)
  <use img/logo.jpeg>
-Package pdftex.def Info: img/logo.jpeg used on input line 97.
+Package pdftex.def Info: img/logo.jpeg used on input line 106.
 (pdftex.def)             Requested size: 131.733pt x 56.9055pt.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 97.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 106.
+
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -1863,86 +1866,104 @@ Underfull \hbox (badness 10000) in paragraph at lines 300--303
 ) (./chapters/resultsanddiscussion.tex [26] [27]
 Chapter 5.
 
-Package caption Warning: \label without proper reference on input line 23.
-See the caption package documentation for explanation.
+Overfull \hbox (1.01228pt too wide) in paragraph at lines 26--26
+ \T1/cmr/m/n/10 Colour| 
+ []
 
 
-LaTeX Warning: Reference `tab:trainingcolours' on page 28 undefined on input li
-ne 20.
+Overfull \hbox (1.01228pt too wide) in paragraph at lines 44--44
+ \T1/cmr/m/n/10 Colour| 
+ []
 
 
-Package caption Warning: \label without proper reference on input line 55.
-See the caption package documentation for explanation.
+Underfull \vbox (badness 1478) has occurred while \output is active []
+
+ [28
+
+]
+Overfull \hbox (1.01228pt too wide) in paragraph at lines 66--66
+ \T1/cmr/m/n/10 Colour| 
+ []
 
 
-LaTeX Warning: Reference `tab:inputcolours' on page 28 undefined on input line 
-40.
+Overfull \hbox (1.01228pt too wide) in paragraph at lines 88--88
+ \T1/cmr/m/n/10 Colour| 
+ []
 
-[28
-
-] [29]
+[29]
 
 LaTeX Warning: Reference `table:trainingcolours' on page 30 undefined on input 
-line 96.
+line 143.
 
-[30]
+[30] [31]
 
-LaTeX Warning: Reference `' on page 31 undefined on input line 148.
+LaTeX Warning: Reference `' on page 32 undefined on input line 195.
 
-[31] [32]
-Underfull \hbox (badness 10000) in paragraph at lines 204--207
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 251--254
 
  []
 
-[33] <img/bloch3over4.png, id=204, 703.62875pt x 618.31pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [33]
+Underfull \hbox (badness 10000) in paragraph at lines 291--294
+
+ []
+
+<img/bloch3over4.png, id=204, 703.62875pt x 618.31pt>
 File: img/bloch3over4.png Graphic file (type png)
 
 <use img/bloch3over4.png>
-Package pdftex.def Info: img/bloch3over4.png used on input line 237.
+Package pdftex.def Info: img/bloch3over4.png used on input line 301.
 (pdftex.def)             Requested size: 351.8135pt x 309.15424pt.
- [34 <./img/bloch3over4.png>]
-<img/controlledudecomp.png, id=208, 687.56876pt x 221.82875pt>
+ [34] [35 <./img/bloch3over4.png>]
+<img/controlledudecomp.png, id=211, 687.56876pt x 221.82875pt>
 File: img/controlledudecomp.png Graphic file (type png)
 
 <use img/controlledudecomp.png>
-Package pdftex.def Info: img/controlledudecomp.png used on input line 275.
+Package pdftex.def Info: img/controlledudecomp.png used on input line 339.
 (pdftex.def)             Requested size: 298.75262pt x 96.3864pt.
- [35 <./img/controlledudecomp.png>]
+ [36 <./img/controlledudecomp.png>]
 PGFPlots: reading {datax.dat}
 PGFPlots: reading {datax.dat}
 
-<img/fowlerdistance.png, id=212, 798.985pt x 695.59875pt>
+<img/fowlerdistance.png, id=215, 798.985pt x 695.59875pt>
 File: img/fowlerdistance.png Graphic file (type png)
 
 <use img/fowlerdistance.png>
-Package pdftex.def Info: img/fowlerdistance.png used on input line 362.
+Package pdftex.def Info: img/fowlerdistance.png used on input line 426.
 (pdftex.def)             Requested size: 313.7364pt x 273.14851pt.
- [36] [37 <./img/fowlerdistance.png>]
-<img/cubewithoutprobs.png, id=219, 658.46pt x 598.235pt>
+ [37]
+Underfull \vbox (badness 2245) has occurred while \output is active []
+
+ [38 <./img/fowlerdistance.png>] [39]
+<img/cubewithoutprobs.png, id=227, 658.46pt x 598.235pt>
 File: img/cubewithoutprobs.png Graphic file (type png)
 
 <use img/cubewithoutprobs.png>
-Package pdftex.def Info: img/cubewithoutprobs.png used on input line 464.
+Package pdftex.def Info: img/cubewithoutprobs.png used on input line 530.
 (pdftex.def)             Requested size: 213.39566pt x 193.87637pt.
 
-<img/hypercubewithoutprobs.png, id=220, 648.4225pt x 557.08125pt>
+<img/hypercubewithoutprobs.png, id=228, 648.4225pt x 557.08125pt>
 File: img/hypercubewithoutprobs.png Graphic file (type png)
 
 <use img/hypercubewithoutprobs.png>
-Package pdftex.def Info: img/hypercubewithoutprobs.png used on input line 472.
+Package pdftex.def Info: img/hypercubewithoutprobs.png used on input line 538.
 (pdftex.def)             Requested size: 213.39566pt x 183.33586pt.
-) (./chapters/outlook.tex [38] [39 <./img/cubewithoutprobs.png> <./img/hypercub
+) (./chapters/outlook.tex [40] [41 <./img/cubewithoutprobs.png> <./img/hypercub
 ewithoutprobs.png>]
 Chapter 6.
-) (./chapters/conclusion.tex [40
+) (./chapters/conclusion.tex [42
 
 ]
 Chapter 7.
-) (./chapters/personalreflection.tex [41
+) (./chapters/personalreflection.tex [43
 
 ]
 Chapter 8.
-) (./thesis.bbl [42
+) (./thesis.bbl [44
 
 ]
 Underfull \hbox (badness 3058) in paragraph at lines 65--78
@@ -1962,18 +1983,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--78
 75eb334&answerId =
  []
 
-[43
+[45
 
-]) [44] (./thesis.aux)
+]) [46] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 41387 strings out of 493029
- 949639 string characters out of 6136235
- 1072558 words of memory out of 5000000
- 44173 multiletter control sequences out of 15000+600000
+ 41400 strings out of 493029
+ 949855 string characters out of 6136235
+ 1073386 words of memory out of 5000000
+ 44186 multiletter control sequences out of 15000+600000
  28337 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,22n,103p,10379b,2280s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1999,10 +2023,10 @@ frm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0600.pfb></usr/sh
 are/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type
 1/public/cm-super/sftt0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
 tt1000.pfb>
-Output written on thesis.pdf (54 pages, 2581287 bytes).
+Output written on thesis.pdf (56 pages, 2588232 bytes).
 PDF statistics:
- 325 PDF objects out of 1000 (max. 8388607)
- 201 compressed objects within 3 object streams
+ 332 PDF objects out of 1000 (max. 8388607)
+ 206 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  176 words of extra memory for PDF output out of 10000 (max. 10000000)
 
