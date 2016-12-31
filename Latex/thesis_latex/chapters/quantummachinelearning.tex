@@ -209,7 +209,7 @@ The state now consists of four registers: 1) input($x$) register, 2) training($v
 The main step in any kNN algorithm is calculating some measure of distance between each training vector $\vec{v}$ and the input vector $\vec{x}$ which in this quantum algorithm is taken to be the Hamming distance defined in the red box below.
 
 \begin{redbox}
-\textbf{Hamming distance (CITATION?)}\\
+\textbf{Definition: Hamming distance (CITATION?)}\\
 \newline
 Hamming distance (HD) is the number of differing characters when comparing two equally long binary patterns $p_0$ and $p_1$.\\
 \newline
@@ -296,9 +296,9 @@ From Equ.~\ref{equ:classprobs} it is evident that the probability of measuring a
 
 In order to obtain a full picture of the probability distribution over the different classes a sufficient number of copies of $\ket{\psi_5}$ needs to be prepared and after successful CM on the ancilla qubit the class qubit needs to be measured.
 
-\begin{redbox}
-\textbf{Algorithmic complexity}\\
+\begin{greenbox}
+\textbf{Complexity analysis}\\
 \newline
 According to \citeA{Schuld2014}, the preparation of the superposition has a complexity of $\mathcal{O}(Pn)$ where $P$ is the number of training vectors and $n$ is the length of the feature vectors. The algorithm has to be repeated $T$ times in order to get a statistically precise picture of the results. Hence, the total quantum kNN algorithm has an algorithmic complexity of $\mathcal{O}(TPn)$. 
-\end{redbox}
+\end{greenbox}
 

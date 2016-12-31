@@ -28,6 +28,7 @@
 \contentsline {section}{\numberline {5.1}Simulating the qubit-based kNN algorithm}{28}
 \contentsline {section}{\numberline {5.2}Development of an amplitude-based kNN algorithm}{33}
 \contentsline {subsection}{\numberline {5.2.1}Implementing the amplitude-based kNN algorithm}{34}
+\contentsline {subsubsection}{Initial state preparation}{35}
 \contentsline {subsubsection}{Controlled U Gate}{37}
 \contentsline {subsection}{\numberline {5.2.2}Simulating the amplitude-based kNN algorithm}{41}
 \contentsline {subsubsection}{Diffusion matrix from quantum random walks}{41}

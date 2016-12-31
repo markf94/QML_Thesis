@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  31 DEC 2016 16:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  31 DEC 2016 18:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1960,62 +1960,48 @@ Overfull \hbox (10.56775pt too wide) in paragraph at lines 326--335
  []
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [35 <./img/3over4state.png>]
-Overfull \hbox (5.64833pt too wide) detected at line 372
- $[] \OT1/cmr/m/n/10 = [] [] [] [] [] + [] [] [] [] [] = [] [] [] [] [][] + [] 
-[] [] [] []$  
- []
-
+[35 <./img/3over4state.png>]
 
 Package caption Warning: \label without proper reference on input line 306.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `fig:3over4state' on page 36 undefined on input line 3
-74.
+80.
 
-
-Overfull \hbox (43.73691pt too wide) detected at line 389
- $[] \OT1/cmr/m/n/10 =[] \OML/cmm/m/it/10 R[]\OT1/cmr/m/n/10 ([])(0\OML/cmm/m/i
-t/10 ; \OT1/cmr/m/n/10 1) [] = [] [] [] [] [] + [] [] [] [] [] = [] [] [] [] []
-[] + [] [] [] [] []$  
- []
-
-[36] <img/controlledudecomp.png, id=214, 687.56876pt x 221.82875pt>
+[36] [37] <img/controlledudecomp.png, id=217, 687.56876pt x 221.82875pt>
 File: img/controlledudecomp.png Graphic file (type png)
 
 <use img/controlledudecomp.png>
-Package pdftex.def Info: img/controlledudecomp.png used on input line 417.
+Package pdftex.def Info: img/controlledudecomp.png used on input line 446.
 (pdftex.def)             Requested size: 298.75262pt x 96.3864pt.
- [37 <./img/controlledudecomp.png>]
+ [38 <./img/controlledudecomp.png>]
 PGFPlots: reading {datax.dat}
 PGFPlots: reading {datax.dat}
 
-<img/fowlerdistance.png, id=218, 798.985pt x 695.59875pt>
+<img/fowlerdistance.png, id=221, 798.985pt x 695.59875pt>
 File: img/fowlerdistance.png Graphic file (type png)
 
 <use img/fowlerdistance.png>
-Package pdftex.def Info: img/fowlerdistance.png used on input line 504.
+Package pdftex.def Info: img/fowlerdistance.png used on input line 533.
 (pdftex.def)             Requested size: 313.7364pt x 273.14851pt.
- [38]
-Underfull \vbox (badness 2245) has occurred while \output is active []
 
- [39 <./img/fowlerdistance.png>] [40]
+Underfull \vbox (badness 3009) has occurred while \output is active []
+
+ [39]
+[40 <./img/fowlerdistance.png>]
 <img/cubewithoutprobs.png, id=230, 658.46pt x 598.235pt>
 File: img/cubewithoutprobs.png Graphic file (type png)
 
 <use img/cubewithoutprobs.png>
-Package pdftex.def Info: img/cubewithoutprobs.png used on input line 608.
+Package pdftex.def Info: img/cubewithoutprobs.png used on input line 637.
 (pdftex.def)             Requested size: 213.39566pt x 193.87637pt.
 
 <img/hypercubewithoutprobs.png, id=231, 648.4225pt x 557.08125pt>
 File: img/hypercubewithoutprobs.png Graphic file (type png)
 
 <use img/hypercubewithoutprobs.png>
-Package pdftex.def Info: img/hypercubewithoutprobs.png used on input line 616.
+Package pdftex.def Info: img/hypercubewithoutprobs.png used on input line 645.
 (pdftex.def)             Requested size: 213.39566pt x 183.33586pt.
 ) (./chapters/outlook.tex [41] [42 <./img/cubewithoutprobs.png> <./img/hypercub
 ewithoutprobs.png>]
@@ -2054,12 +2040,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--78
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 41404 strings out of 493029
- 949924 string characters out of 6136235
- 1073453 words of memory out of 5000000
- 44190 multiletter control sequences out of 15000+600000
+ 41410 strings out of 493029
+ 950030 string characters out of 6136235
+ 1073240 words of memory out of 5000000
+ 44196 multiletter control sequences out of 15000+600000
  28337 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,22n,103p,10379b,2280s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2085,7 +2074,7 @@ frm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0600.pfb></usr/sh
 are/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type
 1/public/cm-super/sftt0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
 tt1000.pfb>
-Output written on thesis.pdf (57 pages, 2586408 bytes).
+Output written on thesis.pdf (57 pages, 2589266 bytes).
 PDF statistics:
  335 PDF objects out of 1000 (max. 8388607)
  208 compressed objects within 3 object streams

@@ -291,7 +291,7 @@ The quantum advantage of the algorithm is the parallel computation of the square
 \begin{greenbox}
 \textbf{Complexity analysis}\\
 \newline
-Independent of number and size of the input and training vectors, the algorithm only requires the application of a single H gate. However, the routine has to be repeated $y$ times of which only $Prob(CM)*y$ lead to a measurement of the class qubit. Thus, the time complexity of this algorithm is $\mathcal{O}(\frac{1}{Prob(CM)})$ where $Prob(CM)$ is the probability of a successful CM (measuring ancilla in the $\ket{0}$ state). Therefore, the algorithm is said to run in constant time. This means it is independent of the number of training vectors and their size. For example, executing this quantum routine with 10 or 100,000,000 training vectors each with 1,000,000 entries does not make a difference in the run time.
+Independent of number and size of the input and training vectors, the algorithm only requires the application of a single H gate. However, the routine has to be repeated for $y$ runs of which only $Prob(CM)*y$ runs result in a measurement of the class qubit. Thus, the time complexity of this algorithm is $\mathcal{O}(\frac{1}{Prob(CM)})$ where $Prob(CM)$ is the probability of a successful CM (measuring ancilla in the $\ket{0}$ state). Therefore, the algorithm is said to run in constant time. This means it is independent of the number of training vectors and their size. For example, executing this quantum routine with 10 or 100,000,000 training vectors each with 1,000,000 entries does not make a difference in the run time.
 \end{greenbox}
 
 \subsection{Implementing the amplitude-based kNN algorithm}
@@ -335,6 +335,9 @@ Perhaps the simplest problem is the classification of a 2-D quantum state vector
     \captionof{table}{Input vector}
 \end{minipage}
 
+\subsubsection{Initial state preparation}
+\label{subsubsubsec:initialstatepreparation}
+
 The first step towards an actual implementation of this problem is to prepare the initial quantum state $\ket{\psi_0}$ previously defined to be of the form,
 \begin{equation}
 \label{equ:ampinitial2}
@@ -343,6 +346,7 @@ The first step towards an actual implementation of this problem is to prepare th
 
 where in the case of the selected classification problem:
 \begin{align} 
+\label{equ:vectordefs}
 &\ket{\textcolor{red}{\Psi_{x}}} = e^{-i\frac{\pi}{8}}\big[0.92388\ket{0} + 0.38268\ket{1}\big]\\
 &\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{1}}}} = \ket{0} \\
 &\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{2}}}} = \ket{1}
@@ -365,11 +369,13 @@ Using another H gate, the ancilla qubit is put in superposition:
 \end{equation}
 %ADD CIRCUIT REPRESENTATION?
 
-Next, the input vector $\ket{\textcolor{red}{\Psi_{x}}}$ should be loaded by some procedure such that the state is described by,
+Next, the input vector $\ket{\textcolor{red}{\Psi_{x}}}$ should be loaded into the quantum state by means of a yet unknown gate sequence $GS$ such that the state is described by,
 
-\begin{equation}
-\ket{\chi} = \frac{1}{2} \sum_{m=0}^1 \big[ \ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{0}\big] \ket{0}\ket{m} = \frac{1}{2} \sum_{m=0}^1 \Big[ \ket{0}\textcolor{red}{e^{-i\frac{\pi}{8}}\big[0.92388\ket{0} + 0.38268\ket{1}\big]} + \ket{1}\ket{0}\Big] \ket{0}\ket{m}
-\end{equation}
+\begin{align}
+\label{equ:chi3}
+\ket{\chi_3} &= GS \ket{\chi_2} = \frac{1}{2} \sum_{m=0}^1 \big[ \ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{0}\big] \ket{0}\ket{m}\notag\\
+&= \frac{1}{2} \sum_{m=0}^1 \Big[ \ket{0}\textcolor{red}{e^{-i\frac{\pi}{8}}\big[0.92388\ket{0} + 0.38268\ket{1}\big]} + \ket{1}\ket{0}\Big] \ket{0}\ket{m}
+\end{align}
 
 By looking closely at Fig.~\ref{fig:3over4state} one can deduce that the red input vector can be reached by simply rotating the \0 vector by an angle of $\frac{\pi}{4}$ around the y-axis. A y-rotation by an arbitrary angle $\vartheta$ can be achieved with the rotation operator $R_y(\vartheta)$. As described by \citeA{nielsen2010quantum}, $R_y(\vartheta)$ can be represented as a unitary 2x2 matrix and is obtained from exponentiating the Y gate as follows,
 
@@ -380,27 +386,44 @@ R_y(\vartheta) = e^{-i\vartheta\frac{Y}{2}} = \text{cos}\frac{\vartheta}{2} - i\
 \end{pmatrix}
 \end{equation}
 
-At this point, note that $R_y(\vartheta)$ is not an element of IBM's universal gate set. The discussion how to implement $R_y(\vartheta)$ on the IBM QC will be addressed later. For now, suppose $R_y(\frac{\pi}{4})$ can be implemented. Acting it on the data qubit results in the state:
+At this point, note that $R_y(\vartheta)$ is not an element of IBM's universal gate set. The problem of how to implement $R_y(\vartheta)$ on the IBM QC will be addressed later. For now, suppose $R_y(\frac{\pi}{4})$ can be implemented. Acting this gate on the data qubit in $\ket{\chi_2}$ yields the expression
 
 \begin{equation}
-\ket{\chi_3} = (\mathbb{1} \otimes R_y(\frac{\pi}{4}) \otimes \mathbb{1} \otimes \mathbb{1})\ket{\chi_2} = \frac{1}{2} \sum_{m=0}^1 \big[ \ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{\textcolor{red}{\Psi_{x}}}\big] \ket{0}\ket{m}
+(\mathbb{1} \otimes R_y(\frac{\pi}{4}) \otimes \mathbb{1} \otimes \mathbb{1})\ket{\chi_2} = \frac{1}{2} \sum_{m=0}^1 \big[ \ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{\textcolor{red}{\Psi_{x}}}\big] \ket{0}\ket{m}
 \end{equation}
 
-
-
-This can be achieved by first applying the controlled rotation $CR_y(\frac{\pi}{4})(0,1)$ around the y-axis of the Bloch sphere.
-
+This, however, is not the desired state $\ket{\chi_3}$ defined in Equ.~\ref{equ:chi3} since the input vector $\ket{\textcolor{red}{\Psi_{x}}}$ should only be entangled with the \0 state of the ancilla. To achieve this type of entanglement the controlled version of the y-rotation gate, $CR_y(\frac{\pi}{4})(c,t)$, is required. When applying it using the $a$ qubit as control and the $d$ qubit as target the input vector will be entangled with the \1 state of the ancilla. Flipping the $a$ qubit with an X gate moves the input vector to the \0 state of the ancilla. Hence, the desired state $\ket{\chi_3}$ is obtained by applying the following gate sequence $GS$:
 \begin{equation}
-\ket{\chi_3} = _CR_y(\frac{\pi}{4})(0,1)\ket{\chi_2} = \frac{1}{2} \sum_{m=0}^1 \big[ \ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{0}\big] \ket{0}\ket{m} = \frac{1}{2} \sum_{m=0}^1 \Big[ \ket{0}\textcolor{red}{\big[\frac{1}{\sqrt{2}}\big[\ket{0} + e^{i \frac{\pi}{4}}\ket{1}\big]} + \ket{1}\ket{0}\Big] \ket{0}\ket{m}
+\label{equ:}
+GS = (X \otimes \mathbb{1} \otimes \mathbb{1} \otimes \mathbb{1}) (CR_y(\frac{\pi}{4})(a,d) \otimes \mathbb{1} \otimes \mathbb{1}) \\
 \end{equation}
+subbing into Equ.~\ref{equ:chi3}:
+\begin{align}
+\label{equ:chi3prepared}
+\ket{\chi_3} &=  GS \ket{\chi_2} = (X \otimes \mathbb{1} \otimes \mathbb{1} \otimes \mathbb{1}) (CR_y(\frac{\pi}{4})(a,d) \otimes \mathbb{1} \otimes \mathbb{1}) \ket{\chi_2}\notag\\
+&= (X \otimes \mathbb{1} \otimes \mathbb{1} \otimes \mathbb{1}) \Big[\frac{1}{2} \sum_{m=0}^1 \big[\ket{0}\ket{0} + \ket{1}\ket{\textcolor{red}{\Psi_{x}}}\big] \ket{0}\ket{m}\Big]\notag\\
+&= \frac{1}{2} \sum_{m=0}^1 \Big[ \ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{0}\Big] \ket{0}\ket{m}
+\end{align}
 
-\begin{equation}
-_0^1CR_y(\frac{\pi}{4})\ket{\Psi_0} = \ket{\Psi_1} = \frac{1}{2}\sum_{m=1}^{2} (\textcolor{emerald}{\ket{0}}\ket{0}+\textcolor{emerald}{\ket{1}}\ket{\textcolor{red}{\Psi_{\tilde{x}}}})\ket{y^{m}}\ket{m}
-\end{equation}
-Flip the ancilla qubit in the first register
-\begin{equation}
-(X\otimes\mathbb{1}\otimes\mathbb{1}\otimes\mathbb{1})\ket{\Psi_1} = \ket{\Psi_2} = \frac{1}{2}\sum_{m=1}^{2} (\textcolor{emerald}{\ket{0}}\ket{\textcolor{red}{\Psi_{\tilde{x}}}}+\textcolor{emerald}{\ket{1}}\ket{0})\ket{y^{m}}\ket{m}
-\end{equation}
+It is important to note that also $CR_y(\frac{\pi}{4})(c,t)$ is not an element of IBM's universal gate set. Its implementation on the IBM QC will be discussed in the next subsection.
+
+The next step is to entangle the first training vector $\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{0}}}}$  with the \1 state of the ancilla and the \0 state of the $m$ qubit. Additionally, the second training vector $\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{1}}}}$ should be entangled with the \1 states of the ancilla and the $m$ qubit. Note that $\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{1}}}}$ and $\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{2}}}}$ defined in Equ.~\ref{equ:vectordefs} were redefined to $\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{0}}}}$ and $\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{1}}}}$ respectively. Expanding the sum in Equ.~\ref{equ:chi3prepared} demonstrates that $\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{0}}}} = \ket{0}$ is already at its desired place:
+
+\begin{align}
+\label{equ:chi3expanded}
+\ket{\chi_3} &= \frac{1}{2}\Big[ \big[\ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{0}\big] \ket{0}\ket{0} + \big[ \ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{0}\big] \ket{0}\ket{1}\Big]\notag\\
+&= \frac{1}{2}\Big[ \big[\ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{0}}}}\big] \ket{0}\ket{0} + \big[ \ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{0}\big] \ket{0}\ket{1}\Big]
+\end{align}
+
+In order to entangle $\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{1}}}} = \ket{1}$ with the \1 states of the ancilla and $m$ qubit a Toffoli (CCNOT) gate needs to be implemented. Using the ancilla ($a$) and $m$ qubit as controls and choosing the data ($d$) qubit as target one obtains the following state:
+
+\begin{align}
+\label{equ:chi3expanded}
+\ket{\chi_4} &= CCNOT(a,m,d)\ket{\chi_3}\notag\\
+&= \frac{1}{2}\Big[ \big[\ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{0}\big] \ket{0}\ket{0} + \big[ \ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{1}\big] \ket{0}\ket{1}\Big]\notag\\
+&= \frac{1}{2}\Big[ \big[\ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{0}}}}\big] \ket{0}\ket{0} + \big[ \ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{1}}}}\big] \ket{0}\ket{1}\Big]
+\end{align}
+
 
 \subsubsection{Controlled U Gate}
 \label{subsubsubsec:controlledugate}
