@@ -6,7 +6,7 @@
 \contentsline {chapter}{\numberline {2}Theoretical Foundations}{3}
 \contentsline {section}{\numberline {2.1}Quantum Bits}{3}
 \contentsline {subsection}{\numberline {2.1.1}Single Qubit Systems}{3}
-\contentsline {subsection}{\numberline {2.1.2}Multiple Qubit Systems}{5}
+\contentsline {subsection}{\numberline {2.1.2}Multiple Qubit Systems}{6}
 \contentsline {section}{\numberline {2.2}Quantum Logic Gates}{8}
 \contentsline {subsection}{\numberline {2.2.1}Single Qubit Gates}{8}
 \contentsline {subsubsection}{Qubit Flip (X) Gate}{8}
@@ -31,9 +31,9 @@
 \contentsline {subsubsection}{Initial state preparation}{35}
 \contentsline {subsubsection}{Controlled U Gate}{38}
 \contentsline {subsubsection}{The Solovay-Kitaev theorem}{40}
-\contentsline {subsection}{\numberline {5.2.2}Simulating the amplitude-based kNN algorithm}{44}
-\contentsline {subsubsection}{Diffusion matrix from quantum random walks}{44}
-\contentsline {chapter}{\numberline {6}Outlook}{46}
-\contentsline {chapter}{\numberline {7}Conclusion}{47}
-\contentsline {chapter}{\numberline {8}Personal reflection}{48}
-\contentsline {chapter}{References}{49}
+\contentsline {subsection}{\numberline {5.2.2}Simulating the amplitude-based kNN algorithm}{45}
+\contentsline {subsubsection}{Diffusion matrix from quantum random walks}{45}
+\contentsline {chapter}{\numberline {6}Outlook}{47}
+\contentsline {chapter}{\numberline {7}Conclusion}{48}
+\contentsline {chapter}{\numberline {8}Personal reflection}{49}
+\contentsline {chapter}{References}{50}

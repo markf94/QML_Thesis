@@ -7,26 +7,26 @@ b = qp.Bloch()
 
 #Add basis vectors
 #b.vector_color = ['k']
-x_basis = (qp.basis(2,0)+(1+0j)*qp.basis(2,1)).unit()
-y_basis = (qp.basis(2,0)+(0+1j)*qp.basis(2,1)).unit()
-z_basis = (qp.basis(2,0)+(0+0j)*qp.basis(2,1)).unit()
-b.add_states([x_basis,y_basis,z_basis])
+#x_basis = (qp.basis(2,0)+(1+0j)*qp.basis(2,1)).unit()
+#y_basis = (qp.basis(2,0)+(0+1j)*qp.basis(2,1)).unit()
+#z_basis = (qp.basis(2,0)+(0+0j)*qp.basis(2,1)).unit()
+#b.add_states([x_basis,y_basis,z_basis])
 #b.add_states([x_basis]);
 
 # color vector for 3/4 state visualization
-b.vector_color = ['k','k','y','m','r']
-#b.vector_color = ['k','r']
-#b.vector_color = ['k','w','c','g','b','y','r']
+#b.vector_color = ['k','k','y','m','r']
+#b.vector_color = ['k','m']
+b.vector_color = ['m','g','b','y','r']
 b.vector_width = 3
-onestate = [[0.,0.,-1.]]
-b.add_vectors(onestate)
+#onestate = [[0.,0.,-1.]]
+#b.add_vectors(onestate)
 #Qubit amplitudes
 
-#xp = [np.cos(th)-0.05 for th in np.linspace(math.pi/4, math.pi/2, 20)]
+#xp = [np.cos(th) for th in np.linspace(0, -23*math.pi/16, 30)]
 
-#yp = [np.sin(th)-0.2 for th in np.linspace(math.pi/4, math.pi/2, 20)]
+#yp = [np.sin(th) for th in np.linspace(0, -23*math.pi/16, 30)]
 
-#zp = np.zeros(10)
+#zp = np.zeros(30)
 #zp = [np.sin(th) for th in np.linspace(0, math.pi/4, 20)]
 #zp = np.append(zp1,zp2)
 #pnts = [xp, yp, zp]
@@ -46,21 +46,21 @@ b.add_vectors(onestate)
 alpha = -0.70711
 beta = 0.70711
 '''
-'''
+
 #original -23/16pi z-rotation
 x = -0.195075369355
 y = 0.980788254554
 z = 9.09619999983e-06
 new_vec = [x.real,y.real,z.real] #works only for the right half sphere....
 b.add_vectors(new_vec)
-
+'''
 # 0.22739
 x = -0.475682821273
 y =  0.851984391192
 z = -0.218742887344
 new_vec = [x.real,y.real,z.real] #works only for the right half sphere....
 b.add_vectors(new_vec)
-
+'''
 #gen5 n=1 0.15165
 alpha = 0.750003414067-0.103553861978j
 beta = -0.250001138022+0.603556138022j
@@ -95,11 +95,11 @@ z = 3.26698397897e-05
 new_vec = [x.real,y.real,z.real] #works only for the right half sphere....
 b.add_vectors(new_vec)
 b.show()
-'''
 
+'''
 # #1 in Liquid (3/4 state)
-alpha = 0.85355 - 0.35355j
-beta = 0.35355 - 0.14645j
+#alpha = 0.85355 - 0.35355j
+#beta = 0.35355 - 0.14645j
 #alpha = 1/math.sqrt(2)
 #beta = 1/math.sqrt(2)*cmath.exp(1j*math.pi/4)
 
@@ -165,3 +165,4 @@ else:
 
 
 b.show()
+'''

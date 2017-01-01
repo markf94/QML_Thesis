@@ -578,23 +578,38 @@ Quantum gate $A$ is just equal to the identity gate which certainly is element o
 \subsubsection{The Solovay-Kitaev theorem}
 \label{subsubsubsec:solovaykitaev}
 
+An important theorem in quantum information is the Solovay-Kitaev theorem first proposed by \citeA{kitaev1997quantum}. It will be used to decompose the quantum gates $B$ and $C$ into a sequence of quantum gates from IBM's universal gate set.
 
-The Solovay-Kitaev theorem guarantees that given a set of single-qubit quantum gates which generates a dense subset of $SU(2)$, then that set is guaranteed to fill $SU(2)$ quickly.\cite{dawson2005solovay}.
- 
-$\rightarrow$ \textcolor{emerald}{\textbf{Hence, given any universal gate set it is possible to obtain good approximations to any desired gate.}}
+At this point, it is important to remember that any universal quantum gate set is a dense subset of the special unitary group $SU(2)$ as defined in Section~\ref{subsubsec:qubits}.
 
-$\rightarrow$ \textcolor{red}{\textbf{But needs to be computed classically!}}
+\begin{redbox}
+\textbf{Theorem: Solovay-Kitaev theorem}\\
+\newline
+Given a universal quantum set $G$ of $SU(2)$ and a desired accuracy $\epsilon > 0$, then there is a constant $b$ such that for any single-qubit gate $W \in SU(2)$ there exists a
+finite gate sequence $\tilde{G}$ of gates from the set $G$ of length $O(log^b (1/\epsilon))$ such that $d(W, \tilde{G}) < \epsilon$.\\
+\newline
+In other words, given a set of single-qubit quantum gates which is a dense subset of $SU(2)$, then the Solovay-Kitaev theorem guarantees that this set will quickly fill $SU(2)$.
+\cite{dawson2005solovay}.
+\end{redbox}
+
+The Solovay-Kitaev theorem is so powerful because it proofs that given any universal gate set it is possible to obtain good approximations to any desired single-qubit gate $W$. In their paper, \citeA{dawson2005solovay} describe how to design an algorithm implementing the Solovay-Kitaev theorem. Unfortunately, the Solovay-Kitaev algorithm needs to be implemented on a classical computer which adds to the overall time complexity of the quantum compiling process as will be shown later. For this thesis, the open-source software package 'Quantum Compiler, v0.03'\textsuperscript{10} developed in Python by Paul Pham was used to run the Solovay-Kitaev algorithm described by \citeA{dawson2005solovay}.
+
+\footnotetext[10]{The software package "Quantum Compiler, v0.03" by Paul Pham can be downloaded from \url{https://sourceforge.net/projects/quantumcompiler/files/v0.03/}.}
+
+To measure how good a particular gate approximation is compared to the desired gate $W$ a new distance metric needs to be introduced.
 
 \begin{redbox}
 \textbf{Definition: Fowler distance}\\
 \newline
-When approximating a unitary gate $U$ with a gate sequence yielding another unitary gate $U_{approx}$ it is important to quantify how 'close' the action of $U_{approx}$ is to $U$. The Fowler distance makes use of the matrix representations of $U$ and $U_{approx}$ and is defined by \citeA{booth2012quantum} as:
+When approximating a unitary gate $W$ with a gate sequence yielding another unitary gate $W_{approx}$ it is important to quantify how 'close' the action of $W_{approx}$ is to $W$. The Fowler distance makes use of the matrix representations of $W$ and $W_{approx}$ and is defined by \citeA{booth2012quantum} as:
 \begin{equation}
-d(U,U_{approx}) = \sqrt{\frac{2-\mid tr(U\cdot U_{approx}^\dagger)\mid}{2}}
+d(W,W_{approx}) = \sqrt{\frac{2-\mid tr(W\cdot W_{approx}^\dagger)\mid}{2}}
 \end{equation}
 
-In contrast to $U$, $U_{approx}$ might introduce a shift in the global phase of the quantum state it is acting on. However, since the global phase of a quantum state is immeasurable in experiment it can be neglected. As a result, the Fowler distance is defined in such a way that possible global phase differences are ignored.
+In contrast to $W$, $W_{approx}$ might introduce a shift in the global phase of the quantum state it is acting on. However, since the global phase of a quantum state is immeasurable in experiment it can be neglected. As a result, the Fowler distance is defined in such a way that possible global phase differences are ignored.
 \end{redbox}
+
+Subsequently, the desired gates $B = R_z(-\frac{23}{16}\pi)$ and $C = R_z(-\frac{9}{16}\pi)$ where decomposed using the Solovay-Kitaev algorithm. Fig.~\ref{fig:skresultplot} shows a plot visualizing how the Fowler distance depends on the number of gates in the approximating gate sequence $W_{approx}$. It clearly shows an exponential increase in the number of gates for decreasing Fowler distance. For example, 109 gates suffice to achieve $d(W_approx,R_z(-\frac{23}{16}\pi)) = 0.10722$. However, to reduce the Fowler distance to $d(W_approx,R_z(-\frac{23}{16}\pi)) = 0.01494$, 14721 gates are required.
 
 \begin{figure}
 \centering
@@ -611,30 +626,49 @@ In contrast to $U$, $U_{approx}$ might introduce a shift in the global phase of 
 
 \end{axis}
 \end{tikzpicture}
+\caption{Fowler distance plotted against the number of required  quantum gates}
+\label{fig:skresultplot}
   \end{figure}
+  
+Fig.~\ref{fig:fowlerdistances} is a visual aid to understanding Fowler distances. It shows five different vectors trying to approximate the action of the 
+
+Fowler distance is best understood using a visual example. Acting the desired gate $B = R_z(-\frac{23}{16}\pi)$ on the state $\ket{\psi} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}$ (black vector in Fig.~\ref{fig:bloch23over16}) results in the desired Bloch vector $\vec{b}$ shown as the purple vector in Fig.~\ref{fig:bloch23over16}.
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{img/bloch23over16.png}
+\caption{\label{fig:bloch23over16} Action of $B = R_z(-\frac{23}{16}\pi)$ on the state $\ket{\psi} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}$}
+\end{figure}
+
+
+Fig.~\ref{fig:fowlerdistances} shows the action of four different approximating gate sequences $B_{approx,1},B_{approx,2},B_{approx,3},B_{approx,4}$ on the state $\ket{\psi} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}$. Gate sequence $B_{approx,1}$ consists of 25 gates and yields a Fowler distance of $d = 0.15165$. The resulting state vector is coloured green in Fig.~\ref{fig:fowlerdistances} and is still far off from the desired vector $\vec{b}$ in Fig.~\ref{fig:bloch23over16}. With 109 gates, $B_{approx,2}$ lowers the Fowler distance to $d = 0.10722$ resulting in the blue vector still not being close to $\vec{b}$.
+
+However, the yellow vector in Fig.~\ref{fig:fowlerdistances} resulting from a gate sequence with
+
+Using $B_{approx,3}$ the Fowler distance drops to $d = 0.02086$ leading to the yellow vector in  Fig.~\ref{fig:fowlerdistances}. This vector can be considered a 'close' approximation of the desired state $\vec{b}$. However, $B_{approx,3}$ requires the implementation of 2997 single-qubit gates. The purple vector from Fig.~\ref{fig:bloch23over16} is also plotted in Fig.~\ref{fig:fowlerdistances} but is not visible since the red vector with $d = 0.00158$ constitutes a very good approximation to the desired state $\vec{b}$ that they are essentially the same. $B_{approx,4}$ needs 370,813 gates to approximate $B$ to such a small Fowler distance.
 
 \begin{minipage}[c]{.8\textwidth}
 	%\vspace{-20mm}
-	\includegraphics[height=0.8\textwidth]{img/fowlerdistance.png}
+	\includegraphics[height=0.8\textwidth]{img/fowlerdistances.png}
        \captionsetup{justification=raggedright, singlelinecheck=false}
-       \captionof{figure}{Various Fowler distances visualized on Bloch sphere }
+       \captionof{figure}{\label{fig:fowlerdistances}Various Fowler distances visualized on Bloch sphere }
 \end{minipage}%%%%%
 \begin{minipage}[c]{.2\textwidth}
 \scriptsize
 \begin{equation}
-\textcolor{cyan}{d = 0.22739}
+\textcolor{cyan}{d = 0.22739} \notag
 \end{equation}
 \begin{equation}
-\textcolor{emerald}{d = 0.15165}
+\textcolor{emerald}{d = 0.15165} \notag
 \end{equation}
 \begin{equation}
-\textcolor{blue}{d = 0.10722}
+\textcolor{blue}{d = 0.10722} \notag
 \end{equation}
 \begin{equation}
-\textcolor{darkyellow}{d = 0.02086}
+\textcolor{darkyellow}{d = 0.02086} \notag
 \end{equation}
 \begin{equation}
-\textcolor{red}{d = 0.00156}
+\textcolor{red}{d = 0.00158} \notag
 \end{equation}
 
 \end{minipage}
@@ -681,7 +715,8 @@ increased to polylogarithmic complexity of
 dependening on the number of gates $m$ that need $\epsilon$-approximations by means of the Solovay-Kitaev algorithm.
 \end{greenbox}
 
-In summary, in this particular classification problem the constant complexity of the algorithm is dominated by the complexity of so-called quantum compiling: preparing the initial quantum state using the universal gate set at hand.
+
+It has been shown that a series of decompositions are required to compile the quantum state preparation for the aKNN algorithm into a series of quantum gates consisting only of gates from the available gate set. In this particular classification problem the constant complexity of the aKNN algorithm is dominated by the complexity of the quantum compiling. 
 
 \newpage
 
