@@ -211,8 +211,54 @@ else
 
 If and only if the ancilla is found to be in the \0 state, the class qubit is measured. The procedure is repeated for $y$ runs to gather sufficiently accurate statistics. Finally, the input vector is assigned to the most frequently measured class.
 
-TO BE DONE!
-Add table with the simulation results from Liqui$\ket{}$ and discuss them here.
+\subsubsection{Quantum Simulation Results}
+\label{subsubsubsec:results}
+
+
+\begin{table}
+\begin{tabular}{| C{1.4cm} | C{2.1cm} |C{1.7cm} | C{1.7cm} | C{1.7cm} |C{1.7cm}| C{1.7cm}|}
+      %\toprule
+      Colour & Binary 9-bit RGB string  & $Prob(CM)$ & $Prob$ $(\ket{c} = \ket{0})$ & $Prob$ $(\ket{c} = \ket{1})$ & Expected class & Algorithm output\\
+      \midrule
+       \cellcolor{inputred1} & 100 000 000 & \begin{tabular}{c} 0.8404* \\\midrule 0.7500 \end{tabular} & \begin{tabular}{c} 0.5598* \\\midrule 0.4933 \end{tabular} & \begin{tabular}{c} 0.4402* \\\midrule 0.5067 \end{tabular} & red ($\ket{0}$) & blue ($\ket{1}$)\\\midrule
+       
+       \cellcolor{inputmixred2} & 110 100 000 & \begin{tabular}{c} 0.6421* \\\midrule 0.6200 \end{tabular} & \begin{tabular}{c} 0.6756* \\\midrule 0.6129 \end{tabular} & \begin{tabular}{c} 0.3244* \\\midrule 0.3871 \end{tabular} & red ($\ket{0}$) & red ($\ket{0}$)\\\midrule\midrule
+       
+       \cellcolor{inputblue1} & 000 000 110  & \begin{tabular}{c} 0.7349* \\\midrule 0.7000 \end{tabular} & \begin{tabular}{c} 0.3599* \\\midrule 0.3571 \end{tabular} & \begin{tabular}{c} 0.6401* \\\midrule 0.6429 \end{tabular} & blue ($\ket{1}$) & blue ($\ket{1}$)\\\midrule
+       
+       \cellcolor{inputmixblue2} & 000 100 111 &  \begin{tabular}{c} 0.5366* \\\midrule 0.5300 \end{tabular} & \begin{tabular}{c} 0.1916* \\\midrule 0.0943 \end{tabular} & \begin{tabular}{c} 0.8084* \\\midrule 0.9057 \end{tabular} & blue ($\ket{1}$) & blue ($\ket{1}$)\\\midrule
+      \bottomrule
+    \end{tabular}
+    \caption{\label{tab:colourresults} Classification results after 100 runs using input data set I. Theoretical predictions (marked with asterisks) on top, simulation results at the bottom.}
+\end{table}
+
+
+\begin{table}
+\begin{tabular}{| C{1.4cm} | C{2.1cm} |C{1.7cm} | C{1.7cm} | C{1.7cm} |C{1.7cm}| C{1.7cm}|}
+      %\toprule
+      Colour & Binary 9-bit RGB string & $Prob(CM)$ & $Prob$ $(\ket{c} = \ket{0})$ & $Prob$ $(\ket{c} = \ket{1})$ & Expected class & Algorithm output\\
+      \midrule
+       \cellcolor{inputred1} & 100 000 000 & \begin{tabular}{c} 0.7543* \\\midrule 0.8500 \end{tabular} & \begin{tabular}{c} 0.5515* \\\midrule 0.5529 \end{tabular} & \begin{tabular}{c} 0.4485* \\\midrule 0.4471 \end{tabular} & red ($\ket{0}$) & red ($\ket{0}$)\\\midrule
+       
+       \cellcolor{inputmixred2} & 110 100 000 & \begin{tabular}{c} 0.6312* \\\midrule 0.6100 \end{tabular} & \begin{tabular}{c} 0.6710* \\\midrule 0.7377 \end{tabular} & \begin{tabular}{c} 0.3289* \\\midrule 0.2623 \end{tabular} & red ($\ket{0}$) & red ($\ket{0}$)\\\midrule
+       
+       \cellcolor{inputmixred3} & 101 100 100  & \begin{tabular}{c} 0.6996* \\\midrule 0.7200 \end{tabular} & \begin{tabular}{c} 0.5821* \\\midrule 0.5694 \end{tabular} & \begin{tabular}{c} 0.4179* \\\midrule 0.4306 \end{tabular} & red ($\ket{0}$) & red ($\ket{0}$)\\\midrule
+       
+       \cellcolor{inputmixred4} & 110 100 110  & \begin{tabular}{c} 0.6470* \\\midrule 0.6600 \end{tabular} & \begin{tabular}{c} 0.5229* \\\midrule 0.5000 \end{tabular} & \begin{tabular}{c} 0.4771* \\\midrule 0.5000 \end{tabular} & red ($\ket{0}$) & blue ($\ket{1}$)\\\midrule\midrule
+       
+       \cellcolor{inputblue1} & 000 000 110  & \begin{tabular}{c} 0.6880* \\\midrule 0.7000 \end{tabular} & \begin{tabular}{c} 0.3760* \\\midrule 0.3714 \end{tabular} & \begin{tabular}{c} 0.6240* \\\midrule 0.6286 \end{tabular} & blue ($\ket{1}$) & blue ($\ket{1}$)\\\midrule
+       
+       \cellcolor{inputmixblue2} & 000 100 111 &  \begin{tabular}{c} 0.5649* \\\midrule 0.5500 \end{tabular} & \begin{tabular}{c} 0.2266* \\\midrule 0.2182 \end{tabular} & \begin{tabular}{c} 0.7734* \\\midrule 0.7818 \end{tabular} & blue ($\ket{1}$) & blue ($\ket{1}$)\\\midrule
+       
+       \cellcolor{inputmixblue3} &  100 100 111 &  \begin{tabular}{c} 0.6236* \\\midrule 0.6100 \end{tabular} & \begin{tabular}{c} 0.3330* \\\midrule 0.3279 \end{tabular} & \begin{tabular}{c} 0.6670* \\\midrule 0.6721 \end{tabular} & blue ($\ket{1}$) & blue ($\ket{1}$)\\\midrule
+       
+       \cellcolor{inputmixblue4} & 110 100 101 &  \begin{tabular}{c} 0.6807* \\\midrule 0.7000 \end{tabular} & \begin{tabular}{c} 0.4970* \\\midrule 0.5857 \end{tabular} & \begin{tabular}{c} 0.5030* \\\midrule 0.4143 \end{tabular}  & blue ($\ket{1}$)& red ($\ket{0}$)\\\midrule
+ \bottomrule
+    \end{tabular}
+    \caption{\label{tab:colourresults2} Classification results after 100 runs using input data set II. Theoretical predictions (marked with asterisks) on top, simulation results at the bottom.}
+\end{table}
+
+
 
 It was shown that for this classification problem the quantum kNN algorithm by \citeA{Schuld2014} requires 20 qubits. Unfortunately, the IBM QC consists of only five qubits rendering an actual implementation of the 9-bit RGB colour classification impossible. Furthermore, even when the training and input patterns could be each encoded into two qubits, the algorithm would require 6 qubits making an IBM QC implementation again impossible. This can be seen from the initial state $\ket{\psi_0}$ in Equ.~\ref{equ:fullinitialstate} that contains the input pattern (two qubits), the training pattern (two qubits) as well as one class qubit and one ancilla qubit. This stresses the need for an alternative version of the quantum kNN algorithm based on amplitude-encoded data. 
 
@@ -424,7 +470,9 @@ In order to entangle $\ket{\textcolor{purple}{\Psi_{t^{1}}}}$ with the \1 states
 &= \frac{1}{2}\Big[ \big[\ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{\textcolor{darkyellow}{\Psi_{t^{0}}}}\big] \ket{0}\ket{0} + \big[ \ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{\textcolor{purple}{\Psi_{t^{1}}}}\big] \ket{0}\ket{1}\Big]
 \end{align}
 
-The class qubit for the first training vector is already in the correct \0 state. It remains to flip the class qubit for the second training vector by applying a CNOT gate using the $d$ qubit as control and the class($c$) qubit as target. The resulting state is then given by,
+The class qubit for the first training vector is already in the correct \0 state. Note again that also the CCNOT gate is not element of IBM's universal gate set which will be addressed later.
+
+It remains to flip the class qubit for the second training vector by applying a CNOT gate using the $d$ qubit as control and the class($c$) qubit as target. The resulting state is then given by,
 
 \begin{align}
 \label{equ:chi5}
@@ -580,23 +628,21 @@ Quantum gate $A$ is just equal to the identity gate which certainly is element o
 
 An important theorem in quantum information is the Solovay-Kitaev theorem first proposed by \citeA{kitaev1997quantum}. It will be used to decompose the quantum gates $B$ and $C$ into a sequence of quantum gates from IBM's universal gate set.
 
-At this point, it is important to remember that any universal quantum gate set is a dense subset of the special unitary group $SU(2)$ as defined in Section~\ref{subsubsec:qubits}.
+At this point, it is important to remember that any universal quantum gate set is a dense subset of the special unitary group $SU(2)$ as previously defined in Section~\ref{subsubsec:qubits}.
 
 \begin{redbox}
 \textbf{Theorem: Solovay-Kitaev theorem}\\
 \newline
-Given a universal quantum set $G$ of $SU(2)$ and a desired accuracy $\epsilon > 0$, then there is a constant $b$ such that for any single-qubit gate $W \in SU(2)$ there exists a
-finite gate sequence $\tilde{G}$ of gates from the set $G$ of length $O(log^b (1/\epsilon))$ such that $d(W, \tilde{G}) < \epsilon$.\\
+Let $G$ be a universal quantum set $G$ consisting of quantum gates from $SU(2)$ and let $\epsilon > 0$ be a desired accuracy. Then there is a constant $b$ such that for any single-qubit gate $W \in SU(2)$ there exists a
+finite gate sequence $\tilde{G}$ of gates from the set $G$ of length $O(log^b (1/\epsilon))$ such that $d(W, \tilde{G}) < \epsilon$. In their proof, \citeA{dawson2005solovay} show that $b \approx 3.97$.\\
 \newline
 In other words, given a set of single-qubit quantum gates which is a dense subset of $SU(2)$, then the Solovay-Kitaev theorem guarantees that this set will quickly fill $SU(2)$.
 \cite{dawson2005solovay}.
 \end{redbox}
 
-The Solovay-Kitaev theorem is so powerful because it proofs that given any universal gate set it is possible to obtain good approximations to any desired single-qubit gate $W$. In their paper, \citeA{dawson2005solovay} describe how to design an algorithm implementing the Solovay-Kitaev theorem. Unfortunately, the Solovay-Kitaev algorithm needs to be implemented on a classical computer which adds to the overall time complexity of the quantum compiling process as will be shown later. For this thesis, the open-source software package 'Quantum Compiler, v0.03'\textsuperscript{10} developed in Python by Paul Pham was used to run the Solovay-Kitaev algorithm described by \citeA{dawson2005solovay}.
+The Solovay-Kitaev theorem is so powerful because it proofs that given any universal gate set it is possible to obtain good approximations to any desired single-qubit gate $W$. In their paper, \citeA{dawson2005solovay} describe how to design an algorithm implementing the Solovay-Kitaev theorem. Unfortunately, the Solovay-Kitaev algorithm needs to be implemented on a classical computer which adds to the overall time complexity of the quantum compiling process as will be shown later. For this thesis, the open-source software package 'Quantum Compiler, v0.03'\textsuperscript{10} developed in Python by Paul Pham was used to run the Solovay-Kitaev algorithm described by \citeA{dawson2005solovay}. This software package compares different gate approximations to the desired gate by a new distance metric called Fowler distance.
 
 \footnotetext[10]{The software package "Quantum Compiler, v0.03" by Paul Pham can be downloaded from \url{https://sourceforge.net/projects/quantumcompiler/files/v0.03/}.}
-
-To measure how good a particular gate approximation is compared to the desired gate $W$ a new distance metric needs to be introduced.
 
 \begin{redbox}
 \textbf{Definition: Fowler distance}\\
@@ -609,11 +655,12 @@ d(W,W_{approx}) = \sqrt{\frac{2-\mid tr(W\cdot W_{approx}^\dagger)\mid}{2}}
 In contrast to $W$, $W_{approx}$ might introduce a shift in the global phase of the quantum state it is acting on. However, since the global phase of a quantum state is immeasurable in experiment it can be neglected. As a result, the Fowler distance is defined in such a way that possible global phase differences are ignored.
 \end{redbox}
 
-Subsequently, the desired gates $B = R_z(-\frac{23}{16}\pi)$ and $C = R_z(-\frac{9}{16}\pi)$ where decomposed using the Solovay-Kitaev algorithm. Fig.~\ref{fig:skresultplot} shows a plot visualizing how the Fowler distance depends on the number of gates in the approximating gate sequence $W_{approx}$. It clearly shows an exponential increase in the number of gates for decreasing Fowler distance. For example, 109 gates suffice to achieve $d(W_approx,R_z(-\frac{23}{16}\pi)) = 0.10722$. However, to reduce the Fowler distance to $d(W_approx,R_z(-\frac{23}{16}\pi)) = 0.01494$, 14721 gates are required.
+Subsequently, the desired gates $B = R_z(-\frac{23}{16}\pi)$ and $C = R_z(-\frac{9}{16}\pi)$ where decomposed using the Solovay-Kitaev algorithm. Fig.~\ref{fig:skresultplot} shows a plot visualizing how the Fowler distance depends on the number of gates in the approximating gate sequence $W_{approx}$. The number of gates in the approximating gate sequence is also called \emph{gate count}. The plot clearly shows an exponential increase in the gate count for decreasing Fowler distance. For example, 109 gates suffice to achieve $d(W_{approx},R_z(-\frac{23}{16}\pi)) = 0.10722$. However, to reduce the Fowler distance to $d(W_{approx},R_z(-\frac{23}{16}\pi)) = 0.01494$, 14721 gates are required.
+BAD LOOKS! Update with 9/16 pi examples!
 
 \begin{figure}
 \centering
-    \begin{tikzpicture}[scale=0.8]
+    \begin{tikzpicture}[scale=1]
 \begin{axis}[xlabel={Gate count},ylabel={Fowler distance [$d(U,U_{approx})$]}]
 
 % Graph column 2 versus column 0
@@ -626,26 +673,19 @@ Subsequently, the desired gates $B = R_z(-\frac{23}{16}\pi)$ and $C = R_z(-\frac
 
 \end{axis}
 \end{tikzpicture}
-\caption{Fowler distance plotted against the number of required  quantum gates}
+\caption{Fowler distance plotted against the required gate count for quantum gates $B = R_z(-\frac{23}{16}\pi)$ and $C = R_z(-\frac{9}{16}\pi)$ }
 \label{fig:skresultplot}
   \end{figure}
   
-Fig.~\ref{fig:fowlerdistances} is a visual aid to understanding Fowler distances. It shows five different vectors trying to approximate the action of the 
-
-Fowler distance is best understood using a visual example. Acting the desired gate $B = R_z(-\frac{23}{16}\pi)$ on the state $\ket{\psi} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}$ (black vector in Fig.~\ref{fig:bloch23over16}) results in the desired Bloch vector $\vec{b}$ shown as the purple vector in Fig.~\ref{fig:bloch23over16}.
+Fowler distance is best understood with a visual example using the gate $B$. Acting the desired gate $B = R_z(-\frac{23}{16}\pi)$ on the state $\ket{\psi} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}$ (black vector in Fig.~\ref{fig:bloch23over16}) results in the purple Bloch vector $\vec{b}$ shown in Fig.~\ref{fig:bloch23over16}.
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.5]{img/bloch23over16.png}
+\includegraphics[scale=0.35]{img/bloch23over16.png}
 \caption{\label{fig:bloch23over16} Action of $B = R_z(-\frac{23}{16}\pi)$ on the state $\ket{\psi} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}$}
 \end{figure}
 
-
-Fig.~\ref{fig:fowlerdistances} shows the action of four different approximating gate sequences $B_{approx,1},B_{approx,2},B_{approx,3},B_{approx,4}$ on the state $\ket{\psi} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}$. Gate sequence $B_{approx,1}$ consists of 25 gates and yields a Fowler distance of $d = 0.15165$. The resulting state vector is coloured green in Fig.~\ref{fig:fowlerdistances} and is still far off from the desired vector $\vec{b}$ in Fig.~\ref{fig:bloch23over16}. With 109 gates, $B_{approx,2}$ lowers the Fowler distance to $d = 0.10722$ resulting in the blue vector still not being close to $\vec{b}$.
-
-However, the yellow vector in Fig.~\ref{fig:fowlerdistances} resulting from a gate sequence with
-
-Using $B_{approx,3}$ the Fowler distance drops to $d = 0.02086$ leading to the yellow vector in  Fig.~\ref{fig:fowlerdistances}. This vector can be considered a 'close' approximation of the desired state $\vec{b}$. However, $B_{approx,3}$ requires the implementation of 2997 single-qubit gates. The purple vector from Fig.~\ref{fig:bloch23over16} is also plotted in Fig.~\ref{fig:fowlerdistances} but is not visible since the red vector with $d = 0.00158$ constitutes a very good approximation to the desired state $\vec{b}$ that they are essentially the same. $B_{approx,4}$ needs 370,813 gates to approximate $B$ to such a small Fowler distance.
+Fig.~\ref{fig:fowlerdistances} shows the action of four different approximating gate sequences $B_{approx,1}$, $B_{approx,2}$, $B_{approx,3}$, $B_{approx,4}$ on the state $\ket{\psi} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}$. Gate sequence $B_{approx,1}$ consists of 25 gates and yields a Fowler distance of $d = 0.15165$. The resulting state vector is coloured green in Fig.~\ref{fig:fowlerdistances}. The green vector lies above the Bloch equator and is relatively far away from the desired vector $\vec{b}$ in Fig.~\ref{fig:bloch23over16}. With 109 gates, $B_{approx,2}$ lowers the Fowler distance to $d = 0.10722$ resulting in the blue vector. It is also found below the Bloch equator and is still relatively far from $\vec{b}$. Using $B_{approx,3}$ the Fowler distance drops to $d = 0.02086$ leading to the yellow vector in  Fig.~\ref{fig:fowlerdistances}. This vector is almost on the Bloch equator and relatively close to $\vec{b}$. Therefore, $B_{approx,3}$ can be considered a good approximation of $B$. However, $B_{approx,3}$ already requires the implementation of 2,997 single-qubit gates. The purple vector from Fig.~\ref{fig:bloch23over16} is also plotted in Fig.~\ref{fig:fowlerdistances} but is not visible since the red vector with $d = 0.00158$ constitutes such a good approximation to the desired state $\vec{b}$.  The red vector is the result of the action of $B_{approx,4}$ which, unfortunately, needs 370,813 gates to approximate $B$ to such a small Fowler distance. Gate $B$ was used as an example but such an exponential increase in the gate count is observed for any quantum gate $W$ when applying the Solovay-Kitaev algorithm (CITATION).
 
 \begin{minipage}[c]{.8\textwidth}
 	%\vspace{-20mm}
@@ -654,10 +694,6 @@ Using $B_{approx,3}$ the Fowler distance drops to $d = 0.02086$ leading to the y
        \captionof{figure}{\label{fig:fowlerdistances}Various Fowler distances visualized on Bloch sphere }
 \end{minipage}%%%%%
 \begin{minipage}[c]{.2\textwidth}
-\scriptsize
-\begin{equation}
-\textcolor{cyan}{d = 0.22739} \notag
-\end{equation}
 \begin{equation}
 \textcolor{emerald}{d = 0.15165} \notag
 \end{equation}
@@ -673,6 +709,8 @@ Using $B_{approx,3}$ the Fowler distance drops to $d = 0.02086$ leading to the y
 
 \end{minipage}
 
+Implementing any quantum gate $D$ inevitable takes some time $t$ since it involves the use of hardware components e.g. targeting a specific electron with a laser pulse. Based on IBM's single-qubit and CNOT gate times described in Section~\ref{subsec:ibmqc} the total execution time of twelve different gate sequences, approximating $B = R_z(-\frac{23}{16}\pi)$ and $C = R_z(-\frac{9}{16}\pi)$ to different Fowler distances, were calculated. The results can be seen in Table~\ref{tab:sktimes}. Keeping in mind that in the best case, the maximum decoherence time of a qubit in IBM's QC is \SI{112.4}{\micro\second} most gate sequences are too long for an IBM implementation (coloured red in Table~\ref{tab:sktimes}). Feasible execution times are marked green in Table~\ref{tab:sktimes}. However, decoherence is not the only limiting factor since IBM only allows for 39 gates and one measurement gate. Thus, the only possibility would be to use a sequence of 25 gates for $B$ and a sequence of 16 gates for $C$ at the cost of relatively large Fowler distances. This, however, sums up to 41 gates which is still two gates more than the allowed gate count of the IBM Quantum Composer. 
+
 \begin{table}
 \centering
     \begin{tabular}{c| c |c |c }
@@ -681,18 +719,37 @@ Using $B_{approx,3}$ the Fowler distance drops to $d = 0.02086$ leading to the y
       \midrule
       $R_z(-\frac{23}{16}\pi)$ & 0.15165 & 25 & \textcolor{emerald}{$\sim$\SI{3}{\micro\second}}\\
        & 0.10722 & 109 & \textcolor{emerald}{$\sim$\SI{14}{\micro\second}}\\
-       & 0.02086 & 2997 & \textcolor{red}{$\sim$\SI{390}{\micro\second}}\\
-       & 0.01494 & 14721 & \textcolor{red}{$\sim$\SI{1914}{\micro\second}}\\
-       & 0.003327 & 74009 & \textcolor{red}{$\sim$\SI{9621}{\micro\second}}\\
-       & 0.001578 & 370813 & \textcolor{red}{$\sim$\SI{48206}{\micro\second}}\\
+       & 0.02086 & 2,997 & \textcolor{red}{$\sim$\SI{390}{\micro\second}}\\
+       & 0.01494 & 14,721 & \textcolor{red}{$\sim$\SI{1914}{\micro\second}}\\
+       & 0.003327 & 74,009 & \textcolor{red}{$\sim$\SI{9621}{\micro\second}}\\
+       & 0.001578 & 370,813 & \textcolor{red}{$\sim$\SI{48206}{\micro\second}}\\
+       \midrule
+      $R_z(-\frac{9}{16}\pi)$ & 0.28390 & 16 & \textcolor{emerald}{$\sim$\SI{2}{\micro\second}}\\
+       & 0.04389 & 146 & \textcolor{emerald}{$\sim$\SI{18}{\micro\second}}\\
+       & 0.049511 & 728 & \textcolor{emerald}{$\sim$\SI{87}{\micro\second}}\\
+       & 0.02823 & 3,622 & \textcolor{red}{$\sim$\SI{435}{\micro\second}}\\
+       & 0.01008 & 17,838 & \textcolor{red}{$\sim$\SI{2141}{\micro\second}}\\
+       & 0.00156 & 444,646 & \textcolor{red}{$\sim$\SI{53358}{\micro\second}}\\
+      \bottomrule
       \bottomrule
     \end{tabular}
-    \caption{SK algorithm results}
+    \caption{\label{tab:sktimes} Results of the Solovay-Kitaev algorithm for decomposition of $B = R_z(-\frac{23}{16}\pi)$ and $C = R_z(-\frac{9}{16}\pi)$}
   \end{table}
 
-Adding complexities
+\subsubsection{Toffoli Gate Decomposition}
+\label{subsubsubsec:toffoli}
 
-Executing the SK algorithm adds to our overall algorithmic complexity:
+
+
+\begin{figure}[!ht]
+       \centering
+       \includegraphics[scale=0.5]{img/toffolidecomposition.png}
+       \caption{\label{img:toffolidecomp} Decomposition of a Toffoli gate into six CNOT and nine single-qubit gates\textsuperscript{12}}
+\end{figure}
+
+\footnotetext[12]{Reprinted from Michael A. Nielsen and Isaac L. Chuang. Quantum Computation and Quantum Information. Cambridge University Press, 2000. Copyright 2010 by Nielsen \& Chuang.}
+
+CANNOT BE IMPLEMENTED ON IBM QUANTUM COMPUTER
 
 \begin{greenbox}
 \textbf{Complexity analysis}\\
