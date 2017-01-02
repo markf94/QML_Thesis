@@ -12,7 +12,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: thesis.bib
-Warning--entry type for "liquid" isn't style-file defined
+Warning--entry type for "microsoftresearch" isn't style-file defined
 --line 221 of file thesis.bib
 Warning--entry type for "ibmgatetimes" isn't style-file defined
 --line 229 of file thesis.bib
@@ -21,69 +21,69 @@ Warning--entry type for "ibmquantumcomputer" isn't style-file defined
 Warning--entry type for "bigdata" isn't style-file defined
 --line 245 of file thesis.bib
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
-Name 1 in "Microsoft Research," has a comma at the end for entry liquid
+Name 1 in "{Microsoft Research}," has a comma at the end for entry microsoftresearch
 while executing---line 5062 of file apacite.bst
-Name 1 in "Microsoft Research," has a comma at the end for entry liquid
+Name 1 in "{Microsoft Research}," has a comma at the end for entry microsoftresearch
 while executing---line 5066 of file apacite.bst
-Name 1 in "Microsoft Research," has a comma at the end for entry liquid
+Name 1 in "{Microsoft Research}," has a comma at the end for entry microsoftresearch
 while executing---line 5066 of file apacite.bst
-Name 1 in "Microsoft Research," has a comma at the end for entry liquid
+Name 1 in "{Microsoft Research}," has a comma at the end for entry microsoftresearch
 while executing---line 5068 of file apacite.bst
-Name 1 in "Microsoft Research," has a comma at the end for entry liquid
+Name 1 in "{Microsoft Research}," has a comma at the end for entry microsoftresearch
 while executing---line 5068 of file apacite.bst
-Name 1 in "Microsoft Research," has a comma at the end for entry liquid
+Name 1 in "{Microsoft Research}," has a comma at the end for entry microsoftresearch
 while executing---line 5072 of file apacite.bst
-Name 1 in "Microsoft Research," has a comma at the end for entry liquid
+Name 1 in "{Microsoft Research}," has a comma at the end for entry microsoftresearch
 while executing---line 5075 of file apacite.bst
-Name 1 in "Microsoft Research," has a comma at the end for entry liquid
+Name 1 in "{Microsoft Research}," has a comma at the end for entry microsoftresearch
 while executing---line 5076 of file apacite.bst
-Name 1 in "Microsoft Research," has a comma at the end for entry liquid
+Name 1 in "{Microsoft Research}," has a comma at the end for entry microsoftresearch
 while executing---line 5079 of file apacite.bst
-Name 1 in "Microsoft Research," has a comma at the end for entry liquid
+Name 1 in "{Microsoft Research}," has a comma at the end for entry microsoftresearch
 while executing---line 5079 of file apacite.bst
-Name 1 in "Microsoft Research," has a comma at the end for entry liquid
+Name 1 in "{Microsoft Research}," has a comma at the end for entry microsoftresearch
 while executing---line 5079 of file apacite.bst
 Warning--No journal in SchuldFingerhuth
 Warning--No journal in Schuld2014
-You've used 21 entries,
+You've used 24 entries,
             6951 wiz_defined-function locations,
-            1395 strings with 14567 characters,
-and the built_in function-call counts, 38240 in all, are:
-= -- 4895
-> -- 333
-< -- 1583
-+ -- 1661
-- -- 49
-* -- 2296
-:= -- 6371
-add.period$ -- 84
-call.type$ -- 21
-change.case$ -- 376
+            1411 strings with 14979 characters,
+and the built_in function-call counts, 43351 in all, are:
+= -- 5526
+> -- 367
+< -- 1835
++ -- 1906
+- -- 57
+* -- 2617
+:= -- 7348
+add.period$ -- 96
+call.type$ -- 24
+change.case$ -- 427
 chr.to.int$ -- 0
-cite$ -- 44
-duplicate$ -- 1097
-empty$ -- 1603
-format.name$ -- 565
-if$ -- 7578
+cite$ -- 50
+duplicate$ -- 1215
+empty$ -- 1811
+format.name$ -- 617
+if$ -- 8550
 int.to.chr$ -- 0
-int.to.str$ -- 67
+int.to.str$ -- 76
 missing$ -- 0
-newline$ -- 539
-num.names$ -- 168
-pop$ -- 673
+newline$ -- 608
+num.names$ -- 192
+pop$ -- 788
 preamble$ -- 1
-purify$ -- 86
+purify$ -- 98
 quote$ -- 0
-skip$ -- 2775
+skip$ -- 3095
 stack$ -- 0
-substring$ -- 1843
-swap$ -- 589
-text.length$ -- 55
+substring$ -- 2108
+swap$ -- 653
+text.length$ -- 62
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 2032
+type$ -- 2272
 warning$ -- 2
-while$ -- 196
+while$ -- 213
 width$ -- 0
-write$ -- 657
+write$ -- 736
 (There were 11 error messages)

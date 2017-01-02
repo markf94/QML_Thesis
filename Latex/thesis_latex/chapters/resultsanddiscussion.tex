@@ -1,15 +1,13 @@
 \chapter{Results and Discussion}\label{sec:resultsanddiscussion}
 
-Some more general text
-Why are some parts simulating and some parts using IBM?
-All the code can be found on GitHub\textsuperscript[7]
+This chapter is subdivided into two sections; Section~\ref{subsec:qubitKNNresults} focuses on the simulation of the qubit-based kNN algorithm proposed by \citeA{Schuld2014} and Section~\ref{subsec:amplitudeKNNalgorithm} introduces a newly developed amplitude-based kNN algorithm with an implementation on IBM's QC in mind. Section~\ref{subsec:amplitudeKNNalgorithm} is then further subdivided into an attempt to compile and implement the algorithm using the IBM Quantum Experience (Section~\ref{subsubsec:implementationamplitudeKNN}) and its simulation using Liqui$\ket{}$ (Section~\ref{subsubsec:simulationamplitudeKNN}). All the F\# code written for the quantum simulations described in this chapter can be found on GitHub\footnotemark[12].
 
-\footnotetext[7]{Link to GitHub folder.}
+\footnotetext[12]{The code is published under an open-source licence and can be downloaded from \url{https://github.com/markf94/Liquid_QML}.}
 
 \section{Simulating the qubit-based kNN algorithm}
 \label{subsec:qubitKNNresults}
 
-The computer used for the Liqui$\ket{}$ quantum simulations in this thesis only provides 8GB of RAM, thereby limiting the maximum number of simulated qubits to 24. Unfortunately, real-world machine learning problems usually involve large datasets that would require much more qubits such that a small artificial dataset needs to be constructed. For this reason, the classification of 9-bit, little-endian RGB colour codes into the classes \emph{red} and \emph{blue} will be considered. A 9-bit RGB colour code uses three bits to encode the content of each RGB colour; red, green and blue. Three binary bits $b_0,b_1,b_2$ can encode any of the numbers 0-7 according to the formula,
+Similar to classical machine learning, the first step towards simulating any quantum machine learning algorithm is the careful selection of a suitable classification problem. The computer used for the Liqui$\ket{}$ quantum simulations in this thesis only provides 8GB of RAM, thereby limiting the maximum number of simulated qubits to 24. Unfortunately, real-world machine learning problems usually involve large datasets that would require much more qubits such that a small artificial dataset needs to be constructed. For this reason, the classification of 9-bit, little-endian RGB colour codes into the classes \emph{red} and \emph{blue} will be considered. A 9-bit RGB colour code uses three bits to encode the content of each RGB colour; red, green and blue. Three binary bits $b_0,b_1,b_2$ can encode any of the numbers 0-7 according to the formula,
 
 \begin{equation}
 b_0*2^0 + b_1*2^1 + b_2*2^2 \text{ where } b_0,b_1,b_2 \in \left\{0,1\right\}
@@ -27,7 +25,7 @@ The quantum classifier will then be tested on four new colour tones (two red, tw
       \midrule
        \cellcolor{red1} & 111 000 000 & red ($\ket{0}$)\\\midrule
        \cellcolor{red2} & 101 000 000 & red ($\ket{0}$)\\\midrule
-       \cellcolor{red3} & 110 000 000 & red ($\ket{0}$)\\\midrule
+       \cellcolor{red3} & 110 000 000 & red ($\ket{0}$)\\\midrule\midrule
        \cellcolor{blue1} & 000 000 111 & blue ($\ket{1}$)\\\midrule
        \cellcolor{blue2} & 000 000 101 & blue ($\ket{1}$)\\\midrule
        \cellcolor{blue3} & 000 000 100 & blue ($\ket{1}$)\\\midrule
@@ -44,7 +42,7 @@ The quantum classifier will then be tested on four new colour tones (two red, tw
       Colour & Binary 9-bit RGB string & Expected class\\
       \midrule
        \cellcolor{inputred1} & 100 000 000 & red ($\ket{0}$)\\\midrule
-              \cellcolor{inputmixred2} & 110 100 000 & red ($\ket{0}$)\\\midrule
+              \cellcolor{inputmixred2} & 110 100 000 & red ($\ket{0}$)\\\midrule\midrule
 
        \cellcolor{inputblue1} & 000 000 110 & blue ($\ket{1}$)\\\midrule
        \cellcolor{inputmixblue2} & 000 100 111 & blue ($\ket{1}$)\\\midrule
@@ -58,7 +56,7 @@ The quantum classifier will then be tested on four new colour tones (two red, tw
 
 In the more difficult evaluation stage, two more blue and red colours are added to training data set I resulting in training data set II shown in Table~\ref{tab:trainingcolours2}. Note that the four new training colours have mixed colour contents meaning red training colours might have a slight blue or green content and vice versa.
 
-In order to compare how training data set I and II influence the classification outcome the four colours from input data set I are also present in input data set II listed in Table~\ref{tab:inputcolours2}. Additionally, four new red and blue tones were added that consist of different mixtures of red, green and blue. These new input colours constitute interesting edge cases and their correct classification is considered hard.
+In order to compare how training data set I and II influence the classification outcome the four colours from input data set I are also present in input data set II listed in Table~\ref{tab:inputcolours2}. Additionally, four new colour tones were added that consist of different mixtures of red, green and blue. These new input colours constitute interesting edge cases and their correct classification is considered hard. Note that the fourth colour from the top in Table~\ref{tab:inputcolours2} has equal red and blue content and will be used to test the classifier in an indecisive case.
 
 \begin{minipage}[c]{.49\textwidth}
     \begin{tabular}{| C{1cm} | C{2.3cm} |C{1.6cm} |}
@@ -69,7 +67,7 @@ In order to compare how training data set I and II influence the classification 
        \cellcolor{red2} & 101 000 000 & red ($\ket{0}$)\\\midrule
        \cellcolor{red3} & 110 000 000 & red ($\ket{0}$)\\\midrule
        \cellcolor{red4} & 111 100 100 & red ($\ket{0}$)\\\midrule
-       \cellcolor{red5} & 111 000 100 & red ($\ket{0}$)\\\midrule
+       \cellcolor{red5} & 111 000 100 & red ($\ket{0}$)\\\midrule\midrule
        \cellcolor{blue1} & 000 000 111 & blue ($\ket{1}$)\\\midrule
        \cellcolor{blue2} & 000 000 101 & blue ($\ket{1}$)\\\midrule
        \cellcolor{blue3} & 000 000 100 & blue ($\ket{1}$)\\\midrule
@@ -89,8 +87,8 @@ In order to compare how training data set I and II influence the classification 
       \midrule
        \cellcolor{inputred1} & 100 000 000 & red ($\ket{0}$)\\\midrule
        \cellcolor{inputmixred2} & 110 100 000 & red ($\ket{0}$)\\\midrule
-              \cellcolor{inputmixred3} & 101 100 100 & red ($\ket{0}$)\\\midrule
-              \cellcolor{inputmixred4} & 110 100 110 & red ($\ket{0}$)\\\midrule
+              \cellcolor{inputmixred3} & 101 100 100 & red ($\ket{0}$)\\\midrule\midrule
+              \cellcolor{inputmixred4} & 110 100 110 & none\\\midrule\midrule
 
        \cellcolor{inputblue1} & 000 000 110 & blue ($\ket{1}$)\\\midrule
        \cellcolor{inputmixblue2} & 000 100 111 & blue ($\ket{1}$)\\\midrule
@@ -211,9 +209,17 @@ else
 
 If and only if the ancilla is found to be in the \0 state, the class qubit is measured. The procedure is repeated for $y$ runs to gather sufficiently accurate statistics. Finally, the input vector is assigned to the most frequently measured class.
 
-\subsubsection{Quantum Simulation Results}
+\subsubsection{Quantum simulation results}
 \label{subsubsubsec:results}
 
+All the steps outlined in the previous section were programmed in F\# within the Liqui$\ket{}$ framework. When executing the script\footnotemark[13] the user needs to first specify the number of runs $r$ needed to gather sufficiently accurate statistics. Next, the user is asked to input the total number of training patterns. One-by-one the user then manually inputs all binary training patterns and their respective classes. Lastly, the user is asked to specify the input pattern requiring classification. The algorithm will then be simulated and repeated $r$ times.
+\footnotetext[13]{The script "\_\_TrugenbergerSchuld($r$)", where $r$ is the number of runs, can be found in the $/linux/bin/Release/$ folder in the GitHub repository \url{https://github.com/markf94/Liquid_QML}.}
+
+The algorithm was first trained using the 9-bit RGB colours from training data set I and then asked to classify each input pattern from input data set I. Each simulation was repeated 100 times to gather sufficient statistics. The results are listed in Table~\ref{tab:colourresults}. For every input pattern the probabilities of successful CM ($Prob(CM)$) and measuring the class qubit in either the \0 ($Prob$ $(\ket{c} = \ket{0})$) or the \1 ($Prob$ $(\ket{c} = \ket{1})$) state are shown.
+
+For every input pattern and probability, the theoretical prediction (marked with asterisks) on top is contrasted with the simulation result below. The small differences between these numbers show that in most cases 100 runs suffice to retrieve the theoretically predicted probabilities. Yet, the first red input pattern 100 000 000 is the only exception since it was incorrectly classified as blue despite the theory predicting a slightly higher probability to measure class red ($\ket{c} = \ket{0}$). In this case, however, both class probabilities are almost equal such that even after a large number of runs the classification would not be better than a coin flip.
+
+The other three input pattern from input data set I were all correctly classified. In all of these cases, the probabilities were clearly favouring one class over the other. It is important to note that the algorithm correctly classified the two input patterns with additional green colour content, even though it was only trained with pure red and pure blue colours.
 
 \begin{table}
 \begin{tabular}{| C{1.4cm} | C{2.1cm} |C{1.7cm} | C{1.7cm} | C{1.7cm} |C{1.7cm}| C{1.7cm}|}
@@ -229,9 +235,22 @@ If and only if the ancilla is found to be in the \0 state, the class qubit is me
        \cellcolor{inputmixblue2} & 000 100 111 &  \begin{tabular}{c} 0.5366* \\\midrule 0.5300 \end{tabular} & \begin{tabular}{c} 0.1916* \\\midrule 0.0943 \end{tabular} & \begin{tabular}{c} 0.8084* \\\midrule 0.9057 \end{tabular} & blue ($\ket{1}$) & blue ($\ket{1}$)\\\midrule
       \bottomrule
     \end{tabular}
-    \caption{\label{tab:colourresults} Classification results after 100 runs using input data set I. Theoretical predictions (marked with asterisks) on top, simulation results at the bottom.}
+    \caption{\label{tab:colourresults} Classification results for input data set I after 100 runs. Trained with training data set I. Theoretical predictions (marked with asterisks) on top, simulation results at the bottom.}
 \end{table}
 
+Next, the algorithm was trained using training data set II and asked to classify all eight input pattern from input data set II, again repeating each simulation 100 times. The results for this second evaluation stage are listed in Table~\ref{tab:colourresults2}. In most cases, the probabilities retrieved from the simulations again closely resemble the theoretically predicted probabilities after 100 runs.
+
+This time, the first red input pattern 100 000 000, previously incorrectly classified using training data set I, is correctly assigned to class red. This is a good example of how the size and quality of the training data set can influence the classification outcome. This goes as far that according to \citeA{domingos2012few} a simple classifier, e.g. kNN, trained on a large training set with correct labels often performs better than a more complicated classifier trained using the same training set.
+
+The second red colour, with slight green content, was again correctly classified but this time the probability distribution over the class qubit states is different when compared with the corresponding entries in Table~\ref{tab:colourresults}. Using training data set II instead of training set I the probability of measuring class $\ket{0}$ increased by $0.12480$. This again underlines the importance of size and quality of the training data set.
+
+Consisting of majority red with slight green and blue content, the third red colour was still classified correctly. Although, the probabilities of measuring class \0 and \1 are close to being equal the simulation yielded a distribution closely resembling the theoretical prediction after only 100 runs.
+
+The fourth colour from the top in Table~\ref{tab:colourresults2} with a slight green and equal red and blue content was deliberately chosen as an edge case. The classifier assigned it to class blue but the class probabilities obtained from the simulation are equal for the \0 and \1 state. Interestingly, the theoretical probabilities slightly favour class red. This can be traced back to the fact that the quantum kNN is based on distance-weighting. This can be seen when analysing training data set II; all but one red training colour have a 1 at the second bit position whereas all but two blue training colours have a 1 at the second to last bit position. Since the fourth input colour has a 1 at the second as well as at the second to last bit position the HDs to the red training colours are slightly smaller than to the blue training colours. Since the HDs are reversed the red class is slightly favoured due to the distance-dependent weights. Thus, this edge case exposes a slight bias within the training data set II.
+
+In the case of the blue input colours, the first three were all classified correctly with the class qubit probabilities clearly favouring the measurement outcome \1. Note that the third blue tone was classified correctly despite some red and green content. The last (fourth) blue tone is another edge case with only slightly larger blue than red content. It was incorrectly classified since the probabilities retrieved from the simulation do not resemble the theoretical predicted values. By increasing the number of runs, the simulation results will eventually converge to the theoretical predictions and the classification outcome will change to blue.
+
+In conclusion, the quantum simulations of the qubit-based kNN algorithm resulted in three out of four correct classification using training data set I and six out of eight correct classifications using training data set II. Hence, with any of the two training data sets the simulated quantum classifier achieved an accuracy of 75\%.
 
 \begin{table}
 \begin{tabular}{| C{1.4cm} | C{2.1cm} |C{1.7cm} | C{1.7cm} | C{1.7cm} |C{1.7cm}| C{1.7cm}|}
@@ -242,9 +261,9 @@ If and only if the ancilla is found to be in the \0 state, the class qubit is me
        
        \cellcolor{inputmixred2} & 110 100 000 & \begin{tabular}{c} 0.6312* \\\midrule 0.6100 \end{tabular} & \begin{tabular}{c} 0.6710* \\\midrule 0.7377 \end{tabular} & \begin{tabular}{c} 0.3289* \\\midrule 0.2623 \end{tabular} & red ($\ket{0}$) & red ($\ket{0}$)\\\midrule
        
-       \cellcolor{inputmixred3} & 101 100 100  & \begin{tabular}{c} 0.6996* \\\midrule 0.7200 \end{tabular} & \begin{tabular}{c} 0.5821* \\\midrule 0.5694 \end{tabular} & \begin{tabular}{c} 0.4179* \\\midrule 0.4306 \end{tabular} & red ($\ket{0}$) & red ($\ket{0}$)\\\midrule
+       \cellcolor{inputmixred3} & 101 100 100  & \begin{tabular}{c} 0.6996* \\\midrule 0.7200 \end{tabular} & \begin{tabular}{c} 0.5821* \\\midrule 0.5694 \end{tabular} & \begin{tabular}{c} 0.4179* \\\midrule 0.4306 \end{tabular} & red ($\ket{0}$) & red ($\ket{0}$)\\\midrule\midrule
        
-       \cellcolor{inputmixred4} & 110 100 110  & \begin{tabular}{c} 0.6470* \\\midrule 0.6600 \end{tabular} & \begin{tabular}{c} 0.5229* \\\midrule 0.5000 \end{tabular} & \begin{tabular}{c} 0.4771* \\\midrule 0.5000 \end{tabular} & red ($\ket{0}$) & blue ($\ket{1}$)\\\midrule\midrule
+       \cellcolor{inputmixred4} & 110 100 110  & \begin{tabular}{c} 0.6470* \\\midrule 0.6600 \end{tabular} & \begin{tabular}{c} 0.5229* \\\midrule 0.5000 \end{tabular} & \begin{tabular}{c} 0.4771* \\\midrule 0.5000 \end{tabular} & none & blue ($\ket{1}$)\\\midrule\midrule
        
        \cellcolor{inputblue1} & 000 000 110  & \begin{tabular}{c} 0.6880* \\\midrule 0.7000 \end{tabular} & \begin{tabular}{c} 0.3760* \\\midrule 0.3714 \end{tabular} & \begin{tabular}{c} 0.6240* \\\midrule 0.6286 \end{tabular} & blue ($\ket{1}$) & blue ($\ket{1}$)\\\midrule
        
@@ -255,12 +274,10 @@ If and only if the ancilla is found to be in the \0 state, the class qubit is me
        \cellcolor{inputmixblue4} & 110 100 101 &  \begin{tabular}{c} 0.6807* \\\midrule 0.7000 \end{tabular} & \begin{tabular}{c} 0.4970* \\\midrule 0.5857 \end{tabular} & \begin{tabular}{c} 0.5030* \\\midrule 0.4143 \end{tabular}  & blue ($\ket{1}$)& red ($\ket{0}$)\\\midrule
  \bottomrule
     \end{tabular}
-    \caption{\label{tab:colourresults2} Classification results after 100 runs using input data set II. Theoretical predictions (marked with asterisks) on top, simulation results at the bottom.}
+    \caption{\label{tab:colourresults2} Classification results for input data set II after 100 runs. Trained with training data set II. Theoretical predictions (marked with asterisks) on top, simulation results at the bottom.}
 \end{table}
 
-
-
-It was shown that for this classification problem the quantum kNN algorithm by \citeA{Schuld2014} requires 20 qubits. Unfortunately, the IBM QC consists of only five qubits rendering an actual implementation of the 9-bit RGB colour classification impossible. Furthermore, even when the training and input patterns could be each encoded into two qubits, the algorithm would require 6 qubits making an IBM QC implementation again impossible. This can be seen from the initial state $\ket{\psi_0}$ in Equ.~\ref{equ:fullinitialstate} that contains the input pattern (two qubits), the training pattern (two qubits) as well as one class qubit and one ancilla qubit. This stresses the need for an alternative version of the quantum kNN algorithm based on amplitude-encoded data. 
+It was shown that for this classification problem the quantum kNN algorithm by \citeA{Schuld2014} requires 20 qubits. Unfortunately, the IBM QC consists of only five qubits rendering an actual implementation of the 9-bit RGB colour classification impossible. Furthermore, even when the training and input patterns could be each encoded into only two qubits, the algorithm would require 6 qubits making an IBM QC implementation again impossible. This follows from the initial state $\ket{\psi_0}$ in Equ.~\ref{equ:fullinitialstate} that contains the input pattern (two qubits), the training pattern (two qubits) as well as one class qubit and one ancilla qubit. This stresses the need for an alternative version of the quantum kNN algorithm based on amplitude-encoded data.
 
 \newpage
 
@@ -340,7 +357,7 @@ The quantum advantage of the algorithm is the parallel computation of the square
 Independent of number and size of the input and training vectors, the algorithm only requires the application of a single H gate. However, the routine has to be repeated for $y$ runs of which only $Prob(CM)*y$ runs result in a measurement of the class qubit. Thus, the time complexity of this algorithm is $\mathcal{O}(\frac{1}{Prob(CM)})$ where $Prob(CM)$ is the probability of a successful CM (measuring ancilla in the $\ket{0}$ state). Therefore, the algorithm is said to run in constant time. This means it is independent of the number of training vectors and their size. For example, executing this quantum routine with 10 or 100,000,000 training vectors each with 1,000,000 entries does not make a difference in the run time.
 \end{greenbox}
 
-\subsection{Implementing the amplitude-based kNN algorithm}
+\subsection{Attempt to implement the amplitude-based kNN algorithm}
 \label{subsubsec:implementationamplitudeKNN}
 
 The akNN algorithm was developed with an actual implementation, using the IBM QC, in mind. Since the IBM Quantum Experience only provides five qubits and a relatively small gate set, a very simple low-dimensional classification problem should be selected. 
@@ -440,7 +457,7 @@ At this point, note that $R_y(\vartheta)$ is not an element of IBM's universal g
 
 This, however, is not the desired state $\ket{\chi_3}$ defined in Equ.~\ref{equ:chi3} since the input vector $\ket{\textcolor{red}{\Psi_{x}}}$ should only be entangled with the \0 state of the ancilla. To achieve this type of entanglement the controlled version of the y-rotation gate, $CR_y(\frac{\pi}{4})(c,t)$, is required. When applying it using the $a$ qubit as control and the $d$ qubit as target the input vector will be entangled with the \1 state of the ancilla. Flipping the $a$ qubit with an X gate moves the input vector to the \0 state of the ancilla. Hence, the desired state $\ket{\chi_3}$ is obtained by applying the following gate sequence $GS$:
 \begin{equation}
-\label{equ:}
+\label{equ:gs}
 GS = (X \otimes \mathbb{1} \otimes \mathbb{1} \otimes \mathbb{1}) (CR_y(\frac{\pi}{4})(a,d) \otimes \mathbb{1} \otimes \mathbb{1}) \\
 \end{equation}
 subbing into Equ.~\ref{equ:chi3}:
@@ -490,7 +507,7 @@ and can be rewritten as:
 
 When comparing Equ.~\ref{equ:chi5psi0} to $\ket{\psi_0}$ in Equ.~\ref{equ:ampinitial} it becomes clear that $\ket{\chi_5}$ is in the form of the desired initial quantum state $\ket{\psi_0}$. The quantum state preparation is therefore theoretically completed.
 
-\subsubsection{Controlled U Gate}
+\subsubsection{Decomposition of a controlled-U gate}
 \label{subsubsubsec:controlledugate}
 
 To implement the quantum state preparation on the IBM QC, it remains to find a way of realizing the controlled y-rotation $CR_y(\frac{\pi}{4})(c,t)$ using only the ten gates from IBM's universal gate set. In their book \citeA{nielsen2010quantum} describe how a controlled U (CU) gate can be decomposed into a sequence of CNOT and single qubit gates. Thereby, U can be any unitary single-qubit gate. A CU gate is then defined as:
@@ -512,11 +529,11 @@ P = \begin{pmatrix}
 \begin{figure}[ht]
    \centering
    \includegraphics[width=0.7\textwidth]{img/controlledudecomp.png}
-   \caption{Circuit decomposition of controlled-U quantum gate.\textsuperscript{3}}
+   \caption[]{Circuit decomposition of controlled-U quantum gate.\footnotemark[14]}
    \label{img:cudecomposition}
 \end{figure}
 
-\footnotetext[3]{Reprinted from Michael A. Nielsen and Isaac L. Chuang. Quantum Computation and Quantum Information. Cambridge University Press, 2000. Copyright 2010 by Nielsen \& Chuang.}
+\footnotetext[14]{Reprinted from Michael A. Nielsen and Isaac L. Chuang. Quantum Computation and Quantum Information. Cambridge University Press, 2000. Copyright 2010 by Nielsen \& Chuang.}
 
 The idea of this decomposition is that when the control qubit (top qubit in Fig.~\ref{img:cudecomposition}) is \0 the gate combination $ABC$ is applied to the target qubit (bottom qubit in Fig.~\ref{img:cudecomposition}) and has to equal the identity gate:
 
@@ -590,7 +607,7 @@ e^{i(\alpha+\frac{\beta}{2}-\frac{\delta}{2})}\sin{\frac{\gamma}{2}} & e^{i(\alp
  \end{pmatrix}
 \end{equation}
 
-When setting the expressions for the respective matrix entries in Equ.~\ref{equ:udecompsubbed} equal the following system of non-linear complex equations is obtained :
+When setting the expressions for the respective matrix entries in Equ.~\ref{equ:udecompsubbed} equal, the following system of non-linear complex equations is obtained :
 
 \begin{align}
 \label{equ:nlsystem}
@@ -626,7 +643,7 @@ Quantum gate $A$ is just equal to the identity gate which certainly is element o
 \subsubsection{The Solovay-Kitaev theorem}
 \label{subsubsubsec:solovaykitaev}
 
-An important theorem in quantum information is the Solovay-Kitaev theorem first proposed by \citeA{kitaev1997quantum}. It will be used to decompose the quantum gates $B$ and $C$ into a sequence of quantum gates from IBM's universal gate set.
+An important theorem in quantum information is the Solovay-Kitaev theorem first proposed by Robert M. Solovay and later published by \citeA{kitaev1995quantum}. It will be used to decompose the quantum gates $B$ and $C$ into a sequence of quantum gates from IBM's universal gate set.
 
 At this point, it is important to remember that any universal quantum gate set is a dense subset of the special unitary group $SU(2)$ as previously defined in Section~\ref{subsubsec:qubits}.
 
@@ -640,9 +657,9 @@ In other words, given a set of single-qubit quantum gates which is a dense subse
 \cite{dawson2005solovay}.
 \end{redbox}
 
-The Solovay-Kitaev theorem is so powerful because it proofs that given any universal gate set it is possible to obtain good approximations to any desired single-qubit gate $W$. In their paper, \citeA{dawson2005solovay} describe how to design an algorithm implementing the Solovay-Kitaev theorem. Unfortunately, the Solovay-Kitaev algorithm needs to be implemented on a classical computer which adds to the overall time complexity of the quantum compiling process as will be shown later. For this thesis, the open-source software package 'Quantum Compiler, v0.03'\textsuperscript{10} developed in Python by Paul Pham was used to run the Solovay-Kitaev algorithm described by \citeA{dawson2005solovay}. This software package compares different gate approximations to the desired gate by a new distance metric called Fowler distance.
+The Solovay-Kitaev theorem is important because it proofs that given any universal gate set it is possible to obtain good approximations to any desired single-qubit gate $W$. In their paper, \citeA{dawson2005solovay} describe how to design an algorithm implementing the Solovay-Kitaev theorem. Unfortunately, the Solovay-Kitaev algorithm needs to be implemented on a classical computer which adds to the overall time complexity of the quantum compiling process as will be shown later. For this thesis, the open-source software package 'Quantum Compiler, v0.03'\footnotemark[15] developed in Python by Paul Pham was used to run the Solovay-Kitaev algorithm described by \citeA{dawson2005solovay}. This software package compares different gate approximations to the desired gate by a new distance metric called Fowler distance.
 
-\footnotetext[10]{The software package "Quantum Compiler, v0.03" by Paul Pham can be downloaded from \url{https://sourceforge.net/projects/quantumcompiler/files/v0.03/}.}
+\footnotetext[15]{The software package 'Quantum Compiler, v0.03' by Paul Pham can be downloaded from \url{https://sourceforge.net/projects/quantumcompiler/files/v0.03/}.}
 
 \begin{redbox}
 \textbf{Definition: Fowler distance}\\
@@ -655,10 +672,9 @@ d(W,W_{approx}) = \sqrt{\frac{2-\mid tr(W\cdot W_{approx}^\dagger)\mid}{2}}
 In contrast to $W$, $W_{approx}$ might introduce a shift in the global phase of the quantum state it is acting on. However, since the global phase of a quantum state is immeasurable in experiment it can be neglected. As a result, the Fowler distance is defined in such a way that possible global phase differences are ignored.
 \end{redbox}
 
-Subsequently, the desired gates $B = R_z(-\frac{23}{16}\pi)$ and $C = R_z(-\frac{9}{16}\pi)$ where decomposed using the Solovay-Kitaev algorithm. Fig.~\ref{fig:skresultplot} shows a plot visualizing how the Fowler distance depends on the number of gates in the approximating gate sequence $W_{approx}$. The number of gates in the approximating gate sequence is also called \emph{gate count}. The plot clearly shows an exponential increase in the gate count for decreasing Fowler distance. For example, 109 gates suffice to achieve $d(W_{approx},R_z(-\frac{23}{16}\pi)) = 0.10722$. However, to reduce the Fowler distance to $d(W_{approx},R_z(-\frac{23}{16}\pi)) = 0.01494$, 14721 gates are required.
-BAD LOOKS! Update with 9/16 pi examples!
+Subsequently, the desired gates $B = R_z(-\frac{23}{16}\pi)$ and $C = R_z(-\frac{9}{16}\pi)$ where decomposed using the Solovay-Kitaev algorithm. Fig.~\ref{fig:skresultplot} shows a plot visualizing how the Fowler distance depends on the number of gates in the approximating gate sequence $W_{approx}$. The number of gates in the approximating gate sequence is also called \emph{gate count}. The plot clearly shows an exponential increase in the gate count for decreasing Fowler distance. For example, 146 gates suffice to achieve $d(W_{approx},R_z(-\frac{9}{16}\pi)) = 0.04389$. Yet, already 17,838 gates are required to reduce the Fowler distance to $d(W_{approx},R_z(-\frac{9}{16}\pi)) = 0.01008$.
 
-\begin{figure}
+\begin{figure}[H]
 \centering
     \begin{tikzpicture}[scale=1]
 \begin{axis}[xlabel={Gate count},ylabel={Fowler distance [$d(U,U_{approx})$]}]
@@ -677,15 +693,16 @@ BAD LOOKS! Update with 9/16 pi examples!
 \label{fig:skresultplot}
   \end{figure}
   
-Fowler distance is best understood with a visual example using the gate $B$. Acting the desired gate $B = R_z(-\frac{23}{16}\pi)$ on the state $\ket{\psi} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}$ (black vector in Fig.~\ref{fig:bloch23over16}) results in the purple Bloch vector $\vec{b}$ shown in Fig.~\ref{fig:bloch23over16}.
+Fowler distance is best understood with a visual example using the gate $B = R_z(-\frac{23}{16}\pi)$. Acting the desired gate $B$ on the state $\ket{\psi} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}$ (black vector in Fig.~\ref{fig:bloch23over16}) results in the purple Bloch vector $\vec{b}$ shown in Fig.~\ref{fig:bloch23over16}.
 
-\begin{figure}
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.35]{img/bloch23over16.png}
+\includegraphics[scale=0.4]{img/bloch23over16.png}
 \caption{\label{fig:bloch23over16} Action of $B = R_z(-\frac{23}{16}\pi)$ on the state $\ket{\psi} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}$}
 \end{figure}
 
-Fig.~\ref{fig:fowlerdistances} shows the action of four different approximating gate sequences $B_{approx,1}$, $B_{approx,2}$, $B_{approx,3}$, $B_{approx,4}$ on the state $\ket{\psi} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}$. Gate sequence $B_{approx,1}$ consists of 25 gates and yields a Fowler distance of $d = 0.15165$. The resulting state vector is coloured green in Fig.~\ref{fig:fowlerdistances}. The green vector lies above the Bloch equator and is relatively far away from the desired vector $\vec{b}$ in Fig.~\ref{fig:bloch23over16}. With 109 gates, $B_{approx,2}$ lowers the Fowler distance to $d = 0.10722$ resulting in the blue vector. It is also found below the Bloch equator and is still relatively far from $\vec{b}$. Using $B_{approx,3}$ the Fowler distance drops to $d = 0.02086$ leading to the yellow vector in  Fig.~\ref{fig:fowlerdistances}. This vector is almost on the Bloch equator and relatively close to $\vec{b}$. Therefore, $B_{approx,3}$ can be considered a good approximation of $B$. However, $B_{approx,3}$ already requires the implementation of 2,997 single-qubit gates. The purple vector from Fig.~\ref{fig:bloch23over16} is also plotted in Fig.~\ref{fig:fowlerdistances} but is not visible since the red vector with $d = 0.00158$ constitutes such a good approximation to the desired state $\vec{b}$.  The red vector is the result of the action of $B_{approx,4}$ which, unfortunately, needs 370,813 gates to approximate $B$ to such a small Fowler distance. Gate $B$ was used as an example but such an exponential increase in the gate count is observed for any quantum gate $W$ when applying the Solovay-Kitaev algorithm (CITATION).
+REWRITE!
+Fig.~\ref{fig:fowlerdistances} shows the action of four different approximating gate sequences $B_{approx,1}$, $B_{approx,2}$, $B_{approx,3}$, $B_{approx,4}$ on the state $\ket{\psi} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}$. Gate sequence $B_{approx,1}$ consists of 25 gates and yields a Fowler distance of $d = 0.15165$. The resulting state vector is coloured green in Fig.~\ref{fig:fowlerdistances}. The green vector lies above the Bloch equator and is relatively far away from the desired vector $\vec{b}$ in Fig.~\ref{fig:bloch23over16}. With 109 gates, $B_{approx,2}$ lowers the Fowler distance to $d = 0.10722$ resulting in the blue vector. It is also found below the Bloch equator and is still relatively far from $\vec{b}$. Using $B_{approx,3}$ the Fowler distance drops to $d = 0.02086$ leading to the yellow vector in  Fig.~\ref{fig:fowlerdistances}. This vector is almost on the Bloch equator and relatively close to $\vec{b}$. Therefore, $B_{approx,3}$ can be considered a good approximation of $B$. However, $B_{approx,3}$ already requires the implementation of 2,997 single-qubit gates. The purple vector from Fig.~\ref{fig:bloch23over16} is also plotted in Fig.~\ref{fig:fowlerdistances} but is not visible since the red vector with $d = 0.00158$ constitutes such a good approximation to the desired state $\vec{b}$.  The red vector is the result of the action of $B_{approx,4}$ which, unfortunately, needs 370,813 gates to approximate $B$ to such a small Fowler distance. Hereby, Gate $B$ was used as an example but such an exponential increase in the gate count is observed for any quantum gate $W$ when applying the Solovay-Kitaev algorithm \cite{dawson2005solovay}.
 
 \begin{minipage}[c]{.8\textwidth}
 	%\vspace{-20mm}
@@ -709,9 +726,11 @@ Fig.~\ref{fig:fowlerdistances} shows the action of four different approximating 
 
 \end{minipage}
 
-Implementing any quantum gate $D$ inevitable takes some time $t$ since it involves the use of hardware components e.g. targeting a specific electron with a laser pulse. Based on IBM's single-qubit and CNOT gate times described in Section~\ref{subsec:ibmqc} the total execution time of twelve different gate sequences, approximating $B = R_z(-\frac{23}{16}\pi)$ and $C = R_z(-\frac{9}{16}\pi)$ to different Fowler distances, were calculated. The results can be seen in Table~\ref{tab:sktimes}. Keeping in mind that in the best case, the maximum decoherence time of a qubit in IBM's QC is \SI{112.4}{\micro\second} most gate sequences are too long for an IBM implementation (coloured red in Table~\ref{tab:sktimes}). Feasible execution times are marked green in Table~\ref{tab:sktimes}. However, decoherence is not the only limiting factor since IBM only allows for 39 gates and one measurement gate. Thus, the only possibility would be to use a sequence of 25 gates for $B$ and a sequence of 16 gates for $C$ at the cost of relatively large Fowler distances. This, however, sums up to 41 gates which is still two gates more than the allowed gate count of the IBM Quantum Composer. 
+Implementing any quantum gate $D$ inevitably takes some time $t$ since it involves the use of hardware components e.g. targeting a specific electron with a laser pulse. Based on IBM's single-qubit and CNOT gate times described in Section~\ref{subsec:ibmqc} the total execution time of twelve different gate sequences, approximating $B = R_z(-\frac{23}{16}\pi)$ and $C = R_z(-\frac{9}{16}\pi)$ to different Fowler distances, were calculated. The results can be seen in Table~\ref{tab:sktimes}. Keeping in mind that in the best case, the maximum decoherence time of a qubit in IBM's QC is \SI{112.4}{\micro\second} most gate sequences are too long for an IBM implementation (coloured red in Table~\ref{tab:sktimes}). Feasible execution times are marked green in Table~\ref{tab:sktimes}. However, decoherence is not the only limiting factor since IBM only allows for 39 gates and one measurement gate. But even when selecting the smallest sequences of 25 gates for $B$ and 16 gates for $C$, the total gate count is 41 which is two gates more than the allowed gate count of the IBM Quantum Composer. Furthermore, the approximating gate sequences of $B$ and $C$ are not the only gates needed to prepare the initial quantum state and execute the akNN algorithm. Unfortunately, this makes an actual implementation of this particular classification problem on IBM's QC impossible.
 
-\begin{table}
+%Thus, the only possibility would be to select the sequence of 25 gates for $B$ and the sequence of 16 gates for $C$ at the cost of relatively large Fowler distances. This, however, still sums up to 41 gates which is two gates more than the allowed gate count of the IBM Quantum Composer. 
+
+\begin{table}[H]
 \centering
     \begin{tabular}{c| c |c |c }
       \toprule
@@ -735,51 +754,70 @@ Implementing any quantum gate $D$ inevitable takes some time $t$ since it involv
     \end{tabular}
     \caption{\label{tab:sktimes} Results of the Solovay-Kitaev algorithm for decomposition of $B = R_z(-\frac{23}{16}\pi)$ and $C = R_z(-\frac{9}{16}\pi)$}
   \end{table}
+  
+To complete the quantum compiling, assume that gates $B$ and $C$ could somehow be implemented with shorter gate sequences. It remains to decompose the Toffoli gate that was required to 'load' the second training pattern $\ket{\textcolor{purple}{\Psi_{t^{1}}}}$ into the quantum state $\ket{\chi_4}$ as shown in Equ.~\ref{equ:chi4}.
 
 \subsubsection{Toffoli Gate Decomposition}
 \label{subsubsubsec:toffoli}
 
-
+The Toffoli or CCNOT gate can be decomposed into CNOT and single-qubit gates in several ways. In their book,\citeA{nielsen2010quantum} describe the decomposition into six CNOTs and nine single-qubit gates; two H gates, three T and three T$^\dagger$ gates. See Fig.~\ref{img:toffolidecomp} for the corresponding circuit diagram. This decomposition does not require any further compiling work since all involved gates are elements of IBM's universal gate set.
 
 \begin{figure}[!ht]
        \centering
        \includegraphics[scale=0.5]{img/toffolidecomposition.png}
-       \caption{\label{img:toffolidecomp} Decomposition of a Toffoli gate into six CNOT and nine single-qubit gates\textsuperscript{12}}
+       \caption[]{\label{img:toffolidecomp} Decomposition of a Toffoli gate into six CNOT and nine single-qubit gates\footnotemark[16]}
 \end{figure}
 
-\footnotetext[12]{Reprinted from Michael A. Nielsen and Isaac L. Chuang. Quantum Computation and Quantum Information. Cambridge University Press, 2000. Copyright 2010 by Nielsen \& Chuang.}
+\footnotetext[16]{Reprinted from Michael A. Nielsen and Isaac L. Chuang. Quantum Computation and Quantum Information. Cambridge University Press, 2000. Copyright 2010 by Nielsen \& Chuang.}
 
-CANNOT BE IMPLEMENTED ON IBM QUANTUM COMPUTER
+The Toffoli decomposition finalizes the compiling of the quantum state preparation into gates from IBM's gate set only. In summary, the compiled state preparation requires: 2 H gates applied to ancilla and the $m$ qubit, the decomposed $CR_y(\frac{\pi}{4})$ gate (2 CNOTs, 1 Z gate, 1 $\mathbb{1}$ gate (can be neglected) \& a sequence of minimum 25 gates for $B$ and minimum 16 gates for $C$), 1 X gate to flip the ancilla (Equ.~\ref{equ:chi3prepared}), 1 decomposed Toffoli (6 CNOTs, 2 H gates, 3 T \& 3 T$^\dagger$ gates) to load the second training vector and 1 CNOT to flip the class qubit. Thus, the quantum state preparation was compiled into 9 CNOT and 53 single-qubit gates. The akNN algorithm only requires one additional H gate and two measurement gates (for ancilla and class qubit) leading to a total of 9 CNOT, 54 single-qubit gates and 2 measurement gates. Even cleverly arranging these gates does not suffice to implement the algorithm within IBM's 40 gate slots. The full circuit diagram for the compiled state preparation and the akNN algorithm can be seen in Fig.~\ref{}.
+
+%state preparation
+%H Gate m qubit
+%H Gate ancilla
+%CR_y decomposed
+%X Gate ancilla
+%Toffoli(a,m,d)
+%CNOT(d,c)
+
+%algorithm
+%H ancilla
+%CM ancilla
+%M class
+
+%Final circuit diagram showing the compile state preparation + akNN algorithm steps
 
 \begin{greenbox}
-\textbf{Complexity analysis}\\
+\textbf{Complexity analysis including quantum compiling steps}\\
 \newline
 The akNN algorithm itself was found to run in constant time $\mathcal{O}(\frac{1}{Prob(CM)})$. However, to determine the overall algorithmic complexity all steps required to prepare the initial quantum state $\ket{\psi_0}$ from Equ.~\ref{equ:ampinitial} need to be included. The decomposition of the $CR_y(\frac{\pi}{4})$ gate involved solving a system of non-linear equations by means of a root-finding algorithm. Any iterative root-finding algorithm e.g. Secant or Newton's method has a complexity of $\mathcal{O}(k)$ where $k$ is the number of root finding iterations. Furthermore, the Solovay-Kitaev algorithm was required to find two single-qubit gate sequences approximating the two gates $B = R_z(-\frac{23}{16}\pi)$ and $C = R_z(-\frac{9}{16}\pi)$. According to \citeA{dawson2005solovay} the Solovay-Kitaev algorithm has a complexity of $\mathcal{O}(m*log^{2.71}(\frac{m}{\epsilon}))$ for $\epsilon$-approximations of $m$ gates. Thus the total complexity is given by:
 \begin{equation}
 \mathcal{O}(\frac{1}{Prob(CM)})+\mathcal{O}(k)+\mathcal{O}(m*log^{2.71}(\frac{m}{\epsilon}))
 \end{equation}
 	
-When adding algorithmic complexities only the most dominant term is considered. Thus, the overall complexity including state preparation is found to be $\mathcal{O}(m*log^{2.71}(\frac{m}{\epsilon}))$.\\
+When adding algorithmic complexities only the most dominant term is considered relevant. Thus, the overall complexity including state preparation is found to be $\mathcal{O}(m*log^{2.71}(\frac{m}{\epsilon}))$.\\
 \newline
-In conclusion, solely due to state preparation the initial constant complexity of
+In conclusion, due to the necessary quantum compiling steps the initial constant complexity of the akNN algorithm
 \begin{equation}  
 \mathcal{O}(\frac{1}{Prob(CM)})
 \end{equation}
-increased to polylogarithmic complexity of
+increased to a polylogarithmic complexity of
 \begin{equation}
 \mathcal{O}(m*log^{2.71}(\frac{m}{\epsilon}))
 \end{equation}
 dependening on the number of gates $m$ that need $\epsilon$-approximations by means of the Solovay-Kitaev algorithm.
 \end{greenbox}
 
-
-It has been shown that a series of decompositions are required to compile the quantum state preparation for the aKNN algorithm into a series of quantum gates consisting only of gates from the available gate set. In this particular classification problem the constant complexity of the aKNN algorithm is dominated by the complexity of the quantum compiling. 
+%All in all, it was shown that for this particular classification problem the constant complexity of the aKNN algorithm is dominated by the complexity of the quantum compiling. 
 
 \newpage
 
-STEPPING UP THE GAME SINCE IBM DOESN'T WORK SO FAR
 \subsection{Simulating the amplitude-based kNN algorithm}
 \label{subsubsec:simulationamplitudeKNN}
+
+Simulation results for the previously discussed classification problem of Bloch vectors
+
+Initializing gaussian distributed quantum states and classifying gaussian distributions by means of the Hellinger distance.
 
 \subsubsection{Diffusion matrix from quantum random walks}
 \label{subsubsubsec:diffusion}

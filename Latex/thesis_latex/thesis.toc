@@ -1,13 +1,41 @@
 \contentsline {chapter}{Abstract}{v}
 \contentsline {chapter}{Nomenclature}{vii}
-\contentsline {chapter}{\numberline {1}Results and Discussion}{1}
-\contentsline {section}{\numberline {1.1}Simulating the qubit-based kNN algorithm}{1}
-\contentsline {section}{\numberline {1.2}Development of an amplitude-based kNN algorithm}{8}
-\contentsline {subsection}{\numberline {1.2.1}Implementing the amplitude-based kNN algorithm}{9}
-\contentsline {subsubsection}{Initial state preparation}{10}
-\contentsline {subsubsection}{Controlled U Gate}{13}
-\contentsline {subsubsection}{The Solovay-Kitaev theorem}{15}
-\contentsline {subsubsection}{Toffoli Gate Decomposition}{19}
-\contentsline {subsection}{\numberline {1.2.2}Simulating the amplitude-based kNN algorithm}{21}
-\contentsline {subsubsection}{Diffusion matrix from quantum random walks}{21}
-\contentsline {chapter}{References}{23}
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {1.1}Motivation}{2}
+\contentsline {section}{\numberline {1.2}Research question}{2}
+\contentsline {chapter}{\numberline {2}Theoretical Foundations}{3}
+\contentsline {section}{\numberline {2.1}Quantum bits}{3}
+\contentsline {subsection}{\numberline {2.1.1}Single qubit systems}{3}
+\contentsline {subsection}{\numberline {2.1.2}Multi qubit systems}{6}
+\contentsline {section}{\numberline {2.2}Quantum Logic Gates}{8}
+\contentsline {subsection}{\numberline {2.2.1}Single qubit gates}{8}
+\contentsline {subsubsection}{Qubit flip (X) gate}{8}
+\contentsline {subsection}{\numberline {2.2.2}Multi qubit gates}{11}
+\contentsline {subsubsection}{Controlled-NOT gate}{11}
+\contentsline {section}{\numberline {2.3}Classical machine learning}{12}
+\contentsline {subsection}{\numberline {2.3.1}$k$-nearest neighbour algorithm}{12}
+\contentsline {subsection}{\numberline {2.3.2}Algorithmic time complexity}{14}
+\contentsline {subsubsection}{Big-O notation}{14}
+\contentsline {chapter}{\numberline {3}Methods}{17}
+\contentsline {section}{\numberline {3.1}Liqui$\mathinner {|{}\delimiter "526930B }$}{17}
+\contentsline {section}{\numberline {3.2}IBM Quantum Experience}{18}
+\contentsline {chapter}{\numberline {4}Literature Review: Quantum-enhanced Machine Learning}{20}
+\contentsline {subsection}{\numberline {4.0.1}Quantum state preparation}{20}
+\contentsline {subsubsection}{Encoding classical data into qubits}{21}
+\contentsline {subsubsection}{Encoding classical data into amplitudes}{23}
+\contentsline {subsection}{\numberline {4.0.2}Quantum k-nearest neighbour algorithm}{24}
+\contentsline {chapter}{\numberline {5}Results and Discussion}{28}
+\contentsline {section}{\numberline {5.1}Simulating the qubit-based kNN algorithm}{28}
+\contentsline {subsubsection}{Quantum simulation results}{32}
+\contentsline {section}{\numberline {5.2}Development of an amplitude-based kNN algorithm}{35}
+\contentsline {subsection}{\numberline {5.2.1}Attempt to implement the amplitude-based kNN algorithm}{36}
+\contentsline {subsubsection}{Initial state preparation}{37}
+\contentsline {subsubsection}{Decomposition of a controlled-U gate}{40}
+\contentsline {subsubsection}{The Solovay-Kitaev theorem}{42}
+\contentsline {subsubsection}{Toffoli Gate Decomposition}{46}
+\contentsline {subsection}{\numberline {5.2.2}Simulating the amplitude-based kNN algorithm}{48}
+\contentsline {subsubsection}{Diffusion matrix from quantum random walks}{48}
+\contentsline {chapter}{\numberline {6}Outlook}{50}
+\contentsline {chapter}{\numberline {7}Conclusion}{51}
+\contentsline {chapter}{\numberline {8}Personal Reflection}{52}
+\contentsline {chapter}{References}{53}

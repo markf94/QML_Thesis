@@ -158,6 +158,29 @@ Dawson, C\BPBI M.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Domingos%
+}{%
+Domingos%
+}{%
+{\protect \APACyear {2012}}%
+}]{%
+domingos2012few}
+\APACinsertmetastar {%
+domingos2012few}%
+\begin{APACrefauthors}%
+Domingos, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2012}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A few useful things to know about machine learning} {A
+  few useful things to know about machine learning}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Communications of the ACM}{55}{10}{78--87}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 D-Wave%
 }{%
 D-Wave%
@@ -287,6 +310,29 @@ IBM.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Kitaev%
+}{%
+Kitaev%
+}{%
+{\protect \APACyear {1995}}%
+}]{%
+kitaev1995quantum}
+\APACinsertmetastar {%
+kitaev1995quantum}%
+\begin{APACrefauthors}%
+Kitaev, A\BPBI Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1995}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Quantum measurements and the Abelian stabilizer problem}
+  {Quantum measurements and the abelian stabilizer problem}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{arXiv preprint quant-ph/9511026}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Li%
 , Liu%
 , Xu%
@@ -316,6 +362,31 @@ Li, Z.%
 \APACjournalVolNumPages{Physical Review Letters}{114}{14}{1--5}.
 \newblock
 \begin{APACrefDOI} \doi{10.1103/PhysRevLett.114.140504} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{Microsoft Research}%
+}{%
+{Microsoft Research}%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+microsoftresearch}
+\APACinsertmetastar {%
+microsoftresearch}%
+\begin{APACrefauthors}%
+{Microsoft Research}.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+\APACrefbtitle {{Language-Integrated Quantum Operations: LIQUi|>}.}
+  {{Language-Integrated Quantum Operations: LIQUi|>}.}
+\newblock
+\begin{APACrefURL}
+  [{2016-12-29}]\url{https://www.microsoft.com/en-us/research/project/language-integrated-quantum-operations-liqui/}
+  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -376,31 +447,6 @@ O'Malley, P\BPBI J\BPBI J.%
   \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1103/PhysRevX.6.031007} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Research%
-}{%
-Research%
-}{%
-{\protect \APACyear {2016}}%
-}]{%
-liquid}
-\APACinsertmetastar {%
-liquid}%
-\begin{APACrefauthors}%
-Research, M.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2016}{}{}.
-\newblock
-\APACrefbtitle {{Language-Integrated Quantum Operations: LIQUi|>}.}
-  {{Language-Integrated Quantum Operations: LIQUi|>}.}
-\newblock
-\begin{APACrefURL}
-  [{2016-12-29}]\url{https://www.microsoft.com/en-us/research/project/language-integrated-quantum-operations-liqui/}
-  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -570,6 +616,34 @@ Trugenberger, C.%
 \begin{APACrefURL} \url{http://arxiv.org/abs/quant-ph/0012100} \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1103/PhysRevLett.87.067901} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Wecker%
+\ \BBA {} Svore%
+}{%
+Wecker%
+\ \BBA {} Svore%
+}{%
+{\protect \APACyear {2014}}%
+}]{%
+liquid}
+\APACinsertmetastar {%
+liquid}%
+\begin{APACrefauthors}%
+Wecker, D.%
+\BCBT {}\ \BBA {} Svore, K\BPBI M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+\APACrefbtitle {{LIQU}i|>: {A} {S}oftware {D}esign {A}rchitecture and
+  {D}omain-{S}pecific {L}anguage for {Q}uantum {C}omputing.} {{LIQU}i|>: {A}
+  {S}oftware {D}esign {A}rchitecture and {D}omain-{S}pecific {L}anguage for
+  {Q}uantum {C}omputing.}
+\newblock
+\begin{APACrefURL} \url{arXiv:1402.4467v1} \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}

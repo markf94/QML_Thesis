@@ -2,6 +2,8 @@
 
 Classical machine learning takes classical data as input and learns from it using classical algorithms executed on classical computers - this will be referred to as C/C (classical data with classical algorithm). One enters the field of quantum machine learning when either quantum data or quantum algorithms are combined with ideas from classical machine learning. Thus, quantum machine learning can be subdivided into three different subfields: 1) C/Q - classical data with quantum algorithm, 2) Q/C - quantum data with classical algorithm and 3) Q/Q - quantum data with quantum algorithm.
 
+EXPLAIN WHY QUANTUM-ENHANCED MACHINE LEARNING!
+
 \emph{Quantum data} includes any data describing a quantum mechanical system such as e.g. the Hamiltonian of a system or the state vector of a certain quantum state. A \emph{quantum algorithm} is any algorithm that can only be executed on a quantum computer. 
 
 C/Q is the topic of this thesis
@@ -21,7 +23,7 @@ tic resources such as depolarizing noise.
 
 Q/Q would include learning a model Hamiltonian of a system implemented in a lab using a quantum learning algorithm.
 
-\subsection{Quantum State Preparation}
+\subsection{Quantum state preparation}
 \label{subsubsec:quantumstatepreparation}
 
 \emph{Quantum state preparation} is the process of preparing a quantum state that accurately represents a vector containing classical (normalized) data. There are two fundamentally different ways of preparing a quantum state representing the classical example vector v:
@@ -177,7 +179,7 @@ For the case when the classical data vectors represent discrete probability dist
 %VERY COMPLICATED AND MOST GENERAL
 Additionally, \citeA{soklakov2006efficient} proposed a quantum algorithm for the more general case that includes initializing amplitude distributions for classical data vectors representing non-efficiently integrable probability distributions.
 
-\subsection{Quantum k-nearest Neighbour Algorithm}
+\subsection{Quantum k-nearest neighbour algorithm}
 \label{subsubsec:quantumknearestneighbour}
 
 The quantum distance-weighted kNN algorithm outlined in this section was proposed by \citeA{Schuld2014} and is based on classical data being encoded into qubits rather than amplitudes. The first step is to prepare an equal superposition $\ket{T}$ over $N$ training vectors $\vec{v}$ of length $n$ with binary entries $v_1,v_2,...v_n$ each assigned to a class $c$ as follows,
