@@ -56,8 +56,8 @@ The quantum classifier will then be tested on four new colour tones (two red, tw
 
 In the more difficult evaluation stage, two more blue and red colours are added to training data set I resulting in training data set II shown in Table~\ref{tab:trainingcolours2}. Note that the four new training colours have mixed colour contents meaning red training colours might have a slight blue or green content and vice versa.
 
-In order to compare how training data set I and II influence the classification outcome the four colours from input data set I are also present in input data set II listed in Table~\ref{tab:inputcolours2}. Additionally, four new colour tones were added that consist of different mixtures of red, green and blue. These new input colours constitute interesting edge cases and their correct classification is considered hard. Note that the fourth colour from the top in Table~\ref{tab:inputcolours2} has equal red and blue content and will be used to test the classifier in an indecisive case.
-
+In order to compare how training data set I and II influence the classification outcome the four colours from input data set I are also present in input data set II listed in Table~\ref{tab:inputcolours2}. Additionally, four new colour tones were added that consist of different mixtures of red, green and blue. These new input colours constitute interesting edge cases and their correct classification is considered hard. Note that the fourth colour from the top in Table~\ref{tab:inputcolours2} has equal red and blue content and will be used to test the classifier in an indecisive case.\\
+\newline
 \begin{minipage}[c]{.49\textwidth}
     \begin{tabular}{| C{1cm} | C{2.3cm} |C{1.6cm} |}
       %\toprule
@@ -350,7 +350,7 @@ All previous steps need to be repeated $y$ times in order to generate a sufficie
 \end{bluebox}
 
 The quantum advantage of the algorithm is the parallel computation of the squared Euclidean distance between the input vector and each training vector through the implementation of a single H gate. Such an operation is impossible to perform on a classical computer. Consider for example a particular training set containing 100,000,000 vectors with 10 entries each: The quantum algorithm performs all 100,000,000 distance computations between input and training vectors within one step whereas a classical computer would need to perform  100,000,000 individual computations to arrive at the same result.
-
+\vspace{1cm}
 \begin{greenbox}
 \textbf{Complexity analysis}\\
 \newline
@@ -439,7 +439,7 @@ Next, the input vector $\ket{\textcolor{red}{\Psi_{x}}}$ should be loaded into t
 &= \frac{1}{2} \sum_{m=0}^1 \Big[ \ket{0}\textcolor{red}{e^{-i\frac{\pi}{8}}\big[0.92388\ket{0} + 0.38268\ket{1}\big]} + \ket{1}\ket{0}\Big] \ket{0}\ket{m}
 \end{align}
 
-By looking closely at Fig.~\ref{fig:3over4} one can deduce that the red input vector can be reached by simply rotating the \0 vector by an angle of $\frac{\pi}{4}$ around the y-axis. A y-rotation by an arbitrary angle $\vartheta$ can be achieved with the rotation operator $R_y(\vartheta)$. As described by \citeA{nielsen2010quantum}, $R_y(\vartheta)$ can be represented as a unitary 2x2 matrix and is obtained from exponentiating the Y gate as follows,
+By looking closely at Fig.~\ref{fig:3over4} one can deduce that the red input vector can be reached by simply rotating the \0 vector by an angle of $\frac{\pi}{4}$ around the y-axis. A y-rotation by an arbitrary angle $\vartheta$ can be achieved with the rotation operator $R_y(\vartheta)$. As described by \citeA{nielsen2010quantum}, $R_y(\vartheta)$ can be represented as a unitary 2x2 matrix and is obtained from exponentiating the Y gate as shown in Equ.~\ref{equ:rydef}.
 
 \begin{equation}
 \label{equ:rydef}
@@ -701,8 +701,7 @@ Fowler distance is best understood with a visual example using the gate $B = R_z
 \caption{\label{fig:bloch23over16} Action of $B = R_z(-\frac{23}{16}\pi)$ on the state $\ket{\psi} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}$}
 \end{figure}
 
-REWRITE!
-Fig.~\ref{fig:fowlerdistances} shows the action of four different approximating gate sequences $B_{approx,1}$, $B_{approx,2}$, $B_{approx,3}$, $B_{approx,4}$ on the state $\ket{\psi} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}$. Gate sequence $B_{approx,1}$ consists of 25 gates and yields a Fowler distance of $d = 0.15165$. The resulting state vector is coloured green in Fig.~\ref{fig:fowlerdistances}. The green vector lies above the Bloch equator and is relatively far away from the desired vector $\vec{b}$ in Fig.~\ref{fig:bloch23over16}. With 109 gates, $B_{approx,2}$ lowers the Fowler distance to $d = 0.10722$ resulting in the blue vector. It is also found below the Bloch equator and is still relatively far from $\vec{b}$. Using $B_{approx,3}$ the Fowler distance drops to $d = 0.02086$ leading to the yellow vector in  Fig.~\ref{fig:fowlerdistances}. This vector is almost on the Bloch equator and relatively close to $\vec{b}$. Therefore, $B_{approx,3}$ can be considered a good approximation of $B$. However, $B_{approx,3}$ already requires the implementation of 2,997 single-qubit gates. The purple vector from Fig.~\ref{fig:bloch23over16} is also plotted in Fig.~\ref{fig:fowlerdistances} but is not visible since the red vector with $d = 0.00158$ constitutes such a good approximation to the desired state $\vec{b}$.  The red vector is the result of the action of $B_{approx,4}$ which, unfortunately, needs 370,813 gates to approximate $B$ to such a small Fowler distance. Hereby, Gate $B$ was used as an example but such an exponential increase in the gate count is observed for any quantum gate $W$ when applying the Solovay-Kitaev algorithm \cite{dawson2005solovay}.
+Fig.~\ref{fig:fowlerdistances} shows the action of four different approximating gate sequences $B_{approx,1}$, $B_{approx,2}$, $B_{approx,3}$, $B_{approx,4}$ on the state $\ket{\psi} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}$. Gate sequence $B_{approx,1}$ consists of 25 gates and is a Fowler distance of $d = 0.15165$ away from $B$. The resulting state vector is coloured green in Fig.~\ref{fig:fowlerdistances}. The green vector lies above the Bloch equator and is relatively far away from the desired vector $\vec{b}$ in Fig.~\ref{fig:bloch23over16}. With 109 gates, $B_{approx,2}$ yields a Fowler distance of $d = 0.10722$ resulting in the blue vector. It is also found below the Bloch equator and still relatively far from $\vec{b}$. Using $B_{approx,3}$ the Fowler distance drops to $d = 0.02086$ leading to the yellow vector in  Fig.~\ref{fig:fowlerdistances}. This vector is almost on the Bloch equator and relatively close to $\vec{b}$ implying that $B_{approx,3}$ is a good approximation of $B$. However, $B_{approx,3}$ already requires the implementation of 2,997 single-qubit gates. The purple vector from Fig.~\ref{fig:bloch23over16} is also plotted in Fig.~\ref{fig:fowlerdistances} but is not visible since the red vector with $d = 0.00158$ constitutes a very good approximation to the desired state $\vec{b}$.  The red vector is the result of the action of $B_{approx,4}$ which, unfortunately, needs 370,813 gates to achieve such a small Fowler distance. Hereby, Gate $B$ was used as an example but such an exponential increase in the gate count is observed for any quantum gate $W$ when applying the Solovay-Kitaev algorithm \cite{dawson2005solovay}.
 
 \begin{minipage}[c]{.8\textwidth}
 	%\vspace{-20mm}
@@ -819,60 +818,62 @@ Simulation results for the previously discussed classification problem of Bloch 
 
 Initializing gaussian distributed quantum states and classifying gaussian distributions by means of the Hellinger distance.
 
-\subsubsection{Diffusion matrix from quantum random walks}
-\label{subsubsubsec:diffusion}
+Visualizations using 3D and 4D cubes
 
-HELLINGER DISTANCE!
+%\subsubsection{Diffusion matrix from quantum random walks}
+%\label{subsubsubsec:diffusion}
 
-Initialization of amplitude distribution is non-trivial
+%HELLINGER DISTANCE!
 
-Need for a simpler way - using diffusion matrix from quantum random walks
+%Initialization of amplitude distribution is non-trivial
 
-For the simplest case, consider the entries in the classical probability vector v to be normal distributed, e.g.
+%Need for a simpler way - using diffusion matrix from quantum random walks
 
-CHECK THE ORDER!
-\begin{equation}
-v = \colvec{0.064180\\0.146860\\0.146770\\0.341590\\0.026840\\0.063590\\0.061700\\0.148470}
-\end{equation}
+%For the simplest case, consider the entries in the classical probability vector v to be normal distributed, e.g.
 
-The goal is to encode this classical data into a quantum memory state $\ket{M}$ of the form,
+%CHECK THE ORDER!
+%\begin{equation}
+%v = \colvec{0.064180\\0.146860\\0.146770\\0.341590\\0.026840\\0.063590\\0.061700\\0.148470}
+%\end{equation}
 
-\begin{align}
-\ket{M} = \quad &0.064180 \ket{000} +
-0.146860 \ket{100} +
-0.146770 \ket{010} +
-0.341590 \ket{001}\notag\\
-&+ 0.026840 \ket{110}
-+ 0.063590 \ket{011} +
-0.061700 \ket{101} +
-0.148470 \ket{111}
-\end{align}
+%The goal is to encode this classical data into a quantum memory state $\ket{M}$ of the form,
+
+%\begin{align}
+%\ket{M} = \quad &0.064180 \ket{000} +
+%0.146860 \ket{100} +
+%0.146770 \ket{010} +
+%0.341590 \ket{001}\notag\\
+%&+ 0.026840 \ket{110}
+%+ 0.063590 \ket{011} +
+%0.061700 \ket{101} +
+%0.148470 \ket{111}
+%\end{align}
 
 %Before outlining how to prepare state $\ket{M}$ the notion of Hamming distance needs to be introduced.
 
-Furthermore, a useful tool of visualizing the HDs between binary patterns made from three qubits is a 3-D cube as shown in Fig.~\ref{img:cubenoprobs}. On the cube, adjacent qubit patterns have a HD of 1 and the HD increases by 1 for every additional corner. For example, the qubit state $\ket{000}$ is adjacent to $\ket{100}$ since they only differ in one qubit ($HD=1$). Moving one more corner yields the state $\ket{101}$ or $\ket{110}$ which both have a HD of 2 compared to $\ket{000}$.
+%Furthermore, a useful tool of visualizing the HDs between binary patterns made from three qubits is a 3-D cube as shown in Fig.~\ref{img:cubenoprobs}. On the cube, adjacent qubit patterns have a HD of 1 and the HD increases by 1 for every additional corner. For example, the qubit state $\ket{000}$ is adjacent to $\ket{100}$ since they only differ in one qubit ($HD=1$). Moving one more corner yields the state $\ket{101}$ or $\ket{110}$ which both have a HD of 2 compared to $\ket{000}$.
 
-\begin{figure}[!ht]
-       \centering
-       \includegraphics[width=0.5\textwidth]{img/cubewithoutprobs.png}
-       \caption{\label{img:cubenoprobs} Visualizing Hamming distances on a 3-D cube}
-\end{figure}
+%\begin{figure}[!ht]
+%       \centering
+%       \includegraphics[width=0.5\textwidth]{img/cubewithoutprobs.png}
+%       \caption{\label{img:cubenoprobs} Visualizing Hamming distances on a 3-D cube}
+%\end{figure}
 
-This way of visualizing HDs can be extended to the 16 binary patterns made by four qubits that can be visualized on a 4-D cube, also called tesseract, as illustrated in Fig.~\ref{img:hypercubenoprobs}.
+%This way of visualizing HDs can be extended to the 16 binary patterns made by four qubits that can be visualized on a 4-D cube, also called tesseract, as illustrated in Fig.~\ref{img:hypercubenoprobs}.
 
-\begin{figure}[!ht]
-       \centering
-       \includegraphics[width=0.5\textwidth]{img/hypercubewithoutprobs.png}
-       \caption{\label{img:hypercubenoprobs} Visualizing Hamming distances on a 4-D cube (tesseract)}
-\end{figure}
+%\begin{figure}[!ht]
+%       \centering
+%       \includegraphics[width=0.5\textwidth]{img/hypercubewithoutprobs.png}
+%       \caption{\label{img:hypercubenoprobs} Visualizing Hamming distances on a 4-D cube (tesseract)}
+%\end{figure}
 
-The idea of a coin operator $C$ can be borrowed from the theory of quantum random walks to initialize a gaussian distribution centered around a chosen binary qubit pattern. For this purpose, the coin operator is defined as,
+%The idea of a coin operator $C$ can be borrowed from the theory of quantum random walks to initialize a gaussian distribution centered around a chosen binary qubit pattern. For this purpose, the coin operator is defined as,
 
-\begin{equation}
-C = \begin{pmatrix}
-\sqrt{\delta} & 1-\sqrt{\delta} \\
-1-\sqrt{\delta} & -\sqrt{\delta}
-\end{pmatrix}
-\end{equation}
+%\begin{equation}
+%C = \begin{pmatrix}
+%\sqrt{\delta} & 1-\sqrt{\delta} \\
+%1-\sqrt{\delta} & -\sqrt{\delta}
+%\end{pmatrix}
+%\end{equation}
 
-where $0 \leq \delta \leq 1$.
+%where $0 \leq \delta \leq 1$.

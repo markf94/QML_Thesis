@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  2 JAN 2017 04:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  2 JAN 2017 05:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1569,69 +1569,40 @@ img/UM_logo-eps-converted-to.pdf> <./img/logo.jpeg>] [2
 ])
 (./chapters/introduction.tex
 Chapter 1.
-
-LaTeX Warning: Citation `bigdata' undefined on input line 7.
-
-
-LaTeX Warning: Citation `bekkerman2011scaling' undefined on input line 7.
-
-
-LaTeX Warning: Citation `shor1994' undefined on input line 18.
-
-
-LaTeX Warning: Citation `qRAM' undefined on input line 29.
-
-
-LaTeX Warning: Citation `hydrogensimulation' undefined on input line 29.
-
-
-LaTeX Warning: Citation `dwave2' undefined on input line 29.
-
 [1
 
-]
-
-LaTeX Warning: Citation `Li2015' undefined on input line 31.
-
-
-LaTeX Warning: Citation `Cai2015' undefined on input line 31.
-
-
-LaTeX Warning: Citation `Riste2015' undefined on input line 31.
-
-) (./chapters/theoreticalfoundations.tex [2]
+]) (./chapters/theoreticalfoundations.tex [2]
 Chapter 2.
 <img/qubitimplementation.jpeg, id=60, 1055.945pt x 395.4775pt>
 File: img/qubitimplementation.jpeg Graphic file (type jpg)
 
 <use img/qubitimplementation.jpeg>
-Package pdftex.def Info: img/qubitimplementation.jpeg used on input line 15.
-(pdftex.def)             Requested size: 384.10959pt x 143.85628pt.
+Package pdftex.def Info: img/qubitimplementation.jpeg used on input line 13.
+(pdftex.def)             Requested size: 369.58629pt x 138.41919pt.
+
+Underfull \vbox (badness 4303) has occurred while \output is active []
+
  [3
 
- <./img/qubitimplementation.jpeg>]
-[4] <img/blochsphere.png, id=77, 2007.5pt x 2278.5125pt>
+ <./img/qubitimplementation.jpeg>] [4]
+<img/blochsphere.png, id=77, 2007.5pt x 2278.5125pt>
 File: img/blochsphere.png Graphic file (type png)
-
-<use img/blochsphere.png>
+ <use img/blochsphere.png>
 Package pdftex.def Info: img/blochsphere.png used on input line 83.
 (pdftex.def)             Requested size: 140.53935pt x 159.51216pt.
- [5 <./img/blochsphere.png>]
 
-LaTeX Warning: Citation `dawson2005solovay' undefined on input line 114.
-
-
+[5 <./img/blochsphere.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 112--115
 
  []
 
-[6] [7] <img/blochxgate.png, id=89, 439.6425pt x 380.42125pt>
+[6] [7] [8] <img/blochxgate.png, id=92, 439.6425pt x 380.42125pt>
 File: img/blochxgate.png Graphic file (type png)
 
 <use img/blochxgate.png>
 Package pdftex.def Info: img/blochxgate.png used on input line 307.
-(pdftex.def)             Requested size: 213.39566pt x 184.64919pt.
- [8]
+(pdftex.def)             Requested size: 256.0774pt x 221.59064pt.
+
 Overfull \hbox (12.63948pt too wide) in paragraph at lines 324--324
  \T1/cmr/m/n/10 Gate| 
  []
@@ -1794,36 +1765,26 @@ Overfull \hbox (46.62343pt too wide) in paragraph at lines 432--462
 [][] 
  []
 
-[11]
-
-LaTeX Warning: Citation `Schuld2014' undefined on input line 492.
-
-[12 <./img/cnotcircuit.png> <./img/ccnotcircuit.png>]
-<img/apple.jpg, id=126, 217.0509pt x 173.448pt>
+[11] [12 <./img/cnotcircuit.png> <./img/ccnotcircuit.png>]
+<img/apple.jpg, id=125, 217.0509pt x 173.448pt>
 File: img/apple.jpg Graphic file (type jpg)
  <use img/apple.jpg>
 Package pdftex.def Info: img/apple.jpg used on input line 498.
 (pdftex.def)             Requested size: 204.85802pt x 163.70543pt.
 
-<img/banana.png, id=127, 1284.8pt x 849.1725pt>
+<img/banana.png, id=126, 1284.8pt x 849.1725pt>
 File: img/banana.png Graphic file (type png)
  <use img/banana.png>
 Package pdftex.def Info: img/banana.png used on input line 502.
 (pdftex.def)             Requested size: 204.85802pt x 135.39095pt.
 
-<img/knn-concept.png, id=128, 385.44pt x 289.08pt>
+<img/knn-concept.png, id=127, 385.44pt x 289.08pt>
 File: img/knn-concept.png Graphic file (type png)
  <use img/knn-concept.png>
 Package pdftex.def Info: img/knn-concept.png used on input line 518.
-(pdftex.def)             Requested size: 211.99265pt x 158.99448pt.
+(pdftex.def)             Requested size: 308.35242pt x 231.2643pt.
 
-Underfull \vbox (badness 2042) has occurred while \output is active []
-
- [13 <./img/apple.jpg> <./img/banana.png>]
-
-LaTeX Warning: Citation `bachmann1894analytische' undefined on input line 532.
-
-
+[13 <./img/apple.jpg> <./img/banana.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 535--538
 
  []
@@ -1832,30 +1793,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 535--538
 File: img/asymptoticupperbound.png Graphic file (type png)
 
 <use img/asymptoticupperbound.png>
-Package pdftex.def Info: img/asymptoticupperbound.png used on input line 545.
-(pdftex.def)             Requested size: 103.38599pt x 79.79793pt.
+Package pdftex.def Info: img/asymptoticupperbound.png used on input line 546.
+(pdftex.def)             Requested size: 124.06445pt x 95.75848pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 5231) has occurred while \output is active []
 
  [14 <./img/knn-concept.png>] <img/bigocomplexity.png, id=137, 809.0225pt x 530
 .98375pt>
 File: img/bigocomplexity.png Graphic file (type png)
 
 <use img/bigocomplexity.png>
-Package pdftex.def Info: img/bigocomplexity.png used on input line 558.
-(pdftex.def)             Requested size: 202.25513pt x 132.7456pt.
+Package pdftex.def Info: img/bigocomplexity.png used on input line 559.
+(pdftex.def)             Requested size: 283.16212pt x 185.84709pt.
 ) (./chapters/methods.tex [15 <./img/asymptoticupperbound.png> <./img/bigocompl
-exity.png>] [16
-
-]
+exity.png>]
 Chapter 3.
-
-LaTeX Warning: Citation `liquid' undefined on input line 15.
-
-
-LaTeX Warning: Citation `microsoftresearch' undefined on input line 15.
-
-<img/liquidcodesnippet.png, id=146, 615.29875pt x 338.26375pt>
+<img/liquidcodesnippet.png, id=143, 615.29875pt x 338.26375pt>
 File: img/liquidcodesnippet.png Graphic file (type png)
 
 <use img/liquidcodesnippet.png>
@@ -1864,13 +1817,10 @@ Package pdftex.def Info: img/liquidcodesnippet.png used on input line 19.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [17
+ [16
 
 ]
-
-LaTeX Warning: Citation `ibmquantumcomputer' undefined on input line 26.
-
-<img/ibmcomposer.png, id=150, 1175.39125pt x 511.9125pt>
+<img/ibmcomposer.png, id=147, 1175.39125pt x 511.9125pt>
 File: img/ibmcomposer.png Graphic file (type png)
 
 <use img/ibmcomposer.png>
@@ -1879,11 +1829,8 @@ Package pdftex.def Info: img/ibmcomposer.png used on input line 33.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [18 <./img/liquidcodesnippet.png>]
-
-LaTeX Warning: Citation `ibmgatetimes' undefined on input line 40.
-
-<img/ibmcalibration.png, id=154, 1332.98pt x 271.0125pt>
+ [17 <./img/liquidcodesnippet.png>]
+<img/ibmcalibration.png, id=151, 1332.98pt x 271.0125pt>
 File: img/ibmcalibration.png Graphic file (type png)
 
 <use img/ibmcalibration.png>
@@ -1894,47 +1841,48 @@ Overfull \hbox (13.09343pt too wide) in paragraph at lines 44--45
  [][] 
  []
 
-) (./chapters/quantummachinelearning.tex [19 <./img/ibmcomposer.png> <./img/ibm
+) (./chapters/quantummachinelearning.tex [18 <./img/ibmcomposer.png> <./img/ibm
 calibration.png>]
 Chapter 4.
-[20
 
-]
+Overfull \hbox (2.09358pt too wide) in paragraph at lines 7--8
+[]\T1/cmr/m/n/10 The sub-field Q/C pro-cesses quan-tum data with clas-si-cal ma
+-chine learn-ing al-go-rithms e.g. []Las Heras,
+ []
 
-LaTeX Warning: Citation `Trugenberger2001' undefined on input line 85.
 
-[21]
+LaTeX Warning: Reference `subsubsec:quantumstatepreparation' on page 19 undefin
+ed on input line 9.
+
+
+LaTeX Warning: Reference `subsubsec:quantumknearestneighbour' on page 19 undefi
+ned on input line 9.
+
+[19
+
+] [20]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [21]
+Underfull \vbox (badness 5133) has occurred while \output is active []
+
  [22]
-[23]
-
-LaTeX Warning: Citation `Grover2002' undefined on input line 177.
-
-
-LaTeX Warning: Citation `soklakov2006efficient' undefined on input line 180.
-
-[24]
-Underfull \hbox (badness 10000) in paragraph at lines 214--223
+Underfull \hbox (badness 10000) in paragraph at lines 181--191
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 214--223
+Underfull \hbox (badness 10000) in paragraph at lines 181--191
 
  []
 
-[25]
-Underfull \hbox (badness 10000) in paragraph at lines 302--305
+[23] [24]
+Underfull \hbox (badness 10000) in paragraph at lines 251--254
 
  []
 
-) (./chapters/resultsanddiscussion.tex [26] [27]
+) (./chapters/resultsanddiscussion.tex [25]
 Chapter 5.
-
-LaTeX Warning: Reference `subsubsec:simulationamplitudeKNN' on page 28 undefine
-d on input line 3.
-
 
 Overfull \hbox (1.01228pt too wide) in paragraph at lines 24--24
  \T1/cmr/m/n/10 Colour| 
@@ -1945,7 +1893,7 @@ Overfull \hbox (1.01228pt too wide) in paragraph at lines 42--42
  \T1/cmr/m/n/10 Colour| 
  []
 
-[28
+[26
 
 ]
 Overfull \hbox (1.01228pt too wide) in paragraph at lines 64--64
@@ -1957,33 +1905,40 @@ Overfull \hbox (1.01228pt too wide) in paragraph at lines 86--86
  \T1/cmr/m/n/10 Colour| 
  []
 
-[29]
 
-LaTeX Warning: Reference `table:trainingcolours' on page 30 undefined on input 
+Underfull \hbox (badness 10000) in paragraph at lines 59--103
+
+ []
+
+
+LaTeX Warning: Reference `subsubsec:quantumknearestneighbour' on page 27 undefi
+ned on input line 104.
+
+[27]
+
+LaTeX Warning: Reference `table:trainingcolours' on page 28 undefined on input 
 line 141.
 
-[30] [31]
+[28]
 
-LaTeX Warning: Reference `' on page 32 undefined on input line 193.
+LaTeX Warning: Reference `subsubsec:quantumknearestneighbour' on page 29 undefi
+ned on input line 157.
 
-[32]
+[29]
+
+LaTeX Warning: Reference `' on page 30 undefined on input line 193.
+
+[30]
 Overfull \hbox (1.84116pt too wide) in paragraph at lines 225--238
 [][] 
  []
 
-
-LaTeX Warning: Citation `domingos2012few' undefined on input line 243.
-
-[33]
+[31]
 Overfull \hbox (1.84116pt too wide) in paragraph at lines 256--277
 [][] 
  []
 
-[34]
-
-LaTeX Warning: Citation `SchuldFingerhuth' undefined on input line 292.
-
-
+[32]
 Underfull \hbox (badness 10000) in paragraph at lines 314--317
 
  []
@@ -1994,17 +1949,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 333--336
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 6859) has occurred while \output is active []
 
- [35]
+ [33]
 Underfull \hbox (badness 10000) in paragraph at lines 355--358
 
  []
 
-[36] <img/3over4state.png, id=215, 648.4225pt x 570.13pt>
-File: img/3over4state.png Graphic file (type png)
 
-<use img/3over4state.png>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [34]
+<img/3over4state.png, id=209, 648.4225pt x 570.13pt>
+File: img/3over4state.png Graphic file (type png)
+ <use img/3over4state.png>
 Package pdftex.def Info: img/3over4state.png used on input line 369.
 (pdftex.def)             Requested size: 324.21045pt x 285.0643pt.
 
@@ -2028,24 +1986,17 @@ Overfull \hbox (27.63914pt too wide) in paragraph at lines 388--397
  []
  []
 
-[37 <./img/3over4state.png>]
 
-LaTeX Warning: Citation `nielsen2010quantum' undefined on input line 442.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[38] [39] <img/controlledudecomp.png, id=227, 687.56876pt x 221.82875pt>
+ [35 <./img/3over4state.png>] [36] [37]
+<img/controlledudecomp.png, id=219, 687.56876pt x 221.82875pt>
 File: img/controlledudecomp.png Graphic file (type png)
 
 <use img/controlledudecomp.png>
 Package pdftex.def Info: img/controlledudecomp.png used on input line 531.
 (pdftex.def)             Requested size: 298.75262pt x 96.3864pt.
- [40 <./img/controlledudecomp.png>] [41]
-
-LaTeX Warning: Citation `kitaev1995quantum' undefined on input line 646.
-
-
-LaTeX Warning: Citation `dawson2005solovay' undefined on input line 654.
-
-
+ [38] [39 <./img/controlledudecomp.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 651--658
 
  []
@@ -2056,113 +2007,73 @@ Underfull \hbox (badness 10000) in paragraph at lines 651--658
  []
 
 
-LaTeX Warning: Citation `dawson2005solovay' undefined on input line 660.
+Underfull \vbox (badness 1946) has occurred while \output is active []
 
-[42]
-
-LaTeX Warning: Citation `booth2012quantum' undefined on input line 667.
-
-
+ [40]
 Underfull \hbox (badness 10000) in paragraph at lines 665--668
 
  []
 
 PGFPlots: reading {datax.dat}
 PGFPlots: reading {datax.dat}
-[43] <img/bloch23over16.png, id=240, 673.51625pt x 631.35875pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [41]
+<img/bloch23over16.png, id=234, 673.51625pt x 631.35875pt>
 File: img/bloch23over16.png Graphic file (type png)
 
 <use img/bloch23over16.png>
 Package pdftex.def Info: img/bloch23over16.png used on input line 700.
 (pdftex.def)             Requested size: 269.40172pt x 252.53902pt.
-
-<img/fowlerdistances.png, id=241, 604.2575pt x 563.10374pt>
+ [42 <./img/bloch23over16.png>]
+<img/fowlerdistances.png, id=238, 604.2575pt x 563.10374pt>
 File: img/fowlerdistances.png Graphic file (type png)
 
 <use img/fowlerdistances.png>
-Package pdftex.def Info: img/fowlerdistances.png used on input line 709.
+Package pdftex.def Info: img/fowlerdistances.png used on input line 708.
 (pdftex.def)             Requested size: 293.11064pt x 273.14851pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [44 <./img/bloch23over16.png>]
-
-LaTeX Warning: Reference `tab:sktimes' on page 45 undefined on input line 729.
-
-
-LaTeX Warning: Reference `tab:sktimes' on page 45 undefined on input line 729.
-
-
-LaTeX Warning: Reference `tab:sktimes' on page 45 undefined on input line 729.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [45 <./img/fowlerdistances.png>]
-
-LaTeX Warning: Reference `img:toffolidecomp' on page 46 undefined on input line
- 763.
-
-<img/toffolidecomposition.png, id=249, 631.35875pt x 132.495pt>
+ [43 <./img/fowlerdistances.png>]
+<img/toffolidecomposition.png, id=242, 631.35875pt x 132.495pt>
 File: img/toffolidecomposition.png Graphic file (type png)
 
 <use img/toffolidecomposition.png>
-Package pdftex.def Info: img/toffolidecomposition.png used on input line 767.
+Package pdftex.def Info: img/toffolidecomposition.png used on input line 766.
 (pdftex.def)             Requested size: 315.6786pt x 66.24733pt.
 
 
-LaTeX Warning: Reference `' on page 46 undefined on input line 773.
+LaTeX Warning: Reference `' on page 44 undefined on input line 772.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 791--794
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 798--801
+Underfull \hbox (badness 10000) in paragraph at lines 790--793
 
  []
 
 
-Underfull \hbox (badness 1226) in paragraph at lines 798--801
+Underfull \hbox (badness 10000) in paragraph at lines 797--800
+
+ []
+
+
+Underfull \hbox (badness 1226) in paragraph at lines 797--800
 \T1/cmr/m/n/10 In con-clu-sion, due to the nec-es-sary quan-tum com-pil-ing ste
 ps the ini-tial con-stant
  []
 
-[46 <./img/toffolidecomposition.png>] [47]
-
-LaTeX Warning: Reference `img:cubenoprobs' on page 48 undefined on input line 8
-53.
-
-<img/cubewithoutprobs.png, id=256, 658.46pt x 598.235pt>
-File: img/cubewithoutprobs.png Graphic file (type png)
-
-<use img/cubewithoutprobs.png>
-Package pdftex.def Info: img/cubewithoutprobs.png used on input line 857.
-(pdftex.def)             Requested size: 213.39566pt x 193.87637pt.
-
-
-LaTeX Warning: Reference `img:hypercubenoprobs' on page 48 undefined on input l
-ine 861.
-
-<img/hypercubewithoutprobs.png, id=257, 648.4225pt x 557.08125pt>
-File: img/hypercubewithoutprobs.png Graphic file (type png)
-
-<use img/hypercubewithoutprobs.png>
-Package pdftex.def Info: img/hypercubewithoutprobs.png used on input line 865.
-(pdftex.def)             Requested size: 213.39566pt x 183.33586pt.
-) (./chapters/outlook.tex [48] [49 <./img/cubewithoutprobs.png> <./img/hypercub
-ewithoutprobs.png>]
+[44 <./img/toffolidecomposition.png>] [45]) (./chapters/outlook.tex [46]
 Chapter 6.
-) (./chapters/conclusion.tex [50
+) (./chapters/conclusion.tex [47
 
 ]
 Chapter 7.
-) (./chapters/personalreflection.tex [51
+) (./chapters/personalreflection.tex [48
 
 ]
 Chapter 8.
-) (./thesis.bbl [52
+) (./thesis.bbl [49
 
 ]
 Underfull \hbox (badness 3058) in paragraph at lines 65--78
@@ -2183,20 +2094,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--78
  []
 
 
-Underfull \hbox (badness 6063) in paragraph at lines 378--391
+Underfull \hbox (badness 6063) in paragraph at lines 430--443
 []\T1/cmr/m/n/10 Microsoft Re-search.  (2016).  \T1/cmr/m/it/10 Language-Integr
 ated Quan-tum Op-er-a-tions: LIQUi|>.
  []
 
 
-Underfull \hbox (badness 7704) in paragraph at lines 378--391
+Underfull \hbox (badness 7704) in paragraph at lines 430--443
 \T1/cmr/m/n/10 Re-trieved 2016-12-29, from $\T1/cmtt/m/n/10 https :// www [] .m
 icrosoft [] .com / en [] -us / research / project /
  []
 
-[53
+[50
 
-]) [54] (./thesis.aux)
+]) [51] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -2205,10 +2116,10 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 41448 strings out of 493029
- 950774 string characters out of 6136235
- 1067506 words of memory out of 5000000
- 44232 multiletter control sequences out of 15000+600000
+ 41471 strings out of 493029
+ 951107 string characters out of 6136235
+ 1072465 words of memory out of 5000000
+ 44257 multiletter control sequences out of 15000+600000
  30542 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,22n,103p,10379b,2272s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2235,10 +2146,10 @@ super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb><
 /usr/share/texmf/fonts/type1/public/cm-super/sfti0600.pfb></usr/share/texmf/fon
 ts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sftt0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on thesis.pdf (64 pages, 2713304 bytes).
+Output written on thesis.pdf (61 pages, 2643719 bytes).
 PDF statistics:
- 367 PDF objects out of 1000 (max. 8388607)
- 229 compressed objects within 3 object streams
+ 356 PDF objects out of 1000 (max. 8388607)
+ 223 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 186 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 176 words of extra memory for PDF output out of 10000 (max. 10000000)
 

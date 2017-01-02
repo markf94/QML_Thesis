@@ -1,8 +1,6 @@
 \chapter{Theoretical Foundations}\label{sec:theory}
-
 \section{Quantum bits}
 \label{subsec:qubits}
-
 \subsection{Single qubit systems}
 \label{subsubsec:qubits}
 %Classical computers manipulate bits and the quantum equivalent is called a quantum bit, often abbreviated as qubit.
@@ -12,12 +10,12 @@ A good example for a physical implementation of a qubit is the single electron o
 
 \begin{figure}[!ht]
        \centering
-       \includegraphics[width=0.9\textwidth]{img/qubitimplementation.jpeg}
+       \includegraphics[scale=0.35]{img/qubitimplementation.jpeg}
        \caption[]{\label{img:qubitatom} A simple example of a physical qubit using the electron of a hydrogen atom\textsuperscript{1}}
 \end{figure}
 
 \footnotetext[1]{Reprinted from RF Wireless World, n.d., Retrieved December 23, 2016, from \url{http://www.rfwireless-world.com/Terminology/Difference-between-Bit-and-Qubit.html}. Copyright 2012 by RF Wireless World. Reprinted with permission.}
-
+\pagebreak
 A classical non-probabilistic bit can only be in one of the two possible states at once. In contrast, qubits obey the laws of quantum mechanics, which gives rise to the powerful property that - besides being a definite 0 or 1 - they can also be in a superposition of the two states. Mathematically this is expressed as a linear combination of the states 0 and 1:
 
 \begin{equation}
@@ -65,6 +63,8 @@ The fact that the probability of measuring a particular state is equal the absol
 \label{equ: normalization}
 {|\alpha|}^{2} + {|\beta|}^{2} =  1
 \end{equation}
+
+\newpage
 Therefore, a qubit is inherently probabilistic but when measured it collapses into a single classical bit (0 or 1). It follows that a measurement destroys information about the superposition of the qubit (the values of $\alpha$ and $\beta$). This constitutes one of the main difficulties when designing quantum algorithms since only limited information can be obtained about the final states of the qubits in the quantum computer.
 
 Using spherical polar coordinates, a single qubit can be visualized on the so-called Bloch sphere by parameterising $\alpha$ and $\beta$ in Equ.~\ref{equ: simplequbit} as follows:
@@ -216,7 +216,7 @@ In contrast, consider the following state:
 \end{equation}
 
 It is straightforward to see that there is no way to factorize the state $\ket{\phi}$ into a tensor product of two states.
-Now imagine, two people Andy and Beatrice are given two electrons prepared in the quantum state $\ket{\phi}$. Andy keeps the first electron in the lab and Beatrice takes the second electron to her house. Andy gets interested in measuring if his electron is in the $\ket{0}$ or $\ket{1}$ state and performs a measurement. He finds the electron to be in the $\ket{1}$ state. From Equ.~\ref{equ:2qubitnonfactorized} and knowing that measurement collapses a superposition the post-measurement (PM) state $\ket{\phi}_{PM}$ is given by:
+Now imagine, two people Andy and Beatrice are given two electrons prepared in the quantum state $\ket{\phi}$. Andy keeps the first electron in the lab and Beatrice takes the second electron to her house. Andy gets interested in measuring if his electron is in the $\ket{0}$ or $\ket{1}$ state and performs a measurement. He finds the electron to be in the $\ket{1}$ state. From Equ.~\ref{equ:2qubitnonfactorized} and knowing that measurement collapses a superposition the post-measurement (PM) state $\ket{\phi}_{PM}$ is given by Equ.~\ref{equ:2qubitcollapsed}.
 
 \begin{equation}
 \label{equ:2qubitcollapsed}
@@ -284,7 +284,7 @@ X \otimes \ket{0} = \begin{pmatrix}
 In terms of the example with the electron of a hydrogen atom shown in Fig.~\ref{img:qubitatom} an X gate can be implemented by exciting the electron from the ground state ($\ket{0}$) into the next highest electron valence shell ($\ket{1}$) using a controlled laser pulse.
 
 %consider the qubit initially being in state \0. Applying an X gate will flip the qubit into the \1 state which can be implemented in the lab by exciting the electron into the next highest electron valence shell using a controlled laser pulse.
-
+\pagebreak
 The \0 state is recovered when applying X again to the \1 state,
 
 \begin{equation}
@@ -304,7 +304,7 @@ On the Bloch sphere, the X gate corresponds to an anti-clockwise $\pi$ rotation 
 
 \begin{figure}[ht]
    \centering
-   \includegraphics[width=0.5\textwidth]{img/blochxgate.png}
+   \includegraphics[width=0.6\textwidth]{img/blochxgate.png}
    \caption{Visualization of the X gate on the Bloch sphere. Initial state (black) transformed to final state (red).}
    \label{img:blochxgate}
 \end{figure}
@@ -466,12 +466,12 @@ nCNOT & n-controlled NOT & -  & $\begin{pmatrix}
 \section{Classical machine learning}
 \label{subsec:classicalmachinelearning}
 
-Machine learning can be subdivided into three major fields.
+Machine learning (ML), a subfield of artificial intelligence, is aiming to enable computers to learn from data without a human explicitly programming its actions. It can be subdivided into the three major fields supervised \& unsupervised machine learning and reinforcement learning. The three fields can be most easily understood by considering the following three colloquial sentences:
 
 \begin{redbox}
 Supervised ML\\
 - Based on \emph{input} and \emph{output} data\\
-"I know how to classify this data but I need the algorithm to do the computations for me."
+"I know how to classify this data but I need an algorithm to do the computations for me."
 \end{redbox}
 \begin{greenbox}
 Unsupervised ML\\
@@ -484,9 +484,9 @@ Reinforcement learning\\
 "I have no clue how to classify this data, can the algorithm classify this data and I'll give it a reward if it's correct or I'll punish it if it's not."
 \end{bluebox}
 
-This thesis is focussing on quantum-enhancements in the field of supervised machine learning only.
+This thesis, specifically, is focusing on quantum-enhancements in the field of supervised machine learning only. The following section will introduce a well-known algorithm from the subfield of supervised ML: the $k$-nearest neighbour algorithm.
 
-\subsection{$k$-nearest neighbour algorithm}
+\subsection{Classical $k$-nearest neighbour algorithm}
 \label{subsubsec:knearestneighbour}
 
 Understanding the quantum version of the distance weighted $k$-nearest neighbour (kNN) algorithm as proposed by \citeA{Schuld2014} requires prior knowledge of the classical version of the algorithm that will be introduced in this subsection.
@@ -515,7 +515,7 @@ Given a new picture of either a banana or an apple, you first extract the same $
 
 \begin{figure}[H]
       \centering
-       \includegraphics[scale=0.55]{img/knn-concept.png}
+       \includegraphics[scale=0.8]{img/knn-concept.png}
        \caption[]{\label{fig:knnconcept} Visualization of a kNN classifier\footnotemark[4]}
 \end{figure}
 
@@ -539,10 +539,11 @@ For any monotonic functions $t(n)$ and $g(n)$ defined on a subset of the real nu
 \begin{equation}
 \mid f(n) \mid \quad \leq \quad c\text{ }*\mid g(n) \mid \quad \text{for all } n \geq n_0
 \end{equation}
-
+\end{redbox}
+\begin{redbox}
 \begin{figure}[H]
       \centering
-       \includegraphics[scale=0.25]{img/asymptoticupperbound.png}
+       \includegraphics[scale=0.3]{img/asymptoticupperbound.png}
        \caption[]{\label{fig:upperasym} Visualization of $c\text{ }*g(n)$ being an upper asymptotic bound of $t(n)$\footnotemark[5]}
 \end{figure}
 
@@ -555,8 +556,7 @@ Fig.~\ref{fig:algcomplexities} provides a good visual comparison between common 
 
 \begin{figure}[H]
       \centering
-       \includegraphics[scale=0.25]{img/bigocomplexity.png}
+       \includegraphics[scale=0.35]{img/bigocomplexity.png}
        \caption[]{\label{fig:algcomplexities} Overview of algorithmic complexity classes\footnotemark[6]}
 \end{figure}
-
 \footnotetext[6]{Reprinted from Big-O Cheatsheet, Retrieved December 28, 2016, from \url{http://bigocheatsheet.com/}. Copyright 2016 by Big-O Cheatsheet. Reprinted with permission.}

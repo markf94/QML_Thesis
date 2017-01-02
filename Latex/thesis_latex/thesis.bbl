@@ -263,6 +263,29 @@ Grover, L\BPBI K.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Hamming%
+}{%
+Hamming%
+}{%
+{\protect \APACyear {1950}}%
+}]{%
+hamming1950error}
+\APACinsertmetastar {%
+hamming1950error}%
+\begin{APACrefauthors}%
+Hamming, R\BPBI W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1950}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Error detecting and error correcting codes} {Error
+  detecting and error correcting codes}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Bell System technical journal}{29}{2}{147--160}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 IBM%
 }{%
 IBM%
@@ -330,6 +353,35 @@ Kitaev, A\BPBI Y.%
   {Quantum measurements and the abelian stabilizer problem}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{arXiv preprint quant-ph/9511026}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Las~Heras%
+, Alvarez-Rodriguez%
+, Solano%
+\BCBL {}\ \BBA {} Sanz%
+}{%
+Las~Heras%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2016}}%
+}]{%
+las2016genetic}
+\APACinsertmetastar {%
+las2016genetic}%
+\begin{APACrefauthors}%
+Las~Heras, U.%
+, Alvarez-Rodriguez, U.%
+, Solano, E.%
+\BCBL {}\ \BBA {} Sanz, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Genetic Algorithms for Digital Quantum Simulations}
+  {Genetic algorithms for digital quantum simulations}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Physical Review Letters}{116}{23}{230504}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
