@@ -1,0 +1,209 @@
+%
+% File:   fullQKNN.qasm
+% Date:   22-Mar-04
+% Author: Mark Fingerhuth
+% 
+% Quantum circuit for qubit-based kNN algorithm
+% 
+% 	def	C,0,'C(16 gates)'
+% 	def	B,0,'B(25 gates)'
+% 	def Td,0,'T^\dagger'
+% 
+% 	qubit	a
+% 	qubit	d
+% 	qubit	c
+% 	qubit	m
+% 
+% 	H a
+% 	H m
+% 	C d
+% 	cnot a,d
+% 	B d
+% 	cnot a,d
+% 	Z a
+% 	X a
+% 
+% 	H d
+% 
+% 	cnot a,d
+% 
+% 	Td d
+% 
+% 	cnot m,d
+% 
+% 	T d
+% 
+% 	cnot a,d
+% 
+% 	Td d
+% 	
+% 	cnot m,d
+% 
+% 	nop d
+% 
+% 	T a
+% 
+% 	cnot m,a
+% 
+% 	Td a
+% 
+% 	T m
+% 
+% 	T d
+% 
+% 	H d
+% 
+% 	nop a
+% 	nop d
+% 	
+% 	cnot m,a
+% 
+% 	nop m 
+% 	nop a
+% 	
+% 	cnot d,c
+% 
+% 	nop c
+% 
+% 	H a
+% 	measure a
+% 	measure c
+
+%  Time 01:
+%    Gate 00 H(a)
+%    Gate 01 H(m)
+%    Gate 02 C(d)
+%  Time 02:
+%    Gate 03 cnot(a,d)
+%  Time 03:
+%    Gate 04 B(d)
+%  Time 04:
+%    Gate 05 cnot(a,d)
+%  Time 05:
+%    Gate 06 Z(a)
+%    Gate 08 H(d)
+%  Time 06:
+%    Gate 07 X(a)
+%  Time 07:
+%    Gate 09 cnot(a,d)
+%  Time 08:
+%    Gate 10 Td(d)
+%  Time 09:
+%    Gate 11 cnot(m,d)
+%  Time 10:
+%    Gate 12 T(d)
+%  Time 11:
+%    Gate 13 cnot(a,d)
+%  Time 12:
+%    Gate 14 Td(d)
+%    Gate 17 T(a)
+%  Time 13:
+%    Gate 15 cnot(m,d)
+%  Time 14:
+%    Gate 16 nop(d)
+%    Gate 18 cnot(m,a)
+%  Time 15:
+%    Gate 19 Td(a)
+%    Gate 20 T(m)
+%    Gate 21 T(d)
+%  Time 16:
+%    Gate 22 H(d)
+%    Gate 23 nop(a)
+%  Time 17:
+%    Gate 24 nop(d)
+%    Gate 25 cnot(m,a)
+%  Time 18:
+%    Gate 26 nop(m)
+%    Gate 27 nop(a)
+%    Gate 28 cnot(d,c)
+%  Time 19:
+%    Gate 29 nop(c)
+%    Gate 30 H(a)
+%  Time 20:
+%    Gate 31 measure(a)
+%    Gate 32 measure(c)
+
+% Qubit circuit matrix:
+%
+% a: gAxA, gBxA, n  , gDxA, gExA, gFxA, gGxA, n  , n  , n  , gKxA, gLxA, n  , gNxA, gOxA, gPxA, gQxA, gRxA, gSxA, gTxA, N  
+% d: gAxB, gBxB, gCxB, gDxB, gExB, n  , gGxB, gHxB, gIxB, gJxB, gKxB, gLxB, gMxB, gNxB, gOxB, gPxB, gQxB, gRxB, n  , n  , n  
+% c: n  , n  , n  , n  , n  , n  , n  , n  , n  , n  , n  , n  , n  , n  , n  , n  , n  , gRxC, gSxC, gTxC, N  
+% m: gAxD, n  , n  , n  , n  , n  , n  , n  , gIxD, n  , n  , n  , gMxD, gNxD, gOxD, n  , gQxD, gRxD, n  , n  , n  
+
+\documentclass[11pt]{article}
+\input{xyqcirc.tex}
+
+% definitions for the circuit elements
+
+\def\gAxA{\op{H}\w\A{gAxA}}
+\def\gAxD{\op{H}\w\A{gAxD}}
+\def\gAxB{\op{C(16 gates)}\w\A{gAxB}}
+\def\gBxA{\b\w\A{gBxA}}
+\def\gBxB{\o\w\A{gBxB}}
+\def\gCxB{\op{B(25 gates)}\w\A{gCxB}}
+\def\gDxA{\b\w\A{gDxA}}
+\def\gDxB{\o\w\A{gDxB}}
+\def\gExA{\op{Z}\w\A{gExA}}
+\def\gFxA{\op{X}\w\A{gFxA}}
+\def\gExB{\op{H}\w\A{gExB}}
+\def\gGxA{\b\w\A{gGxA}}
+\def\gGxB{\o\w\A{gGxB}}
+\def\gHxB{\op{T^\dagger}\w\A{gHxB}}
+\def\gIxD{\b\w\A{gIxD}}
+\def\gIxB{\o\w\A{gIxB}}
+\def\gJxB{\op{T}\w\A{gJxB}}
+\def\gKxA{\b\w\A{gKxA}}
+\def\gKxB{\o\w\A{gKxB}}
+\def\gLxB{\op{T^\dagger}\w\A{gLxB}}
+\def\gMxD{\b\w\A{gMxD}}
+\def\gMxB{\o\w\A{gMxB}}
+\def\gNxB{*-{}\w\A{gNxB}}
+\def\gLxA{\op{T}\w\A{gLxA}}
+\def\gNxD{\b\w\A{gNxD}}
+\def\gNxA{\o\w\A{gNxA}}
+\def\gOxA{\op{T^\dagger}\w\A{gOxA}}
+\def\gOxD{\op{T}\w\A{gOxD}}
+\def\gOxB{\op{T}\w\A{gOxB}}
+\def\gPxB{\op{H}\w\A{gPxB}}
+\def\gPxA{*-{}\w\A{gPxA}}
+\def\gQxB{*-{}\w\A{gQxB}}
+\def\gQxD{\b\w\A{gQxD}}
+\def\gQxA{\o\w\A{gQxA}}
+\def\gRxD{*-{}\w\A{gRxD}}
+\def\gRxA{*-{}\w\A{gRxA}}
+\def\gRxB{\b\w\A{gRxB}}
+\def\gRxC{\o\w\A{gRxC}}
+\def\gSxC{*-{}\w\A{gSxC}}
+\def\gSxA{\op{H}\w\A{gSxA}}
+\def\gTxA{\meter\w\A{gTxA}}
+\def\gTxC{\meter\w\A{gTxC}}
+
+% definitions for bit labels and initial states
+
+\def\bA{ \q{a}}
+\def\bB{ \q{d}}
+\def\bC{ \q{c}}
+\def\bD{ \q{m}}
+
+% The quantum circuit as an xymatrix
+
+\xymatrix@R=5pt@C=10pt{
+    \bA & \gAxA &\gBxA &\n   &\gDxA &\gExA &\gFxA &\gGxA &\n   &\n   &\n   &\gKxA &\gLxA &\n   &\gNxA &\gOxA &\gPxA &\gQxA &\gRxA &\gSxA &\gTxA &\N  
+\\  \bB & \gAxB &\gBxB &\gCxB &\gDxB &\gExB &\n   &\gGxB &\gHxB &\gIxB &\gJxB &\gKxB &\gLxB &\gMxB &\gNxB &\gOxB &\gPxB &\gQxB &\gRxB &\n   &\n   &\n  
+\\  \bC & \n   &\n   &\n   &\n   &\n   &\n   &\n   &\n   &\n   &\n   &\n   &\n   &\n   &\n   &\n   &\n   &\n   &\gRxC &\gSxC &\gTxC &\N  
+\\  \bD & \gAxD &\n   &\n   &\n   &\n   &\n   &\n   &\n   &\gIxD &\n   &\n   &\n   &\gMxD &\gNxD &\gOxD &\n   &\gQxD &\gRxD &\n   &\n   &\n  
+%
+% Vertical lines and other post-xymatrix latex
+%
+\ar@{-}"gBxB";"gBxA"
+\ar@{-}"gDxB";"gDxA"
+\ar@{-}"gGxB";"gGxA"
+\ar@{-}"gIxB";"gIxD"
+\ar@{-}"gKxB";"gKxA"
+\ar@{-}"gMxB";"gMxD"
+\ar@{-}"gNxA";"gNxD"
+\ar@{-}"gQxA";"gQxD"
+\ar@{-}"gRxC";"gRxB"
+}
+
+\end{document}

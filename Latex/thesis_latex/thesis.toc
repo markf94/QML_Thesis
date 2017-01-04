@@ -1,5 +1,5 @@
-\contentsline {chapter}{Abstract}{v}
-\contentsline {chapter}{Nomenclature}{vii}
+\contentsline {chapter}{Abstract}{vii}
+\contentsline {chapter}{Nomenclature}{ix}
 \contentsline {chapter}{\numberline {1}Introduction}{1}
 \contentsline {section}{\numberline {1.1}Motivation}{2}
 \contentsline {section}{\numberline {1.2}Research question}{2}
@@ -28,13 +28,13 @@
 \contentsline {section}{\numberline {5.1}Simulating the qubit-based kNN algorithm}{26}
 \contentsline {subsubsection}{Quantum simulation results}{30}
 \contentsline {section}{\numberline {5.2}Development of an amplitude-based kNN algorithm}{33}
-\contentsline {subsection}{\numberline {5.2.1}Attempt to implement the amplitude-based kNN algorithm}{35}
+\contentsline {subsection}{\numberline {5.2.1}Compiling the amplitude-based kNN algorithm}{35}
 \contentsline {subsubsection}{Initial state preparation}{36}
 \contentsline {subsubsection}{Decomposition of a controlled-U gate}{38}
 \contentsline {subsubsection}{The Solovay-Kitaev theorem}{40}
 \contentsline {subsubsection}{Toffoli Gate Decomposition}{44}
-\contentsline {subsection}{\numberline {5.2.2}Simulating the amplitude-based kNN algorithm}{46}
-\contentsline {chapter}{\numberline {6}Outlook}{47}
-\contentsline {chapter}{\numberline {7}Conclusion}{48}
-\contentsline {chapter}{\numberline {8}Personal Reflection}{49}
-\contentsline {chapter}{References}{50}
+\contentsline {subsection}{\numberline {5.2.2}Simulating the amplitude-based kNN algorithm}{45}
+\contentsline {chapter}{\numberline {6}Outlook}{46}
+\contentsline {chapter}{\numberline {7}Conclusion}{47}
+\contentsline {chapter}{\numberline {8}Personal Reflection}{48}
+\contentsline {chapter}{References}{49}

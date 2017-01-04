@@ -248,9 +248,11 @@ Consisting of majority red with slight green and blue content, the third red col
 
 The fourth colour from the top in Table~\ref{tab:colourresults2} with a slight green and equal red and blue content was deliberately chosen as an edge case. The classifier assigned it to class blue but the class probabilities obtained from the simulation are equal for the \0 and \1 state. Interestingly, the theoretical probabilities slightly favour class red. This can be traced back to the fact that the quantum kNN is based on distance-weighting. This can be seen when analysing training data set II; all but one red training colour have a 1 at the second bit position whereas all but two blue training colours have a 1 at the second to last bit position. Since the fourth input colour has a 1 at the second as well as at the second to last bit position the HDs to the red training colours are slightly smaller than to the blue training colours. Since the HDs are reversed the red class is slightly favoured due to the distance-dependent weights. Thus, this edge case exposes a slight bias within the training data set II.
 
-In the case of the blue input colours, the first three were all classified correctly with the class qubit probabilities clearly favouring the measurement outcome \1. Note that the third blue tone was classified correctly despite some red and green content. The last (fourth) blue tone is another edge case with only slightly larger blue than red content. It was incorrectly classified since the probabilities retrieved from the simulation do not resemble the theoretical predicted values. By increasing the number of runs, the simulation results will eventually converge to the theoretical predictions and the classification outcome will change to blue.
+In the case of the blue input colours, the first three were all classified correctly with the class qubit probabilities clearly favouring the measurement outcome \1. Note that the third blue tone was classified correctly despite some red and green content.  The last (fourth) blue tone is another edge case with only slightly larger blue than red content. Yet, it was also correctly classified since the probability of measuring class blue is slightly higher. 
+%since the probabilities retrieved from the simulation do not resemble the theoretical predicted values. By increasing the number of runs, the simulation results will eventually converge to the theoretical predictions and the classification outcome will change to blue.
 
-In conclusion, the quantum simulations of the qubit-based kNN algorithm resulted in three out of four correct classification using training data set I and six out of eight correct classifications using training data set II. Hence, with any of the two training data sets the simulated quantum classifier achieved an accuracy of 75\%.
+In conclusion, the quantum simulations of the qubit-based kNN algorithm resulted in three out of four correct classification using training data set I and, ignoring the edge case with equal red and blue content, seven out of seven correct classifications using training data set II. Hence, with training data set I the simulated quantum classifier achieved an accuracy of 75\%. The accuracy increased to 100\% with the use of training data set II. These results clearly show that the qubit kNN routine, based on distance-weighting with reverse HD, is a very effective classification algorithm with respect to 9-bit RGB colours.
+%two training data sets the simulated quantum classifier achieved an accuracy of 75\%.
 
 \begin{table}
 \begin{tabular}{| C{1.4cm} | C{2.1cm} |C{1.7cm} | C{1.7cm} | C{1.7cm} |C{1.7cm}| C{1.7cm}|}
@@ -271,7 +273,7 @@ In conclusion, the quantum simulations of the qubit-based kNN algorithm resulted
        
        \cellcolor{inputmixblue3} &  100 100 111 &  \begin{tabular}{c} 0.6236* \\\midrule 0.6100 \end{tabular} & \begin{tabular}{c} 0.3330* \\\midrule 0.3279 \end{tabular} & \begin{tabular}{c} 0.6670* \\\midrule 0.6721 \end{tabular} & blue ($\ket{1}$) & blue ($\ket{1}$)\\\midrule
        
-       \cellcolor{inputmixblue4} & 110 100 101 &  \begin{tabular}{c} 0.6807* \\\midrule 0.7000 \end{tabular} & \begin{tabular}{c} 0.4970* \\\midrule 0.5857 \end{tabular} & \begin{tabular}{c} 0.5030* \\\midrule 0.4143 \end{tabular}  & blue ($\ket{1}$)& red ($\ket{0}$)\\\midrule
+       \cellcolor{inputmixblue4} & 110 100 101 &  \begin{tabular}{c} 0.6807* \\\midrule 0.7500 \end{tabular} & \begin{tabular}{c} 0.4970* \\\midrule 0.4933 \end{tabular} & \begin{tabular}{c} 0.5030* \\\midrule 0.5067 \end{tabular}  & blue ($\ket{1}$)& blue ($\ket{1}$)\\\midrule
  \bottomrule
     \end{tabular}
     \caption{\label{tab:colourresults2} Classification results for input data set II after 100 runs. Trained with training data set II. Theoretical predictions (marked with asterisks) on top, simulation results at the bottom.}
@@ -357,8 +359,9 @@ The quantum advantage of the algorithm is the parallel computation of the square
 Independent of number and size of the input and training vectors, the algorithm only requires the application of a single H gate. However, the routine has to be repeated for $y$ runs of which only $Prob(CM)*y$ runs result in a measurement of the class qubit. Thus, the time complexity of this algorithm is $\mathcal{O}(\frac{1}{Prob(CM)})$ where $Prob(CM)$ is the probability of a successful CM (measuring ancilla in the $\ket{0}$ state). Therefore, the algorithm is said to run in constant time. This means it is independent of the number of training vectors and their size. For example, executing this quantum routine with 10 or 100,000,000 training vectors each with 1,000,000 entries does not make a difference in the run time.
 \end{greenbox}
 
-\subsection{Attempt to implement the amplitude-based kNN algorithm}
+\subsection{Compiling the amplitude-based kNN algorithm}
 \label{subsubsec:implementationamplitudeKNN}
+%Attempt to implement the amplitude-based kNN algorithm}
 
 The akNN algorithm was developed with an actual implementation, using the IBM QC, in mind. Since the IBM Quantum Experience only provides five qubits and a relatively small gate set, a very simple low-dimensional classification problem should be selected. 
 
@@ -771,6 +774,12 @@ The Toffoli or CCNOT gate can be decomposed into CNOT and single-qubit gates in 
 
 The Toffoli decomposition finalizes the compiling of the quantum state preparation into gates from IBM's gate set only. In summary, the compiled state preparation requires: 2 H gates applied to ancilla and the $m$ qubit, the decomposed $CR_y(\frac{\pi}{4})$ gate (2 CNOTs, 1 Z gate, 1 $\mathbb{1}$ gate (can be neglected) \& a sequence of minimum 25 gates for $B$ and minimum 16 gates for $C$), 1 X gate to flip the ancilla (Equ.~\ref{equ:chi3prepared}), 1 decomposed Toffoli (6 CNOTs, 2 H gates, 3 T \& 3 T$^\dagger$ gates) to load the second training vector and 1 CNOT to flip the class qubit. Thus, the quantum state preparation was compiled into 9 CNOT and 53 single-qubit gates. The akNN algorithm only requires one additional H gate and two measurement gates (for ancilla and class qubit) leading to a total of 9 CNOT, 54 single-qubit gates and 2 measurement gates. Even cleverly arranging these gates does not suffice to implement the algorithm within IBM's 40 gate slots. The full circuit diagram for the compiled state preparation and the akNN algorithm can be seen in Fig.~\ref{}.
 
+\begin{figure}[!ht]
+       \centering
+       \includegraphics[width=\textwidth]{img/fullQKNN.png}
+       \caption[]{\label{img:toffolidecomp} Compiled quantum circuit for implementing the akNN algorithm with the binary Bloch vector classification problem}
+\end{figure}
+
 %state preparation
 %H Gate m qubit
 %H Gate ancilla
@@ -808,8 +817,6 @@ dependening on the number of gates $m$ that need $\epsilon$-approximations by me
 \end{greenbox}
 
 %All in all, it was shown that for this particular classification problem the constant complexity of the aKNN algorithm is dominated by the complexity of the quantum compiling. 
-
-\newpage
 
 \subsection{Simulating the amplitude-based kNN algorithm}
 \label{subsubsec:simulationamplitudeKNN}

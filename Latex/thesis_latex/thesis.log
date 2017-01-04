@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  2 JAN 2017 05:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  4 JAN 2017 21:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1340,7 +1340,11 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)) (./thesis.aux)
+)) (./thesis.aux
+
+LaTeX Warning: Label `img:toffolidecomp' multiply defined.
+
+)
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 105.
@@ -1358,8 +1362,7 @@ LaTeX Font Info:    ... okay on input line 105.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 105.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 105.
 
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 105.
@@ -1550,15 +1553,15 @@ img/UM_logo-eps-converted-to.pdf> <./img/logo.jpeg>] [2
 
 ] [2
 
+] [3
+
+] [4
+
 ] (./thesis.toc)
 \tf@toc=\write8
 \openout8 = `thesis.toc'.
 
- [3
-
-] [4
-
-] [5
+ [5
 
 ] [6
 
@@ -1566,14 +1569,18 @@ img/UM_logo-eps-converted-to.pdf> <./img/logo.jpeg>] [2
 
 ] [8
 
-])
-(./chapters/introduction.tex
+]
+[9
+
+] [10
+
+]) (./chapters/introduction.tex
 Chapter 1.
 [1
 
 ]) (./chapters/theoreticalfoundations.tex [2]
 Chapter 2.
-<img/qubitimplementation.jpeg, id=60, 1055.945pt x 395.4775pt>
+<img/qubitimplementation.jpeg, id=68, 1055.945pt x 395.4775pt>
 File: img/qubitimplementation.jpeg Graphic file (type jpg)
 
 <use img/qubitimplementation.jpeg>
@@ -1585,7 +1592,7 @@ Underfull \vbox (badness 4303) has occurred while \output is active []
  [3
 
  <./img/qubitimplementation.jpeg>] [4]
-<img/blochsphere.png, id=77, 2007.5pt x 2278.5125pt>
+<img/blochsphere.png, id=83, 2007.5pt x 2278.5125pt>
 File: img/blochsphere.png Graphic file (type png)
  <use img/blochsphere.png>
 Package pdftex.def Info: img/blochsphere.png used on input line 83.
@@ -1596,7 +1603,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 112--115
 
  []
 
-[6] [7] [8] <img/blochxgate.png, id=92, 439.6425pt x 380.42125pt>
+[6] [7] [8] <img/blochxgate.png, id=99, 439.6425pt x 380.42125pt>
 File: img/blochxgate.png Graphic file (type png)
 
 <use img/blochxgate.png>
@@ -1607,14 +1614,14 @@ Overfull \hbox (12.63948pt too wide) in paragraph at lines 324--324
  \T1/cmr/m/n/10 Gate| 
  []
 
-<img/identitycircuit.png, id=93, 900.36375pt x 410.53375pt>
+<img/identitycircuit.png, id=100, 900.36375pt x 410.53375pt>
 File: img/identitycircuit.png Graphic file (type png)
 
 <use img/identitycircuit.png>
 Package pdftex.def Info: img/identitycircuit.png used on input line 325.
 (pdftex.def)             Requested size: 42.68173pt x 19.4567pt.
 
-<img/xcircuit.png, id=94, 911.405pt x 418.56375pt>
+<img/xcircuit.png, id=101, 911.405pt x 418.56375pt>
 File: img/xcircuit.png Graphic file (type png)
  <use img/xcircuit.png>
 Package pdftex.def Info: img/xcircuit.png used on input line 329.
@@ -1624,31 +1631,31 @@ File: img/blochxgate.png Graphic file (type png)
 <use img/blochxgate.png>
 Package pdftex.def Info: img/blochxgate.png used on input line 332.
 (pdftex.def)             Requested size: 85.35696pt x 73.85387pt.
- <img/ycircuit.png, id=95, 870.25125pt x 413.545pt>
+ <img/ycircuit.png, id=102, 870.25125pt x 413.545pt>
 File: img/ycircuit.png Graphic file (type png)
 
 <use img/ycircuit.png>
 Package pdftex.def Info: img/ycircuit.png used on input line 333.
 (pdftex.def)             Requested size: 42.68173pt x 20.28091pt.
- <img/blochygate.png, id=96, 434.62375pt x 370.38374pt>
+ <img/blochygate.png, id=103, 434.62375pt x 370.38374pt>
 File: img/blochygate.png Graphic file (type png)
 
 <use img/blochygate.png>
 Package pdftex.def Info: img/blochygate.png used on input line 336.
 (pdftex.def)             Requested size: 85.35696pt x 72.736pt.
- <img/zcircuit.png, id=97, 852.18375pt x 415.5525pt>
+ <img/zcircuit.png, id=104, 852.18375pt x 415.5525pt>
 File: img/zcircuit.png Graphic file (type png)
 
 <use img/zcircuit.png>
 Package pdftex.def Info: img/zcircuit.png used on input line 337.
 (pdftex.def)             Requested size: 42.68173pt x 20.81053pt.
- <img/blochzgate.png, id=98, 436.63126pt x 373.395pt>
+ <img/blochzgate.png, id=105, 436.63126pt x 373.395pt>
 File: img/blochzgate.png Graphic file (type png)
 
 <use img/blochzgate.png>
 Package pdftex.def Info: img/blochzgate.png used on input line 340.
 (pdftex.def)             Requested size: 85.35696pt x 72.9912pt.
- <img/hcircuit.png, id=99, 897.3525pt x 413.545pt>
+ <img/hcircuit.png, id=106, 897.3525pt x 413.545pt>
 File: img/hcircuit.png Graphic file (type png)
 
 <use img/hcircuit.png>
@@ -1659,20 +1666,20 @@ Overfull \hbox (16.84325pt too wide) in paragraph at lines 341--344
  []$| 
  []
 
-<img/blochhadamard.png, id=100, 438.63875pt x 380.42125pt>
+<img/blochhadamard.png, id=107, 438.63875pt x 380.42125pt>
 File: img/blochhadamard.png Graphic file (type png)
 
 <use img/blochhadamard.png>
 Package pdftex.def Info: img/blochhadamard.png used on input line 344.
 (pdftex.def)             Requested size: 85.35696pt x 74.02802pt.
 
-<img/scircuit.png, id=101, 781.92125pt x 394.47375pt>
+<img/scircuit.png, id=108, 781.92125pt x 394.47375pt>
 File: img/scircuit.png Graphic file (type png)
  <use img/scircuit.png>
 Package pdftex.def Info: img/scircuit.png used on input line 345.
 (pdftex.def)             Requested size: 42.68173pt x 21.5306pt.
 
-<img/blochsgate.png, id=102, 435.6275pt x 376.40625pt>
+<img/blochsgate.png, id=109, 435.6275pt x 376.40625pt>
 File: img/blochsgate.png Graphic file (type png)
 
 <use img/blochsgate.png>
@@ -1683,13 +1690,13 @@ Overfull \hbox (1.18497pt too wide) in paragraph at lines 349--349
  \T1/cmr/m/n/10 S$[]$| 
  []
 
-<img/sdcircuit.png, id=103, 896.34875pt x 416.55624pt>
+<img/sdcircuit.png, id=110, 896.34875pt x 416.55624pt>
 File: img/sdcircuit.png Graphic file (type png)
  <use img/sdcircuit.png>
 Package pdftex.def Info: img/sdcircuit.png used on input line 349.
 (pdftex.def)             Requested size: 42.68173pt x 19.83112pt.
 
-<img/tcircuit.png, id=104, 844.15375pt x 414.54875pt>
+<img/tcircuit.png, id=111, 844.15375pt x 414.54875pt>
 File: img/tcircuit.png Graphic file (type png)
  <use img/tcircuit.png>
 Package pdftex.def Info: img/tcircuit.png used on input line 353.
@@ -1699,7 +1706,7 @@ Overfull \hbox (1.6024pt too wide) in paragraph at lines 353--356
  []$| 
  []
 
-<img/blochtgate.png, id=105, 429.605pt x 378.41376pt>
+<img/blochtgate.png, id=112, 429.605pt x 378.41376pt>
 File: img/blochtgate.png Graphic file (type png)
  <use img/blochtgate.png>
 Package pdftex.def Info: img/blochtgate.png used on input line 356.
@@ -1709,7 +1716,7 @@ Overfull \hbox (2.85123pt too wide) in paragraph at lines 357--357
  \T1/cmr/m/n/10 T$[]$| 
  []
 
-<img/tdcircuit.png, id=106, 920.43875pt x 421.575pt>
+<img/tdcircuit.png, id=113, 920.43875pt x 421.575pt>
 File: img/tdcircuit.png Graphic file (type png)
  <use img/tdcircuit.png>
 Package pdftex.def Info: img/tdcircuit.png used on input line 357.
@@ -1724,7 +1731,7 @@ Overfull \hbox (6.73814pt too wide) in paragraph at lines 361--361
  \T1/cmr/m/n/10 ZM| 
  []
 
-<img/measurecircuit.png, id=107, 931.48pt x 405.515pt>
+<img/measurecircuit.png, id=114, 931.48pt x 405.515pt>
 File: img/measurecircuit.png Graphic file (type png)
 
 <use img/measurecircuit.png>
@@ -1747,14 +1754,14 @@ g/blochygate.png> <./img/zcircuit.png> <./img/blochzgate.png> <./img/hcircuit.p
 ng> <./img/blochhadamard.png> <./img/scircuit.png> <./img/blochsgate.png> <./im
 g/sdcircuit.png> <./img/tcircuit.png> <./img/blochtgate.png> <./img/tdcircuit.p
 ng> <./img/measurecircuit.png>]
-<img/cnotcircuit.png, id=117, 472.76625pt x 710.655pt>
+<img/cnotcircuit.png, id=123, 472.76625pt x 710.655pt>
 File: img/cnotcircuit.png Graphic file (type png)
 
 <use img/cnotcircuit.png>
 Package pdftex.def Info: img/cnotcircuit.png used on input line 434.
 (pdftex.def)             Requested size: 42.68173pt x 64.15137pt.
 
-<img/ccnotcircuit.png, id=118, 235.88126pt x 586.19pt>
+<img/ccnotcircuit.png, id=124, 235.88126pt x 586.19pt>
 File: img/ccnotcircuit.png Graphic file (type png)
 
 <use img/ccnotcircuit.png>
@@ -1766,19 +1773,19 @@ Overfull \hbox (46.62343pt too wide) in paragraph at lines 432--462
  []
 
 [11] [12 <./img/cnotcircuit.png> <./img/ccnotcircuit.png>]
-<img/apple.jpg, id=125, 217.0509pt x 173.448pt>
+<img/apple.jpg, id=131, 217.0509pt x 173.448pt>
 File: img/apple.jpg Graphic file (type jpg)
  <use img/apple.jpg>
 Package pdftex.def Info: img/apple.jpg used on input line 498.
 (pdftex.def)             Requested size: 204.85802pt x 163.70543pt.
 
-<img/banana.png, id=126, 1284.8pt x 849.1725pt>
+<img/banana.png, id=132, 1284.8pt x 849.1725pt>
 File: img/banana.png Graphic file (type png)
  <use img/banana.png>
 Package pdftex.def Info: img/banana.png used on input line 502.
 (pdftex.def)             Requested size: 204.85802pt x 135.39095pt.
 
-<img/knn-concept.png, id=127, 385.44pt x 289.08pt>
+<img/knn-concept.png, id=133, 385.44pt x 289.08pt>
 File: img/knn-concept.png Graphic file (type png)
  <use img/knn-concept.png>
 Package pdftex.def Info: img/knn-concept.png used on input line 518.
@@ -1789,7 +1796,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 535--538
 
  []
 
-<img/asymptoticupperbound.png, id=133, 413.545pt x 319.1925pt>
+<img/asymptoticupperbound.png, id=140, 413.545pt x 319.1925pt>
 File: img/asymptoticupperbound.png Graphic file (type png)
 
 <use img/asymptoticupperbound.png>
@@ -1798,7 +1805,7 @@ Package pdftex.def Info: img/asymptoticupperbound.png used on input line 546.
 
 Underfull \vbox (badness 5231) has occurred while \output is active []
 
- [14 <./img/knn-concept.png>] <img/bigocomplexity.png, id=137, 809.0225pt x 530
+ [14 <./img/knn-concept.png>] <img/bigocomplexity.png, id=144, 809.0225pt x 530
 .98375pt>
 File: img/bigocomplexity.png Graphic file (type png)
 
@@ -1808,7 +1815,7 @@ Package pdftex.def Info: img/bigocomplexity.png used on input line 559.
 ) (./chapters/methods.tex [15 <./img/asymptoticupperbound.png> <./img/bigocompl
 exity.png>]
 Chapter 3.
-<img/liquidcodesnippet.png, id=143, 615.29875pt x 338.26375pt>
+<img/liquidcodesnippet.png, id=149, 615.29875pt x 338.26375pt>
 File: img/liquidcodesnippet.png Graphic file (type png)
 
 <use img/liquidcodesnippet.png>
@@ -1820,7 +1827,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [16
 
 ]
-<img/ibmcomposer.png, id=147, 1175.39125pt x 511.9125pt>
+<img/ibmcomposer.png, id=153, 1175.39125pt x 511.9125pt>
 File: img/ibmcomposer.png Graphic file (type png)
 
 <use img/ibmcomposer.png>
@@ -1830,7 +1837,7 @@ Package pdftex.def Info: img/ibmcomposer.png used on input line 33.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [17 <./img/liquidcodesnippet.png>]
-<img/ibmcalibration.png, id=151, 1332.98pt x 271.0125pt>
+<img/ibmcalibration.png, id=157, 1332.98pt x 271.0125pt>
 File: img/ibmcalibration.png Graphic file (type png)
 
 <use img/ibmcalibration.png>
@@ -1934,17 +1941,17 @@ Overfull \hbox (1.84116pt too wide) in paragraph at lines 225--238
  []
 
 [31]
-Overfull \hbox (1.84116pt too wide) in paragraph at lines 256--277
+Overfull \hbox (1.84116pt too wide) in paragraph at lines 258--279
 [][] 
  []
 
 [32]
-Underfull \hbox (badness 10000) in paragraph at lines 314--317
+Underfull \hbox (badness 10000) in paragraph at lines 316--319
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--336
+Underfull \hbox (badness 10000) in paragraph at lines 335--338
 
  []
 
@@ -1952,7 +1959,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 333--336
 Underfull \vbox (badness 6859) has occurred while \output is active []
 
  [33]
-Underfull \hbox (badness 10000) in paragraph at lines 355--358
+Underfull \hbox (badness 10000) in paragraph at lines 357--360
 
  []
 
@@ -1960,29 +1967,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 355--358
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [34]
-<img/3over4state.png, id=209, 648.4225pt x 570.13pt>
+<img/3over4state.png, id=215, 648.4225pt x 570.13pt>
 File: img/3over4state.png Graphic file (type png)
  <use img/3over4state.png>
-Package pdftex.def Info: img/3over4state.png used on input line 369.
+Package pdftex.def Info: img/3over4state.png used on input line 372.
 (pdftex.def)             Requested size: 324.21045pt x 285.0643pt.
 
-Overfull \hbox (2.78703pt too wide) in paragraph at lines 376--376
+Overfull \hbox (2.78703pt too wide) in paragraph at lines 379--379
  \T1/cmr/m/n/10 Qubit 
  []
 
 
-Overfull \hbox (2.20403pt too wide) in paragraph at lines 392--392
+Overfull \hbox (2.20403pt too wide) in paragraph at lines 395--395
  \OML/cmm/m/it/10 e[][]\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 92388
  [] + 
  []
 
 
-Overfull \hbox (4.69604pt too wide) in paragraph at lines 392--392
+Overfull \hbox (4.69604pt too wide) in paragraph at lines 395--395
  \OML/cmm/m/it/10 e[] []$| 
  []
 
 
-Overfull \hbox (27.63914pt too wide) in paragraph at lines 388--397
+Overfull \hbox (27.63914pt too wide) in paragraph at lines 391--400
  []
  []
 
@@ -1990,19 +1997,19 @@ Overfull \hbox (27.63914pt too wide) in paragraph at lines 388--397
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [35 <./img/3over4state.png>] [36] [37]
-<img/controlledudecomp.png, id=219, 687.56876pt x 221.82875pt>
+<img/controlledudecomp.png, id=227, 687.56876pt x 221.82875pt>
 File: img/controlledudecomp.png Graphic file (type png)
 
 <use img/controlledudecomp.png>
-Package pdftex.def Info: img/controlledudecomp.png used on input line 531.
+Package pdftex.def Info: img/controlledudecomp.png used on input line 534.
 (pdftex.def)             Requested size: 298.75262pt x 96.3864pt.
  [38] [39 <./img/controlledudecomp.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 651--658
+Underfull \hbox (badness 10000) in paragraph at lines 654--661
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 651--658
+Underfull \hbox (badness 10000) in paragraph at lines 654--661
 
  []
 
@@ -2010,7 +2017,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 651--658
 Underfull \vbox (badness 1946) has occurred while \output is active []
 
  [40]
-Underfull \hbox (badness 10000) in paragraph at lines 665--668
+Underfull \hbox (badness 10000) in paragraph at lines 668--671
 
  []
 
@@ -2020,60 +2027,66 @@ PGFPlots: reading {datax.dat}
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [41]
-<img/bloch23over16.png, id=234, 673.51625pt x 631.35875pt>
+<img/bloch23over16.png, id=240, 673.51625pt x 631.35875pt>
 File: img/bloch23over16.png Graphic file (type png)
 
 <use img/bloch23over16.png>
-Package pdftex.def Info: img/bloch23over16.png used on input line 700.
+Package pdftex.def Info: img/bloch23over16.png used on input line 703.
 (pdftex.def)             Requested size: 269.40172pt x 252.53902pt.
  [42 <./img/bloch23over16.png>]
-<img/fowlerdistances.png, id=238, 604.2575pt x 563.10374pt>
+<img/fowlerdistances.png, id=244, 604.2575pt x 563.10374pt>
 File: img/fowlerdistances.png Graphic file (type png)
 
 <use img/fowlerdistances.png>
-Package pdftex.def Info: img/fowlerdistances.png used on input line 708.
+Package pdftex.def Info: img/fowlerdistances.png used on input line 711.
 (pdftex.def)             Requested size: 293.11064pt x 273.14851pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [43 <./img/fowlerdistances.png>]
-<img/toffolidecomposition.png, id=242, 631.35875pt x 132.495pt>
+<img/toffolidecomposition.png, id=249, 631.35875pt x 132.495pt>
 File: img/toffolidecomposition.png Graphic file (type png)
 
 <use img/toffolidecomposition.png>
-Package pdftex.def Info: img/toffolidecomposition.png used on input line 766.
+Package pdftex.def Info: img/toffolidecomposition.png used on input line 769.
 (pdftex.def)             Requested size: 315.6786pt x 66.24733pt.
 
 
-LaTeX Warning: Reference `' on page 44 undefined on input line 772.
+LaTeX Warning: Reference `' on page 44 undefined on input line 775.
 
+<img/fullQKNN.png, id=250, 2784.4025pt x 518.93875pt>
+File: img/fullQKNN.png Graphic file (type png)
+ <use img/fullQKNN.png>
+Package pdftex.def Info: img/fullQKNN.png used on input line 779.
+(pdftex.def)             Requested size: 426.79134pt x 79.5399pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 790--793
+Underfull \hbox (badness 10000) in paragraph at lines 799--802
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 797--800
+Underfull \hbox (badness 10000) in paragraph at lines 806--809
 
  []
 
 
-Underfull \hbox (badness 1226) in paragraph at lines 797--800
+Underfull \hbox (badness 1226) in paragraph at lines 806--809
 \T1/cmr/m/n/10 In con-clu-sion, due to the nec-es-sary quan-tum com-pil-ing ste
 ps the ini-tial con-stant
  []
 
-[44 <./img/toffolidecomposition.png>] [45]) (./chapters/outlook.tex [46]
+[44 <./img/toffolidecomposition.png>]) (./chapters/outlook.tex [45 <./img/fullQ
+KNN.png>]
 Chapter 6.
-) (./chapters/conclusion.tex [47
+) (./chapters/conclusion.tex [46
 
 ]
 Chapter 7.
-) (./chapters/personalreflection.tex [48
+) (./chapters/personalreflection.tex [47
 
 ]
 Chapter 8.
-) (./thesis.bbl [49
+) (./thesis.bbl [48
 
 ]
 Underfull \hbox (badness 3058) in paragraph at lines 65--78
@@ -2105,21 +2118,21 @@ Underfull \hbox (badness 7704) in paragraph at lines 430--443
 icrosoft [] .com / en [] -us / research / project /
  []
 
-[50
+[49
 
-]) [51] (./thesis.aux)
+]) [50] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 41471 strings out of 493029
- 951107 string characters out of 6136235
- 1072465 words of memory out of 5000000
- 44257 multiletter control sequences out of 15000+600000
+ 41473 strings out of 493029
+ 951139 string characters out of 6136235
+ 1073483 words of memory out of 5000000
+ 44258 multiletter control sequences out of 15000+600000
  30542 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,22n,103p,10379b,2272s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2146,10 +2159,10 @@ super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb><
 /usr/share/texmf/fonts/type1/public/cm-super/sfti0600.pfb></usr/share/texmf/fon
 ts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sftt0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on thesis.pdf (61 pages, 2643719 bytes).
+Output written on thesis.pdf (62 pages, 2655779 bytes).
 PDF statistics:
- 356 PDF objects out of 1000 (max. 8388607)
- 223 compressed objects within 3 object streams
+ 361 PDF objects out of 1000 (max. 8388607)
+ 225 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 176 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 181 words of extra memory for PDF output out of 10000 (max. 10000000)
 
