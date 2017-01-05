@@ -34,7 +34,7 @@
 \contentsline {subsubsection}{The Solovay-Kitaev theorem}{40}
 \contentsline {subsubsection}{Toffoli Gate Decomposition}{44}
 \contentsline {subsection}{\numberline {5.2.2}Simulating the amplitude-based kNN algorithm}{45}
-\contentsline {chapter}{\numberline {6}Outlook}{46}
-\contentsline {chapter}{\numberline {7}Conclusion}{47}
-\contentsline {chapter}{\numberline {8}Personal Reflection}{48}
-\contentsline {chapter}{References}{49}
+\contentsline {chapter}{\numberline {6}Outlook}{47}
+\contentsline {chapter}{\numberline {7}Conclusion}{48}
+\contentsline {chapter}{\numberline {8}Personal Reflection}{49}
+\contentsline {chapter}{References}{50}

@@ -772,7 +772,7 @@ The Toffoli or CCNOT gate can be decomposed into CNOT and single-qubit gates in 
 
 \footnotetext[16]{Reprinted from Michael A. Nielsen and Isaac L. Chuang. Quantum Computation and Quantum Information. Cambridge University Press, 2000. Copyright 2010 by Nielsen \& Chuang.}
 
-The Toffoli decomposition finalizes the compiling of the quantum state preparation into gates from IBM's gate set only. In summary, the compiled state preparation requires: 2 H gates applied to ancilla and the $m$ qubit, the decomposed $CR_y(\frac{\pi}{4})$ gate (2 CNOTs, 1 Z gate, 1 $\mathbb{1}$ gate (can be neglected) \& a sequence of minimum 25 gates for $B$ and minimum 16 gates for $C$), 1 X gate to flip the ancilla (Equ.~\ref{equ:chi3prepared}), 1 decomposed Toffoli (6 CNOTs, 2 H gates, 3 T \& 3 T$^\dagger$ gates) to load the second training vector and 1 CNOT to flip the class qubit. Thus, the quantum state preparation was compiled into 9 CNOT and 53 single-qubit gates. The akNN algorithm only requires one additional H gate and two measurement gates (for ancilla and class qubit) leading to a total of 9 CNOT, 54 single-qubit gates and 2 measurement gates. Even cleverly arranging these gates does not suffice to implement the algorithm within IBM's 40 gate slots. The full circuit diagram for the compiled state preparation and the akNN algorithm can be seen in Fig.~\ref{}.
+The Toffoli decomposition finalizes the compiling of the quantum state preparation into gates from IBM's gate set only. In summary, the compiled state preparation requires: 2 H gates applied to the ancilla and the $m$ qubit, the decomposed $CR_y(\frac{\pi}{4})$ gate (2 CNOTs, 1 Z gate, 1 $\mathbb{1}$ gate (can be neglected) \& a sequence of minimum 25 gates for $B$ and minimum 16 gates for $C$), 1 X gate to flip the ancilla (Equ.~\ref{equ:chi3prepared}), 1 decomposed Toffoli (6 CNOTs, 2 H gates, 3 T \& 3 T$^\dagger$ gates) to load the second training vector and 1 CNOT to flip the class qubit. Thus, the quantum state preparation was compiled into 9 CNOT and 53 single-qubit gates. The akNN algorithm only requires one additional H gate and two measurement gates (for ancilla and class qubit) leading to a total of 9 CNOT, 54 single-qubit gates and 2 measurement gates. However, even cleverly arranging these gates does not suffice to implement the algorithm within IBM's 40 gate slots. The full circuit diagram for the compiled state preparation and the akNN algorithm can be seen in Fig.~\ref{img:toffolidecomp}.
 
 \begin{figure}[!ht]
        \centering
@@ -821,7 +821,28 @@ dependening on the number of gates $m$ that need $\epsilon$-approximations by me
 \subsection{Simulating the amplitude-based kNN algorithm}
 \label{subsubsec:simulationamplitudeKNN}
 
-Simulation results for the previously discussed classification problem of Bloch vectors
+Since the IBM Quantum Experience does not allow for an implementation, the Bloch vector classification problem described in Section~\ref{subsubsec:implementationamplitudeKNN} was simulated in Liqui$\ket{}$ to determine the performance and the outcome of the algorithm.
+
+\begin{figure}[H]
+       \centering
+       \includegraphics[scale=0.5]{img/bloch7over8.png}
+       \caption{\label{img:7over8} Visualization of the second input qubit state $e^{-i\frac{\pi}{16}}\big[0.98079\ket{0} + 0.19509\ket{1}\big]$ coloured red on the Bloch sphere. The first training vector \0 is shown in yellow and the second training vector \1 is shown in purple.}
+\end{figure}
+
+\begin{table}[H]
+\begin{tabular}{| C{0.5cm} | C{2.7cm} |C{1.7cm} | C{1.7cm} | C{1.7cm} |C{1.8cm}| C{1.8cm}|}
+      %\toprule
+      ID & Qubit state  & $Prob(CM)$ & $Prob$ $(\ket{c} = \ket{0})$ & $Prob$ $(\ket{c} = \ket{1})$ & Expected class & Algorithm output\\
+      \midrule
+        1 & $e^{-i\frac{\pi}{8}}\big[0.92388\ket{0} + 0.38268\ket{1}\big]$ & \begin{tabular}{c} 0.8266* \\\midrule 0.8050 \end{tabular} & \begin{tabular}{c} 0.5818* \\\midrule 0.5863 \end{tabular} & \begin{tabular}{c} 0.4182* \\\midrule 0.4137 \end{tabular} & yellow ($\ket{0}$) & yellow ($\ket{0}$)\\\midrule
+        
+       2 & $e^{-i\frac{\pi}{16}}\big[0.98079\ket{0} + 0.19509\ket{1}\big]$ & \begin{tabular}{c} 0.7940* \\\midrule 0.7710 \end{tabular} & \begin{tabular}{c} 0.6237* \\\midrule 0.6420 \end{tabular} & \begin{tabular}{c} 0.3763* \\\midrule 0.3580 \end{tabular} & yellow ($\ket{0}$) & yellow ($\ket{0}$)\\\midrule
+      \bottomrule
+    \end{tabular}
+    \caption{\label{tab:blochresults} Classification results for two qubit states after 1000 runs. Input state with ID=1 was defined in Table~\ref{tab:inputvectors} and qubit state with ID=2 was defined in Section~\ref{subsubsec:simulationamplitudeKNN}. Trained with training set defined in Table~\ref{tab:trainingset} consisting of the \0 and \1 qubit states. Theoretical predictions (marked with asterisks) on top, simulation results at the bottom.}
+\end{table}
+
+
 
 Initializing gaussian distributed quantum states and classifying gaussian distributions by means of the Hellinger distance.
 
