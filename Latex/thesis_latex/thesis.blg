@@ -20,6 +20,8 @@ Warning--entry type for "ibmquantumcomputer" isn't style-file defined
 --line 237 of file thesis.bib
 Warning--entry type for "bigdata" isn't style-file defined
 --line 245 of file thesis.bib
+Warning--entry type for "harsha" isn't style-file defined
+--line 332 of file thesis.bib
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
 Name 1 in "{Microsoft Research}," has a comma at the end for entry microsoftresearch
 while executing---line 5062 of file apacite.bst
@@ -45,45 +47,45 @@ Name 1 in "{Microsoft Research}," has a comma at the end for entry microsoftrese
 while executing---line 5079 of file apacite.bst
 Warning--No journal in SchuldFingerhuth
 Warning--No journal in Schuld2014
-You've used 26 entries,
+You've used 28 entries,
             6951 wiz_defined-function locations,
-            1425 strings with 15256 characters,
-and the built_in function-call counts, 46791 in all, are:
-= -- 5940
-> -- 400
-< -- 1988
-+ -- 2057
-- -- 61
-* -- 2839
-:= -- 7944
-add.period$ -- 104
-call.type$ -- 26
-change.case$ -- 461
+            1437 strings with 15599 characters,
+and the built_in function-call counts, 50309 in all, are:
+= -- 6412
+> -- 420
+< -- 2152
++ -- 2205
+- -- 65
+* -- 3048
+:= -- 8569
+add.period$ -- 112
+call.type$ -- 28
+change.case$ -- 495
 chr.to.int$ -- 0
-cite$ -- 54
-duplicate$ -- 1317
-empty$ -- 1959
-format.name$ -- 672
-if$ -- 9218
+cite$ -- 58
+duplicate$ -- 1387
+empty$ -- 2095
+format.name$ -- 700
+if$ -- 9913
 int.to.chr$ -- 0
-int.to.str$ -- 82
+int.to.str$ -- 88
 missing$ -- 0
-newline$ -- 658
-num.names$ -- 208
-pop$ -- 837
+newline$ -- 702
+num.names$ -- 224
+pop$ -- 877
 preamble$ -- 1
-purify$ -- 106
+purify$ -- 114
 quote$ -- 0
-skip$ -- 3338
+skip$ -- 3632
 stack$ -- 0
-substring$ -- 2271
-swap$ -- 718
-text.length$ -- 66
+substring$ -- 2429
+swap$ -- 757
+text.length$ -- 70
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 2432
+type$ -- 2664
 warning$ -- 2
-while$ -- 232
+while$ -- 242
 width$ -- 0
-write$ -- 799
+write$ -- 847
 (There were 11 error messages)

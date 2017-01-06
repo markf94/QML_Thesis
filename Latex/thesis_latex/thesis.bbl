@@ -286,6 +286,31 @@ Hamming, R\BPBI W.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Hellinger%
+}{%
+Hellinger%
+}{%
+{\protect \APACyear {1909}}%
+}]{%
+hellinger1909neue}
+\APACinsertmetastar {%
+hellinger1909neue}%
+\begin{APACrefauthors}%
+Hellinger, E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1909}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Neue Begr{\"u}ndung der Theorie quadratischer Formen
+  von unendlichvielen Ver{\"a}nderlichen.}} {{Neue Begr{\"u}ndung der Theorie
+  quadratischer Formen von unendlichvielen Ver{\"a}nderlichen.}}{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal f{\"u}r die reine und angewandte
+  Mathematik}{136}{}{210--271}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 IBM%
 }{%
 IBM%
@@ -499,6 +524,31 @@ O'Malley, P\BPBI J\BPBI J.%
   \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1103/PhysRevX.6.031007} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Prahladh%
+}{%
+Prahladh%
+}{%
+{\protect \APACyear {2011}}%
+}]{%
+harsha}
+\APACinsertmetastar {%
+harsha}%
+\begin{APACrefauthors}%
+Prahladh, H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+\APACrefbtitle {{Lecture notes on communication complexity}.} {{Lecture notes
+  on communication complexity}.}
+\newblock
+\begin{APACrefURL}
+  [{2017-01-06}]\url{http://www.tcs.tifr.res.in/~prahladh/teaching/2011-12/comm/lectures/l12.pdf}
+  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
