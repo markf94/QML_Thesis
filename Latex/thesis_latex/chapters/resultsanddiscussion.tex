@@ -138,7 +138,7 @@ Equ.~\ref{equ:trugcolours2} shows a quantum state with four registers as desired
 \ket{\phi_2} = \frac{1}{\sqrt{6}} \sum^6_{j=1} \ket{x_1,x_2,...,x_9;c^j=0;a=0;t^j_1,t^j_2,...,t^j_9}
 \end{equation}
 
-Currently, every training pattern is considered class $\ket{0}$ (red) which is of course incorrect. To flip the class qubit for the three training patterns encoding blue colours, one can make use of X and nCNOT gates. Consider the fourth (first blue) training pattern $t^4$ = 000 000 111 from Table~\ref{table:trainingcolours}. One might think that simply applying a 3CNOT($t_7,t_8,t_9$,c) gate controlled by the three qubits that are in the \1 state will suffice to flip the class label for this training pattern. However, depending on the classification problem at hand there might be another training pattern e.g. $t'$ = 111 110 111 belonging to class \0 for which the application of the 3CNOT($t_7,t_8,t_9$,c) gate would incorrectly flip the class qubit since the last three qubits of $t'$ are also in the \1 state.
+Currently, every training pattern is considered class $\ket{0}$ (red) which is, of course, incorrect. To flip the class qubit for the three training patterns encoding blue colours, one can make use of X and nCNOT gates. Consider the fourth (first blue) training pattern $t^4$ = 000 000 111 from Table~\ref{table:trainingcolours}. One might think that simply applying a 3CNOT($t_7,t_8,t_9$,c) gate controlled by the three qubits that are in the \1 state will suffice to flip the class label for this training pattern. However, depending on the classification problem at hand there might be another training pattern e.g. $t'$ = 111 110 111 belonging to class \0 for which the application of the 3CNOT($t_7,t_8,t_9$,c) gate would incorrectly flip the class qubit since the last three qubits of $t'$ are also in the \1 state.
 
 To avoid this problem, apply an X gate to all qubits in the training pattern that are currently in the \0 state. Continuing the example with the training pattern $t^4$ = 000 000 111, X gates need to be applied to the first six qubits. The result is then $t^{4*}$ = 111 111 111. After this step, any other training pattern will contain at least one zero e.g. flipping the first six qubits of $t'$ = 111 110 111 results in $t'^{*}$ = 000 001 111. Hence, the training pattern $t^4$ is now the only pattern in the fourth register consisting only of ones. Now, this property can be exploited by applying a 9CNOT($t_1,t_2,...,t_9$,c) gate that will flip the class label to $\ket{1}$ for training pattern $t^4$ only. Acting X gates on the first six qubits again will restore all training patterns to their original states. Repeating this procedure for all training patterns belonging to class $\ket{1}$ (blue) entangles the class qubit $\ket{c}$ with the training patterns and the overall state is now described by,
 
@@ -249,9 +249,9 @@ Consisting of majority red with slight green and blue content, the third red col
 The fourth colour from the top in Table~\ref{tab:colourresults2} with a slight green and equal red and blue content was deliberately chosen as an edge case. The classifier assigned it to class blue but the class probabilities obtained from the simulation are equal for the \0 and \1 state. Interestingly, the theoretical probabilities slightly favour class red. This can be traced back to the fact that the quantum kNN is based on distance-weighting. This can be seen when analysing training data set II; all but one red training colour have a 1 at the second bit position whereas all but two blue training colours have a 1 at the second to last bit position. Since the fourth input colour has a 1 at the second as well as at the second to last bit position the HDs to the red training colours are slightly smaller than to the blue training colours. Since the HDs are reversed the red class is slightly favoured due to the distance-dependent weights. Thus, this edge case exposes a slight bias within the training data set II.
 
 In the case of the blue input colours, the first three were all classified correctly with the class qubit probabilities clearly favouring the measurement outcome \1. Note that the third blue tone was classified correctly despite some red and green content.  The last (fourth) blue tone is another edge case with only slightly larger blue than red content. Yet, it was also correctly classified since the probability of measuring class blue is slightly higher. 
-%since the probabilities retrieved from the simulation do not resemble the theoretical predicted values. By increasing the number of runs, the simulation results will eventually converge to the theoretical predictions and the classification outcome will change to blue.
+%since the probabilities retrieved from the simulation do not resemble the theoretically predicted values. By increasing the number of runs, the simulation results will eventually converge to the theoretical predictions and the classification outcome will change to blue.
 
-In conclusion, the quantum simulations of the qubit-based kNN algorithm resulted in three out of four correct classification using training data set I and, ignoring the edge case with equal red and blue content, seven out of seven correct classifications using training data set II. Hence, with training data set I the simulated quantum classifier achieved an accuracy of 75\%. The accuracy increased to 100\% with the use of training data set II. These results clearly show that the qubit kNN routine, based on distance-weighting with reverse HD, is a very effective classification algorithm with respect to 9-bit RGB colours.
+In conclusion, the quantum simulations of the qubit-based kNN algorithm resulted in three out of four correct classification using training data set I and, ignoring the edge case with equal red and blue content, seven out of seven correct classifications using training dataset II. Hence, with training dataset I the simulated quantum classifier achieved an accuracy of 75\%. The accuracy increased to 100\% with the use of training dataset II. These results clearly show that the qubit kNN routine, based on distance-weighting with reverse HD, is a very effective classification algorithm with respect to 9-bit RGB colours.
 %two training data sets the simulated quantum classifier achieved an accuracy of 75\%.
 
 \begin{table}
@@ -304,7 +304,7 @@ where
 \begin{equation}
 \label{equ:infoencoding}
 \ket{\textcolor{red}{\Psi_{x}}} = \sum_{i=1}^{N} \textcolor{red}{x_i}\ket{i} \quad \quad
-\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{m}}}}	 = \sum_{i=1}^{N} \textcolor{darkyellow}{t}\textcolor{purple}{_i^m} \ket{i} 
+\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{m}}}}     = \sum_{i=1}^{N} \textcolor{darkyellow}{t}\textcolor{purple}{_i^m} \ket{i} 
 \end{equation}
 \begin{equation}
 e.g. \quad \begin{pmatrix}
@@ -346,7 +346,7 @@ The probability of measuring e.g. class $\ket{1}$ (B) is given by the following 
 Prob(\ket{c^m} = \ket{1(\textcolor{purple}{B})})= \sum_{m \mid c^m=1(\textcolor{purple}{B})} 1 - \frac{1}{4M} \sum_{i=1}^N \mid \textcolor{red}{x_i} - \textcolor{purple}{t^m_i} \mid ^2
 \end{equation}
 
-Note that the probability of measuring class \1 (B) is dependent on the squared Euclidean distance between the input vector and each training vector belonging to class \textcolor{purple}{$B$}. Thus, if the average of these squared Euclidean distances is small, the probability of measuring the class qubit in the \1 state is greater. This quantum routine therefore resembles a kNN algorithm with $k=all$ and without distance-weighting.
+Note that the probability of measuring class \1 (B) is dependent on the squared Euclidean distance between the input vector and each training vector belonging to class \textcolor{purple}{$B$}. Thus, if the average of these squared Euclidean distances is small, the probability of measuring the class qubit in the \1 state is greater. This quantum routine, therefore, resembles a kNN algorithm with $k=all$ and without distance-weighting.
 
 All previous steps need to be repeated $y$ times in order to generate a sufficiently accurate picture of the probability distribution of $\ket{c}$.
 \end{bluebox}
@@ -365,7 +365,7 @@ Independent of number and size of the input and training vectors, the algorithm 
 
 The akNN algorithm was developed with an actual implementation, using the IBM QC, in mind. Since the IBM Quantum Experience only provides five qubits and a relatively small gate set, a very simple low-dimensional classification problem should be selected. 
 
-Perhaps the simplest problem is the classification of a 2-D quantum state vector as either \0 or \1 depending on its position on the Bloch sphere. This choice also enables easy visualization throughout the discussion since any single qubit vector has a well defined position on the Bloch sphere (see Section~\ref{subsubsec:qubits}). The training set is listed in Table~\ref{tab:trainingset} and consists only of the \0 and the \1 vector depicted in Fig.~\ref{fig:3over4} as the yellow and purple vector respectively. The red vector in Fig.~\ref{fig:3over4} will be the input vector and its qubit state and vector representation are given in Table~\ref{tab:inputvectors}.
+Perhaps the simplest problem is the classification of a 2-D quantum state vector as either \0 or \1 depending on its position on the Bloch sphere. This choice also enables easy visualization throughout the discussion since any single qubit vector has a well-defined position on the Bloch sphere (see Section~\ref{subsubsec:qubits}). The training set is listed in Table~\ref{tab:trainingset} and consists only of the \0 and the \1 vector depicted in Fig.~\ref{fig:3over4} as the yellow and purple vector respectively. The red vector in Fig.~\ref{fig:3over4} will be the input vector and its qubit state and vector representation are given in Table~\ref{tab:inputvectors}.
 
 \begin{figure}
 \centering
@@ -490,7 +490,7 @@ In order to entangle $\ket{\textcolor{purple}{\Psi_{t^{1}}}}$ with the \1 states
 &= \frac{1}{2}\Big[ \big[\ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{\textcolor{darkyellow}{\Psi_{t^{0}}}}\big] \ket{0}\ket{0} + \big[ \ket{0}\ket{\textcolor{red}{\Psi_{x}}} + \ket{1}\ket{\textcolor{purple}{\Psi_{t^{1}}}}\big] \ket{0}\ket{1}\Big]
 \end{align}
 
-The class qubit for the first training vector is already in the correct \0 state. Note again that also the CCNOT gate is not element of IBM's universal gate set which will be addressed later.
+The class qubit for the first training vector is already in the correct \0 state. Note again that also the CCNOT gate is not an element of IBM's universal gate set which will be addressed later.
 
 It remains to flip the class qubit for the second training vector by applying a CNOT gate using the $d$ qubit as control and the class($c$) qubit as target. The resulting state is then given by,
 
@@ -545,7 +545,7 @@ The idea of this decomposition is that when the control qubit (top qubit in Fig.
 ABC = \mathbb{1}
 \end{equation}
 
-If and only if the control qubit is \1 then the gate sequence $e^{i\alpha}AXBXC$ is applied to the target. Since the goal is to apply the unitary U to the target qubit the following equation must be satified:
+If and only if the control qubit is \1 then the gate sequence $e^{i\alpha}AXBXC$ is applied to the target. Since the goal is to apply the unitary U to the target qubit the following equation must be satisfied:
 \begin{equation}
 \label{equ:UAXBXC}
 e^{i\alpha}AXBXC = U
@@ -559,7 +559,7 @@ B &= R_y(-\frac{\gamma}{2})R_z(-\frac{\delta+\beta}{2})\\
 C &= R_z(\frac{\delta-\beta}{2})
 \end{align}
 
-where $R_z(\varrho)$ is the general rotation gate about the z-axis of the Bloch sphere. Similary to the $R_y(\vartheta)$ gate it can be obtained by exponentiating the Z gate as shown below in Equ.~\ref{equ:rzdef}.
+where $R_z(\varrho)$ is the general rotation gate about the z-axis of the Bloch sphere. Similarly to the $R_y(\vartheta)$ gate it can be obtained by exponentiating the Z gate as shown below in Equ.~\ref{equ:rzdef}.
 
 \begin{equation}
 \label{equ:rzdef}
@@ -641,7 +641,7 @@ C \quad=\quad R_z(\frac{\delta-\beta}{2})\quad =& \quad R_z(-\frac{9}{16}\pi) \q
 P\quad =\quad \begin{pmatrix} 1&0\cr0&e^{i\alpha} \end{pmatrix}\quad=& \quad \begin{pmatrix} 1&0\cr0&e^{i\pi} \end{pmatrix}\quad= \quad \textcolor{emerald}{Z}
 \end{align}
 
-Quantum gate $A$ is just equal to the identity gate which certainly is element of IBM's universal gate set. The phase-adjusting gate $P$ is equal to the Z gate that also is within IBM's gate set. Only gates $B$ and $C$ result in more complex z-rotations of $-\frac{23}{16}\pi$ and $-\frac{9}{16}\pi$ radians respectively. Unfortunately, these quantum gates are not found in IBM's gate set as indicated by the red question marks in Equ.~\ref{equ:abcsubbed2} and \ref{equ:abcsubbed3}.
+Quantum gate $A$ is just equal to the identity gate which certainly is an element of IBM's universal gate set. The phase-adjusting gate $P$ is equal to the Z gate that also is within IBM's gate set. Only gates $B$ and $C$ result in more complex z-rotations of $-\frac{23}{16}\pi$ and $-\frac{9}{16}\pi$ radians respectively. Unfortunately, these quantum gates are not found in IBM's gate set as indicated by the red question marks in Equ.~\ref{equ:abcsubbed2} and \ref{equ:abcsubbed3}.
 
 \subsubsection{The Solovay-Kitaev theorem}
 \label{subsubsubsec:solovaykitaev}
@@ -707,8 +707,8 @@ Fowler distance is best understood with a visual example using the gate $B = R_z
 Fig.~\ref{fig:fowlerdistances} shows the action of four different approximating gate sequences $B_{approx,1}$, $B_{approx,2}$, $B_{approx,3}$, $B_{approx,4}$ on the state $\ket{\psi} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}$. Gate sequence $B_{approx,1}$ consists of 25 gates and is a Fowler distance of $d = 0.15165$ away from $B$. The resulting state vector is coloured green in Fig.~\ref{fig:fowlerdistances}. The green vector lies above the Bloch equator and is relatively far away from the desired vector $\vec{b}$ in Fig.~\ref{fig:bloch23over16}. With 109 gates, $B_{approx,2}$ yields a Fowler distance of $d = 0.10722$ resulting in the blue vector. It is also found below the Bloch equator and still relatively far from $\vec{b}$. Using $B_{approx,3}$ the Fowler distance drops to $d = 0.02086$ leading to the yellow vector in  Fig.~\ref{fig:fowlerdistances}. This vector is almost on the Bloch equator and relatively close to $\vec{b}$ implying that $B_{approx,3}$ is a good approximation of $B$. However, $B_{approx,3}$ already requires the implementation of 2,997 single-qubit gates. The purple vector from Fig.~\ref{fig:bloch23over16} is also plotted in Fig.~\ref{fig:fowlerdistances} but is not visible since the red vector with $d = 0.00158$ constitutes a very good approximation to the desired state $\vec{b}$.  The red vector is the result of the action of $B_{approx,4}$ which, unfortunately, needs 370,813 gates to achieve such a small Fowler distance. Hereby, Gate $B$ was used as an example but such an exponential increase in the gate count is observed for any quantum gate $W$ when applying the Solovay-Kitaev algorithm \cite{dawson2005solovay}.
 
 \begin{minipage}[c]{.8\textwidth}
-	%\vspace{-20mm}
-	\includegraphics[height=0.8\textwidth]{img/fowlerdistances.png}
+    %\vspace{-20mm}
+    \includegraphics[height=0.8\textwidth]{img/fowlerdistances.png}
        \captionsetup{justification=raggedright, singlelinecheck=false}
        \captionof{figure}{\label{fig:fowlerdistances}Various Fowler distances visualized on Bloch sphere }
 \end{minipage}%%%%%
@@ -730,7 +730,7 @@ Fig.~\ref{fig:fowlerdistances} shows the action of four different approximating 
 
 Implementing any quantum gate $D$ inevitably takes some time $t$ since it involves the use of hardware components e.g. targeting a specific electron with a laser pulse. Based on IBM's single-qubit and CNOT gate times described in Section~\ref{subsec:ibmqc} the total execution time of twelve different gate sequences, approximating $B = R_z(-\frac{23}{16}\pi)$ and $C = R_z(-\frac{9}{16}\pi)$ to different Fowler distances, were calculated. The results can be seen in Table~\ref{tab:sktimes}. Keeping in mind that in the best case, the maximum decoherence time of a qubit in IBM's QC is \SI{112.4}{\micro\second} most gate sequences are too long for an IBM implementation (coloured red in Table~\ref{tab:sktimes}). Feasible execution times are marked green in Table~\ref{tab:sktimes}. However, decoherence is not the only limiting factor since IBM only allows for 39 gates and one measurement gate. But even when selecting the smallest sequences of 25 gates for $B$ and 16 gates for $C$, the total gate count is 41 which is two gates more than the allowed gate count of the IBM Quantum Composer. Furthermore, the approximating gate sequences of $B$ and $C$ are not the only gates needed to prepare the initial quantum state and execute the akNN algorithm. Unfortunately, this makes an actual implementation of this particular classification problem on IBM's QC impossible.
 
-%Thus, the only possibility would be to select the sequence of 25 gates for $B$ and the sequence of 16 gates for $C$ at the cost of relatively large Fowler distances. This, however, still sums up to 41 gates which is two gates more than the allowed gate count of the IBM Quantum Composer. 
+%Thus, the only possibility would be to select the sequence of 25 gates for $B$ and the sequence of 16 gates for $C$ at the cost of relatively large Fowler distances. This, however, still sums up to 41 gates which are two gates more than the allowed gate count of the IBM Quantum Composer. 
 
 \begin{table}[H]
 \centering
@@ -802,7 +802,7 @@ The akNN algorithm itself was found to run in constant time $\mathcal{O}(\frac{1
 \begin{equation}
 \mathcal{O}(\frac{1}{Prob(CM)})+\mathcal{O}(k)+\mathcal{O}(m*log^{2.71}(\frac{m}{\epsilon}))
 \end{equation}
-	
+    
 When adding algorithmic complexities only the most dominant term is considered relevant. Thus, the overall complexity including state preparation is found to be $\mathcal{O}(m*log^{2.71}(\frac{m}{\epsilon}))$.\\
 \newline
 In conclusion, due to the necessary quantum compiling steps the initial constant complexity of the akNN algorithm
@@ -866,7 +866,7 @@ The obtained simulation results after 1000 runs for both Bloch vectors from inpu
     \caption{\label{tab:blochresults} Classification results for two qubit states after 1000 runs. Input state with ID=1 was defined in Table~\ref{tab:inputvectors} and qubit state with ID=2 was defined in Section~\ref{subsubsec:simulationamplitudeKNN}. Trained with training set defined in Table~\ref{tab:trainingset} consisting of the \0 and \1 qubit states. Theoretical predictions (marked with asterisks) on top, simulation results at the bottom.}
 \end{table}
 
-Both input qubit states were correctly classified as \0 (yellow vector in Fig.~\ref{img:3over4} and Fig.~\ref{fig:7over8}) as expected since both qubit states lie within the upper half of the Bloch sphere. The input qubit state with ID=2 has a slightly higher probability of being classified as \0 than the qubit state with ID=1. This is expected since the state with ID=2 is closer to the training state \0 on the Bloch sphere than the state with ID=1. 	
+Both input qubit states were correctly classified as \0 (yellow vector in Fig.~\ref{img:3over4} and Fig.~\ref{fig:7over8}) as expected since both qubit states lie within the upper half of the Bloch sphere. The input qubit state with ID=2 has a slightly higher probability of being classified as \0 than the qubit state with ID=1. This is expected since the state with ID=2 is closer to the training state \0 on the Bloch sphere than the state with ID=1.     
 
 In conclusion, using the small input data set II the amplitude-based kNN algorithm has achieved 100\% accuracy. However, since only two Bloch vectors were considered this number should not be taken too seriously but rather be seen as a small test bench for the amplitude-based kNN algorithm. All in all, the main purpose of this simulation was to show that the amplitude-based kNN algorithm would have performed as expected when an implementation with IBM's quantum computer would have been feasible.
 
@@ -936,18 +936,18 @@ When choosing $\delta = 0.7$, the last expression in Equ.~\ref{equ:deltatensor} 
 
 Thus, it was shown that acting $C(0.7)$ on each qubit in the state $\ket{000}$ yields the desired quantum memory state $\ket{w}$. Since the amplitudes of $\ket{w}$ represent a discretized Gaussian distribution, it was shown that the coin gate $C(\delta)$ can indeed be used to generate Gaussian amplitude distributions. 
 
-Keeping in mind that $\ket{w}$ resulted from the action of $(C(0.7) \otimes C(0.7) \otimes C(0.7))$ onto the $\ket{000}$ state and important pattern is observed when calculating the Hamming distances between $\ket{000}$ and all eight possible three qubit states. Firstly, the state $\ket{000}$ has a Hamming distance of zero relative to itself and has the highest amplitude of 0.58566. Secondly, $\ket{100}$, $\ket{010}$ and $\ket{001}$ all have amplitudes of 0.11434 and a Hamming distance of one with respect to $\ket{000}$. Thirdly, $\ket{110}$, $\ket{011}$ and $\ket{101}$ have amplitudes of 0.02232 and a Hamming distance of two compared to $\ket{000}$. Lastly, $\ket{111}$ has a Hamming distance of three with respect to $\ket{000}$ and an amplitude of 0.00436. Hence, the amplitudes are always equal for equal Hamming distances and decrease with increasing Hamming distance.
+Keeping in mind that $\ket{w}$ resulted from the action of $(C(0.7) \otimes C(0.7) \otimes C(0.7))$ onto the $\ket{000}$ state and important pattern is observed when calculating the Hamming distances between $\ket{000}$ and all eight possible three-qubit states. Firstly, the state $\ket{000}$ has a Hamming distance of zero relative to itself and has the highest amplitude of 0.58566. Secondly, $\ket{100}$, $\ket{010}$ and $\ket{001}$ all have amplitudes of 0.11434 and a Hamming distance of one with respect to $\ket{000}$. Thirdly, $\ket{110}$, $\ket{011}$ and $\ket{101}$ have amplitudes of 0.02232 and a Hamming distance of two compared to $\ket{000}$. Lastly, $\ket{111}$ has a Hamming distance of three with respect to $\ket{000}$ and an amplitude of 0.00436. Hence, the amplitudes are always equal for equal Hamming distances and decrease with increasing Hamming distance.
 
-To visualise the Gaussian distribution represented by $\ket{w}$, one simply needs to plot amplitudes against Hamming distances and mirror the resulting plot with respect to the vertical line connecting the horizontal zero value  with the data point representing the highest amplitude. The corresponding plot is given in Fig.~\ref{fig:gaussdeltaplot1} and clearly shows a discrete Gaussian distribution centered around the binary qubit pattern with Hamming distance zero: in this case $\ket{000}$. It follows that applying the coin gate $C(0.7)$ to each qubit in an $n$-qubit systems $\ket{q_1,q_2,...,q_n}$ yields a similar discretized Gaussian distribution centered around the binary qubit pattern $\ket{q_1,q_2,...,q_n}$.
+To visualise the Gaussian distribution represented by $\ket{w}$, one simply needs to plot amplitudes against Hamming distances and mirror the resulting plot with respect to the vertical line connecting the horizontal zero value with the data point representing the highest amplitude. The corresponding plot is given in Fig.~\ref{fig:gaussdeltaplot1} and clearly shows a discrete Gaussian distribution centered around the binary qubit pattern with Hamming distance zero: in this case $\ket{000}$. It follows that applying the coin gate $C(0.7)$ to each qubit in an $n$-qubit systems $\ket{q_1,q_2,...,q_n}$ yields a similar discretized Gaussian distribution centered around the binary qubit pattern $\ket{q_1,q_2,...,q_n}$.
 %redefine the Hamming distance between $\ket{100}$ and $\ket{000}$ to be -1 instead of 1 and the Hamming distance between $ket{110}$ and $\ket{000}$ to be -2 instead of 2. Furthermore, suppose one can add a ninth entry to $\ket{w}$ by duplicating the entry for state $\ket{111}$. Define the new duplicate entry of $\ket{111}$ to have a Hamming distance of -3 instead of 3. When plotting the Hamming distances against the amplitudes of this new artificial vector representation of $\ket{w}$ a discrete Gaussian distribution can be observed. The corresponding plot in Fig.~\ref{fig:gaussdeltaplot1} illustrates this clearly.
 
 \begin{figure}[H]
 \centering
     \begin{tikzpicture}[scale=1]
 \begin{axis}[xlabel={Hamming distance},ylabel={Amplitude},
-				xtick=data,xticklabel style={align=center},xticklabels={3,2,1,0,1,2,3}]
-				
-				%xticklabels={{3\\($\ket{111}$)},{2\\($\ket{011}$)\\($\ket{110}$)\\($\ket{101}$)},{1\\($\ket{100}$)\\($\ket{010}$)\\($\ket{001}$)},{0\\($\ket{000}$)},{1\\($\ket{100}$)\\($\ket{010}$)\\($\ket{001}$)},{2\\($\ket{011}$)\\($\ket{110}$)\\($\ket{101}$)},{3\\($\ket{111}$)}}]
+                xtick=data,xticklabel style={align=center},xticklabels={3,2,1,0,1,2,3}]
+                
+                %xticklabels={{3\\($\ket{111}$)},{2\\($\ket{011}$)\\($\ket{110}$)\\($\ket{101}$)},{1\\($\ket{100}$)\\($\ket{010}$)\\($\ket{001}$)},{0\\($\ket{000}$)},{1\\($\ket{100}$)\\($\ket{010}$)\\($\ket{001}$)},{2\\($\ket{011}$)\\($\ket{110}$)\\($\ket{101}$)},{3\\($\ket{111}$)}}]
 
 % Graph column 0 versus column 1
 \addplot table[x index=1,y index=0,col sep=comma] {gauss2.dat};
@@ -955,7 +955,7 @@ To visualise the Gaussian distribution represented by $\ket{w}$, one simply need
 
 \end{axis}
 \end{tikzpicture}
-\caption{Plot visualizing the discrete Gaussian distribution of $\ket{w}$ resulting from acting coin gate $C$ with $\delta =0.7$ on each qubit in state $\ket{000}$. Amplitudes of quantum state $\ket{w}$ (Equ.~\ref{equ:desiredmemorystate}) are plotted against the Hamming distances between binary pattern $\ket{000}$ and all eight binary three-qubit pattern. The plot was mirrored with respect to the vertical line connecting the horizontal zero value with the data point representing the highest amplitude.}
+\caption{Plot visualizing the discrete Gaussian distribution of $\ket{w}$ resulting from acting coin gate $C$ with $\delta =0.7$ on each qubit in state $\ket{000}$. Amplitudes of the quantum state $\ket{w}$ (Equ.~\ref{equ:desiredmemorystate}) are plotted against the Hamming distances between binary pattern $\ket{000}$ and all eight binary three-qubit pattern. The plot was mirrored with respect to the vertical line connecting the horizontal zero value with the data point representing the highest amplitude.}
 \label{fig:gaussdeltaplot1}
   \end{figure}
   
@@ -985,7 +985,7 @@ Applying the coin gate $C$ to the first qubit redistributes the amplitudes betwe
        \caption{\label{img:cubediffused1} Visualization of the amplitude distribution over all three-qubit states after application of coin gate $C$ to the first qubit of the state $\ket{000}$.}
 \end{figure}
 
-Fig.~\ref{img:cubediffused2} illustrates the amplitude distribution after application of $C$ gates to the first and second qubit in the state $\ket{000}$. It can be seen that only four out of eight three-qubit states have non-zero amplitudes at this point. With the application of the third $C$ gate to the third qubit in $\ket{000}$ all eight qubit patterns have non-zero amplitudes and the quantum state $\ket{w}$ from Equ.~\ref{equ:desiredmemorystate} is obtained. Fig.~\ref{img:cubediffused3} shows this final quantum superposition representing a discrete Gaussian distribution over a three-dimensional cube based on Hamming distances.
+Fig.~\ref{img:cubediffused2} illustrates the amplitude distribution after application of $C$ gates to the first and second qubit in the state $\ket{000}$. It can be seen that only four out of eight three-qubit states have non-zero amplitudes at this point. With the application of the third $C$ gate to the third qubit in $\ket{000}$ all eight-qubit patterns have non-zero amplitudes and the quantum state $\ket{w}$ from Equ.~\ref{equ:desiredmemorystate} is obtained. Fig.~\ref{img:cubediffused3} shows this final quantum superposition representing a discrete Gaussian distribution over a three-dimensional cube based on Hamming distances.
 
 In this example, Fig.~\ref{img:cubediffused1}, ~\ref{img:cubediffused2} and \ref{img:cubediffused3} visually demonstrate a stepwise diffusion of the initial amplitude of 1.0 from $\ket{000}$ over all eight three-qubit patterns on the cube.
 

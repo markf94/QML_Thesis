@@ -4,9 +4,9 @@
 \subsection{Single qubit systems}
 \label{subsubsec:qubits}
 %Classical computers manipulate bits and the quantum equivalent is called a quantum bit, often abbreviated as qubit.
-Classical computers manipulate bits, whereas quantum computer's most fundamental unit is called a quantum bit, often abbreviated as qubit. Bits as well as qubits are binary entities, meaning they can only take the values 0 and 1.
+Classical computers manipulate bits, whereas quantum computer's most fundamental unit is called a quantum bit, often abbreviated as qubit. Bits, as well as qubits, are binary entities, meaning they can only take the values 0 and 1.
 
-A good example for a physical implementation of a qubit is the single electron of a hydrogen atom sketched in Fig.~\ref{img:qubitatom}. Usually, the electron is found in its ground state which one can define as the \0 state of the qubit. Using a laser pulse the electron can be excited into the next highest valence shell which one can define as the \1 state of the qubit. After some time $t$ the electron will decohere to its ground state (\0) which is called the longitudinal coherence or amplitude damping time and is an important parameter for measuring qubit lifetimes.
+A good example of a physical implementation of a qubit is the single electron of a hydrogen atom sketched in Fig.~\ref{img:qubitatom}. Usually, the electron is found in its ground state which one can define as the \0 state of the qubit. By using a laser pulse, the electron can be excited into the next highest valence shell which one can define as the \1 state of the qubit. After some time $t$ the electron will decohere to its ground state (\0) which is called the longitudinal coherence or amplitude damping time and is an important parameter for measuring qubit lifetimes.
 
 \begin{figure}[!ht]
        \centering
@@ -16,7 +16,7 @@ A good example for a physical implementation of a qubit is the single electron o
 
 \footnotetext[1]{Reprinted from RF Wireless World, n.d., Retrieved December 23, 2016, from \url{http://www.rfwireless-world.com/Terminology/Difference-between-Bit-and-Qubit.html}. Copyright 2012 by RF Wireless World. Reprinted with permission.}
 \pagebreak
-A classical non-probabilistic bit can only be in one of the two possible states at once. In contrast, qubits obey the laws of quantum mechanics, which gives rise to the powerful property that - besides being a definite 0 or 1 - they can also be in a superposition of the two states. Mathematically this is expressed as a linear combination of the states 0 and 1:
+A classical non-probabilistic bit can only be in one of the two possible states at once. In contrast, qubits obey the laws of quantum mechanics, which gives rise to the important property that - besides being a definite 0 or 1 - they can also be in a superposition of the two states. Mathematically this is expressed as a linear combination of the states 0 and 1:
 
 \begin{equation}
 \label{equ: simplequbit}
@@ -45,7 +45,7 @@ Subbing these vectors into Equ.~\ref{equ: simplequbit} yields the vector represe
 \ket{\psi} = \alpha \colvec{1\\0} + \beta \colvec{0\\1} = \colvec{\alpha\\\beta}
 \end{equation}
 
-In the cases $\alpha = 1$ or $\beta = 1$ there is no quantum behaviour since the qubit is not in a superposition. However, if for example $\alpha = \beta = \frac{1}{\sqrt{2}}$ the qubit is in an equal quantum superposition which is impossible to achieve with a classical computer. This leads to another important qubit lifetime parameter - the transversal coherence or phase damping time. It is measured by preparing the equal superposition $\frac{\ket{0}+\ket{1}}{\sqrt{2}}$ and due to unavoidable interaction with the environment after some time $t$ the quantum behaviour will be lost and the state will either be a definite \0 or \1. The process of losing quantum behaviour is called \emph{decoherence}.
+In the cases $\alpha = 1$ or $\beta = 1$ there is no quantum behaviour since the qubit is not in a superposition. However, if for example $\alpha = \beta = \frac{1}{\sqrt{2}}$ the qubit is in an equal quantum superposition which is impossible to achieve with a classical computer. This leads to another important qubit lifetime parameter - the transversal coherence or phase damping time. It is measured by preparing the equal superposition $\frac{\ket{0}+\ket{1}}{\sqrt{2}}$ and due to unavoidable interaction with the environment after some time $t$ the quantum behaviour will be lost, and the state will either be a definite \0 or \1. The process of losing quantum behaviour is called \emph{decoherence}.
 
 However, even though a qubit can be in a superposition of \0 and \1, when measured it will take the value \0 with a probability of
 \begin{equation}
@@ -74,7 +74,7 @@ Using spherical polar coordinates, a single qubit can be visualized on the so-ca
 \ket{q} = \cos\frac{\theta}{2} \ket{0} + e^{i \phi} \sin\frac{\theta}{2} \ket{1}
 \end{equation}
 
-The Bloch sphere has a radius of 1 and is therefore a unit sphere. The \0 qubit state is defined to lie along the positive z-axis ($\hat{z}$) and the \1 state is defined to lie along the negative z-axis ($-\hat{z}$) as labelled in Fig.~\ref{fig:blochsphere}. At this point, it is important to note that these two states are mutually orthogonal in $\mathcal{H}_{2}$ even though they are not orthogonal on the Bloch sphere. 
+The Bloch sphere has a radius of 1 and is, therefore, a unit sphere. The \0 qubit state is defined to lie along the positive z-axis ($\hat{z}$) and the \1 state is defined to lie along the negative z-axis ($-\hat{z}$) as labelled in Fig.~\ref{fig:blochsphere}. At this point, it is important to note that these two states are mutually orthogonal in $\mathcal{H}_{2}$ even though they are not orthogonal on the Bloch sphere. 
 
 Qubit states on the Bloch equator such as the $\hat{x}$ and $\hat{y}$ coordinate axes represent equal superpositions where \0 and \1 both have measurement probabilities equal to $0.5$. The $\hat{x}$-axis for example represents the equal superposition $\ket{q} = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}$. As illustrated in Fig.~\ref{fig:blochsphere} any arbitrary 2-D qubit state $\ket{\psi}$ can be decomposed into the polar angles $\theta$ and $\phi$ and visualized as a vector on the Bloch sphere. Such an object is called the Bloch vector of the qubit state $\ket{\psi}$. The Bloch sphere will be the main visualization tool for qubit manipulations in this thesis.
 
@@ -97,7 +97,7 @@ U \ket{\psi} = \begin{pmatrix}
  \end{pmatrix} \colvec{\alpha\\\beta} = \colvec{a*\alpha+b*\beta\\c*\alpha+d*\beta}
 \end{equation}
 
-Matrix $U$ must be unitary which means that a) its determinant is equal to unity and b) its Hermitian conjugate $U^\dagger$ must be equal to its inverse (see Equ.~\ref{equ:unitarydef1} and ~\ref{equ:unitarydef2}). All quantum logic gates must be unitary since this preserves the normalization of the qubit state it is acting on.
+Matrix $U$ must be unitary which means that a) its determinant is equal to unity and b) its Hermitian conjugate $U^\dagger$ must be equal to its inverse (see Equ.~\ref{equ:unitarydef1} and ~\ref{equ:unitarydef2}). All quantum logic gates must be unitary since this preserves the normalisation of the qubit state it is acting on.
 
 \begin{align}
 \label{equ:unitarydef1}
@@ -117,13 +117,13 @@ The gate set $G$ is a dense subset of $SU(2)$ when given any quantum gate $W \in
 \subsection{Multi qubit systems}
 \label{subsec:multiqubitsystems}
 
-A classical computer with one bit of memory is not particularly useful and equally a QC with one qubit is rather useless. In order to be able to perform large and complicated computations many individual qubits need to be combined to create a large QC. When moving from single to multi qubit systems a new mathematical tool, the so-called tensor product (symbol $\otimes$), is needed. A tensor product of two qubits is written as:
+A classical computer with one bit of memory is not particularly useful and equally, a QC with one qubit is rather useless. To be able to perform large and complicated computations many individual qubits need to be combined to create a large QC. When moving from single to multi-qubit systems a new mathematical tool, the so-called tensor product (symbol $\otimes$), is needed. A tensor product of two qubits is written as:
 
 \begin{equation}
 \ket{\psi} \otimes \ket{\psi} = \ket{0} \otimes \ket{0} = \ket{00}
 \end{equation}
  
-whereby the last expression omits the $\otimes$ symbol which is the shorthand form of a tensor product between two qubits. A \emph{quantum register} of size $j$ is an alternative way of referring to a tensor product of $j$ qubits. In QML algorithms, large quantum states are usually subdivided into several quantum registers fulfilling different purposes e.g. storing data or class label.
+Whereby the last expression omits the $\otimes$ symbol which is the shorthand form of a tensor product between two qubits. A \emph{quantum register} of size $j$ is an alternative way of referring to a tensor product of $j$ qubits. In QML algorithms, large quantum states are usually subdivided into several quantum registers fulfilling different purposes e.g. storing data or class label.
 
 In vector notation a tensor product of two vectors (\textcolor{red}{red} and \textcolor{green}{green}) is defined as shown below:
 
@@ -132,7 +132,7 @@ In vector notation a tensor product of two vectors (\textcolor{red}{red} and \te
 \ket{\textcolor{red}{0}\textcolor{green}{0}} = \textcolor{red}{\ket{0}} \otimes \textcolor{green}{\ket{0}} = \textcolor{red}{\colvec{1\\0}} \otimes \textcolor{green}{\colvec{1\\0}} = \colvec{\textcolor{red}{1}*\textcolor{green}{\colvec{1\\0}}\\\textcolor{red}{0}*\textcolor{green}{\colvec{1\\0}}} = \colvec{1\\0\\0\\0}
 \end{equation}
 
-The last expression in Equ.~\ref{equ:tensor2qubits} shows that the two-qubit state $\ket{00}$ is no longer two but four-dimensional. Hence, it lives in a four-dimensional Hilbert space $\mathcal{H}_{4}$. A quantum gate acting on multiple qubits can therefore not have the same dimensions as a single-qubit gate (Equ.~\ref{equ:unitarytransformation}) which demands for a new gate formalism for multi qubit systems.
+The last expression in Equ.~\ref{equ:tensor2qubits} shows that the two-qubit state $\ket{00}$ is no longer two but four-dimensional. Hence, it lives in a four-dimensional Hilbert space $\mathcal{H}_{4}$. A quantum gate acting on multiple qubits can therefore not have the same dimensions as a single-qubit gate (Equ.~\ref{equ:unitarytransformation}) which demands a new gate formalism for multi-qubit systems.
 
 Consider wanting to apply an arbitrary single-qubit gate U (Equ.~\ref{equ:unitarytransformation}) to the first qubit and leaving the second qubit unchanged, essentially applying the identity matrix $\mathbb{1}$ to it. To do this, one defines the tensor product of two matrices as follows,
 
@@ -192,7 +192,7 @@ One can also first perform the single qubit operations on the respective qubits 
  \end{pmatrix} \colvec{1\\0} = \colvec{a\\c} \otimes \colvec{1\\0} = \colvec{a\\0\\c\\0}
 \end{equation}
 
-This formalism can be extended to any number of qubits and the use of tensor products leads to an exponential increase in the dimensionality of the Hilbert space. Hence, $n$ qubits live in a $2^n$-dimensional Hilbert space ($\mathcal{H}_{2}^{\otimes n}$) and can store the content of $2^n$ classical bits. As an example, only 33 qubits can store the equivalent of $2^{33} = 8,589,934,592$ bits (= 1 gigabyte) which clearly bears the potential for enourmous speed-ups in computations as will be demonstrated later.
+This formalism can be extended to any number of qubits and the use of tensor products leads to an exponential increase in the dimensionality of the Hilbert space. Hence, $n$ qubits live in a $2^n$-dimensional Hilbert space ($\mathcal{H}_{2}^{\otimes n}$) and can store the content of $2^n$ classical bits. As an example, only 33 qubits can store the equivalent of $2^{33} = 8,589,934,592$ bits (= 1 gigabyte) which clearly bears the potential for enormous speed-ups in computations as will be demonstrated later.
 
 When considering multi qubit systems one will encounter quantum states that can or cannot be factorized. Consider for example the last expression in Equ.~\ref{equ:2qubitlineartransform2} which can be reexpressed as follows,
 
@@ -215,7 +215,7 @@ In contrast, consider the following state:
 \ket{\phi} = \frac{\ket{00} + \ket{11}}{\sqrt{2}}
 \end{equation}
 
-It is straightforward to see that there is no way to factorize the state $\ket{\phi}$ into a tensor product of two states.
+It is straightforward to see that there is no way to factorise the state $\ket{\phi}$ into a tensor product of two states.
 Now imagine, two people Andy and Beatrice are given two electrons prepared in the quantum state $\ket{\phi}$. Andy keeps the first electron in the lab and Beatrice takes the second electron to her house. Andy gets interested in measuring if his electron is in the $\ket{0}$ or $\ket{1}$ state and performs a measurement. He finds the electron to be in the $\ket{1}$ state. From Equ.~\ref{equ:2qubitnonfactorized} and knowing that measurement collapses a superposition the post-measurement (PM) state $\ket{\phi}_{PM}$ is given by Equ.~\ref{equ:2qubitcollapsed}.
 
 \begin{equation}
@@ -223,7 +223,7 @@ Now imagine, two people Andy and Beatrice are given two electrons prepared in th
 \ket{\phi}_{PM} = \ket{11}
 \end{equation}
 
-Looking at this expression tells Andy that Beatrice's electron must be in state $\ket{1}$ as well without having measured her electron! Even more suprising is the fact that the second electron was nowhere close to Andy and he was still able to determine its state. 
+Looking at this expression tells Andy that Beatrice's electron must be in state $\ket{1}$ as well without having measured her electron! Even more surprising is the fact that the second electron was nowhere close to Andy and he was still able to determine its state. 
 
 Non-local correlations between qubit measurement outcomes is a peculiar quantum property of non-factorising quantum states and is called \emph{entanglement}. It is an integral part of quantum computation and Section~\ref{subsubsubsec:cnotgate} will give a concrete example of how to create such a state in a QC.
 
@@ -232,7 +232,7 @@ Non-local correlations between qubit measurement outcomes is a peculiar quantum 
 
 \section{Quantum Logic Gates}
 \label{subsec:quantumlogicgates}
-In order to perform quantum computations, tools, analogous to the classical logic gates, are needed for qubit manipulation. Quantum logic gates are square matrices that can be visualized as rotations on the Bloch sphere. The following subsections will introduce the major single and multi qubit logic gates.
+In order to perform quantum computations, tools, analogous to the classical logic gates, are needed for qubit manipulation. Quantum logic gates are square matrices that can be visualised as rotations on the Bloch sphere. The following subsections will introduce the major single and multi-qubit logic gates.
 
 \subsection{Single qubit gates}
 \label{subsubsec:singlequbitgates} 
@@ -315,7 +315,7 @@ XX &= XX^\dagger = \mathbb{1} \\
 X &= X^{-1} = X^\dagger
 \end{align}
 
-The action, circuit \& matrix representation and Bloch sphere visualization for the most important single-qubit quantum logic gates are summarised in Table~\ref{tab:singlequbitgates}  below.
+The action, circuit \& matrix representation and Bloch sphere visualisation for the most important single-qubit quantum logic gates are summarised in Table~\ref{tab:singlequbitgates}  below.
 
 \begin{table}[H]
 \caption{Table of major single-qubit quantum logic gates.}\vspace{1em}
@@ -387,7 +387,7 @@ CNOT = \begin{pmatrix}
  \end{pmatrix}
 \end{equation}
 
-The CNOT gate takes two qubits, a control and a target qubit, as input. If and only if the control qubit is in the \1 state, the NOT (X) gate is applied to the target qubit. In equations, the CNOT will always be followed by parantheses containing the control (c) qubit followed by the target (t) qubit: CNOT(c,t). The input-output relation (truth table) for the CNOT gate is given in Table~\ref{tab:cnottruthtable} below.
+The CNOT gate takes two qubits, a control and a target qubit, as input. If and only if the control qubit is in the \1 state, the NOT (X) gate is applied to the target qubit. In equations, the CNOT will always be followed by parentheses containing the control (c) qubit followed by the target (t) qubit: CNOT(c,t). The input-output relation (truth table) for the CNOT gate is given in Table~\ref{tab:cnottruthtable} below.
 
 \begin{table}[H]
 \begin{center}
@@ -424,7 +424,7 @@ CNOT(\textcolor{red}{0},\textcolor{green}{1}) \otimes (\frac{1}{\sqrt{2}} \ket{\
 
 The last expression in Equ.~\ref{equ:cnotexamples} was used as an example (Equ.~\ref{equ:2qubitnonfactorized}) for entanglement in Section~\ref{subsec:multiqubitsystems} and it is one of the famous Bell states which are a set of four maximally entangled states (CITATION). Thus, this example demonstrates how the CNOT gate is crucial for the generation of entangled states since it applies the X gate to a qubit depending on the state of a second qubit.
 
-The three most important multi qubit quantum gates CNOT, Toffoli and nCNOT are characterised in Table~\ref{tab:multiqubitgates}.
+The three most important multi-qubit quantum gates CNOT, Toffoli and nCNOT are characterised in Table~\ref{tab:multiqubitgates}.
 
 \begin{table}[H]
 \caption{Table of major multi-qubit quantum logic gates where $c_j$ stands for the j\textsuperscript{th} control qubit and $\mathbb{1}_k$ for the kxk identity matrix.}\vspace{1em}
@@ -466,7 +466,7 @@ nCNOT & n-controlled NOT & -  & $\begin{pmatrix}
 \section{Classical machine learning}
 \label{subsec:classicalmachinelearning}
 
-Machine learning (ML), a subfield of artificial intelligence, is aiming to enable computers to learn from data without a human explicitly programming its actions. It can be subdivided into the three major fields supervised \& unsupervised machine learning and reinforcement learning. The three fields can be most easily understood by considering the following three colloquial sentences:
+Machine learning (ML), a subfield of artificial intelligence, is aiming to enable computers to learn from data without a human explicitly programming its actions. It can be subdivided into the three major fields supervised \& unsupervised machine learning and reinforcement learning. The three areas can be most readily understood by considering the following three colloquial sentences:
 
 \begin{redbox}
 Supervised ML\\
@@ -491,7 +491,7 @@ This thesis, specifically, is focusing on quantum-enhancements in the field of s
 
 Understanding the quantum version of the distance weighted $k$-nearest neighbour (kNN) algorithm as proposed by \citeA{Schuld2014} requires prior knowledge of the classical version of the algorithm that will be introduced in this subsection.
 
-Imagine working for a search engine company and you are given the task of classifying unknown pictures of fruits as either apples or bananas. To train your classification algorithm you are given 5 different pictures of apples and 5 different pictures of bananas. This will be called the \emph{training data set} ${D}_{T}$. The pictures in ${D}_{T}$ may be taken from different angles, in varying light settings and include different coloured apples and bananas. Two examples of such pictures are shown in Fig.~\ref{img:appleandbanana}. 
+Imagine working for a search engine company and you are given the task of classifying unknown pictures of fruits as either apples or bananas. To train your classification algorithm, you are given five different pictures of apples and five different pictures of bananas. This will be called the \emph{training data set} ${D}_{T}$. The pictures in ${D}_{T}$ may be taken from various angles, in varying light settings and include different coloured apples and bananas. Two examples of such images are shown in Fig.~\ref{img:appleandbanana}. 
 
 \begin{figure}[H]
   \begin{minipage}[t]{0.48\textwidth}
@@ -509,9 +509,9 @@ Imagine working for a search engine company and you are given the task of classi
 
 Most of the time, using the full pixel representation of each picture for classification does not lead to optimal results. Therefore, the next step is to select a certain number of characteristic \emph{features} extracted from the pictures in the training set that can be used to differentiate apples from bananas. Such a feature might be the RGB value of the most frequent pixel colour since bananas and apples have different colour spectra. Using a measure of the curvature of the main object in the picture is another possibility since an apple is almost spherical whereas a banana looks more like a bend line.
 
-By selecting and extracting features, the dimensionality of the training data set is drastically reduced from a few thousand pixels to a handful of features. The $m$ extracted features for the j\textsuperscript{th} picture are stored in the $m$-dimensional \emph{feature vector} $\vec{v}_{j}$. Mathematically, the training data set ${D}_{T}$ consists of ten feature vectors $\vec{v}_{0}, \vec{v}_{1},..,\vec{v}_{10}$ that are each assigned to either class $A$ (apple) or $B$ (banana). The training vectors are visualized as yellow and purple circles in Fig.~\ref{fig:knnconcept}.
+By selecting and extracting features, the dimensionality of the training data set is drastically reduced from a few thousand pixels to a handful of features. The $m$ extracted features for the j\textsuperscript{th} picture are stored in the $m$-dimensional \emph{feature vector} $\vec{v}_{j}$. Mathematically, the training data set ${D}_{T}$ consists of ten feature vectors $\vec{v}_{0}, \vec{v}_{1},..,\vec{v}_{10}$ that are each assigned to either class $A$ (apple) or $B$ (banana). The training vectors are visualised as yellow and purple circles in Fig.~\ref{fig:knnconcept}.
 
-Given a new picture of either a banana or an apple, you first extract the same $m$ features from it and store it in the input vector $\vec{x}$. From many algorithms you decide to use the kNN algorithm since it is a non-parametric classifier meaning it makes no prior assumption about the class of the new picture. Given a new unclassified input vector $\vec{x}$ (red star in Fig.~\ref{fig:knnconcept}), the algorithm considers the $k$ nearest neighbours within the training set (using a predefined measure of distance) and classifies $\vec{x}$, based on a majority vote, as either $A$ or $B$. Thereby, $k$ is a positive integer, usually chosen to be small and its value determines the classification outcome. Namely, in the case $k = 3$ in Fig.~\ref{fig:knnconcept}, vector $\vec{x}$ will be classified as class B (purple) but in the case $k = 6$ it will be labelled class A (yellow).
+Given a new picture of either a banana or an apple, you first extract the same $m$ features from it and store it in the input vector $\vec{x}$. From many algorithms, you decide to use the kNN algorithm since it is a non-parametric classifier meaning it makes no prior assumption about the class of the new picture. Given a new unclassified input vector $\vec{x}$ (red star in Fig.~\ref{fig:knnconcept}), the algorithm considers the $k$ nearest neighbours within the training set (using a predefined measure of distance) and classifies $\vec{x}$, based on a majority vote, as either $A$ or $B$. Thereby, $k$ is a positive integer, usually chosen to be small and its value determines the classification outcome. Namely, in the case $k = 3$ in Fig.~\ref{fig:knnconcept}, vector $\vec{x}$ will be classified as class B (purple) but in the case $k = 6$ it will be labelled class A (yellow).
 
 \begin{figure}[H]
       \centering
@@ -552,7 +552,7 @@ For any monotonic functions $t(n)$ and $g(n)$ defined on a subset of the real nu
 This implies that the function $f(n)$ does not grow at a faster rate than $g(n)$, or in other words that some constant multiple of the function $g(n)$ is an upper asymptotic bound for the function $f(n)$, for all $n\rightarrow \infty$.
 \end{redbox}
 
-Fig.~\ref{fig:algcomplexities} provides a good visual comparison between common algorithmic complexity classes regarding their relation to the input size $n$. It can be seen that the best possible algorithmic time complexity is constant time, $\mathcal{O}(1)$, that is being independent of the size of the input data e.g. determining if a binary number is even or odd. An algorithm is still considered excellent if it runs in logarithmic time $\mathcal{O}(log(n))$. Linear search algorithms for example are linear in time expressed as $\mathcal{O}(n)$. More complex sort algorithms like "bubble sort" have a higher time complexity and often run in quadratic time ($\mathcal{O}(n^2)$). Furthermore, algorithms with complexity $\mathcal{O}(n^c)$ are said to run in polynomial time for some $c > 2$. If an algorithm has time complexity $\mathcal{O}((log(n))^c)$ for some $c \geq 1$ it is called polylogarithmic. The highest complexity classes are exponential $\mathcal{O}(c^n)$ with $c \geq 1$ and factorial time $\mathcal{O}(n!)$. For example, solving the travelling salesman problem using brute-force search runs in factorial time.
+Fig.~\ref{fig:algcomplexities} provides a good visual comparison between common algorithmic complexity classes regarding their relation to the input size $n$. It can be seen that the best possible algorithmic time complexity is constant time, $\mathcal{O}(1)$, that is being independent of the size of the input data e.g. determining if a binary number is even or odd. An algorithm is still considered excellent if it runs in logarithmic time $\mathcal{O}(log(n))$. Linear search algorithms, for example, are linear in time expressed as $\mathcal{O}(n)$. More complex sort algorithms like "bubble sort" have a higher time complexity and often run in quadratic time ($\mathcal{O}(n^2)$). Furthermore, algorithms with complexity $\mathcal{O}(n^c)$ are said to run in polynomial time for some $c > 2$. If an algorithm has time complexity $\mathcal{O}((log(n))^c)$ for some $c \geq 1$ it is called polylogarithmic. The highest complexity classes are exponential $\mathcal{O}(c^n)$ with $c \geq 1$ and factorial time $\mathcal{O}(n!)$. For example, solving the travelling salesman problem using brute-force search runs in factorial time.
 
 \begin{figure}[H]
       \centering
