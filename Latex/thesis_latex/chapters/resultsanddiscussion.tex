@@ -1081,16 +1081,50 @@ Suppose the probability distribution $R = (r_1,...,r_N)$ is the input sample tha
 Prob(\ket{c^m} = \ket{1})= \sum_{m \mid c^m=1} 1 - \frac{1}{4M} \sum_{i=1}^N \mid \sqrt{r_i} - \sqrt{l^m_i} \mid ^2
 \end{equation}
 
-which is now clearly dependent on the squared Hellinger distance  between the input distribution $R$ and each training distribution $L^m$.
+which is now dependent on the squared Hellinger distance between the input distribution $R$ and each training distribution $L^m$.
 
-It remains to discuss how to load the input and training distributions into the initial quantum state (Eq.~\ref{equ:ampinitial}) required for the amplitude-based kNN algorithm. The neccessary procedure is outlined in Appendix~\ref{sec:stateprepgaussian}.
+It remains to discuss how to load the input and training distributions into the initial quantum state required for the amplitude-based kNN algorithm as defined in Eq.~\ref{equ:ampinitial}. The neccessary procedure is outlined in Appendix~\ref{sec:stateprepgaussian}. Thus, all tools needed to classify Gaussian distributions with the amplitude-based kNN algorithm have been introduced.
 
-At this point, all tools needed to classify Gaussian distributions with the amplitude-based kNN algorithm have been discussed. 
+%For the beginning, the classification of Gaussian distributions with eight entries requiring three qubits will be 
+%Introduce the training and input dataset and explain visually on the cube what the main idea is!
 
-For the beginning, the classification of Gaussian distributions with eight entries requiring three qubits will be 
+\begin{minipage}[c]{.49\textwidth}
+    \begin{tabular}{| C{0.8cm} | C{2.3cm} |C{2cm}|}
+      \toprule
+      ID & Gaussian distr. centered around & Class label\\
+      \midrule
+       1 & $\ket{000}$ & $\ket{0}$ \\\midrule
+       2 & $\ket{111}$ & $\ket{1}$ \\
+      \bottomrule
+    \end{tabular}
+        \label{tab:gausstrainingset}
+        \captionsetup{justification=raggedright, singlelinecheck=false}
+    \captionof{table}{Training set}
+\end{minipage}%%%%
+\begin{minipage}[c][][b]{.49\textwidth}
+\flushright
+    \begin{tabular}{| C{0.8cm} | C{2.3cm} |C{2cm}|}
+      \toprule
+      ID & Gaussian distr. centered around & Expected class\\
+      \midrule
+       1 & $\ket{100}$ & $\ket{0}$ \\\midrule
+       2 & $\ket{010}$ & $\ket{0}$ \\\midrule
+       3 & $\ket{001}$ & $\ket{0}$ \\\midrule\midrule
+       
+       4 & $\ket{110}$ & $\ket{1}$ \\\midrule
+       5 & $\ket{011}$ & $\ket{1}$ \\\midrule
+       6 & $\ket{101}$ & $\ket{1}$ \\
+      \bottomrule
+    \end{tabular}
+        \label{tab:gaussinputset}
+        \captionsetup{justification=raggedleft, singlelinecheck=false}
+    \captionof{table}{Input vector}
+\end{minipage}
 
 
-
+%Liqui$\ket{}$ was used to perform the simulations
+%Results are shown...
+%Discuss the results here
 
 \begin{table}[H]
 \begin{tabular}{| C{0.5cm} | C{2.7cm} |C{1.7cm} | C{1.7cm} | C{1.7cm} |C{1.8cm}| C{1.8cm}|}
@@ -1111,13 +1145,19 @@ For the beginning, the classification of Gaussian distributions with eight entri
        
       \bottomrule
     \end{tabular}
-    \caption{\label{tab:gauss3qubitresults} Amplitude-based kNN algorithm classification results for various Gaussian distributions centered around six different three-qubit patterns. The Gaussian distributions were created using the coin gate $C(\delta)$. For each pattern three different distributions were prepared and classified by changing the parameter $\delta$: The results for $\delta = 0.6$ are always on top and marked with an empty circle ($\circ$), results for $\delta = 0.85$ are always in the middle marked with a filled circle ($\bullet$) and results for $\delta = 0.95$ are always at the bottom and marked with a triangle ($\triangleright$)}
+    \caption{\label{tab:gauss3qubitresults} Amplitude-based kNN algorithm classification results after 1000 runs for various Gaussian distributions centered around six different three-qubit patterns. The Gaussian distributions were created using the coin gate $C(\delta)$. For each pattern three different distributions were prepared and classified by changing the parameter $\delta$: The results for $\delta = 0.6$ are always on top and marked with an empty circle ($\circ$), results for $\delta = 0.85$ are always in the middle marked with a filled circle ($\bullet$) and results for $\delta = 0.95$ are always at the bottom and marked with a triangle ($\triangleright$)}
 \end{table}
 
+%Summarize the Gaussian part
+%Stress that it was another toy example for the aKNN algorithm
+%Need to implement more advanced state preparation algorithms!
+%aKNN performed well for the fact that it is a very simple q alg
 
 
 
-
+%Summarize the entire Results & Discussion section here?
+%Contrast with some other work if possible
+%Criticize what could be improved
 
 
 
