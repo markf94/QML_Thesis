@@ -354,7 +354,7 @@ All previous steps need to be repeated $y$ times in order to generate a sufficie
 The quantum advantage of the algorithm is the parallel computation of the squared Euclidean distance between the input vector and each training vector through the implementation of a single H gate. Such an operation is impossible to perform on a classical computer. Consider for example a particular training set containing 100,000,000 vectors with 10 entries each: The quantum algorithm performs all 100,000,000 distance computations between input and training vectors within one step whereas a classical computer would need to perform  100,000,000 individual computations to arrive at the same result.
 \vspace{1cm}
 \begin{greenbox}
-\textbf{Complexity analysis}\\
+\textbf{Complexity analysis neglecting initial state preparation}\\
 \newline
 Independent of number and size of the input and training vectors, the algorithm only requires the application of a single H gate. However, the routine has to be repeated for $y$ runs of which only $Prob(CM)*y$ runs result in a measurement of the class qubit. Thus, the time complexity of this algorithm is $\mathcal{O}(\frac{1}{Prob(CM)})$ where $Prob(CM)$ is the probability of a successful CM (measuring ancilla in the $\ket{0}$ state). Therefore, the algorithm is said to run in constant time. This means it is independent of the number of training vectors and their size. For example, executing this quantum routine with 10 or 100,000,000 training vectors each with 1,000,000 entries does not make a difference in the run time.
 \end{greenbox}
@@ -866,7 +866,7 @@ The obtained simulation results after 1000 runs for both Bloch vectors from inpu
     \caption{\label{tab:blochresults} Classification results for two qubit states after 1000 runs. Input state with ID=1 was defined in Table~\ref{tab:inputvectors} and qubit state with ID=2 was defined in Section~\ref{subsubsec:simulationamplitudeKNN}. Trained with training set defined in Table~\ref{tab:trainingset} consisting of the \0 and \1 qubit states. Theoretical predictions (marked with asterisks) on top, simulation results at the bottom.}
 \end{table}
 
-Both input qubit states were correctly classified as \0 (yellow vector in Fig.~\ref{img:3over4} and Fig.~\ref{fig:7over8}) since both qubit states lie within the upper half of the Bloch sphere. The input qubit state with ID=2 has a slightly higher probability of measuring class \0 than the qubit state with ID=1. This is expected since the state with ID=2 is closer to the training state \0 on the Bloch sphere than the state with ID=1.
+Both input qubit states were correctly classified as \0 (yellow vector in Fig.~\ref{img:3over4} and Fig.~\ref{fig:7over8}) as expected since both qubit states lie within the upper half of the Bloch sphere. The input qubit state with ID=2 has a slightly higher probability of being classified as \0 than the qubit state with ID=1. This is expected since the state with ID=2 is closer to the training state \0 on the Bloch sphere than the state with ID=1. 	
 
 In conclusion, using the small input data set II the amplitude-based kNN algorithm has achieved 100\% accuracy. However, since only two Bloch vectors were considered this number should not be taken too seriously but rather be seen as a small test bench for the amplitude-based kNN algorithm. All in all, the main purpose of this simulation was to show that the amplitude-based kNN algorithm would have performed as expected when an implementation with IBM's quantum computer would have been feasible.
 
@@ -883,7 +883,7 @@ Consider the following classical probability vector $w$ with eight entries repre
 w = \colvec{0.58566\\0.11434\\0.11434\\0.022322\\0.11434\\0.022322\\0.022322\\0.0043579}
 \end{equation}
 
-The goal is to initialize an amplitude distribution of a multi-qubit system such that it represents the classical vector $w$. Since $w$ has eight entries the multi-qubit system needs to consist of three qubits giving rise to $2^3=8$ amplitudes. Thus, the desired quantum memory state $\ket{w}$ representing the classical vector $v$ should be of the form:
+The goal is to initialize an amplitude distribution of a multi-qubit system such that it represents the classical vector $w$. Since $w$ has eight entries the multi-qubit system needs to consist of three qubits giving rise to $2^3=8$ amplitudes. Thus, the desired quantum memory state $\ket{w}$ representing the classical vector $w$ should be of the form:
 
 \begin{align}
 \label{equ:desiredmemorystate}
@@ -893,7 +893,7 @@ The goal is to initialize an amplitude distribution of a multi-qubit system such
 + 0.00436 \ket{111}
 \end{align}
 
-Knowing that the classical vector $w$ is Gaussian-distributed it follows that the amplitudes of $\ket{w}$ are also Gaussian-distributed. To initialize the state $\ket{w}$ a suitable quantum gate is required. For this purpose, the idea of a coin operator can be borrowed from the theory of quantum random walks (CITATION). Such a coin operator can be used as a quantum gate to initialize a gaussian distribution centered around a chosen binary qubit pattern as will be shown later. For this purpose, the coin gate, denoted $C$, will be defined as the following unitary matrix:
+Knowing that the classical vector $w$ is Gaussian-distributed it follows that the amplitudes of $\ket{w}$ are also Gaussian-distributed which will become important later. To initialize the state $\ket{w}$ a suitable quantum gate is required. For this purpose, the idea of a coin operator can be borrowed from the theory of quantum random walks (CITATION). Such a coin operator can be used as a quantum gate to initialize a Gaussian distribution centered around a chosen binary qubit pattern as will be shown later. For this purpose, the coin gate, denoted $C$, will be defined as the following unitary matrix:
 
 \begin{equation}
 C(\delta) = \begin{pmatrix}
@@ -920,7 +920,7 @@ where $0 \leq \delta \leq 1$. The action of $C(\delta)$ on a quantum state needs
 &= \colvec{\sqrt{\delta}*\colvec{\sqrt{\delta}\\1-\sqrt{\delta}}\\(1-\sqrt{\delta})*\colvec{\sqrt{\delta}\\1-\sqrt{\delta}}} \otimes \colvec{\sqrt{\delta}\\1-\sqrt{\delta}}\notag\\
 &= \colvec{\delta\\\sqrt{\delta}-\delta\\\sqrt{\delta}-\delta\\1-2\sqrt{\delta}+\delta} \otimes \colvec{\sqrt{\delta}\\1-\sqrt{\delta}}\notag\\
 \label{equ:deltatensor}
-&= \colvec{\delta\sqrt{\delta}\\\delta-\delta\sqrt{\delta}\\\delta-\delta\sqrt{\delta}\\-2\delta+\sqrt{\delta}(\delta+1)\\\delta-\delta\sqrt{\delta}\\-2\delta+\sqrt{\delta}(\delta+1)\\-2\delta+\sqrt{\delta}(\delta+1)\\1+3\delta-\sqrt{\delta}(3+\delta)}
+&= \colvec{\delta\sqrt{\delta}\\\delta-\delta\sqrt{\delta}\\\delta-\delta\sqrt{\delta}\\\sqrt{\delta}(\delta+1)-2\delta\\\delta-\delta\sqrt{\delta}\\\sqrt{\delta}(\delta+1)-2\delta\\\sqrt{\delta}(\delta+1)-2\delta\\-\sqrt{\delta}(3+\delta)+1+3\delta}
 \end{align}
 
 When choosing $\delta = 0.7$, the last expression in Equ.~\ref{equ:deltatensor} is equal to the desired quantum memory state $\ket{w}$ defined in Equ.~\ref{equ:desiredmemorystate}:
@@ -936,15 +936,18 @@ When choosing $\delta = 0.7$, the last expression in Equ.~\ref{equ:deltatensor} 
 
 Thus, it was shown that acting $C(0.7)$ on each qubit in the state $\ket{000}$ yields the desired quantum memory state $\ket{w}$. Since the amplitudes of $\ket{w}$ represent a discretized Gaussian distribution, it was shown that the coin gate $C(\delta)$ can indeed be used to generate Gaussian amplitude distributions. 
 
-eep in mind that it resulted from the action of $(C(0.7) \otimes C(0.7) \otimes C(0.7))$ onto the $\ket{000}$ state. In $\ket{w}$, the state $\ket{000}$ has the highest amplitude of 0.58566. When calculating the Hamming distances between $\ket{000}$ and all other seven possible three qubit states an important pattern is observed. Namely, $\ket{100}$, $\ket{010}$ and $\ket{001}$ all have amplitudes of 0.11434 and a Hamming distance of one with respect to $\ket{000}$. Next, $\ket{110}$, $\ket{011}$ and $\ket{101}$ have amplitudes of 0.02232 and a Hamming distance of two compared to $\ket{000}$. Lastly, $\ket{111}$ has a Hamming distance of three with respect to $\ket{000}$ and an amplitude of 0.00436. Hence, the amplitudes are equal for equal Hamming distances and decrease with increasing Hamming distance.
+Keeping in mind that $\ket{w}$ resulted from the action of $(C(0.7) \otimes C(0.7) \otimes C(0.7))$ onto the $\ket{000}$ state and important pattern is observed when calculating the Hamming distances between $\ket{000}$ and all eight possible three qubit states. Firstly, the state $\ket{000}$ has a Hamming distance of zero relative to itself and has the highest amplitude of 0.58566. Secondly, $\ket{100}$, $\ket{010}$ and $\ket{001}$ all have amplitudes of 0.11434 and a Hamming distance of one with respect to $\ket{000}$. Thirdly, $\ket{110}$, $\ket{011}$ and $\ket{101}$ have amplitudes of 0.02232 and a Hamming distance of two compared to $\ket{000}$. Lastly, $\ket{111}$ has a Hamming distance of three with respect to $\ket{000}$ and an amplitude of 0.00436. Hence, the amplitudes are always equal for equal Hamming distances and decrease with increasing Hamming distance.
 
-To visualise the Gaussian distribution represented by $\ket{w}$, redefine the Hamming distance between $\ket{100}$ and $\ket{000}$ to be -1 instead of 1 and the Hamming distance between $ket{110}$ and $\ket{000}$ to be -2 instead of 2. Furthermore, suppose one can add a ninth entry to $\ket{w}$ by duplicating the entry for state $\ket{111}$. Define the new duplicate entry of $\ket{111}$ to have a Hamming distance of -3 instead of 3. When plotting the Hamming distances against the amplitudes of this new artificial vector representation of $\ket{w}$ a discrete Gaussian distribution can be observed. The corresponding plot in Fig.~\ref{fig:gaussdeltaplot1} illustrates this clearly.
+To visualise the Gaussian distribution represented by $\ket{w}$, one simply needs to plot amplitudes against Hamming distances and mirror the resulting plot with respect to the vertical line connecting the horizontal zero value  with the data point representing the highest amplitude. The corresponding plot is given in Fig.~\ref{fig:gaussdeltaplot1} and clearly shows a discrete Gaussian distribution centered around the binary qubit pattern with Hamming distance zero: in this case $\ket{000}$. It follows that applying the coin gate $C(0.7)$ to each qubit in an $n$-qubit systems $\ket{q_1,q_2,...,q_n}$ yields a similar discretized Gaussian distribution centered around the binary qubit pattern $\ket{q_1,q_2,...,q_n}$.
+%redefine the Hamming distance between $\ket{100}$ and $\ket{000}$ to be -1 instead of 1 and the Hamming distance between $ket{110}$ and $\ket{000}$ to be -2 instead of 2. Furthermore, suppose one can add a ninth entry to $\ket{w}$ by duplicating the entry for state $\ket{111}$. Define the new duplicate entry of $\ket{111}$ to have a Hamming distance of -3 instead of 3. When plotting the Hamming distances against the amplitudes of this new artificial vector representation of $\ket{w}$ a discrete Gaussian distribution can be observed. The corresponding plot in Fig.~\ref{fig:gaussdeltaplot1} illustrates this clearly.
 
 \begin{figure}[H]
 \centering
-    \begin{tikzpicture}[scale=1.3]
+    \begin{tikzpicture}[scale=1]
 \begin{axis}[xlabel={Hamming distance},ylabel={Amplitude},
-				xtick=data,xticklabels={3,2,1,0,1,2,3}]
+				xtick=data,xticklabel style={align=center},xticklabels={3,2,1,0,1,2,3}]
+				
+				%xticklabels={{3\\($\ket{111}$)},{2\\($\ket{011}$)\\($\ket{110}$)\\($\ket{101}$)},{1\\($\ket{100}$)\\($\ket{010}$)\\($\ket{001}$)},{0\\($\ket{000}$)},{1\\($\ket{100}$)\\($\ket{010}$)\\($\ket{001}$)},{2\\($\ket{011}$)\\($\ket{110}$)\\($\ket{101}$)},{3\\($\ket{111}$)}}]
 
 % Graph column 0 versus column 1
 \addplot table[x index=1,y index=0,col sep=comma] {gauss2.dat};
@@ -952,29 +955,50 @@ To visualise the Gaussian distribution represented by $\ket{w}$, redefine the Ha
 
 \end{axis}
 \end{tikzpicture}
-\caption{Gaussian distribution of $\ket{000}$ with $C$ with $\delta =0.7$.}
+\caption{Plot visualizing the discrete Gaussian distribution of $\ket{w}$ resulting from acting coin gate $C$ with $\delta =0.7$ on each qubit in state $\ket{000}$. Amplitudes of quantum state $\ket{w}$ (Equ.~\ref{equ:desiredmemorystate}) are plotted against the Hamming distances between binary pattern $\ket{000}$ and all eight binary three-qubit pattern. The plot was mirrored with respect to the vertical line connecting the horizontal zero value with the data point representing the highest amplitude.}
 \label{fig:gaussdeltaplot1}
   \end{figure}
   
-The observed pattern within the amplitudes can be generalized using Equ.~\ref{equ:deltatensor}: Acting the coin gate $C(\delta)$ on each qubit in the three-qubit state $\ket{000}$ will result in a discretized Gaussian distribution with the following amplitudes dependent on the Hamming distance with respect to state $\ket{000}$: state $\ket{000}$ with Hamming distance zero will have the largest amplitude of $\delta\sqrt{\delta}$, states with Hamming distance one have amplitudes equal to $\delta-\delta\sqrt{\delta}$, states with Hamming distance two have amplitudes equal to $-2\delta+\sqrt{\delta}(\delta+1)$ and the state $\ket{111}$ with the largest Hamming distance of three has the smallest amplitude of $1+3\delta-\sqrt{\delta}(3+\delta)$.
+The observed pattern within the amplitudes can be generalized using Equ.~\ref{equ:deltatensor}: Acting the coin gate $C(\delta)$ on each qubit in the three-qubit state $\ket{000}$ will result in a discretized Gaussian distribution centered around $\ket{000}$ with the following amplitudes dependent on the Hamming distance with respect to state $\ket{000}$: state $\ket{000}$ with Hamming distance zero will have the largest amplitude of $\delta\sqrt{\delta}$, states with Hamming distance one have amplitudes equal to $\delta-\delta\sqrt{\delta}$, states with Hamming distance two have amplitudes equal to $\sqrt{\delta}(\delta+1)-2\delta$ and the state $\ket{111}$ with the largest Hamming distance of three has the smallest amplitude of $-\sqrt{\delta}(3+\delta)+1+3\delta$.
   
-Furthermore, a useful tool of visualizing the HDs between binary patterns made from three qubits is a 3-D cube as shown in Fig.~\ref{img:cubenoprobs}. On the cube, adjacent qubit patterns have a HD of 1 and the HD increases by 1 for every additional corner. For example, the qubit state $\ket{000}$ is adjacent to $\ket{100}$ since they only differ in one qubit ($HD=1$). Moving one more corner yields the state $\ket{101}$ or $\ket{110}$ which both have a HD of 2 compared to $\ket{000}$.
+A useful tool for visualizing Hamming distances between three-qubit patterns is a three-dimensional cube as shown in Fig.~\ref{img:cubenoprobs}. On that cube, adjacent qubit patterns have a Hamming distance (HD) of one and the Hamming distance increases by one with every additional corner. For example, the qubit state $\ket{100}$ is adjacent to $\ket{110}$ since they only differ in one qubit ($HD=1$). Moving one more corner yields the state $\ket{111}$ or $\ket{010}$ which both have a Hamming distance of two when compared to $\ket{100}$.
 
 \begin{figure}[!ht]
        \centering
        \includegraphics[width=0.5\textwidth]{img/cubewithoutprobs.png}
-       \caption{\label{img:cubenoprobs} Visualizing Hamming distances on a 3-D cube}
+       \caption{\label{img:cubenoprobs} Visualizing Hamming distances on a three-dimensional cube. The Hamming distance between two binary qubit patterns is given by the shortest path on the edges of the cube between them. Thereby, the Hamming distance increases by one for every corner.}
 \end{figure}
+
+This cube can be used as another way of visualizing the action of the coin gate $C(0.7)$ on each qubit in the e.g. $\ket{000}$ state. Before applying the $C$ gates the qubit state is $\ket{000}$ with an amplitude of 1.0 shown in Fig.~\ref{img:cubeoneprob} wherein amplitude is denoted by $a$.
   
-\begin{figure}[!ht]
+\begin{figure}[H]
        \centering
-       \includegraphics[width=0.5\textwidth]{img/cubewithoutprobs.png}
-       \caption{\label{img:cubenoprobs} Visualizing Hamming distances on a 3-D cube}
+       \includegraphics[width=0.5\textwidth]{img/cubeoneprob.png}
+       \caption{\label{img:cubeoneprob} The qubit state $\ket{000}$ with amplitude ($a$) of 1.0 visualized on a three-dimensional cube representing the Hamming distances between binary qubit patterns.}
 \end{figure}
-  
-  
-  
-  
+
+Applying the coin gate $C$ to the first qubit redistributes the amplitudes between the $\ket{000}$ and $\ket{100}$ state which is visualized in Fig.~\ref{img:cubediffused1} below.
+
+\begin{figure}[H]
+       \centering
+       \includegraphics[width=0.5\textwidth]{img/cube_diffused1.png}
+       \caption{\label{img:cubediffused1} Visualization of the amplitude distribution over all three-qubit states after application of coin gate $C$ to the first qubit of the state $\ket{000}$.}
+\end{figure}
+
+Fig.~\ref{img:cubediffused2} illustrates the amplitude distribution after application of $C$ gates to the first and second qubit in the state $\ket{000}$. It can be seen that only four out of eight three-qubit states have non-zero amplitudes at this point. With the application of the third $C$ gate to the third qubit in $\ket{000}$ all eight qubit patterns have non-zero amplitudes and the quantum state $\ket{w}$ from Equ.~\ref{equ:desiredmemorystate} is obtained. Fig.~\ref{img:cubediffused3} shows this final quantum superposition representing a discrete Gaussian distribution over a three-dimensional cube based on Hamming distances.
+
+In this example, Fig.~\ref{img:cubediffused1}, ~\ref{img:cubediffused2} and \ref{img:cubediffused3} visually demonstrate a stepwise diffusion of the initial amplitude of 1.0 from $\ket{000}$ over all eight three-qubit patterns on the cube.
+
+\begin{minipage}[c]{.5\textwidth}
+       \includegraphics[width=1\textwidth]{img/cube_diffused2.png}
+       \captionsetup{justification=raggedright, singlelinecheck=false}
+       \captionof{figure}{\label{img:cubediffused2} Visualization of the amplitude distribution over all three-qubit states after application of coin gate $C$ to the first two \\qubits in the state $\ket{000}$.}
+\end{minipage}%%%%%
+\begin{minipage}[c]{.5\textwidth}
+       \includegraphics[width=1\textwidth]{img/cube_diffused.png} \captionsetup{justification=raggedright, singlelinecheck=false}
+       \captionof{figure}{\label{img:cubediffused3} Final amplitude distribution over all three-qubit states after application of coin gate $C$ to each qubit in the state $\ket{000}$ visualized on a three-dimensional cube.}
+\end{minipage}
+
 
 \begin{figure}[H]
 \centering
@@ -1018,12 +1042,36 @@ This way of visualizing HDs can be extended to the 16 binary patterns made by fo
 
 Initializing gaussian distributed quantum states and classifying gaussian distributions by means of the Hellinger distance.
 
-Visualizations using 3D and 4D cubes
+\begin{redbox}
+\textbf{Definition: Hellinger distance}\\
+\newline
+The Hellinger distance is a distance metric used to quantify the difference between any two probability distributions. In the case of continuous probability distributions it is defined using the Hellinger integral first proposed by \citeA{hellinger1909neue}. However, since the $2^n$ amplitudes of an $n$-qubit system will always constitute a discrete probability distribution only the Hellinger distance for discrete distributions will be introduced.\\
+\newline
+The Hellinger distance between two probability distributions $R = (r_1,...,r_j)$ and $T = (t_1,...,t_j)$ is defined as:
+
+\begin{equation}
+\label{equ:hellingerdistance}
+H(R,T) = \frac{1}{\sqrt{2}}\sqrt{\sum_{i=1}^j (\sqrt{r_i} - \sqrt{t_i})^2}
+\end{equation}
+
+and can be rewritten in terms of the Euclidean distance between the square root vectors $\sqrt{R}$ and $\sqrt{T}$:
+
+\begin{equation}
+H(R,T) = \frac{1}{\sqrt{2}} \mid\mid\sqrt{R} - \sqrt{T}\mid\mid_2
+\end{equation}
+\end{redbox}
+
+\begin{equation}
+Prob(\ket{c^m} = \ket{1(\textcolor{purple}{B})})= \sum_{m \mid c^m=1(\textcolor{purple}{B})} 1 - \frac{1}{4M} \sum_{i=1}^N \mid \textcolor{red}{x_i} - \textcolor{purple}{t^m_i} \mid ^2
+\end{equation}
+
+Hence, if $x_i = \sqrt{w_i}$ where $w_i$ is the i\textsuperscript{th} element of the classical probability vector $w$ the aKNN algorithm classification outcome is dependent on the squared Hellinger distance. This can be obtained by squaring Equ.~\ref{equ:hellingerdistance} yielding:
+\begin{equation}
+\label{equ:squaredhellingerdistance}
+H^2(R,T) = \frac{1}{\sqrt{2}}\sum_{i=1}^j (\sqrt{r_i} - \sqrt{t_i})^2
+\end{equation}
 
 
-HELLINGER DISTANCE!
 
-Initialization of amplitude distribution is non-trivial
 
-Need for a simpler way - using diffusion matrix from quantum random walks
 

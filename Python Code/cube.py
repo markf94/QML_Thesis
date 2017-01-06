@@ -21,14 +21,14 @@ for s, e in combinations(np.array(list(product(r,r,r))), 2):
         ax.plot3D(*zip(s,e), color="b")
 
 # Label the edges
-ax.text(1,1,1,  '%s' % ("|000>"), size=18, zorder=1,color='k')
-ax.text(1,-1,1,  '%s' % ("|001>"), size=18, zorder=1,color='k')
-ax.text(1,-1,-1,  '%s' % ("|011>"), size=18, zorder=1,color='k')
-ax.text(1,1,-1,  '%s' % ("|010"), size=18, zorder=1,color='k')
-ax.text(-1,-1,1,  '%s' % ("|101>"), size=18, zorder=1,color='k')
-ax.text(-1,1,1,  '%s' % ("|100>"), size=18, zorder=1,color='k')
-ax.text(-1,1,-1,  '%s' % ("|110>"), size=18, zorder=1,color='k')
-ax.text(-1,-1,-1,  '%s' % ("|111>"), size=18, zorder=1,color='k')
+ax.text(1,1,1,  '%s' % ("|000>\na=1.0"), size=21, zorder=1,color='k')
+ax.text(1,-1,1,  '%s' % ("|001>\na=0.0"), size=21, zorder=1,color='k')
+ax.text(1,-1,-1,  '%s' % ("|011>\na=0.0"), size=21, zorder=1,color='k')
+ax.text(1,1,-1,  '%s' % ("|010>\na=0.0"), size=21, zorder=1,color='k')
+ax.text(-1,-1,1,  '%s' % ("|101>\na=0.0"), size=21, zorder=1,color='k')
+ax.text(-1,1,1,  '%s' % ("|100>\na=0.0"), size=21, zorder=1,color='k')
+ax.text(-1,1,-1,  '%s' % ("|110>\na=0.0"), size=21, zorder=1,color='k')
+ax.text(-1,-1,-1,  '%s' % ("|111>\na=0.0"), size=21, zorder=1,color='k')
 
 # Hide the axes
 ax = plt.gca(projection='3d')
@@ -52,14 +52,14 @@ for s, e in combinations(np.array(list(product(r,r,r))), 2):
         ax.plot3D(*zip(s,e), color="b")
 
 # Label the edges
-ax.text(1,1,1,  '%s' % ("|000>\np=0.009210"), size=14, zorder=1,color='k')
-ax.text(1,-1,1,  '%s' % ("|001>\np=0.080990"), size=14, zorder=1,color='k')
-ax.text(1,-1,-1,  '%s' % ("|011>\np=0.008800"), size=14, zorder=1,color='k')
-ax.text(1,1,-1,  '%s' % ("|010>\np=0.001000"), size=14, zorder=1,color='k')
-ax.text(-1,-1,1,  '%s' % ("|101>\np=0.728780"), size=14, zorder=1,color='k')
-ax.text(-1,1,1,  '%s' % ("|100>\np=0.081040"), size=14, zorder=1,color='k')
-ax.text(-1,1,-1,  '%s' % ("|110>\np=0.009150"), size=14, zorder=1,color='k')
-ax.text(-1,-1,-1,  '%s' % ("|111>\np=0.081030"), size=14, zorder=1,color='k')
+ax.text(1,1,1,  '%s' % ("|000>\na=0.58566"), size=21, zorder=1,color='k')
+ax.text(1,-1,1,  '%s' % ("|001>\na=0.11434"), size=21, zorder=1,color='k')
+ax.text(1,-1,-1,  '%s' % ("|011>\na=0.02232"), size=21, zorder=1,color='k')
+ax.text(1,1,-1,  '%s' % ("|010>\na=0.11434"), size=21, zorder=1,color='k')
+ax.text(-1,-1,1,  '%s' % ("|101>\na=0.02232"), size=21, zorder=1,color='k')
+ax.text(-1,1,1,  '%s' % ("|100>\na=0.11434"), size=21, zorder=1,color='k')
+ax.text(-1,1,-1,  '%s' % ("|110>\na=0.02232"), size=21, zorder=1,color='k')
+ax.text(-1,-1,-1,  '%s' % ("|111>\na=0.00436"), size=21, zorder=1,color='k')
 
 # Hide the axes
 ax = plt.gca(projection='3d')

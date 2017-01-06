@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  5 JAN 2017 19:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  6 JAN 2017 02:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1360,9 +1360,6 @@ LaTeX Warning: Label `img:toffolidecomp' multiply defined.
 LaTeX Warning: Label `subsubsubsec:classificationblochvectors' multiply defined
 .
 
-
-LaTeX Warning: Label `img:cubenoprobs' multiply defined.
-
 )
 \openout1 = `thesis.aux'.
 
@@ -2146,16 +2143,40 @@ LaTeX Warning: Reference `fig:7over8' on page 47 undefined on input line 869.
 [47 <./img/bloch7over8.png>] [48] [49]
 PGFPlots: reading {gauss2.dat}
  [50]
-<img/cubewithoutprobs.png, id=275, 658.46pt x 598.235pt>
+<img/cubewithoutprobs.png, id=275, 529.98pt x 482.80376pt>
 File: img/cubewithoutprobs.png Graphic file (type png)
 
 <use img/cubewithoutprobs.png>
-Package pdftex.def Info: img/cubewithoutprobs.png used on input line 965.
-(pdftex.def)             Requested size: 213.39566pt x 193.87637pt.
-File: img/cubewithoutprobs.png Graphic file (type png)
- <use img/cubewithoutprobs.png>
-Package pdftex.def Info: img/cubewithoutprobs.png used on input line 971.
-(pdftex.def)             Requested size: 213.39566pt x 193.87637pt.
+Package pdftex.def Info: img/cubewithoutprobs.png used on input line 968.
+(pdftex.def)             Requested size: 213.39566pt x 194.39993pt.
+
+<img/cubeoneprob.png, id=276, 598.235pt x 605.26125pt>
+File: img/cubeoneprob.png Graphic file (type png)
+
+<use img/cubeoneprob.png>
+Package pdftex.def Info: img/cubeoneprob.png used on input line 976.
+(pdftex.def)             Requested size: 213.39566pt x 215.899pt.
+
+<img/cube_diffused1.png, id=277, 680.5425pt x 592.2125pt>
+File: img/cube_diffused1.png Graphic file (type png)
+
+<use img/cube_diffused1.png>
+Package pdftex.def Info: img/cube_diffused1.png used on input line 984.
+(pdftex.def)             Requested size: 213.39566pt x 185.69849pt.
+ [51 <./img/cubewithoutprobs.png> <./img/cubeoneprob.png>] <img/cube_diffused2.
+png, id=281, 662.475pt x 599.23875pt>
+File: img/cube_diffused2.png Graphic file (type png)
+
+<use img/cube_diffused2.png>
+Package pdftex.def Info: img/cube_diffused2.png used on input line 993.
+(pdftex.def)             Requested size: 213.39566pt x 193.02214pt.
+
+<img/cube_diffused.png, id=282, 656.4525pt x 582.175pt>
+File: img/cube_diffused.png Graphic file (type png)
+
+<use img/cube_diffused.png>
+Package pdftex.def Info: img/cube_diffused.png used on input line 998.
+(pdftex.def)             Requested size: 213.39566pt x 189.24905pt.
 PGFPlots: reading {gauss1.dat}
 PGFPlots: reading {gauss1.dat}
 PGFPlots: reading {gauss1.dat}
@@ -2164,25 +2185,55 @@ PGFPlots: reading {gauss1.dat}
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [51 <./img/cubewithoutprobs.png>]
-<img/hypercubewithoutprobs.png, id=279, 648.4225pt x 557.08125pt>
+ [52 <./img/cube_diffused1.png> <./img/cube_diffused2.png> <./img/cube_diffused
+.png>]
+<img/hypercubewithoutprobs.png, id=286, 648.4225pt x 557.08125pt>
 File: img/hypercubewithoutprobs.png Graphic file (type png)
 
 <use img/hypercubewithoutprobs.png>
-Package pdftex.def Info: img/hypercubewithoutprobs.png used on input line 1014.
+Package pdftex.def Info: img/hypercubewithoutprobs.png used on input line 1038.
 
 (pdftex.def)             Requested size: 213.39566pt x 183.33586pt.
-) (./chapters/outlook.tex [52 <./img/hypercubewithoutprobs.png>]
+
+
+LaTeX Warning: Citation `hellinger1909neue' undefined on input line 1048.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1046--1051
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1046--1051
+
+ []
+
+
+Underfull \hbox (badness 1199) in paragraph at lines 1046--1051
+\T1/cmr/m/n/10 The Hellinger dis-tance be-tween two prob-a-bil-ity dis-tri-bu-t
+ions $\OML/cmm/m/it/10 R \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 r[]; :::; r[]\OT1/
+cmr/m/n/10 )$ \T1/cmr/m/n/10 and
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [53 <./img/hypercubewithoutprobs.png>]
+
+LaTeX Warning: Reference `equ:hellingerdistance' on page 54 undefined on input 
+line 1068.
+
+) (./chapters/outlook.tex [54]
 Chapter 6.
-) (./chapters/conclusion.tex [53
+) (./chapters/conclusion.tex [55
 
 ]
 Chapter 7.
-) (./chapters/personalreflection.tex [54
+) (./chapters/personalreflection.tex [56
 
 ]
 Chapter 8.
-) (./thesis.bbl [55
+) (./thesis.bbl [57
 
 ]
 Underfull \hbox (badness 3058) in paragraph at lines 65--78
@@ -2214,9 +2265,9 @@ Underfull \hbox (badness 7704) in paragraph at lines 430--443
 icrosoft [] .com / en [] -us / research / project /
  []
 
-[56
+[58
 
-]) [57] (./thesis.aux)
+]) [59] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -2225,10 +2276,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 41556 strings out of 493029
- 952886 string characters out of 6136235
- 1084122 words of memory out of 5000000
- 44334 multiletter control sequences out of 15000+600000
+ 41585 strings out of 493029
+ 953547 string characters out of 6136235
+ 1085655 words of memory out of 5000000
+ 44359 multiletter control sequences out of 15000+600000
  30542 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,22n,103p,10379b,2302s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2255,10 +2306,10 @@ super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb><
 /usr/share/texmf/fonts/type1/public/cm-super/sfti0600.pfb></usr/share/texmf/fon
 ts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sftt0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on thesis.pdf (69 pages, 2843798 bytes).
+Output written on thesis.pdf (71 pages, 3017881 bytes).
 PDF statistics:
- 386 PDF objects out of 1000 (max. 8388607)
- 240 compressed objects within 3 object streams
+ 396 PDF objects out of 1000 (max. 8388607)
+ 244 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 196 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 216 words of extra memory for PDF output out of 10000 (max. 10000000)
 
