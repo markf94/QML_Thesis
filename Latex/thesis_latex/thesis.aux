@@ -200,6 +200,8 @@
 \newlabel{subsubsubsec:initialstatepreparation}{{5.2.1}{36}}
 \newlabel{equ:ampinitial2}{{5.21}{36}}
 \newlabel{equ:vectordefs}{{5.22}{36}}
+\newlabel{equ:chi1}{{5.26}{36}}
+\newlabel{equ:chi2}{{5.27}{36}}
 \newlabel{equ:chi3}{{5.28}{36}}
 \newlabel{equ:rydef}{{5.29}{37}}
 \newlabel{equ:gs}{{5.31}{37}}
@@ -261,42 +263,49 @@
 \@writefile{toc}{\contentsline {subsubsection}{Classification of Gaussian distributions}{48}}
 \newlabel{subsubsubsec:classificationblochvectors}{{5.2.2}{48}}
 \newlabel{equ:desiredmemorystate}{{5.63}{48}}
+\newlabel{equ:coingate}{{5.64}{49}}
 \newlabel{equ:deltatensor}{{5.65}{49}}
-\newlabel{equ:deltatensorsubbed}{{5.66}{49}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Plot visualizing the discrete Gaussian distribution of $\mathinner {|{w}\delimiter "526930B }$ resulting from acting coin gate $C$ with $\delta =0.7$ on each qubit in state $\mathinner {|{000}\delimiter "526930B }$. Amplitudes of quantum state $\mathinner {|{w}\delimiter "526930B }$ (Equ.\nobreakspace  {}5.63\hbox {}) are plotted against the Hamming distances between binary pattern $\mathinner {|{000}\delimiter "526930B }$ and all eight binary three-qubit pattern. The plot was mirrored with respect to the vertical line connecting the horizontal zero value with the data point representing the highest amplitude.\relax }}{50}}
-\newlabel{fig:gaussdeltaplot1}{{5.9}{50}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces  Visualizing Hamming distances on a three-dimensional cube. The Hamming distance between two binary qubit patterns is given by the shortest path on the edges of the cube between them. Thereby, the Hamming distance increases by one for every corner.\relax }}{51}}
-\newlabel{img:cubenoprobs}{{5.10}{51}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces  The qubit state $\mathinner {|{000}\delimiter "526930B }$ with amplitude ($a$) of 1.0 visualized on a three-dimensional cube representing the Hamming distances between binary qubit patterns.\relax }}{51}}
-\newlabel{img:cubeoneprob}{{5.11}{51}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces  Visualization of the amplitude distribution over all three-qubit states after application of coin gate $C$ to the first qubit of the state $\mathinner {|{000}\delimiter "526930B }$.\relax }}{52}}
-\newlabel{img:cubediffused1}{{5.12}{52}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.13}{\ignorespaces  Visualization of the amplitude distribution over all three-qubit states after application of coin gate $C$ to the first two  qubits in the state $\mathinner {|{000}\delimiter "526930B }$.\relax }}{52}}
-\newlabel{img:cubediffused2}{{5.13}{52}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.14}{\ignorespaces  Final amplitude distribution over all three-qubit states after application of coin gate $C$ to each qubit in the state $\mathinner {|{000}\delimiter "526930B }$ visualized on a three-dimensional cube.\relax }}{52}}
-\newlabel{img:cubediffused3}{{5.14}{52}}
+\newlabel{equ:deltatensorsubbed}{{5.66}{50}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Plot visualizing the discrete Gaussian distribution of $\mathinner {|{w}\delimiter "526930B }$ resulting from acting coin gate $C$ with $\delta =0.7$ on each qubit in state $\mathinner {|{000}\delimiter "526930B }$. Amplitudes of the quantum state $\mathinner {|{w}\delimiter "526930B }$ (Equ.\nobreakspace  {}5.63\hbox {}) are plotted against the Hamming distances between binary pattern $\mathinner {|{000}\delimiter "526930B }$ and all eight binary three-qubit pattern. The plot was mirrored with respect to the vertical line connecting the horizontal zero value with the data point representing the highest amplitude.\relax }}{51}}
+\newlabel{fig:gaussdeltaplot1}{{5.9}{51}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces Plot visualizing the resulting discrete Gaussian distribution from the action of the coin gate $C(\delta )$ on each qubit in state $\mathinner {|{0000}\delimiter "526930B }$ for five different $\delta $ values. Amplitudes are plotted against the Hamming distances between binary pattern $\mathinner {|{0000}\delimiter "526930B }$ and all 16 binary four-qubit pattern. The plot was mirrored with respect to the vertical line connecting the horizontal zero value with the data point representing the highest amplitude.\relax }}{52}}
+\newlabel{fig:gaussdeltaplot2}{{5.10}{52}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces  Visualizing Hamming distances on a three-dimensional cube. The Hamming distance between two binary qubit patterns is given by the shortest path on the edges of the cube between them. Thereby, the Hamming distance increases by one for every corner.\relax }}{53}}
+\newlabel{img:cubenoprobs}{{5.11}{53}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces  The qubit state $\mathinner {|{000}\delimiter "526930B }$ with amplitude ($a$) of 1.0 visualized on a three-dimensional cube representing the Hamming distances between binary qubit patterns.\relax }}{53}}
+\newlabel{img:cubeoneprob}{{5.12}{53}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.13}{\ignorespaces  Visualization of the amplitude distribution over all three-qubit states after application of coin gate $C$ to the first qubit of the state $\mathinner {|{000}\delimiter "526930B }$.\relax }}{54}}
+\newlabel{img:cubediffused1}{{5.13}{54}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.14}{\ignorespaces  Visualization of the amplitude distribution over all three-qubit states after application of coin gate $C$ to the first two  qubits in the state $\mathinner {|{000}\delimiter "526930B }$.\relax }}{54}}
+\newlabel{img:cubediffused2}{{5.14}{54}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.15}{\ignorespaces  Final amplitude distribution over all three-qubit states after application of coin gate $C$ to each qubit in the state $\mathinner {|{000}\delimiter "526930B }$ visualized on a three-dimensional cube.\relax }}{54}}
+\newlabel{img:cubediffused3}{{5.15}{54}}
 \citation{hellinger1909neue}
 \citation{harsha}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.15}{\ignorespaces Gaussian distributions\relax }}{53}}
-\newlabel{fig:gaussdeltaplot2}{{5.15}{53}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.16}{\ignorespaces  Visualizing Hamming distances on a 4-D cube (tesseract)\relax }}{53}}
-\newlabel{img:hypercubenoprobs}{{5.16}{53}}
-\newlabel{equ:hellingerdistance}{{5.67}{54}}
-\newlabel{equ:squaredhellingerdistance}{{5.70}{54}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Outlook}{55}}
+\newlabel{equ:hellingerdistance}{{5.67}{55}}
+\newlabel{equ:hellingereuclidean}{{5.68}{55}}
+\newlabel{equ:squaredhellingerdistance}{{5.69}{55}}
+\newlabel{equ:probcagain}{{5.70}{55}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.12}{\ignorespaces  Amplitude-based kNN algorithm classification results for various Gaussian distributions centered around six different three-qubit patterns. The Gaussian distributions were created using the coin gate $C(\delta )$. For each pattern three different distributions were prepared and classified by changing the parameter $\delta $: The results for $\delta = 0.6$ are always on top and marked with an empty circle ($\circ $), results for $\delta = 0.85$ are always in the middle marked with a filled circle ($\bullet $) and results for $\delta = 0.95$ are always at the bottom and marked with a triangle ($\triangleright $)\relax }}{56}}
+\newlabel{tab:gauss3qubitresults}{{5.12}{56}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Outlook}{57}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{sec:outlook}{{6}{55}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusion}{56}}
+\newlabel{sec:outlook}{{6}{57}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusion}{58}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{sec:conclusion}{{7}{56}}
+\newlabel{sec:conclusion}{{7}{58}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {8}Personal Reflection}{59}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{sec:personalreflection}{{8}{59}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Quantum state preparation with Gaussian distributions}{60}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{sec:stateprepgaussian}{{A}{60}}
 \bibstyle{apacite}
 \bibdata{thesis}
-\@writefile{toc}{\contentsline {chapter}{\numberline {8}Personal Reflection}{57}}
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{sec:personalreflection}{{8}{57}}
 \bibcite{bachmann1894analytische}{\citeauthoryear {Bachmann}{Bachmann}{{\APACyear {1894}}}}
 \APACbibcite{bachmann1894analytische}{\citeauthoryear {Bachmann}{Bachmann}{{\APACyear {1894}}}}
 \bibcite{bekkerman2011scaling}{\citeauthoryear {Bekkerman, Bilenko,{}\ \BBA{} Langford}{Bekkerman\ \BOthers {.}}{{\APACyear {2011}}}}
@@ -337,7 +346,7 @@
 \APACbibcite{nielsen2010quantum}{\citeauthoryear {Nielsen\ \BBA{} Chuang}{Nielsen\ \BBA{} Chuang}{{\APACyear {2010}}}}
 \bibcite{hydrogensimulation}{\citeauthoryear {O'Malley\ \BOthers {.}}{O'Malley\ \BOthers {.}}{{\APACyear {2016}}}}
 \APACbibcite{hydrogensimulation}{\citeauthoryear {O'Malley\ \BOthers {.}}{O'Malley\ \BOthers {.}}{{\APACyear {2016}}}}
-\@writefile{toc}{\contentsline {chapter}{References}{58}}
+\@writefile{toc}{\contentsline {chapter}{References}{63}}
 \bibcite{harsha}{\citeauthoryear {Prahladh}{Prahladh}{{\APACyear {2011}}}}
 \APACbibcite{harsha}{\citeauthoryear {Prahladh}{Prahladh}{{\APACyear {2011}}}}
 \bibcite{Riste2015}{\citeauthoryear {Rist{\`{e}}\ \BOthers {.}}{Rist{\`{e}}\ \BOthers {.}}{{\APACyear {2015}}}}

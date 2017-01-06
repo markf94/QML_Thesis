@@ -36,7 +36,8 @@
 \contentsline {subsection}{\numberline {5.2.2}Simulating the amplitude-based kNN algorithm}{45}
 \contentsline {subsubsection}{Classification of Bloch vectors}{46}
 \contentsline {subsubsection}{Classification of Gaussian distributions}{48}
-\contentsline {chapter}{\numberline {6}Outlook}{55}
-\contentsline {chapter}{\numberline {7}Conclusion}{56}
-\contentsline {chapter}{\numberline {8}Personal Reflection}{57}
-\contentsline {chapter}{References}{58}
+\contentsline {chapter}{\numberline {6}Outlook}{57}
+\contentsline {chapter}{\numberline {7}Conclusion}{58}
+\contentsline {chapter}{\numberline {8}Personal Reflection}{59}
+\contentsline {chapter}{\numberline {A}Quantum state preparation with Gaussian distributions}{60}
+\contentsline {chapter}{References}{63}
