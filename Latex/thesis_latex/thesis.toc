@@ -6,12 +6,10 @@
 \contentsline {chapter}{\numberline {2}Theoretical Foundations}{3}
 \contentsline {section}{\numberline {2.1}Quantum bits}{3}
 \contentsline {subsection}{\numberline {2.1.1}Single qubit systems}{3}
-\contentsline {subsection}{\numberline {2.1.2}Multi qubit systems}{6}
-\contentsline {section}{\numberline {2.2}Quantum Logic Gates}{8}
-\contentsline {subsection}{\numberline {2.2.1}Single qubit gates}{9}
-\contentsline {subsubsection}{Qubit flip (X) gate}{9}
-\contentsline {subsection}{\numberline {2.2.2}Multi qubit gates}{12}
-\contentsline {subsubsection}{Controlled-NOT gate}{12}
+\contentsline {subsection}{\numberline {2.1.2}Multi qubit systems}{7}
+\contentsline {section}{\numberline {2.2}Quantum Logic Gates}{9}
+\contentsline {subsection}{\numberline {2.2.1}Single-qubit gates}{9}
+\contentsline {subsection}{\numberline {2.2.2}Multi-qubit gates}{12}
 \contentsline {section}{\numberline {2.3}Classical machine learning}{13}
 \contentsline {subsection}{\numberline {2.3.1}Classical $k$-nearest neighbour algorithm}{14}
 \contentsline {subsection}{\numberline {2.3.2}Algorithmic time complexity}{15}

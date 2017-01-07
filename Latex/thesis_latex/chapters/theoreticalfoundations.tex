@@ -29,7 +29,15 @@ where $\alpha$ and $\beta$ are complex coefficients ($\alpha, \beta \in \mathbb{
 \eta = e^{i\phi}e\, .
 \end{equation}
  
-In Eq.~\ref{equ: simplequbit}, \0 is the Dirac notation for the qubit being in state 0 and can be represented as a two-dimensional vector in a complex two-dimensional vector space (called Hilbert space $\mathcal{H}_{2}$). First defined by \citeA{dirac1939new}, the object $\ket{\phi}$ is called a \emph{ket} and its Hermitian conjugate $\ket{\phi}^\dagger = \bra{\phi}$ is called a \emph{bra}. The Hermitian conjugate, denoted with a dagger ($\dagger$), of some column vector $c$ with complex entries $c_1$ and $c_2$:
+In Eq.~\ref{equ: simplequbit}, \0 is the Dirac notation for the qubit being in state 0 and can be represented as a two-dimensional vector in a complex two-dimensional vector space (called Hilbert space $\mathcal{H}_{2}$). First defined by \citeA{dirac1939new}, the object
+\begin{equation}
+\ket{\phi}\, ,
+\end{equation}
+is called a \emph{ket} and its Hermitian conjugate
+\begin{equation}
+\ket{\phi}^\dagger = \bra{\phi}\, ,
+\end{equation}
+is called a \emph{bra}. The Hermitian conjugate, denoted with a dagger ($\dagger$), of some e.g. two-dimensional column vector $c$ with complex entries $c_1$ and $c_2$:
 \begin{equation}
 c = \colvec{c_1\\c_2}\, ,
 \end{equation}
@@ -37,7 +45,13 @@ is obtained by complex conjugating each entry and then transposing vector $c$:
 \begin{equation}
 c^\dagger = \colvec{c_1\\c_2}^\dagger = \begin{pmatrix}c_1^* & c_2^*\end{pmatrix}\, ,
 \end{equation}
-where complex conjugates are denoted with an asterisk ($*$). Furthermore, the inner product of a bra and a ket is called a \emph{bra-ket} and is written $\braket{\phi|\phi}$. Note that all later sections will make heavy use of this \emph{bra-ket notation}.
+where complex conjugates are denoted with an asterisk ($*$). The Hermitian conjugate is defined for vectors as well as square matrices.
+
+The inner product of a bra and a ket is called a \emph{bra-ket} and is written
+\begin{equation}
+\braket{\phi|\phi}
+\end{equation}
+Note that all later sections will make heavy use of this \emph{bra-ket notation}.
 
 The quantum states \0 and \1 are called the computational basis states and they constitute an orthonormal basis of $\mathcal{H}_{2}$. When a qubit is expressed in terms of the two states \0 and \1 it is said to be in its \emph{standard basis}. For the sake of clarity, \0 and \1 can be represented as the 2-D vectors
 \begin{equation}
@@ -78,14 +92,15 @@ Using spherical polar coordinates, a single qubit can be visualized on the so-ca
 \end{equation}
 The Bloch sphere has a radius of 1 and is, therefore, a unit sphere. The \0 qubit state is defined to lie along the positive $\hat{z}$-axis and the \1 state is defined to lie along the negative $\hat{z}$-axis as labelled in Fig.~\ref{fig:blochsphere}. At this point, it is important to note that these two states are mutually orthogonal in $\mathcal{H}_{2}$ even though they are not orthogonal on the Bloch sphere. 
 
+Qubit states on the Bloch equator such as the $\hat{x}$ and $\hat{y}$ coordinate axes represent equal superpositions where \0 and \1 both have measurement probabilities equal to $0.5$. The $\hat{x}$-axis for example represents the equal superposition $\ket{q} = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}$. As illustrated in Fig.~\ref{fig:blochsphere} any arbitrary 2-D qubit state $\ket{\psi}$ can be decomposed into the polar angles $\theta$ and $\phi$ and visualized as a vector on the Bloch sphere. Such an object is called the Bloch vector of the qubit state $\ket{\psi}$. The Bloch sphere will be the main visualization tool for qubit manipulations in this thesis.
+
 \begin{figure}[!ht]
        \centering
-       \includegraphics[scale=0.09]{img/blochsphere.png}
+       \includegraphics[scale=0.11]{img/blochsphere.png}
        \caption[]{\label{fig:blochsphere} An arbitrary single-qubit state $\ket{\psi} = \alpha \ket{0} + \beta \ket{1}$ can be visualized on the Bloch sphere by parameterising $\alpha = \cos\frac{\theta}{2}$ and $\beta = e^{i \phi} \sin\frac{\theta}{2}$ where $\theta$ is the polar and $\phi$ the azimuthal angle in spherical polar coordinates.\footnotemark[2]}
 \end{figure}
 \footnotetext[2]{Reprinted from Wikipedia, n.d., Retrieved September 7, 2016, from \url{https://en.wikipedia.org/wiki/Bloch_Sphere}. Copyright 2012 by Glosser.ca.}
 \newpage
-Qubit states on the Bloch equator such as the $\hat{x}$ and $\hat{y}$ coordinate axes represent equal superpositions where \0 and \1 both have measurement probabilities equal to $0.5$. The $\hat{x}$-axis for example represents the equal superposition $\ket{q} = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}$. As illustrated in Fig.~\ref{fig:blochsphere} any arbitrary 2-D qubit state $\ket{\psi}$ can be decomposed into the polar angles $\theta$ and $\phi$ and visualized as a vector on the Bloch sphere. Such an object is called the Bloch vector of the qubit state $\ket{\psi}$. The Bloch sphere will be the main visualization tool for qubit manipulations in this thesis.
 
 Similar to logic gates in a classical computer, a QC manipulates qubits, by means of quantum logic gates which will be introduced in detail in Section~\ref{subsec:quantumlogicgates}. Generally, an arbitrary quantum logic gate $U$ acting on a single qubit state is a unitary transformation which can be represented as a $2\times2$ matrix:
 \begin{equation}
@@ -122,7 +137,7 @@ All quantum logic gates must be unitary since this preserves the normalisation o
 \newline
 The gate set $G$ is a dense subset of $\mathrm{SU}(2)$ when given any quantum gate $W \in \mathrm{SU}(2)$ and any accuracy $\epsilon > 0$ there exists a product $J$ of gates from $G$ which is an $\epsilon$-approximation to $W$ \cite{dawson2005solovay}.
 \end{redbox}
-
+%\pagebreak
 \subsection{Multi qubit systems}
 \label{subsec:multiqubitsystems}
 
@@ -229,35 +244,31 @@ It is straightforward to verify that the two-qubit state $\ket{\Psi^+}$ cannot b
 where the subscripts indicate which electron belongs to Andile (A) and Buhle (B). Looking at this expression tells Andile that Buhle's electron must be in state $\ket{0}$ without having measured her electron! At her house, Buhle measures her electron one second after Andile has performed his measurement and indeed finds it to be in state $\ket{0}$. Note that the second electron was nowhere close to Andile and he was still able to determine its state by only measuring his electron. After repeating this experiment one thousand times, Andile and Buhle find perfect correlations in their results: whenever Andile measured his electron in state $\ket{0}$, Buhle found her electron in state $\ket{1}$ and vice versa.
 
 Non-local correlations between qubit measurement outcomes is a peculiar quantum property of non-factorising quantum states and is called \emph{quantum entanglement}. It is an integral part of quantum computation and Section~\ref{subsubsubsec:cnotgate} will give a concrete example of how to create an entangled state in a QC.
-
-%%%%% SECTION: Q LOGIC GATES
-
-
+%\pagebreak
 \section{Quantum Logic Gates}
 \label{subsec:quantumlogicgates}
-In order to perform quantum computations, tools, analogous to the classical logic gates, are needed for qubit manipulation. Quantum logic gates are square matrices that can be visualised as rotations on the Bloch sphere. The following subsections will introduce the major single and multi-qubit logic gates.
+Until this point, most introduced concepts came from the field of pure quantum theory. However, this section marks the important transition from quantum theory to the field of \emph{quantum information processing}.
 
-\subsection{Single qubit gates}
+A classical computer processes information and performs computations by systematically manipulating bits through the application of logic gates e.g. NOT or XOR gates. Analogously, a quantum computer processes information and performs \emph{quantum computations} by manipulating qubits using \emph{quantum logic gates}, often just called \emph{quantum gates}. Usually, a sequence of such quantum gates is required in order to perform a certain task or solve a particular problem on a quantum computer. Such a sequence of quantum gates is called a \emph{quantum algorithm}. The following subsections will introduce some major single and multi-qubit quantum logic gates that will be used extensively in the later sections of this thesis.
+%In order to perform quantum computations, tools, analogous to the classical logic gates, are needed for qubit manipulation. 
+
+\subsection{Single-qubit gates}
 \label{subsubsec:singlequbitgates} 
-
-\subsubsection{Qubit flip (X) gate}
-\label{subsubsubsec:xgate}
-
-The quantum equivalent of the classical NOT logic gate is called X gate and is given by the 1\textsuperscript{st} Pauli matrix:
-
+%\subsubsection{Qubit flip (X) gate}
+%\label{subsubsubsec:xgate}
+%The quantum equivalent of the classical NOT logic gate is called X gate and is given by the 1\textsuperscript{st} Pauli matrix:
+Quantum logic gates acting on single qubits can be represented as $2\times2$ unitary matrices (see Eq.~\ref{equ:generalquantumgate}) whose actions on a qubit can be visualised as rotations on the Bloch sphere. How a single-qubit quantum gate acts on a qubit, its properties and matrix representation will be illustrated using the example of the quantum equivalent of the classical NOT logic gate: the so-called X gate. The X gate can be represented by the $2\times2$ unitary matrix
 \begin{equation}
-\sigma_{1} = X = \begin{pmatrix}
+X \doteq \begin{pmatrix}
  0 & 1 \\ 
  1 & 0
- \end{pmatrix}
+ \end{pmatrix}\, .
 \end{equation}
 
-
-The action of a quantum gate on the arbitrary qubit state $\ket{\psi}$ (Eq.~\ref{equ: simplequbitvector}) can be analysed using the gate's matrix and the qubit's vector representation. Applying some straightforward linear algebra yields:
-
+The action of the X gate on the arbitrary qubit state $\ket{\psi}$ (Eq.~\ref{equ: simplequbitvector}) can be analysed using the gate's matrix and the qubit's vector representation. Applying some straightforward linear algebra yields
 \begin{equation}
 \label{equ:xverification1}
-X \otimes \ket{\psi} = X \otimes (\alpha \ket{0} + \beta \ket{1}) = \begin{pmatrix}
+X \ket{\psi} = X (\alpha \ket{0} + \beta \ket{1}) \doteq \begin{pmatrix}
  0 & 1 \\ 
  1 & 0
  \end{pmatrix} \begin{pmatrix}
@@ -266,14 +277,12 @@ X \otimes \ket{\psi} = X \otimes (\alpha \ket{0} + \beta \ket{1}) = \begin{pmatr
  \end{pmatrix} = \begin{pmatrix}
  \beta  \\ 
  \alpha
- \end{pmatrix} = \beta \ket{0} + \alpha \ket{1}
+ \end{pmatrix} \doteq \beta \ket{0} + \alpha \ket{1}\, .
 \end{equation}
-
-Thus, applying the X gate to qubit state $\ket{\psi}$ swaps the amplitudes of \0 and \1. More specifically, applying X to the \0 state results in the \1 state,
-
+Thus, applying the X gate to qubit state $\ket{\psi}$ swaps the amplitudes of the \0 and \1 states. More specifically, applying X to the \0 state results in the \1 state:
 \begin{equation}
 \label{equ:xverification2}
-X \otimes \ket{0} = \begin{pmatrix}
+X \ket{0} \doteq \begin{pmatrix}
  0 & 1 \\ 
  1 & 0
  \end{pmatrix} \begin{pmatrix}
@@ -281,18 +290,15 @@ X \otimes \ket{0} = \begin{pmatrix}
  0
  \end{pmatrix} = \begin{pmatrix}
  0  \\ 
- 1 \end{pmatrix} =  \ket{1}
+ 1 \end{pmatrix} \doteq  \ket{1}\, .
 \end{equation}
-
-In terms of the example with the electron of a hydrogen atom shown in Fig.~\ref{img:qubitatom} an X gate can be implemented by exciting the electron from the ground state ($\ket{0}$) into the next highest electron valence shell ($\ket{1}$) using a controlled laser pulse.
-
+In terms of the example with the valence electron of a hydrogen atom shown in Fig.~\ref{img:qubitatom} an X gate can be implemented by exciting the electron from the ground state $\ket{0}$ into the next highest electron valence shell, defined to be the $\ket{1}$ state, using a controlled laser pulse.
 %consider the qubit initially being in state \0. Applying an X gate will flip the qubit into the \1 state which can be implemented in the lab by exciting the electron into the next highest electron valence shell using a controlled laser pulse.
-\pagebreak
-The \0 state is recovered when applying X again to the \1 state,
 
+The \0 state is recovered when applying X again to the \1 state:
 \begin{equation}
 \label{equ:xverification3}
-X \otimes \ket{1} = \begin{pmatrix}
+X \ket{1} \doteq \begin{pmatrix}
  0 & 1 \\ 
  1 & 0
  \end{pmatrix} \begin{pmatrix}
@@ -300,25 +306,25 @@ X \otimes \ket{1} = \begin{pmatrix}
  1
  \end{pmatrix} = \begin{pmatrix}
  1  \\ 
- 0 \end{pmatrix} =  \ket{0}
+ 0 \end{pmatrix} \doteq  \ket{0}\, .
 \end{equation}
 
-On the Bloch sphere, the X gate corresponds to an anti-clockwise $\pi$ rotation around the x-axis as shown in Fig.~\ref{img:blochxgate}.
+On the Bloch sphere, the X gate corresponds to an anti-clockwise $\pi$ rotation around the $\hat{x}$-axis as shown in Fig.~\ref{img:blochxgate}.
 
 \begin{figure}[ht]
    \centering
-   \includegraphics[width=0.6\textwidth]{img/blochxgate.png}
-   \caption{Visualization of the X gate on the Bloch sphere. Initial state (black) transformed to final state (red).}
+   \includegraphics[width=0.75\textwidth]{img/blochxgate.png}
+   \caption{Visualization of the X gate action on the Bloch sphere. The figure shows the X gate transforming the \0 state (black $+\hat{z}$-axis) into the \1 state (red $-\hat{z}$-axis) by means of an anti-clockwise $\pi$ rotation around the $\hat{x}$-axis.}
    \label{img:blochxgate}
 \end{figure}
 
 From Eq.~\ref{equ:xverification1},~\ref{equ:xverification2} and~\ref{equ:xverification3} it follows that X is its own inverse as well as its own Hermitian conjugate:
 \begin{align}
-XX &= XX^\dagger = \mathbb{1} \\
-X &= X^{-1} = X^\dagger
+XX &= XX^\dagger = \mathbb{1}\, , \\
+X &= X^{-1} = X^\dagger\, .
 \end{align}
 
-The action, circuit \& matrix representation and Bloch sphere visualisation for the most important single-qubit quantum logic gates are summarised in Table~\ref{tab:singlequbitgates}  below.
+Based on the textbook by \citeA{nielsen2010quantum}, the action, circuit \& matrix representation and Bloch sphere visualisation for some of the most important single-qubit quantum logic gates are summarised in Table~\ref{tab:singlequbitgates}.
 
 \begin{table}[H]
 \caption{Table of major single-qubit quantum logic gates.}\vspace{1em}
@@ -336,15 +342,15 @@ X & Qubit flip & \includegraphics[width=0.1\textwidth]{img/xcircuit.png}  & $\be
 Y & Qubit \& phase flip & \includegraphics[width=0.1\textwidth]{img/ycircuit.png}  & $\begin{pmatrix}
  0 & -i \\ 
  i & 0
- \end{pmatrix}$ & Swaps amplitudes and introduces phase & $\pi$ rotation around $\hat{y}$ &  \includegraphics[width=0.2\textwidth]{img/blochygate.png}\\\midrule
+ \end{pmatrix}$ & Swaps amplitudes and introduces phase factor of $\pi$ (negative sign) to the \0 state & $\pi$ rotation around $\hat{y}$ &  \includegraphics[width=0.2\textwidth]{img/blochygate.png}\\\midrule
 Z & Phase flip & \includegraphics[width=0.1\textwidth]{img/zcircuit.png} & $\begin{pmatrix}
- 1 & 0 \\ 
+ 1 & 0 \\ '
  0 & -1
- \end{pmatrix}$ & Adds a negative sign to the \1 state & $\pi$ rotation around $\hat{z}$ & \includegraphics[width=0.2\textwidth]{img/blochzgate.png} \\\midrule 
+ \end{pmatrix}$ & Introduces phase factor of $\pi$ (negative sign) to the \1 state & $\pi$ rotation around $\hat{z}$ & \includegraphics[width=0.2\textwidth]{img/blochzgate.png} \\\midrule 
 H & Hadamard & \includegraphics[width=0.1\textwidth]{img/hcircuit.png}  & $\begin{pmatrix}
  \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\ 
  \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}
- \end{pmatrix}$ & Creates equal superpositions & $\frac{\pi}{2}$ rotation around $\hat{y}$ and $\pi$ rotation around $\hat{x}$ & \includegraphics[width=0.2\textwidth]{img/blochhadamard.png}\\\midrule
+ \end{pmatrix}$ & Creates equal superposition & $\frac{\pi}{2}$ rotation around $\hat{y}$ and $\pi$ rotation around $\hat{x}$ & \includegraphics[width=0.2\textwidth]{img/blochhadamard.png}\\\midrule
 S & $\frac{\pi}{2}$ rotation gate & \includegraphics[width=0.1\textwidth]{img/scircuit.png} & $\begin{pmatrix}
  1 & 0 \\ 
  0 & i
@@ -352,7 +358,7 @@ S & $\frac{\pi}{2}$ rotation gate & \includegraphics[width=0.1\textwidth]{img/sc
 S$^\dagger$ & $-\frac{\pi}{2}$ rotation gate & \includegraphics[width=0.1\textwidth]{img/sdcircuit.png} &  $\begin{pmatrix}
  1 & 0 \\ 
  0 & -i
- \end{pmatrix}$ & Adjoint of S & $-\frac{\pi}{2}$ rotation around $\hat{z}$ & \\\midrule
+ \end{pmatrix}$ & Hermitian conjugate of S & $-\frac{\pi}{2}$ rotation around $\hat{z}$ & \\\midrule
 T & $\frac{\pi}{4}$ rotation gate & \includegraphics[width=0.1\textwidth]{img/tcircuit.png} & $\begin{pmatrix}
  1 & 0 \\ 
  0 & e^{\frac{i\pi}{4}}
@@ -360,7 +366,7 @@ T & $\frac{\pi}{4}$ rotation gate & \includegraphics[width=0.1\textwidth]{img/tc
 T$^\dagger$ & $-\frac{\pi}{4}$ rotation gate & \includegraphics[width=0.1\textwidth]{img/tdcircuit.png} & $\begin{pmatrix}
  1 & 0 \\ 
  0 & e^{-\frac{i\pi}{4}}
- \end{pmatrix}$ & Adjoint of T & $-\frac{\pi}{4}$ rotation around $\hat{z}$ & \\\midrule
+ \end{pmatrix}$ & Hermitian conjugate of T & $-\frac{\pi}{4}$ rotation around $\hat{z}$ & \\\midrule
 ZM & Z-basis measurement & \includegraphics[width=0.1\textwidth]{img/measurecircuit.png} & - & Measurement in standard basis & Collapses the state & - \\
 %\midrule
 %BM & Bloch measurement & \includegraphics[width=0.1\textwidth]{img/identitycircuit.png} & - & Quantum state tomography & Collapses the state  & -\\
@@ -369,14 +375,11 @@ ZM & Z-basis measurement & \includegraphics[width=0.1\textwidth]{img/measurecirc
 
 
 %%%%% SUBSECTION: MULTIPLE Q LOGIC GATES
-
-
-\subsection{Multi qubit gates}
+\subsection{Multi-qubit gates}
 \label{subsubsec:multiqubitgates}
 
-\subsubsection{Controlled-NOT gate}
-\label{subsubsubsec:cnotgate}
-
+%\subsubsection{Controlled-NOT gate}
+%\label{subsubsubsec:cnotgate}
 The most important two-qubit quantum gate is the controlled NOT or CNOT gate given by the following 4x4 matrix:
 \begin{equation}
 CNOT = \begin{pmatrix}
