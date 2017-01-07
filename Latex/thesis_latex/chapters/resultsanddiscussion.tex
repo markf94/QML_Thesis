@@ -1087,8 +1087,7 @@ which is now dependent on the squared Hellinger distance between the input distr
 
 It remains to discuss how to load the input and training distributions into the initial quantum state required for the amplitude-based kNN algorithm as defined in Eq.~\ref{equ:ampinitial}. The neccessary procedure is outlined in Appendix~\ref{sec:stateprepgaussian}. Thus, all tools needed to classify Gaussian distributions with the amplitude-based kNN algorithm have been introduced.
 
-%For the beginning, the classification of Gaussian distributions with eight entries requiring three qubits will be 
-%Introduce the training and input dataset and explain visually on the cube what the main idea is!
+The quantum simulation will be limited to discrete Gaussian distributions with eight entries, thus, making use of three data qubits with $2^3 = 8$ amplitudes. For the classification, two distinct Gaussian training distributions will be used. These training distributions should be chosen as different as possible to enable better classification results. The training dataset is listed in Table~\ref{tab:gausstrainingset}. The first training sample is chosen to be a Gaussian distribution centered around $\ket{000}$ and is arbitrarily defined to be of class $\ket{0}$. The second training sample is defined to belong to class $\ket{1}$ and is chosen to be a Gaussian distribution centered around the $\ket{111}$ state. The cube in Fig.~\ref{img:cubenoprobs} illustrates that these are the most contrasting distributions because they are centered around diagonally opposite corners of the cube. Subsequently, the amplitude-based kNN algorithm will be evaluated on the input dataset listed in Table~\ref{tab:gaussinputset} which contains Gaussian distributions centered around the six binary three-qubit patterns that are not part of the training set.
 
 \begin{minipage}[c]{.49\textwidth}
     \begin{tabular}{| C{0.8cm} | C{2.3cm} |C{2cm}|}
@@ -1100,9 +1099,10 @@ It remains to discuss how to load the input and training distributions into the 
       \bottomrule
     \end{tabular}
         \label{tab:gausstrainingset}
-        \captionsetup{justification=raggedright, singlelinecheck=false}
-    \captionof{table}{Training set}
+        \captionsetup{justification=justified, singlelinecheck=false}
+    \captionof{table}{Training dataset used for the classification of Gaussian distributions centered around different binary three-qubit patterns. The training data set consists of two maximally different distributions with different class labels centered around diagonally opposite corners of the cube shown in Fig.~\ref{img:cubenoprobs}.}
 \end{minipage}%%%%
+\hspace{0.5cm}
 \begin{minipage}[c][][b]{.49\textwidth}
 \flushright
     \begin{tabular}{| C{0.8cm} | C{2.3cm} |C{2cm}|}
@@ -1119,14 +1119,13 @@ It remains to discuss how to load the input and training distributions into the 
       \bottomrule
     \end{tabular}
         \label{tab:gaussinputset}
-        \captionsetup{justification=raggedleft, singlelinecheck=false}
-    \captionof{table}{Input vector}
+        \captionsetup{justification=justified, singlelinecheck=false}
+    \captionof{table}{Input dataset for the classification of Gaussian distributions with the amplitude-based kNN algorithm. The dataset contains Gaussian distributions centered around the six three-qubit patterns that are not part of the training dataset shown in Table~\ref{tab:gausstrainingset}. A particular input distribution is expected to be of the class for which the Hamming distance between the input distribution centre and the training distribution centre is smallest.}
 \end{minipage}
 
+The expected class label of an input distribution is dependent on the Hamming distance between its distribution centre and the distribution centre of the training samples. For example, looking at the cube in Fig.~\ref{img:cubenoprobs} reveals that the first input sample is a Gaussian distribution centered around $\ket{100}$ which is only one corner away from the distribution centre $\ket{000}$ of the first training sample. It is, however, two corners away from the distribution centre $\ket{111}$ of the second training sample. Thus, its expected class is that of the first training sample ($\ket{0}$).
 
-%Liqui$\ket{}$ was used to perform the simulations
-%Results are shown...
-%Discuss the results here
+Liqui$\ket{}$ was used to perform the quantum simulations and the probability distributions for the classification of each input sample were collected within 1000 runs. The obtained simulation results are shown in Table~\ref{tab:gauss3qubitresults}. Note that all Gaussian distributions were initialized with the coin gate $C(\delta)$ whereby  the shape of the resulting distribution depends on the parameter $\delta$ (as it was shown in Fig.~\ref{fig:gaussdeltaplot2}). It is, therefore, interesting to analyze how the value of $\delta$ alters the classification outcome. For this reason, three different values for $\delta$ were tested: In Table~\ref{tab:gauss3qubitresults} the results for $\delta = 0.6$ are always on top and marked with an empty circle ($\circ$), results for $\delta = 0.85$ are always in the middle marked with a filled circle ($\bullet$) and results for $\delta = 0.95$ are always at the bottom and marked with a triangle ($\triangleright$).
 
 \begin{table}[H]
 \begin{tabular}{| C{0.5cm} | C{2.7cm} |C{1.7cm} | C{1.7cm} | C{1.7cm} |C{1.8cm}| C{1.8cm}|}
@@ -1137,7 +1136,7 @@ It remains to discuss how to load the input and training distributions into the 
         
        2 & $\ket{010}$ & \begin{tabular}{c} 0.9830$^\circ$ \\\midrule 0.8050$^\bullet$ \\\midrule 0.6600$^\triangleright$ \end{tabular} & \begin{tabular}{c} 0.4914$^\circ$ \\\midrule 0.5205$^\bullet$ \\\midrule 0.5636$^\triangleright$ \end{tabular} & \begin{tabular}{c} 0.5086$^\circ$ \\\midrule 0.4795$^\bullet$ \\\midrule 0.4364$^\triangleright$ \end{tabular}& $\ket{0}$ & \begin{tabular}{c} $\ket{1}$ $^\circ$ \\\midrule $\ket{0}$ $^\bullet$ \\\midrule $\ket{0}$ $^\triangleright$ \end{tabular}\\\midrule
        
-       3 & $\ket{001}$ & \begin{tabular}{c} 0.8080$^\circ$ \\\midrule 0.8120$^\bullet$ \\\midrule 0.6700$^\triangleright$ \end{tabular} & \begin{tabular}{c} 0.4980$^\circ$ \\\midrule 0.5582$^\bullet$ \\\midrule 0.5642$^\triangleright$ \end{tabular} & \begin{tabular}{c} 0.5020$^\circ$ \\\midrule 0.4418$^\bullet$ \\\midrule 0.4358$^\triangleright$ \end{tabular} & $\ket{0}$ & \begin{tabular}{c} $\ket{1}$ $^\circ$ \\\midrule $\ket{0}$ $^\bullet$ \\\midrule $\ket{0}$ $^\triangleright$ \end{tabular}\\\midrule\midrule
+       3 & $\ket{001}$ & \begin{tabular}{c} 0.8280$^\circ$ \\\midrule 0.8120$^\bullet$ \\\midrule 0.6700$^\triangleright$ \end{tabular} & \begin{tabular}{c} 0.4980$^\circ$ \\\midrule 0.5582$^\bullet$ \\\midrule 0.5642$^\triangleright$ \end{tabular} & \begin{tabular}{c} 0.5020$^\circ$ \\\midrule 0.4418$^\bullet$ \\\midrule 0.4358$^\triangleright$ \end{tabular} & $\ket{0}$ & \begin{tabular}{c} $\ket{1}$ $^\circ$ \\\midrule $\ket{0}$ $^\bullet$ \\\midrule $\ket{0}$ $^\triangleright$ \end{tabular}\\\midrule\midrule
        
        4 & $\ket{110}$ & \begin{tabular}{c} 0.9830$^\circ$ \\\midrule 0.8040$^\bullet$ \\\midrule 0.6350$^\triangleright$ \end{tabular} & \begin{tabular}{c} 0.4914$^\circ$ \\\midrule 0.4726$^\bullet$ \\\midrule 0.4520$^\triangleright$ \end{tabular} & \begin{tabular}{c} 0.5086$^\circ$ \\\midrule 0.5274$^\bullet$ \\\midrule 0.5480$^\triangleright$ \end{tabular} & $\ket{1}$ &\begin{tabular}{c} $\ket{1}$ $^\circ$ \\\midrule $\ket{1}$ $^\bullet$ \\\midrule $\ket{1}$ $^\triangleright$ \end{tabular} \\\midrule
         
@@ -1149,6 +1148,11 @@ It remains to discuss how to load the input and training distributions into the 
     \end{tabular}
     \caption{\label{tab:gauss3qubitresults} Amplitude-based kNN algorithm classification results after 1000 runs for various Gaussian distributions centered around six different three-qubit patterns. The Gaussian distributions were created using the coin gate $C(\delta)$. For each pattern three different distributions were prepared and classified by changing the parameter $\delta$: The results for $\delta = 0.6$ are always on top and marked with an empty circle ($\circ$), results for $\delta = 0.85$ are always in the middle marked with a filled circle ($\bullet$) and results for $\delta = 0.95$ are always at the bottom and marked with a triangle ($\triangleright$)}
 \end{table}
+
+The results in Table~\ref{tab:gauss3qubitresults} show that for all input distributions the probability of a successful conditional measurement ($\mathrm{Prob}(\mathrm{CM})$) decreases with increasing values of $\delta$. Specifically, in the case $\delta = 0.6$ the values of $\mathrm{Prob}(\mathrm{CM})$ are very close to unity for all six input distributions. Furthermore, when $\delta = 0.6$ the probability distributions over the class qubit states \0 and \1 are close to being equal for all six input distributions indicating no clear preference for a particular class. This can be explained by looking back to Fig.~\ref{fig:gaussdeltaplot2} which shows that choosing $\delta = 0.6$ results in flat Gaussian distributions with little peaks. On the cube in Fig.~\ref{img:cubenoprobs} this would correspond to an almost uniform amplitude distribution over the cube. Thus, in this case the training samples are almost equal to each other yielding nearly equal probabilities for class \0 and \1 for all six input distributions. As a result, for $\delta = 0.6$ the first three input distributions were all incorrectly classified and the last three input samples were all correctly classified. Despite correct or incorrect classification, all six class qubit probability distributions show no clear preference and make clear that the training samples with $\delta = 0.6$ are not distinct enough for the algorithm to make a clear classification decision.
+
+In the case $\delta = 0.85$ all six input distributions were correctly classified. In this case, the Gaussian training distributions correspond to more distinct amplitude distributions over the cube in Fig.~\ref{img:cubenoprobs}. This fact results in different probabilities for class \0 and \1, thereby clearly favouring one class over the other. Lastly, for $\delta = 0.95$ all six input distributions were again correctly classified with larger differences between the probabilities for class \0 and \1 compared to the case $\delta = 0.85$.
+
 
 %Summarize the Gaussian part
 %Stress that it was another toy example for the aKNN algorithm

@@ -100,6 +100,29 @@ Booth~Jr, J.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Born%
+}{%
+Born%
+}{%
+{\protect \APACyear {1954}}%
+}]{%
+born1954statistical}
+\APACinsertmetastar {%
+born1954statistical}%
+\begin{APACrefauthors}%
+Born, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1954}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The statistical interpretation of quantum mechanics}
+  {The statistical interpretation of quantum mechanics}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Nobel Lecture}{11}{}{1942--1962}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Cai%
 \ \protect \BOthers {.}}{%
 Cai%
@@ -132,6 +155,31 @@ Cai, X\BPBI D.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Chuang%
+}{%
+Chuang%
+}{%
+{\protect \APACyear {2003}}%
+}]{%
+chuanglecturenotes}
+\APACinsertmetastar {%
+chuanglecturenotes}%
+\begin{APACrefauthors}%
+Chuang, I.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2003}{}{}.
+\newblock
+\APACrefbtitle {{Lecture 19: How to Build Your Own Quantum Computer}.}
+  {{Lecture 19: How to Build Your Own Quantum Computer}.}
+\newblock
+\begin{APACrefURL}
+  [{2017-01-07}]\url{https://ocw.mit.edu/courses/mathematics/18-435j-quantum-computation-fall-2003/lecture-notes/qc_lec19.pdf}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Dawson%
 \ \BBA {} Nielsen%
 }{%
@@ -155,6 +203,31 @@ Dawson, C\BPBI M.%
   algorithm}}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{arXiv preprint quant-ph/0505030}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Dirac%
+}{%
+Dirac%
+}{%
+{\protect \APACyear {1939}}%
+}]{%
+dirac1939new}
+\APACinsertmetastar {%
+dirac1939new}%
+\begin{APACrefauthors}%
+Dirac, P\BPBI A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1939}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A new notation for quantum mechanics} {A new notation
+  for quantum mechanics}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Mathematical Proceedings of the Cambridge Philosophical
+  Society} {Mathematical proceedings of the cambridge philosophical society}\
+  (\BVOL~35, \BPGS\ 416--418).
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -255,6 +328,35 @@ Giovannetti, V.%
   memory}}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{Physical review letters}{100}{16}{160501}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Graves%
+, Mohamed%
+\BCBL {}\ \BBA {} Hinton%
+}{%
+Graves%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2013}}%
+}]{%
+graves2013speech}
+\APACinsertmetastar {%
+graves2013speech}%
+\begin{APACrefauthors}%
+Graves, A.%
+, Mohamed, A\BHBI r.%
+\BCBL {}\ \BBA {} Hinton, G.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2013}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Speech recognition with deep recurrent neural networks}
+  {Speech recognition with deep recurrent neural networks}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {2013 IEEE international conference on acoustics, speech
+  and signal processing} {2013 ieee international conference on acoustics,
+  speech and signal processing}\ (\BPGS\ 6645--6649).
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -382,6 +484,30 @@ IBM.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Kieu%
+}{%
+Kieu%
+}{%
+{\protect \APACyear {2006}}%
+}]{%
+kieu2006quantum}
+\APACinsertmetastar {%
+kieu2006quantum}%
+\begin{APACrefauthors}%
+Kieu, T\BPBI D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2006}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Quantum adiabatic computation and the travelling
+  salesman problem} {Quantum adiabatic computation and the travelling salesman
+  problem}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{arXiv preprint quant-ph/0601151}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Kitaev%
 }{%
 Kitaev%
@@ -463,6 +589,34 @@ Li, Z.%
 \APACjournalVolNumPages{Physical Review Letters}{114}{14}{1--5}.
 \newblock
 \begin{APACrefDOI} \doi{10.1103/PhysRevLett.114.140504} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Linden%
+, Smith%
+\BCBL {}\ \BBA {} York%
+}{%
+Linden%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2003}}%
+}]{%
+linden2003amazon}
+\APACinsertmetastar {%
+linden2003amazon}%
+\begin{APACrefauthors}%
+Linden, G.%
+, Smith, B.%
+\BCBL {}\ \BBA {} York, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2003}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Amazon.com recommendations: Item-to-item collaborative
+  filtering}} {{Amazon.com recommendations: Item-to-item collaborative
+  filtering}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{IEEE Internet computing}{7}{1}{76--80}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

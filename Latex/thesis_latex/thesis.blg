@@ -24,6 +24,8 @@ Warning--entry type for "harsha" isn't style-file defined
 --line 332 of file thesis.bib
 Warning--entry type for "ibmquasm2.0" isn't style-file defined
 --line 340 of file thesis.bib
+Warning--entry type for "chuanglecturenotes" isn't style-file defined
+--line 386 of file thesis.bib
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
 Name 1 in "{Microsoft Research}," has a comma at the end for entry microsoftresearch
 while executing---line 5062 of file apacite.bst
@@ -49,45 +51,45 @@ Name 1 in "{Microsoft Research}," has a comma at the end for entry microsoftrese
 while executing---line 5079 of file apacite.bst
 Warning--No journal in SchuldFingerhuth
 Warning--No journal in Schuld2014
-You've used 29 entries,
+You've used 35 entries,
             6951 wiz_defined-function locations,
-            1442 strings with 15771 characters,
-and the built_in function-call counts, 51849 in all, are:
-= -- 6646
-> -- 430
-< -- 2195
-+ -- 2240
-- -- 67
-* -- 3114
-:= -- 8766
-add.period$ -- 116
-call.type$ -- 29
-change.case$ -- 512
+            1477 strings with 16729 characters,
+and the built_in function-call counts, 62840 in all, are:
+= -- 8098
+> -- 521
+< -- 2661
++ -- 2683
+- -- 79
+* -- 3745
+:= -- 10592
+add.period$ -- 144
+call.type$ -- 35
+change.case$ -- 616
 chr.to.int$ -- 0
-cite$ -- 60
-duplicate$ -- 1421
-empty$ -- 2163
-format.name$ -- 714
-if$ -- 10259
+cite$ -- 72
+duplicate$ -- 1690
+empty$ -- 2603
+format.name$ -- 834
+if$ -- 12472
 int.to.chr$ -- 0
-int.to.str$ -- 91
+int.to.str$ -- 109
 missing$ -- 0
-newline$ -- 724
-num.names$ -- 232
-pop$ -- 896
+newline$ -- 864
+num.names$ -- 280
+pop$ -- 1103
 preamble$ -- 1
-purify$ -- 118
+purify$ -- 142
 quote$ -- 0
-skip$ -- 3805
+skip$ -- 4654
 stack$ -- 0
-substring$ -- 2469
-swap$ -- 772
-text.length$ -- 72
+substring$ -- 2977
+swap$ -- 935
+text.length$ -- 100
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 2816
+type$ -- 3496
 warning$ -- 2
-while$ -- 247
+while$ -- 294
 width$ -- 0
-write$ -- 871
+write$ -- 1037
 (There were 11 error messages)

@@ -1,4 +1,4 @@
-\chapter{Quantum state preparation with Gaussian distributions}\label{sec:stateprepgaussian}
+\chapter{Quantum state preparation routine for Gaussian distributions}\label{sec:stateprepgaussian}
 
 To keep the discussion simple, the task is to load one Gaussian input distribution $R$ and two Gaussian training samples, $L_1$ and $L_2$, such that the amplitude-based kNN algorithm can be used to classify $R$. Note that the input and training distributions are restricted to Gaussian distributions that can be initialized by using the coin gate $C(\delta)$ for some value of $\delta$. The input and training samples all have $N$ entries whereby $N$ is restricted to be a multiple of two. To encode the distributions, $n$ data qubits are required such that there are $2^n = N$ amplitudes. Additionally, one ancilla, one class and one $m$ qubit are needed. Since all qubits are initialised to the \0 state, the initial state is 
 
