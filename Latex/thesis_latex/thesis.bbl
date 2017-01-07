@@ -207,6 +207,30 @@ D-Wave.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Gambetta%
+}{%
+Gambetta%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+ibmquasm2.0}
+\APACinsertmetastar {%
+ibmquasm2.0}%
+\begin{APACrefauthors}%
+Gambetta, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+\APACrefbtitle {{Working towards QASM 2.0}.} {{Working towards QASM 2.0}.}
+\newblock
+\begin{APACrefURL}
+  [{2017-01-07}]\url{https://quantumexperience.ng.bluemix.net/qstage/#/community/question?questionId=52a9bcb45e9f21d27c29f6fec29af057}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Giovannetti%
 , Lloyd%
 \BCBL {}\ \BBA {} Maccone%

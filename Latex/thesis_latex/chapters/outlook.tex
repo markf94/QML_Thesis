@@ -1,8 +1,10 @@
 \chapter{Outlook}\label{sec:outlook}
 
-%Considering more advanced state preparation algorithm
+Despite the use of small classification problems, neither the qubit- nor the amplitude-based kNN algorithm could be implemented on the quantum hardware provided by the IBM Quantum Experience (IBMQE). Thereby, the limiting factors were the small number of qubits as well as the small universal gate set consisting of only ten quantum gates. Yet, the latter issue might soon be resolved since IBM has made an announcement in the IBMQE discussion forum that there will be a major update to IBMQE 2.0 soon. According to IBM researcher \citeA{ibmquasm2.0}, this update will provide a larger universal gate set including more general rotation gates. However, if IBM will enable the use of more than 40 gates in their quantum composer is unclear at this point. The author of this thesis will retry an implementation of the amplitude-based kNN algorithm as soon as this update has been rolled out. Future research might also consider the implementation of other quantum machine learning algorithms with small datasets using the IBMQE 2.0.
 
-%IBM Update soon -> general rotation gates (and more gate slots?)
+For this research relatively simple quantum state preparation routines were used. This was deliberately chosen since the timeframe of this thesis did not allow for the implementation of more sophisticated quantum state preparation algorithms. Future research should, therefore, focus on simulation and actual implementation of quantum algorithms initializing arbitrary amplitude distributions. This might provide insights into which types of classical data are able to be encoded into amplitudes as well as what resources are needed to do so.
+
+Lastly, this bachelor thesis research was presented at the 4\textsuperscript{th} South African Conference for Quantum Information Processing, Communication and Control in Cape Town which sparked the interest of an experimental research group working on quantum computation based on trapped ions in Israel. Furthermore, there is the possibility for a collaboration with an experimental group working on NMR quantum computation in China. In the near future, one of the possible collaborations could lead to an experimental implementation and subsequent publication of the amplitude-based kNN algorithm by \citeA{SchuldFingerhuth}.
 
 %Experimental implementation with an experimental quantum computation group
 %possibly NMR, photonic or trapped ions
