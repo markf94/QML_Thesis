@@ -21,6 +21,7 @@ The quantum classifier will then be tested on four new colour tones (two red, tw
 
 \begin{minipage}[c]{.49\textwidth}
     \begin{tabular}{| C{1cm} | C{2.3cm} |C{1.6cm} |}
+    \toprule
       Colour & Binary 9-bit RGB string & Class\\
       \midrule
        \cellcolor{red1} & 111 000 000 & red ($\ket{0}$)\\\midrule
@@ -39,6 +40,7 @@ The quantum classifier will then be tested on four new colour tones (two red, tw
 \begin{minipage}[c][][b]{.49\textwidth}
 \flushright
     \begin{tabular}{| C{1cm} | C{2.3cm} |C{1.6cm}|}
+    \toprule
       Colour & Binary 9-bit RGB string & Expected class\\
       \midrule
        \cellcolor{inputred1} & 100 000 000 & red ($\ket{0}$)\\\midrule
@@ -60,7 +62,7 @@ In order to compare how training data set I and II influence the classification 
 \newline
 \begin{minipage}[c]{.49\textwidth}
     \begin{tabular}{| C{1cm} | C{2.3cm} |C{1.6cm} |}
-      %\toprule
+      \toprule
       Colour & Binary 9-bit RGB string & Class\\
       \midrule
        \cellcolor{red1} & 111 000 000 & red ($\ket{0}$)\\\midrule
@@ -82,7 +84,7 @@ In order to compare how training data set I and II influence the classification 
 \begin{minipage}[c][][b]{.49\textwidth}
 \flushright
     \begin{tabular}{| C{1cm} | C{2.3cm} |C{1.6cm}|}
-      %\toprule
+      \toprule
       Colour & Binary 9-bit RGB string & Expected class\\
       \midrule
        \cellcolor{inputred1} & 100 000 000 & red ($\ket{0}$)\\\midrule
@@ -223,7 +225,7 @@ The other three input pattern from input data set I were all correctly classifie
 
 \begin{table}
 \begin{tabular}{| C{1.4cm} | C{2.1cm} |C{1.7cm} | C{1.7cm} | C{1.7cm} |C{1.7cm}| C{1.7cm}|}
-      %\toprule
+      \toprule
       Colour & Binary 9-bit RGB string  & $Prob(CM)$ & $Prob$ $(\ket{c} = \ket{0})$ & $Prob$ $(\ket{c} = \ket{1})$ & Expected class & Algorithm output\\
       \midrule
        \cellcolor{inputred1} & 100 000 000 & \begin{tabular}{c} 0.8404* \\\midrule 0.7500 \end{tabular} & \begin{tabular}{c} 0.5598* \\\midrule 0.4933 \end{tabular} & \begin{tabular}{c} 0.4402* \\\midrule 0.5067 \end{tabular} & red ($\ket{0}$) & blue ($\ket{1}$)\\\midrule
@@ -256,7 +258,7 @@ In conclusion, the quantum simulations of the qubit-based kNN algorithm resulted
 
 \begin{table}
 \begin{tabular}{| C{1.4cm} | C{2.1cm} |C{1.7cm} | C{1.7cm} | C{1.7cm} |C{1.7cm}| C{1.7cm}|}
-      %\toprule
+      \toprule
       Colour & Binary 9-bit RGB string & $Prob(CM)$ & $Prob$ $(\ket{c} = \ket{0})$ & $Prob$ $(\ket{c} = \ket{1})$ & Expected class & Algorithm output\\
       \midrule
        \cellcolor{inputred1} & 100 000 000 & \begin{tabular}{c} 0.7543* \\\midrule 0.8500 \end{tabular} & \begin{tabular}{c} 0.5515* \\\midrule 0.5529 \end{tabular} & \begin{tabular}{c} 0.4485* \\\midrule 0.4471 \end{tabular} & red ($\ket{0}$) & red ($\ket{0}$)\\\midrule
