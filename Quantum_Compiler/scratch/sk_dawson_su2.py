@@ -10,20 +10,27 @@ import qutip as qp
 import cmath
 
 b = qp.Bloch()
+b.vector_color = ['k','r']
 
 H2 = get_hermitian_basis(d=2)
 theta = math.pi / 4 # 45 degrees
 axis = cart3d_to_h2(x=1, y=1, z=1)
 
 print "Identity Name: " + H2.identity.name
-
+theta_z = -5./16.*cmath.pi
+theta_y = -cmath.pi/6.
+#promising: -cmath.pi/6.
+#print "test", numpy.exp(-1j*theta_z/2.)
 # Compose a unitary to compile
 #matrix_U = axis_to_unitary(axis, theta, H2)
-#matrix_U = matrixify([[1,0], [0,numpy.exp(1j * math.pi / 8)]])
-matrix_U = matrixify([[-0.63439 + 0.77301j,0.0], [0.0,-0.63439 - 0.77301j]])
+#z-rotation:
+#matrix_U = matrixify([[numpy.exp(-1j * theta_z/ 2),0], [0,numpy.exp(1j * theta_z/ 2)]])
+#y-rotation:
+matrix_U = matrixify([[numpy.cos(theta_y/ 2),-numpy.sin(theta_y/ 2)], [numpy.sin(theta_y/ 2),numpy.cos(theta_y/ 2)]])
+#matrix_U = matrixify([[numpy.exp(-1j*theta_z/2),0.0], [0.0,numpy.exp(-1j*theta_z/2)]])
 op_U = Operator(name="U", matrix=matrix_U)
 
-n = 2
+n = 1
 print "U= " + str(matrix_U)
 
 ##############################################################################
@@ -73,8 +80,8 @@ sk_set_basis(H2)
 sk_set_axis(X_AXIS)
 sk_set_simplify_engine(simplify_engine)
 #sk_build_tree("su2", 9)
-#sk_build_tree("su2_withSSd", 5)
-sk_build_tree("su2_all_gates", 3)
+#sk_build_tree("su2_withSSd", 3)
+sk_build_tree("su2_all_gates", 4)
 
 Un = solovay_kitaev(op_U, n)
 print "Approximated U: " + str(Un)
@@ -88,13 +95,67 @@ print "n= " + str(n)
 
 
 print "==============================="
-plusstateaction = Un.matrix*[[0.70711],[0.70711]];
-print plusstateaction[0,0]
-print plusstateaction[1,0]
+targetstate = matrix_U*[[0.70711],[0.70711]];
+approxstate = Un.matrix*[[0.70711],[0.70711]];
+print approxstate[0,0]
+print approxstate[1,0]
 
+alpha = targetstate[0,0]
+beta = targetstate[1,0]
 
-alpha = plusstateaction[0,0]
-beta = plusstateaction[1,0]
+#Find and eliminate global phase
+angle_alpha = cmath.phase(alpha)
+#print "angle_alpha:", angle_alpha
+angle_beta = cmath.phase(beta)
+#print "angle_beta:", angle_beta
+
+if angle_beta < 0:
+	if angle_alpha < angle_beta:
+		alpha_new = alpha/cmath.exp(1j*angle_beta)
+		beta_new = beta/cmath.exp(1j*angle_beta)
+	else:
+		alpha_new = alpha/cmath.exp(1j*angle_alpha)
+        	beta_new = beta/cmath.exp(1j*angle_alpha)
+else:
+	if angle_alpha > angle_beta:
+                alpha_new = alpha/cmath.exp(1j*angle_beta)
+                beta_new = beta/cmath.exp(1j*angle_beta)
+        else:
+                alpha_new = alpha/cmath.exp(1j*angle_alpha)
+                beta_new = beta/cmath.exp(1j*angle_alpha)
+#print "alpha_new:", alpha_new
+#print "beta_new:", beta_new
+
+if abs(alpha) == 0 or abs(beta) == 0:
+	if alpha == 0:
+		b.clear()
+		down = [0,0,-1]
+		b.add_vectors(down)
+	else:
+		b.clear()
+		up = [0,0,1]
+		b.add_vectors(up)
+else:
+	#Compute theta and phi from alpha and beta
+	theta = 2*cmath.acos(alpha_new)
+	phi = -1j*cmath.log(beta_new/cmath.sin(theta/2))
+	#print "theta:", theta
+	#print "phi:", phi
+
+	#Compute the cartesian coordinates
+	x = cmath.sin(theta)*cmath.cos(phi)
+	y = cmath.sin(theta)*cmath.sin(phi)
+	z = cmath.cos(theta)
+	#print "x:", x
+	#print "y:", y
+	#print "z:", z
+
+	#Create the new state vector and plot it onto the Bloch sphere
+	new_vec = [x.real,y.real,z.real] #works only for the right half sphere....
+	b.add_vectors(new_vec)
+
+alpha = approxstate[0,0]
+beta = approxstate[1,0]
 
 #Find and eliminate global phase
 angle_alpha = cmath.phase(alpha)

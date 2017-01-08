@@ -1,23 +1,24 @@
 \chapter{Results and Discussion}\label{sec:resultsanddiscussion}
 
-This chapter is subdivided into two sections; Section~\ref{subsec:qubitKNNresults} focuses on the simulation of the qubit-based kNN algorithm proposed by \citeA{Schuld2014} and Section~\ref{subsec:amplitudeKNNalgorithm} introduces a newly developed amplitude-based kNN algorithm with an implementation on IBM's QC in mind. Section~\ref{subsec:amplitudeKNNalgorithm} is then further subdivided into an attempt to compile and implement the algorithm using the IBM Quantum Experience (Section~\ref{subsubsec:implementationamplitudeKNN}) and its simulation using Liqui$\ket{}$ (Section~\ref{subsubsec:simulationamplitudeKNN}). All the F\# code written for the quantum simulations described in this chapter can be found on GitHub\footnotemark[13].
+This chapter is subdivided into two sections; Section~\ref{subsec:qubitKNNresults} focuses on the simulation of the qubit-based kNN algorithm proposed by \citeA{Schuld2014} and Section~\ref{subsec:amplitudeKNNalgorithm} introduces a newly developed amplitude-based kNN algorithm with an implementation on IBM's QC in mind. Section~\ref{subsec:amplitudeKNNalgorithm} is then further subdivided into an attempt to compile and implement the algorithm using the IBM Quantum Experience (Section~\ref{subsubsec:implementationamplitudeKNN}) and its simulation using Liqui$\ket{}$ (Section~\ref{subsubsec:simulationamplitudeKNN}). All the F\# code written for the quantum simulations described in this chapter can be found on GitHub.\footnotemark[13] 
+
+Section~\ref{sec:motivation} outlined that quantum-enhanced machine learning is a very theoretical field and that there has been comparatively little practical work with respect to simulations and actual implementations. The original work in this thesis is the selection of suitable small scale classification problems and the modification of the respective QML algorithms to accomodate these problems. Additionally, all the F\# code for the quantum simulations in Liqui$\ket{}$ as well as compiling the quantum kNN algorithm for an implementation on the IBM quantum hardware are original work. All QML algorithms used in this section were developed by other authors.
 
 \footnotetext[13]{The code is published under an open-source licence and can be downloaded from \url{https://github.com/markf94/Liquid_QML}.}
 
 \section{Simulating the qubit-based kNN algorithm}
 \label{subsec:qubitKNNresults}
 
-Similar to classical machine learning, the first step towards simulating any quantum machine learning algorithm is the careful selection of a suitable classification problem. The computer used for the Liqui$\ket{}$ quantum simulations in this thesis only provides 8GB of RAM, thereby limiting the maximum number of simulated qubits to 24. Unfortunately, real-world machine learning problems usually involve large datasets that would require far more qubits such that a small artificial dataset needs to be constructed. For this reason, the classification of 9-bit, little-endian RGB colour codes into the classes \emph{red} and \emph{blue} will be considered. A 9-bit RGB colour code uses three bits to encode the content of each RGB colour; red, green and blue. Three binary bits $b_0,b_1,b_2$ can encode any of the numbers 0-7 according to the formula,
-
+Similar to classical machine learning, the first step towards simulating any quantum machine learning algorithm is the careful selection of a suitable classification problem. The computer used for the Liqui$\ket{}$ quantum simulations in this thesis only provides 8GB of RAM, thereby limiting the maximum number of simulated qubits to 24. Unfortunately, real-world machine learning problems usually involve large datasets that would require far more qubits such that a small artificial dataset needs to be constructed. For this reason, the classification of 9-bit RGB colour codes into the two classes \emph{red} and \emph{blue} will be considered. A 9-bit RGB colour code uses three bits to encode the content of each RGB colour; red, green and blue. Three binary bits $b_0,b_1,b_2$ can encode any of the numbers 0-7 according to the formula:
 \begin{equation}
-b_0*2^0 + b_1*2^1 + b_2*2^2 \text{ where } b_0,b_1,b_2 \in \left\{0,1\right\}
+b_0*2^0 + b_1*2^1 + b_2*2^2 \text{ where } b_0,b_1,b_2 \in \left\{0,1\right\}\, .
 \end{equation}
 
-For example, the 9-bit RGB code 111 100 100 can be written in roman numerals as 7,1,1 (full red, little green, little blue) and represents \colorbox{examplered}{this red tone}.
+For example, the 9-bit RGB code 111 100 100 can be written in roman numerals as 7,1,1 (full red, little green, little blue) and represents \colorbox{examplered}{this red tone}. For the sake of clarity
 
-The quantum kNN algorithm is evaluated on two different levels of difficulty - easy and hard. First, the algorithm will be tested using training set I consisting of 3 randomly chosen red and blue tones listed in Table~\ref{tab:trainingcolours1}. Since the class qubit $\ket{c}$ can only take binary values, class red is defined as $\ket{c} = \ket{0}$ and class blue is defined as $\ket{c} = \ket{1}$. Note that this assessment stage is considered easy because all training colours are either pure red colours (without green or blue content) or pure blue colours (without green or red content).
+The quantum kNN algorithm is evaluated on two different levels of difficulty - easy (training \& input dataset I) and hard (training \& input dataset II). First, the algorithm will be tested using training set I consisting of 3 randomly chosen red and blue tones listed in Table~\ref{tab:trainingcolours1}. Since the class qubit $\ket{c}$ can only take binary values, class red is defined as $\ket{c} = \ket{0}$ and class blue is defined as $\ket{c} = \ket{1}$. Note that this assessment stage is considered easy because all training colours are either pure red colours (without green or blue content) or pure blue colours (without green or red content).
 
-The quantum classifier will then be tested on four new colour tones (two red, two blue) listed in Table~\ref{tab:inputcolours1}. However, in contrast to the training set, the input colours also include colours with additional green content testing how the classifier reacts to cases that it has not been trained for.
+The quantum classifier will then be tested on four new colour tones (two red, two blue) listed in Table~\ref{tab:inputcolours1}. However, in contrast to the training set, the input colours also include colours with additional green content testing how the classifier reacts to cases that it has not been trained for. Yet, the fact that the colours have additional green content should not affect the outcome of the classifier because it simply increases the Hamming distances to all training patterns by one (since none of the training patterns contain green).
 
 \begin{minipage}[c]{.49\textwidth}
     \begin{tabular}{| C{1cm} | C{2.3cm} |C{1.6cm} |}
@@ -103,7 +104,7 @@ In order to compare how training data set I and II influence the classification 
     \captionof{table}{Input data set II}
 \end{minipage}
 
-The first step towards the classification of RGB colour codes using the qubit-based kNN algorithm proposed by \citeA{Schuld2014} as described in detail in Section~\ref{subsubsec:quantumknearestneighbour} is preparing the initial superposition over all six 9-bit RGB training patterns $t^j$:
+The first step towards the classification of RGB colour codes using the qubit-based kNN algorithm proposed by \citeA{Schuld2014} as described in detail in Section~\ref{subsec:quantumknearestneighbour} is preparing the initial superposition over all six 9-bit RGB training patterns $t^j$:
 
 \begin{equation}
 \label{equ:trainingsup}
@@ -192,15 +193,14 @@ The unitary gates $U$, $CU^{-2}$ and $U^{-2}$ can easily be defined in Liqui$\ke
 &+ e^{-i\frac{\pi}{18}d_H(\vec{x},\vec{v}^p)} \ket{x_1,x_2,...,x_9;c^j;1;d_1^j,d_2^j,...d_9^j}\Big]
 \end{align}
 
-In the last step, one simply has to act an H gate on the ancilla qubit in the third register which will transfer the total reverse HD from the phases into the amplitudes shown in Equ.~\ref{} below.
-
+In the last step, one simply has to act an H gate on the ancilla qubit in the third register which will transfer the total reverse HD from the phases into the amplitudes:
 \begin{align}
 \label{equ:trugcolours8}
-\ket{\phi_7} = (\mathbb{1} \otimes \mathbb{1} \otimes H \otimes \mathbb{1})\ket{\phi_6} = \frac{1}{\sqrt{12}} \sum^6_{j=1} \Big[& cos\big[\frac{\pi}{18}d_H(\vec{x},\vec{t}^j)\big] \ket{x_1,x_2,...,x_9;c^j;0;d_1^j,d_2^j,...d_9^j} \notag\\
-&+ sin\big[\frac{\pi}{18}d_H(\vec{x},\vec{t}^j)\big] \ket{x_1,x_2,...,x_9;c^j;1;d_1^j,d_2^j,...d_9^j}\Big]
+\ket{\phi_7} = (\mathbb{1} \otimes \mathbb{1} \otimes H \otimes \mathbb{1})\ket{\phi_6} = \frac{1}{\sqrt{12}} \sum^6_{j=1} \Big[& \cos\big[\frac{\pi}{18}d_H(\vec{x},\vec{t}^j)\big] \ket{x_1,x_2,...,x_9;c^j;0;d_1^j,d_2^j,...d_9^j} \notag\\
+&+ \sin\big[\frac{\pi}{18}d_H(\vec{x},\vec{t}^j)\big] \ket{x_1,x_2,...,x_9;c^j;1;d_1^j,d_2^j,...d_9^j}\Big]\, .
 \end{align}
 
-At this point, the ancilla qubit in the third register is conditionally measured. This can be achieved with a simple if statement in F\# as shown in the pseudocode below:
+At this point, the ancilla qubit in the third register is conditionally measured. This can be achieved with a simple \emph{if statement} in F\# as shown in the pseudocode below:
 
 \begin{Verbatim}[commandchars=\\\{\}]
 if ancilla = 0 then
@@ -217,7 +217,7 @@ If and only if the ancilla is found to be in the \0 state, the class qubit is me
 All the steps outlined in the previous section were programmed in F\# within the Liqui$\ket{}$ framework. When executing the script\footnotemark[14] the user needs to first specify the number of runs $r$ needed to gather sufficiently accurate statistics. Next, the user is asked to input the total number of training patterns. One-by-one the user then manually inputs all binary training patterns and their respective classes. Lastly, the user is asked to specify the input pattern requiring classification. The algorithm will then be simulated and repeated $r$ times.
 \footnotetext[14]{The script "\_\_TrugenbergerSchuld($r$)", where $r$ is the number of runs, can be found in the $/linux/bin/Release/$ folder in the GitHub repository \url{https://github.com/markf94/Liquid_QML}.}
 
-The algorithm was first trained using the 9-bit RGB colours from training data set I and then asked to classify each input pattern from input data set I. Each simulation was repeated 100 times to gather sufficient statistics. The results are listed in Table~\ref{tab:colourresults}. For every input pattern the probabilities of successful CM ($Prob(CM)$) and measuring the class qubit in either the \0 ($Prob$ $(\ket{c} = \ket{0})$) or the \1 ($Prob$ $(\ket{c} = \ket{1})$) state are shown.
+The algorithm was first trained using the 9-bit RGB colours from training data set I and then asked to classify each input pattern from input data set I. Each simulation was repeated 100 times to gather sufficient statistics. The results are listed in Table~\ref{tab:colourresults}. For every input pattern the probabilities of successful CM ($\mathrm{Prob}(CM)$) and measuring the class qubit in either the \0 ($\mathrm{Prob}$ $(\ket{c} = \ket{0})$) or the \1 ($\mathrm{Prob}$ $(\ket{c} = \ket{1})$) state are shown.
 
 For every input pattern and probability, the theoretical prediction (marked with asterisks) on top is contrasted with the simulation result below. The small differences between these numbers show that in most cases 100 runs suffice to retrieve the theoretically predicted probabilities. Yet, the first red input pattern 100 000 000 is the only exception since it was incorrectly classified as blue despite the theory predicting a slightly higher probability to measure class red ($\ket{c} = \ket{0}$). In this case, however, both class probabilities are almost equal such that even after a large number of runs the classification would not be better than a coin flip.
 
@@ -226,7 +226,7 @@ The other three input pattern from input data set I were all correctly classifie
 \begin{table}
 \begin{tabular}{| C{1.4cm} | C{2.1cm} |C{1.7cm} | C{1.7cm} | C{1.7cm} |C{1.7cm}| C{1.7cm}|}
       \toprule
-      Colour & Binary 9-bit RGB string  & $Prob(CM)$ & $Prob$ $(\ket{c} = \ket{0})$ & $Prob$ $(\ket{c} = \ket{1})$ & Expected class & Algorithm output\\
+      Colour & Binary 9-bit RGB string  & $\mathrm{Prob}(CM)$ & $\mathrm{Prob}$ $(\ket{c} = \ket{0})$ & $\mathrm{Prob}$ $(\ket{c} = \ket{1})$ & Expected class & Algorithm output\\
       \midrule
        \cellcolor{inputred1} & 100 000 000 & \begin{tabular}{c} 0.8404* \\\midrule 0.7500 \end{tabular} & \begin{tabular}{c} 0.5598* \\\midrule 0.4933 \end{tabular} & \begin{tabular}{c} 0.4402* \\\midrule 0.5067 \end{tabular} & red ($\ket{0}$) & blue ($\ket{1}$)\\\midrule
        
@@ -259,7 +259,7 @@ In conclusion, the quantum simulations of the qubit-based kNN algorithm resulted
 \begin{table}
 \begin{tabular}{| C{1.4cm} | C{2.1cm} |C{1.7cm} | C{1.7cm} | C{1.7cm} |C{1.7cm}| C{1.7cm}|}
       \toprule
-      Colour & Binary 9-bit RGB string & $Prob(CM)$ & $Prob$ $(\ket{c} = \ket{0})$ & $Prob$ $(\ket{c} = \ket{1})$ & Expected class & Algorithm output\\
+      Colour & Binary 9-bit RGB string & $\mathrm{Prob}(CM)$ & $\mathrm{Prob}$ $(\ket{c} = \ket{0})$ & $\mathrm{Prob}$ $(\ket{c} = \ket{1})$ & Expected class & Algorithm output\\
       \midrule
        \cellcolor{inputred1} & 100 000 000 & \begin{tabular}{c} 0.7543* \\\midrule 0.8500 \end{tabular} & \begin{tabular}{c} 0.5515* \\\midrule 0.5529 \end{tabular} & \begin{tabular}{c} 0.4485* \\\midrule 0.4471 \end{tabular} & red ($\ket{0}$) & red ($\ket{0}$)\\\midrule
        
@@ -329,12 +329,12 @@ To only select the constructive interference, a CM has to be performed on the an
 
 \begin{equation}
 \label{equ:probancilla}
-Prob(CM) = Prob(\ket{a} = \ket{0})= 1 - \frac{1}{4M} \sum_{m=1}^M \sum_{i=1}^N \mid \textcolor{red}{x_i} - \textcolor{purple}{t_i^m} \mid ^2
+\mathrm{Prob}(CM) = \mathrm{Prob}(\ket{a} = \ket{0})= 1 - \frac{1}{4M} \sum_{m=1}^M \sum_{i=1}^N \mid \textcolor{red}{x_i} - \textcolor{purple}{t_i^m} \mid ^2
 \end{equation}
 \end{bluebox}
 
 \begin{bluebox}
-Note that $\sum_{i=1}^N \mid \textcolor{red}{x_i} - \textcolor{purple}{t^m_i} \mid ^2$ is the squared Euclidean distance between the input vector and the $m^{th}$ training vector. Equ.~\ref{equ:probancilla} shows that the probability for the CM to succeed is higher when the average distance between input and training vectors is small. If all training vectors are relatively far from the input the training set can be regarded as suboptimal. Therefore, $Prob(\ket{a} = \ket{0})$ is a measure of how suitable the training vectors are to classify the new input.\\
+Note that $\sum_{i=1}^N \mid \textcolor{red}{x_i} - \textcolor{purple}{t^m_i} \mid ^2$ is the squared Euclidean distance between the input vector and the $m^{th}$ training vector. Equ.~\ref{equ:probancilla} shows that the probability for the CM to succeed is higher when the average distance between input and training vectors is small. If all training vectors are relatively far from the input the training set can be regarded as suboptimal. Therefore, $\mathrm{Prob}(\ket{a} = \ket{0})$ is a measure of how suitable the training vectors are to classify the new input.\\
 \newline
 After the successful CM, the state is proportional to:
 
@@ -345,7 +345,7 @@ After the successful CM, the state is proportional to:
 
 The probability of measuring e.g. class $\ket{1}$ (B) is given by the following expression:
 \begin{equation}
-Prob(\ket{c^m} = \ket{1(\textcolor{purple}{B})})= \sum_{m \mid c^m=1(\textcolor{purple}{B})} 1 - \frac{1}{4M} \sum_{i=1}^N \mid \textcolor{red}{x_i} - \textcolor{purple}{t^m_i} \mid ^2
+\mathrm{Prob}(\ket{c^m} = \ket{1(\textcolor{purple}{B})})= \sum_{m \mid c^m=1(\textcolor{purple}{B})} 1 - \frac{1}{4M} \sum_{i=1}^N \mid \textcolor{red}{x_i} - \textcolor{purple}{t^m_i} \mid ^2
 \end{equation}
 
 Note that the probability of measuring class \1 (B) is dependent on the squared Euclidean distance between the input vector and each training vector belonging to class \textcolor{purple}{$B$}. Thus, if the average of these squared Euclidean distances is small, the probability of measuring the class qubit in the \1 state is greater. This quantum routine, therefore, resembles a kNN algorithm with $k=all$ and without distance-weighting.
@@ -358,14 +358,13 @@ The quantum advantage of the algorithm is the parallel computation of the square
 \begin{greenbox}
 \textbf{Complexity analysis neglecting initial state preparation}\\
 \newline
-Independent of number and size of the input and training vectors, the algorithm only requires the application of a single H gate. However, the routine has to be repeated for $y$ runs of which only $Prob(CM)*y$ runs result in a measurement of the class qubit. Thus, the time complexity of this algorithm is $\mathcal{O}(\frac{1}{Prob(CM)})$ where $Prob(CM)$ is the probability of a successful CM (measuring ancilla in the $\ket{0}$ state). Therefore, the algorithm is said to run in constant time. This means it is independent of the number of training vectors and their size. For example, executing this quantum routine with 10 or 100,000,000 training vectors each with 1,000,000 entries does not make a difference in the run time.
+Independent of number and size of the input and training vectors, the algorithm only requires the application of a single H gate. However, the routine has to be repeated for $y$ runs of which only $\mathrm{Prob}(CM)*y$ runs result in a measurement of the class qubit. Thus, the time complexity of this algorithm is $\mathcal{O}(\frac{1}{\mathrm{Prob}(CM)})$ where $\mathrm{Prob}(CM)$ is the probability of a successful CM (measuring ancilla in the $\ket{0}$ state). Therefore, the algorithm is said to run in constant time. This means it is independent of the number of training vectors and their size. For example, executing this quantum routine with 10 or 100,000,000 training vectors each with 1,000,000 entries does not make a difference in the run time.
 \end{greenbox}
 
 \subsection{Compiling the amplitude-based kNN algorithm}
 \label{subsubsec:implementationamplitudeKNN}
 %Attempt to implement the amplitude-based kNN algorithm}
-
-The akNN algorithm was developed with an actual implementation, using the IBM QC, in mind. Since the IBM Quantum Experience only provides five qubits and a relatively small gate set, a very simple low-dimensional classification problem should be selected. 
+The akNN algorithm was designed for an actual implementation on the IBM QC. Since the IBM Quantum Experience only provides five qubits and a relatively small universal gate set, a very simple low-dimensional classification problem is selected. Therefore, the first part of this section will introduce the chosen classification problem. Thereafter, the process of quantum compiling the aKNN quantum algorithm for an implementation with the IBM Quantum Experience will be explained.
 
 Perhaps the simplest problem is the classification of a 2-D quantum state vector as either \0 or \1 depending on its position on the Bloch sphere. This choice also enables easy visualization throughout the discussion since any single qubit vector has a well-defined position on the Bloch sphere (see Section~\ref{subsubsec:qubits}). The training set is listed in Table~\ref{tab:trainingset} and consists only of the \0 and the \1 vector depicted in Fig.~\ref{fig:3over4} as the yellow and purple vector respectively. The red vector in Fig.~\ref{fig:3over4} will be the input vector and its qubit state and vector representation are given in Table~\ref{tab:inputvectors}.
 
@@ -450,9 +449,9 @@ By looking closely at Fig.~\ref{fig:3over4} one can deduce that the red input ve
 
 \begin{equation}
 \label{equ:rydef}
-R_y(\vartheta) = e^{-i\vartheta\frac{Y}{2}} = \text{cos}\frac{\vartheta}{2}\mathbb{1} - i\text{sin}\frac{\vartheta}{2}Y = \begin{pmatrix}
-\text{cos}\frac{\vartheta}{2} & -\text{sin}\frac{\vartheta}{2} \\
-\text{sin}\frac{\vartheta}{2} & \text{cos}\frac{\vartheta}{2}
+R_y(\vartheta) = e^{-i\vartheta\frac{Y}{2}} = \cos\frac{\vartheta}{2}\mathbb{1} - i\sin\frac{\vartheta}{2}Y = \begin{pmatrix}
+\cos\frac{\vartheta}{2} & -\sin\frac{\vartheta}{2} \\
+\sin\frac{\vartheta}{2} & \cos\frac{\vartheta}{2}
 \end{pmatrix}
 \end{equation}
 
@@ -567,7 +566,7 @@ where $R_z(\varrho)$ is the general rotation gate about the z-axis of the Bloch 
 
 \begin{equation}
 \label{equ:rzdef}
-R_z(\varrho) = e^{-i\varrho\frac{Z}{2}} = \text{cos}\frac{\varrho}{2} \mathbb{1}- i\text{sin}\frac{\varrho}{2}Z = \begin{pmatrix}
+R_z(\varrho) = e^{-i\varrho\frac{Z}{2}} = \cos\frac{\varrho}{2} \mathbb{1}- i\sin\frac{\varrho}{2}Z = \begin{pmatrix}
 e^{-i\frac{\varrho}{2}} & 0 \\
 0 & e^{i\frac{\varrho}{2}}
 \end{pmatrix}
@@ -596,8 +595,8 @@ To decompose $CR_y(\frac{\pi}{4})$, one simply chooses $U = R_y(\frac{\pi}{4})$.
 
 \begin{equation}
 U = R_y(\frac{\pi}{4}) = \begin{pmatrix}
-\text{cos}\frac{\pi}{8} & -\text{sin}\frac{\pi}{8} \\
-\text{sin}\frac{\pi}{8} & \text{cos}\frac{\pi}{8}
+\cos\frac{\pi}{8} & -\sin\frac{\pi}{8} \\
+\sin\frac{\pi}{8} & \cos\frac{\pi}{8}
 \end{pmatrix}
 \end{equation}
 
@@ -606,8 +605,8 @@ Substituting this expression for $U$ into Equ.~\ref{equ:udecompdef} leads to:
 \begin{equation}
 \label{equ:udecompsubbed}
 U = \begin{pmatrix}
-\text{cos}\frac{\pi}{8} & -\text{sin}\frac{\pi}{8} \\
-\text{sin}\frac{\pi}{8} & \text{cos}\frac{\pi}{8}
+\cos\frac{\pi}{8} & -\sin\frac{\pi}{8} \\
+\sin\frac{\pi}{8} & \cos\frac{\pi}{8}
 \end{pmatrix} = \begin{pmatrix}
  e^{i(\alpha-\frac{\beta}{2}-\frac{\delta}{2})}\cos{\frac{\gamma}{2}} & -e^{i(\alpha-\frac{\beta}{2}+\frac{\delta}{2})}\sin{\frac{\gamma}{2}} \\ 
 e^{i(\alpha+\frac{\beta}{2}-\frac{\delta}{2})}\sin{\frac{\gamma}{2}} & e^{i(\alpha+\frac{\beta}{2}+\frac{\delta}{2})}\cos{\frac{\gamma}{2}}
@@ -619,9 +618,9 @@ When setting the expressions for the respective matrix entries in Equ.~\ref{equ:
 \begin{align}
 \label{equ:nlsystem}
 \cos\frac{\pi}{8} &= e^{i(\alpha-\frac{\beta}{2}-\frac{\delta}{2})}\cos{\frac{\gamma}{2}}\\
--\text{sin}\frac{\pi}{8} &= -e^{i(\alpha-\frac{\beta}{2}+\frac{\delta}{2})}\sin{\frac{\gamma}{2}}  \\
-\text{sin}\frac{\pi}{8} &= e^{i(\alpha+\frac{\beta}{2}-\frac{\delta}{2})}\sin{\frac{\gamma}{2}}\\
-\text{cos}\frac{\pi}{8} &= e^{i(\alpha+\frac{\beta}{2}+\frac{\delta}{2})}\cos{\frac{\gamma}{2}}\\
+-\sin\frac{\pi}{8} &= -e^{i(\alpha-\frac{\beta}{2}+\frac{\delta}{2})}\sin{\frac{\gamma}{2}}  \\
+\sin\frac{\pi}{8} &= e^{i(\alpha+\frac{\beta}{2}-\frac{\delta}{2})}\sin{\frac{\gamma}{2}}\\
+\cos\frac{\pi}{8} &= e^{i(\alpha+\frac{\beta}{2}+\frac{\delta}{2})}\cos{\frac{\gamma}{2}}
 \end{align}
 
 This is a system of four non-linear complex equations with four unknowns. In order to solve for the parameters $\alpha,\beta,\gamma$ and $\delta$ one can use any root finding algorithm for non-linear equations such as Secant or Newton's method. Using Newton's method the solutions are found to be:
@@ -652,15 +651,15 @@ Quantum gate $A$ is just equal to the identity gate which certainly is an elemen
 
 An important theorem in quantum information is the Solovay-Kitaev theorem first proposed by Robert M. Solovay and later published by \citeA{kitaev1995quantum}. It will be used to decompose the quantum gates $B$ and $C$ into a sequence of quantum gates from IBM's universal gate set.
 
-At this point, it is important to remember that any universal quantum gate set is a dense subset of the special unitary group $SU(2)$ as previously defined in Section~\ref{subsubsec:qubits}.
+At this point, it is important to remember that any universal quantum gate set is a dense subset of the special unitary group $\mathrm{SU}(2)$ as previously defined in Section~\ref{subsubsec:qubits}.
 
 \begin{redbox}
 \textbf{Theorem: Solovay-Kitaev theorem}\\
 \newline
-Let $G$ be a universal quantum set $G$ consisting of quantum gates from $SU(2)$ and let $\epsilon > 0$ be a desired accuracy. Then there is a constant $b$ such that for any single-qubit gate $W \in SU(2)$ there exists a
+Let $G$ be a universal quantum set $G$ consisting of quantum gates from $\mathrm{SU}(2)$ and let $\epsilon > 0$ be a desired accuracy. Then there is a constant $b$ such that for any single-qubit gate $W \in \mathrm{SU}(2)$ there exists a
 finite gate sequence $\tilde{G}$ of gates from the set $G$ of length $O(log^b (1/\epsilon))$ such that $d(W, \tilde{G}) < \epsilon$. In their proof, \citeA{dawson2005solovay} show that $b \approx 3.97$.\\
 \newline
-In other words, given a set of single-qubit quantum gates which is a dense subset of $SU(2)$, then the Solovay-Kitaev theorem guarantees that this set will quickly fill $SU(2)$.
+In other words, given a set of single-qubit quantum gates which is a dense subset of $\mathrm{SU}(2)$, then the Solovay-Kitaev theorem guarantees that this set will quickly fill $\mathrm{SU}(2)$.
 \cite{dawson2005solovay}.
 \end{redbox}
 
@@ -671,15 +670,15 @@ The Solovay-Kitaev theorem is important because it proofs that given any univers
 \begin{redbox}
 \textbf{Definition: Fowler distance}\\
 \newline
-When approximating a unitary gate $W$ with a gate sequence yielding another unitary gate $W_{approx}$ it is important to quantify how 'close' the action of $W_{approx}$ is to $W$. The Fowler distance makes use of the matrix representations of $W$ and $W_{approx}$ and is defined by \citeA{booth2012quantum} as:
+When approximating a unitary gate $W$ with a gate sequence yielding another unitary gate $W_\mathrm\mathrm{approx}$ it is important to quantify how 'close' the action of $W_\mathrm{approx}$ is to $W$. The Fowler distance makes use of the matrix representations of $W$ and $W_\mathrm{approx}$ and is defined by \citeA{booth2012quantum} as:
 \begin{equation}
-d(W,W_{approx}) = \sqrt{\frac{2-\mid tr(W\cdot W_{\mathrm{approx}}^\dagger)\mid}{2}}
+d(W,W_\mathrm{approx}) = \sqrt{\frac{2-\mid tr(W\cdot W_{\mathrm\mathrm{approx}}^\dagger)\mid}{2}}
 \end{equation}
 
-In contrast to $W$, $W_{approx}$ might introduce a shift in the global phase of the quantum state it is acting on. However, since the global phase of a quantum state is immeasurable in experiment it can be neglected. As a result, the Fowler distance is defined in such a way that possible global phase differences are ignored.
+In contrast to $W$, $W_\mathrm{approx}$ might introduce a shift in the global phase of the quantum state it is acting on. However, since the global phase of a quantum state is immeasurable in experiment it can be neglected. As a result, the Fowler distance is defined in such a way that possible global phase differences are ignored.
 \end{redbox}
 
-Subsequently, the desired gates $B = R_z(-\frac{23}{16}\pi)$ and $C = R_z(-\frac{9}{16}\pi)$ where decomposed using the Solovay-Kitaev algorithm. Fig.~\ref{fig:skresultplot} shows a plot visualizing how the Fowler distance depends on the number of gates in the approximating gate sequence $W_{approx}$. The number of gates in the approximating gate sequence is also called \emph{gate count}. The plot clearly shows an exponential increase in the gate count for decreasing Fowler distance. For example, 146 gates suffice to achieve $d(W_{approx},R_z(-\frac{9}{16}\pi)) = 0.04389$. Yet, already 17,838 gates are required to reduce the Fowler distance to $d(W_{approx},R_z(-\frac{9}{16}\pi)) = 0.01008$.
+Subsequently, the desired gates $B = R_z(-\frac{23}{16}\pi)$ and $C = R_z(-\frac{9}{16}\pi)$ where decomposed using the Solovay-Kitaev algorithm. Fig.~\ref{fig:skresultplot} shows a plot visualizing how the Fowler distance depends on the number of gates in the approximating gate sequence $W_\mathrm{approx}$. The number of gates in the approximating gate sequence is also called \emph{gate count}. The plot clearly shows an exponential increase in the gate count for decreasing Fowler distance. For example, 146 gates suffice to achieve $d(W_\mathrm{approx},R_z(-\frac{9}{16}\pi)) = 0.04389$. Yet, already 17,838 gates are required to reduce the Fowler distance to $d(W_\mathrm{approx},R_z(-\frac{9}{16}\pi)) = 0.01008$.
 
 \begin{figure}[H]
 \centering
@@ -708,7 +707,7 @@ Fowler distance is best understood with a visual example using the gate $B = R_z
 \caption{\label{fig:bloch23over16} Action of $B = R_z(-\frac{23}{16}\pi)$ on the state $\ket{\psi} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}$}
 \end{figure}
 
-Fig.~\ref{fig:fowlerdistances} shows the action of four different approximating gate sequences $B_{approx,1}$, $B_{approx,2}$, $B_{approx,3}$, $B_{approx,4}$ on the state $\ket{\psi} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}$. Gate sequence $B_{approx,1}$ consists of 25 gates and is a Fowler distance of $d = 0.15165$ away from $B$. The resulting state vector is coloured green in Fig.~\ref{fig:fowlerdistances}. The green vector lies above the Bloch equator and is relatively far away from the desired vector $\vec{b}$ in Fig.~\ref{fig:bloch23over16}. With 109 gates, $B_{approx,2}$ yields a Fowler distance of $d = 0.10722$ resulting in the blue vector. It is also found below the Bloch equator and still relatively far from $\vec{b}$. Using $B_{approx,3}$ the Fowler distance drops to $d = 0.02086$ leading to the yellow vector in  Fig.~\ref{fig:fowlerdistances}. This vector is almost on the Bloch equator and relatively close to $\vec{b}$ implying that $B_{approx,3}$ is a good approximation of $B$. However, $B_{approx,3}$ already requires the implementation of 2,997 single-qubit gates. The purple vector from Fig.~\ref{fig:bloch23over16} is also plotted in Fig.~\ref{fig:fowlerdistances} but is not visible since the red vector with $d = 0.00158$ constitutes a very good approximation to the desired state $\vec{b}$.  The red vector is the result of the action of $B_{approx,4}$ which, unfortunately, needs 370,813 gates to achieve such a small Fowler distance. Hereby, Gate $B$ was used as an example but such an exponential increase in the gate count is observed for any quantum gate $W$ when applying the Solovay-Kitaev algorithm \cite{dawson2005solovay}.
+Fig.~\ref{fig:fowlerdistances} shows the action of four different approximating gate sequences $B_\mathrm{approx,1}$, $B_\mathrm{approx,2}$, $B_\mathrm{approx,3}$, $B_\mathrm{approx,4}$ on the state $\ket{\psi} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}$. Gate sequence $B_\mathrm{approx,1}$ consists of 25 gates and is a Fowler distance of $d = 0.15165$ away from $B$. The resulting state vector is coloured green in Fig.~\ref{fig:fowlerdistances}. The green vector lies above the Bloch equator and is relatively far away from the desired vector $\vec{b}$ in Fig.~\ref{fig:bloch23over16}. With 109 gates, $B_\mathrm{approx,2}$ yields a Fowler distance of $d = 0.10722$ resulting in the blue vector. It is also found below the Bloch equator and still relatively far from $\vec{b}$. Using $B_\mathrm{approx,3}$ the Fowler distance drops to $d = 0.02086$ leading to the yellow vector in  Fig.~\ref{fig:fowlerdistances}. This vector is almost on the Bloch equator and relatively close to $\vec{b}$ implying that $B_\mathrm{approx,3}$ is a good approximation of $B$. However, $B_\mathrm{approx,3}$ already requires the implementation of 2,997 single-qubit gates. The purple vector from Fig.~\ref{fig:bloch23over16} is also plotted in Fig.~\ref{fig:fowlerdistances} but is not visible since the red vector with $d = 0.00158$ constitutes a very good approximation to the desired state $\vec{b}$.  The red vector is the result of the action of $B_\mathrm{approx,4}$ which, unfortunately, needs 370,813 gates to achieve such a small Fowler distance. Hereby, Gate $B$ was used as an example but such an exponential increase in the gate count is observed for any quantum gate $W$ when applying the Solovay-Kitaev algorithm \cite{dawson2005solovay}.
 
 \begin{minipage}[c]{.8\textwidth}
     %\vspace{-20mm}
@@ -802,20 +801,20 @@ The Toffoli decomposition finalizes the compiling of the quantum state preparati
 \begin{greenbox}
 \textbf{Complexity analysis including quantum compiling steps}\\
 \newline
-The akNN algorithm itself was found to run in constant time $\mathcal{O}(\frac{1}{Prob(CM)})$. However, to determine the overall algorithmic complexity all steps required to prepare the initial quantum state $\ket{\psi_0}$ from Equ.~\ref{equ:ampinitial} need to be included. The decomposition of the $CR_y(\frac{\pi}{4})$ gate involved solving a system of non-linear equations by means of a root-finding algorithm. Any iterative root-finding algorithm e.g. Secant or Newton's method has a complexity of $\mathcal{O}(k)$ where $k$ is the number of root finding iterations. Furthermore, the Solovay-Kitaev algorithm was required to find two single-qubit gate sequences approximating the two gates $B = R_z(-\frac{23}{16}\pi)$ and $C = R_z(-\frac{9}{16}\pi)$. According to \citeA{dawson2005solovay} the Solovay-Kitaev algorithm has a complexity of $\mathcal{O}(m*log^{2.71}(\frac{m}{\epsilon}))$ for $\epsilon$-approximations of $m$ gates. Thus the total complexity is given by:
+The akNN algorithm itself was found to run in constant time $\mathcal{O}(\frac{1}{\mathrm{Prob}(CM)})$. However, to determine the overall algorithmic complexity all steps required to prepare the initial quantum state $\ket{\psi_0}$ from Equ.~\ref{equ:ampinitial} need to be included. The decomposition of the $CR_y(\frac{\pi}{4})$ gate involved solving a system of non-linear equations by means of a root-finding algorithm. Any iterative root-finding algorithm e.g. Secant or Newton's method has a complexity of $\mathcal{O}(k)$ where $k$ is the number of root finding iterations. Furthermore, the Solovay-Kitaev algorithm was required to find two single-qubit gate sequences approximating the two gates $B = R_z(-\frac{23}{16}\pi)$ and $C = R_z(-\frac{9}{16}\pi)$. According to \citeA{dawson2005solovay} the Solovay-Kitaev algorithm has a complexity of $\mathcal{O}(m\cdot log^{2.71}(\frac{m}{\epsilon}))$ for $\epsilon$-approximations of $m$ gates. Thus the total complexity is given by:
 \begin{equation}
-\mathcal{O}(\frac{1}{Prob(CM)})+\mathcal{O}(k)+\mathcal{O}(m*log^{2.71}(\frac{m}{\epsilon}))
+\mathcal{O}(\frac{1}{\mathrm{Prob}(CM)})+\mathcal{O}(k)+\mathcal{O}(m\cdot log^{2.71}(\frac{m}{\epsilon}))
 \end{equation}
     
-When adding algorithmic complexities only the most dominant term is considered relevant. Thus, the overall complexity including state preparation is found to be $\mathcal{O}(m*log^{2.71}(\frac{m}{\epsilon}))$.\\
+When adding algorithmic complexities only the most dominant term is considered relevant. Thus, the overall complexity including state preparation is found to be $\mathcal{O}(m\cdot log^{2.71}(\frac{m}{\epsilon}))$.\\
 \newline
 In conclusion, due to the necessary quantum compiling steps the initial constant complexity of the akNN algorithm
 \begin{equation}  
-\mathcal{O}(\frac{1}{Prob(CM)})
+\mathcal{O}(\frac{1}{\mathrm{Prob}(CM)})
 \end{equation}
 increased to a polylogarithmic complexity of
 \begin{equation}
-\mathcal{O}(m*log^{2.71}(\frac{m}{\epsilon}))
+\mathcal{O}(m\cdot log^{2.71}(\frac{m}{\epsilon}))
 \end{equation}
 dependening on the number of gates $m$ that need $\epsilon$-approximations by means of the Solovay-Kitaev algorithm.
 \end{greenbox}
@@ -860,7 +859,7 @@ The obtained simulation results after 1000 runs for both Bloch vectors from inpu
 \begin{table}[H]
 \begin{tabular}{| C{0.5cm} | C{2.7cm} |C{1.7cm} | C{1.7cm} | C{1.7cm} |C{1.8cm}| C{1.8cm}|}
       %\toprule
-      ID & Qubit state  & $Prob(CM)$ & $Prob$ $(\ket{c} = \ket{0})$ & $Prob$ $(\ket{c} = \ket{1})$ & Expected class & Algorithm output\\
+      ID & Qubit state  & $\mathrm{Prob}(CM)$ & $\mathrm{Prob}$ $(\ket{c} = \ket{0})$ & $\mathrm{Prob}$ $(\ket{c} = \ket{1})$ & Expected class & Algorithm output\\
       \midrule
         1 & $e^{-i\frac{\pi}{8}}\big[0.92388\ket{0} + 0.38268\ket{1}\big]$ & \begin{tabular}{c} 0.8266* \\\midrule 0.8050 \end{tabular} & \begin{tabular}{c} 0.5818* \\\midrule 0.5863 \end{tabular} & \begin{tabular}{c} 0.4182* \\\midrule 0.4137 \end{tabular} & $\ket{0}$ (yellow) & $\ket{0}$ (yellow)\\\midrule
         
@@ -1074,13 +1073,13 @@ As previously discussed in Section~\ref{subsec:amplitudeKNNalgorithm}, the proba
 
 \begin{equation}
 \label{equ:probcagain}
-Prob(\ket{c^m} = \ket{1})= \sum_{m \mid c^m=1} 1 - \frac{1}{4M} \sum_{i=1}^N \mid x_i - t^m_i \mid ^2
+\mathrm{Prob}(\ket{c^m} = \ket{1})= \sum_{m \mid c^m=1} 1 - \frac{1}{4M} \sum_{i=1}^N \mid x_i - t^m_i \mid ^2
 \end{equation}
 
 Suppose the probability distribution $R = (r_1,...,r_N)$ is the input sample that shall be classified and the distributions $L^m = (l_1^m,...,l_N^m)$ are the training samples. Instead of directly using them for the amplitude-based kNN algorithm, one chooses their square root vectors such that $x_i \rightarrow \sqrt{r_i}$ and $t_i^m \rightarrow \sqrt{l_i^m}$. Eq.~\ref{equ:probcagain} then reads
 
 \begin{equation}
-Prob(\ket{c^m} = \ket{1})= \sum_{m \mid c^m=1} 1 - \frac{1}{4M} \sum_{i=1}^N \mid \sqrt{r_i} - \sqrt{l^m_i} \mid ^2
+\mathrm{Prob}(\ket{c^m} = \ket{1})= \sum_{m \mid c^m=1} 1 - \frac{1}{4M} \sum_{i=1}^N \mid \sqrt{r_i} - \sqrt{l^m_i} \mid ^2
 \end{equation}
 
 which is now dependent on the squared Hellinger distance between the input distribution $R$ and each training distribution $L^m$.
@@ -1130,7 +1129,7 @@ Liqui$\ket{}$ was used to perform the quantum simulations and the probability di
 \begin{table}[H]
 \begin{tabular}{| C{0.5cm} | C{2.7cm} |C{1.7cm} | C{1.7cm} | C{1.7cm} |C{1.8cm}| C{1.8cm}|}
       \toprule
-      ID & Gaussian distr. centered around & $Prob(CM)$ & $Prob$ $(\ket{c} = \ket{0})$ & $Prob$ $(\ket{c} = \ket{1})$ & Expected class & Algorithm output\\
+      ID & Gaussian distr. centered around & $\mathrm{Prob}(CM)$ & $\mathrm{Prob}$ $(\ket{c} = \ket{0})$ & $\mathrm{Prob}$ $(\ket{c} = \ket{1})$ & Expected class & Algorithm output\\
       \midrule
         1 & $\ket{100}$ & \begin{tabular}{c} 0.9930$^\circ$ \\\midrule 0.8090$^\bullet$ \\\midrule 0.6740$^\triangleright$ \end{tabular} & \begin{tabular}{c} 0.4904$^\circ$ \\\midrule 0.5414$^\bullet$ \\\midrule 0.5549$^\triangleright$ \end{tabular} & \begin{tabular}{c} 0.5096$^\circ$ \\\midrule 0.4586$^\bullet$ \\\midrule 0.4451$^\triangleright$ \end{tabular} & $\ket{0}$ & \begin{tabular}{c} $\ket{1}$ $^\circ$ \\\midrule $\ket{0}$ $^\bullet$ \\\midrule $\ket{0}$ $^\triangleright$ \end{tabular}\\\midrule
         
@@ -1149,7 +1148,7 @@ Liqui$\ket{}$ was used to perform the quantum simulations and the probability di
     \caption{\label{tab:gauss3qubitresults} Amplitude-based kNN algorithm classification results after 1000 runs for various Gaussian distributions centered around six different three-qubit patterns. The Gaussian distributions were created using the coin gate $C(\delta)$. For each pattern three different distributions were prepared and classified by changing the parameter $\delta$: The results for $\delta = 0.6$ are always on top and marked with an empty circle ($\circ$), results for $\delta = 0.85$ are always in the middle marked with a filled circle ($\bullet$) and results for $\delta = 0.95$ are always at the bottom and marked with a triangle ($\triangleright$)}
 \end{table}
 
-The results in Table~\ref{tab:gauss3qubitresults} show that for all input distributions the probability of a successful conditional measurement ($\mathrm{Prob}(\mathrm{CM})$) decreases with increasing values of $\delta$. Specifically, in the case $\delta = 0.6$ the values of $\mathrm{Prob}(\mathrm{CM})$ are very close to unity for all six input distributions. Furthermore, when $\delta = 0.6$ the probability distributions over the class qubit states \0 and \1 are close to being equal for all six input distributions indicating no clear preference for a particular class. This can be explained by looking back to Fig.~\ref{fig:gaussdeltaplot2} which shows that choosing $\delta = 0.6$ results in flat Gaussian distributions with little peaks. On the cube in Fig.~\ref{img:cubenoprobs} this would correspond to an almost uniform amplitude distribution over the cube. Thus, in this case the training samples are almost equal to each other yielding nearly equal probabilities for class \0 and \1 for all six input distributions. As a result, for $\delta = 0.6$ the first three input distributions were all incorrectly classified and the last three input samples were all correctly classified. Despite correct or incorrect classification, all six class qubit probability distributions show no clear preference and make clear that the training samples with $\delta = 0.6$ are not distinct enough for the algorithm to make a clear classification decision.
+The results in Table~\ref{tab:gauss3qubitresults} show that for all input distributions the probability of a successful conditional measurement $\mathrm{Prob}(\mathrm{CM})$ decreases with increasing values of $\delta$. Specifically, in the case $\delta = 0.6$ the values of $\mathrm{Prob}(\mathrm{CM})$ are very close to unity for all six input distributions. Furthermore, when $\delta = 0.6$ the probability distributions over the class qubit states \0 and \1 are close to being equal for all six input distributions indicating no clear preference for a particular class. This can be explained by looking back to Fig.~\ref{fig:gaussdeltaplot2} which shows that choosing $\delta = 0.6$ results in flat Gaussian distributions with little peaks. On the cube in Fig.~\ref{img:cubenoprobs} this would correspond to an almost uniform amplitude distribution over the cube. Thus, in this case the training samples are almost equal to each other yielding nearly equal probabilities for class \0 and \1 for all six input distributions. As a result, for $\delta = 0.6$ the first three input distributions were all incorrectly classified and the last three input samples were all correctly classified. Despite correct or incorrect classification, all six class qubit probability distributions show no clear preference and make clear that the training samples with $\delta = 0.6$ are not distinct enough for the algorithm to make a clear classification decision.
 
 In the case $\delta = 0.85$ all six input distributions were correctly classified. In this case, the Gaussian training distributions correspond to more distinct amplitude distributions over the cube in Fig.~\ref{img:cubenoprobs}. This fact results in different probabilities for class \0 and \1, thereby clearly favouring one class over the other. Lastly, for $\delta = 0.95$ all six input distributions were again correctly classified with larger differences between the probabilities for class \0 and \1 compared to the case $\delta = 0.85$.
 

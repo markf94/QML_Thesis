@@ -5,8 +5,8 @@
 \contentsline {section}{\numberline {1.2}Research question}{2}
 \contentsline {chapter}{\numberline {2}Theoretical Foundations}{3}
 \contentsline {section}{\numberline {2.1}Quantum bits}{3}
-\contentsline {subsection}{\numberline {2.1.1}Single qubit systems}{3}
-\contentsline {subsection}{\numberline {2.1.2}Multi qubit systems}{7}
+\contentsline {subsection}{\numberline {2.1.1}Single-qubit systems}{3}
+\contentsline {subsection}{\numberline {2.1.2}Multi-qubit systems}{7}
 \contentsline {section}{\numberline {2.2}Quantum Logic Gates}{9}
 \contentsline {subsection}{\numberline {2.2.1}Single-qubit gates}{9}
 \contentsline {subsection}{\numberline {2.2.2}Multi-qubit gates}{12}
@@ -20,21 +20,21 @@
 \contentsline {section}{\numberline {4.1}Quantum state preparation}{22}
 \contentsline {subsection}{\numberline {4.1.1}Encoding classical data into qubits}{22}
 \contentsline {subsection}{\numberline {4.1.2}Encoding classical data into amplitudes}{24}
-\contentsline {section}{\numberline {4.2}Quantum k-nearest neighbour algorithm}{25}
+\contentsline {section}{\numberline {4.2}Qubit-based quantum k-nearest neighbour algorithm}{25}
 \contentsline {chapter}{\numberline {5}Results and Discussion}{28}
 \contentsline {section}{\numberline {5.1}Simulating the qubit-based kNN algorithm}{28}
-\contentsline {subsubsection}{\numberline {5.1.0.1}Quantum simulation results}{32}
-\contentsline {section}{\numberline {5.2}Development of an amplitude-based kNN algorithm}{35}
-\contentsline {subsection}{\numberline {5.2.1}Compiling the amplitude-based kNN algorithm}{37}
-\contentsline {subsubsection}{\numberline {5.2.1.1}Initial state preparation}{38}
-\contentsline {subsubsection}{\numberline {5.2.1.2}Decomposition of a controlled-U gate}{40}
-\contentsline {subsubsection}{\numberline {5.2.1.3}The Solovay-Kitaev theorem}{42}
-\contentsline {subsubsection}{\numberline {5.2.1.4}Toffoli Gate Decomposition}{46}
-\contentsline {subsection}{\numberline {5.2.2}Simulating the amplitude-based kNN algorithm}{47}
-\contentsline {subsubsection}{\numberline {5.2.2.1}Classification of Bloch vectors}{48}
-\contentsline {subsubsection}{\numberline {5.2.2.2}Classification of Gaussian distributions}{50}
-\contentsline {chapter}{\numberline {6}Outlook}{61}
-\contentsline {chapter}{\numberline {7}Conclusion}{62}
-\contentsline {chapter}{\numberline {8}Personal Reflection}{63}
-\contentsline {chapter}{\numberline {A}Quantum state preparation routine for Gaussian distributions}{64}
-\contentsline {chapter}{References}{67}
+\contentsline {subsubsection}{\numberline {5.1.0.1}Quantum simulation results}{33}
+\contentsline {section}{\numberline {5.2}Development of an amplitude-based kNN algorithm}{37}
+\contentsline {subsection}{\numberline {5.2.1}Compiling the amplitude-based kNN algorithm}{39}
+\contentsline {subsubsection}{\numberline {5.2.1.1}Initial state preparation}{40}
+\contentsline {subsubsection}{\numberline {5.2.1.2}Decomposition of a controlled-U gate}{42}
+\contentsline {subsubsection}{\numberline {5.2.1.3}The Solovay-Kitaev theorem}{44}
+\contentsline {subsubsection}{\numberline {5.2.1.4}Toffoli Gate Decomposition}{48}
+\contentsline {subsection}{\numberline {5.2.2}Simulating the amplitude-based kNN algorithm}{49}
+\contentsline {subsubsection}{\numberline {5.2.2.1}Classification of Bloch vectors}{50}
+\contentsline {subsubsection}{\numberline {5.2.2.2}Classification of Gaussian distributions}{52}
+\contentsline {chapter}{\numberline {6}Outlook}{63}
+\contentsline {chapter}{\numberline {7}Conclusion}{64}
+\contentsline {chapter}{\numberline {8}Personal Reflection}{65}
+\contentsline {chapter}{\numberline {A}Quantum state preparation routine for Gaussian distributions}{66}
+\contentsline {chapter}{References}{69}

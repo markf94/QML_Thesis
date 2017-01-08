@@ -2,7 +2,7 @@
 \emph{Please note that all concepts introduced in Section~\ref{subsec:qubits} and Section~\ref{subsec:quantumlogicgates} can be found in any standard textbook on quantum information and will, therefore, not be referenced individually. Both of these sections are mainly based on the textbook by \citeA{nielsen2010quantum}.}
 \section{Quantum bits}
 \label{subsec:qubits}
-\subsection{Single qubit systems}
+\subsection{Single-qubit systems}
 \label{subsubsec:qubits}
 
 Classical computers manipulate bits, whereas quantum computer's most fundamental unit is called a \emph{quantum bit}, often abbreviated as \emph{qubit}. Instead of 0 and 1, qubit states are denoted \0 and \1 for reasons that will be outlined later.
@@ -138,7 +138,7 @@ All quantum logic gates must be unitary since this preserves the normalisation o
 The gate set $G$ is a dense subset of $\mathrm{SU}(2)$ when given any quantum gate $W \in \mathrm{SU}(2)$ and any accuracy $\epsilon > 0$ there exists a product $J$ of gates from $G$ which is an $\epsilon$-approximation to $W$ \cite{dawson2005solovay}.
 \end{redbox}
 %\pagebreak
-\subsection{Multi qubit systems}
+\subsection{Multi-qubit systems}
 \label{subsec:multiqubitsystems}
 
 A classical computer with one bit of memory is not particularly useful, and equally, a QC with one qubit is rather useless. To be able to perform large and complicated computations many individual qubits need to be combined to create a large QC. When moving from single to multi-qubit systems a new mathematical tool, the so-called tensor product (symbol $\otimes$), is needed. A tensor product of two qubits is written as
@@ -247,9 +247,11 @@ Non-local correlations between qubit measurement outcomes is a peculiar quantum 
 %\pagebreak
 \section{Quantum Logic Gates}
 \label{subsec:quantumlogicgates}
-Until this point, most introduced concepts came from the field of pure quantum theory. However, this section marks the important transition from quantum theory to the field of \emph{quantum information processing}.
+Until this point, most introduced concepts came from the field of pure quantum theory. However, this section marks the important transition from quantum theory to the field of \emph{quantum information processing}. A classical computer processes information and performs computations by systematically manipulating bits through the application of logic gates e.g. NOT or XOR gates. Analogously, a quantum computer processes information and performs \emph{quantum computations} by manipulating qubits using \emph{quantum logic gates}, often just called \emph{quantum gates}. Usually, a sequence of such quantum gates is required to perform a certain task or solve a particular problem on a quantum computer. Such a sequence of quantum gates is called a \emph{quantum algorithm}. 
 
-A classical computer processes information and performs computations by systematically manipulating bits through the application of logic gates e.g. NOT or XOR gates. Analogously, a quantum computer processes information and performs \emph{quantum computations} by manipulating qubits using \emph{quantum logic gates}, often just called \emph{quantum gates}. Usually, a sequence of such quantum gates is required to perform a certain task or solve a particular problem on a quantum computer. Such a sequence of quantum gates is called a \emph{quantum algorithm}. The following subsections will introduce some major single and multi-qubit quantum logic gates that will be used extensively in the later sections of this thesis.
+There are many different ways of realising a QC such as using trapped ions, photons or superconducting Josephson junctions, etc. \cite{clarke2008superconducting,haffner2008quantum,o2007optical}. Depending on the chosen substrate, different sets of quantum logic gates can be implemented and in order to run a quantum algorithm it has to be mapped to the available quantum hardware. Thus, quantum algorithms have to be translated (compiled) into a series of gates consisting only of quantum gates from the available universal gate set. This is referred to as \emph{quantum compiling}. 
+
+The following subsections will introduce some major single and multi-qubit quantum logic gates that will be used extensively in the later sections of this thesis.
 %In order to perform quantum computations, tools, analogous to the classical logic gates, are needed for qubit manipulation. 
 
 \subsection{Single-qubit gates}

@@ -1,6 +1,35 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
+A{\"\i}meur%
+, Brassard%
+\BCBL {}\ \BBA {} Gambs%
+}{%
+A{\"\i}meur%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2006}}%
+}]{%
+aimeur2006machine}
+\APACinsertmetastar {%
+aimeur2006machine}%
+\begin{APACrefauthors}%
+A{\"\i}meur, E.%
+, Brassard, G.%
+\BCBL {}\ \BBA {} Gambs, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2006}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Machine learning in a quantum world} {Machine learning
+  in a quantum world}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Conference of the Canadian Society for Computational
+  Studies of Intelligence} {Conference of the canadian society for
+  computational studies of intelligence}\ (\BPGS\ 431--442).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Altepeter%
 , James%
 \BCBL {}\ \BBA {} Kwiat%
@@ -183,6 +212,32 @@ Cai, X\BPBI D.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Carrasquilla%
+\ \BBA {} Melko%
+}{%
+Carrasquilla%
+\ \BBA {} Melko%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+carrasquilla2016machine}
+\APACinsertmetastar {%
+carrasquilla2016machine}%
+\begin{APACrefauthors}%
+Carrasquilla, J.%
+\BCBT {}\ \BBA {} Melko, R\BPBI G.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Machine learning phases of matter} {Machine learning
+  phases of matter}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{arXiv preprint arXiv:1605.01735}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Chuang%
 }{%
 Chuang%
@@ -205,6 +260,32 @@ Chuang, I.%
 \begin{APACrefURL}
   [{2017-01-07}]\url{https://ocw.mit.edu/courses/mathematics/18-435j-quantum-computation-fall-2003/lecture-notes/qc_lec19.pdf}
   \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Clarke%
+\ \BBA {} Wilhelm%
+}{%
+Clarke%
+\ \BBA {} Wilhelm%
+}{%
+{\protect \APACyear {2008}}%
+}]{%
+clarke2008superconducting}
+\APACinsertmetastar {%
+clarke2008superconducting}%
+\begin{APACrefauthors}%
+Clarke, J.%
+\BCBT {}\ \BBA {} Wilhelm, F\BPBI K.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2008}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Superconducting quantum bits} {Superconducting quantum
+  bits}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Nature}{453}{7198}{1031--1042}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -443,6 +524,33 @@ Grover, L\BPBI K.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+H{\"a}ffner%
+, Roos%
+\BCBL {}\ \BBA {} Blatt%
+}{%
+H{\"a}ffner%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2008}}%
+}]{%
+haffner2008quantum}
+\APACinsertmetastar {%
+haffner2008quantum}%
+\begin{APACrefauthors}%
+H{\"a}ffner, H.%
+, Roos, C\BPBI F.%
+\BCBL {}\ \BBA {} Blatt, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2008}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Quantum computing with trapped ions} {Quantum computing
+  with trapped ions}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Physics reports}{469}{4}{155--203}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Hamming%
 }{%
 Hamming%
@@ -582,6 +690,32 @@ Kitaev, A\BPBI Y.%
   {Quantum measurements and the abelian stabilizer problem}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{arXiv preprint quant-ph/9511026}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Lambropoulos%
+\ \BBA {} Petrosyan%
+}{%
+Lambropoulos%
+\ \BBA {} Petrosyan%
+}{%
+{\protect \APACyear {2007}}%
+}]{%
+lambropoulos2007fundamentals}
+\APACinsertmetastar {%
+lambropoulos2007fundamentals}%
+\begin{APACrefauthors}%
+Lambropoulos, P.%
+\BCBT {}\ \BBA {} Petrosyan, D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2007}.
+\newblock
+\APACrefbtitle {Fundamentals of quantum optics and quantum information}
+  {Fundamentals of quantum optics and quantum information}.
+\newblock
+\APACaddressPublisher{}{Springer}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -747,6 +881,29 @@ Nielsen, M\BPBI A.%
   computation and quantum information}.
 \newblock
 \APACaddressPublisher{}{Cambridge university press}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+O'Brien%
+}{%
+O'Brien%
+}{%
+{\protect \APACyear {2007}}%
+}]{%
+o2007optical}
+\APACinsertmetastar {%
+o2007optical}%
+\begin{APACrefauthors}%
+O'Brien, J\BPBI L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2007}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Optical quantum computing} {Optical quantum
+  computing}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Science}{318}{5856}{1567--1570}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -975,6 +1132,32 @@ Trugenberger, C.%
 \begin{APACrefURL} \url{http://arxiv.org/abs/quant-ph/0012100} \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1103/PhysRevLett.87.067901} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Ventura%
+\ \BBA {} Martinez%
+}{%
+Ventura%
+\ \BBA {} Martinez%
+}{%
+{\protect \APACyear {2000}}%
+}]{%
+ventura2000quantum}
+\APACinsertmetastar {%
+ventura2000quantum}%
+\begin{APACrefauthors}%
+Ventura, D.%
+\BCBT {}\ \BBA {} Martinez, T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2000}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Quantum associative memory} {Quantum associative
+  memory}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Information Sciences}{124}{1}{273--296}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

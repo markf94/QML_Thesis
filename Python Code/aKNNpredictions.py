@@ -3,7 +3,7 @@ import numpy
 import cmath
 
 #inputamplitudes = [0.92388, 0.38268]
-inputamplitudes = [0.98079, 0.19509]
+inputamplitudes = [0.85355 - 0.35355j, 0.35355 - 0.14645j]
 training1amplitudes = [1,0]
 training2amplitudes = [0,1]
 
@@ -23,10 +23,10 @@ for i in range(2):
     ancilla1m1[i] = inputamplitudes[i] - training2amplitudes[i]
 
 # calculate probabilities
-ancilla0m0[:] = [x**2*0.125 for x in ancilla0m0]
-ancilla0m1[:] = [x**2*0.125 for x in ancilla0m1]
-ancilla1m0[:] = [x**2*0.125 for x in ancilla1m0]
-ancilla1m1[:] = [x**2*0.125 for x in ancilla1m1]
+ancilla0m0[:] = [abs(x)**2*0.125 for x in ancilla0m0]
+ancilla0m1[:] = [abs(x)**2*0.125 for x in ancilla0m1]
+ancilla1m0[:] = [abs(x)**2*0.125 for x in ancilla1m0]
+ancilla1m1[:] = [abs(x)**2*0.125 for x in ancilla1m1]
 
 prediction1 = (sum(ancilla0m0)+sum(ancilla0m1))
 prediction2 = 1-(sum(ancilla1m0)+sum(ancilla1m1))
