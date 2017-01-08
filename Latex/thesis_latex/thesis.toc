@@ -12,30 +12,29 @@
 \contentsline {subsection}{\numberline {2.2.2}Multi-qubit gates}{12}
 \contentsline {section}{\numberline {2.3}Classical machine learning}{13}
 \contentsline {subsection}{\numberline {2.3.1}Classical $k$-nearest neighbour algorithm}{14}
-\contentsline {subsection}{\numberline {2.3.2}Algorithmic time complexity}{15}
-\contentsline {subsubsection}{Big-O notation}{15}
-\contentsline {chapter}{\numberline {3}Methods}{17}
-\contentsline {section}{\numberline {3.1}Liqui$\mathinner {|{}\delimiter "526930B }$}{17}
-\contentsline {section}{\numberline {3.2}IBM Quantum Experience}{18}
-\contentsline {chapter}{\numberline {4}Literature Review: Quantum-enhanced Machine Learning}{20}
-\contentsline {section}{\numberline {4.1}Quantum state preparation}{21}
-\contentsline {subsection}{\numberline {4.1.1}Encoding classical data into qubits}{21}
-\contentsline {subsection}{\numberline {4.1.2}Encoding classical data into amplitudes}{23}
-\contentsline {section}{\numberline {4.2}Quantum k-nearest neighbour algorithm}{24}
-\contentsline {chapter}{\numberline {5}Results and Discussion}{27}
-\contentsline {section}{\numberline {5.1}Simulating the qubit-based kNN algorithm}{27}
-\contentsline {subsubsection}{Quantum simulation results}{31}
-\contentsline {section}{\numberline {5.2}Development of an amplitude-based kNN algorithm}{34}
-\contentsline {subsection}{\numberline {5.2.1}Compiling the amplitude-based kNN algorithm}{36}
-\contentsline {subsubsection}{Initial state preparation}{37}
-\contentsline {subsubsection}{Decomposition of a controlled-U gate}{39}
-\contentsline {subsubsection}{The Solovay-Kitaev theorem}{41}
-\contentsline {subsubsection}{Toffoli Gate Decomposition}{45}
-\contentsline {subsection}{\numberline {5.2.2}Simulating the amplitude-based kNN algorithm}{46}
-\contentsline {subsubsection}{Classification of Bloch vectors}{47}
-\contentsline {subsubsection}{Classification of Gaussian distributions}{49}
-\contentsline {chapter}{\numberline {6}Outlook}{60}
-\contentsline {chapter}{\numberline {7}Conclusion}{61}
-\contentsline {chapter}{\numberline {8}Personal Reflection}{62}
-\contentsline {chapter}{\numberline {A}Quantum state preparation routine for Gaussian distributions}{63}
-\contentsline {chapter}{References}{65}
+\contentsline {subsection}{\numberline {2.3.2}Algorithmic time complexity: Big-O notation}{15}
+\contentsline {chapter}{\numberline {3}Methods}{18}
+\contentsline {section}{\numberline {3.1}Liqui$\mathinner {|{}\delimiter "526930B }$}{18}
+\contentsline {section}{\numberline {3.2}IBM Quantum Experience}{19}
+\contentsline {chapter}{\numberline {4}Literature Review: Quantum-enhanced Machine Learning}{21}
+\contentsline {section}{\numberline {4.1}Quantum state preparation}{22}
+\contentsline {subsection}{\numberline {4.1.1}Encoding classical data into qubits}{22}
+\contentsline {subsection}{\numberline {4.1.2}Encoding classical data into amplitudes}{24}
+\contentsline {section}{\numberline {4.2}Quantum k-nearest neighbour algorithm}{25}
+\contentsline {chapter}{\numberline {5}Results and Discussion}{28}
+\contentsline {section}{\numberline {5.1}Simulating the qubit-based kNN algorithm}{28}
+\contentsline {subsubsection}{Quantum simulation results}{32}
+\contentsline {section}{\numberline {5.2}Development of an amplitude-based kNN algorithm}{35}
+\contentsline {subsection}{\numberline {5.2.1}Compiling the amplitude-based kNN algorithm}{37}
+\contentsline {subsubsection}{Initial state preparation}{38}
+\contentsline {subsubsection}{Decomposition of a controlled-U gate}{40}
+\contentsline {subsubsection}{The Solovay-Kitaev theorem}{42}
+\contentsline {subsubsection}{Toffoli Gate Decomposition}{46}
+\contentsline {subsection}{\numberline {5.2.2}Simulating the amplitude-based kNN algorithm}{47}
+\contentsline {subsubsection}{Classification of Bloch vectors}{48}
+\contentsline {subsubsection}{Classification of Gaussian distributions}{50}
+\contentsline {chapter}{\numberline {6}Outlook}{61}
+\contentsline {chapter}{\numberline {7}Conclusion}{62}
+\contentsline {chapter}{\numberline {8}Personal Reflection}{63}
+\contentsline {chapter}{\numberline {A}Quantum state preparation routine for Gaussian distributions}{64}
+\contentsline {chapter}{References}{67}
