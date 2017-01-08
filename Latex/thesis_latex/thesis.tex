@@ -8,7 +8,6 @@
 \usepackage{xcolor}
 \definecolor{darkyellow}{HTML}{FFB600}
 \definecolor{emerald}{HTML}{32936F}
-\usepackage{enumerate}
 \usepackage{ragged2e}
 \usepackage{eurosym}
 \usepackage{amsmath}
@@ -18,6 +17,13 @@
 \usepackage{caption}
 \usepackage{fancyvrb}
 \usepackage{float}
+\usepackage{enumerate}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+%\addtocontents{toc}{\vskip-200pt} % this is to reduce the gap for the first table of contents entry
+\usepackage{tocloft}
+\setlength{\cftbeforelottitleskip}{0pt}
+\setlength{\cftafterlottitleskip}{0pt}
 \usepackage{pgfplots} %for plotting
 \pgfplotsset{compat=1.3}
 \usepackage{xcolor,colortbl}

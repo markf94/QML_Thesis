@@ -64,7 +64,7 @@ Qubit-based quantum state preparation becomes slightly more complicated when aim
 \ket{M} = \frac{1}{\sqrt{l}}\sum^l_{j=1} \ket{l^j}
 \text{where } \ket{l^j} = \ket{l^j_1,l^j_2,...l^j_n} \text{and } l^j_k \in \left\{0,1\right\}
 \end{equation}
-Preparing this quantum state is a requirement for the later used qubit-encoded kNN quantum algorithm by \citeA{Schuld2014}. \citeA{Trugenberger2001} describe a quantum routine that can efficiently prepare such a state as will be explained in detail below.
+Preparing this quantum state is a requirement for the later used qubit-encoded kNN quantum algorithm by \citeA{Schuld2014}. \citeA{Trugenberger2001} describes a quantum routine that can efficiently prepare such a state as will be explained in detail below.
 
 \pagebreak
 First, \citeA{Trugenberger2001} defines the new unitary quantum gate $S^j$,
@@ -243,7 +243,7 @@ Prob(c) = \frac{1}{NProb(\ket{a} = \ket{0})} \sum_{l \in c} cos^2\big[\frac{\pi}
 %&\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad + sin\big[\frac{\pi}{2n}d_H(\vec{x},\vec{v}^l)\big] \ket{x_1^l,x_2^l,...x_n^l;d_1^l,d_2^l,...d_n^l;1}
 %\end{align}
 %where $l$ runs over all vectors $\vec{v}$ of a particular class c.
-From Equ.~\ref{equ:classprobs} it is evident that the probability of measuring a certain class $c$ is dependent on the average total reverse HD between all training vectors belonging to class $c$ and the input vector $\vec{x}$. Since the total reverse HD represent distance-dependent weights it gets clear why this is the quantum equivalent to a classical distance-weighted kNN algorithm.
+From Equ.~\ref{equ:classprobs} it is evident that the probability of measuring a certain class $c$ is dependent on the average total reverse HD between all training vectors belonging to class $c$ and the input vector $\vec{x}$. Since the total reverse HDs represent distance-dependent weights it becomes clear why this is the quantum equivalent to a classical distance-weighted kNN algorithm.
 
 In order to obtain a full picture of the probability distribution over the different classes a sufficient number of copies of $\ket{\psi_5}$ needs to be prepared and after successful CM on the ancilla qubit the class qubit needs to be measured.
 \vspace{1cm}

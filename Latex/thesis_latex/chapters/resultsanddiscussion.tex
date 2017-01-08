@@ -1,13 +1,13 @@
 \chapter{Results and Discussion}\label{sec:resultsanddiscussion}
 
-This chapter is subdivided into two sections; Section~\ref{subsec:qubitKNNresults} focuses on the simulation of the qubit-based kNN algorithm proposed by \citeA{Schuld2014} and Section~\ref{subsec:amplitudeKNNalgorithm} introduces a newly developed amplitude-based kNN algorithm with an implementation on IBM's QC in mind. Section~\ref{subsec:amplitudeKNNalgorithm} is then further subdivided into an attempt to compile and implement the algorithm using the IBM Quantum Experience (Section~\ref{subsubsec:implementationamplitudeKNN}) and its simulation using Liqui$\ket{}$ (Section~\ref{subsubsec:simulationamplitudeKNN}). All the F\# code written for the quantum simulations described in this chapter can be found on GitHub\footnotemark[12].
+This chapter is subdivided into two sections; Section~\ref{subsec:qubitKNNresults} focuses on the simulation of the qubit-based kNN algorithm proposed by \citeA{Schuld2014} and Section~\ref{subsec:amplitudeKNNalgorithm} introduces a newly developed amplitude-based kNN algorithm with an implementation on IBM's QC in mind. Section~\ref{subsec:amplitudeKNNalgorithm} is then further subdivided into an attempt to compile and implement the algorithm using the IBM Quantum Experience (Section~\ref{subsubsec:implementationamplitudeKNN}) and its simulation using Liqui$\ket{}$ (Section~\ref{subsubsec:simulationamplitudeKNN}). All the F\# code written for the quantum simulations described in this chapter can be found on GitHub\footnotemark[13].
 
-\footnotetext[12]{The code is published under an open-source licence and can be downloaded from \url{https://github.com/markf94/Liquid_QML}.}
+\footnotetext[13]{The code is published under an open-source licence and can be downloaded from \url{https://github.com/markf94/Liquid_QML}.}
 
 \section{Simulating the qubit-based kNN algorithm}
 \label{subsec:qubitKNNresults}
 
-Similar to classical machine learning, the first step towards simulating any quantum machine learning algorithm is the careful selection of a suitable classification problem. The computer used for the Liqui$\ket{}$ quantum simulations in this thesis only provides 8GB of RAM, thereby limiting the maximum number of simulated qubits to 24. Unfortunately, real-world machine learning problems usually involve large datasets that would require much more qubits such that a small artificial dataset needs to be constructed. For this reason, the classification of 9-bit, little-endian RGB colour codes into the classes \emph{red} and \emph{blue} will be considered. A 9-bit RGB colour code uses three bits to encode the content of each RGB colour; red, green and blue. Three binary bits $b_0,b_1,b_2$ can encode any of the numbers 0-7 according to the formula,
+Similar to classical machine learning, the first step towards simulating any quantum machine learning algorithm is the careful selection of a suitable classification problem. The computer used for the Liqui$\ket{}$ quantum simulations in this thesis only provides 8GB of RAM, thereby limiting the maximum number of simulated qubits to 24. Unfortunately, real-world machine learning problems usually involve large datasets that would require far more qubits such that a small artificial dataset needs to be constructed. For this reason, the classification of 9-bit, little-endian RGB colour codes into the classes \emph{red} and \emph{blue} will be considered. A 9-bit RGB colour code uses three bits to encode the content of each RGB colour; red, green and blue. Three binary bits $b_0,b_1,b_2$ can encode any of the numbers 0-7 according to the formula,
 
 \begin{equation}
 b_0*2^0 + b_1*2^1 + b_2*2^2 \text{ where } b_0,b_1,b_2 \in \left\{0,1\right\}
@@ -214,8 +214,8 @@ If and only if the ancilla is found to be in the \0 state, the class qubit is me
 \subsubsection{Quantum simulation results}
 \label{subsubsubsec:results}
 
-All the steps outlined in the previous section were programmed in F\# within the Liqui$\ket{}$ framework. When executing the script\footnotemark[13] the user needs to first specify the number of runs $r$ needed to gather sufficiently accurate statistics. Next, the user is asked to input the total number of training patterns. One-by-one the user then manually inputs all binary training patterns and their respective classes. Lastly, the user is asked to specify the input pattern requiring classification. The algorithm will then be simulated and repeated $r$ times.
-\footnotetext[13]{The script "\_\_TrugenbergerSchuld($r$)", where $r$ is the number of runs, can be found in the $/linux/bin/Release/$ folder in the GitHub repository \url{https://github.com/markf94/Liquid_QML}.}
+All the steps outlined in the previous section were programmed in F\# within the Liqui$\ket{}$ framework. When executing the script\footnotemark[14] the user needs to first specify the number of runs $r$ needed to gather sufficiently accurate statistics. Next, the user is asked to input the total number of training patterns. One-by-one the user then manually inputs all binary training patterns and their respective classes. Lastly, the user is asked to specify the input pattern requiring classification. The algorithm will then be simulated and repeated $r$ times.
+\footnotetext[14]{The script "\_\_TrugenbergerSchuld($r$)", where $r$ is the number of runs, can be found in the $/linux/bin/Release/$ folder in the GitHub repository \url{https://github.com/markf94/Liquid_QML}.}
 
 The algorithm was first trained using the 9-bit RGB colours from training data set I and then asked to classify each input pattern from input data set I. Each simulation was repeated 100 times to gather sufficient statistics. The results are listed in Table~\ref{tab:colourresults}. For every input pattern the probabilities of successful CM ($Prob(CM)$) and measuring the class qubit in either the \0 ($Prob$ $(\ket{c} = \ket{0})$) or the \1 ($Prob$ $(\ket{c} = \ket{1})$) state are shown.
 
@@ -467,7 +467,7 @@ This, however, is not the desired state $\ket{\chi_3}$ defined in Equ.~\ref{equ:
 \label{equ:gs}
 GS = (X \otimes \mathbb{1} \otimes \mathbb{1} \otimes \mathbb{1}) (CR_y(\frac{\pi}{4})(a,d) \otimes \mathbb{1} \otimes \mathbb{1}) \\
 \end{equation}
-subbing into Equ.~\ref{equ:chi3}:
+substituting into Equ.~\ref{equ:chi3}:
 \begin{align}
 \label{equ:chi3prepared}
 \ket{\chi_3} &=  GS \ket{\chi_2} = (X \otimes \mathbb{1} \otimes \mathbb{1} \otimes \mathbb{1}) (CR_y(\frac{\pi}{4})(a,d) \otimes \mathbb{1} \otimes \mathbb{1}) \ket{\chi_2}\notag\\
@@ -536,11 +536,11 @@ P = \begin{pmatrix}
 \begin{figure}[ht]
    \centering
    \includegraphics[width=0.7\textwidth]{img/controlledudecomp.png}
-   \caption[]{Circuit decomposition of controlled-U quantum gate.\footnotemark[14]}
+   \caption[]{Circuit decomposition of controlled-U quantum gate.\footnotemark[15]}
    \label{img:cudecomposition}
 \end{figure}
 
-\footnotetext[14]{Reprinted from Michael A. Nielsen and Isaac L. Chuang. Quantum Computation and Quantum Information. Cambridge University Press, 2000. Copyright 2010 by Nielsen \& Chuang.}
+\footnotetext[15]{Reprinted from Michael A. Nielsen and Isaac L. Chuang. Quantum Computation and Quantum Information. Cambridge University Press, 2000. Copyright 2010 by Nielsen \& Chuang.}
 
 The idea of this decomposition is that when the control qubit (top qubit in Fig.~\ref{img:cudecomposition}) is \0 the gate combination $ABC$ is applied to the target qubit (bottom qubit in Fig.~\ref{img:cudecomposition}) and has to equal the identity gate:
 
@@ -573,7 +573,7 @@ e^{-i\frac{\varrho}{2}} & 0 \\
 \end{pmatrix}
 \end{equation}
 
-When subbing the expressions for $A,B,C$ from Equ.~\ref{equ:abc} into Equ.~\ref{equ:abcidentity} one will indeed obtain the identity operation (proof omitted). These choices of $A,B,C$ are also a solution to Equ.~\ref{equ:UAXBXC}. Subbing into Equ.~\ref{equ:UAXBXC} leads to the following expression for matrix $U$:
+When substituting the expressions for $A,B,C$ from Equ.~\ref{equ:abc} into Equ.~\ref{equ:abcidentity} one will indeed obtain the identity operation (proof omitted). These choices of $A,B,C$ are also a solution to Equ.~\ref{equ:UAXBXC}. Substituting into Equ.~\ref{equ:UAXBXC} leads to the following expression for matrix $U$:
 
 \begin{equation}
 \label{equ:udecompdef}
@@ -592,7 +592,7 @@ e^{i(\alpha+\frac{\beta}{2}-\frac{\delta}{2})}\sin{\frac{\gamma}{2}} & e^{i(\alp
 %e^{i\alpha}AR_x(\pi)BR_x(\pi)C = U
 %\end{equation}
 
-To decompose $CR_y(\frac{\pi}{4})$, one simply chooses $U = R_y(\frac{\pi}{4})$. Subbing $\vartheta = \frac{\pi}{4}$ into Equ.~\ref{equ:rydef} the matrix representation of $R_y(\frac{\pi}{4})$ is obtained:
+To decompose $CR_y(\frac{\pi}{4})$, one simply chooses $U = R_y(\frac{\pi}{4})$. Substituting $\vartheta = \frac{\pi}{4}$ into Equ.~\ref{equ:rydef} the matrix representation of $R_y(\frac{\pi}{4})$ is obtained:
 
 \begin{equation}
 U = R_y(\frac{\pi}{4}) = \begin{pmatrix}
@@ -601,7 +601,7 @@ U = R_y(\frac{\pi}{4}) = \begin{pmatrix}
 \end{pmatrix}
 \end{equation}
 
-Subbing this expression for $U$ into Equ.~\ref{equ:udecompdef} leads to:
+Substituting this expression for $U$ into Equ.~\ref{equ:udecompdef} leads to:
 
 \begin{equation}
 \label{equ:udecompsubbed}
@@ -632,7 +632,7 @@ This is a system of four non-linear complex equations with four unknowns. In ord
 \gamma = 0
 \end{equation}
 
-Subbing these parameters into the expressions for $A,B$ and $C$ defined in Equ.~\ref{equ:abc} yields,
+Substituting these parameters into the expressions for $A,B$ and $C$ defined in Equ.~\ref{equ:abc} yields,
 
 \begin{align}
 \label{equ:abcsubbed1}
@@ -664,9 +664,9 @@ In other words, given a set of single-qubit quantum gates which is a dense subse
 \cite{dawson2005solovay}.
 \end{redbox}
 
-The Solovay-Kitaev theorem is important because it proofs that given any universal gate set it is possible to obtain good approximations to any desired single-qubit gate $W$. In their paper, \citeA{dawson2005solovay} describe how to design an algorithm implementing the Solovay-Kitaev theorem. Unfortunately, the Solovay-Kitaev algorithm needs to be implemented on a classical computer which adds to the overall time complexity of the quantum compiling process as will be shown later. For this thesis, the open-source software package 'Quantum Compiler, v0.03'\footnotemark[15] developed in Python by Paul Pham was used to run the Solovay-Kitaev algorithm described by \citeA{dawson2005solovay}. This software package compares different gate approximations to the desired gate by a new distance metric called Fowler distance.
+The Solovay-Kitaev theorem is important because it proofs that given any universal gate set it is possible to obtain good approximations to any desired single-qubit gate $W$. In their paper, \citeA{dawson2005solovay} describe how to design an algorithm implementing the Solovay-Kitaev theorem. Unfortunately, the Solovay-Kitaev algorithm needs to be implemented on a classical computer which adds to the overall time complexity of the quantum compiling process as will be shown later. For this thesis, the open-source software package 'Quantum Compiler, v0.03'\footnotemark[16] developed in Python by Paul Pham was used to run the Solovay-Kitaev algorithm described by \citeA{dawson2005solovay}. This software package compares different gate approximations to the desired gate by a new distance metric called Fowler distance.
 
-\footnotetext[15]{The software package 'Quantum Compiler, v0.03' by Paul Pham can be downloaded from \url{https://sourceforge.net/projects/quantumcompiler/files/v0.03/}.}
+\footnotetext[16]{The software package 'Quantum Compiler, v0.03' by Paul Pham can be downloaded from \url{https://sourceforge.net/projects/quantumcompiler/files/v0.03/}.}
 
 \begin{redbox}
 \textbf{Definition: Fowler distance}\\
@@ -732,7 +732,7 @@ Fig.~\ref{fig:fowlerdistances} shows the action of four different approximating 
 
 \end{minipage}
 
-Implementing any quantum gate $D$ inevitably takes some time $t$ since it involves the use of hardware components e.g. targeting a specific electron with a laser pulse. Based on IBM's single-qubit and CNOT gate times described in Section~\ref{subsec:ibmqc} the total execution time of twelve different gate sequences, approximating $B = R_z(-\frac{23}{16}\pi)$ and $C = R_z(-\frac{9}{16}\pi)$ to different Fowler distances, were calculated. The results can be seen in Table~\ref{tab:sktimes}. Keeping in mind that in the best case, the maximum decoherence time of a qubit in IBM's QC is \SI{112.4}{\micro\second} most gate sequences are too long for an IBM implementation (coloured red in Table~\ref{tab:sktimes}). Feasible execution times are marked green in Table~\ref{tab:sktimes}. However, decoherence is not the only limiting factor since IBM only allows for 39 gates and one measurement gate. But even when selecting the smallest sequences of 25 gates for $B$ and 16 gates for $C$, the total gate count is 41 which is two gates more than the allowed gate count of the IBM Quantum Composer. Furthermore, the approximating gate sequences of $B$ and $C$ are not the only gates needed to prepare the initial quantum state and execute the akNN algorithm. Unfortunately, this makes an actual implementation of this particular classification problem on IBM's QC impossible.
+Implementing any quantum gate $D$ inevitably takes some time $t$ since it involves the use of hardware components e.g. targeting a specific electron with a laser pulse. Based on IBM's single-qubit and CNOT gate times described in Section~\ref{subsec:ibmqc} the total execution time of twelve different gate sequences, approximating $B = R_z(-\frac{23}{16}\pi)$ and $C = R_z(-\frac{9}{16}\pi)$ to different Fowler distances, were calculated. The results can be seen in Table~\ref{tab:sktimes}. Keeping in mind that in the best case, the maximum decoherence time of a qubit in IBM's QC is \SI{112.4}{\micro\second} most gate sequences are too long for an IBM implementation (coloured red in Table~\ref{tab:sktimes}). Feasible execution times are marked green in Table~\ref{tab:sktimes}. However, decoherence is not the only limiting factor since IBM only allows for 39 gates and one measurement gate. But even when selecting the smallest sequences of 25 gates for $B$ and 16 gates for $C$, the total gate count is 41 which is two gates more than the allowed gate count of the IBM Quantum Composer. Furthermore, the approximating gate sequences of $B$ and $C$ are not the only gates needed to prepare the initial quantum state and execute the akNN algorithm. Unfortunately, this makes an actual implementation of this particular classification problem on IBM's present QC impossible.
 
 %Thus, the only possibility would be to select the sequence of 25 gates for $B$ and the sequence of 16 gates for $C$ at the cost of relatively large Fowler distances. This, however, still sums up to 41 gates which are two gates more than the allowed gate count of the IBM Quantum Composer. 
 
@@ -771,10 +771,10 @@ The Toffoli or CCNOT gate can be decomposed into CNOT and single-qubit gates in 
 \begin{figure}[!ht]
        \centering
        \includegraphics[scale=0.5]{img/toffolidecomposition.png}
-       \caption[]{\label{img:toffolidecomp} Decomposition of a Toffoli gate into six CNOT and nine single-qubit gates\footnotemark[16]}
+       \caption[]{\label{img:toffolidecomp} Decomposition of a Toffoli gate into six CNOT and nine single-qubit gates\footnotemark[17]}
 \end{figure}
 
-\footnotetext[16]{Reprinted from Michael A. Nielsen and Isaac L. Chuang. Quantum Computation and Quantum Information. Cambridge University Press, 2000. Copyright 2010 by Nielsen \& Chuang.}
+\footnotetext[17]{Reprinted from Michael A. Nielsen and Isaac L. Chuang. Quantum Computation and Quantum Information. Cambridge University Press, 2000. Copyright 2010 by Nielsen \& Chuang.}
 
 The Toffoli decomposition finalizes the compiling of the quantum state preparation into gates from IBM's gate set only. In summary, the compiled state preparation requires: 2 H gates applied to the ancilla and the $m$ qubit, the decomposed $CR_y(\frac{\pi}{4})$ gate (2 CNOTs, 1 Z gate, 1 $\mathbb{1}$ gate (can be neglected) \& a sequence of minimum 25 gates for $B$ and minimum 16 gates for $C$), 1 X gate to flip the ancilla (Equ.~\ref{equ:chi3prepared}), 1 decomposed Toffoli (6 CNOTs, 2 H gates, 3 T \& 3 T$^\dagger$ gates) to load the second training vector and 1 CNOT to flip the class qubit. Thus, the quantum state preparation was compiled into 9 CNOT and 53 single-qubit gates. The akNN algorithm only requires one additional H gate and two measurement gates (for ancilla and class qubit) leading to a total of 9 CNOT, 54 single-qubit gates and 2 measurement gates. However, even cleverly arranging these gates does not suffice to implement the algorithm within IBM's 40 gate slots. The full circuit diagram for the compiled state preparation and the akNN algorithm can be seen in Fig.~\ref{img:toffolidecomp}.
 

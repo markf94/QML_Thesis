@@ -8,12 +8,12 @@
 Classical computers manipulate bits, whereas quantum computer's most fundamental unit is called a \emph{quantum bit}, often abbreviated as \emph{qubit}. Instead of 0 and 1, qubit states are denoted \0 and \1 for reasons that will be outlined later.
 %A non-probabilistic classical bit is a binary entity and can take either the value 0 or 1. Qubits are also binary entities but they can also be in a superposition of the two states. In contrast to classical bits, the two fundamental qubit states are denoted \0 and \1 for reasons outlined later.
 
-A good example of a physical implementation of a qubit is the single electron of a hydrogen atom sketched in Fig.~\ref{img:qubitatom}. Usually, the electron is found in its ground state which one can define as the \0 state of the qubit. By using a laser pulse, the electron can be excited into the next highest valence shell which one can define as the \1 state of the qubit. After some time $t$ the electron will decohere to its ground state \0 which is called the \emph{longitudinal coherence} or \emph{amplitude damping time} and is an important parameter for measuring qubit lifetimes \cite{chuanglecturenotes}.
+A good example of a physical implementation of a qubit is the single electron of a hydrogen atom sketched in Fig.~\ref{img:qubitatom}. Usually, the electron is found in its ground state which one can define as the \0 state of the qubit. By using a laser pulse, the electron can be excited into the next higher valence shell which one can define as the \1 state of the qubit. After some time $t$ the electron will decohere to its ground state \0 which is called the \emph{longitudinal coherence} or \emph{amplitude damping time} and is an important parameter for measuring qubit lifetimes \cite{chuanglecturenotes}.
 
 \begin{figure}[!ht]
        \centering
        \includegraphics[scale=0.35]{img/qubitimplementation.jpeg}
-       \caption[]{\label{img:qubitatom} A simple example of a physical qubit using the single valence electron of a hydrogen atom. Thereby, the electron's ground state can be defined as the \0 state of the qubit. By using a laser pulse, the electron can be excited into the next highest valence shell which can be defined as the qubit's \1 state. \textsuperscript{1}}
+       \caption[]{\label{img:qubitatom} A simple example of a physical qubit using the single valence electron of a hydrogen atom. Thereby, the electron's ground state can be defined as the \0 state of the qubit. By using a laser pulse, the electron can be excited into the next higher valence shell which can be defined as the qubit's \1 state. \textsuperscript{1}}
 \end{figure}
 \footnotetext[1]{Reprinted from RF Wireless World, n.d., Retrieved December 23, 2016, from \url{http://www.rfwireless-world.com/Terminology/Difference-between-Bit-and-Qubit.html}. Copyright 2012 by RF Wireless World.}
 
@@ -236,7 +236,7 @@ In contrast, consider one of the four famous Bell states:
 \label{equ:2qubitnonfactorized}
 \ket{\Psi^+} = \frac{\ket{01} + \ket{10}}{\sqrt{2}}\, .
 \end{equation}
-It is straightforward to verify that the two-qubit state $\ket{\Psi^+}$ cannot be factorised into a tensor product of two single-qubit states. Now imagine, that the two people Andile and Buhle are given two electrons prepared in the quantum state $\ket{\Psi^+}$. Andile keeps the first electron in the lab, and Buhle takes the second electron to her house. Andile gets interested in measuring if his electron is in the $\ket{0}$ or $\ket{1}$ state and performs a measurement. By applying Born's rule to the quantum state $\ket{\Psi^+}$, Andile knows that he will measure his electron in either state \0 or \1 with equal probabilities of 0.5. Note that even though the exact state vector $\ket{\Psi^+}$ is known, the outcome of the measurement is still uncertain. By measuring his electron, he finds it to be in the $\ket{1}$ state. From Eq.~\ref{equ:2qubitnonfactorized} and knowing that measurement collapses a superposition, the post-measurement (PM) state $\ket{\Psi^+}_{PM}$ is
+It is straightforward to verify that the two-qubit state $\ket{\Psi^+}$ cannot be factorised into a tensor product of two single-qubit states. Now imagine, that the two people Andile and Buhle are given two electrons prepared in the quantum state $\ket{\Psi^+}$. Andile keeps the first electron in the lab, and Buhle takes the second electron to her house. After some time $t$, Andile gets interested in measuring if his electron is in the $\ket{0}$ or $\ket{1}$ state and performs a measurement along the standard basis. By applying Born's rule to the quantum state $\ket{\Psi^+}$, Andile knows that he will measure his electron in either state \0 or \1 with equal probabilities of 0.5. Note that even though the exact state vector $\ket{\Psi^+}$ is known, the outcome of the measurement is still uncertain. By measuring his electron, he finds it to be in the $\ket{1}$ state. From Eq.~\ref{equ:2qubitnonfactorized} and knowing that measurement collapses a superposition, the post-measurement (PM) state $\ket{\Psi^+}_{PM}$ is
 \begin{equation}
 \label{equ:2qubitcollapsed}
 \ket{\Psi^+}_{PM} = \ket{1_A0_B}\, ,
@@ -292,7 +292,7 @@ X \ket{0} \doteq \begin{pmatrix}
  0  \\ 
  1 \end{pmatrix} \doteq  \ket{1}\, .
 \end{equation}
-In terms of the example with the valence electron of a hydrogen atom shown in Fig.~\ref{img:qubitatom} an X gate can be implemented by exciting the electron from the ground state $\ket{0}$ into the next highest electron valence shell, defined to be the $\ket{1}$ state, using a controlled laser pulse.
+In terms of the example with the valence electron of a hydrogen atom shown in Fig.~\ref{img:qubitatom} an X gate can be implemented by exciting the electron from the ground state $\ket{0}$ into the next higher electron valence shell, defined to be the $\ket{1}$ state, using a controlled laser pulse.
 %consider the qubit initially being in state \0. Applying an X gate will flip the qubit into the \1 state which can be implemented in the lab by exciting the electron into the next highest electron valence shell using a controlled laser pulse.
 
 The \0 state is recovered when applying X again to the \1 state:
@@ -506,7 +506,7 @@ Imagine working for a search engine company and you are given the task of classi
   \label{img:appleandbanana}
 \end{figure}
 
-\footnotetext[3]{Reprinted from Pixabay, Retrieved December 24, 2016, from \url{https://pixabay.com/en/apple-red-fruit-frisch-vitamins-1632016/} and \url{https://pixabay.com/en/banana-fruit-yellow-1504956/}. Creative Commons Licence 2016 by Pixabay. Reprinted with permission.}
+\footnotetext[3]{Reprinted from Pixabay, Retrieved December 24, 2016, from \url{https://pixabay.com/en/apple-red-fruit-frisch-vitamins-1632016/} and \url{https://pixabay.com/en/banana-fruit-yellow-1504956/}. Creative Commons Licence 2016 by Pixabay.}
 
 Most of the time, using the full pixel representation of each picture for classification does not lead to optimal results. Therefore, the next step is to select a certain number of characteristic \emph{features} extracted from the pictures in the training set that can be used to differentiate apples from bananas. Such a feature might be the RGB value of the most frequent pixel colour since bananas and apples have different colour spectra. Using a measure of the curvature of the main object in the picture is another possibility since an apple is almost spherical whereas a banana looks more like a bend line.
 

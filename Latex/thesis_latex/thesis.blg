@@ -26,6 +26,10 @@ Warning--entry type for "ibmquasm2.0" isn't style-file defined
 --line 340 of file thesis.bib
 Warning--entry type for "chuanglecturenotes" isn't style-file defined
 --line 386 of file thesis.bib
+Warning--entry type for "chinasupercomputer" isn't style-file defined
+--line 404 of file thesis.bib
+Warning--entry type for "ibmqetomo" isn't style-file defined
+--line 420 of file thesis.bib
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
 Name 1 in "{Microsoft Research}," has a comma at the end for entry microsoftresearch
 while executing---line 5062 of file apacite.bst
@@ -51,45 +55,45 @@ Name 1 in "{Microsoft Research}," has a comma at the end for entry microsoftrese
 while executing---line 5079 of file apacite.bst
 Warning--No journal in SchuldFingerhuth
 Warning--No journal in Schuld2014
-You've used 35 entries,
+You've used 38 entries,
             6951 wiz_defined-function locations,
-            1477 strings with 16729 characters,
-and the built_in function-call counts, 62840 in all, are:
-= -- 8098
-> -- 521
-< -- 2661
-+ -- 2683
-- -- 79
-* -- 3745
-:= -- 10592
-add.period$ -- 144
-call.type$ -- 35
-change.case$ -- 616
+            1491 strings with 17278 characters,
+and the built_in function-call counts, 67903 in all, are:
+= -- 8795
+> -- 560
+< -- 2861
++ -- 2856
+- -- 85
+* -- 4016
+:= -- 11368
+add.period$ -- 156
+call.type$ -- 38
+change.case$ -- 654
 chr.to.int$ -- 0
-cite$ -- 72
-duplicate$ -- 1690
-empty$ -- 2603
-format.name$ -- 834
-if$ -- 12472
+cite$ -- 78
+duplicate$ -- 1812
+empty$ -- 2815
+format.name$ -- 894
+if$ -- 13534
 int.to.chr$ -- 0
-int.to.str$ -- 109
+int.to.str$ -- 118
 missing$ -- 0
-newline$ -- 864
-num.names$ -- 280
-pop$ -- 1103
+newline$ -- 934
+num.names$ -- 304
+pop$ -- 1170
 preamble$ -- 1
-purify$ -- 142
+purify$ -- 153
 quote$ -- 0
-skip$ -- 4654
+skip$ -- 5114
 stack$ -- 0
-substring$ -- 2977
-swap$ -- 935
-text.length$ -- 100
+substring$ -- 3166
+swap$ -- 998
+text.length$ -- 105
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 3496
+type$ -- 3880
 warning$ -- 2
-while$ -- 294
+while$ -- 315
 width$ -- 0
-write$ -- 1037
+write$ -- 1120
 (There were 11 error messages)

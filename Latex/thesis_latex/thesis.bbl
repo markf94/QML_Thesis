@@ -1,6 +1,34 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
+Altepeter%
+, James%
+\BCBL {}\ \BBA {} Kwiat%
+}{%
+Altepeter%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {{\protect \bibnodate {}}}}%
+}]{%
+altepeter649quantum}
+\APACinsertmetastar {%
+altepeter649quantum}%
+\begin{APACrefauthors}%
+Altepeter, J.%
+, James, D.%
+\BCBL {}\ \BBA {} Kwiat, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Quantum state tomography} {Quantum state
+  tomography}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Quantum State Estimation-Lecture Notes in
+  Physics}{649}{}{113--146}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Bachmann%
 }{%
 Bachmann%
@@ -277,6 +305,32 @@ D-Wave.%
   {\url{http://www.dwavesys.com/blog/2015/06/breaking-through-1000-qubits}}.
 \newblock
 \APACrefnote{Accessed: 2016-09-09}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Feldman%
+}{%
+Feldman%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+chinasupercomputer}
+\APACinsertmetastar {%
+chinasupercomputer}%
+\begin{APACrefauthors}%
+Feldman, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+\APACrefbtitle {{China Tops Supercomputer Rankings with New 93-Petaflop
+  Machine}.} {{China Tops Supercomputer Rankings with New 93-Petaflop
+  Machine}.}
+\newblock
+\begin{APACrefURL}
+  [{2017-01-07}]\url{https://www.top500.org/news/china-tops-supercomputer-rankings-with-new-93-petaflop-machine/}
+  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -617,6 +671,31 @@ Linden, G.%
   filtering}}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{IEEE Internet computing}{7}{1}{76--80}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Mckay%
+}{%
+Mckay%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+ibmqetomo}
+\APACinsertmetastar {%
+ibmqetomo}%
+\begin{APACrefauthors}%
+Mckay, D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+\APACrefbtitle {{Bloch Measurement and Entangled States}.} {{Bloch Measurement
+  and Entangled States}.}
+\newblock
+\begin{APACrefURL}
+  [{2017-01-07}]\url{https://quantumexperience.ng.bluemix.net/qstage/#/community/question?questionId=bdfd3c7b68cd1905cc875bd7409b2b97&answerId=f34ed6d1dd90695f503823a3ab6b9a98}
+  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
