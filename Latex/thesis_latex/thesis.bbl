@@ -30,6 +30,33 @@ A{\"\i}meur, E.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+A{\"\i}meur%
+, Brassard%
+\BCBL {}\ \BBA {} Gambs%
+}{%
+A{\"\i}meur%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2013}}%
+}]{%
+aimeur2013quantum}
+\APACinsertmetastar {%
+aimeur2013quantum}%
+\begin{APACrefauthors}%
+A{\"\i}meur, E.%
+, Brassard, G.%
+\BCBL {}\ \BBA {} Gambs, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2013}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Quantum speed-up for unsupervised learning} {Quantum
+  speed-up for unsupervised learning}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Machine Learning}{90}{2}{261--287}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Altepeter%
 , James%
 \BCBL {}\ \BBA {} Kwiat%
@@ -55,6 +82,35 @@ Altepeter, J.%
 \newblock
 \APACjournalVolNumPages{Quantum State Estimation-Lecture Notes in
   Physics}{649}{}{113--146}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Anguita%
+, Ridella%
+, Rivieccio%
+\BCBL {}\ \BBA {} Zunino%
+}{%
+Anguita%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2003}}%
+}]{%
+anguita2003quantum}
+\APACinsertmetastar {%
+anguita2003quantum}%
+\begin{APACrefauthors}%
+Anguita, D.%
+, Ridella, S.%
+, Rivieccio, F.%
+\BCBL {}\ \BBA {} Zunino, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2003}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Quantum optimization for training support vector
+  machines} {Quantum optimization for training support vector machines}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Neural Networks}{16}{5}{763--770}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -106,6 +162,34 @@ Bekkerman, R.%
   approaches}}.
 \newblock
 \APACaddressPublisher{}{Cambridge University Press}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Biamonte%
+\ \protect \BOthers {.}}{%
+Biamonte%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2016}}%
+}]{%
+biamonte2016quantum}
+\APACinsertmetastar {%
+biamonte2016quantum}%
+\begin{APACrefauthors}%
+Biamonte, J.%
+, Wittek, P.%
+, Pancotti, N.%
+, Rebentrost, P.%
+, Wiebe, N.%
+\BCBL {}\ \BBA {} Lloyd, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Quantum Machine Learning} {Quantum machine
+  learning}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{arXiv preprint arXiv:1611.09347}{}{}{}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -235,6 +319,29 @@ Carrasquilla, J.%
   phases of matter}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{arXiv preprint arXiv:1605.01735}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Chandrashekar%
+}{%
+Chandrashekar%
+}{%
+{\protect \APACyear {2010}}%
+}]{%
+chandrashekar2010discrete}
+\APACinsertmetastar {%
+chandrashekar2010discrete}%
+\begin{APACrefauthors}%
+Chandrashekar, C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2010}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Discrete-time quantum walk-dynamics and applications}
+  {Discrete-time quantum walk-dynamics and applications}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{arXiv preprint arXiv:1001.5326}{}{}{}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -646,6 +753,34 @@ IBM.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Kapoor%
+, Wiebe%
+\BCBL {}\ \BBA {} Svore%
+}{%
+Kapoor%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2016}}%
+}]{%
+kapoor2016quantum}
+\APACinsertmetastar {%
+kapoor2016quantum}%
+\begin{APACrefauthors}%
+Kapoor, A.%
+, Wiebe, N.%
+\BCBL {}\ \BBA {} Svore, K.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Quantum Perceptron Models} {Quantum perceptron
+  models}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Advances in Neural Information Processing Systems}
+  {Advances in neural information processing systems}\ (\BPGS\ 3999--4007).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Kieu%
 }{%
 Kieu%
@@ -805,6 +940,34 @@ Linden, G.%
   filtering}}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{IEEE Internet computing}{7}{1}{76--80}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Lloyd%
+, Mohseni%
+\BCBL {}\ \BBA {} Rebentrost%
+}{%
+Lloyd%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2013}}%
+}]{%
+lloyd2013quantum}
+\APACinsertmetastar {%
+lloyd2013quantum}%
+\begin{APACrefauthors}%
+Lloyd, S.%
+, Mohseni, M.%
+\BCBL {}\ \BBA {} Rebentrost, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2013}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Quantum algorithms for supervised and unsupervised
+  machine learning} {Quantum algorithms for supervised and unsupervised machine
+  learning}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{arXiv preprint arXiv:1307.0411}{}{}{}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

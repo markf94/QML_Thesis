@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  9 JAN 2017 04:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  9 JAN 2017 17:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1844,27 +1844,34 @@ Overfull \hbox (46.62343pt too wide) in paragraph at lines 436--465
 [][] 
  []
 
-[12] [13 <./img/cnotcircuit.png> <./img/ccnotcircuit.png>]
+[12]
+
+LaTeX Warning: Citation `schuld2015introduction' undefined on input line 472.
+
+
+LaTeX Warning: Citation `bishop2006pattern' undefined on input line 481.
+
+[13 <./img/cnotcircuit.png> <./img/ccnotcircuit.png>]
 <img/apple.jpg, id=136, 217.0509pt x 173.448pt>
 File: img/apple.jpg Graphic file (type jpg)
  <use img/apple.jpg>
-Package pdftex.def Info: img/apple.jpg used on input line 501.
+Package pdftex.def Info: img/apple.jpg used on input line 493.
 (pdftex.def)             Requested size: 204.85802pt x 163.70543pt.
 
 <img/banana.png, id=137, 1284.8pt x 849.1725pt>
 File: img/banana.png Graphic file (type png)
  <use img/banana.png>
-Package pdftex.def Info: img/banana.png used on input line 505.
+Package pdftex.def Info: img/banana.png used on input line 497.
 (pdftex.def)             Requested size: 204.85802pt x 135.39095pt.
 
 <img/knn-concept.png, id=138, 385.44pt x 289.08pt>
 File: img/knn-concept.png Graphic file (type png)
  <use img/knn-concept.png>
-Package pdftex.def Info: img/knn-concept.png used on input line 521.
+Package pdftex.def Info: img/knn-concept.png used on input line 513.
 (pdftex.def)             Requested size: 308.35242pt x 231.2643pt.
 
 [14 <./img/apple.jpg> <./img/banana.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 537--540
+Underfull \hbox (badness 10000) in paragraph at lines 529--532
 
  []
 
@@ -1872,7 +1879,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 537--540
 File: img/asymptoticupperbound.png Graphic file (type png)
 
 <use img/asymptoticupperbound.png>
-Package pdftex.def Info: img/asymptoticupperbound.png used on input line 548.
+Package pdftex.def Info: img/asymptoticupperbound.png used on input line 540.
 (pdftex.def)             Requested size: 124.06445pt x 95.75848pt.
 
 Underfull \vbox (badness 7379) has occurred while \output is active []
@@ -1882,7 +1889,7 @@ Underfull \vbox (badness 7379) has occurred while \output is active []
 File: img/bigocomplexity.png Graphic file (type png)
 
 <use img/bigocomplexity.png>
-Package pdftex.def Info: img/bigocomplexity.png used on input line 562.
+Package pdftex.def Info: img/bigocomplexity.png used on input line 554.
 (pdftex.def)             Requested size: 283.16212pt x 185.84709pt.
 ) (./chapters/methods.tex
 Underfull \vbox (badness 4316) has occurred while \output is active []
@@ -2182,12 +2189,7 @@ Overfull \hbox (7.1666pt too wide) in paragraph at lines 818--818
  \OML/cmm/m/it/10 e[] []$| 
  []
 
-[49 <./img/bloch7over8.png>] [50]
-
-LaTeX Warning: Citation `chandrashekar2010discrete' undefined on input line 868
-.
-
-[51] [52]
+[49 <./img/bloch7over8.png>] [50] [51] [52]
 PGFPlots: reading {gauss2.dat}
  [53]
 PGFPlots: reading {gaussamp2.dat}
@@ -2195,7 +2197,8 @@ PGFPlots: reading {gaussamp2.dat}
 PGFPlots: reading {gaussamp2.dat}
 PGFPlots: reading {gaussamp2.dat}
 PGFPlots: reading {gaussamp2.dat}
- <img/cubewithoutprobs.png, id=285, 529.98pt x 482.80376pt>
+
+<img/cubewithoutprobs.png, id=285, 529.98pt x 482.80376pt>
 File: img/cubewithoutprobs.png Graphic file (type png)
 
 <use img/cubewithoutprobs.png>
@@ -2219,7 +2222,7 @@ Package pdftex.def Info: img/cube_diffused.png used on input line 999.
 Underfull \vbox (badness 3039) has occurred while \output is active []
 
  [54 <./img/cubewithoutprobs.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1012--1015
+Underfull \hbox (badness 10000) in paragraph at lines 1014--1017
 
  []
 
@@ -2227,15 +2230,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 1012--1015
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [55 <./img/cubeoneprob.png> <./img/cube_diffused.png>]
-Overfull \hbox (7.9169pt too wide) in paragraph at lines 1051--1084
+Overfull \hbox (7.9169pt too wide) in paragraph at lines 1054--1087
 []$[]$  $[]$ 
  []
 
-[56]
+
+Underfull \vbox (badness 1389) has occurred while \output is active []
+
+ [56]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [57])
-(./chapters/outlook.tex [58] [59]
+ [57]
+[58]) (./chapters/outlook.tex [59]
 Section 6.
 ) (./chapters/conclusion.tex [60
 
@@ -2252,55 +2258,55 @@ Appendix A.
 [63
 
 ] [64]) (./thesis.bbl
-Underfull \hbox (badness 3058) in paragraph at lines 122--135
+Underfull \hbox (badness 3058) in paragraph at lines 206--219
 []\T1/cmr/m/n/10 Bishop, L.  (2016).  \T1/cmr/m/it/10 Quan-tum gate times on IB
 M quan-tum com-puter.  \T1/cmr/m/n/10 Re-trieved
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--135
+Underfull \hbox (badness 10000) in paragraph at lines 206--219
 \T1/cmr/m/n/10 2016-12-29, from $\T1/cmtt/m/n/10 https :// quantumexperience []
  .ng [] .bluemix [] .net / qstage / # /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--135
+Underfull \hbox (badness 10000) in paragraph at lines 206--219
 \T1/cmtt/m/n/10 community / question [] ?questionId = 71b344418d724f8ec1088bafc
 75eb334&answerId =
  []
 
 
-Underfull \hbox (badness 3199) in paragraph at lines 428--440
-[]\T1/cmr/m/n/10 Gambetta, J.  (2016).  \T1/cmr/m/it/10 Work-ing to-wards QASM 
-2.0.  \T1/cmr/m/n/10 Re-trieved 2017-01-07, from
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 428--440
-\T1/cmtt/m/n/10 https :// quantumexperience [] .ng [] .bluemix [] .net / qstage
- / # / community / question []
- []
-
-
-Underfull \vbox (badness 3428) has occurred while \output is active []
+Underfull \vbox (badness 3108) has occurred while \output is active []
 
  [65
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 821--834
+Underfull \hbox (badness 3199) in paragraph at lines 535--547
+[]\T1/cmr/m/n/10 Gambetta, J.  (2016).  \T1/cmr/m/it/10 Work-ing to-wards QASM 
+2.0.  \T1/cmr/m/n/10 Re-trieved 2017-01-07, from
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 535--547
+\T1/cmtt/m/n/10 https :// quantumexperience [] .ng [] .bluemix [] .net / qstage
+ / # / community / question []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 984--997
 \T1/cmtt/m/n/10 quantumexperience [] .ng [] .bluemix [] .net / qstage / # / com
 munity / question [] ?questionId =
  []
 
 
-Underfull \hbox (badness 6063) in paragraph at lines 846--859
+Underfull \hbox (badness 6063) in paragraph at lines 1009--1022
 []\T1/cmr/m/n/10 Microsoft Re-search.  (2016).  \T1/cmr/m/it/10 Language-Integr
 ated Quan-tum Op-er-a-tions: LIQUi|>.
  []
 
 
-Underfull \hbox (badness 7704) in paragraph at lines 846--859
+Underfull \hbox (badness 7704) in paragraph at lines 1009--1022
 \T1/cmr/m/n/10 Re-trieved 2016-12-29, from $\T1/cmtt/m/n/10 https :// www [] .m
 icrosoft [] .com / en [] -us / research / project /
  []
@@ -2318,10 +2324,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 41930 strings out of 493029
- 958973 string characters out of 6136235
- 1095793 words of memory out of 5000000
- 44693 multiletter control sequences out of 15000+600000
+ 41954 strings out of 493029
+ 959532 string characters out of 6136235
+ 1096564 words of memory out of 5000000
+ 44717 multiletter control sequences out of 15000+600000
  33017 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,22n,103p,10379b,2302s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2349,7 +2355,7 @@ sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/s
 hare/texmf/fonts/type1/public/cm-super/sfti0600.pfb></usr/share/texmf/fonts/typ
 e1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
 ftt0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on thesis.pdf (79 pages, 2948971 bytes).
+Output written on thesis.pdf (79 pages, 2954547 bytes).
 PDF statistics:
  424 PDF objects out of 1000 (max. 8388607)
  266 compressed objects within 3 object streams

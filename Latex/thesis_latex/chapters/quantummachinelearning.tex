@@ -1,12 +1,12 @@
 \chapter{Literature Review: Quantum-enhanced Machine Learning}\label{sec:qml}
 
-Classical machine learning takes classical data as input and learns from it using classical algorithms executed on classical computers: \citeA{aimeur2006machine} refer to this as C/C (classical data with classical algorithm). One enters the field of quantum machine learning when either \emph{quantum data} or quantum algorithms are combined with ideas from classical machine learning. Thus, \citeA{aimeur2006machine} divide the field of quantum machine learning into three different subfields: 1) C/Q - classical data with quantum algorithm, 2) Q/C - quantum data with classical algorithm and 3) Q/Q - quantum data with quantum algorithm. Thereby, quantum data includes any data describing a quantum mechanical system such as e.g. the Hamiltonian or state vector of a quantum system.
+Quantum-enhanced machine learning (QeML) tries to answer the question, if quantum mechanical properties, like quantum parallelism and interference, and concepts from quantum information can be used to improve classical machine learning algorithms. QeML is a relatively new research field illustrated by the fact that the term 'quantum machine learning' was only coined in 2013 in a manuscript by \citeA{lloyd2013quantum}. From 1995 onwards, many QeML algorithms have been published as summarised in the recent review paper by \citeA{biamonte2016quantum}. To achieve quantum speedups, many QeML algorithms use well-known quantum algorithms, such as Grover's search, quantum Fourier transform or quantum phase estimation, as subroutines for larger machine learning tasks \cite{aimeur2013quantum,anguita2003quantum,biamonte2016quantum,kapoor2016quantum,lloyd2013quantum}.
 
-The subfield Q/C processes quantum data with classical machine learning algorithms. For example, \citeA{carrasquilla2016machine} used Google's deep learning library TensorFlow to identify the current phase of and phase transitions in quantum systems. Subfield Q/Q  is the union of C/Q and Q/C and deals with the processing of quantum data using quantum algorithms e.g. learning the Hamiltonian of a quantum system using quantum machine learning algorithms.
+Classical machine learning takes classical data as input and learns from it using classical algorithms executed on classical computers: \citeA{aimeur2006machine} refer to this as C/C (classical data with classical algorithm). One enters the field of general QML when either quantum data or quantum algorithms are combined with machine learning. Thus, \citeA{aimeur2006machine} divide the field of quantum machine learning into three different subfields: 1) C/Q - classical data with quantum algorithm, 2) Q/C - quantum data with classical algorithm and 3) Q/Q - quantum data with quantum algorithm. Thereby, \emph{quantum data} includes any data describing a quantum mechanical system such as e.g. the Hamiltonian or state vector of a quantum system.
 
-The topic of this thesis is embedded within the subfield C/Q that aims to develop quantum algorithms for machine learning tasks involving classical data. This subfield is also called \emph{quantum-enhanced machine learning} since smart algorithm design can harness quantum parallelism and quantum interference to speed up classical machine learning algorithms. The following sections will introduce some main concepts from the field of quantum-enhanced machine learning. More specifically, Section~\ref{subsec:quantumknearestneighbour} presents the quantum version of the classical $k$-nearest neighbour algorithm whose quantum simulation will be discussed extensively in Section~\ref{subsec:qubitKNNresults}. However, since a quantum algorithm is a sequence of quantum gates, it can only manipulate quantum and not classical bits. Therefore, the next section will first outline how classical data can be transferred into quantum states that can then be used for quantum computations.
+The subfield Q/C processes quantum data with classical machine learning algorithms. For example, \citeA{carrasquilla2016machine} used Google's deep learning library TensorFlow to identify phase transitions in quantum systems. The subfield Q/Q is the union of C/Q and Q/C and deals with the processing of quantum data using quantum algorithms e.g. learning the Hamiltonian of a quantum system using quantum machine learning algorithms. This thesis work is embedded within the subfield C/Q, also called QeML, that aims to develop quantum algorithms for machine learning tasks involving classical data.
 
-%WRITE ANOTHER PARAGRAPH HERE!
+The following sections will introduce some main concepts from the field of QeML. More specifically, Section~\ref{subsec:quantumknearestneighbour} presents the quantum version of the classical $k$-nearest neighbour algorithm whose quantum simulation will be discussed extensively in Section~\ref{subsec:qubitKNNresults}. However, since a quantum algorithm is a sequence of quantum gates, it can only manipulate quantum and not classical bits. Therefore, the next section will first outline how classical data can be transferred into quantum states, thereby, enabling quantum computations.
 
 \newpage
 \section{Quantum state preparation}
@@ -229,17 +229,17 @@ Applying an H gate to the ancilla register transfers the $d_H(\vec{x},\vec{v}^p)
 \begin{align}
 \label{equ:beforecm}
 \ket{\psi_5} &= (\mathbb{1} \otimes \mathbb{1} \otimes \mathbb{1} \otimes H)\ket{\psi_4}\notag\\
-&= \frac{1}{\sqrt{N}}\sum_p^N cos\big[\frac{\pi}{2n}d_H(\vec{x},\vec{v}^p)\big] \ket{x_1,x_2,...x_n;d_1^p,d_2^p,...d_n^p;c^p;0} \notag\\
-&\quad\quad\quad\quad\quad\quad + sin\big[\frac{\pi}{2n}d_H(\vec{x},\vec{v}^p)\big] \ket{x_1,x_2,...x_n;d_1^p,d_2^p,...d_n^p;c^p;1}\, .
+&= \frac{1}{\sqrt{N}}\sum_p^N \cos\big[\frac{\pi}{2n}d_H(\vec{x},\vec{v}^p)\big] \ket{x_1,x_2,...x_n;d_1^p,d_2^p,...d_n^p;c^p;0} \notag\\
+&\quad\quad\quad\quad\quad\quad + \sin\big[\frac{\pi}{2n}d_H(\vec{x},\vec{v}^p)\big] \ket{x_1,x_2,...x_n;d_1^p,d_2^p,...d_n^p;c^p;1}\, .
 \end{align}
 At this point the ancilla qubit is measured along the standard basis and all previous steps have to be repeated until the ancilla is measured in the \0 state. Since it is conditioned on a particular outcome, this type of measurement is called \emph{conditional measurement}. The probability of a successful conditional measurement is given by the square of the absolute value of the amplitude and is dependent on the average reverse Hamming distance between all training vectors and the input vector:
 \begin{equation}
-Prob(\ket{a} = \ket{0}) = \sum_p^N cos^2\big[\frac{\pi}{2n}d_H(\vec{x},\vec{v}^p)\big]\, .
+Prob(\ket{a} = \ket{0}) = \sum_p^N \cos^2\big[\frac{\pi}{2n}d_H(\vec{x},\vec{v}^p)\big]\, .
 \end{equation}
 Finally, to classify the input vector $\vec{x}$ the class register is measured along the standard basis. The probability of measuring a specific class c is then given by the following expression:
 \begin{equation}
 \label{equ:classprobs}
-Prob(c) = \frac{1}{NProb(\ket{a} = \ket{0})} \sum_{l \in c} cos^2\big[\frac{\pi}{2n}d_H(\vec{x},\vec{v}^l)\big]\, .
+Prob(c) = \frac{1}{NProb(\ket{a} = \ket{0})} \sum_{l \in c} \cos^2\big[\frac{\pi}{2n}d_H(\vec{x},\vec{v}^l)\big]\, .
 \end{equation}
 %When rewriting Eq.~\ref{equ:beforecm} into the following form,
 %\begin{align}

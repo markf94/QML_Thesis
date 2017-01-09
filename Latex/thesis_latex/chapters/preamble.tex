@@ -45,16 +45,10 @@ Finally, I would like to express my gratitude to my parents for their continuous
 \chapter*{Abstract}
  \addcontentsline{toc}{chapter}{Abstract}
 
-NEEDS MODIFICATION!
-
-Quantum machine learning, the intersection of quantum computation and classical machine learning,
+Quantum-enhanced machine learning, the intersection of quantum computation and classical machine learning,
 bears the potential to provide more efficient ways to deal with big data through the use of quantum
-superpositions, entanglement and the resulting quantum parallelism. The proposed research will
-attempt to implement and simulate two quantum machine learning routines and use them to solve
-small machine learning problems. That will establish one of the earliest proof-of-concept studies in
-the field and demonstrate that quantum machine learning is already implementable on small-scale
-quantum computers. This is vital to show that an extrapolation to larger quantum computing devices
-will indeed lead to vast speedups of current machine learning algorithms.
+superpositions, entanglement and the resulting quantum parallelism. This thesis presents proof-of-principle simulations of two quantum $k$-nearest neighbour (kNN) algorithms demonstrating that these quantum machine learning algorithms can already be used for small classification problems on small-scale
+quantum computers. Using the quantum simulation architecture Liqui$\ket{}$, the qubit-based quantum kNN algorithm is shown to classify 9-bit RGB colours with up to 100\% accuracy on specific training and input datasets. Its variant, the amplitude-based kNN algorithm, is quantum compiled for an unsuccessful implementation with the IBM Quantum Experience and subsequently simulated with Liqui$\ket{}$. As a result, the amplitude-based kNN algorithm is shown to classify specific Bloch vectors with 100\% accuracy and Gaussian distributions with 83.3\% accuracy.
 
  \cleardoublepage
 
@@ -76,6 +70,7 @@ will indeed lead to vast speedups of current machine learning algorithms.
 \section*{Acronyms and Abbreviations}
 \begin{tabbing}
  \hspace*{1.6cm}  \= \kill
+ aKNN \> amplitude-based $k$-nearest neighbour \\[0.5ex]
  CCNOT \> Controlled controlled NOT gate (Toffoli gate) \\[0.5ex]
  CM \> Conditional measurement \\[0.5ex]
  CNOT \> Controlled NOT gate \\[0.5ex]

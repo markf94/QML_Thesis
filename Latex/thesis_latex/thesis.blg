@@ -55,45 +55,45 @@ Name 1 in "{Microsoft Research}," has a comma at the end for entry microsoftrese
 while executing---line 5079 of file apacite.bst
 Warning--No journal in SchuldFingerhuth
 Warning--No journal in Schuld2014
-You've used 45 entries,
+You've used 51 entries,
             6951 wiz_defined-function locations,
-            1536 strings with 18278 characters,
-and the built_in function-call counts, 79465 in all, are:
-= -- 10263
-> -- 669
-< -- 3305
-+ -- 3291
-- -- 99
-* -- 4694
-:= -- 13249
-add.period$ -- 186
-call.type$ -- 45
-change.case$ -- 774
+            1563 strings with 19166 characters,
+and the built_in function-call counts, 90540 in all, are:
+= -- 11609
+> -- 792
+< -- 3785
++ -- 3751
+- -- 111
+* -- 5377
+:= -- 15088
+add.period$ -- 212
+call.type$ -- 51
+change.case$ -- 877
 chr.to.int$ -- 0
-cite$ -- 92
-duplicate$ -- 2153
-empty$ -- 3333
-format.name$ -- 1068
-if$ -- 15890
+cite$ -- 104
+duplicate$ -- 2499
+empty$ -- 3805
+format.name$ -- 1273
+if$ -- 18074
 int.to.chr$ -- 0
-int.to.str$ -- 139
+int.to.str$ -- 157
 missing$ -- 0
-newline$ -- 1108
-num.names$ -- 360
-pop$ -- 1398
+newline$ -- 1263
+num.names$ -- 408
+pop$ -- 1593
 preamble$ -- 1
-purify$ -- 181
+purify$ -- 205
 quote$ -- 0
-skip$ -- 5959
+skip$ -- 6747
 stack$ -- 0
-substring$ -- 3664
-swap$ -- 1201
-text.length$ -- 125
+substring$ -- 4172
+swap$ -- 1402
+text.length$ -- 144
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 4504
+type$ -- 5048
 warning$ -- 2
-while$ -- 373
+while$ -- 446
 width$ -- 0
-write$ -- 1338
+write$ -- 1543
 (There were 11 error messages)

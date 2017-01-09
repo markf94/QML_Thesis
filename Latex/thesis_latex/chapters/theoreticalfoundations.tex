@@ -431,7 +431,7 @@ The last expression in Eq.~\ref{equ:cnotexamples} is one of the famous Bell stat
 The three most important multi-qubit quantum gates CNOT, Toffoli and nCNOT are characterised in Table~\ref{tab:multiqubitgates}.
 
 \begin{table}[H]
-\caption{Table containing some major multi-qubit quantum logic gates where $c_j$ stands for the j\textsuperscript{th} control qubit and $\mathbb{1}_k$ for the kxk identity matrix.}\vspace{1em}
+\caption{Table containing some major multi-qubit quantum logic gates where $c_j$ stands for the j\textsuperscript{th} control qubit and $\mathbb{1}_k$ for the $k\timesk$ identity matrix.}\vspace{1em}
 \label{tab:multiqubitgates}
 \begin{tabular}{ c  C{1.8cm}  C{2cm}  c C{3cm}}\hline
 Gate & Name & Circuit representation & Matrix & Description \\ \midrule
@@ -469,26 +469,18 @@ nCNOT & n-controlled NOT & -  & $\begin{pmatrix}
 \section{Classical machine learning}
 \label{subsec:classicalmachinelearning}
 
-Machine learning (ML), a subfield of artificial intelligence, is aiming to enable computers to learn from data without a human explicitly programming its actions. It can be subdivided into the three major fields supervised \& unsupervised machine learning and reinforcement learning. The three areas can be most readily understood by considering the following three colloquial sentences:
+\emph{Machine learning} (ML), a subdiscipline of artificial intelligence, is trying to enable computers to learn from data without a human explicitly programming its actions. It can be subdivided into the three major fields \emph{supervised}, \emph{unsupervised} and \emph{reinforcement learning} \cite{schuld2015introduction}. Only supervised machine learning will be introduced because this thesis research exclusively focuses on supervised quantum machine learning algorithms. 
 
-\begin{redbox}
-Supervised ML\\
-- Based on \emph{input} and \emph{output} data\\
-"I know how to classify this data, but I need an algorithm to do the computations for me."
-\end{redbox}
-\begin{greenbox}
-Unsupervised ML\\
-- Based on \emph{input} data only\\
-"I have no clue how to classify this data, can the algorithm create a classifier for me?"
-\end{greenbox}
-\begin{bluebox}
-Reinforcement learning\\
-- Based on \emph{input} data only\\
-"I have no clue how to classify this data, can the algorithm classify this data and I'll give it a reward if it's correct or I'll punish it if it's not."
-\end{bluebox}
+The main idea of supervised machine learning is to train an algorithm on a \emph{labelled} training dataset containing, for example, pictures of fruits with their corresponding names such that it can be used to label new pictures that are not part of the training dataset. Since the samples in the training dataset were labelled, the process is said to be supervised.
 
-This thesis, specifically, is focusing on quantum-enhancements in the field of supervised machine learning only. The following section will introduce a well-known algorithm from the subfield of supervised ML: the $k$-nearest neighbour algorithm.
+More formally, in supervised machine learning one is presented with pairs of input ($x$) and output ($o$) variables and the machine learning algorithm is supposed to learn the function $f$ that maps inputs to their respective outputs:
+\begin{equation}
+\label{equ:inputoutputML}
+f(i) = o\, .
+\end{equation}
+Thereby, the algorithm should approximate the mapping function $f$ to such an extent that it can predict the output $o$ for new unknown input data $\tilde{x}$ \cite{bishop2006pattern}. The following section will introduce a well-known algorithm from the field of supervised ML: the classical $k$-nearest neighbour algorithm.
 
+\newpage
 \subsection{Classical $k$-nearest neighbour algorithm}
 \label{subsubsec:knearestneighbour}
 
@@ -504,7 +496,7 @@ Imagine working for a search engine company and you are given the task of classi
   \begin{minipage}[t]{0.48\textwidth}
     \includegraphics[width = \textwidth]{img/banana.png}
   \end{minipage}
-  \caption[]{Pictures of apple and banana from training data set ${D}_{T}$.\footnotemark[3]}
+  \caption[]{Example pictures of apple and banana from training data set ${D}_{T}$.\footnotemark[3]}
   \label{img:appleandbanana}
 \end{figure}
 

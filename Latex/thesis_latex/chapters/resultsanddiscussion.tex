@@ -1006,21 +1006,24 @@ The cube can now be used as another way of visualising the action of the coin ga
 After the application of the three $C(0.7)$ gates to the three qubits in $\ket{000}$ all eight-qubit patterns have non-zero amplitudes and the quantum state $\ket{w}$ from Eq.~\ref{equ:desiredmemorystate} is obtained. Fig.~\ref{img:cubediffused3} shows this final quantum superposition representing a discrete Gaussian distribution over a three-dimensional cube based on Hamming distances.
 %In this example, Fig.~\ref{img:cubediffused1}, ~\ref{img:cubediffused2} and \ref{img:cubediffused3} visually demonstrated a stepwise diffusion of the initial amplitude 1.0 of $\ket{000}$ over all eight three-qubit patterns on the cube.
 
-With the familiarisation with the coin gate $C$ and the use of cubes to visualise amplitude distributions, the introduction of most required tools to simulate the classification of Gaussian distributions with the aKNN algorithm is completed. Yet, since any distance-weighted kNN algorithm is based on measuring distances between the input sample and each training sample, a new distance metric for distributions needs to be introduced. For this reason, the Hellinger distance is defined in the red box below.
+
+%With the familiarisation with the coin gate $C$ and the use of cubes to visualise amplitude distributions, the introduction of most required tools to simulate the classification of Gaussian distributions with the aKNN algorithm is completed. 
+Per definition, any distance-weighted kNN algorithm, classical and quantum, is based on measuring distances between the input sample and each training sample. The aKNN algorithm presented in Section~\ref{subsec:amplitudeKNNalgorithm} is based on squared Euclidean distance which is not the most ideal way of measuring distances between probability distributions. Therefore, a new distance metric for distributions needs to be introduced. For this reason, the Hellinger distance is defined in the red box below.
 
 \begin{redbox}
 \textbf{Definition: Hellinger distance}\\
 \newline
 The Hellinger distance is a distance metric used to quantify the difference between any two probability distributions. In the case of continuous probability distributions it is defined using the Hellinger integral first proposed by \citeA{hellinger1909neue}. However, since the $2^n$ amplitudes of an $n$-qubit system will always constitute a discrete probability distribution only the Hellinger distance for discrete distributions will be introduced.
-\end{redbox}
-\begin{redbox}
+
 According to \citeA{harsha}, the Hellinger distance between two discrete probability distributions $R = (r_1,...,r_N)$ and $L = (l_1,...,l_N)$, each with $N$ entries, is defined as:
 
 \begin{equation}
 \label{equ:hellingerdistance}
-H(R,L) = \frac{1}{\sqrt{2}}\sqrt{\sum_{i=1}^N (\sqrt{r_i} - \sqrt{l_i})^2}\, ,
+H(R,L) = \frac{1}{\sqrt{2}}\sqrt{\sum_{i=1}^N (\sqrt{r_i} - \sqrt{l_i})^2}\, .
 \end{equation}
-which can be rewritten in terms of the Euclidean distance between the square root vectors $\sqrt{R}$ and $\sqrt{L}$:
+\end{redbox}
+\begin{redbox}
+Eq.~\ref{equ:hellingerdistance} can be rewritten in terms of the Euclidean distance between the square root vectors $\sqrt{R}$ and $\sqrt{L}$:
 \begin{equation}
 \label{equ:hellingereuclidean}
 H(R,L) = \frac{1}{\sqrt{2}} \mid\mid\sqrt{R} - \sqrt{L}\mid\mid_2\, .
@@ -1044,7 +1047,7 @@ Suppose the probability distribution $R = (r_1,...,r_N)$ is the input sample tha
 \end{equation}
 which is now dependent on the squared Hellinger distance between the input distribution $R$ and each training distribution $L^m$.
 
-It remains to discuss how to load the input and training distributions into the initial quantum state required for the amplitude-based kNN algorithm as defined in Eq.~\ref{equ:ampinitial}. The necessary procedure is outlined in Appendix~\ref{sec:stateprepgaussian}. Thus, all tools needed to classify Gaussian distributions with the amplitude-based kNN algorithm have been introduced.
+It remains to discuss how to load the input and training distributions into the initial quantum state required for the aKNN algorithm as defined in Eq.~\ref{equ:ampinitial}. The necessary procedure is outlined in detail in Appendix~\ref{sec:stateprepgaussian}. In summary, the state preparation makes use of the coin gate $C(\delta)$, its controlled version $CC(\delta)$ as well as the controlled controlled version $CCC(\delta)$ to initialise the input and training samples. With the coin gate, the 3-D cube visualisations, the Hellinger distance and the necessary quantum state preparation routine, all tools needed to classify Gaussian distributions with the aKNN algorithm have been introduced.
 
 The quantum simulation will be limited to discrete Gaussian distributions with eight entries, thus, making use of three data qubits with $2^3 = 8$ amplitudes. For the classification, two distinct Gaussian training distributions will be used. These training distributions should be chosen as different as possible to enable better classification results. The training dataset is listed in Table~\ref{tab:gausstrainingset}. The first training sample is selected to be a Gaussian distribution centred around $\ket{000}$ and is arbitrarily defined to be of class $\ket{0}$. The second training sample is defined to belong to class $\ket{1}$ and is chosen to be a Gaussian distribution centred around the $\ket{111}$ state. The cube in Fig.~\ref{img:cubenoprobs} illustrates that these are the most contrasting distributions because they are centred around diagonally opposite corners of the cube. Subsequently, the amplitude-based kNN algorithm will be evaluated on the input dataset listed in Table~\ref{tab:gaussinputset} which contains Gaussian distributions centred around the six binary three-qubit patterns that are not part of the training set.
 
@@ -1110,20 +1113,14 @@ Liqui$\ket{}$ was used to perform the quantum simulations, and the probability d
 
 The results in Table~\ref{tab:gauss3qubitresults} show that for all input distributions the probability of a successful conditional measurement $\mathrm{Prob}(\mathrm{CM})$ decreases with increasing values of $\delta$. Specifically, in the case $\delta = 0.6$ the values of $\mathrm{Prob}(\mathrm{CM})$ are very close to unity for all six input distributions. Furthermore, when $\delta = 0.6$ the probability distributions over the class qubit states \0 and \1 are close to being equal for all six input distributions indicating no clear preference for a particular class. This can be explained by looking back to Fig.~\ref{fig:gaussdeltaplot2} which shows that choosing $\delta = 0.6$ results in flat Gaussian distributions with little peaks. On the cube in Fig.~\ref{img:cubenoprobs} this would correspond to an almost uniform amplitude distribution over the cube. In this case, the training samples are almost equal to each other yielding nearly equal probabilities for class \0 and \1 for all six input distributions. As a result, for $\delta = 0.6$ the first three input distributions were all incorrectly classified, and the last three input samples were all correctly classified. Despite correct or incorrect classification, all six class qubit probability distributions show no clear preference and make clear that the training samples with $\delta = 0.6$ are not distinct enough for the algorithm to make a clear classification decision.
 
-In the case $\delta = 0.85$ all six input distributions were correctly classified. In this case, the Gaussian training distributions correspond to more distinct amplitude distributions over the cube in Fig.~\ref{img:cubenoprobs}. This fact results in different probabilities for class \0 and \1, thereby clearly favouring one class over the other. Lastly, for $\delta = 0.95$ all six input distributions were again correctly classified with larger differences between the probabilities for class \0 and \1 compared to the case $\delta = 0.85$.
+In the case $\delta = 0.85$ all six input distributions were correctly classified. In this case, the Gaussian training distributions correspond to more distinct amplitude distributions over the cube in Fig.~\ref{img:cubenoprobs}. This fact results in different probabilities for class \0 and \1, thereby clearly favouring one class over the other. Lastly, for $\delta = 0.95$ all six input distributions were again correctly classified with even larger differences between the probabilities for class \0 and \1 compared to the case $\delta = 0.85$.
 
-
-%Summarize the Gaussian part
-%Stress that it was another toy example for the aKNN algorithm
-%Need to implement more advanced state preparation algorithms!
-%aKNN performed well for the fact that it is a very simple q alg
-
+In summary, the classification of Gaussian distributions outlined in this section was another example of solving a small-scale machine learning problem by simulating a quantum machine learning algorithm. The simulated aKNN algorithm achieved an overall accuracy of 83.3\% on the classification of Gaussian distributions for various $\delta$ values. However, for an actual useful application this would, of course, require generalization to a wide range of discrete probability distributions. In this example, Gaussian distributions were selected since they enable relatively straightforward quantum state preparation. More advanced state preparation routines need to be considered to enable the classification of e.g. Poissonian or logistic distributions \cite{Grover2002,soklakov2006efficient}.
 
 
 %Summarize the entire Results & Discussion section here?
 %Contrast with some other work if possible
 %Criticize what could be improved
-
 
 
 
