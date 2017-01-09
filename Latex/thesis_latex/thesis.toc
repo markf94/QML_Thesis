@@ -30,11 +30,11 @@
 \contentsline {subsubsection}{\numberline {5.2.1.2}Decomposition of a controlled-U gate}{41}
 \contentsline {subsubsection}{\numberline {5.2.1.3}The Solovay-Kitaev theorem}{43}
 \contentsline {subsubsection}{\numberline {5.2.1.4}Toffoli Gate Decomposition}{47}
-\contentsline {subsection}{\numberline {5.2.2}Simulating the amplitude-based kNN algorithm}{48}
+\contentsline {subsection}{\numberline {5.2.2}Simulating the amplitude-based kNN algorithm}{49}
 \contentsline {subsubsection}{\numberline {5.2.2.1}Classification of Bloch vectors}{49}
 \contentsline {subsubsection}{\numberline {5.2.2.2}Classification of Gaussian distributions}{51}
-\contentsline {chapter}{\numberline {6}Outlook}{60}
-\contentsline {chapter}{\numberline {7}Conclusion}{61}
-\contentsline {chapter}{\numberline {8}Personal Reflection}{62}
-\contentsline {chapter}{\numberline {A}Quantum state preparation routine for Gaussian distributions}{63}
-\contentsline {chapter}{References}{65}
+\contentsline {chapter}{\numberline {6}Outlook}{59}
+\contentsline {chapter}{\numberline {7}Conclusion}{60}
+\contentsline {chapter}{\numberline {8}Personal Reflection}{61}
+\contentsline {chapter}{\numberline {A}Quantum state preparation routine for Gaussian distributions}{62}
+\contentsline {chapter}{References}{64}

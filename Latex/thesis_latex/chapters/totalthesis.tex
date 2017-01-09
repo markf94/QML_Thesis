@@ -1,9 +1,105 @@
+%---------------------------------------------------------------------------
+% Preface
+
+\chapter*{Preface}
+
+This thesis is submitted for the Bachelor degree at the University of Maastricht. The research for this thesis was conducted under the supervision of Prof. F. Petruccione at the Centre for Quantum Technology, University of KwaZulu-Natal, South Africa between September 2016 and January 2017.
+
+This work is to the best of my knowledge original, expect where acknowledgements and references are made to previous work. Neither this nor any substantially similar thesis has been or is being submitted for any other degree, diploma or other qualification at any other university.
+
+No part of this thesis has been previously published.
+
+\flushright
+Mark Fingerhuth
+
+January 2017
+\justify
+ \cleardoublepage
+ 
+%---------------------------------------------------------------------------
+% Acknowledgements
+ 
+ \chapter*{Acknowledgements}
+
+I would like to especially thank Prof. Francesco Petruccione for providing me with the opportunity to conduct my bachelor thesis research together with him at the Centre for Quantum Technology. I am incredibly grateful for the financial support from the Centre for Quantum Technology enabling me, parallel to my research, to partake in the Quantum Machine Learning Workshop in July 2016, the 4\textsuperscript{th} South African Conference for Quantum Information Processing, Communication and Control in November 2016 and the NiTheP Chris Engelbrecht Quantum Machine Learning Summer School in January 2017. 
+
+I would also like to thank Maria Schuld for her unofficial supervision, endless support, great cooperation and for all the countless explanations and help I received from her.
+
+Thanks also to all my friends who have supported, proofread and helped me throughout this research.
+
+Finally, I would like to express my gratitude to my parents for their continuous encouragement, unconditional love and mental as well as financial support.
+
+ \cleardoublepage
+
+%---------------------------------------------------------------------------
+% Table of contents
+
+ \setcounter{tocdepth}{2}
+ \tableofcontents
+
+ \cleardoublepage
+
+%---------------------------------------------------------------------------
+% Abstract
+
+\chapter*{Abstract}
+ \addcontentsline{toc}{chapter}{Abstract}
+
+Quantum-enhanced machine learning, the intersection of quantum computation and classical machine learning,
+bears the potential to provide more efficient ways to deal with big data through the use of quantum
+superpositions, entanglement and the resulting quantum parallelism. This thesis presents proof-of-principle simulations of two quantum $k$-nearest neighbour (kNN) algorithms demonstrating that these quantum machine learning algorithms can already be used for small classification problems on small-scale
+quantum computers. Using the quantum simulation architecture Liqui$\ket{}$, the qubit-based quantum kNN algorithm is shown to classify 9-bit RGB colours with up to 100\% accuracy on specific training and input datasets. Its variant, the amplitude-based kNN algorithm, is quantum compiled for an unsuccessful implementation with the IBM Quantum Experience and, therefore, subsequently simulated with Liqui$\ket{}$. As a result, the amplitude-based kNN algorithm is shown to classify particular Bloch vectors with 100\% accuracy and Gaussian distributions with 83.3\% accuracy.
+
+ \cleardoublepage
+
+%---------------------------------------------------------------------------
+% Symbols
+
+\chapter*{Nomenclature}\label{chap:symbole}
+ \addcontentsline{toc}{chapter}{Nomenclature}
+
+\section*{Symbols}
+\begin{tabbing}
+ \hspace*{1.6cm} \= \hspace*{8cm} \= \kill
+ $\otimes$ \> Tensor product \\[0.5ex]
+ $i$ \> Imaginary unit \> $i=\sqrt{-1}$ \\[0.5ex]
+ $\dagger$ \> Hermitian conjugate \> Complex conjugate transpose \\[0.5ex]
+ $!$ \> Factorial \> e.g. 3! = 3*2*1 \\[0.5ex]
+ $\mathbb{1}$ \> $2\times2$ Identity matrix \> $\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$ \\[0.5ex]
+\end{tabbing}
+
+\section*{Acronyms and Abbreviations}
+\begin{tabbing}
+ \hspace*{1.6cm}  \= \kill
+ aKNN \> amplitude-based $k$-nearest neighbour \\[0.5ex]
+ CCNOT \> Controlled controlled NOT gate (Toffoli gate) \\[0.5ex]
+ CM \> Conditional measurement \\[0.5ex]
+ CNOT \> Controlled NOT gate \\[0.5ex]
+ CU \> Controlled U gate (with U being any unitary $2\times2$ quantum gate) \\[0.5ex]
+ GB \> Gigabyte \\[0.5ex]
+ HD \> Hamming distance \\[0.5ex]
+ IBM \> International Business Machines Corporation \\[0.5ex]
+ IBMQE \> IBM Quantum Experience \\[0.5ex]
+ kNN \> $k$-nearest neighbour \\[0.5ex]
+ ML \> Machine learning \\[0.5ex]
+ PM \> Post-measurement \\[0.5ex]
+ Prob \> Probability \\[0.5ex]
+ QC \> Quantum computer \\[0.5ex]
+ QeML \> Quantum-enhanced machine learning \\[0.5ex]
+ QML \> Quantum machine learning \\[0.5ex]
+ RAM \> Random-access memory \\[0.5ex]
+ 
+\end{tabbing}
+
+ \cleardoublepage
+
+%---------------------------------------------------------------------------
 \chapter{Introduction}\label{sec:introduction}
 
 The ability to recognise familiar faces, to understand spoken language and to distinguish types of vegetables comes naturally to humans, although these processes of pattern recognition and classification are inherently complex. Machine learning (ML), a subdiscipline of artificial intelligence, is concerned with the development of algorithms that perform these types of tasks, thus enabling computers to find and recognise patterns in data and classify unknown inputs based on previous training data. Such algorithms make the core of e.g. human speech recognition and recommendation engines as used by Amazon \cite{graves2013speech,linden2003amazon}.
 % and algorithms that can predict heart disease from real-time electrocardiograms \citep{acharya2015integrated, pazzani2007content}.
 
-According to \citeA{bigdata}, approximately 2.5 quintillions (${10}^{18}$) bytes of digital data are created every day. This growing number implies that many areas dealing with data will eventually require advanced algorithms that can make sense of data content, retrieve patterns and reveal correlations. However, most ML algorithms involve the execution of computationally expensive operations and doing so on large data sets inevitably takes a lot of time \cite{bekkerman2011scaling}. Thus, it becomes increasingly important to find efficient ways of dealing with big data.
+According to \citeA{bigdata}, approximately 2.5 quintillion (${10}^{18}$) bytes of digital data are created every day. This growing number implies that many areas dealing with data will eventually require advanced algorithms that can make sense of data content, retrieve patterns and reveal correlations. However, most ML algorithms involve the execution of computationally expensive operations and doing so on large data sets inevitably takes a lot of time \cite{bekkerman2011scaling}. Thus, it becomes increasingly important to find efficient ways of dealing with big data.
 %and/or reduce the computational complexity of the algorithms.
 
 A promising solution is the use of quantum computation which has been researched intensively in the last few decades. Quantum computers (QCs) use quantum mechanical systems and their unique properties to manipulate and process information in ways that are impossible for classical computers. Analogous to a classical computer manipulating bits, a quantum computer makes use of so-called quantum bits (qubits). Bits and qubits are both binary entities meaning they can only take the values 0 and 1. However, a non-probabilistic classical bit can only take one of these values at a time whereas a qubit can also be found in a linear superposition of the two states.
@@ -27,7 +123,7 @@ Considering these advantages, the combination of quantum computation and classic
 \section{Motivation}
 \label{sec:motivation}
 
-Classical ML is a very practical topic since it can be directly tested, verified and implemented on any commercial classical computer. So far, QML has been of almost entirely theoretical nature since the required computational resources are not yet in place. To yield reliable solutions QML algorithms often require a huge number of error-correcting qubits and some quantum data storage such as the proposed quantum random access memory (qRAM) \cite{qRAM}. However, to date the maximum number of e.g. superconducting qubits reportedly used for calculation is nine, the D-Wave II quantum annealing device delivers 1152 qubits but can only solve a narrow class of problems, and a qRAM has not been developed yet \cite{hydrogensimulation, dwave2}. Furthermore, qubit error-correction is still a very active research field, and most of the described preliminary QCs deal with non-error-corrected qubits with short lifetimes and are, thus, impractical for large QML implementations.
+Classical ML is a very practical topic since it can be directly tested, verified and implemented on any commercial classical computer. So far, QML has been of almost entirely theoretical nature since the required computational resources are not yet in place. To yield reliable solutions QML algorithms often require a huge number of error-correcting qubits and some quantum data storage, for example, the quantum random access memory (qRAM) proposed by \citeA{qRAM}. However, to date the maximum number of e.g. superconducting qubits reportedly used for calculation is nine, the D-Wave II quantum annealing device delivers 1152 qubits but can only solve a narrow class of problems, and a qRAM has not been developed yet \cite{hydrogensimulation, dwave2}. Furthermore, qubit error-correction is still a very active research field, and most of the described preliminary QCs deal with non-error-corrected qubits with short lifetimes and are, thus, impractical for large QML implementations.
 
 Until now there have been only a few experimental verifications of QML algorithms that establish proof-of-principle. \citeA{Li2015} successfully distinguished handwritten digits using a quantum support vector machine on a four-qubit nuclear magnetic resonance test bench. In addition, \citeA{Cai2015} were first to experimentally demonstrate quantum machine learning on a photonic QC and showed that the distance between two vectors and their inner product can indeed be computed quantum mechanically. Lastly, \citeA{Riste2015} solved a learning parity problem with five superconducting qubits and found that a quantum advantage can already be observed in non-error-corrected systems.
 
@@ -62,16 +158,15 @@ The following sections will introduce the necessary theoretical foundations, and
 \label{subsec:qubits}
 \subsection{Single-qubit systems}
 \label{subsubsec:qubits}
-
 Classical computers manipulate bits, whereas quantum computer's most fundamental unit is called a \emph{quantum bit}, often abbreviated as \emph{qubit}. Instead of 0 and 1, qubit states are denoted \0 and \1 for reasons that will be outlined later.
 %A non-probabilistic classical bit is a binary entity and can take either the value 0 or 1. Qubits are also binary entities but they can also be in a superposition of the two states. In contrast to classical bits, the two fundamental qubit states are denoted \0 and \1 for reasons outlined later.
 
-A good example of a physical implementation of a qubit is the single electron of a hydrogen atom sketched in Fig.~\ref{img:qubitatom}. Usually, the electron is found in its ground state which one can define as the \0 state of the qubit. By using a laser pulse, the electron can be excited into the next higher valence shell which one can define as the \1 state of the qubit. After some time $t$ the electron will decohere to its ground state \0 which is called the \emph{longitudinal coherence} or \emph{amplitude damping time} and is an important parameter for measuring qubit lifetimes \cite{chuanglecturenotes}.
+A good example of a physical implementation of a qubit is the single electron of a hydrogen atom sketched in Fig.~\ref{img:qubitatom}. Usually, the electron is found in its ground state which one can define as the \0 state of the qubit. By using a laser pulse, the electron can be excited into the next higher valence shell which can be defined as the \1 state of the qubit. After some time $t$ the electron will decohere to its ground state \0 which is called the \emph{longitudinal coherence} or \emph{amplitude damping time} and is an important parameter for measuring qubit lifetimes \cite{chuanglecturenotes}.
 
 \begin{figure}[!ht]
        \centering
        \includegraphics[scale=0.35]{img/qubitimplementation.jpeg}
-       \caption[]{\label{img:qubitatom} A simple example of a physical qubit using the single valence electron of a hydrogen atom. Thereby, the electron's ground state can be defined as the \0 state of the qubit. By using a laser pulse, the electron can be excited into the next higher valence shell which can be defined as the qubit's \1 state. \textsuperscript{1}}
+       \caption[]{\label{img:qubitatom} A simple example of a physical qubit using the electron of a hydrogen atom. Thereby, the electron's ground state is defined as the qubit's \0 state. By using a laser pulse, the electron can be excited into the next higher valence shell which is defined as the qubit's \1 state. \textsuperscript{1}}
 \end{figure}
 \footnotetext[1]{Reprinted from RF Wireless World, n.d., Retrieved December 23, 2016, from \url{http://www.rfwireless-world.com/Terminology/Difference-between-Bit-and-Qubit.html}. Copyright 2012 by RF Wireless World.}
 
@@ -107,7 +202,7 @@ where complex conjugates are denoted with an asterisk ($*$). The Hermitian conju
 
 The inner product of a bra and a ket is called a \emph{bra-ket} and is written
 \begin{equation}
-\braket{\phi|\phi}
+\braket{\phi|\phi}\, .
 \end{equation}
 Note that all later sections will make heavy use of this \emph{bra-ket notation}.
 
@@ -136,7 +231,7 @@ and \1 with a probability of
 \mathrm{Prob}(\ket{1}) = {|\beta|}^{2}\, .
 \end{equation}
 
-The fact that the probability of measuring a particular state is equal the absolute value squared of the respective amplitude was first postulated by \cite{born1954statistical} and, thus, is called Born rule. Since the total probability of measuring any value has to be 1, the normalisation condition
+The fact that the probability of measuring a particular state is equal the absolute value squared of the respective amplitude was first postulated by \citeA{born1954statistical} and, thus, is called Born rule. Since the total probability of measuring any value has to be 1, the normalisation condition
 \begin{equation}
 \label{equ: normalization}
 {|\alpha|}^{2} + {|\beta|}^{2} =  1\, ,
@@ -157,9 +252,9 @@ Qubit states on the Bloch equator such as the $\hat{x}$ and $\hat{y}$ coordinate
        \includegraphics[scale=0.11]{img/blochsphere.png}
        \caption[]{\label{fig:blochsphere} An arbitrary single-qubit state $\ket{\psi} = \alpha \ket{0} + \beta \ket{1}$ can be visualised on the Bloch sphere by parameterising $\alpha = \cos\frac{\theta}{2}$ and $\beta = e^{i \phi} \sin\frac{\theta}{2}$ where $\theta$ is the polar and $\phi$ the azimuthal angle in spherical polar coordinates.\footnotemark[2]}
 \end{figure}
-\footnotetext[2]{Reprinted from Wikipedia, n.d., Retrieved September 7, 2016, from \url{https://en.wikipedia.org/wiki/Bloch_Sphere}. Copyright 2012 by Glosser.ca.}
-\newpage
 
+\newpage
+\footnotetext[2]{Reprinted from Wikipedia, n.d., Retrieved September 7, 2016, from \url{https://en.wikipedia.org/wiki/Bloch_Sphere}. Copyright 2012 by Glosser.ca.}
 Similar to logic gates in a classical computer, a QC manipulates qubits, by means of quantum logic gates which will be introduced in detail in Section~\ref{subsec:quantumlogicgates}. Generally, an arbitrary quantum logic gate $U$ acting on a single qubit state is a unitary transformation which can be represented as a $2\times2$ matrix:
 \begin{equation}
 \label{equ:generalquantumgate}
@@ -188,7 +283,7 @@ and its Hermitian conjugate $U^\dagger$ must be equal to its inverse:
 UU^\dagger = U^\dagger U = \mathbb{1} = UU^{-1} = U^{-1}U\, .
 \end{equation} 
 
-All quantum logic gates must be unitary since this preserves the normalisation of the qubit state it is acting on. The set of all two-dimensional complex unitary matrices with determinant one is called the special unitary group $\mathrm{SU}(2)$ and all single-qubit quantum gates are therefore elements of $\mathrm{SU}(2)$. Furthermore, a gate set $G$ consisting of $m$ quantum-gates $g_1,g_2,...,g_m$ is called a \emph{universal quantum gate set} when it is a dense subset of $\mathrm{SU}(2)$ as defined in the red box below.
+All quantum logic gates must be unitary since this preserves the normalisation of the qubit state it is acting on. The set of all two-dimensional complex unitary matrices with determinant one is called the special unitary group $\mathrm{SU}(2)$ and all single-qubit quantum gates are therefore elements of $\mathrm{SU}(2)$. Furthermore, a gate set $G$ consisting of $m$ quantum-gates $g_1,g_2,...,g_m$ is called a \emph{universal quantum gate set} when it is a dense subset of $\mathrm{SU}(2)$ as defined in the red box on the next page.
 \vspace{0.5cm}
 \begin{redbox}
 \textbf{Definition: Dense Subset of $\mathbf{SU(2)}$}\\
@@ -199,7 +294,7 @@ The gate set $G$ is a dense subset of $\mathrm{SU}(2)$ when given any quantum ga
 \subsection{Multi-qubit systems}
 \label{subsec:multiqubitsystems}
 
-A classical computer with one bit of memory is not particularly useful, and equally, a QC with one qubit is rather useless. To be able to perform large and complicated computations many individual qubits need to be combined to create a large QC. When moving from single to multi-qubit systems a new mathematical tool, the so-called tensor product (symbol $\otimes$), is needed. A tensor product of two qubits is written as
+A classical computer with one bit of memory is not particularly useful, and equally, a QC with one qubit is rather useless. To be able to perform large and complicated computations many individual qubits need to be combined to create a large QC. When moving from single to multi-qubit systems a new mathematical tool, the so-called tensor product (symbol $\otimes$), is needed. A tensor product of two qubits is written
 \begin{equation}
 \label{equ:tensor}
 \ket{\psi_1} \otimes \ket{\psi_2} = \ket{\psi_1}\ket{\psi_2} = \ket{\psi_1\psi_2}\, ,
@@ -221,7 +316,7 @@ In the vector representation a tensor product of two \0 kets (\textcolor{red}{re
 
 The last expression in Eq.~\ref{equ:tensor2qubits} shows that the two-qubit state $\ket{00}$ is no longer two but four-dimensional. Hence, it lives in a four-dimensional Hilbert space $\mathcal{H}_{4}$. A quantum gate acting on multiple qubits can therefore not have the same dimensions as a single-qubit gate (Eq.~\ref{equ:generalquantumgate}) which demands a new gate formalism for multi-qubit systems.
 
-Consider aiming to apply an arbitrary single-qubit gate $U$ (Eq.~\ref{equ:generalquantumgate}) to the first qubit in the two-qubit state $\ket{00}$. The second qubit in the state $\ket{00}$ shall remain unchanged which, in other words, means applying the $2\times2$ identity matrix $\mathbb{1}$ to it. To perform these operations, one defines the tensor product of two single-qubit gates as
+Consider aiming to apply an arbitrary single-qubit gate $U$ (Eq.~\ref{equ:generalquantumgate}) to the first qubit in the two-qubit state $\ket{00}$. The second qubit in the state $\ket{00}$ shall remain unchanged which, in other words, means applying the $2\times2$ identity matrix $\mathbb{1}$ to it. To perform these operations, one defines the tensor product of two single-qubit gates as:
 \begin{equation}
 \label{equ:matrixtensorproduct}
 \textcolor{red}{U} \otimes \textcolor{emerald}{\mathbb{1}} \doteq \textcolor{red}{\begin{pmatrix}
@@ -278,10 +373,10 @@ One can also first perform the single qubit operations on the respective qubits,
 
 This formalism can be extended to any number of qubits, and the use of tensor products leads to an exponential increase in the dimensionality of the Hilbert space. Hence, $n$ qubits live in a $2^n$-dimensional Hilbert space ($\mathcal{H}_{2}^{\otimes n}$) and can store the content of $2^n$ classical bits. As an example, only 33 qubits can store the equivalent of $2^{33} = 8,589,934,592$ bits (= 1 gigabyte) which clearly bears the potential for enormous speedups in computations as will be demonstrated later.
 
-When considering multi-qubit systems one will encounter quantum states that can or cannot be factorised. For example, consider reexpressing the last expression in Eq.~\ref{equ:2qubitlineartransform2} as
+When considering multi-qubit systems one will encounter quantum states that can or cannot be factorised. For example, consider reexpressing the last expression in Eq.~\ref{equ:2qubitlineartransform2} as:
 \begin{equation}
 \label{equ:2qubitreexpressed}
-\colvec{a\\0\\c\\0} = a\colvec{1\\0\\0\\0} + 0\colvec{0\\1\\0\\0} + c \colvec{0\\0\\1\\0} + 0\colvec{0\\0\\0\\1} \doteq  a\ket{00} + 0 \ket{01} + c \ket{10} + 0\ket{11}\, ,
+\colvec{a\\0\\c\\0} = a\colvec{1\\0\\0\\0} + 0\colvec{0\\1\\0\\0} + c \colvec{0\\0\\1\\0} + 0\colvec{0\\0\\0\\1} \doteq  a\ket{00} + c \ket{10}\, ,
 \end{equation}
 which can be factorised into the tensor product
 \begin{equation}
@@ -301,15 +396,13 @@ It is straightforward to verify that the two-qubit state $\ket{\Psi^+}$ cannot b
 \end{equation}
 where the subscripts indicate which electron belongs to Andile (A) and Buhle (B). Looking at this expression tells Andile that Buhle's electron must be in state $\ket{0}$ without having measured her electron! At her house, Buhle measures her electron one second after Andile has performed his measurement and indeed finds it to be in state $\ket{0}$. Note that the second electron was nowhere close to Andile and he was still able to determine its state by only measuring his electron. After repeating this experiment one thousand times, Andile and Buhle find perfect correlations in their results: whenever Andile measured his electron in state $\ket{0}$, Buhle found her electron in state $\ket{1}$ and vice versa.
 
-Non-local correlations between qubit measurement outcomes is a peculiar quantum property of non-factorising quantum states and is called \emph{quantum entanglement}. It is an integral part of quantum computation and Section~\ref{subsubsubsec:cnotgate} will give a concrete example of how to create an entangled state in a QC.
+Non-local correlations between qubit measurement outcomes is a peculiar quantum property of non-factorising quantum states and is called \emph{quantum entanglement}. It is an integral part of quantum computation and Section~\ref{subsubsec:multiqubitgates} will give a concrete example of how to create an entangled state in a QC.
 %\pagebreak
 \section{Quantum Logic Gates}
 \label{subsec:quantumlogicgates}
 Until this point, most introduced concepts came from the field of pure quantum theory. However, this section marks the important transition from quantum theory to the field of \emph{quantum information processing}. A classical computer processes information and performs computations by systematically manipulating bits through the application of logic gates e.g. NOT or XOR gates. Analogously, a quantum computer processes information and performs \emph{quantum computations} by manipulating qubits using \emph{quantum logic gates}, often just called \emph{quantum gates}. Usually, a sequence of such quantum gates is required to perform a certain task or solve a particular problem on a quantum computer. Such a sequence of quantum gates is called a \emph{quantum algorithm}. 
 
-There are many different ways of realising a QC such as using trapped ions, photons or superconducting Josephson junctions, etc. \cite{clarke2008superconducting,haffner2008quantum,o2007optical}. Depending on the chosen substrate, different sets of quantum logic gates can be implemented and in order to run a quantum algorithm it has to be mapped to the available quantum hardware. Thus, quantum algorithms have to be translated (compiled) into a series of gates consisting only of quantum gates from the available universal gate set. This is referred to as \emph{quantum compiling}. 
-
-The following subsections will introduce some major single and multi-qubit quantum logic gates that will be used extensively in the later sections of this thesis.
+There are many different ways of realising a QC, for example, using trapped ions, photons or superconducting Josephson junctions \cite{clarke2008superconducting,haffner2008quantum,o2007optical}. Depending on the chosen substrate, different sets of quantum logic gates can be implemented and in order to run a quantum algorithm it has to be mapped to the available quantum hardware. Thus, quantum algorithms have to be translated (compiled) into a series of gates consisting only of quantum gates from the available universal gate set. This is referred to as \emph{quantum compiling}. The following subsections will introduce some major single and multi-qubit quantum logic gates that will be used extensively in the later sections of this thesis.
 %In order to perform quantum computations, tools, analogous to the classical logic gates, are needed for qubit manipulation. 
 
 \subsection{Single-qubit gates}
@@ -325,7 +418,7 @@ X \doteq \begin{pmatrix}
  \end{pmatrix}\, .
 \end{equation}
 
-The action of the X gate on the arbitrary qubit state $\ket{\psi}$ (Eq.~\ref{equ: simplequbitvector}) can be analysed using the gate's matrix and the qubit's vector representation. Applying some straightforward linear algebra yields
+The action of the X gate on the arbitrary qubit state $\ket{\psi}$ (Eq.~\ref{equ: simplequbitvector}) can be analysed using the gate's matrix and the qubit's vector representation. Applying some straightforward linear algebra yields:
 \begin{equation}
 \label{equ:xverification1}
 X \ket{\psi} = X (\alpha \ket{0} + \beta \ket{1}) \doteq \begin{pmatrix}
@@ -352,6 +445,8 @@ X \ket{0} \doteq \begin{pmatrix}
  0  \\ 
  1 \end{pmatrix} \doteq  \ket{1}\, .
 \end{equation}
+
+\newpage
 In terms of the example with the valence electron of a hydrogen atom shown in Fig.~\ref{img:qubitatom} an X gate can be implemented by exciting the electron from the ground state $\ket{0}$ into the next higher electron valence shell, defined to be the $\ket{1}$ state, using a controlled laser pulse.
 %consider the qubit initially being in state \0. Applying an X gate will flip the qubit into the \1 state which can be implemented in the lab by exciting the electron into the next highest electron valence shell using a controlled laser pulse.
 
@@ -469,7 +564,7 @@ The controlled NOT or CNOT gate is given by the following $4\times4$ matrix:
 
 The CNOT gate takes two qubits, a control and a target qubit, as input. If and only if the control qubit is in the \1 state, the NOT (X) quantum gate is applied to the target qubit. In equations, the CNOT will always be followed by parentheses containing the control (c) qubit followed by the target (t) qubit: CNOT(c,t). The input-output relation, called truth table, for the CNOT gate is given in Table~\ref{tab:cnottruthtable} at the top of the page.
 
-To demonstrate the usefulness of the CNOT gate consider starting with two unentangled qubits both in the \0 state,
+To demonstrate the usefulness of the CNOT gate consider starting with two unentangled qubits both in the \0 state:
 \begin{equation}
 \ket{\phi_0} = \ket{0} \otimes \ket{0} = \ket{00}\, .
 \end{equation}
@@ -489,7 +584,7 @@ The last expression in Eq.~\ref{equ:cnotexamples} is one of the famous Bell stat
 The three most important multi-qubit quantum gates CNOT, Toffoli and nCNOT are characterised in Table~\ref{tab:multiqubitgates}.
 
 \begin{table}[H]
-\caption{Table containing some major multi-qubit quantum logic gates where $c_j$ stands for the j\textsuperscript{th} control qubit and $\mathbb{1}_k$ for the kxk identity matrix.}\vspace{1em}
+\caption{Table containing some major multi-qubit quantum logic gates where $c_j$ stands for the j\textsuperscript{th} control qubit and $\mathbb{1}_k$ for the $k\times k$ identity matrix.}\vspace{1em}
 \label{tab:multiqubitgates}
 \begin{tabular}{ c  C{1.8cm}  C{2cm}  c C{3cm}}\hline
 Gate & Name & Circuit representation & Matrix & Description \\ \midrule
@@ -527,30 +622,22 @@ nCNOT & n-controlled NOT & -  & $\begin{pmatrix}
 \section{Classical machine learning}
 \label{subsec:classicalmachinelearning}
 
-Machine learning (ML), a subfield of artificial intelligence, is aiming to enable computers to learn from data without a human explicitly programming its actions. It can be subdivided into the three major fields supervised \& unsupervised machine learning and reinforcement learning. The three areas can be most readily understood by considering the following three colloquial sentences:
+\emph{Machine learning} (ML), a subdiscipline of artificial intelligence, is trying to enable computers to learn from data without a human explicitly programming its actions. It can be subdivided into the three major fields \emph{supervised}, \emph{unsupervised} and \emph{reinforcement learning} \cite{schuld2015introduction}. Only supervised machine learning will be introduced because this thesis research exclusively focuses on supervised quantum machine learning algorithms. 
 
-\begin{redbox}
-Supervised ML\\
-- Based on \emph{input} and \emph{output} data\\
-"I know how to classify this data, but I need an algorithm to do the computations for me."
-\end{redbox}
-\begin{greenbox}
-Unsupervised ML\\
-- Based on \emph{input} data only\\
-"I have no clue how to classify this data, can the algorithm create a classifier for me?"
-\end{greenbox}
-\begin{bluebox}
-Reinforcement learning\\
-- Based on \emph{input} data only\\
-"I have no clue how to classify this data, can the algorithm classify this data and I'll give it a reward if it's correct or I'll punish it if it's not."
-\end{bluebox}
+The main idea of supervised machine learning is to train an algorithm on a \emph{labelled} training dataset containing, for example, pictures of fruits with their corresponding names such that it can be used to label new pictures that are not part of the training dataset. Since the samples in the training dataset are labelled, the process is said to be supervised.
 
-This thesis, specifically, is focusing on quantum-enhancements in the field of supervised machine learning only. The following section will introduce a well-known algorithm from the subfield of supervised ML: the $k$-nearest neighbour algorithm.
+More formally, in supervised machine learning one is presented with pairs of input ($x$) and output ($o$) variables and the machine learning algorithm is supposed to learn the function $f$ that maps inputs to their respective outputs:
+\begin{equation}
+\label{equ:inputoutputML}
+f(x) = o\, .
+\end{equation}
+Thereby, the algorithm should approximate the mapping function $f$ to such an extent that it can predict the output $o$ for new unknown input data $\tilde{x}$ \cite{bishop2006pattern}. The following section will introduce a well-known algorithm from the field of supervised ML: the classical $k$-nearest neighbour algorithm.
 
+\newpage
 \subsection{Classical $k$-nearest neighbour algorithm}
 \label{subsubsec:knearestneighbour}
 
-Understanding the quantum version of the distance weighted $k$-nearest neighbour (kNN) algorithm as proposed by \citeA{Schuld2014} requires prior knowledge of the classical version of the algorithm that will be introduced in this subsection.
+Understanding the later used quantum version of the distance weighted $k$-nearest neighbour (kNN) algorithm as proposed by \citeA{Schuld2014} requires prior knowledge of the classical version of the algorithm described by \citeA{cunningham2007k} that will be introduced in this subsection.
 
 Imagine working for a search engine company and you are given the task of classifying unknown pictures of fruits as either apples or bananas. To train your classification algorithm, you are given five different pictures of apples and five different pictures of bananas. This will be called the \emph{training data set} ${D}_{T}$. The pictures in ${D}_{T}$ may be taken from various angles, in varying light settings and include different coloured apples and bananas. Two examples of such images are shown in Fig.~\ref{img:appleandbanana}. 
 
@@ -562,7 +649,7 @@ Imagine working for a search engine company and you are given the task of classi
   \begin{minipage}[t]{0.48\textwidth}
     \includegraphics[width = \textwidth]{img/banana.png}
   \end{minipage}
-  \caption[]{Pictures of apple and banana from training data set ${D}_{T}$.\footnotemark[3]}
+  \caption[]{Example pictures of an apple and a banana from training data set ${D}_{T}$.\footnotemark[3]}
   \label{img:appleandbanana}
 \end{figure}
 
@@ -577,7 +664,7 @@ Given a new picture of either a banana or an apple, you first extract the same $
 \begin{figure}[H]
       \centering
        \includegraphics[scale=0.8]{img/knn-concept.png}
-       \caption[]{\label{fig:knnconcept} Visualisation of a kNN classifier\footnotemark[4]}
+       \caption[]{\label{fig:knnconcept} Visualisation of a kNN classifier. The yellow and purple points represent the training vectors from class A and B respectively. The red star represent the new input vector that needs classification. In the case of $k=3$ the red star would be classified as class B since the majority of the three nearest neighbours are from class B. If $k=6$ then the red star would be classified as class A since four out of the six nearest neighbours are from class A.\footnotemark[4]}
 \end{figure}
 
 \footnotetext[4]{Reprinted from GitHub, Burton de Wilde, Retrieved September 13, 2016, from \url{http://bdewilde.github.io/blog/blogger/2012/10/26/classification-of-hand-written-digits-3/}. Copyright 2012 by Burton de Wilde.}
@@ -592,18 +679,18 @@ In the case of $k = 10$, $\vec{x}$ would simply be assigned to the class with th
 In the fields of computer science and quantum information, the so-called \emph{Big-O notation}, first described by \citeA{bachmann1894analytische}, is often used to describe how the runtime of an algorithm depends on variables such as the desired accuracy, the number of input vectors or their size. Hence, this is a way of quantifying the \emph{algorithmic time complexity} of a quantum algorithm. In the later sections of this thesis, the Big-O notation will be used as a tool to quantify possible quantum speedups in kNN quantum machine learning algorithms.
 
 \begin{redbox}
-\textbf{Definition: Big-O $\mathcal{O}$}\\
+\textbf{Definition: Big-$\mathcal{O}$}\\
 \newline
 For any monotonic functions $t(n)$ and $g(n)$ defined on a subset of the real numbers (${\rm I\!R}$), one says that $t(n) = \mathcal{O}(g(n))$ if and only if when there exists constants $c \geq 0$ and $n_0 \geq 0$ such that
 
 \begin{equation}
-\mid t(n) \mid \quad \leq \quad c\text{ }\mid g(n) \mid\, , \quad \text{for all } n \geq n_0\, .
+\mid t(n) \mid \quad \leq \quad c\text{ }\cdot\mid g(n) \mid\, , \quad \text{for all } n \geq n_0\, .
 \end{equation}
 \end{redbox}
 \begin{redbox}
 \begin{figure}[H]
       \centering
-       \includegraphics[scale=0.3]{img/asymptoticupperbound.png}
+       \includegraphics[scale=0.5]{img/asymptoticupperbound.png}
        \caption[]{\label{fig:upperasym} Visualisation of $c\text{ }g(n)$ being an upper asymptotic bound for the function $t(n)$\footnotemark[5]}
 \end{figure}
 
@@ -612,26 +699,22 @@ For any monotonic functions $t(n)$ and $g(n)$ defined on a subset of the real nu
 This implies that the function $t(n)$ does not grow at a faster rate than $g(n)$, or in other words that some constant multiple of the function $g(n)$ is an upper asymptotic bound for the function $t(n)$, for all $n\rightarrow \infty$.
 \end{redbox}
 
-Fig.~\ref{fig:algcomplexities} provides a good visual comparison between common algorithmic complexity classes regarding their relation to the input size $n$. It can be seen that the best possible algorithmic time complexity is constant time, $\mathcal{O}(1)$, that is being independent of the size of the input data e.g. determining if a binary number is even or odd. An algorithm is still considered excellent if it runs in logarithmic time $\mathcal{O}(log(n))$. Linear search algorithms, for example, are linear in time expressed as $\mathcal{O}(n)$. More complex sort algorithms like "bubble sort" have a higher time complexity and often run in quadratic time ($\mathcal{O}(n^2)$). Furthermore, algorithms with complexity $\mathcal{O}(n^c)$ are said to run in polynomial time for some $c > 2$. If an algorithm has time complexity $\mathcal{O}((log(n))^c)$ for some $c \geq 1$ it is called polylogarithmic. The highest complexity classes are exponential $\mathcal{O}(c^n)$ with $c \geq 1$ and factorial time $\mathcal{O}(n!)$. 
-%For example, solving the travelling salesman problem using brute-force search runs in factorial time.
-
 \begin{figure}[H]
       \centering
-       \includegraphics[scale=0.35]{img/bigocomplexity.png}
-       \caption[]{\label{fig:algcomplexities} Overview of some major algorithmic complexity classes. In the figure, the number of operations (vertical axis) is plotted against the number of elements $n$ in the input data vector (horizontal axis). Based on colour coding defined on top of the table the following algorithmic time complexity classes are illustrated: constant time $\mathcal{O}(1)$, logarithmic time $\mathcal{O}(log(n))$, linear time $\mathcal{O}(n)$, linearithmic time $\mathcal{O}(n log(n))$, quadratic time $\mathcal{O}(n^2)$, exponential time $\mathcal{O}(2^n)$ and factorial time $\mathcal{O}(n!)$.\footnotemark[6]}
+       \includegraphics[scale=0.43]{img/bigocomplexity.png}
+       \caption[]{\label{fig:algcomplexities} Overview of some major algorithmic complexity classes. In the figure, the number of operations (vertical axis) is plotted against the number of elements $n$ in the input data vector (horizontal axis). Based on colour coding defined on top of the table the following algorithmic time complexity classes are illustrated: constant time $\mathcal{O}(1)$, logarithmic time $\mathcal{O}(\log(n))$, linear time $\mathcal{O}(n)$, linearithmic time $\mathcal{O}(n\mathrm{ }\log(n))$, quadratic time $\mathcal{O}(n^2)$, exponential time $\mathcal{O}(2^n)$ and factorial time $\mathcal{O}(n!)$.\footnotemark[6]}
 \end{figure}
 \footnotetext[6]{Reprinted from Big-O Cheatsheet, Retrieved December 28, 2016, from \url{http://bigocheatsheet.com/}. Copyright 2016 by Big-O Cheatsheet.}
 
-%TRANSITION TO NEXT SECTION NEEDED!
+Fig.~\ref{fig:algcomplexities} provides a good visual comparison between common algorithmic complexity classes regarding their relation to the input size $n$. It can be seen that the best possible algorithmic time complexity is constant time, $\mathcal{O}(1)$, that is being independent of the size of the input data e.g. determining if a binary number is even or odd. An algorithm is still considered excellent if it runs in logarithmic time $\mathcal{O}(\log(n))$. Linear search algorithms, for example, are linear in time expressed as $\mathcal{O}(n)$. More complex sort algorithms like 'bubble sort' have a higher time complexity and often run in quadratic time $\mathcal{O}(n^2)$. Furthermore, algorithms with complexity $\mathcal{O}(n^c)$ are said to run in polynomial time for some $c > 2$. If an algorithm has time complexity $\mathcal{O}((\log(n))^c)$ for some $c \geq 1$, it is called polylogarithmic. The highest complexity classes are exponential $\mathcal{O}(c^n)$ with $c \geq 1$ and factorial time $\mathcal{O}(n!)$. 
+
+The Big-O notation completes the introduction of the necessary theoretical foundations. All later sections will make extensive use of the topics introduced in this section. The following section will outline the computational methods used for implementation and simulation of the quantum kNN algorithm.
 
 \chapter{Methods}\label{sec:methods}
 
-The entirety of the research for this thesis is performed with pen and paper and a computer running the Linux operating system Ubuntu. The programming language Python, with its very intuitive syntax and extensive libraries for scientific computing and plotting, was used for the calculations and most of the plots for this thesis. More specifically, the open-source QuTiP library\footnotemark[7] for Python was used to create the Bloch sphere plots. All function plots were embedded directly into \LaTeX  by using the pgfplots package\footnotemark[8].
-
+The entirety of the research for this thesis is performed with pen and paper and a computer running the Linux operating system Ubuntu. The programming language Python, with its very intuitive syntax and extensive libraries for scientific computing and plotting, was used for the calculations and most of the plots for this thesis. More specifically, the open-source QuTiP library\footnotemark[7] for Python was used to create the Bloch sphere plots. All function plots were embedded directly into \LaTeX  by using the pgfplots package\footnotemark[8]. For the implementation of the quantum kNN algorithm, there are two fundamentally different ways: Running it a) by simulating a QC or b) by actually executing it on a real QC. The required tools for both possibilities will be explained in the following subsections.
 \footnotetext[7]{The open-source QuTiP library for Python may be downloaded from \url{http://qutip.org/}.}
 \footnotetext[8]{The \LaTeX  pgfplots package may be downloaded from \url{https://www.ctan.org/pkg/pgfplots}.}
-
-For the implementation of the quantum kNN algorithm, there are two fundamentally different ways: Running it a) by simulating a QC or b) by actually executing it on a real QC. The required tools for both possibilities will be explained in the following subsections.
 
 \section{Liqui$\ket{}$}
 \label{subsec:simulation}
@@ -649,7 +732,7 @@ For the quantum computing simulations in this thesis the quantum simulation tool
 \section{IBM Quantum Experience}
 \label{subsec:ibmqc}
 
-Since May 2016, IBM has enabled public cloud access to their experimental quantum processor containing five non-error-corrected superconducting qubits located at the IBM Quantum Lab at the Thomas J Watson Research Center in Yorktown Heights, New York \cite{ibmquantumcomputer}. Instead of only simulating on classical hardware, this opens up the possibility of executing the QML kNN algorithm on actual quantum hardware.
+Since May 2016, IBM has enabled public cloud access to their experimental quantum processor containing five non-error-corrected superconducting qubits located at the IBM Quantum Lab at the Thomas J Watson Research Center in Yorktown Heights, New York \cite{ibmquantumcomputer}. Instead of only simulating on classical hardware, this opens up the possibility of executing the quantum kNN algorithm on actual quantum hardware.
 
 The so-called IBM Quantum Experience\footnotemark[9] provides the user with access to their \emph{quantum composer} which is the main tool for algorithm design. The quantum composer shown in Fig.~\ref{fig:composer} consists of 5 horizontal lines, one for each qubit, and enables the user to choose from a universal gate set (bottom of Fig.~\ref{fig:composer}) consisting of the following 10 quantum logic gates: $\mathbb{1}$, X, Y, Z, H, S, S$^\dagger$, T, T$^\dagger$ and CNOT. Additionally, there are two different types of measurement:
 \begin{enumerate}[(a)]
@@ -669,7 +752,7 @@ Through simple drag and drop the user can move any of those quantum logic and me
 
 After registration, each user receives a limited number of units that are required to execute algorithms on the real quantum processor. A minimum of three units is required to send the gate sequence of a composed algorithm to IBM's QC in New York. Then, depending on the waiting queue and the availability of the QC the results will be send back via email within a few minutes or days. The IBM Quantum Experience also allows for free quantum simulations under ideal or real conditions which provide a great tool for experimentation without spending user units.
 
-The main limitation of the IBM Quantum Experience are the qubit decoherence times since they restrict the maximum number of possible operations before the qubits lose their quantum behaviour and their quantum information. Therefore, the number of quantum gates per qubit is currently limited to only 40 which essentially means 39 logic gates and one measurement gate. According to the qubit calibration results shown in Fig.~\ref{fig:calibration}, the amplitude damping times of the five qubits range from \SI{52.3}{\micro\second} to \SI{81.5}{\micro\second}. Furthermore, the phase damping times range from \SI{60.9}{\micro\second} to \SI{112.4}{\micro\second}. Currently, the implementation of a single qubit quantum logic gate takes 130ns and applying a CNOT gate takes 500ns \cite{ibmgatetimes}.
+The main limitation of the IBM Quantum Experience are the qubit decoherence times since they restrict the maximum number of possible operations before the qubits lose their quantum behaviour and their quantum information. Therefore, the number of quantum gates per qubit is currently limited to only 40 which essentially means 39 logic gates and one measurement gate. According to the qubit calibration results shown in Fig.~\ref{fig:calibration}, the amplitude damping times of the five qubits range from \SI{52.3}{\micro\second} to \SI{81.5}{\micro\second}. Furthermore, the phase damping times range from \SI{60.9}{\micro\second} to \SI{112.4}{\micro\second}. Currently, the implementation of a single-qubit quantum logic gate takes 130 nanoseconds (ns) and applying a CNOT gate takes 500ns \cite{ibmgatetimes}.
 
 \begin{figure}[H]
       \centering
@@ -680,19 +763,19 @@ The main limitation of the IBM Quantum Experience are the qubit decoherence time
 
 \chapter{Literature Review: Quantum-enhanced Machine Learning}\label{sec:qml}
 
-Classical machine learning takes classical data as input and learns from it using classical algorithms executed on classical computers: \citeA{aimeur2006machine} refer to this as C/C (classical data with classical algorithm). One enters the field of quantum machine learning when either \emph{quantum data} or quantum algorithms are combined with ideas from classical machine learning. Thus, \citeA{aimeur2006machine} divide the field of quantum machine learning into three different subfields: 1) C/Q - classical data with quantum algorithm, 2) Q/C - quantum data with classical algorithm and 3) Q/Q - quantum data with quantum algorithm. Thereby, quantum data includes any data describing a quantum mechanical system such as e.g. the Hamiltonian or state vector of a quantum system.
+Quantum-enhanced machine learning (QeML) tries to answer the question, if quantum mechanical properties, like quantum parallelism and interference, and concepts from quantum information can be used to improve classical machine learning algorithms. QeML is a relatively new research field illustrated by the fact that the term 'quantum machine learning' was only coined in 2013 in a manuscript by \citeA{lloyd2013quantum}. From 1995 onwards, many QeML algorithms have been published as summarised in the recent review paper by \citeA{biamonte2016quantum}. To achieve quantum speedups, many QeML algorithms use well-known quantum routines, such as Grover's search, quantum Fourier transform or quantum phase estimation, as subroutines for larger machine learning tasks \cite{aimeur2013quantum,anguita2003quantum,biamonte2016quantum,kapoor2016quantum,lloyd2013quantum}.
 
-The subfield Q/C processes quantum data with classical machine learning algorithms. For example, \citeA{carrasquilla2016machine} used Google's deep learning library TensorFlow to identify the current phase of and phase transitions in quantum systems. Subfield Q/Q  is the union of C/Q and Q/C and deals with the processing of quantum data using quantum algorithms e.g. learning the Hamiltonian of a quantum system using quantum machine learning algorithms.
+Classical machine learning takes classical data as input and learns from it using classical algorithms executed on classical computers: \citeA{aimeur2006machine} refer to this as C/C (classical data with classical algorithm). One enters the field of general QML when either quantum data or quantum algorithms are combined with machine learning. Thus, \citeA{aimeur2006machine} divide the field of quantum machine learning into three different subfields: 1) C/Q - classical data with quantum algorithm, 2) Q/C - quantum data with classical algorithm and 3) Q/Q - quantum data with quantum algorithm. Thereby, \emph{quantum data} includes any data describing a quantum mechanical system such as e.g. the Hamiltonian or state vector of a quantum system.
 
-The topic of this thesis is embedded within the subfield C/Q that aims to develop quantum algorithms for machine learning tasks involving classical data. This subfield is also called \emph{quantum-enhanced machine learning} since smart algorithm design can harness quantum parallelism and quantum interference to speed up classical machine learning algorithms. The following sections will introduce some main concepts from the field of quantum-enhanced machine learning. More specifically, Section~\ref{subsec:quantumknearestneighbour} presents the quantum version of the classical $k$-nearest neighbour algorithm whose quantum simulation will be discussed extensively in Section~\ref{subsec:qubitKNNresults}. However, since a quantum algorithm is a sequence of quantum gates, it can only manipulate quantum and not classical bits. Therefore, the next section will first outline how classical data can be transferred into quantum states that can then be used for quantum computations.
+The subfield Q/C processes quantum data with classical machine learning algorithms. For example, \citeA{carrasquilla2016machine} used Google's deep learning library TensorFlow to identify phase transitions in quantum systems. The subfield Q/Q is the union of C/Q and Q/C and deals with the processing of quantum data using quantum algorithms e.g. learning the Hamiltonian of a quantum system using quantum machine learning algorithms. This thesis work is embedded within the subfield C/Q, also called QeML, that aims to develop quantum algorithms for machine learning tasks involving classical data.
 
-%WRITE ANOTHER PARAGRAPH HERE!
+The following sections will introduce some main concepts from the field of QeML. More specifically, Section~\ref{subsec:quantumknearestneighbour} presents the quantum version of the classical $k$-nearest neighbour algorithm whose quantum simulation will be discussed extensively in Section~\ref{subsec:qubitKNNresults}. However, since a quantum algorithm is a sequence of quantum gates, it can only manipulate quantum and not classical bits. Therefore, the next section will first outline how classical data can be transferred into quantum states, thereby, enabling quantum computations.
 
 \newpage
 \section{Quantum state preparation}
 \label{subsec:quantumstatepreparation}
 
-\emph{Quantum state preparation} is the process of preparing a quantum state that accurately represents a vector containing classical (normalised) data. In order to apply any quantum machine learning algorithm to classical data, quantum state preparation always needs to be performed first. Therefore, the reader needs to be familiar with the concepts of quantum state preparation in later sections of this thesis. There are two fundamentally different ways of encoding classical data into quantum states which are both equally important for the work in this thesis. First, Section~\ref{subsubsec:classicaldataqubits} will focus on encoding classical data into the qubit states \0 and \1 and outline an important quantum state preparation routine by \citeA{Trugenberger2001}. Next, Section~\ref{subsubsec:classicaldataqubits} will introduce the concept of encoding classical data into the $2^n$ amplitudes of a $n$-qubit system. As an example for the next two subsections, consider the classical data represented by the two-dimensional vector $v$:
+\emph{Quantum state preparation} is the process of preparing a quantum state that accurately represents a vector containing classical (normalised) data. In order to apply any quantum machine learning algorithm to classical data, quantum state preparation always needs to be performed first. Therefore, the reader needs to be familiar with the concepts of quantum state preparation in later sections of this thesis. There are two fundamentally different ways of encoding classical data into quantum states which are both equally important for the work in this thesis. First, Section~\ref{subsubsec:classicaldataqubits} will focus on encoding classical data into the qubit states \0 and \1 and outline an important quantum state preparation routine by \citeA{Trugenberger2001}. Next, Section~\ref{subsubsec:classicaldataamplitudes} will introduce the concept of encoding classical data into the $2^n$ amplitudes of an $n$-qubit system. As an example for the next two subsections, consider the classical data represented by the two-dimensional vector $v$:
 \begin{equation}
 \label{equ:v}
 v = \begin{pmatrix}0.6 \\ 0.4 \end{pmatrix}\, .
@@ -819,7 +902,7 @@ At the end of Step 7 the next pattern can be loaded into the first register, and
 \subsection{Encoding classical data into amplitudes}
 \label{subsubsec:classicaldataamplitudes}
 
-A more sophisticated way of representing the classical vector $v$ (Eq.~\ref{equ:v}) as a quantum state makes use of the $2^n$ amplitudes in a $n$-qubit system. The general idea is expressed as:
+A more sophisticated way of representing the classical vector $v$ (Eq.~\ref{equ:v}) as a quantum state makes use of the $2^n$ amplitudes in an $n$-qubit system. The general idea is expressed as:
 \begin{equation}
 \label{equ:amplitudedata}
 \begin{pmatrix}
@@ -827,21 +910,21 @@ A more sophisticated way of representing the classical vector $v$ (Eq.~\ref{equ:
  \textcolor{emerald}{0.4}
  \end{pmatrix} \quad \rightarrow \quad \ket{n} = \sqrt{\textcolor{blue}{0.6}}\ket{0}+\sqrt{\textcolor{emerald}{0.4}}\ket{1}\, .
 \end{equation}
-Using amplitude-based quantum state preparation, a $k$-dimensional probability vector is encoded into only $log_{2}(k)$ qubits since the number of amplitudes grows exponentially with the number of qubits. Therefore, this type of quantum data storage makes exponential compression of classical data possible. Since a quantum gate acts on all amplitudes in the superposition at once there is the possibility of exponential speed-ups in quantum algorithms compared to their classical counterparts \cite{nielsen2010quantum}. Compared to the one-to-one correspondence in qubit-encoded state preparation, amplitude-encoding requires a much smaller number of qubits that grows logarithmically with the size of the classical data vector. However, initialising an arbitrary amplitude distribution is still an active field of research and requires the implementation of non-trivial quantum algorithms.
+Using amplitude-based quantum state preparation, a $k$-dimensional probability vector is encoded into only $log_{2}(k)$ qubits since the number of amplitudes grows exponentially with the number of qubits. Therefore, this type of quantum data storage makes exponential compression of classical data possible. Since a quantum gate acts on all amplitudes in the superposition at once there is the possibility of exponential speedups in quantum algorithms compared to their classical counterparts \cite{nielsen2010quantum}. Compared to the one-to-one correspondence in qubit-encoded state preparation, amplitude-encoding requires a much smaller number of qubits that grows logarithmically with the size of the classical data vector. However, initialising an arbitrary amplitude distribution is still an active field of research and requires the implementation of non-trivial quantum algorithms.
 
 For the case when the classical data vectors represent discrete probability distributions which are efficiently integrable on a classical computer, \citeA{Grover2002} developed a quantum routine to initialise the corresponding amplitude distribution.
 %The main idea in their algorithm is subdividing the respective probability distribution and encoding the probability
 %VERY COMPLICATED AND MOST GENERAL
 Additionally, \citeA{soklakov2006efficient} proposed a quantum algorithm, polynomial in the number of qubits, for the more general case that includes initialising amplitude distributions for classical data vectors representing non-efficiently integrable probability distributions.
 
-\section{Qubit-based quantum k-nearest neighbour algorithm}
+\section{Qubit-based quantum $k$-nearest neighbour algorithm}
 \label{subsec:quantumknearestneighbour}
 
 The quantum distance-weighted kNN algorithm outlined in this section was proposed by \citeA{Schuld2014} and is based on classical data being encoded into qubits rather than amplitudes. Therefore, it will be referred to as the \emph{qubit-based kNN algorithm}. This particular algorithm is introduced since Section~\ref{subsec:qubitKNNresults} will discuss its quantum simulation using a small scale machine learning problem.
 
-The task is to classify a binary qubit input pattern based on some number of binary qubit training patterns. Each training pattern belongs to a certain class that is encoded in a class qubit entangled with each training pattern. The main idea is that the qubit-based kNN algorithm calculates the distance between the binary input pattern and each training pattern through a series of quantum gates. Next, these distances are reversed such that training patterns close to the input have larger reverse distances than more distant training patterns. These reverse distances are then written into the amplitudes of the corresponding class qubit state. Note that the absolute value squared of an amplitude of a particular class qubit state, determines the probability of measuring that class. Thus, the probability of measuring a particular class is now dependent on the reverse distances between the training patterns of that class and the input pattern. Thus, the reverse distances can be seen as distance-dependent weights since they increase the probability of measuring the class with the majority of close training patterns. The necessary steps of the qubit-based kNN algorithm are outlined in detail below.
+The task is to classify a binary qubit input pattern based on a number of qubit training patterns. Each training pattern belongs to a certain class that is encoded in a class qubit entangled with each training pattern. The main idea is that the qubit-based kNN algorithm calculates the distance between the binary input pattern and each training pattern through a series of quantum gates. Next, these distances are reversed such that training patterns close to the input have larger reverse distances than more distant training patterns. These reverse distances are then written into the amplitudes of the corresponding class qubit state. Note that the absolute value squared of an amplitude of a particular class qubit state, determines the probability of measuring that class. Thus, the probability of measuring a particular class is now dependent on the reverse distances between the training patterns of that class and the input pattern. The reverse distances can be seen as distance-dependent weights since they increase the probability of measuring the class with closest training patterns. The necessary steps of the qubit-based kNN algorithm are outlined in detail below.
 
-The first step is to prepare an equal superposition $\ket{T}$ over $N$ training vectors $\vec{v}$ of length $n$ with binary entries $v_1,v_2,...v_n$ each assigned to a class $c$ as follows,
+The first step is to prepare an equal superposition $\ket{T}$ over $N$ training vectors $\vec{v}$ of length $n$ with binary entries $v_1,v_2,...v_n$ each assigned to a class $c$ as follows:
 \begin{equation}
 \label{equ:qubitknninitial}
 \ket{T} = \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket{v_1^p,v_2^p,...v_n^p;c^p}\, ,
@@ -859,18 +942,18 @@ The state now consists of four registers: 1) input ($x$) register, 2) training (
 \ket{\psi_2} &= \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket{x_1,x_2,...x_n;v_1^p,v_2^p,...v_n^p;c^p} \otimes H\ket{0}\notag\\
 &= \frac{1}{\sqrt{N}}\sum_{p=1}^N \ket{x_1,x_2,...x_n;v_1^p,v_2^p,...v_n^p;c^p} \otimes \frac{(\ket{0}+\ket{1})}{\sqrt{2}}\, .
 \end{align}
-The main step in any kNN algorithm is calculating some measure of distance between each training vector $\vec{v}$ and the input vector $\vec{x}$ which in this quantum algorithm is taken to be the Hamming distance defined in the red box below.
+The main step in any kNN algorithm is calculating some measure of distance between each training vector $\vec{v}$ and the input vector $\vec{x}$ which in this quantum algorithm is taken to be the Hamming distance defined in the red box on the next page.
 
 \begin{redbox}
 \textbf{Definition: Hamming distance}\\
 \newline
-First defined by \citeA{hamming1950error}, Hamming distance is the number of differing characters when comparing two equally long binary patterns $p_0$ and $p_1$.\\
+First defined by \citeA{hamming1950error}, Hamming distance (HD) is the number of differing characters when comparing two equally long binary patterns $p_0$ and $p_1$.\\
 \newline
 Example:\\
 $p_0 = \quad\textcolor{red}{0}\quad\textcolor{emerald}{0\quad1}$\\
 $p_1 = \quad\textcolor{red}{1}\quad\textcolor{emerald}{0\quad1}$\\
 $--------$\\
-Hamming distance $= 1+0+0 = 1$\\
+HD $= 1+0+0 = 1$\\
 \newline
 According to \citeA{Trugenberger2001}, the Hamming distance is equivalent to the squared Euclidean distance between the two binary patterns $p_0$ and $p_1$.
 \end{redbox}
@@ -905,21 +988,21 @@ the sum over the second register is computed. As a result, the total reverse Ham
 &= \frac{1}{\sqrt{2N}}\sum_p^N e^{i\frac{\pi}{2n}d_H(\vec{x},\vec{v}^p)} \ket{x_1,x_2,...x_n;d_1^p,d_2^p,...d_n^p;c^p;0} \notag\\
 &\quad\quad\quad\quad\quad\quad + e^{-i\frac{\pi}{2n}d_H(\vec{x},\vec{v}^p)} \ket{x_1,x_2,...x_n;d_1^p,d_2^p,...d_n^p;c^p;1}\, .
 \end{align}
-Applying an H gate to the ancilla register transfers the $d_H(\vec{x},\vec{v}^p)$ from the phases into the amplitudes such that the new quantum state is described by,
+Applying an H gate to the ancilla register transfers the $d_H(\vec{x},\vec{v}^p)$ from the phases into the amplitudes such that the new quantum state is described by:
 \begin{align}
 \label{equ:beforecm}
 \ket{\psi_5} &= (\mathbb{1} \otimes \mathbb{1} \otimes \mathbb{1} \otimes H)\ket{\psi_4}\notag\\
-&= \frac{1}{\sqrt{N}}\sum_p^N cos\big[\frac{\pi}{2n}d_H(\vec{x},\vec{v}^p)\big] \ket{x_1,x_2,...x_n;d_1^p,d_2^p,...d_n^p;c^p;0} \notag\\
-&\quad\quad\quad\quad\quad\quad + sin\big[\frac{\pi}{2n}d_H(\vec{x},\vec{v}^p)\big] \ket{x_1,x_2,...x_n;d_1^p,d_2^p,...d_n^p;c^p;1}\, .
+&= \frac{1}{\sqrt{N}}\sum_p^N \cos\big[\frac{\pi}{2n}d_H(\vec{x},\vec{v}^p)\big] \ket{x_1,x_2,...x_n;d_1^p,d_2^p,...d_n^p;c^p;0} \notag\\
+&\quad\quad\quad\quad\quad\quad + \sin\big[\frac{\pi}{2n}d_H(\vec{x},\vec{v}^p)\big] \ket{x_1,x_2,...x_n;d_1^p,d_2^p,...d_n^p;c^p;1}\, .
 \end{align}
 At this point the ancilla qubit is measured along the standard basis and all previous steps have to be repeated until the ancilla is measured in the \0 state. Since it is conditioned on a particular outcome, this type of measurement is called \emph{conditional measurement}. The probability of a successful conditional measurement is given by the square of the absolute value of the amplitude and is dependent on the average reverse Hamming distance between all training vectors and the input vector:
 \begin{equation}
-Prob(\ket{a} = \ket{0}) = \sum_p^N cos^2\big[\frac{\pi}{2n}d_H(\vec{x},\vec{v}^p)\big]\, .
+Prob(\ket{a} = \ket{0}) = \sum_p^N \cos^2\big[\frac{\pi}{2n}d_H(\vec{x},\vec{v}^p)\big]\, .
 \end{equation}
 Finally, to classify the input vector $\vec{x}$ the class register is measured along the standard basis. The probability of measuring a specific class c is then given by the following expression:
 \begin{equation}
 \label{equ:classprobs}
-Prob(c) = \frac{1}{NProb(\ket{a} = \ket{0})} \sum_{l \in c} cos^2\big[\frac{\pi}{2n}d_H(\vec{x},\vec{v}^l)\big]\, .
+Prob(c) = \frac{1}{NProb(\ket{a} = \ket{0})} \sum_{l \in c} \cos^2\big[\frac{\pi}{2n}d_H(\vec{x},\vec{v}^l)\big]\, .
 \end{equation}
 %When rewriting Eq.~\ref{equ:beforecm} into the following form,
 %\begin{align}
@@ -928,16 +1011,13 @@ Prob(c) = \frac{1}{NProb(\ket{a} = \ket{0})} \sum_{l \in c} cos^2\big[\frac{\pi}
 %&\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad + sin\big[\frac{\pi}{2n}d_H(\vec{x},\vec{v}^l)\big] \ket{x_1^l,x_2^l,...x_n^l;d_1^l,d_2^l,...d_n^l;1}
 %\end{align}
 %where $l$ runs over all vectors $\vec{v}$ of a particular class c.
-From Eq.~\ref{equ:classprobs} it is evident that the probability of measuring a certain class $c$ is dependent on the average total reverse Hamming distance between all training vectors belonging to class $c$ and the input vector $\vec{x}$. Since the total reverse Hamming distances represent distance-dependent weights, it becomes clear why this is the quantum equivalent to a classical distance-weighted kNN algorithm.
-
-In order to obtain a full picture of the probability distribution over the different classes a sufficient number of copies of $\ket{\psi_5}$ needs to be prepared and after successful conditional measurement on the ancilla qubit the class qubit needs to be measured.
+From Eq.~\ref{equ:classprobs} it is evident that the probability of measuring a certain class $c$ is dependent on the average total reverse Hamming distance between all training vectors belonging to class $c$ and the input vector $\vec{x}$. Since the total reverse Hamming distances represent distance-dependent weights, it becomes clear why this is the quantum equivalent to a classical distance-weighted kNN algorithm. Lastly, to obtain a full picture of the probability distribution over the different classes a sufficient number of copies of $\ket{\psi_5}$ needs to be prepared and after successful conditional measurement on the ancilla qubit the class qubit needs to be measured.
 \vspace{1cm}
 \begin{greenbox}
 \textbf{Complexity analysis}\\
 \newline
 According to \citeA{Schuld2014}, the preparation of the superposition has a complexity of $\mathcal{O}(Pn)$ where $P$ is the number of training vectors and $n$ is the length of the feature vectors. The algorithm has to be repeated $T$ times to get a statistically precise picture of the results. Hence, the total quantum kNN algorithm has an algorithmic complexity of $\mathcal{O}(TPn)$. 
 \end{greenbox}
-
 
 \chapter{Results and Discussion}\label{sec:resultsanddiscussion}
 
@@ -1053,7 +1133,7 @@ The first step towards the classification of 9-bit RGB colours using the qubit-b
 \ket{T} = \frac{1}{\sqrt{6}}\sum_{j=1}^N \ket{t_1^j,t_2^j,...t_9^j;c^j}\, .
 \end{equation}
 
-This can be done using the quantum state preparation algorithm by \citeA{Trugenberger2001} outlined in Section~\ref{subsubsec:classicaldataqubits}. In this case, the seven steps (see blue box in Section~\ref{subsubsec:classicaldataqubits}) of the state preparation algorithm have to be repeated six times in order to load the six RGB training patterns $t^j$ into the memory register $m$ defined in Eq.~\ref{equ:truginitial}. Afterwards, the state is defined as:
+In the subsequent discussion the quantum state of the simulation in the $i^{th}$ step will be denoted $\ket{\phi_i}$. The superposition $\ket{T}$ from Eq.~\ref{equ:trainingsup} can be achieved using the quantum state preparation algorithm by \citeA{Trugenberger2001} outlined in Section~\ref{subsubsec:classicaldataqubits}. In this case, the seven steps (see blue box in Section~\ref{subsubsec:classicaldataqubits}) of the state preparation algorithm have to be repeated six times in order to load the six RGB training patterns $t^j$ into the memory register $m$ defined in Eq.~\ref{equ:truginitial}. Afterwards, the current state of the simulation is defined as:
 \begin{equation}
 \label{equ:trugcolours}
 \ket{\phi_0} = \frac{1}{\sqrt{6}} \sum^6_{j=1} \ket{t^6_1,t^6_2,...,t^6_9;u_1=0,u_2=0;t^j_1,t^j_2,...,t^j_9}\, .
@@ -1068,7 +1148,7 @@ In the next step of the quantum kNN algorithm, the yet unclassified 9-bit RGB in
 \end{equation}
 
 \newpage
-Hereby, the trick is to realise that Eq.~\ref{equ:trugcolours} and ~\ref{equ:fullinitialstate} contain the same number of qubits. Firstly, each of them has nine qubits in the first register. Secondly, Eq.~\ref{equ:trugcolours} has two utility qubits that are balanced by the ancilla and the class qubit in Eq.~\ref{equ:fullinitialstate}. Lastly, there are again nine qubits in the third register in Eq.~\ref{equ:trugcolours} and the second register in Eq.~\ref{equ:fullinitialstate}. Thus, $\ket{\psi_0}$ and $\ket{\phi}$ both contain $9+9+2 = 20$ qubits. Since $\ket{\phi}$ is the current state of the qubits in the simulation, one simply needs to redefine the utility qubits such that the first one becomes the class qubit $\ket{u_1} = \ket{c^j}$ and the second utility qubit becomes the ancilla $\ket{u_2} = \ket{a}$. Note that class and ancilla qubit are currently still in the \0 state as indicated in the current quantum state $\ket{\phi_1}$:
+Hereby, the trick is to realise that Eq.~\ref{equ:trugcolours} and \ref{equ:fullinitialstate} contain the same number of qubits. Firstly, each of them has nine qubits in the first register. Secondly, Eq.~\ref{equ:trugcolours} has two utility qubits that are balanced by the ancilla and the class qubit in Eq.~\ref{equ:fullinitialstate}. Lastly, there are again nine qubits in the third register in Eq.~\ref{equ:trugcolours} and the second register in Eq.~\ref{equ:fullinitialstate}. Thus, $\ket{\psi_0}$ and $\ket{\phi_0}$ both contain $9+9+2 = 20$ qubits. Since $\ket{\phi_0}$ is the current state of the qubits in the simulation, one simply needs to redefine the utility qubits such that the first one becomes the class qubit $\ket{u_1} = \ket{c^j}$ and the second utility qubit becomes the ancilla $\ket{u_2} = \ket{a}$. Note that class and ancilla qubit are currently still in the \0 state as indicated in the current quantum state $\ket{\phi_1}$:
 \begin{equation}
 \label{equ:trugcolours2}
 \ket{\phi_1} = \frac{1}{\sqrt{6}} \sum^6_{j=1} \ket{0_1,0_2,...,0_9;c^j=0;a=0;t^j_1,t^j_2,...,t^j_9}\, .
@@ -1081,7 +1161,7 @@ Eq.~\ref{equ:trugcolours2} shows a quantum state with four registers as desired 
 \ket{\phi_2} = \frac{1}{\sqrt{6}} \sum^6_{j=1} \ket{x_1,x_2,...,x_9;c^j=0;a=0;t^j_1,t^j_2,...,t^j_9}\, .
 \end{equation}
 
-Currently, every training pattern is considered class $\ket{0}$ (red) which is, of course, incorrect. To flip the class qubit for the three training patterns encoding blue colours, one can make use of X and nCNOT gates. Consider the fourth (ID 4) training pattern $t^4$ = 000 000 111 from Table~\ref{table:trainingcolours1}. One might think that simply applying a 3CNOT($t_7,t_8,t_9$,c) gate controlled by the three qubits that are in the \1 state will suffice to flip the class label for this training pattern. However, depending on the classification problem at hand there might be another training pattern e.g. $t'$ = 111 110 111 belonging to class \0 for which the application of the 3CNOT($t_7,t_8,t_9$,c) gate would incorrectly flip the class qubit since the last three qubits of $t'$ are also in the \1 state.
+Currently, every training pattern is considered class $\ket{0}$ (red) which is, of course, incorrect. To flip the class qubit for the three training patterns encoding blue colours, one can make use of X and nCNOT gates. Consider the fourth (ID 4) training pattern $t^4$ = 000 000 111 from Table~\ref{tab:trainingcolours1}. One might think that simply applying a 3CNOT($t_7,t_8,t_9$,c) gate controlled by the three qubits that are in the \1 state will suffice to flip the class label for this training pattern. However, depending on the classification problem at hand there might be another training pattern e.g. $t'$ = 111 110 111 belonging to class \0 for which the application of the 3CNOT($t_7,t_8,t_9$,c) gate would incorrectly flip the class qubit since the last three qubits of $t'$ are also in the \1 state.
 
 To avoid this problem, apply an X gate to all qubits in the training pattern that are currently in the \0 state. Continuing the example with the training pattern $t^4$ = 000 000 111, X gates need to be applied to the first six qubits. The result is then $t^{4*}$ = 111 111 111. After this step, any other training pattern will contain at least one zero e.g. flipping the first six qubits of $t'$ = 111 110 111 results in $t'^{*}$ = 000 001 111. Hence, the training pattern $t^4$ is now the only pattern in the fourth register consisting only of ones. Now, this property can be exploited by applying a 9CNOT($t_1,t_2,...,t_9$,c) gate that will flip the class label to $\ket{1}$ for training pattern $t^4$ only. Acting X gates on the first six qubits again will restore all training patterns to their original states. Repeating this procedure for all training patterns belonging to class $\ket{1}$ (blue) entangles the class qubit $\ket{c}$ with the training patterns and the overall state is now described by the equation:
 \begin{equation}
@@ -1096,7 +1176,7 @@ Note that the class qubit is now not in the \0 state only. Inspection of Eq.~\re
 \end{equation}
 
 \newpage
-The next step is the calculation of the HD between the input pattern and each training pattern which is done by the straightforward application of nine CNOT($x_s,t_s^j$) gates. By applying an X gate to every qubit in the fourth register the HD gets reversed as discussed in Section~\ref{subsec:quantumknearestneighbour}. The state is now:
+The next step is the calculation of the Hamming distance between the input pattern and each training pattern which is done by the straightforward application of nine CNOT($x_s,t_s^j$) gates. By applying an X gate to every qubit in the fourth register the Hamming distance gets reversed as discussed in Section~\ref{subsec:quantumknearestneighbour}. The state is now:
 \begin{align}
 \ket{\phi_5} = \frac{1}{\sqrt{12}} \sum^6_{j=1} \prod_{s=1}^9 X(t^j_s)CNOT(x_s,t^j_s) \Big[&\ket{x_1,x_2,...,x_9;c^j;0;t^j_1,t^j_2,...,t^j_9}\notag\\
 &+ \ket{x_1,x_2,...,x_9;c^j;1;t^j_1,t^j_2,...,t^j_9}\Big]
@@ -1180,25 +1260,25 @@ The other three input pattern from input dataset I were all correctly classified
 Next, the algorithm was trained using training dataset II and asked to classify all eight input pattern from input dataset II, again repeating each simulation 100 times. The results for this second evaluation stage are listed in Table~\ref{tab:colourresults2}. In all cases, the probabilities retrieved from the simulations do not deviate by more than $\frac{1}{\sqrt{100}}=0.1$ and, in most cases, closely resemble the theoretically predicted probabilities after 100 runs.
 
 \begin{table}
-\begin{tabular}{| C{1.4cm} | C{2.1cm} |C{1.7cm} | C{1.7cm} | C{1.7cm} |C{1.7cm}| C{1.7cm}|}
+\begin{tabular}{| C{0.45cm}  | C{1.35cm} | C{2.1cm} |C{1.7cm} | C{1.6cm} | C{1.6cm} |C{1.6cm}| C{1.6cm}|}
       \toprule
-      Colour & Binary 9-bit RGB string & $\mathrm{Prob(CM)}$ & $\mathrm{Prob}$ $(\ket{c} = \ket{0})$ & $\mathrm{Prob}$ $(\ket{c} = \ket{1})$ & Expected class & Algorithm output\\
+      ID & Colour & Binary 9-bit RGB string & $\mathrm{Prob(CM)}$ & $\mathrm{Prob}$ $(\ket{c} = \ket{0})$ & $\mathrm{Prob}$ $(\ket{c} = \ket{1})$ & Expected class & Algorithm output\\
       \midrule
-       \cellcolor{inputred1} & 100 000 000 & \begin{tabular}{c} 0.7543* \\\midrule 0.8500 \end{tabular} & \begin{tabular}{c} 0.5515* \\\midrule 0.5529 \end{tabular} & \begin{tabular}{c} 0.4485* \\\midrule 0.4471 \end{tabular} & red ($\ket{0}$) & red ($\ket{0}$)\\\midrule
+       1 & \cellcolor{inputred1} & 100 000 000 & \begin{tabular}{c} 0.7543* \\\midrule 0.8500 \end{tabular} & \begin{tabular}{c} 0.5515* \\\midrule 0.5529 \end{tabular} & \begin{tabular}{c} 0.4485* \\\midrule 0.4471 \end{tabular} & red ($\ket{0}$) & red ($\ket{0}$)\\\midrule
        
-       \cellcolor{inputmixred2} & 110 100 000 & \begin{tabular}{c} 0.6312* \\\midrule 0.6100 \end{tabular} & \begin{tabular}{c} 0.6710* \\\midrule 0.7377 \end{tabular} & \begin{tabular}{c} 0.3289* \\\midrule 0.2623 \end{tabular} & red ($\ket{0}$) & red ($\ket{0}$)\\\midrule
+       2 & \cellcolor{inputmixred2} & 110 100 000 & \begin{tabular}{c} 0.6312* \\\midrule 0.6100 \end{tabular} & \begin{tabular}{c} 0.6710* \\\midrule 0.7377 \end{tabular} & \begin{tabular}{c} 0.3289* \\\midrule 0.2623 \end{tabular} & red ($\ket{0}$) & red ($\ket{0}$)\\\midrule
        
-       \cellcolor{inputmixred3} & 101 100 100  & \begin{tabular}{c} 0.6996* \\\midrule 0.7200 \end{tabular} & \begin{tabular}{c} 0.5821* \\\midrule 0.5694 \end{tabular} & \begin{tabular}{c} 0.4179* \\\midrule 0.4306 \end{tabular} & red ($\ket{0}$) & red ($\ket{0}$)\\\midrule\midrule
+       3 & \cellcolor{inputmixred3} & 101 100 100  & \begin{tabular}{c} 0.6996* \\\midrule 0.7200 \end{tabular} & \begin{tabular}{c} 0.5821* \\\midrule 0.5694 \end{tabular} & \begin{tabular}{c} 0.4179* \\\midrule 0.4306 \end{tabular} & red ($\ket{0}$) & red ($\ket{0}$)\\\midrule\midrule
        
-       \cellcolor{inputmixred4} & 110 100 110  & \begin{tabular}{c} 0.6470* \\\midrule 0.6600 \end{tabular} & \begin{tabular}{c} 0.5229* \\\midrule 0.5000 \end{tabular} & \begin{tabular}{c} 0.4771* \\\midrule 0.5000 \end{tabular} & none & blue ($\ket{1}$)\\\midrule\midrule
+       4 & \cellcolor{inputmixred4} & 110 100 110  & \begin{tabular}{c} 0.6470* \\\midrule 0.6600 \end{tabular} & \begin{tabular}{c} 0.5229* \\\midrule 0.5000 \end{tabular} & \begin{tabular}{c} 0.4771* \\\midrule 0.5000 \end{tabular} & none & blue ($\ket{1}$)\\\midrule\midrule
        
-       \cellcolor{inputblue1} & 000 000 110  & \begin{tabular}{c} 0.6880* \\\midrule 0.7000 \end{tabular} & \begin{tabular}{c} 0.3760* \\\midrule 0.3714 \end{tabular} & \begin{tabular}{c} 0.6240* \\\midrule 0.6286 \end{tabular} & blue ($\ket{1}$) & blue ($\ket{1}$)\\\midrule
+       5 & \cellcolor{inputblue1} & 000 000 110  & \begin{tabular}{c} 0.6880* \\\midrule 0.7000 \end{tabular} & \begin{tabular}{c} 0.3760* \\\midrule 0.3714 \end{tabular} & \begin{tabular}{c} 0.6240* \\\midrule 0.6286 \end{tabular} & blue ($\ket{1}$) & blue ($\ket{1}$)\\\midrule
        
-       \cellcolor{inputmixblue2} & 000 100 111 &  \begin{tabular}{c} 0.5649* \\\midrule 0.5500 \end{tabular} & \begin{tabular}{c} 0.2266* \\\midrule 0.2182 \end{tabular} & \begin{tabular}{c} 0.7734* \\\midrule 0.7818 \end{tabular} & blue ($\ket{1}$) & blue ($\ket{1}$)\\\midrule
+       6 & \cellcolor{inputmixblue2} & 000 100 111 &  \begin{tabular}{c} 0.5649* \\\midrule 0.5500 \end{tabular} & \begin{tabular}{c} 0.2266* \\\midrule 0.2182 \end{tabular} & \begin{tabular}{c} 0.7734* \\\midrule 0.7818 \end{tabular} & blue ($\ket{1}$) & blue ($\ket{1}$)\\\midrule
        
-       \cellcolor{inputmixblue3} &  100 100 111 &  \begin{tabular}{c} 0.6236* \\\midrule 0.6100 \end{tabular} & \begin{tabular}{c} 0.3330* \\\midrule 0.3279 \end{tabular} & \begin{tabular}{c} 0.6670* \\\midrule 0.6721 \end{tabular} & blue ($\ket{1}$) & blue ($\ket{1}$)\\\midrule
+       7 & \cellcolor{inputmixblue3} &  100 100 111 &  \begin{tabular}{c} 0.6236* \\\midrule 0.6100 \end{tabular} & \begin{tabular}{c} 0.3330* \\\midrule 0.3279 \end{tabular} & \begin{tabular}{c} 0.6670* \\\midrule 0.6721 \end{tabular} & blue ($\ket{1}$) & blue ($\ket{1}$)\\\midrule
        
-       \cellcolor{inputmixblue4} & 110 100 101 &  \begin{tabular}{c} 0.6807* \\\midrule 0.7500 \end{tabular} & \begin{tabular}{c} 0.4970* \\\midrule 0.4933 \end{tabular} & \begin{tabular}{c} 0.5030* \\\midrule 0.5067 \end{tabular}  & blue ($\ket{1}$)& blue ($\ket{1}$)\\\midrule
+       8 & \cellcolor{inputmixblue4} & 110 100 101 &  \begin{tabular}{c} 0.6807* \\\midrule 0.7500 \end{tabular} & \begin{tabular}{c} 0.4970* \\\midrule 0.4933 \end{tabular} & \begin{tabular}{c} 0.5030* \\\midrule 0.5067 \end{tabular}  & blue ($\ket{1}$)& blue ($\ket{1}$)\\\midrule
  \bottomrule
     \end{tabular}
     \caption{\label{tab:colourresults2} Classification results for input dataset II after 100 runs. Trained with training dataset II. Theoretical predictions (marked with asterisks) on top, simulation results at the bottom.}
@@ -1209,9 +1289,9 @@ This time, the first red input pattern 100 000 000, previously incorrectly class
 The second red colour (ID 2), with slight green content, was again correctly classified but this time the probability distribution over the class qubit states is different when compared with the corresponding entries in Table~\ref{tab:colourresults}. Using training dataset II instead of training set I increased the probability of measuring class $\ket{0}$ by $0.12480$. This again underlines the importance of size and quality of the training dataset.
 %Consisting of majority red with slight green and blue content, the third red colour was still classified correctly. Although, the probabilities of measuring class \0 and \1 are close to being equal the simulation yielded a distribution closely resembling the theoretical prediction after only 100 runs.
 \newpage
-The fourth colour (ID 4) in Table~\ref{tab:colourresults2} with a slight green and equal red and blue content was deliberately chosen as an edge case. The classifier assigned it to class blue, but the class probabilities obtained from the simulation are equal for the \0 and \1 state. Note that the theoretical probabilities slightly favour class red which can be traced back to the fact that the quantum kNN is based on distance-weighting. This can be seen when analysing training dataset II; all but one red training colour have a one at the second bit position whereas all but two blue training colours have a one at the second to last bit position. Since the fourth input colour has a one at the second, as well as at the second to last bit position, the Hamming distances to the red training colours are slightly smaller than to the blue training colours. As the Hamming distances have been reversed, the red class is slightly favoured due to the distance-dependent weights. Thus, this edge case exposes a slight bias within the training dataset II.
+The fourth colour (ID 4) in Table~\ref{tab:colourresults2} with a slight green and equal red and blue content was deliberately chosen as an edge case. The classifier assigned it to class blue, but the class probabilities obtained from the simulation are equal for the \0 and \1 state. Note that the theoretical probabilities slightly favour class red which can be traced back to the fact that the quantum kNN is based on distance-weighting. This can be seen when analysing training dataset II; all but one red training colour have a 1 at the second bit position whereas all but two blue training colours have a 1 at the second to last bit position. Since the fourth input colour has a 1 at the second, as well as at the second to last bit position, the Hamming distances to the red training colours are slightly smaller than to the blue training colours. As the Hamming distances have been reversed, the red class is slightly favoured due to the distance-dependent weights. Thus, this edge case exposes a slight bias within the training dataset II.
 
-In the case of the blue input colours, the first three were all classified correctly with the class qubit probabilities clearly favouring the measurement outcome \1. Note that the third blue tone was classified correctly despite some red and green content.  The last (fourth) blue tone is another edge case with only slightly larger blue than red content. Yet, it was also correctly classified since the probability of measuring class blue is slightly higher. 
+In the case of the blue input colours, the first three were all classified correctly with the class qubit probabilities clearly favouring the measurement outcome \1. Note that the third blue tone was classified correctly despite some red and green content.  The last blue tone (ID 8) is another edge case with only slightly larger blue than red content. Yet, it was also correctly classified since the probability of measuring class blue is slightly higher. 
 %since the probabilities retrieved from the simulation do not resemble the theoretically predicted values. By increasing the number of runs, the simulation results will eventually converge to the theoretical predictions and the classification outcome will change to blue.
 
 In conclusion, the quantum simulations of the qubit-based kNN algorithm led to three out of four correct classification using training dataset I and, ignoring the edge case with equal red and blue content, seven out of seven correct classifications using training dataset II. Hence, with training dataset I the simulated quantum classifier achieved an accuracy of 75\%. The accuracy increased to 100\% with the use of training dataset II. These results clearly show that the qubit kNN routine, based on distance-weighting with reverse Hamming distance, is a very effective classification algorithm concerning 9-bit RGB colours.
@@ -1227,7 +1307,7 @@ It was shown that for this classification problem the quantum kNN algorithm by \
 %As an alternative to the qubit-based kNN algorithm
 %quantum simulations of the qubit-based kNN algorithm 
 %shortcomings )
-To enable an implementation of the quantum kNN algorithm using the IBM Quantum Experience platform a new amplitude-based kNN (aKNN) algorithm was developed for this thesis. This algorithm by \citeA{SchuldFingerhuth} will be introduced in this section using colours for input \& training vectors and classes $A$ and $B$ based on the schematic Fig.~\ref{fig:knnconcept} in Section~\ref{subsubsec:knearestneighbour}. The main idea of the aKNN algorithm is to interfere the amplitudes encoding the training vectors with the amplitudes encoding the input vector. One can think of this like water waves travelling towards each other; constructive interference happens when two crests add up producing a larger wave, and destructive interference takes place when a crest and a trough cancel each other out. 
+To enable an implementation of the quantum kNN algorithm using the IBM Quantum Experience, a new amplitude-based kNN (aKNN) algorithm was developed for this thesis. This algorithm by \citeA{SchuldFingerhuth} will be introduced in this section using colours for input \& training vectors and classes $A$ and $B$ based on the schematic Fig.~\ref{fig:knnconcept} in Section~\ref{subsubsec:knearestneighbour}. The main idea of the aKNN algorithm is to interfere the amplitudes encoding the training vectors with the amplitudes encoding the input vector. One can think of this like water waves travelling towards each other; constructive interference happens when two crests add up producing a larger wave, and destructive interference takes place when a crest and a trough cancel each other out. 
 
 \begin{bluebox}
 The algorithm starts with the assumption that the following initial state can be constructed from $M$ training vectors with $N$ entries:
@@ -1257,10 +1337,10 @@ Having prepared the initial state $\ket{\psi_0}$ one has to simply apply an H ga
 &= \frac{1}{2\sqrt{M}}\sum_{m=1}^{M} (\ket{0}[\ket{\textcolor{red}{\Psi_{x}}}+\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{m}}}}]+\ket{1}[\ket{\textcolor{red}{\Psi_{x}}}-\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{t^{m}}}}])\ket{c^{m}(\textcolor{darkyellow}{A} \ or \ \textcolor{purple}{B})}\ket{m}\, .
 \end{align}
 
-To only select the constructive interference, a conditional measurement has to be performed on the ancilla qubit. All previous steps have to be repeated until the ancilla is measured in the \0 state. The probability for this to happen is:
+To only select the constructive interference, a conditional measurement (CM) has to be performed on the ancilla qubit. All previous steps have to be repeated until the ancilla is measured in the \0 state. The probability for this to happen is:
 \begin{equation}
 \label{equ:probancilla}
-\mathrm{Prob(CM)} = \mathrm{Prob}(\ket{a} = \ket{0})= 1 - \frac{1}{4M} \sum_{m=1}^M \sum_{i=1}^N \mid \textcolor{red}{x_i} - \textcolor{purple}{t_i^m} \mid ^2
+\mathrm{Prob(CM)} = \mathrm{Prob}(\ket{a} = \ket{0})= 1 - \frac{1}{4M} \sum_{m=1}^M \sum_{i=1}^N \mid \textcolor{red}{x_i} - \textcolor{purple}{t_i^m} \mid ^2\, .
 \end{equation}
 \end{bluebox}
 
@@ -1271,12 +1351,12 @@ After the successful conditional measurement, the state is proportional to:
 
 \begin{equation}
 \label{equ:amplaftercm}
-\ket{\psi_2} = \frac{1}{2\sqrt{M}}\sum_{m=1}^{M} \sum_{i=1}^{N} (\textcolor{red}{x_i}+\textcolor{darkyellow}{t}\textcolor{purple}{_i^m})\ket{0}\ket{i}\ket{c^{m}(\textcolor{darkyellow}{A} \ or \ \textcolor{purple}{B})}\ket{m}
+\ket{\psi_2} = \frac{1}{2\sqrt{M}}\sum_{m=1}^{M} \sum_{i=1}^{N} (\textcolor{red}{x_i}+\textcolor{darkyellow}{t}\textcolor{purple}{_i^m})\ket{0}\ket{i}\ket{c^{m}(\textcolor{darkyellow}{A} \ or \ \textcolor{purple}{B})}\ket{m}\, .
 \end{equation}
 
-The probability of measuring e.g. class $\ket{1}$ (\textcolor{purple}{$B$}) is given by the following expression:
+The probability of measuring e.g. class $\ket{1}$ (\textcolor{purple}{$B$}) is then given by the following expression:
 \begin{equation}
-\mathrm{Prob}(\ket{c^m} = \ket{1(\textcolor{purple}{B})})= \sum_{m \mid c^m=1(\textcolor{purple}{B})} 1 - \frac{1}{4M} \sum_{i=1}^N \mid \textcolor{red}{x_i} - \textcolor{purple}{t^m_i} \mid ^2
+\mathrm{Prob}(\ket{c^m} = \ket{1(\textcolor{purple}{B})})= \sum_{m \mid c^m=1(\textcolor{purple}{B})} 1 - \frac{1}{4M} \sum_{i=1}^N \mid \textcolor{red}{x_i} - \textcolor{purple}{t^m_i} \mid ^2\, .
 \end{equation}
 
 Note that the probability of measuring class $\ket{1}$ (\textcolor{purple}{$B$}) is dependent on the squared Euclidean distance between the input vector and each training vector belonging to class \textcolor{purple}{$B$}. Thus, if the average of these squared Euclidean distances is small, the probability of measuring the class qubit in the \1 state is greater. This quantum routine, therefore, resembles a distance-weighted kNN algorithm with $k=all$.
@@ -1297,7 +1377,7 @@ Independent of number and size of the input and training vectors, the algorithm 
 %Attempt to implement the amplitude-based kNN algorithm}
 The aKNN algorithm was designed for an actual implementation on the IBM quantum computer. Since the IBM Quantum Experience only provides five qubits and a relatively small universal gate set, a very simple low-dimensional classification problem is selected. The first part of this section will introduce the chosen classification problem. Thereafter, the process of quantum compiling the aKNN algorithm for an implementation with the IBM Quantum Experience will be explained.
 
-Perhaps the simplest problem is the classification of a two-dimensional quantum state vector as either \0 or \1 depending on its position on the Bloch sphere. This choice also enables easy visualisation throughout the discussion since any single qubit vector has a well-defined position on the Bloch sphere (see Section~\ref{subsubsec:qubits}). The training set is listed in Table~\ref{tab:trainingset} and consists only of the \0 and the \1 vector depicted in Fig.~\ref{fig:3over4} as the yellow and purple vector respectively. The red vector in Fig.~\ref{fig:3over4} will be the input vector and its qubit state and vector representation are given in Table~\ref{tab:inputvectors}.
+Perhaps the simplest problem is the classification of a two-dimensional quantum state vector as either \0 or \1 depending on its position on the Bloch sphere. This choice also enables easy visualisation throughout the discussion since any single qubit vector has a well-defined position on the Bloch sphere (see Section~\ref{subsubsec:qubits}). The training set is listed in Table~\ref{tab:trainingset} and consists only of the \0 and the \1 vector depicted as the yellow and purple vector in Fig.~\ref{fig:3over4} respectively. The red vector in Fig.~\ref{fig:3over4} will be the input vector and its qubit state and vector representation are given in Table~\ref{tab:inputvectors}.
 
 \begin{figure}
 \centering
@@ -1419,7 +1499,7 @@ In order to entangle $\ket{\textcolor{purple}{\Psi_{t^{1}}}}$ with the \1 state 
 Note again, that also the CCNOT gate is not an element of IBM's universal gate set which will be addressed later in Section~\ref{subsubsubsec:toffoli}.
 
 \newpage
-Eq.~\ref{equ:chi4} shows that the class qubit for the first training vector is already in the correct \0 state. It remains to flip the class qubit for the second training vector by applying a CNOT gate using the $d$ qubit as control and the class($c$) qubit as target. The resulting state is then defined by:
+Eq.~\ref{equ:chi4} shows that the class qubit for the first training vector is already in the correct \0 state. It remains to flip the class qubit for the second training vector by applying a CNOT gate using the $d$ qubit as control and the class ($c$) qubit as target. The resulting state is then defined by:
 \begin{align}
 \label{equ:chi5}
 \ket{\chi_5} &= CNOT(d,c)\ket{\chi_4}\notag\\
@@ -1474,9 +1554,11 @@ If and only if the control qubit is \1 then the gate sequence $e^{i\alpha}AXBXC$
 e^{i\alpha}AXBXC = U\, .
 \end{equation}
 \citeA{nielsen2010quantum} make the following choices for the unitary gates $A,B,C$:
-\begin{align}\label{equ:abc}
+\begin{align}\label{equ:1abc}
 A &=  R_z(\beta)R_y(\frac{\gamma}{2})\, ,\\
+\label{equ:2abc}
 B &= R_y(-\frac{\gamma}{2})R_z(-\frac{\delta+\beta}{2})\, ,\\
+\label{equ:3abc}
 C &= R_z(\frac{\delta-\beta}{2})\, ,
 \end{align}
 where $R_z(\varrho)$ is the general rotation gate about the z-axis of the Bloch sphere. Similarly to the $R_y(\vartheta)$ gate it can be obtained by exponentiating the Z gate as shown below in Eq.~\ref{equ:rzdef}.
@@ -1488,7 +1570,7 @@ e^{-i\frac{\varrho}{2}} & 0 \\
 \end{pmatrix}\, .
 \end{equation}
 
-When substituting the expressions for $A,B,C$ from Eq.~\ref{equ:abc} into Eq.~\ref{equ:abcidentity} one will indeed obtain the identity operation as shown by \citeA{nielsen2010quantum}(proof omitted). These choices of $A,B,C$ are also a solution to Eq.~\ref{equ:UAXBXC}. Substituting into Eq.~\ref{equ:UAXBXC} leads to the following expression for matrix $U$:
+When substituting the expressions for $A,B,C$ from Eq.~\ref{equ:1abc},~\ref{equ:2abc} and \ref{equ:3abc} into Eq.~\ref{equ:abcidentity} one will indeed obtain the identity operation as shown by \citeA{nielsen2010quantum}(proof omitted). These choices of $A,B,C$ are also a solution to Eq.~\ref{equ:UAXBXC}. Substituting into Eq.~\ref{equ:UAXBXC} leads to the following expression for matrix $U$:
 \begin{equation}
 \label{equ:udecompdef}
 U = \begin{pmatrix}
@@ -1543,7 +1625,7 @@ This is a system of four non-linear complex equations with four unknowns. In ord
 \delta = \frac{7}{8}\pi;\quad 
 \gamma = 0\, .
 \end{equation}
-Substituting these parameters into the expressions for $A,B$ and $C$ defined in Eq.~\ref{equ:abc} yields:
+Substituting these parameters into the expressions for $A,B$ and $C$ defined in Eq.~\ref{equ:1abc},~\ref{equ:2abc} and \ref{equ:3abc} yields:
 \begin{align}
 \label{equ:abcsubbed1}
 A \quad= \quad R_z(\beta)R_y(\frac{\gamma}{2})\quad =& \quad R_z(2\pi) \quad = \quad \textcolor{emerald}{\mathbb{1}}\, , \\
@@ -1580,12 +1662,11 @@ The importance of the Solovay-Kitaev theorem arises from proving that given any 
 \begin{redbox}
 \textbf{Definition: Fowler distance}\\
 \newline
-When approximating a unitary gate $W$ with a gate sequence yielding another unitary gate $W_\mathrm\mathrm{approx}$ it is important to quantify how 'close' the action of $W_\mathrm{approx}$ is to $W$. The Fowler distance makes use of the matrix representations of $W$ and $W_\mathrm{approx}$ and is defined by \citeA{booth2012quantum} as:
+When approximating a unitary gate $W$ with a gate sequence yielding another unitary gate $W_\mathrm{approx}$ it is important to quantify how 'close' the action of $W_\mathrm{approx}$ is to $W$. The Fowler distance makes use of the matrix representations of $W$ and $W_\mathrm{approx}$ and is defined by \citeA{booth2012quantum} as:
 \begin{equation}
-d(W,W_\mathrm{approx}) = \sqrt{\frac{2-\mid tr(W\cdot W_{\mathrm\mathrm{approx}}^\dagger)\mid}{2}}
+d(W,W_\mathrm{approx}) = \sqrt{\frac{2-\mid \mathrm{tr}(W\cdot W_{\mathrm\mathrm{approx}}^\dagger)\mid}{2}}\, ,
 \end{equation}
-
-In contrast to $W$, $W_\mathrm{approx}$ might introduce a shift in the global phase of the quantum state it is acting on. However, since a global phase of a quantum state is immeasurable in experiment, it can be neglected \cite{nielsen2010quantum}. As a result, the Fowler distance is defined in such a way that possible global phase differences are ignored.
+where $tr$ stands for trace. In contrast to $W$, $W_\mathrm{approx}$ might introduce a shift in the global phase of the quantum state it is acting on. However, since a global phase of a quantum state is immeasurable in experiment, it can be neglected \cite{nielsen2010quantum}. As a result, the Fowler distance is defined in such a way that possible global phase differences are ignored.
 \end{redbox}
 
 Subsequently, the desired gates $B = R_z(-\frac{23}{16}\pi)$ and $C = R_z(-\frac{9}{16}\pi)$ where decomposed using the Solovay-Kitaev algorithm. Fig.~\ref{fig:skresultplot} shows a plot visualising how the Fowler distance depends on the number of gates in the approximating gate sequence $W_\mathrm{approx}$. The number of gates in the approximating gate sequence is also called \emph{gate count}. The plot clearly shows an exponential increase in the gate count for decreasing Fowler distance. For example, 146 gates suffice to achieve $d(W_\mathrm{approx},R_z(-\frac{9}{16}\pi)) = 0.04389$. Yet, already 17,838 gates are required to reduce the Fowler distance to $d(W_\mathrm{approx},R_z(-\frac{9}{16}\pi)) = 0.01008$.
@@ -1615,13 +1696,14 @@ Subsequently, the desired gates $B = R_z(-\frac{23}{16}\pi)$ and $C = R_z(-\frac
 \caption{\label{fig:bloch23over16} Applying $B = R_z(-\frac{23}{16}\pi)$ to the state $\ket{\psi} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}$ leads to the purple vector $\vec{b}$. The plot shows the rotation of $-\frac{23}{16}\pi$ radians around the $\hat{z}$-axis of the Bloch sphere.}
 \end{figure}
 Fowler distance is best understood with a visual example using the gate $B = R_z(-\frac{23}{16}\pi)$. Acting the desired gate $B$ on the state $\ket{\psi} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}$ (black vector in Fig.~\ref{fig:bloch23over16}) results in the purple Bloch vector $\vec{b}$ shown in Fig.~\ref{fig:bloch23over16}. In comparison, Fig.~\ref{fig:fowlerdistances} shows the action of four different approximating gate sequences $B_\mathrm{approx,1}$, $B_\mathrm{approx,2}$, $B_\mathrm{approx,3}$, $B_\mathrm{approx,4}$ on the state $\ket{\psi} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}$.
-\begin{minipage}[c]{.8\textwidth}
+\begin{minipage}[c]{.9\textwidth}
     %\vspace{-20mm}
-    \includegraphics[height=0.7\textwidth]{img/fowlerdistances.png}
+    \includegraphics[height=0.65\textwidth]{img/fowlerdistances.png}
        \captionsetup{justification=raggedright, singlelinecheck=false}
        \captionof{figure}{\label{fig:fowlerdistances}Visualisation of the obtained state vectors from the action of gate sequences $B_\mathrm{approx,1}$, $B_\mathrm{approx,2}$, $B_\mathrm{approx,3}$, $B_\mathrm{approx,4}$ onto the state $\ket{\psi} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}$. The plot visually shows the difference between different Fowler distances on the Bloch sphere.}
 \end{minipage}%%%%%
-\begin{minipage}[c]{.2\textwidth}
+\hspace{-2.4cm}
+\begin{minipage}[c]{.1\textwidth}
 \begin{equation}
 \textcolor{emerald}{d(B,B_\mathrm{approx,1}) = 0.15165} \notag
 \end{equation}
@@ -1638,7 +1720,7 @@ Fowler distance is best understood with a visual example using the gate $B = R_z
 
 Gate sequence $B_\mathrm{approx,1}$ consists of 25 gates and is a Fowler distance of $d = 0.15165$ away from $B$. The resulting state vector is coloured green in Fig.~\ref{fig:fowlerdistances}. The green vector lies above the Bloch equator and is relatively far away from the desired vector $\vec{b}$ in Fig.~\ref{fig:bloch23over16}. With 109 gates, $B_\mathrm{approx,2}$ yields a Fowler distance of $d = 0.10722$ resulting in the blue vector. It can be seen, that the blue state vector lies below the Bloch equator and is still relatively far from $\vec{b}$. Using $B_\mathrm{approx,3}$ the Fowler distance drops to $d = 0.02086$ leading to the yellow vector in  Fig.~\ref{fig:fowlerdistances}. This yellow vector is almost on the Bloch equator and relatively close to $\vec{b}$ implying that $B_\mathrm{approx,3}$ is a good approximation of $B$. However, $B_\mathrm{approx,3}$ already requires the implementation of 2,997 single-qubit gates. The purple vector from Fig.~\ref{fig:bloch23over16} is also plotted in Fig.~\ref{fig:fowlerdistances} but is not visible since the red vector with $d = 0.00158$ constitutes a very good approximation to the desired state $\vec{b}$.  The red vector is the result of the action of $B_\mathrm{approx,4}$ which, unfortunately, needs 370,813 gates to achieve such a small Fowler distance. Hereby, Gate $B$ was used as an example but such an exponential increase in the gate count is observed for any quantum gate $W$ when applying the Solovay-Kitaev algorithm \cite{dawson2005solovay}.
 
-Implementing any quantum gate $D$ inevitably takes some time $t$ since it involves the use of hardware components e.g. targeting a specific atom with a laser pulse. Based on IBM's single-qubit and CNOT gate times described in Section~\ref{subsec:ibmqc} the total execution time of twelve different gate sequences, approximating $B = R_z(-\frac{23}{16}\pi)$ and $C = R_z(-\frac{9}{16}\pi)$ to different Fowler distances, were calculated. The results can be seen in Table~\ref{tab:sktimes}. Keeping in mind that in the best case, the maximum decoherence time of a qubit in IBM's QC is \SI{112.4}{\micro\second} most gate sequences are too long for an IBM implementation (coloured red in Table~\ref{tab:sktimes}). Feasible execution times are marked green in Table~\ref{tab:sktimes}. However, decoherence is not the only limiting factor since IBM only allows for 39 gates and one measurement gate per qubit. Even when selecting the smallest sequences of 25 gates for $B$ and 16 gates for $C$, the total gate count is 41 which is two gates more than the allowed gate count of the IBM Quantum Composer. Note that the approximating gate sequences of $B$ and $C$ are not the only gates needed to prepare the initial quantum state and execute the akNN algorithm. Unfortunately, this makes an actual implementation of this particular classification problem on IBM's present QC impossible. However, to complete the quantum compiling, assume that gates $B$ and $C$ could somehow be implemented with shorter gate sequences. For the following section, it remains to decompose the Toffoli gate that was required to 'load' the second training pattern $\ket{\textcolor{purple}{\Psi_{t^{1}}}}$ into the quantum state $\ket{\chi_4}$ as shown in Eq.~\ref{equ:chi4}.
+Implementing any quantum gate $D$ inevitably takes some time $t$ since it involves the use of hardware components e.g. targeting a specific atom with a laser pulse. Based on IBM's single-qubit and CNOT gate times described in Section~\ref{subsec:ibmqc} the total execution time of twelve different gate sequences, approximating $B = R_z(-\frac{23}{16}\pi)$ and $C = R_z(-\frac{9}{16}\pi)$ to different Fowler distances, were calculated. The results can be seen in Table~\ref{tab:sktimes}. Keeping in mind that in the best case, the maximum decoherence time of a qubit in IBM's QC is \SI{112.4}{\micro\second} most gate sequences are too long for an IBM implementation (coloured red in Table~\ref{tab:sktimes}). Feasible execution times are marked green in Table~\ref{tab:sktimes}. However, decoherence is not the only limiting factor since IBM only allows for 39 gates and one measurement gate per qubit. Even when selecting the smallest sequences of 25 gates for $B$ and 16 gates for $C$, the total gate count is 41 which is two gates more than the allowed gate count of the IBM Quantum Composer. Note that the approximating gate sequences of $B$ and $C$ are not the only gates needed to prepare the initial quantum state and execute the aKNN algorithm. Unfortunately, this makes an actual implementation of this particular classification problem on IBM's present QC impossible. However, to complete the quantum compiling, assume that gates $B$ and $C$ could somehow be implemented with shorter gate sequences. For the following section, it remains to decompose the Toffoli gate that was required to 'load' the second training pattern $\ket{\textcolor{purple}{\Psi_{t^{1}}}}$ into the quantum state $\ket{\chi_4}$ as shown in Eq.~\ref{equ:chi4}.
 
 %Thus, the only possibility would be to select the sequence of 25 gates for $B$ and the sequence of 16 gates for $C$ at the cost of relatively large Fowler distances. This, however, still sums up to 41 gates which are two gates more than the allowed gate count of the IBM Quantum Composer. 
 \begin{table}[H]
@@ -1673,12 +1755,11 @@ The Toffoli or CCNOT gate can be decomposed into CNOT and single-qubit gates in 
 
 \begin{figure}[!ht]
        \centering
-       \includegraphics[scale=0.5]{img/toffolidecomposition.png}
+       \includegraphics[scale=0.4]{img/toffolidecomposition.png}
        \caption[]{\label{img:toffolidecomp} Decomposition of a Toffoli gate into six CNOT and nine single-qubit gates\footnotemark[17]}
 \end{figure}
 
 \footnotetext[17]{Reprinted from Michael A. Nielsen and Isaac L. Chuang. Quantum Computation and Quantum Information. Cambridge University Press, 2000. Copyright 2010 by Nielsen \& Chuang.}
-
 The Toffoli decomposition finalises the compiling of the quantum state preparation into gates from IBM's gate set only. In summary, the compiled state preparation requires: 
 \begin{itemize}
 \item 2 H gates applied to the ancilla and the $m$ qubit
@@ -1687,7 +1768,7 @@ The Toffoli decomposition finalises the compiling of the quantum state preparati
 \item 1 decomposed Toffoli (6 CNOTs, 2 H gates, 3 T \& 3 T$^\dagger$ gates) to load the second training vector
 \item 1 CNOT to flip the class qubit
 \end{itemize}
-Thus, the quantum state preparation was compiled into 9 CNOT and 53 single-qubit gates. The akNN algorithm only requires one additional H gate and two measurement gates (for ancilla and class qubit) leading to a total of 9 CNOT, 54 single-qubit gates and two measurement gates. However, even cleverly arranging these gates does not suffice to implement the algorithm within IBM's 40 gate slots. The full circuit diagram for the compiled state preparation and the aKNN algorithm can be seen in Fig.~\ref{img:toffolidecomp}.
+Thus, the quantum state preparation was compiled into 9 CNOT and 53 single-qubit gates. The aKNN algorithm only requires one additional H gate and two measurement gates (for ancilla and class qubit) leading to a total of 9 CNOT, 54 single-qubit gates and two measurement gates. However, even cleverly arranging these gates does not suffice to implement the algorithm within IBM's 40 gate slots. The full circuit diagram for the compiled state preparation and the aKNN algorithm can be seen in Fig.~\ref{img:toffolidecomp}.
 
 \begin{figure}[!ht]
        \centering
@@ -1706,7 +1787,7 @@ Thus, the quantum state preparation was compiled into 9 CNOT and 53 single-qubit
 %H ancilla
 %CM ancilla
 %M class
-%Final circuit diagram showing the compile state preparation + akNN algorithm steps
+%Final circuit diagram showing the compile state preparation + aKNN algorithm steps
 
 \begin{greenbox}
 \textbf{Complexity analysis including quantum compiling steps}\\
@@ -1718,7 +1799,7 @@ The amplitude-based kNN algorithm itself was found to run in constant time $\mat
     
 When adding algorithmic complexities only the most dominant term is considered relevant. Thus, the overall complexity including state preparation is found to be $\mathcal{O}(m\cdot \log^{2.71}(\frac{m}{\epsilon}))$.\\
 \newline
-In conclusion, due to the necessary quantum compiling steps the initial constant complexity of the akNN algorithm
+In conclusion, due to the necessary quantum compiling steps the initial constant complexity of the aKNN algorithm
 \begin{equation}  
 \mathcal{O}(\frac{1}{\mathrm{Prob(CM)}})
 \end{equation}
@@ -1762,7 +1843,6 @@ The Bloch vector classification problem described in Section~\ref{subsubsec:impl
     \caption{\label{tab:inputvectors2} Input dataset II for the simulation of the aKNN algorithm. The dataset consists of two different qubit states both lying in the z-x plane of the Bloch sphere.}
 \end{table}
 
-\newpage
 Table~\ref{tab:inputvectors2} shows that the probability of measuring the new input vector (ID 2) in state \0 is slightly higher than for the first input vector (ID 1). This can also be seen visually when comparing Fig.~\ref{img:7over8} to Fig.~\ref{fig:3over4}: the second input vector (ID 2) is closer to the \0 state than the first input vector (ID 1). For the quantum simulation, the training dataset listed in Table~\ref{tab:trainingset} was not changed.
 
 The obtained simulation results after 1000 runs for both Bloch vectors from input dataset II are shown in Table~\ref{tab:blochresults}. The theoretically predicted probabilities are marked with asterisks and are always displayed on top of the corresponding simulation results. Comparing these values shows strong agreement between prediction and simulation and the expected maximum error of $\frac{1}{\sqrt{1000}}=0.03$ is not exceeded. 
@@ -1783,10 +1863,9 @@ The obtained simulation results after 1000 runs for both Bloch vectors from inpu
 Both input Bloch vectors were correctly classified as \0 (yellow vector in Fig.~\ref{fig:3over4} and Fig.~\ref{img:7over8}). This was expected since both vectors lie within the upper half of the Bloch sphere. The input vector with ID 2 has a slightly higher probability of being classified as \0 than the vector with ID 1. This is expected since the second vector (ID 2) is closer to the training state \0 on the Bloch sphere.     
 
 In summary, using the small input dataset II the amplitude-based kNN algorithm has achieved 100\% accuracy. However, since only two Bloch vectors were considered this number should not be taken too seriously but rather be seen as a small test bench. The main purpose of this simulation was to show that the aKNN algorithm would have performed as expected when an implementation with IBM's QC would have been feasible.
-
+\newpage
 The classification of Bloch vectors considered in this section only made use of one qubit for each training and input vector. Since one qubit can only be in a superposition of maximally two states (e.g. the \0 and \1 state) only $2^1=2$ amplitudes are available for data encoding. This was deliberately chosen since it made it relatively easy to construct the initial quantum state (Eq.~\ref{equ:ampinitial}) required for the aKNN algorithm. The next section will increase the number of qubits used to encode each training and input vector and will describe how the simulated aKNN algorithm can be used to classify different Gaussian distributions.
 
-\newpage
 \subsubsection{Classification of Gaussian distributions}
 \label{subsubsubsec:classificationblochvectors}
 
@@ -1855,7 +1934,7 @@ Thus, it was demonstrated that acting $C(0.7)$ on each qubit in the state $\ket{
 \newpage
 Keeping in mind that $\ket{w}$ resulted from the action of $(C(0.7) \otimes C(0.7) \otimes C(0.7))$ onto the $\ket{000}$ state an important pattern is observed when calculating the Hamming distances (HDs) between $\ket{000}$ and all eight possible three-qubit states. Firstly, the state $\ket{000}$ has a HD of zero relative to itself and has the highest amplitude of 0.58566. Secondly, $\ket{100}$, $\ket{010}$ and $\ket{001}$ all have amplitudes of 0.11434 and a HD of one with respect to $\ket{000}$. Thirdly, $\ket{110}$, $\ket{011}$ and $\ket{101}$ have amplitudes of 0.02232 and a HD of two compared to $\ket{000}$. Lastly, $\ket{111}$ has a HD of three with respect to $\ket{000}$ and an amplitude of 0.00436. Hence, the amplitudes are always equal for equal Hamming distances and decrease with increasing Hamming distance.
 
-To visualise the Gaussian distribution represented by $\ket{w}$, one simply needs to plot amplitudes against Hamming distances and mirror the resulting plot with respect to the vertical line connecting the horizontal zero value with the data point representing the highest amplitude. The corresponding plot is given in Fig.~\ref{fig:gaussdeltaplot1} and clearly shows a discrete Gaussian distribution centred around the binary qubit pattern with Hamming distance zero: in this case $\ket{000}$. It follows that applying the coin gate $C(0.7)$ to each qubit in an $n$-qubit systems $\ket{q_1,q_2,...,q_n}$ yields a similar discretised Gaussian distribution centered around the binary qubit pattern $\ket{q_1,q_2,...,q_n}$.
+To visualise the Gaussian distribution represented by $\ket{w}$, one simply needs to plot amplitudes against Hamming distances and mirror the resulting plot with respect to the vertical line connecting the horizontal zero value with the data point representing the highest amplitude. The corresponding plot is given in Fig.~\ref{fig:gaussdeltaplot1} and clearly shows a discrete Gaussian distribution centred around the binary qubit pattern with HD zero: in this case $\ket{000}$. It follows that applying the coin gate $C(0.7)$ to each qubit in an $n$-qubit systems $\ket{q_1,q_2,...,q_n}$ yields a similar discretised Gaussian distribution centered around the binary qubit pattern $\ket{q_1,q_2,...,q_n}$.
 %redefine the Hamming distance between $\ket{100}$ and $\ket{000}$ to be -1 instead of 1 and the Hamming distance between $ket{110}$ and $\ket{000}$ to be -2 instead of 2. Furthermore, suppose one can add a ninth entry to $\ket{w}$ by duplicating the entry for state $\ket{111}$. Define the new duplicate entry of $\ket{111}$ to have a Hamming distance of -3 instead of 3. When plotting the Hamming distances against the amplitudes of this new artificial vector representation of $\ket{w}$ a discrete Gaussian distribution can be observed. The corresponding plot in Fig.~\ref{fig:gaussdeltaplot1} illustrates this clearly.
 \vspace{0.5cm}
 \begin{figure}[H]
@@ -1876,7 +1955,7 @@ To visualise the Gaussian distribution represented by $\ket{w}$, one simply need
 \label{fig:gaussdeltaplot1}
   \end{figure}
   
-The observed pattern within the amplitudes can be generalised using Eq.~\ref{equ:deltatensor}: Acting the coin gate $C(\delta)$ on each qubit in the three-qubit state $\ket{q_1,q_2,q_3}$ will result in a discretised Gaussian distribution centered around the binary qubit pattern $\ket{q_1,q_2,q_3}$. The resulting amplitudes are dependent on the Hamming distance with respect to state $\ket{q_1,q_2,q_3}$: the state $\ket{q_1,q_2,q_3}$ with HD zero will have the largest amplitude of $\delta\sqrt{\delta}$, all states with HD one have amplitudes equal to $\delta-\delta\sqrt{\delta}$, states with HD two have amplitudes equal to $\sqrt{\delta}(\delta+1)-2\delta$ and the state with the largest HD of three has the smallest amplitude of $-\sqrt{\delta}(3+\delta)+1+3\delta$. A similar pattern will be observed when acting $C(\delta)$ on each qubit in any $n$-qubit state.
+The observed pattern within the amplitudes can be generalised using Eq.~\ref{equ:deltatensor}: Acting the coin gate $C(\delta)$ on each qubit in the three-qubit state $\ket{q_1,q_2,q_3}$ will result in a discretised Gaussian distribution centered around the binary qubit pattern $\ket{q_1,q_2,q_3}$. The resulting amplitudes are dependent on the HD with respect to state $\ket{q_1,q_2,q_3}$: the state $\ket{q_1,q_2,q_3}$ with HD zero will have the largest amplitude of $\delta\sqrt{\delta}$, all states with HD one have amplitudes equal to $\delta-\delta\sqrt{\delta}$, states with HD two have amplitudes equal to $\sqrt{\delta}(\delta+1)-2\delta$ and the state with the largest HD of three has the smallest amplitude of $-\sqrt{\delta}(3+\delta)+1+3\delta$. A similar pattern will be observed when acting $C(\delta)$ on each qubit in any $n$-qubit state.
 
 \newpage
 To demonstrate how different values of the parameter $\delta$ affect the shape of the resulting distribution, the coin gate $C(\delta)$ was applied to the four-qubit state $\ket{0000}$ using five different values for $\delta$: $0.5$, $0.6$, $0.7$, $0.8$, $0.9$. The five different distributions are shown in Fig.~\ref{fig:gaussdeltaplot2}. The example uses the four-qubit state $\ket{0000}$ since it leads to a larger range on the horizontal axis showing clearer differences between the distributions. Fig.~\ref{fig:gaussdeltaplot2} shows that the distribution flattens out with decreasing $\delta$ values. In the case of $\delta = 0.5$, the distribution has no visible peaks implying an equal superposition over all four-qubit states due to equal amplitudes.
@@ -1947,21 +2026,24 @@ The cube can now be used as another way of visualising the action of the coin ga
 After the application of the three $C(0.7)$ gates to the three qubits in $\ket{000}$ all eight-qubit patterns have non-zero amplitudes and the quantum state $\ket{w}$ from Eq.~\ref{equ:desiredmemorystate} is obtained. Fig.~\ref{img:cubediffused3} shows this final quantum superposition representing a discrete Gaussian distribution over a three-dimensional cube based on Hamming distances.
 %In this example, Fig.~\ref{img:cubediffused1}, ~\ref{img:cubediffused2} and \ref{img:cubediffused3} visually demonstrated a stepwise diffusion of the initial amplitude 1.0 of $\ket{000}$ over all eight three-qubit patterns on the cube.
 
-With the familiarisation with the coin gate $C$ and the use of cubes to visualise amplitude distributions, the introduction of most required tools to simulate the classification of Gaussian distributions with the aKNN algorithm is completed. Yet, since any distance-weighted kNN algorithm is based on measuring distances between the input sample and each training sample, a new distance metric for distributions needs to be introduced. For this reason, the Hellinger distance is defined in the red box below.
+
+%With the familiarisation with the coin gate $C$ and the use of cubes to visualise amplitude distributions, the introduction of most required tools to simulate the classification of Gaussian distributions with the aKNN algorithm is completed. 
+Per definition, any distance-weighted kNN algorithm, classical and quantum, is based on measuring distances between the input sample and each training sample. The aKNN algorithm presented in Section~\ref{subsec:amplitudeKNNalgorithm} is based on squared Euclidean distance which is not the most ideal way of measuring distances between probability distributions. Therefore, a new distance metric for distributions needs to be introduced. For this reason, the Hellinger distance is defined in the red box below.
 
 \begin{redbox}
 \textbf{Definition: Hellinger distance}\\
 \newline
 The Hellinger distance is a distance metric used to quantify the difference between any two probability distributions. In the case of continuous probability distributions it is defined using the Hellinger integral first proposed by \citeA{hellinger1909neue}. However, since the $2^n$ amplitudes of an $n$-qubit system will always constitute a discrete probability distribution only the Hellinger distance for discrete distributions will be introduced.
-\end{redbox}
-\begin{redbox}
+
 According to \citeA{harsha}, the Hellinger distance between two discrete probability distributions $R = (r_1,...,r_N)$ and $L = (l_1,...,l_N)$, each with $N$ entries, is defined as:
 
 \begin{equation}
 \label{equ:hellingerdistance}
-H(R,L) = \frac{1}{\sqrt{2}}\sqrt{\sum_{i=1}^N (\sqrt{r_i} - \sqrt{l_i})^2}\, ,
+H(R,L) = \frac{1}{\sqrt{2}}\sqrt{\sum_{i=1}^N (\sqrt{r_i} - \sqrt{l_i})^2}\, .
 \end{equation}
-which can be rewritten in terms of the Euclidean distance between the square root vectors $\sqrt{R}$ and $\sqrt{L}$:
+\end{redbox}
+\begin{redbox}
+Eq.~\ref{equ:hellingerdistance} can be rewritten in terms of the Euclidean distance between the square root vectors $\sqrt{R}$ and $\sqrt{L}$:
 \begin{equation}
 \label{equ:hellingereuclidean}
 H(R,L) = \frac{1}{\sqrt{2}} \mid\mid\sqrt{R} - \sqrt{L}\mid\mid_2\, .
@@ -1985,10 +2067,11 @@ Suppose the probability distribution $R = (r_1,...,r_N)$ is the input sample tha
 \end{equation}
 which is now dependent on the squared Hellinger distance between the input distribution $R$ and each training distribution $L^m$.
 
-It remains to discuss how to load the input and training distributions into the initial quantum state required for the amplitude-based kNN algorithm as defined in Eq.~\ref{equ:ampinitial}. The necessary procedure is outlined in Appendix~\ref{sec:stateprepgaussian}. Thus, all tools needed to classify Gaussian distributions with the amplitude-based kNN algorithm have been introduced.
+It remains to discuss how to load the input and training distributions into the initial quantum state required for the aKNN algorithm as defined in Eq.~\ref{equ:ampinitial}. The necessary procedure is outlined in detail in Appendix~\ref{sec:stateprepgaussian}. In summary, the state preparation makes use of the coin gate $C(\delta)$, its controlled version $CC(\delta)$ as well as the controlled controlled version $CCC(\delta)$ to initialise the input and training samples. With the coin gate, the 3-D cube visualisations, the Hellinger distance and the necessary quantum state preparation routine, all tools needed to classify Gaussian distributions with the aKNN algorithm have been introduced.
 
 The quantum simulation will be limited to discrete Gaussian distributions with eight entries, thus, making use of three data qubits with $2^3 = 8$ amplitudes. For the classification, two distinct Gaussian training distributions will be used. These training distributions should be chosen as different as possible to enable better classification results. The training dataset is listed in Table~\ref{tab:gausstrainingset}. The first training sample is selected to be a Gaussian distribution centred around $\ket{000}$ and is arbitrarily defined to be of class $\ket{0}$. The second training sample is defined to belong to class $\ket{1}$ and is chosen to be a Gaussian distribution centred around the $\ket{111}$ state. The cube in Fig.~\ref{img:cubenoprobs} illustrates that these are the most contrasting distributions because they are centred around diagonally opposite corners of the cube. Subsequently, the amplitude-based kNN algorithm will be evaluated on the input dataset listed in Table~\ref{tab:gaussinputset} which contains Gaussian distributions centred around the six binary three-qubit patterns that are not part of the training set.
 
+\newpage
 \begin{minipage}[c]{.49\textwidth}
     \begin{tabular}{| C{0.8cm} | C{2.3cm} |C{2cm}|}
       \toprule
@@ -1998,9 +2081,8 @@ The quantum simulation will be limited to discrete Gaussian distributions with e
        2 & $\ket{111}$ & $\ket{1}$ \\
       \bottomrule
     \end{tabular}
-        \label{tab:gausstrainingset}
         \captionsetup{justification=justified, singlelinecheck=false}
-    \captionof{table}{Training dataset used for the classification of Gaussian distributions centered around different binary three-qubit patterns. The training dataset consists of two maximally different distributions with different class labels centered around diagonally opposite corners of the cube shown in Fig.~\ref{img:cubenoprobs}.}
+    \captionof{table}{ \label{tab:gausstrainingset}Training dataset used for the classification of Gaussian distributions centered around different binary three-qubit patterns. The training dataset consists of two maximally different distributions with different class labels centered around diagonally opposite corners of the cube shown in Fig.~\ref{img:cubenoprobs}.}
 \end{minipage}%%%%
 \hspace{0.5cm}
 \begin{minipage}[c][][b]{.49\textwidth}
@@ -2018,14 +2100,15 @@ The quantum simulation will be limited to discrete Gaussian distributions with e
        6 & $\ket{101}$ & $\ket{1}$ \\
       \bottomrule
     \end{tabular}
-        \label{tab:gaussinputset}
         \captionsetup{justification=justified, singlelinecheck=false}
-    \captionof{table}{Input dataset for the classification of Gaussian distributions with the amplitude-based kNN algorithm. The dataset contains Gaussian distributions centred around the six three-qubit patterns that are not part of the training dataset shown in Table~\ref{tab:gausstrainingset}. A particular input distribution is expected to be of the class for which the Hamming distance between the input distribution centre and the training distribution centre is smallest.}
+    \captionof{table}{\label{tab:gaussinputset}Input dataset for the classification of Gaussian distributions with the amplitude-based kNN algorithm. The dataset contains Gaussian distributions centred around the six three-qubit patterns that are not part of the training dataset shown in Table~\ref{tab:gausstrainingset}. A particular input distribution is expected to be of the class for which the Hamming distance between the input distribution centre and the training distribution centre is smallest.}
 \end{minipage}
 
 The expected class label of an input distribution is dependent on the Hamming distance between its distribution centre and the distribution centre of the training samples. For example, looking at the cube in Fig.~\ref{img:cubenoprobs} reveals that the first input sample is a Gaussian distribution centred around $\ket{100}$ which is only one corner away from the distribution centre $\ket{000}$ of the first training sample. It is, however, two corners away from the distribution centre $\ket{111}$ of the second training sample. Thus, its expected class is that of the first training sample ($\ket{0}$).
 
 Liqui$\ket{}$ was used to perform the quantum simulations, and the probability distributions for the classification of each input sample were collected within 1000 runs. The obtained simulation results are shown in Table~\ref{tab:gauss3qubitresults}. Note that all Gaussian distributions were initialised with the coin gate $C(\delta)$ whereby the shape of the resulting distribution depends on the parameter $\delta$ (as it was shown in Fig.~\ref{fig:gaussdeltaplot2}). It is, therefore, interesting to analyse how the value of $\delta$ alters the classification outcome. For this reason, three different values for $\delta$ were tested: In Table~\ref{tab:gauss3qubitresults} the results for $\delta = 0.6$ are always on top and marked with an empty circle ($\circ$), results for $\delta = 0.85$ are always in the middle marked with a filled circle ($\bullet$) and results for $\delta = 0.95$ are always at the bottom and marked with a triangle ($\triangleright$).
+
+The results in Table~\ref{tab:gauss3qubitresults} show that for all input distributions the probability of a successful conditional measurement $\mathrm{Prob}(\mathrm{CM})$ decreases with increasing values of $\delta$. Specifically, in the case $\delta = 0.6$ the values of $\mathrm{Prob}(\mathrm{CM})$ are very close to unity for all six input distributions. Furthermore, when $\delta = 0.6$ the probability distributions over the class qubit states \0 and \1 are close to being equal for all six input distributions indicating no clear preference for a particular class. This can be explained by looking back to Fig.~\ref{fig:gaussdeltaplot2} which shows that choosing $\delta = 0.6$ results in a relatively flat Gaussian distributions with little peaks. On the cube in Fig.~\ref{img:cubenoprobs} this would correspond to an almost uniform amplitude distribution over the cube. In this case, the training samples are almost equal to each other yielding nearly equal probabilities for class \0 and \1 for all six input distributions. As a result, for $\delta = 0.6$ the first three input distributions were all incorrectly classified, and the last three input samples were all correctly classified. Despite correct or incorrect classification, all six class qubit probability distributions show no clear preference and make clear that the training samples with $\delta = 0.6$ are not distinct enough for the algorithm to make a clear classification decision.
 
 \begin{table}[H]
 \begin{tabular}{| C{0.5cm} | C{2.7cm} |C{1.7cm} | C{1.7cm} | C{1.7cm} |C{1.8cm}| C{1.8cm}|}
@@ -2049,22 +2132,15 @@ Liqui$\ket{}$ was used to perform the quantum simulations, and the probability d
     \caption{\label{tab:gauss3qubitresults} Amplitude-based kNN algorithm classification results after 1000 runs for various Gaussian distributions centered around six different three-qubit patterns. The Gaussian distributions were created using the coin gate $C(\delta)$. For each pattern three different distributions were prepared and classified by changing the parameter $\delta$: The results for $\delta = 0.6$ are always on top and marked with an empty circle ($\circ$), results for $\delta = 0.85$ are always in the middle marked with a filled circle ($\bullet$) and results for $\delta = 0.95$ are always at the bottom and marked with a triangle ($\triangleright$)}
 \end{table}
 
-The results in Table~\ref{tab:gauss3qubitresults} show that for all input distributions the probability of a successful conditional measurement $\mathrm{Prob}(\mathrm{CM})$ decreases with increasing values of $\delta$. Specifically, in the case $\delta = 0.6$ the values of $\mathrm{Prob}(\mathrm{CM})$ are very close to unity for all six input distributions. Furthermore, when $\delta = 0.6$ the probability distributions over the class qubit states \0 and \1 are close to being equal for all six input distributions indicating no clear preference for a particular class. This can be explained by looking back to Fig.~\ref{fig:gaussdeltaplot2} which shows that choosing $\delta = 0.6$ results in flat Gaussian distributions with little peaks. On the cube in Fig.~\ref{img:cubenoprobs} this would correspond to an almost uniform amplitude distribution over the cube. In this case, the training samples are almost equal to each other yielding nearly equal probabilities for class \0 and \1 for all six input distributions. As a result, for $\delta = 0.6$ the first three input distributions were all incorrectly classified, and the last three input samples were all correctly classified. Despite correct or incorrect classification, all six class qubit probability distributions show no clear preference and make clear that the training samples with $\delta = 0.6$ are not distinct enough for the algorithm to make a clear classification decision.
+In the case $\delta = 0.85$ all six input distributions were correctly classified. In this case, the Gaussian training distributions correspond to more distinct amplitude distributions over the cube in Fig.~\ref{img:cubenoprobs}. This fact results in different probabilities for class \0 and \1, thereby clearly favouring one class over the other. Lastly, for $\delta = 0.95$ all six input distributions were again correctly classified with even larger differences between the probabilities for class \0 and \1 compared to the case $\delta = 0.85$.
 
-In the case $\delta = 0.85$ all six input distributions were correctly classified. In this case, the Gaussian training distributions correspond to more distinct amplitude distributions over the cube in Fig.~\ref{img:cubenoprobs}. This fact results in different probabilities for class \0 and \1, thereby clearly favouring one class over the other. Lastly, for $\delta = 0.95$ all six input distributions were again correctly classified with larger differences between the probabilities for class \0 and \1 compared to the case $\delta = 0.85$.
+In summary, the classification of Gaussian distributions outlined in this section was another example of solving a small-scale machine learning problem by simulating a quantum machine learning algorithm. The simulated aKNN algorithm achieved an overall accuracy of 83.3\% on the classification of Gaussian distributions for various $\delta$ values. For an actual useful application, this would, however, require generalization to a wider range of discrete probability distributions. 
 
-
-%Summarize the Gaussian part
-%Stress that it was another toy example for the aKNN algorithm
-%Need to implement more advanced state preparation algorithms!
-%aKNN performed well for the fact that it is a very simple q alg
-
-
+In this example, Gaussian distributions were selected since they enable relatively straightforward quantum state preparation. Yet, future research should consider more advanced state preparation routines to enable the classification of e.g. Poissonian or logistic distributions \cite{Grover2002,soklakov2006efficient}. The following section will provide the reader with an outlook for more future research with respect to the implementation and simulation of quantum kNN and other quantum-enhanced machine learning algorithms.
 
 %Summarize the entire Results & Discussion section here?
 %Contrast with some other work if possible
 %Criticize what could be improved
-
 
 
 
@@ -2077,87 +2153,74 @@ In the case $\delta = 0.85$ all six input distributions were correctly classifie
 %\end{figure}
 
 %Initialising gaussian distributed quantum states and classifying gaussian distributions by means of the Hellinger distance.
+
 \chapter{Outlook}\label{sec:outlook}
 
 Despite the use of small classification problems, neither the qubit- nor the amplitude-based kNN algorithm could be implemented on the quantum hardware provided by the IBM Quantum Experience (IBMQE). Thereby, the limiting factors were the small number of qubits as well as the small universal gate set consisting of only ten quantum gates. Yet, the latter issue might soon be resolved since IBM has made an announcement in the IBMQE discussion forum that there will be a major update to IBMQE 2.0 soon. According to IBM researcher \citeA{ibmquasm2.0}, this update will provide a larger universal gate set including more general rotation gates. However, it is unclear at this point if IBM will enable the use of more than 40 gates in their quantum composer. The author of this thesis will retry an implementation of the amplitude-based kNN algorithm as soon as this update has been rolled out. Future research might also consider the implementation of other quantum machine learning algorithms with small datasets using the IBMQE 2.0.
 
-For this research relatively simple quantum state preparation routines were used. This was deliberately chosen since the timeframe of this thesis did not allow for the implementation of more sophisticated quantum state preparation algorithms. Future research should, therefore, focus on simulation and actual implementation of quantum algorithms initialising arbitrary amplitude distributions. This might provide insights into which types of classical data can be encoded into amplitudes as well as what resources are needed to do so.
+For this research, relatively simple quantum state preparation routines were selected. This was deliberately chosen since the time frame of this thesis did not allow for the implementation of more sophisticated quantum state preparation algorithms. Future research should, therefore, focus on simulation and actual implementation of quantum algorithms initialising arbitrary amplitude distributions. This might provide insights into which types of classical data can be encoded into amplitudes as well as what resources are needed to do so.
 
 Lastly, this bachelor thesis research was presented at the 4\textsuperscript{th} South African Conference for Quantum Information Processing, Communication and Control in Cape Town which sparked the interest of an experimental research group working on quantum computation based on trapped ions in Israel. Furthermore, there is the possibility for a collaboration with an experimental group working on nuclear magnetic resonance quantum computation in China. Shortly, one of the possible collaborations could lead to an experimental implementation and subsequent publication of the amplitude-based kNN algorithm by \citeA{SchuldFingerhuth}.
 
 %Experimental implementation with an experimental quantum computation group
 %possibly NMR, photonic or trapped ions
+\chapter{Conclusion}\label{sec:conclusion}
 
-\chapter{Personal Reflection}\label{sec:personalreflection}
+Quantum-enhanced machine learning aims to harness the properties of quantum mechanical systems to enhance the performance of classical machine learning algorithms beyond the reach of classical computers. This becomes increasingly important since big data pushes computational resources and classical algorithms to their limits. This research established proof-of-principle simulations of two variants of a distance-weighted quantum $k$-nearest neighbour (kNN) algorithm using three small-scale supervised machine learning tasks.
+%However, current quantum computing efforts have not yet led to the construction of a large-scale universal quantum computer and, thus, most of the current quantum-enhanced machine learning research is purely theoretical. Yet, small-scale quantum computers have been realised already and up to 30 qubits can still be simulated on a conventional laptop. Thus, this research is part of the attempt to shift quantum-enhanced machine learning into a more applied field by establishing proof-of-principle simulations of two variants of a distance-weighted quantum $k$-nearest neighbour (kNN) algorithm using three small-scale supervised machine learning tasks.
+%On the other hand, IBM has enabled public access to their five-qubit quantum computer and small quantum computers with up to 30 qubits can still be simulated on conventional laptops. 
 
-This bachelor thesis research has been instructive and beneficial in many different ways. Most importantly, I have had the opportunity to dedicate my entire time to learn about the subject of quantum information and, specifically, quantum machine learning in detail. Since these subjects are not taught within the curriculum of the Maastricht Science Programme (MSP) it was especially amazing to challenge myself with these notoriously difficult subjects within the intersection of quantum physics and computer science. In doing so, I have learned more about the methods of theoretical physics and gained additional experience in scientific programming with Octave, Python and F\#. Without prior knowledge of F\#, I was able to learn how to simulate quantum computations and quantum machine learning algorithms using the quantum simulation toolsuite Liqui$\ket{}$. Furthermore, I was able to use the first cloud-based quantum computer, the so-called IBM Quantum Experience, publicly released in May 2016 by IBM.
+Firstly, the qubit-based kNN algorithm by \citeA{Schuld2014} was combined with a quantum state preparation routine by \citeA{Trugenberger2001} to classify various 9-bit RGB colours into the classes \emph{red} and \emph{blue}. Microsoft's software architecture Liqui$\ket{}$ was used to simulate the algorithm on two levels of difficulty. In the easy evaluation stage, the quantum kNN achieved a classification accuracy of 75\% which was subsequently raised to 100\% in the more challenging evaluation stage with a larger training dataset. These results show that the qubit-based kNN routine is a very effective classification algorithm concerning 9-bit RGB colours.
 
-Alongside my research, I had the possibility to attend many great lectures, seminars and three conferences which were all generously funded by the Centre for Quantum Technology. This enabled me to get to know many renowned scientists working in the fields of quantum information, quantum machine learning, open quantum systems, quantum optics and quantum cryptography. Furthermore, I was provided with the opportunity to present my research at the 4\textsuperscript{th} South African Conference for Quantum Information Processing, Communication and Control in Cape Town in late November 2016. This constituted a big step with respect to my academic career and a great way of putting my acquired presentation skills to practice.
+Aiming for an implementation with the IBM Quantum Experience, an amplitude-based kNN algorithm (aKNN) was developed by \citeA{SchuldFingerhuth}.  A simple binary Bloch vector classification tasks was considered to keep the requirements on the quantum hardware as small as possible. The necessary quantum compiling steps mapping the quantum state preparation routine and the aKNN algorithm to the IBM quantum hardware were outlined. For that particular classification task, it was shown that it could not be implemented within IBM's 40 quantum gate slots. Even though an implementation might be feasible using different datasets, the research demonstrated that there are cases which require relatively large gate sequences for implementation. As an alternative, the Bloch vector classification problem using the aKNN algorithm was simulated in Liqui$\ket{}$. The simulated algorithm led to the correct classification of two Bloch vectors. Lastly, the aKNN algorithm was simulated for the classification of discrete Gaussian distributions constituting a higher-dimensional classification problem using a slightly more advanced quantum state preparation routine. The simulated algorithm classified 83.3\% of various discrete Gaussian distributions correctly.
 
-However, in retrospect I feel that I could have been more productive in office by structuring my work days more diligently. For example, the first one and a half months were mostly spent on reading research paper and text books to acquire the theoretical foundation for my research and little time was used to practice F\# within the Liqui$\ket{}$ framework. A possible solution for the future would be to divide each day into two parts: e.g. spending the morning with reading papers and books and the afternoon on practical work and programming. Besides this, I feel like I should have communicated my progress more with my internal supervisor Dr. Birembaut at the MSP.
-
-In conclusion, the bachelor thesis research has showed me the importance of interdisciplinarity since the field of quantum information requires the understanding of concepts in computer science as well as quantum mechanics. Fortunately, MSP's liberal education does not only focus on textbook exercises and lectures but mostly teaches us how to systematically approach unknown topics and tackle problems therein. It was great to see that this enabled me to venture into a previously unfamiliar field and learn the necessary skills to conduct meaningful research. The newly acquired skills will certainly be useful for my planned masters in the field of quantum information.
-
-%During the thesis work, I realized that encountering problem after problem is at the core of research but that one can resolve most of them when just showing enough dedication.
-
-%The Centre for Quantum Technology at the University of KwaZulu-Natal in South Africa has been a wonderful host for my Bachelor thesis research. My supervisor Prof. Francesco Petruccione has become a mentor and friend and provided me with great opportunities for personal and academic growth. Furthermore, my collaborator Maria Schuld has shared vasts amount of knowledge, tricks and ideas with me and has always been a great help during my research work. Alongside my research, I had the possibility to attend many great lectures, seminars and three conferences which were all generously funded by the Centre for Quantum Technology. This enabled me to get to know many renowned scientists working in the fields of quantum information, quantum machine learning, open quantum systems, quantum optics and quantum cryptography. Attending the Quantum Machine Learning Workshop at the Dolphin Coast in July 2016 provided me with a broad overview of the field of quantum machine learning and was the first time that I ever attended a scientific conference. In November 2016, I was provided with the opportunity to present my research at the 4\textsuperscript{th} South African conference for Quantum Information Processing, Communication and Control in Cape Town. This opened the possibility for a collaboration with an experimental research group in Israel working on quantum computation with trapped ions. In January 2017, I am invited to the NiTheP Chris Engelbrecht Quantum Machine Learning Summer School where I will give three workshop sessions on quantum machine learning using the Liqui$\ket{}$ framework and the IBM Quantum Experience.
-
+Overall, the Liqui$\ket{}$ quantum simulations clearly demonstrated the effectiveness of both quantum kNN algorithms. When combined with more general quantum state preparation routines, these algorithms bear the potential to speed up the processing of big data. Thus, a breakthrough in the development of a universal quantum computer would not solely constitute a major milestone in physics but most probably also revolutionise the field of machine learning.
 \chapter{Quantum state preparation routine for Gaussian distributions}\label{sec:stateprepgaussian}
 
 To keep the discussion simple, the task is to load one Gaussian input distribution $R$ and two Gaussian training samples; $L_1$ and $L_2$, such that the amplitude-based kNN algorithm can be used to classify $R$. Note that the input and training distributions are restricted to Gaussian distributions that can be initialized by using the coin gate $C(\delta)$ for some value of $\delta$. The input and training samples all have $N$ entries whereby $N$ is restricted to be a multiple of two. To encode the distributions, $n$ data qubits are required such that there are $2^n = N$ amplitudes. Additionally, one ancilla, one class and one $m$ qubit are needed. Since all qubits are initialised to the \0 state, the initial state is 
-
 \begin{equation}
-\ket{\Upsilon_0} = \ket{a;d_1,...,d_n;c;m} = \ket{0;0_1,...,0_n;0;0}
+\ket{\Upsilon_0} = \ket{a;d_1,...,d_n;c;m} = \ket{0;0_1,...,0_n;0;0}\, ,
 \end{equation}
-
 where the first register holds the ancilla ($a$), the second register contains the $n$ data qubits ($d$) used to encode the distributions and the third and fourth register consists of the class ($c$) and $m$-qubit respectively.
 
-As already demonstrated in Eq.~\ref{equ:chi1} and Eq.~\ref{equ:chi2} in Section~\ref{subsubsec:implementationamplitudeKNN}, the ancilla and $m$-register are each put into an equal superposition through the application of two H gates. The state is then
-
+As already demonstrated in Eq.~\ref{equ:chi1} and Eq.~\ref{equ:chi2} in Section~\ref{subsubsec:implementationamplitudeKNN}, the ancilla and $m$-register are each put into an equal superposition through the application of two H gates. The state is then:
 \begin{equation}
-\ket{\Upsilon_1} = \frac{1}{2} \sum_{m=0}^1 \big[ \ket{0}\ket{0_1,...,0_n} + \ket{1}\ket{0_1,...,0_n}\big] \ket{0}\ket{m}
+\ket{\Upsilon_1} = \frac{1}{2} \sum_{m=0}^1 \big[ \ket{0}\ket{0_1,...,0_n} + \ket{1}\ket{0_1,...,0_n}\big] \ket{0}\ket{m}\, .
 \end{equation}
 
-Suppose the Gaussian distribution $R$ is obtained by choosing $\delta = \tau$ for the coin gate $C(\delta)$. Then the next step is to make use of the controlled version of the coin gate $CC(\tau)$ controlled by the ancilla qubit. $CC(\tau)$ is applied to each of the $n$ qubits in the data register to load the input distribution $R$. Hence, the new quantum state is 
-
+Suppose the Gaussian distribution $R$ is obtained by choosing $\delta = \tau$ for the coin gate $C(\delta)$. Then the next step is to make use of the controlled version of the coin gate $CC(\tau)$ controlled by the ancilla qubit. $CC(\tau)$ is applied to each of the $n$ qubits in the data register to load the input distribution $R$. Hence, the new quantum state is:
 \begin{equation}
-\ket{\Upsilon_2} = \prod^n_{j=1} CC(\tau)(a,d_j) \ket{\Upsilon_1} = \frac{1}{2} \sum_{m=0}^1 \big[ \ket{0}\ket{0_1,...,0_n} + \ket{1}\ket{R}\big] \ket{0}\ket{m}
+\ket{\Upsilon_2} = \prod^n_{j=1} CC(\tau)(a,d_j) \ket{\Upsilon_1} = \frac{1}{2} \sum_{m=0}^1 \big[ \ket{0}\ket{0_1,...,0_n} + \ket{1}\ket{R}\big] \ket{0}\ket{m}\, .
 \end{equation}
 
-Since the algorithm is simulated in Liqui$\ket{}$, it is straightforward to define the controlled version of the coin gate $C(\delta)$. 
-
-Next, using an X gate to flip the ancilla moves the input distribution $R$ onto the \0 state of the ancilla such that the state is now
-
+Since the algorithm is simulated in Liqui$\ket{}$, it is straightforward to define the controlled version of the coin gate $C(\delta)$. Next, using an X gate to flip the ancilla moves the input distribution $R$ onto the \0 state of the ancilla such that the state is now defined by:
 \begin{equation}
-\ket{\Upsilon_3} = X(a) \ket{\Upsilon_2} = \frac{1}{2} \sum_{m=0}^1 \big[ \ket{0}\ket{R} + \ket{1}\ket{0_1,...,0_n}\big] \ket{0}\ket{m}
+\ket{\Upsilon_3} = X(a) \ket{\Upsilon_2} = \frac{1}{2} \sum_{m=0}^1 \big[ \ket{0}\ket{R} + \ket{1}\ket{0_1,...,0_n}\big] \ket{0}\ket{m}\, .
 \end{equation}
 
-Suppose the first training distribution $L_1$ can be loaded by choosing $\delta = \sigma$ and applying $C(\sigma)$ to the qubit pattern $\ket{0_1,...,1_5,0_6,...,0_n}$. Thus, the fifth qubit in the data register connected to the \1 ancilla state needs to flipped into the \1 state. This can be done with a CCNOT gate, controlled by the ancilla and $m$ qubit, acting on the fifth data qubit. Next, by applying the controlled controlled version of the coin gate $CCC(\sigma)$ to each data qubit controlled by the ancilla and the $m$ qubit the training sample $L_1$ is loaded. The quantum state is then given by
+Suppose the first training distribution $L_1$ can be loaded by choosing $\delta = \sigma$ and applying $C(\sigma)$ to the qubit pattern $\ket{0_1,...,1_5,0_6,...,0_n}$. Thus, the fifth qubit in the data register connected to the \1 ancilla state needs to flipped into the \1 state. This can be done with a CCNOT gate, controlled by the ancilla and $m$ qubit, acting on the fifth data qubit. Next, by applying the controlled controlled version of the coin gate $CCC(\sigma)$ to each data qubit controlled by the ancilla and the $m$ qubit the training sample $L_1$ is loaded. The quantum state is then described by:
 \begin{align}
 \ket{\Upsilon_4} &= \prod^n_{j=1} CCC(\sigma)(a,m,d_j) CCNOT(a,m,d_5) \ket{\Upsilon_3}\notag\\
-&= \frac{1}{2} \Big[\big[ \ket{0}\ket{R} + \ket{1}\ket{0_1,...,0_n}\big] \ket{0}\ket{0} + \big[\ket{0}\ket{R} + \ket{1}\ket{L_1*}\big] \ket{0}\ket{1}\Big]
+&= \frac{1}{2} \Big[\big[ \ket{0}\ket{R} + \ket{1}\ket{0_1,...,0_n}\big] \ket{0}\ket{0} + \big[\ket{0}\ket{R} + \ket{1}\ket{L_1*}\big] \ket{0}\ket{1}\Big]\, .
 \end{align}
 
-Since the last entry on the diagonal of the coin gate (see Eq.~\ref{equ:coingate}) is negative, the application of $CCC(\sigma)$ introduces a negative sign when applied to the fifth data qubit. Hence, not the exact distribution $L_1$ but a distribution $L_1^*$ with a sign difference was loaded into $\ket{\Upsilon_4}$. As explained in Section~\ref{subsec:amplitudeKNNalgorithm}, the amplitude-based kNN algorithm makes use of interference between the input and training samples whereby the negative sign would alter the outcome of the interference. Thus, the sign needs to be corrected by acting a controlled controlled Z gate on the fifth data qubit. Thereafter, the $m$ qubit is flipped with an X gate to move $L_1$ onto the \0 state of the $m$ qubit. After these gate operations the state is
+Since the last entry on the diagonal of the coin gate (see Eq.~\ref{equ:coingate}) is negative, the application of $CCC(\sigma)$ introduces a negative sign when applied to the fifth data qubit. Hence, not the exact distribution $L_1$ but a distribution $L_1^*$ with a sign difference was loaded into $\ket{\Upsilon_4}$. As explained in Section~\ref{subsec:amplitudeKNNalgorithm}, the amplitude-based kNN algorithm makes use of interference between the input and training samples whereby the negative sign would alter the outcome of the interference. Thus, the sign needs to be corrected by acting a controlled controlled Z gate on the fifth data qubit. Thereafter, the $m$ qubit is flipped with an X gate to move $L_1$ onto the \0 state of the $m$ qubit. After these gate operations the state is:
 \begin{align}
 \ket{\Upsilon_5} &= X(m) CCZ(d_5) \ket{\Upsilon_4}\notag\\
-&= \frac{1}{2} \Big[\big[ \ket{0}\ket{R} + \ket{1}\ket{L_1}\big] \ket{0}\ket{0} + \big[\ket{0}\ket{R} + \ket{1}\ket{0_1,...,0_n}\big] \ket{0}\ket{1}\Big]
+&= \frac{1}{2} \Big[\big[ \ket{0}\ket{R} + \ket{1}\ket{L_1}\big] \ket{0}\ket{0} + \big[\ket{0}\ket{R} + \ket{1}\ket{0_1,...,0_n}\big] \ket{0}\ket{1}\Big]\, .
 \end{align}
 
-For the second training distribution $L_2$, suppose it results from choosing $\delta = \nu$ and applying $C(\nu)$ to the qubit pattern $\ket{1_1,...,1_n}$. Thus, all data qubits connected to the \1 ancilla and \1 $m$-qubit state have to be flipped using a CCNOT gates. As outlined in the previous step, $CCC(\nu)$ loads the distribution $L_2^*$ and not $L_2$ because of sign differences. Since all data qubits are \1, these signs are corrected by acting controlled controlled Z gates on all data qubits controlled by the ancilla and $m$-qubit. The state containing the input and both training distributions is then
-
+For the second training distribution $L_2$, suppose it results from choosing $\delta = \nu$ and applying $C(\nu)$ to the qubit pattern $\ket{1_1,...,1_n}$. Thus, all data qubits connected to the \1 ancilla and \1 $m$-qubit state have to be flipped using a CCNOT gates. As outlined in the previous step, $CCC(\nu)$ loads the distribution $L_2^*$ and not $L_2$ because of sign differences. Since all data qubits are \1, these signs are corrected by acting controlled controlled Z gates on all data qubits controlled by the ancilla and $m$-qubit. The state containing the input and both training distributions is then:
 \begin{align}
 \ket{\Upsilon_6} &= \prod^n_{j=1} CCZ(d_j) CCC(\sigma)(a,m,d_j) CCNOT(a,m,d_j) \ket{\Upsilon_5}\notag\\
-&= \frac{1}{2} \Big[\big[ \ket{0}\ket{R} + \ket{1}\ket{L_1}\big] \ket{0}\ket{0} + \big[\ket{0}\ket{R} + \ket{1}\ket{L_2}\big] \ket{0}\ket{1}\Big]
+&= \frac{1}{2} \Big[\big[ \ket{0}\ket{R} + \ket{1}\ket{L_1}\big] \ket{0}\ket{0} + \big[\ket{0}\ket{R} + \ket{1}\ket{L_2}\big] \ket{0}\ket{1}\Big]\, .
 \end{align}
 
-Lastly, the class qubit for $L_2$ is flipped with a CNOT gate controlled by the $m$ qubit such that the final state is
+Lastly, the class qubit for $L_2$ is flipped with a CNOT gate controlled by the $m$ qubit such that the final state is:
 \begin{align}
 \ket{\Upsilon_6} &= CNOT(m,c) \ket{\Upsilon_6}\notag\\
-&= \frac{1}{2} \Big[\big[ \ket{0}\ket{R} + \ket{1}\ket{L_1}\big] \ket{0}\ket{0} + \big[\ket{0}\ket{R} + \ket{1}\ket{L_2}\big] \ket{1}\ket{1}\Big]
+&= \frac{1}{2} \Big[\big[ \ket{0}\ket{R} + \ket{1}\ket{L_1}\big] \ket{0}\ket{0} + \big[\ket{0}\ket{R} + \ket{1}\ket{L_2}\big] \ket{1}\ket{1}\Big]\, .
 \end{align}
-
 
 $\ket{\Upsilon_7}$ is in the form of the initial quantum state (Eq.~\ref{equ:ampinitial}) required for the amplitude-based kNN algorithm. This completes the quantum state preparation routine for loading a restricted subset of discrete Gaussian distributions using the coin gate $C(\delta)$.
 
- \cleardoublepage
