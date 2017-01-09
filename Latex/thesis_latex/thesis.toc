@@ -20,7 +20,7 @@
 \contentsline {section}{\numberline {4.1}Quantum state preparation}{22}
 \contentsline {subsection}{\numberline {4.1.1}Encoding classical data into qubits}{22}
 \contentsline {subsection}{\numberline {4.1.2}Encoding classical data into amplitudes}{24}
-\contentsline {section}{\numberline {4.2}Qubit-based quantum k-nearest neighbour algorithm}{25}
+\contentsline {section}{\numberline {4.2}Qubit-based quantum $k$-nearest neighbour algorithm}{25}
 \contentsline {chapter}{\numberline {5}Results and Discussion}{28}
 \contentsline {section}{\numberline {5.1}Simulating the qubit-based kNN algorithm}{28}
 \contentsline {subsubsection}{\numberline {5.1.0.1}Quantum simulation results}{33}

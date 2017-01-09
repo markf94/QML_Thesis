@@ -193,9 +193,31 @@ Biamonte, J.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Bishop%
+C\BPBI M.~Bishop%
 }{%
-Bishop%
+C\BPBI M.~Bishop%
+}{%
+{\protect \APACyear {2006}}%
+}]{%
+bishop2006pattern}
+\APACinsertmetastar {%
+bishop2006pattern}%
+\begin{APACrefauthors}%
+Bishop, C\BPBI M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2006}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Pattern recognition} {Pattern recognition}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Machine Learning}{128}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+L.~Bishop%
+}{%
+L.~Bishop%
 }{%
 {\protect \APACyear {2016}}%
 }]{%
@@ -393,6 +415,32 @@ Clarke, J.%
   bits}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{Nature}{453}{7198}{1031--1042}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Cunningham%
+\ \BBA {} Delany%
+}{%
+Cunningham%
+\ \BBA {} Delany%
+}{%
+{\protect \APACyear {2007}}%
+}]{%
+cunningham2007k}
+\APACinsertmetastar {%
+cunningham2007k}%
+\begin{APACrefauthors}%
+Cunningham, P.%
+\BCBT {}\ \BBA {} Delany, S\BPBI J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2007}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {k-Nearest neighbour classifiers} {k-nearest neighbour
+  classifiers}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Multiple Classifier Systems}{}{}{1--17}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -1216,6 +1264,33 @@ Schuld, M.%
 \begin{APACrefURL} \url{http://arxiv.org/abs/1412.3646} \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1007/978-3-319-13560-1} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Schuld%
+, Sinayskiy%
+\BCBL {}\ \BBA {} Petruccione%
+}{%
+Schuld%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+schuld2015introduction}
+\APACinsertmetastar {%
+schuld2015introduction}%
+\begin{APACrefauthors}%
+Schuld, M.%
+, Sinayskiy, I.%
+\BCBL {}\ \BBA {} Petruccione, F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {An introduction to quantum machine learning} {An
+  introduction to quantum machine learning}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Contemporary Physics}{56}{2}{172--185}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

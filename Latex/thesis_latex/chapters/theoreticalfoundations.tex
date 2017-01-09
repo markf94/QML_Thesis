@@ -4,16 +4,15 @@
 \label{subsec:qubits}
 \subsection{Single-qubit systems}
 \label{subsubsec:qubits}
-
 Classical computers manipulate bits, whereas quantum computer's most fundamental unit is called a \emph{quantum bit}, often abbreviated as \emph{qubit}. Instead of 0 and 1, qubit states are denoted \0 and \1 for reasons that will be outlined later.
 %A non-probabilistic classical bit is a binary entity and can take either the value 0 or 1. Qubits are also binary entities but they can also be in a superposition of the two states. In contrast to classical bits, the two fundamental qubit states are denoted \0 and \1 for reasons outlined later.
 
-A good example of a physical implementation of a qubit is the single electron of a hydrogen atom sketched in Fig.~\ref{img:qubitatom}. Usually, the electron is found in its ground state which one can define as the \0 state of the qubit. By using a laser pulse, the electron can be excited into the next higher valence shell which one can define as the \1 state of the qubit. After some time $t$ the electron will decohere to its ground state \0 which is called the \emph{longitudinal coherence} or \emph{amplitude damping time} and is an important parameter for measuring qubit lifetimes \cite{chuanglecturenotes}.
+A good example of a physical implementation of a qubit is the single electron of a hydrogen atom sketched in Fig.~\ref{img:qubitatom}. Usually, the electron is found in its ground state which one can define as the \0 state of the qubit. By using a laser pulse, the electron can be excited into the next higher valence shell which can be defined as the \1 state of the qubit. After some time $t$ the electron will decohere to its ground state \0 which is called the \emph{longitudinal coherence} or \emph{amplitude damping time} and is an important parameter for measuring qubit lifetimes \cite{chuanglecturenotes}.
 
 \begin{figure}[!ht]
        \centering
        \includegraphics[scale=0.35]{img/qubitimplementation.jpeg}
-       \caption[]{\label{img:qubitatom} A simple example of a physical qubit using the single valence electron of a hydrogen atom. Thereby, the electron's ground state can be defined as the \0 state of the qubit. By using a laser pulse, the electron can be excited into the next higher valence shell which can be defined as the qubit's \1 state. \textsuperscript{1}}
+       \caption[]{\label{img:qubitatom} A simple example of a physical qubit using the electron of a hydrogen atom. Thereby, the electron's ground state is defined as the qubit's \0 state. By using a laser pulse, the electron can be excited into the next higher valence shell which is defined as the qubit's \1 state. \textsuperscript{1}}
 \end{figure}
 \footnotetext[1]{Reprinted from RF Wireless World, n.d., Retrieved December 23, 2016, from \url{http://www.rfwireless-world.com/Terminology/Difference-between-Bit-and-Qubit.html}. Copyright 2012 by RF Wireless World.}
 
@@ -49,7 +48,7 @@ where complex conjugates are denoted with an asterisk ($*$). The Hermitian conju
 
 The inner product of a bra and a ket is called a \emph{bra-ket} and is written
 \begin{equation}
-\braket{\phi|\phi}
+\braket{\phi|\phi}\, .
 \end{equation}
 Note that all later sections will make heavy use of this \emph{bra-ket notation}.
 
@@ -78,7 +77,7 @@ and \1 with a probability of
 \mathrm{Prob}(\ket{1}) = {|\beta|}^{2}\, .
 \end{equation}
 
-The fact that the probability of measuring a particular state is equal the absolute value squared of the respective amplitude was first postulated by \cite{born1954statistical} and, thus, is called Born rule. Since the total probability of measuring any value has to be 1, the normalisation condition
+The fact that the probability of measuring a particular state is equal the absolute value squared of the respective amplitude was first postulated by \citeA{born1954statistical} and, thus, is called Born rule. Since the total probability of measuring any value has to be 1, the normalisation condition
 \begin{equation}
 \label{equ: normalization}
 {|\alpha|}^{2} + {|\beta|}^{2} =  1\, ,
@@ -99,9 +98,9 @@ Qubit states on the Bloch equator such as the $\hat{x}$ and $\hat{y}$ coordinate
        \includegraphics[scale=0.11]{img/blochsphere.png}
        \caption[]{\label{fig:blochsphere} An arbitrary single-qubit state $\ket{\psi} = \alpha \ket{0} + \beta \ket{1}$ can be visualised on the Bloch sphere by parameterising $\alpha = \cos\frac{\theta}{2}$ and $\beta = e^{i \phi} \sin\frac{\theta}{2}$ where $\theta$ is the polar and $\phi$ the azimuthal angle in spherical polar coordinates.\footnotemark[2]}
 \end{figure}
-\footnotetext[2]{Reprinted from Wikipedia, n.d., Retrieved September 7, 2016, from \url{https://en.wikipedia.org/wiki/Bloch_Sphere}. Copyright 2012 by Glosser.ca.}
-\newpage
 
+\newpage
+\footnotetext[2]{Reprinted from Wikipedia, n.d., Retrieved September 7, 2016, from \url{https://en.wikipedia.org/wiki/Bloch_Sphere}. Copyright 2012 by Glosser.ca.}
 Similar to logic gates in a classical computer, a QC manipulates qubits, by means of quantum logic gates which will be introduced in detail in Section~\ref{subsec:quantumlogicgates}. Generally, an arbitrary quantum logic gate $U$ acting on a single qubit state is a unitary transformation which can be represented as a $2\times2$ matrix:
 \begin{equation}
 \label{equ:generalquantumgate}
@@ -130,7 +129,7 @@ and its Hermitian conjugate $U^\dagger$ must be equal to its inverse:
 UU^\dagger = U^\dagger U = \mathbb{1} = UU^{-1} = U^{-1}U\, .
 \end{equation} 
 
-All quantum logic gates must be unitary since this preserves the normalisation of the qubit state it is acting on. The set of all two-dimensional complex unitary matrices with determinant one is called the special unitary group $\mathrm{SU}(2)$ and all single-qubit quantum gates are therefore elements of $\mathrm{SU}(2)$. Furthermore, a gate set $G$ consisting of $m$ quantum-gates $g_1,g_2,...,g_m$ is called a \emph{universal quantum gate set} when it is a dense subset of $\mathrm{SU}(2)$ as defined in the red box below.
+All quantum logic gates must be unitary since this preserves the normalisation of the qubit state it is acting on. The set of all two-dimensional complex unitary matrices with determinant one is called the special unitary group $\mathrm{SU}(2)$ and all single-qubit quantum gates are therefore elements of $\mathrm{SU}(2)$. Furthermore, a gate set $G$ consisting of $m$ quantum-gates $g_1,g_2,...,g_m$ is called a \emph{universal quantum gate set} when it is a dense subset of $\mathrm{SU}(2)$ as defined in the red box on the next page.
 \vspace{0.5cm}
 \begin{redbox}
 \textbf{Definition: Dense Subset of $\mathbf{SU(2)}$}\\
@@ -141,7 +140,7 @@ The gate set $G$ is a dense subset of $\mathrm{SU}(2)$ when given any quantum ga
 \subsection{Multi-qubit systems}
 \label{subsec:multiqubitsystems}
 
-A classical computer with one bit of memory is not particularly useful, and equally, a QC with one qubit is rather useless. To be able to perform large and complicated computations many individual qubits need to be combined to create a large QC. When moving from single to multi-qubit systems a new mathematical tool, the so-called tensor product (symbol $\otimes$), is needed. A tensor product of two qubits is written as
+A classical computer with one bit of memory is not particularly useful, and equally, a QC with one qubit is rather useless. To be able to perform large and complicated computations many individual qubits need to be combined to create a large QC. When moving from single to multi-qubit systems a new mathematical tool, the so-called tensor product (symbol $\otimes$), is needed. A tensor product of two qubits is written
 \begin{equation}
 \label{equ:tensor}
 \ket{\psi_1} \otimes \ket{\psi_2} = \ket{\psi_1}\ket{\psi_2} = \ket{\psi_1\psi_2}\, ,
@@ -163,7 +162,7 @@ In the vector representation a tensor product of two \0 kets (\textcolor{red}{re
 
 The last expression in Eq.~\ref{equ:tensor2qubits} shows that the two-qubit state $\ket{00}$ is no longer two but four-dimensional. Hence, it lives in a four-dimensional Hilbert space $\mathcal{H}_{4}$. A quantum gate acting on multiple qubits can therefore not have the same dimensions as a single-qubit gate (Eq.~\ref{equ:generalquantumgate}) which demands a new gate formalism for multi-qubit systems.
 
-Consider aiming to apply an arbitrary single-qubit gate $U$ (Eq.~\ref{equ:generalquantumgate}) to the first qubit in the two-qubit state $\ket{00}$. The second qubit in the state $\ket{00}$ shall remain unchanged which, in other words, means applying the $2\times2$ identity matrix $\mathbb{1}$ to it. To perform these operations, one defines the tensor product of two single-qubit gates as
+Consider aiming to apply an arbitrary single-qubit gate $U$ (Eq.~\ref{equ:generalquantumgate}) to the first qubit in the two-qubit state $\ket{00}$. The second qubit in the state $\ket{00}$ shall remain unchanged which, in other words, means applying the $2\times2$ identity matrix $\mathbb{1}$ to it. To perform these operations, one defines the tensor product of two single-qubit gates as:
 \begin{equation}
 \label{equ:matrixtensorproduct}
 \textcolor{red}{U} \otimes \textcolor{emerald}{\mathbb{1}} \doteq \textcolor{red}{\begin{pmatrix}
@@ -220,10 +219,10 @@ One can also first perform the single qubit operations on the respective qubits,
 
 This formalism can be extended to any number of qubits, and the use of tensor products leads to an exponential increase in the dimensionality of the Hilbert space. Hence, $n$ qubits live in a $2^n$-dimensional Hilbert space ($\mathcal{H}_{2}^{\otimes n}$) and can store the content of $2^n$ classical bits. As an example, only 33 qubits can store the equivalent of $2^{33} = 8,589,934,592$ bits (= 1 gigabyte) which clearly bears the potential for enormous speedups in computations as will be demonstrated later.
 
-When considering multi-qubit systems one will encounter quantum states that can or cannot be factorised. For example, consider reexpressing the last expression in Eq.~\ref{equ:2qubitlineartransform2} as
+When considering multi-qubit systems one will encounter quantum states that can or cannot be factorised. For example, consider reexpressing the last expression in Eq.~\ref{equ:2qubitlineartransform2} as:
 \begin{equation}
 \label{equ:2qubitreexpressed}
-\colvec{a\\0\\c\\0} = a\colvec{1\\0\\0\\0} + 0\colvec{0\\1\\0\\0} + c \colvec{0\\0\\1\\0} + 0\colvec{0\\0\\0\\1} \doteq  a\ket{00} + 0 \ket{01} + c \ket{10} + 0\ket{11}\, ,
+\colvec{a\\0\\c\\0} = a\colvec{1\\0\\0\\0} + 0\colvec{0\\1\\0\\0} + c \colvec{0\\0\\1\\0} + 0\colvec{0\\0\\0\\1} \doteq  a\ket{00} + c \ket{10}\, ,
 \end{equation}
 which can be factorised into the tensor product
 \begin{equation}
@@ -243,15 +242,13 @@ It is straightforward to verify that the two-qubit state $\ket{\Psi^+}$ cannot b
 \end{equation}
 where the subscripts indicate which electron belongs to Andile (A) and Buhle (B). Looking at this expression tells Andile that Buhle's electron must be in state $\ket{0}$ without having measured her electron! At her house, Buhle measures her electron one second after Andile has performed his measurement and indeed finds it to be in state $\ket{0}$. Note that the second electron was nowhere close to Andile and he was still able to determine its state by only measuring his electron. After repeating this experiment one thousand times, Andile and Buhle find perfect correlations in their results: whenever Andile measured his electron in state $\ket{0}$, Buhle found her electron in state $\ket{1}$ and vice versa.
 
-Non-local correlations between qubit measurement outcomes is a peculiar quantum property of non-factorising quantum states and is called \emph{quantum entanglement}. It is an integral part of quantum computation and Section~\ref{subsubsubsec:cnotgate} will give a concrete example of how to create an entangled state in a QC.
+Non-local correlations between qubit measurement outcomes is a peculiar quantum property of non-factorising quantum states and is called \emph{quantum entanglement}. It is an integral part of quantum computation and Section~\ref{subsubsec:multiqubitgates} will give a concrete example of how to create an entangled state in a QC.
 %\pagebreak
 \section{Quantum Logic Gates}
 \label{subsec:quantumlogicgates}
 Until this point, most introduced concepts came from the field of pure quantum theory. However, this section marks the important transition from quantum theory to the field of \emph{quantum information processing}. A classical computer processes information and performs computations by systematically manipulating bits through the application of logic gates e.g. NOT or XOR gates. Analogously, a quantum computer processes information and performs \emph{quantum computations} by manipulating qubits using \emph{quantum logic gates}, often just called \emph{quantum gates}. Usually, a sequence of such quantum gates is required to perform a certain task or solve a particular problem on a quantum computer. Such a sequence of quantum gates is called a \emph{quantum algorithm}. 
 
-There are many different ways of realising a QC such as using trapped ions, photons or superconducting Josephson junctions, etc. \cite{clarke2008superconducting,haffner2008quantum,o2007optical}. Depending on the chosen substrate, different sets of quantum logic gates can be implemented and in order to run a quantum algorithm it has to be mapped to the available quantum hardware. Thus, quantum algorithms have to be translated (compiled) into a series of gates consisting only of quantum gates from the available universal gate set. This is referred to as \emph{quantum compiling}. 
-
-The following subsections will introduce some major single and multi-qubit quantum logic gates that will be used extensively in the later sections of this thesis.
+There are many different ways of realising a QC, for example, using trapped ions, photons or superconducting Josephson junctions \cite{clarke2008superconducting,haffner2008quantum,o2007optical}. Depending on the chosen substrate, different sets of quantum logic gates can be implemented and in order to run a quantum algorithm it has to be mapped to the available quantum hardware. Thus, quantum algorithms have to be translated (compiled) into a series of gates consisting only of quantum gates from the available universal gate set. This is referred to as \emph{quantum compiling}. The following subsections will introduce some major single and multi-qubit quantum logic gates that will be used extensively in the later sections of this thesis.
 %In order to perform quantum computations, tools, analogous to the classical logic gates, are needed for qubit manipulation. 
 
 \subsection{Single-qubit gates}
@@ -267,7 +264,7 @@ X \doteq \begin{pmatrix}
  \end{pmatrix}\, .
 \end{equation}
 
-The action of the X gate on the arbitrary qubit state $\ket{\psi}$ (Eq.~\ref{equ: simplequbitvector}) can be analysed using the gate's matrix and the qubit's vector representation. Applying some straightforward linear algebra yields
+The action of the X gate on the arbitrary qubit state $\ket{\psi}$ (Eq.~\ref{equ: simplequbitvector}) can be analysed using the gate's matrix and the qubit's vector representation. Applying some straightforward linear algebra yields:
 \begin{equation}
 \label{equ:xverification1}
 X \ket{\psi} = X (\alpha \ket{0} + \beta \ket{1}) \doteq \begin{pmatrix}
@@ -294,6 +291,8 @@ X \ket{0} \doteq \begin{pmatrix}
  0  \\ 
  1 \end{pmatrix} \doteq  \ket{1}\, .
 \end{equation}
+
+\newpage
 In terms of the example with the valence electron of a hydrogen atom shown in Fig.~\ref{img:qubitatom} an X gate can be implemented by exciting the electron from the ground state $\ket{0}$ into the next higher electron valence shell, defined to be the $\ket{1}$ state, using a controlled laser pulse.
 %consider the qubit initially being in state \0. Applying an X gate will flip the qubit into the \1 state which can be implemented in the lab by exciting the electron into the next highest electron valence shell using a controlled laser pulse.
 
@@ -411,7 +410,7 @@ The controlled NOT or CNOT gate is given by the following $4\times4$ matrix:
 
 The CNOT gate takes two qubits, a control and a target qubit, as input. If and only if the control qubit is in the \1 state, the NOT (X) quantum gate is applied to the target qubit. In equations, the CNOT will always be followed by parentheses containing the control (c) qubit followed by the target (t) qubit: CNOT(c,t). The input-output relation, called truth table, for the CNOT gate is given in Table~\ref{tab:cnottruthtable} at the top of the page.
 
-To demonstrate the usefulness of the CNOT gate consider starting with two unentangled qubits both in the \0 state,
+To demonstrate the usefulness of the CNOT gate consider starting with two unentangled qubits both in the \0 state:
 \begin{equation}
 \ket{\phi_0} = \ket{0} \otimes \ket{0} = \ket{00}\, .
 \end{equation}
@@ -431,7 +430,7 @@ The last expression in Eq.~\ref{equ:cnotexamples} is one of the famous Bell stat
 The three most important multi-qubit quantum gates CNOT, Toffoli and nCNOT are characterised in Table~\ref{tab:multiqubitgates}.
 
 \begin{table}[H]
-\caption{Table containing some major multi-qubit quantum logic gates where $c_j$ stands for the j\textsuperscript{th} control qubit and $\mathbb{1}_k$ for the $k\timesk$ identity matrix.}\vspace{1em}
+\caption{Table containing some major multi-qubit quantum logic gates where $c_j$ stands for the j\textsuperscript{th} control qubit and $\mathbb{1}_k$ for the $k\times k$ identity matrix.}\vspace{1em}
 \label{tab:multiqubitgates}
 \begin{tabular}{ c  C{1.8cm}  C{2cm}  c C{3cm}}\hline
 Gate & Name & Circuit representation & Matrix & Description \\ \midrule
@@ -471,12 +470,12 @@ nCNOT & n-controlled NOT & -  & $\begin{pmatrix}
 
 \emph{Machine learning} (ML), a subdiscipline of artificial intelligence, is trying to enable computers to learn from data without a human explicitly programming its actions. It can be subdivided into the three major fields \emph{supervised}, \emph{unsupervised} and \emph{reinforcement learning} \cite{schuld2015introduction}. Only supervised machine learning will be introduced because this thesis research exclusively focuses on supervised quantum machine learning algorithms. 
 
-The main idea of supervised machine learning is to train an algorithm on a \emph{labelled} training dataset containing, for example, pictures of fruits with their corresponding names such that it can be used to label new pictures that are not part of the training dataset. Since the samples in the training dataset were labelled, the process is said to be supervised.
+The main idea of supervised machine learning is to train an algorithm on a \emph{labelled} training dataset containing, for example, pictures of fruits with their corresponding names such that it can be used to label new pictures that are not part of the training dataset. Since the samples in the training dataset are labelled, the process is said to be supervised.
 
 More formally, in supervised machine learning one is presented with pairs of input ($x$) and output ($o$) variables and the machine learning algorithm is supposed to learn the function $f$ that maps inputs to their respective outputs:
 \begin{equation}
 \label{equ:inputoutputML}
-f(i) = o\, .
+f(x) = o\, .
 \end{equation}
 Thereby, the algorithm should approximate the mapping function $f$ to such an extent that it can predict the output $o$ for new unknown input data $\tilde{x}$ \cite{bishop2006pattern}. The following section will introduce a well-known algorithm from the field of supervised ML: the classical $k$-nearest neighbour algorithm.
 
@@ -484,7 +483,7 @@ Thereby, the algorithm should approximate the mapping function $f$ to such an ex
 \subsection{Classical $k$-nearest neighbour algorithm}
 \label{subsubsec:knearestneighbour}
 
-Understanding the quantum version of the distance weighted $k$-nearest neighbour (kNN) algorithm as proposed by \citeA{Schuld2014} requires prior knowledge of the classical version of the algorithm that will be introduced in this subsection.
+Understanding the later used quantum version of the distance weighted $k$-nearest neighbour (kNN) algorithm as proposed by \citeA{Schuld2014} requires prior knowledge of the classical version of the algorithm described by \citeA{cunningham2007k} that will be introduced in this subsection.
 
 Imagine working for a search engine company and you are given the task of classifying unknown pictures of fruits as either apples or bananas. To train your classification algorithm, you are given five different pictures of apples and five different pictures of bananas. This will be called the \emph{training data set} ${D}_{T}$. The pictures in ${D}_{T}$ may be taken from various angles, in varying light settings and include different coloured apples and bananas. Two examples of such images are shown in Fig.~\ref{img:appleandbanana}. 
 
@@ -496,7 +495,7 @@ Imagine working for a search engine company and you are given the task of classi
   \begin{minipage}[t]{0.48\textwidth}
     \includegraphics[width = \textwidth]{img/banana.png}
   \end{minipage}
-  \caption[]{Example pictures of apple and banana from training data set ${D}_{T}$.\footnotemark[3]}
+  \caption[]{Example pictures of an apple and a banana from training data set ${D}_{T}$.\footnotemark[3]}
   \label{img:appleandbanana}
 \end{figure}
 
@@ -511,7 +510,7 @@ Given a new picture of either a banana or an apple, you first extract the same $
 \begin{figure}[H]
       \centering
        \includegraphics[scale=0.8]{img/knn-concept.png}
-       \caption[]{\label{fig:knnconcept} Visualisation of a kNN classifier\footnotemark[4]}
+       \caption[]{\label{fig:knnconcept} Visualisation of a kNN classifier. The yellow and purple points represent the training vectors from class A and B respectively. The red star represent the new input vector that needs classification. In the case of $k=3$ the red star would be classified as class B since the majority of the three nearest neighbours are from class B. If $k=6$ then the red star would be classified as class A since four out of the six nearest neighbours are from class A.\footnotemark[4]}
 \end{figure}
 
 \footnotetext[4]{Reprinted from GitHub, Burton de Wilde, Retrieved September 13, 2016, from \url{http://bdewilde.github.io/blog/blogger/2012/10/26/classification-of-hand-written-digits-3/}. Copyright 2012 by Burton de Wilde.}
@@ -526,18 +525,18 @@ In the case of $k = 10$, $\vec{x}$ would simply be assigned to the class with th
 In the fields of computer science and quantum information, the so-called \emph{Big-O notation}, first described by \citeA{bachmann1894analytische}, is often used to describe how the runtime of an algorithm depends on variables such as the desired accuracy, the number of input vectors or their size. Hence, this is a way of quantifying the \emph{algorithmic time complexity} of a quantum algorithm. In the later sections of this thesis, the Big-O notation will be used as a tool to quantify possible quantum speedups in kNN quantum machine learning algorithms.
 
 \begin{redbox}
-\textbf{Definition: Big-O $\mathcal{O}$}\\
+\textbf{Definition: Big-$\mathcal{O}$}\\
 \newline
 For any monotonic functions $t(n)$ and $g(n)$ defined on a subset of the real numbers (${\rm I\!R}$), one says that $t(n) = \mathcal{O}(g(n))$ if and only if when there exists constants $c \geq 0$ and $n_0 \geq 0$ such that
 
 \begin{equation}
-\mid t(n) \mid \quad \leq \quad c\text{ }\mid g(n) \mid\, , \quad \text{for all } n \geq n_0\, .
+\mid t(n) \mid \quad \leq \quad c\text{ }\cdot\mid g(n) \mid\, , \quad \text{for all } n \geq n_0\, .
 \end{equation}
 \end{redbox}
 \begin{redbox}
 \begin{figure}[H]
       \centering
-       \includegraphics[scale=0.3]{img/asymptoticupperbound.png}
+       \includegraphics[scale=0.5]{img/asymptoticupperbound.png}
        \caption[]{\label{fig:upperasym} Visualisation of $c\text{ }g(n)$ being an upper asymptotic bound for the function $t(n)$\footnotemark[5]}
 \end{figure}
 
@@ -546,14 +545,13 @@ For any monotonic functions $t(n)$ and $g(n)$ defined on a subset of the real nu
 This implies that the function $t(n)$ does not grow at a faster rate than $g(n)$, or in other words that some constant multiple of the function $g(n)$ is an upper asymptotic bound for the function $t(n)$, for all $n\rightarrow \infty$.
 \end{redbox}
 
-Fig.~\ref{fig:algcomplexities} provides a good visual comparison between common algorithmic complexity classes regarding their relation to the input size $n$. It can be seen that the best possible algorithmic time complexity is constant time, $\mathcal{O}(1)$, that is being independent of the size of the input data e.g. determining if a binary number is even or odd. An algorithm is still considered excellent if it runs in logarithmic time $\mathcal{O}(log(n))$. Linear search algorithms, for example, are linear in time expressed as $\mathcal{O}(n)$. More complex sort algorithms like "bubble sort" have a higher time complexity and often run in quadratic time ($\mathcal{O}(n^2)$). Furthermore, algorithms with complexity $\mathcal{O}(n^c)$ are said to run in polynomial time for some $c > 2$. If an algorithm has time complexity $\mathcal{O}((log(n))^c)$ for some $c \geq 1$ it is called polylogarithmic. The highest complexity classes are exponential $\mathcal{O}(c^n)$ with $c \geq 1$ and factorial time $\mathcal{O}(n!)$. 
-%For example, solving the travelling salesman problem using brute-force search runs in factorial time.
-
 \begin{figure}[H]
       \centering
-       \includegraphics[scale=0.35]{img/bigocomplexity.png}
-       \caption[]{\label{fig:algcomplexities} Overview of some major algorithmic complexity classes. In the figure, the number of operations (vertical axis) is plotted against the number of elements $n$ in the input data vector (horizontal axis). Based on colour coding defined on top of the table the following algorithmic time complexity classes are illustrated: constant time $\mathcal{O}(1)$, logarithmic time $\mathcal{O}(log(n))$, linear time $\mathcal{O}(n)$, linearithmic time $\mathcal{O}(n log(n))$, quadratic time $\mathcal{O}(n^2)$, exponential time $\mathcal{O}(2^n)$ and factorial time $\mathcal{O}(n!)$.\footnotemark[6]}
+       \includegraphics[scale=0.43]{img/bigocomplexity.png}
+       \caption[]{\label{fig:algcomplexities} Overview of some major algorithmic complexity classes. In the figure, the number of operations (vertical axis) is plotted against the number of elements $n$ in the input data vector (horizontal axis). Based on colour coding defined on top of the table the following algorithmic time complexity classes are illustrated: constant time $\mathcal{O}(1)$, logarithmic time $\mathcal{O}(\log(n))$, linear time $\mathcal{O}(n)$, linearithmic time $\mathcal{O}(n\mathrm{ }\log(n))$, quadratic time $\mathcal{O}(n^2)$, exponential time $\mathcal{O}(2^n)$ and factorial time $\mathcal{O}(n!)$.\footnotemark[6]}
 \end{figure}
 \footnotetext[6]{Reprinted from Big-O Cheatsheet, Retrieved December 28, 2016, from \url{http://bigocheatsheet.com/}. Copyright 2016 by Big-O Cheatsheet.}
 
-%TRANSITION TO NEXT SECTION NEEDED!
+Fig.~\ref{fig:algcomplexities} provides a good visual comparison between common algorithmic complexity classes regarding their relation to the input size $n$. It can be seen that the best possible algorithmic time complexity is constant time, $\mathcal{O}(1)$, that is being independent of the size of the input data e.g. determining if a binary number is even or odd. An algorithm is still considered excellent if it runs in logarithmic time $\mathcal{O}(\log(n))$. Linear search algorithms, for example, are linear in time expressed as $\mathcal{O}(n)$. More complex sort algorithms like 'bubble sort' have a higher time complexity and often run in quadratic time $\mathcal{O}(n^2)$. Furthermore, algorithms with complexity $\mathcal{O}(n^c)$ are said to run in polynomial time for some $c > 2$. If an algorithm has time complexity $\mathcal{O}((\log(n))^c)$ for some $c \geq 1$, it is called polylogarithmic. The highest complexity classes are exponential $\mathcal{O}(c^n)$ with $c \geq 1$ and factorial time $\mathcal{O}(n!)$. 
+
+The Big-O notation completes the introduction of the necessary theoretical foundations. All later sections will make extensive use of the topics introduced in this section. The following section will outline the computational methods used for implementation and simulation of the quantum kNN algorithm.
