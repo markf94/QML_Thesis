@@ -4,7 +4,7 @@ Classical machine learning takes classical data as input and learns from it usin
 
 The subfield Q/C processes quantum data with classical machine learning algorithms. For example, \citeA{carrasquilla2016machine} used Google's deep learning library TensorFlow to identify the current phase of and phase transitions in quantum systems. Subfield Q/Q  is the union of C/Q and Q/C and deals with the processing of quantum data using quantum algorithms e.g. learning the Hamiltonian of a quantum system using quantum machine learning algorithms.
 
-The topic of this thesis is embedded within the subfield C/Q that aims to develop quantum algorithms for machine learning tasks involving classical data. This subfield is also called \emph{quantum-enhanced machine learning} since smart algorithm design can harness quantum parallelism and quantum interference to speed-up classical machine learning algorithms. The following sections will introduce some main concepts from the field of quantum-enhanced machine learning. More specifically, Section~\ref{subsec:quantumknearestneighbour} presents the quantum version of the classical $k$-nearest neighbour algorithm whose quantum simulation will be discussed extensively in Section~\ref{subsec:qubitKNNresults}. However, since a quantum algorithm is a sequence of quantum gates, it can only manipulate quantum and not classical bits. Therefore, the next section will first outline how classical data can be transferred into quantum states that can then be used for quantum computations.
+The topic of this thesis is embedded within the subfield C/Q that aims to develop quantum algorithms for machine learning tasks involving classical data. This subfield is also called \emph{quantum-enhanced machine learning} since smart algorithm design can harness quantum parallelism and quantum interference to speed up classical machine learning algorithms. The following sections will introduce some main concepts from the field of quantum-enhanced machine learning. More specifically, Section~\ref{subsec:quantumknearestneighbour} presents the quantum version of the classical $k$-nearest neighbour algorithm whose quantum simulation will be discussed extensively in Section~\ref{subsec:qubitKNNresults}. However, since a quantum algorithm is a sequence of quantum gates, it can only manipulate quantum and not classical bits. Therefore, the next section will first outline how classical data can be transferred into quantum states that can then be used for quantum computations.
 
 %WRITE ANOTHER PARAGRAPH HERE!
 
@@ -50,7 +50,7 @@ Rewrite the resulting two-dimensional vector as a one-dimensional bit string:
  \textcolor{emerald}{0100}
  \end{pmatrix} \rightarrow n=\textcolor{blue}{0110}\textcolor{emerald}{0100}\, .
 \end{equation}
-For $g$ bits initialize $g$ qubits in the \0 state \& apply the X gate to the respective qubits:
+For $g$ bits initialise $g$ qubits in the \0 state \& apply the X gate to the respective qubits:
 \begin{equation}
 n=\textcolor{blue}{0110}\textcolor{emerald}{0100}  \rightarrow \ket{n} = (\textcolor{blue}{\mathbb{1} \otimes X \otimes X \otimes \mathbb{1}}\otimes\textcolor{emerald}{\mathbb{1} \otimes X \otimes \mathbb{1} \otimes \mathbb{1}})\ket{00000000} = \ket{\textcolor{blue}{0110}\textcolor{emerald}{0100}}\, .
 \end{equation}
@@ -81,7 +81,7 @@ CS^j = \begin{pmatrix}
 0 & S^j
 \end{pmatrix}\, .
 \end{equation}
-The initial quantum state is given in Equ.~\ref{equ:truginitial} and consists of three registers; the first being the pattern register containing the first pattern $l^1$, the second register $u$ is a utility register initialized in state $\ket{01}$ and the third register $m$ represents the memory register initialized with $n$ zeros in which all patterns $l^j$ will be loaded one after the other:
+The initial quantum state is given in Eq.~\ref{equ:truginitial} and consists of three registers; the first being the pattern register containing the first pattern $l^1$, the second register $u$ is a utility register initialised in state $\ket{01}$ and the third register $m$ represents the memory register initialised with $n$ zeros in which all patterns $l^j$ will be loaded one after the other:
 \begin{equation}
 \label{equ:truginitial}
 \ket{\Psi^1_0} = \ket{l^1;u;m} = \ket{l^1_1,l^1_1,...,l^1_n;01;0_1,...,0_n}\, .
@@ -134,12 +134,12 @@ Step 7: Finally, by applying the inverse operation of Step 1 the memory register
 \end{equation}
 \end{bluebox}
 
-At the end of Step 7 the next pattern can be loaded into the first register, and by applying Steps 1-7 again, the pattern gets added to the memory register. After repeating this procedure $l$ times, the memory register $m$ will be in the desired state $\ket{M}$ defined by Equ.~\ref{equ:memorysuperpos}.
+At the end of Step 7 the next pattern can be loaded into the first register, and by applying Steps 1-7 again, the pattern gets added to the memory register. After repeating this procedure $l$ times, the memory register $m$ will be in the desired state $\ket{M}$ defined by Eq.~\ref{equ:memorysuperpos}.
 
 \subsection{Encoding classical data into amplitudes}
 \label{subsubsec:classicaldataamplitudes}
 
-A more sophisticated way of representing the classical vector $v$ (Equ.~\ref{equ:v}) as a quantum state makes use of the $2^n$ amplitudes in a $n$-qubit system. The general idea is expressed as:
+A more sophisticated way of representing the classical vector $v$ (Eq.~\ref{equ:v}) as a quantum state makes use of the $2^n$ amplitudes in a $n$-qubit system. The general idea is expressed as:
 \begin{equation}
 \label{equ:amplitudedata}
 \begin{pmatrix}
@@ -147,12 +147,12 @@ A more sophisticated way of representing the classical vector $v$ (Equ.~\ref{equ
  \textcolor{emerald}{0.4}
  \end{pmatrix} \quad \rightarrow \quad \ket{n} = \sqrt{\textcolor{blue}{0.6}}\ket{0}+\sqrt{\textcolor{emerald}{0.4}}\ket{1}\, .
 \end{equation}
-Using amplitude-based quantum state preparation, a $k$-dimensional probability vector is encoded into only $log_{2}(k)$ qubits since the number of amplitudes grows exponentially with the number of qubits. Therefore, this type of quantum data storage makes exponential compression of classical data possible. Since a quantum gate acts on all amplitudes in the superposition at once there is the possibility of exponential speed-ups in quantum algorithms compared to their classical counterparts \cite{nielsen2010quantum}. Compared to the one-to-one correspondence in qubit-encoded state preparation, amplitude-encoding requires a much smaller number of qubits that grows logarithmically with the size of the classical data vector. However, initializing an arbitrary amplitude distribution is still an active field of research and requires the implementation of non-trivial quantum algorithms.
+Using amplitude-based quantum state preparation, a $k$-dimensional probability vector is encoded into only $log_{2}(k)$ qubits since the number of amplitudes grows exponentially with the number of qubits. Therefore, this type of quantum data storage makes exponential compression of classical data possible. Since a quantum gate acts on all amplitudes in the superposition at once there is the possibility of exponential speed-ups in quantum algorithms compared to their classical counterparts \cite{nielsen2010quantum}. Compared to the one-to-one correspondence in qubit-encoded state preparation, amplitude-encoding requires a much smaller number of qubits that grows logarithmically with the size of the classical data vector. However, initialising an arbitrary amplitude distribution is still an active field of research and requires the implementation of non-trivial quantum algorithms.
 
-For the case when the classical data vectors represent discrete probability distributions which are efficiently integrable on a classical computer, \citeA{Grover2002} developed a quantum routine to initialize the corresponding amplitude distribution.
+For the case when the classical data vectors represent discrete probability distributions which are efficiently integrable on a classical computer, \citeA{Grover2002} developed a quantum routine to initialise the corresponding amplitude distribution.
 %The main idea in their algorithm is subdividing the respective probability distribution and encoding the probability
 %VERY COMPLICATED AND MOST GENERAL
-Additionally, \citeA{soklakov2006efficient} proposed a quantum algorithm, polynomial in the number of qubits, for the more general case that includes initializing amplitude distributions for classical data vectors representing non-efficiently integrable probability distributions.
+Additionally, \citeA{soklakov2006efficient} proposed a quantum algorithm, polynomial in the number of qubits, for the more general case that includes initialising amplitude distributions for classical data vectors representing non-efficiently integrable probability distributions.
 
 \section{Qubit-based quantum k-nearest neighbour algorithm}
 \label{subsec:quantumknearestneighbour}
@@ -241,14 +241,14 @@ Finally, to classify the input vector $\vec{x}$ the class register is measured a
 \label{equ:classprobs}
 Prob(c) = \frac{1}{NProb(\ket{a} = \ket{0})} \sum_{l \in c} cos^2\big[\frac{\pi}{2n}d_H(\vec{x},\vec{v}^l)\big]\, .
 \end{equation}
-%When rewriting Equ.~\ref{equ:beforecm} into the following form,
+%When rewriting Eq.~\ref{equ:beforecm} into the following form,
 %\begin{align}
 %\label{equ:beforecm2}
 %\ket{\psi_5} &= \frac{1}{\sqrt{N}}\sum_{c=1}^d \ket{c} \otimes \sum_{l \in c} cos\big[\frac{\pi}{2n}d_H(\vec{x},\vec{v}^l)\big] \ket{x_1^l,x_2^l,...x_n^l;d_1^l,d_2^l,...d_n^l;0} \notag\\
 %&\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad + sin\big[\frac{\pi}{2n}d_H(\vec{x},\vec{v}^l)\big] \ket{x_1^l,x_2^l,...x_n^l;d_1^l,d_2^l,...d_n^l;1}
 %\end{align}
 %where $l$ runs over all vectors $\vec{v}$ of a particular class c.
-From Equ.~\ref{equ:classprobs} it is evident that the probability of measuring a certain class $c$ is dependent on the average total reverse Hamming distance between all training vectors belonging to class $c$ and the input vector $\vec{x}$. Since the total reverse Hamming distances represent distance-dependent weights, it becomes clear why this is the quantum equivalent to a classical distance-weighted kNN algorithm.
+From Eq.~\ref{equ:classprobs} it is evident that the probability of measuring a certain class $c$ is dependent on the average total reverse Hamming distance between all training vectors belonging to class $c$ and the input vector $\vec{x}$. Since the total reverse Hamming distances represent distance-dependent weights, it becomes clear why this is the quantum equivalent to a classical distance-weighted kNN algorithm.
 
 In order to obtain a full picture of the probability distribution over the different classes a sufficient number of copies of $\ket{\psi_5}$ needs to be prepared and after successful conditional measurement on the ancilla qubit the class qubit needs to be measured.
 \vspace{1cm}

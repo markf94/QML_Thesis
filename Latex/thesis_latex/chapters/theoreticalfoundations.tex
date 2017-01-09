@@ -85,19 +85,19 @@ The fact that the probability of measuring a particular state is equal the absol
 \end{equation}
 must be satisfied. Therefore, a qubit is inherently probabilistic but when measured it collapses into a single classical bit (0 or 1). It follows that a measurement destroys information about the superposition of the qubit (the values of $\alpha$ and $\beta$). This constitutes one of the main difficulties when designing quantum algorithms since only limited information can be obtained about the final states of the qubits in the quantum computer.
 
-Using spherical polar coordinates, a single qubit can be visualized on the so-called Bloch sphere by parameterising $\alpha$ and $\beta$ in Eq.~\ref{equ: simplequbit} as follows:
+Using spherical polar coordinates, a single qubit can be visualised on the so-called Bloch sphere by parameterising $\alpha$ and $\beta$ in Eq.~\ref{equ: simplequbit} as follows:
 \begin{equation}
 \label{equ: blochqubit}
 \ket{\psi} = \cos\frac{\theta}{2} \ket{0} + e^{i \phi} \sin\frac{\theta}{2} \ket{1}\, .
 \end{equation}
 The Bloch sphere has a radius of 1 and is, therefore, a unit sphere. The \0 qubit state is defined to lie along the positive $\hat{z}$-axis and the \1 state is defined to lie along the negative $\hat{z}$-axis as labelled in Fig.~\ref{fig:blochsphere}. At this point, it is important to note that these two states are mutually orthogonal in $\mathcal{H}_{2}$ even though they are not orthogonal on the Bloch sphere. 
 
-Qubit states on the Bloch equator such as the $\hat{x}$ and $\hat{y}$ coordinate axes represent equal superpositions where \0 and \1 both have measurement probabilities equal to $0.5$. The $\hat{x}$-axis for example represents the equal superposition $\ket{q} = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}$. As illustrated in Fig.~\ref{fig:blochsphere} any arbitrary 2-D qubit state $\ket{\psi}$ can be decomposed into the polar angles $\theta$ and $\phi$ and visualized as a vector on the Bloch sphere. Such an object is called the Bloch vector of the qubit state $\ket{\psi}$. The Bloch sphere will be the main visualization tool for qubit manipulations in this thesis.
+Qubit states on the Bloch equator such as the $\hat{x}$ and $\hat{y}$ coordinate axes represent equal superpositions where \0 and \1 both have measurement probabilities equal to $0.5$. The $\hat{x}$-axis for example represents the equal superposition $\ket{q} = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}$. As illustrated in Fig.~\ref{fig:blochsphere} any arbitrary 2-D qubit state $\ket{\psi}$ can be decomposed into the polar angles $\theta$ and $\phi$ and visualised as a vector on the Bloch sphere. Such an object is called the Bloch vector of the qubit state $\ket{\psi}$. The Bloch sphere will be the main visualisation tool for qubit manipulations in this thesis.
 
 \begin{figure}[!ht]
        \centering
        \includegraphics[scale=0.11]{img/blochsphere.png}
-       \caption[]{\label{fig:blochsphere} An arbitrary single-qubit state $\ket{\psi} = \alpha \ket{0} + \beta \ket{1}$ can be visualized on the Bloch sphere by parameterising $\alpha = \cos\frac{\theta}{2}$ and $\beta = e^{i \phi} \sin\frac{\theta}{2}$ where $\theta$ is the polar and $\phi$ the azimuthal angle in spherical polar coordinates.\footnotemark[2]}
+       \caption[]{\label{fig:blochsphere} An arbitrary single-qubit state $\ket{\psi} = \alpha \ket{0} + \beta \ket{1}$ can be visualised on the Bloch sphere by parameterising $\alpha = \cos\frac{\theta}{2}$ and $\beta = e^{i \phi} \sin\frac{\theta}{2}$ where $\theta$ is the polar and $\phi$ the azimuthal angle in spherical polar coordinates.\footnotemark[2]}
 \end{figure}
 \footnotetext[2]{Reprinted from Wikipedia, n.d., Retrieved September 7, 2016, from \url{https://en.wikipedia.org/wiki/Bloch_Sphere}. Copyright 2012 by Glosser.ca.}
 \newpage
@@ -218,25 +218,25 @@ One can also first perform the single qubit operations on the respective qubits,
  \end{pmatrix} \colvec{1\\0} = \colvec{a\\c} \otimes \colvec{1\\0} = \colvec{a\\0\\c\\0}\, .
 \end{equation}
 
-This formalism can be extended to any number of qubits, and the use of tensor products leads to an exponential increase in the dimensionality of the Hilbert space. Hence, $n$ qubits live in a $2^n$-dimensional Hilbert space ($\mathcal{H}_{2}^{\otimes n}$) and can store the content of $2^n$ classical bits. As an example, only 33 qubits can store the equivalent of $2^{33} = 8,589,934,592$ bits (= 1 gigabyte) which clearly bears the potential for enormous speed-ups in computations as will be demonstrated later.
+This formalism can be extended to any number of qubits, and the use of tensor products leads to an exponential increase in the dimensionality of the Hilbert space. Hence, $n$ qubits live in a $2^n$-dimensional Hilbert space ($\mathcal{H}_{2}^{\otimes n}$) and can store the content of $2^n$ classical bits. As an example, only 33 qubits can store the equivalent of $2^{33} = 8,589,934,592$ bits (= 1 gigabyte) which clearly bears the potential for enormous speedups in computations as will be demonstrated later.
 
-When considering multi-qubit systems one will encounter quantum states that can or cannot be factorized. For example, consider reexpressing the last expression in Eq.~\ref{equ:2qubitlineartransform2} as
+When considering multi-qubit systems one will encounter quantum states that can or cannot be factorised. For example, consider reexpressing the last expression in Eq.~\ref{equ:2qubitlineartransform2} as
 \begin{equation}
 \label{equ:2qubitreexpressed}
 \colvec{a\\0\\c\\0} = a\colvec{1\\0\\0\\0} + 0\colvec{0\\1\\0\\0} + c \colvec{0\\0\\1\\0} + 0\colvec{0\\0\\0\\1} \doteq  a\ket{00} + 0 \ket{01} + c \ket{10} + 0\ket{11}\, ,
 \end{equation}
-which can be factorized into the tensor product
+which can be factorised into the tensor product
 \begin{equation}
-\label{equ:2qubitfactorized}
+\label{equ:2qubitfactorised}
 a\ket{00} + c \ket{10} = (a\ket{0} + c \ket{1})\otimes \ket{0}\, .
 \end{equation}
 
 In contrast, consider one of the four famous Bell states:
 \begin{equation}
-\label{equ:2qubitnonfactorized}
+\label{equ:2qubitnonfactorised}
 \ket{\Psi^+} = \frac{\ket{01} + \ket{10}}{\sqrt{2}}\, .
 \end{equation}
-It is straightforward to verify that the two-qubit state $\ket{\Psi^+}$ cannot be factorised into a tensor product of two single-qubit states. Now imagine, that the two people Andile and Buhle are given two electrons prepared in the quantum state $\ket{\Psi^+}$. Andile keeps the first electron in the lab, and Buhle takes the second electron to her house. After some time $t$, Andile gets interested in measuring if his electron is in the $\ket{0}$ or $\ket{1}$ state and performs a measurement along the standard basis. By applying Born's rule to the quantum state $\ket{\Psi^+}$, Andile knows that he will measure his electron in either state \0 or \1 with equal probabilities of 0.5. Note that even though the exact state vector $\ket{\Psi^+}$ is known, the outcome of the measurement is still uncertain. By measuring his electron, he finds it to be in the $\ket{1}$ state. From Eq.~\ref{equ:2qubitnonfactorized} and knowing that measurement collapses a superposition, the post-measurement (PM) state $\ket{\Psi^+}_{PM}$ is
+It is straightforward to verify that the two-qubit state $\ket{\Psi^+}$ cannot be factorised into a tensor product of two single-qubit states. Now imagine, that the two people Andile and Buhle are given two electrons prepared in the quantum state $\ket{\Psi^+}$. Andile keeps the first electron in the lab, and Buhle takes the second electron to her house. After some time $t$, Andile gets interested in measuring if his electron is in the $\ket{0}$ or $\ket{1}$ state and performs a measurement along the standard basis. By applying Born's rule to the quantum state $\ket{\Psi^+}$, Andile knows that he will measure his electron in either state \0 or \1 with equal probabilities of 0.5. Note that even though the exact state vector $\ket{\Psi^+}$ is known, the outcome of the measurement is still uncertain. By measuring his electron, he finds it to be in the $\ket{1}$ state. From Eq.~\ref{equ:2qubitnonfactorised} and knowing that measurement collapses a superposition, the post-measurement (PM) state $\ket{\Psi^+}_{PM}$ is
 \begin{equation}
 \label{equ:2qubitcollapsed}
 \ket{\Psi^+}_{PM} = \ket{1_A0_B}\, ,
@@ -316,7 +316,7 @@ On the Bloch sphere, the X gate corresponds to an anti-clockwise $\pi$ rotation 
 \begin{figure}[ht]
    \centering
    \includegraphics[width=0.75\textwidth]{img/blochxgate.png}
-   \caption{Visualization of the X gate action on the Bloch sphere. The figure shows the X gate transforming the \0 state (black $+\hat{z}$-axis) into the \1 state (red $-\hat{z}$-axis) by means of an anti-clockwise $\pi$ rotation around the $\hat{x}$-axis.}
+   \caption{Visualisation of the X gate action on the Bloch sphere. The figure shows the X gate transforming the \0 state (black $+\hat{z}$-axis) into the \1 state (red $-\hat{z}$-axis) by means of an anti-clockwise $\pi$ rotation around the $\hat{x}$-axis.}
    \label{img:blochxgate}
 \end{figure}
 
@@ -394,7 +394,7 @@ Input & Output \\ \hline
 \end{table}
 %\subsubsection{Controlled-NOT gate}
 %\label{subsubsubsec:cnotgate}
-Multi-qubit quantum logic gates act on at least two qubits at the same time. Similar to single-qubit gates, an $n$-qubit quantum gate can be represented as a $2^n\times2^n$ unitary matrix. Since they involve multiple qubits, the Bloch sphere cannot longer be used to visualise their action. The two-qubit controlled NOT quantum gate will be used to demonstrate the properties, matrix representation and action of a two-qubit quantum gate. This can then easily be generalized to $n$-qubit quantum gates.
+Multi-qubit quantum logic gates act on at least two qubits at the same time. Similar to single-qubit gates, an $n$-qubit quantum gate can be represented as a $2^n\times2^n$ unitary matrix. Since they involve multiple qubits, the Bloch sphere cannot longer be used to visualise their action. The two-qubit controlled NOT quantum gate will be used to demonstrate the properties, matrix representation and action of a two-qubit quantum gate. This can then easily be generalised to $n$-qubit quantum gates.
 
 The controlled NOT or CNOT gate is given by the following $4\times4$ matrix:
 \begin{equation}
@@ -426,7 +426,7 @@ Now consider applying the CNOT gate to the state $\ket{\phi_1}$ whereby the cont
 CNOT(\textcolor{red}{0},\textcolor{emerald}{1}) (\frac{1}{\sqrt{2}} \ket{\textcolor{red}{0}\textcolor{emerald}{0}} + \frac{1}{\sqrt{2}} \ket{\textcolor{red}{1}\textcolor{emerald}{0}}) = \frac{1}{\sqrt{2}} \ket{\textcolor{red}{0}\textcolor{emerald}{0}} + \frac{1}{\sqrt{2}} (\textcolor{red}{\mathbb{1}} \otimes \textcolor{emerald}{X}) \ket{\textcolor{red}{1}\textcolor{emerald}{0}} = \frac{1}{\sqrt{2}} \ket{\textcolor{red}{0}\textcolor{emerald}{0}} + \frac{1}{\sqrt{2}} \ket{\textcolor{red}{1}\textcolor{emerald}{1}}\, .
 \end{equation}
 The last expression in Eq.~\ref{equ:cnotexamples} is one of the famous Bell states which are a set of four maximally entangled quantum states. Another Bell state was used in the entanglement example in Section~\ref{subsec:multiqubitsystems}. Thus, this example demonstrates how the CNOT gate is crucial for the generation of entangled states since it applies the X gate to a target qubit depending on the state of a second control qubit.
-%was used as an example (Eq.~\ref{equ:2qubitnonfactorized}) for entanglement in Section~\ref{subsec:multiqubitsystems} and it 
+%was used as an example (Eq.~\ref{equ:2qubitnonfactorised}) for entanglement in Section~\ref{subsec:multiqubitsystems} and it 
 
 The three most important multi-qubit quantum gates CNOT, Toffoli and nCNOT are characterised in Table~\ref{tab:multiqubitgates}.
 
@@ -519,7 +519,7 @@ Given a new picture of either a banana or an apple, you first extract the same $
 \begin{figure}[H]
       \centering
        \includegraphics[scale=0.8]{img/knn-concept.png}
-       \caption[]{\label{fig:knnconcept} Visualization of a kNN classifier\footnotemark[4]}
+       \caption[]{\label{fig:knnconcept} Visualisation of a kNN classifier\footnotemark[4]}
 \end{figure}
 
 \footnotetext[4]{Reprinted from GitHub, Burton de Wilde, Retrieved September 13, 2016, from \url{http://bdewilde.github.io/blog/blogger/2012/10/26/classification-of-hand-written-digits-3/}. Copyright 2012 by Burton de Wilde.}
@@ -531,7 +531,7 @@ In the case of $k = 10$, $\vec{x}$ would simply be assigned to the class with th
 
 %\subsubsection{Big-O notation}
 %\label{subsubsubsec:bigO}
-In the fields of computer science and quantum information, the so-called \emph{Big-O notation}, first described by \citeA{bachmann1894analytische}, is often used to describe how the runtime of an algorithm depends on variables such as the desired accuracy, the number of input vectors or their size. Hence, this is a way of quantifying the \emph{algorithmic time complexity} of a quantum algorithm. In the later sections of this thesis, the Big-O notation will be used as a tool to quantify possible quantum speed-ups in kNN quantum machine learning algorithms.
+In the fields of computer science and quantum information, the so-called \emph{Big-O notation}, first described by \citeA{bachmann1894analytische}, is often used to describe how the runtime of an algorithm depends on variables such as the desired accuracy, the number of input vectors or their size. Hence, this is a way of quantifying the \emph{algorithmic time complexity} of a quantum algorithm. In the later sections of this thesis, the Big-O notation will be used as a tool to quantify possible quantum speedups in kNN quantum machine learning algorithms.
 
 \begin{redbox}
 \textbf{Definition: Big-O $\mathcal{O}$}\\
@@ -546,7 +546,7 @@ For any monotonic functions $t(n)$ and $g(n)$ defined on a subset of the real nu
 \begin{figure}[H]
       \centering
        \includegraphics[scale=0.3]{img/asymptoticupperbound.png}
-       \caption[]{\label{fig:upperasym} Visualization of $c\text{ }g(n)$ being an upper asymptotic bound for the function $t(n)$\footnotemark[5]}
+       \caption[]{\label{fig:upperasym} Visualisation of $c\text{ }g(n)$ being an upper asymptotic bound for the function $t(n)$\footnotemark[5]}
 \end{figure}
 
 \footnotetext[5]{Reprinted from Anany Levitin and Soumen Mukherjee. Introduction to the Design \& Analysis of Algorithms. Reading, MA: Addison-Wesley, 2003. Copyright 2012 by Levitin \& Mukherjee.}

@@ -52,14 +52,14 @@ for s, e in combinations(np.array(list(product(r,r,r))), 2):
         ax.plot3D(*zip(s,e), color="b")
 
 # Label the edges
-ax.text(1,1,1,  '%s' % ("|000>\na=0.58566"), size=21, zorder=1,color='k')
-ax.text(1,-1,1,  '%s' % ("|001>\na=0.11434"), size=21, zorder=1,color='k')
-ax.text(1,-1,-1,  '%s' % ("|011>\na=0.02232"), size=21, zorder=1,color='k')
-ax.text(1,1,-1,  '%s' % ("|010>\na=0.11434"), size=21, zorder=1,color='k')
-ax.text(-1,-1,1,  '%s' % ("|101>\na=0.02232"), size=21, zorder=1,color='k')
-ax.text(-1,1,1,  '%s' % ("|100>\na=0.11434"), size=21, zorder=1,color='k')
-ax.text(-1,1,-1,  '%s' % ("|110>\na=0.02232"), size=21, zorder=1,color='k')
-ax.text(-1,-1,-1,  '%s' % ("|111>\na=0.00436"), size=21, zorder=1,color='k')
+ax.text(1,1,1,  '%s' % ("|000>\na=1.0"), size=21, zorder=1,color='k')
+ax.text(1,-1,1,  '%s' % ("|001>\na=0.0"), size=21, zorder=1,color='k')
+ax.text(1,-1,-1,  '%s' % ("|011>\na=0.0"), size=21, zorder=1,color='k')
+ax.text(1,1,-1,  '%s' % ("|010>\na=0.0"), size=21, zorder=1,color='k')
+ax.text(-1,-1,1,  '%s' % ("|101>\na=0.0"), size=21, zorder=1,color='k')
+ax.text(-1,1,1,  '%s' % ("|100>\na=0.0"), size=21, zorder=1,color='k')
+ax.text(-1,1,-1,  '%s' % ("|110>\na=0.0"), size=21, zorder=1,color='k')
+ax.text(-1,-1,-1,  '%s' % ("|111>\na=0.0"), size=21, zorder=1,color='k')
 
 # Hide the axes
 ax = plt.gca(projection='3d')

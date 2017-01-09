@@ -57,15 +57,15 @@ Warning--No journal in SchuldFingerhuth
 Warning--No journal in Schuld2014
 You've used 45 entries,
             6951 wiz_defined-function locations,
-            1535 strings with 18253 characters,
-and the built_in function-call counts, 79278 in all, are:
-= -- 10242
+            1536 strings with 18278 characters,
+and the built_in function-call counts, 79465 in all, are:
+= -- 10263
 > -- 669
-< -- 3284
-+ -- 3270
+< -- 3305
++ -- 3291
 - -- 99
-* -- 4675
-:= -- 13188
+* -- 4694
+:= -- 13249
 add.period$ -- 186
 call.type$ -- 45
 change.case$ -- 774
@@ -74,7 +74,7 @@ cite$ -- 92
 duplicate$ -- 2153
 empty$ -- 3333
 format.name$ -- 1068
-if$ -- 15869
+if$ -- 15890
 int.to.chr$ -- 0
 int.to.str$ -- 139
 missing$ -- 0
@@ -84,9 +84,9 @@ pop$ -- 1398
 preamble$ -- 1
 purify$ -- 181
 quote$ -- 0
-skip$ -- 5957
+skip$ -- 5959
 stack$ -- 0
-substring$ -- 3643
+substring$ -- 3664
 swap$ -- 1201
 text.length$ -- 125
 text.prefix$ -- 0

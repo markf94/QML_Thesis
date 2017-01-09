@@ -1003,7 +1003,7 @@ Schuld%
 }{%
 Schuld%
 \ \protect \BOthers {.}}{%
-{\protect \APACyear {2016}}%
+{\protect \APACyear {Manuscript in preparation}}%
 }]{%
 SchuldFingerhuth}
 \APACinsertmetastar {%
@@ -1015,7 +1015,7 @@ Schuld, M.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2016}{}{}.
+\APACrefYearMonthDay{Manuscript in preparation}{}{}.
 \newblock
 {\BBOQ}\APACrefatitle {{Amplitude-based quantum k-nearest neighbour algorithm.
   Manuscript in preparation.}} {{Amplitude-based quantum k-nearest neighbour
