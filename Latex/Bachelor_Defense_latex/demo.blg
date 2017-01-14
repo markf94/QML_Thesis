@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: demo.aux
+The style file: abbrv.bst
+Database file #1: demo.bib
+Warning--I didn't find a database entry for "knuth92"
+Warning--I didn't find a database entry for "ConcreteMath"
+Warning--I didn't find a database entry for "Simpson"
+Warning--I didn't find a database entry for "Er01"
+Warning--I didn't find a database entry for "greenwade93"
+You've used 1 entry,
+            2118 wiz_defined-function locations,
+            510 strings with 3884 characters,
+and the built_in function-call counts, 237 in all, are:
+= -- 22
+> -- 7
+< -- 0
++ -- 3
+- -- 2
+* -- 8
+:= -- 46
+add.period$ -- 4
+call.type$ -- 1
+change.case$ -- 4
+chr.to.int$ -- 0
+cite$ -- 1
+duplicate$ -- 7
+empty$ -- 23
+format.name$ -- 2
+if$ -- 49
+int.to.chr$ -- 0
+int.to.str$ -- 1
+missing$ -- 0
+newline$ -- 9
+num.names$ -- 2
+pop$ -- 8
+preamble$ -- 1
+purify$ -- 3
+quote$ -- 0
+skip$ -- 6
+stack$ -- 0
+substring$ -- 5
+swap$ -- 1
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 4
+warning$ -- 0
+while$ -- 2
+width$ -- 2
+write$ -- 14
+(There were 5 warnings)
