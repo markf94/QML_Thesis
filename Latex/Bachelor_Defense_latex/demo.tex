@@ -99,30 +99,106 @@ x y class
 \maketitle
 
 \begin{frame}{Table of contents}
-  \setbeamertemplate{section in toc}[sections numbered]
-  \tableofcontents %[hideallsubsections]
+  %\setbeamertemplate{section in toc}[sections numbered]
+  %\tableofcontents %[hideallsubsections]
+  \begin{enumerate}
+  \item Introduction
+  \item Machine Learning
+  \item Quantum Computing
+  \item Quantum-enhanced Machine Learning
+  \item Results: Amplitude-based quantum $k$-nearest neighbour algorithm
+  \item Outlook
+  \item Conclusion
+  \end{enumerate}
 \end{frame}
 
 
 \section{Introduction}
 
 {
-\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}Bishop, C. M. (2006). Pattern recognition. Machine Learning, 128 .\newline \textsuperscript{2}Bekkerman, R., Bilenko, M., \& Langford, J. (2011). Scaling up machine learning: Parallel and distributed
+approaches. Cambridge University Press.}}
 \begin{frame}[fragile]{Enhancing machine learning with quantum mechanics}
 
-\begin{minipage}[c]{0.59\textwidth}
+\begin{minipage}[c]{0.45\textwidth}
 \includegraphics[scale=3.5]{Vectors/laptop_ml.eps}
 \newline
 \textbf{Machine learning}\\
 Enable computers to\\
 learn from data
 \end{minipage}%%
-\begin{minipage}[c]{0.39\textwidth}
-%\vspace{2.8cm}
-%\flushright
-%\includegraphics[scale=2.2]{Vectors/laptop_q.eps}
+\hspace{0.5cm}
+\begin{minipage}[c]{0.49\textwidth}
+\flushright
+\includegraphics[scale=0.09]{google_car.jpeg}
+\includegraphics[scale=0.55]{facial_recognition.jpg}\\
+\vspace{-0.2cm}
+\tiny{Source: IEEE Spectrum}
+\normalsize
+\vspace{0.5cm}
+\flushleft
+\begin{itemize}	 
+%Approximately 2.5 quintillion (${10}^{18}$) bytes of digital data are created every day\textsuperscript{1}
+	\item ML algorithms often involve\textsuperscript{1}
+	\begin{itemize}
+	\item solving large systems of linear equations
+	\item inverting large matrices
+	\item distance computations
+	\end{itemize}
+	\item Performing these computations on large data
+sets gets increasingly difficult\textsuperscript{2}
+\end{itemize}
 \end{minipage}
 
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{}
+\begin{frame}[fragile]{Quantum Machine Learning}
+
+\begin{enumerate}
+\item ML involves manipulation of large vectors and matrices
+\item Quantum mechanics is about vectors $\in$ complex Hilbert spaces
+\item Quantum computers are performing linear operations on qubits
+\end{enumerate}
+\hspace{3mm}$\rightarrow$ Hence, we can manipulate large vectors in parallel on quantum\\ \hspace{8mm}computers\\
+\vspace{3mm}
+\centering{\textcolor{orange}{So can we use QC to improve classical ML algorithms??}}
+\vspace{3mm}
+\begin{itemize}
+\item Classical ML is a very practical topic\\
+\item BUT, QML has been of almost entirely theoretical nature
+\end{itemize}
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
+\begin{frame}[fragile]{Enhancing machine learning with quantum mechanics}
+\hspace{-0.7cm}
+\begin{minipage}[c]{0.59\textwidth}
+\includegraphics[scale=0.12]{ibm-quantum-computer.jpg}
+\includegraphics[scale=0.12]{dwave.jpg}
+\tiny{Sources: DWave, IBM}
+\normalsize
+\begin{itemize}
+\item Quantum mechanics is about vectors in complex Hilbert spaces
+\item Quantum computers are performing linear operations on qubits
+\item Many-qubit systems are described by large vectors that can be manipulated in parallel on quantum computers
+\item Machine learning involves manipulation of large vectors and matrices
+\end{itemize}
+\end{minipage}%%
+\hspace{0.3cm}
+\begin{minipage}[c]{0.39\textwidth}
+\vspace{2.8cm}
+\centering
+\hspace{-1cm}\includegraphics[scale=2.2]{Vectors/laptop_q.eps}
+\flushleft
+\textbf{Quantum computing}\\
+Build computer hardware based on quantum physics
+\end{minipage}
 
 \end{frame}
 }
@@ -168,10 +244,8 @@ faster than classical computers
 }
 
 
-\section{Machine Learning}
-%\begin{figure}
-%\includegraphics[scale=3.5]{Vectors/laptop_ml.eps}
-%\end{figure}\\
+\section{\protect\includegraphics[scale=3.5]{Vectors/laptop_ml.eps}\newline Machine Learning
+}
 
 {
 \setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
@@ -485,7 +559,7 @@ Explain the kNN!
 }
 
 
-\section{Quantum Computing}
+\section{\protect\includegraphics[scale=2.4]{Vectors/laptop_q.eps}\newline Quantum Computing}
 
 {
 \setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
@@ -532,7 +606,7 @@ Mathematically, a qubit state is expressed as:
 \label{equ:simplequbit}
 \ket{\psi} = \alpha \ket{0} + \beta \ket{1}\, ,
 \end{equation}
-where $\alpha, \beta \in \mathbb{C}$.
+where $\alpha, \beta \in \mathbb{C}$ and they are called amplitudes.
 
 $\ket{0}$ and $\ket{1}$ can be represented as the 2-D vectors:
 \begin{equation}
@@ -583,6 +657,32 @@ where $0 \leq \theta \leq \pi$ and $0 \leq \phi \leq 2\pi$
 }
 
 {
+\setbeamertemplate{frame footer}{\tiny{}}
+\begin{frame}[fragile]{Three random bits vs. three qubits}
+
+Mathematically, a qubit state is expressed as:
+\begin{equation}
+\label{equ:simplequbit}
+\ket{\psi} = \alpha \ket{0} + \beta \ket{1}\, ,
+\end{equation}
+where $\alpha, \beta \in \mathbb{C}$ and they are called amplitudes.
+
+$\ket{0}$ and $\ket{1}$ can be represented as the 2-D vectors:
+\begin{equation}
+\ket{0} \doteq  \begin{pmatrix}1\\0\end{pmatrix} \quad \mathrm{and} \quad \ket{1} \doteq \begin{pmatrix}0\\1\end{pmatrix}\, .
+\end{equation}
+
+Substituting into Eq.~\ref{equ:simplequbit} yields the vector representation of $\ket{\psi}$:
+\begin{equation}
+\ket{\psi} \doteq \alpha \begin{pmatrix} 1\\0 \end{pmatrix} + \beta \begin{pmatrix}0\\1 \end{pmatrix} = \begin{pmatrix}\alpha\\\beta\end{pmatrix}\, .
+\end{equation}
+
+%introduce ket vectors \& superposition
+%show vector representation of a qubit
+\end{frame}
+}
+
+{
 \setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
 \begin{frame}[fragile]{Quantum gates}
 
@@ -601,30 +701,60 @@ Show two simple examples (Hadamard and X gate?)
 }
 
 
-\section{Quantum-enhanced Machine Learning}
+\section*{\protect\includegraphics[scale=2.4]{Vectors/laptop_qml.eps}\newline Quantum-enhanced Machine Learning}
 
 {
 \setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
 \begin{frame}[fragile]{Encoding classical data into qubits}
 
 %\movie[width=5cm,height=3.8cm,poster,autostart]{}{interference.mp4}
-\includemedia[
-  label=vidA,
-  addresource=interference.mp4,
-  activate=pageopen,
-  width=5cm, height=3.8cm,
-  flashvars={
-     source=interference.mp4
-    &loop=true
-  }
-]{}{VPlayer.swf}
+%\includemedia[
+%  label=vidA,
+%  addresource=interference.mp4,
+%  activate=pageopen,
+%  width=5cm, height=3.8cm,
+%  flashvars={
+%     source=interference.mp4
+%    &loop=true
+%  }
+%]{}{VPlayer.swf}
 
-\mediabutton[
-  mediacommand=vidA:playPause,
-]{\fbox{Play/Pause}}
+%\mediabutton[
+%  mediacommand=vidA:playPause,
+%]{\fbox{Play/Pause}}
 %\begin{figure}[ht]
 %\includemovie[poster,text={\small(Loading Video...)}]{6cm}{4cm}{interference.mp4}
 %\end{figure}
+There are two fundamentally different ways for state preparation:
+
+\begin{alertblock}{Data encoded into qubits}
+%speed-up not very clear since the \# of qubits increases linearly with the \# of classical bits
+k-dimensional probability vector requires $4k$ classical bits which are encoded one-to-one into $4k$ qubits, e.g.\\
+\vspace{2mm}
+$\begin{pmatrix}
+ \textcolor{blue}{0.6} \\ 
+ \textcolor{emerald}{0.4}
+ \end{pmatrix}*10 \rightarrow \begin{pmatrix}
+ \textcolor{blue}{6} \\ 
+ \textcolor{emerald}{4}
+ \end{pmatrix} \rightarrow \begin{pmatrix}
+ \textcolor{blue}{0110} \\ 
+ \textcolor{emerald}{0100}
+ \end{pmatrix} \rightarrow n=\textcolor{blue}{0110}\textcolor{emerald}{0100} \rightarrow \ket{n} = \ket{\textcolor{blue}{0110}\textcolor{emerald}{0100}}$\\
+%\textbf{Only slight speed up possible}
+\end{alertblock}
+\vspace{3mm}
+\begin{alertblock}{\textcolor{gray}{Data encoded into amplitudes}}
+\textcolor{gray}{k-dimensional probability vector is encoded into $log_{2}(k)$ qubits, e.g.\\ 
+\vspace{2mm}
+$\begin{pmatrix}
+ 0.6 \\ 
+ 0.4
+ \end{pmatrix} \quad \rightarrow \quad \ket{n} = \sqrt{0.6}\ket{0}+\sqrt{0.4}\ket{1}$\\
+%\textbf{Possibility of exponential speed up}
+}
+\end{alertblock}
+
 
 \end{frame}
 }
@@ -632,14 +762,42 @@ Show two simple examples (Hadamard and X gate?)
 {
 \setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
 \begin{frame}[fragile]{Encoding classical data into amplitudes}
+There are two fundamentally different ways for state preparation:
 
+\begin{alertblock}{\textcolor{gray}{Data encoded into qubits}}
+%speed-up not very clear since the \# of qubits increases linearly with the \# of classical bits
+\textcolor{gray}{k-dimensional probability vector requires $4k$ classical bits which are encoded one-to-one into $4k$ qubits, e.g.\\
+\vspace{2mm}
+$\begin{pmatrix}
+ 0.6 \\ 
+ 0.4
+ \end{pmatrix}*10 \rightarrow \begin{pmatrix}
+ 6 \\ 
+ 4
+ \end{pmatrix} \rightarrow \begin{pmatrix}
+ 0110 \\ 
+ 0100
+ \end{pmatrix} \rightarrow n=01100100 \rightarrow \ket{n} = \ket{01100100}$\\
+%\textbf{Only slight speed up possible}
+}
+\end{alertblock}  
+\vspace{3mm}
+\begin{alertblock}{Data encoded into amplitudes}
+k-dimensional probability vector is encoded into $log_{2}(k)$ qubits, e.g.\\ 
+\vspace{2mm}
+$\begin{pmatrix}
+ \textcolor{blue}{0.6} \\ 
+ \textcolor{emerald}{0.4}
+ \end{pmatrix} \quad \rightarrow \quad \ket{n} = \sqrt{\textcolor{blue}{0.6}}\ket{0}+\sqrt{\textcolor{emerald}{0.4}}\ket{1}$\\
+%\textbf{Possibility of exponential speed up}
+\end{alertblock}
 
 \end{frame}
 }
 
 {
 \setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
-\begin{frame}[fragile]{Amplitude interference}
+\begin{frame}[fragile]{Calculating distances with interference}
 
 
 \end{frame}

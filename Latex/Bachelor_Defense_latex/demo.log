@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  15 JAN 2017 03:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  15 JAN 2017 10:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1472,6 +1472,9 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 LaTeX Warning: Label `equ: blochqubit' multiply defined.
 
 
+LaTeX Warning: Label `equ:simplequbit' multiply defined.
+
+
 LaTeX Warning: Label `equ: blochqubit' multiply defined.
 
 
@@ -1703,13 +1706,13 @@ Package epstopdf Info: Source file: <UM_logo.eps>
 df UM_logo.eps>
 (epstopdf)             \includegraphics on input line 99.
 Package epstopdf Info: Output file is already uptodate.
-<UM_logo-eps-converted-to.pdf, id=49, 445.665pt x 114.4275pt>
+<UM_logo-eps-converted-to.pdf, id=45, 445.665pt x 114.4275pt>
 File: UM_logo-eps-converted-to.pdf Graphic file (type pdf)
 
 <use UM_logo-eps-converted-to.pdf>
 Package pdftex.def Info: UM_logo-eps-converted-to.pdf used on input line 99.
 (pdftex.def)             Requested size: 133.70053pt x 34.3285pt.
- <logo.jpeg, id=50, 334.6101pt x 144.54pt>
+ <logo.jpeg, id=46, 334.6101pt x 144.54pt>
 File: logo.jpeg Graphic file (type jpg)
 
 <use logo.jpeg>
@@ -1722,14 +1725,14 @@ Overfull \vbox (13.79993pt too high) detected at line 99
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./UM_logo-eps-converted-to
-.pdf> <./logo.jpeg>] (./demo.toc)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 104--104
+.pdf> <./logo.jpeg>]
+Overfull \hbox (0.4pt too wide) in paragraph at lines 113--113
 [][]  
  []
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 104.
+(Font)              size <5> substituted on input line 113.
 
 [2
 
@@ -1750,7 +1753,7 @@ erted-to.pdf Vectors/laptop_ml.eps>
 (epstopdf)             \includegraphics on input line 4.
 Package epstopdf Info: Output file is already uptodate.
 
-<Vectors/laptop_ml-eps-converted-to.pdf, id=91, 54.2025pt x 38.1425pt>
+<Vectors/laptop_ml-eps-converted-to.pdf, id=75, 54.2025pt x 38.1425pt>
 File: Vectors/laptop_ml-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Vectors/laptop_ml-eps-converted-to.pdf>
@@ -1758,18 +1761,99 @@ Package pdftex.def Info: Vectors/laptop_ml-eps-converted-to.pdf used on input l
 ine 4.
 (pdftex.def)             Requested size: 189.70827pt x 133.49838pt.
 
-Overfull \hbox (8.40837pt too wide) in paragraph at lines 4--9
+Overfull \hbox (51.42877pt too wide) in paragraph at lines 4--9
 [][] 
  []
 
+<google_car.jpeg, id=76, 852.18375pt x 462.72874pt>
+File: google_car.jpeg Graphic file (type jpg)
+ <use google_car.jpeg>
+Package pdftex.def Info: google_car.jpeg used on input line 13.
+(pdftex.def)             Requested size: 76.69322pt x 41.64378pt.
+
+<facial_recognition.jpg, id=77, 120.45pt x 80.3pt>
+File: facial_recognition.jpg Graphic file (type jpg)
+
+<use facial_recognition.jpg>
+Package pdftex.def Info: facial_recognition.jpg used on input line 14.
+(pdftex.def)             Requested size: 66.2477pt x 44.16512pt.
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 22.
+
+LaTeX Font Info:    No file OMScmss.fd. on input line 22.
+
+
+LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbullet' on input line 22.
+
 )
-Overfull \hbox (0.4pt too wide) in paragraph at lines 127--127
+Overfull \hbox (0.4pt too wide) in paragraph at lines 154--154
 [][]  
  []
 
 [4
 
- <./Vectors/laptop_ml-eps-converted-to.pdf>]
+ <./Vectors/laptop_ml-eps-converted-to.pdf> <./google_car.jpeg> <./facial_recog
+nition.jpg>]
+\openout4 = `demo.vrb'.
+
+ (./demo.vrb)
+Overfull \hbox (0.4pt too wide) in paragraph at lines 174--174
+[][]  
+ []
+
+[5
+
+]
+\openout4 = `demo.vrb'.
+
+ (./demo.vrb <ibm-quantum-computer.jpg, id=92, 642.4pt x 481.8pt>
+File: ibm-quantum-computer.jpg Graphic file (type jpg)
+
+<use ibm-quantum-computer.jpg>
+Package pdftex.def Info: ibm-quantum-computer.jpg used on input line 4.
+(pdftex.def)             Requested size: 77.08467pt x 57.81349pt.
+ <dwave.jpg, id=93, 640.3925pt x 564.1075pt>
+File: dwave.jpg Graphic file (type jpg)
+
+<use dwave.jpg>
+Package pdftex.def Info: dwave.jpg used on input line 5.
+(pdftex.def)             Requested size: 76.84378pt x 67.68997pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--9
+[][][]\OT1/cmss/m/n/5 Sources:
+ []
+
+Package epstopdf Info: Source file: <Vectors/laptop_q.eps>
+(epstopdf)                    date: 2017-01-14 14:58:15
+(epstopdf)                    size: 16968 bytes
+(epstopdf)             Output file: <Vectors/laptop_q-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-01-14 14:58:23
+(epstopdf)                    size: 8131 bytes
+(epstopdf)             Command: <repstopdf --outfile=Vectors/laptop_q-eps-conve
+rted-to.pdf Vectors/laptop_q.eps>
+(epstopdf)             \includegraphics on input line 19.
+Package epstopdf Info: Output file is already uptodate.
+<Vectors/laptop_q-eps-converted-to.pdf, id=94, 43.16125pt x 23.08624pt>
+File: Vectors/laptop_q-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Vectors/laptop_q-eps-converted-to.pdf>
+Package pdftex.def Info: Vectors/laptop_q-eps-converted-to.pdf used on input li
+ne 19.
+(pdftex.def)             Requested size: 94.95435pt x 50.78949pt.
+)
+Overfull \hbox (0.4pt too wide) in paragraph at lines 203--203
+[][]  
+ []
+
+
+Overfull \vbox (3.12506pt too high) detected at line 203
+ []
+
+[6
+
+ <./ibm-quantum-computer.jpg> <./dwave.jpg> <./Vectors/laptop_q-eps-converted-t
+o.pdf>]
 \openout4 = `demo.vrb'.
 
  (./demo.vrb
@@ -1784,8 +1868,7 @@ erted-to.pdf Vectors/laptop_ml.eps>
 (epstopdf)             \includegraphics on input line 4.
 Package epstopdf Info: Output file is already uptodate.
 File: Vectors/laptop_ml-eps-converted-to.pdf Graphic file (type pdf)
-
-<use Vectors/laptop_ml-eps-converted-to.pdf>
+ <use Vectors/laptop_ml-eps-converted-to.pdf>
 Package pdftex.def Info: Vectors/laptop_ml-eps-converted-to.pdf used on input l
 ine 4.
 (pdftex.def)             Requested size: 189.70827pt x 133.49838pt.
@@ -1804,21 +1887,19 @@ Package epstopdf Info: Source file: <Vectors/laptop_q.eps>
 rted-to.pdf Vectors/laptop_q.eps>
 (epstopdf)             \includegraphics on input line 13.
 Package epstopdf Info: Output file is already uptodate.
-<Vectors/laptop_q-eps-converted-to.pdf, id=99, 43.16125pt x 23.08624pt>
 File: Vectors/laptop_q-eps-converted-to.pdf Graphic file (type pdf)
-
 <use Vectors/laptop_q-eps-converted-to.pdf>
 Package pdftex.def Info: Vectors/laptop_q-eps-converted-to.pdf used on input li
 ne 13.
 (pdftex.def)             Requested size: 94.95435pt x 50.78949pt.
 )
-Overfull \hbox (0.4pt too wide) in paragraph at lines 150--150
+Overfull \hbox (0.4pt too wide) in paragraph at lines 226--226
 [][]  
  []
 
-[5
+[7
 
- <./Vectors/laptop_q-eps-converted-to.pdf>]
+]
 \openout4 = `demo.vrb'.
 
  (./demo.vrb
@@ -1833,7 +1914,7 @@ verted-to.pdf Vectors/laptop_qml.eps>
 (epstopdf)             \includegraphics on input line 6.
 Package epstopdf Info: Output file is already uptodate.
 
-<Vectors/laptop_qml-eps-converted-to.pdf, id=107, 64.24pt x 40.15pt>
+<Vectors/laptop_qml-eps-converted-to.pdf, id=108, 64.24pt x 40.15pt>
 File: Vectors/laptop_qml-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Vectors/laptop_qml-eps-converted-to.pdf>
@@ -1841,54 +1922,52 @@ Package pdftex.def Info: Vectors/laptop_qml-eps-converted-to.pdf used on input
 line 6.
 (pdftex.def)             Requested size: 192.71951pt x 120.44966pt.
 )
-Overfull \hbox (0.4pt too wide) in paragraph at lines 167--167
+Overfull \hbox (0.4pt too wide) in paragraph at lines 243--243
 [][]  
- []
-
-[6
-
- <./Vectors/laptop_qml-eps-converted-to.pdf>] [7
-
-]
-\openout4 = `demo.vrb'.
-
- (./demo.vrb
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 26.
-
-LaTeX Font Info:    No file OMScmss.fd. on input line 26.
-
-
-LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 26.
-
-)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 206--206
-[][]  
- []
-
-
-Overfull \vbox (45.95271pt too high) detected at line 206
  []
 
 [8
 
+ <./Vectors/laptop_qml-eps-converted-to.pdf>]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\new@ifnextchar' on input line 248.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 248.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\newline' on input line 248.
+
+Package epstopdf Info: Source file: <Vectors/laptop_ml.eps>
+(epstopdf)                    date: 2017-01-14 15:50:33
+(epstopdf)                    size: 294324 bytes
+(epstopdf)             Output file: <Vectors/laptop_ml-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-01-14 15:50:37
+(epstopdf)                    size: 86990 bytes
+(epstopdf)             Command: <repstopdf --outfile=Vectors/laptop_ml-eps-conv
+erted-to.pdf Vectors/laptop_ml.eps>
+(epstopdf)             \includegraphics on input line 248.
+Package epstopdf Info: Output file is already uptodate.
+File: Vectors/laptop_ml-eps-converted-to.pdf Graphic file (type pdf)
+<use Vectors/laptop_ml-eps-converted-to.pdf>
+Package pdftex.def Info: Vectors/laptop_ml-eps-converted-to.pdf used on input l
+ine 248.
+(pdftex.def)             Requested size: 189.70827pt x 133.49838pt.
+ [9
+
 ]
 \openout4 = `demo.vrb'.
 
  (./demo.vrb)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 232--232
+Overfull \hbox (0.4pt too wide) in paragraph at lines 280--280
 [][]  
  []
 
-[9
 
-]
-\openout4 = `demo.vrb'.
-
- (./demo.vrb)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 272--272
-[][]  
+Overfull \vbox (45.95271pt too high) detected at line 280
  []
 
 [10
@@ -1897,7 +1976,7 @@ Overfull \hbox (0.4pt too wide) in paragraph at lines 272--272
 \openout4 = `demo.vrb'.
 
  (./demo.vrb)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 475--475
+Overfull \hbox (0.4pt too wide) in paragraph at lines 306--306
 [][]  
  []
 
@@ -1907,28 +1986,76 @@ Overfull \hbox (0.4pt too wide) in paragraph at lines 475--475
 \openout4 = `demo.vrb'.
 
  (./demo.vrb)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 484--484
+Overfull \hbox (0.4pt too wide) in paragraph at lines 346--346
 [][]  
  []
 
 [12
 
-] [13
+]
+\openout4 = `demo.vrb'.
+
+ (./demo.vrb)
+Overfull \hbox (0.4pt too wide) in paragraph at lines 549--549
+[][]  
+ []
+
+[13
 
 ]
 \openout4 = `demo.vrb'.
 
  (./demo.vrb)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 503--503
+Overfull \hbox (0.4pt too wide) in paragraph at lines 558--558
 [][]  
  []
 
 [14
 
 ]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\new@ifnextchar' on input line 562.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 562.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\newline' on input line 562.
+
+Package epstopdf Info: Source file: <Vectors/laptop_q.eps>
+(epstopdf)                    date: 2017-01-14 14:58:15
+(epstopdf)                    size: 16968 bytes
+(epstopdf)             Output file: <Vectors/laptop_q-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-01-14 14:58:23
+(epstopdf)                    size: 8131 bytes
+(epstopdf)             Command: <repstopdf --outfile=Vectors/laptop_q-eps-conve
+rted-to.pdf Vectors/laptop_q.eps>
+(epstopdf)             \includegraphics on input line 562.
+Package epstopdf Info: Output file is already uptodate.
+File: Vectors/laptop_q-eps-converted-to.pdf Graphic file (type pdf)
+<use Vectors/laptop_q-eps-converted-to.pdf>
+Package pdftex.def Info: Vectors/laptop_q-eps-converted-to.pdf used on input li
+ne 562.
+(pdftex.def)             Requested size: 103.58644pt x 55.40665pt.
+ [15
+
+]
 \openout4 = `demo.vrb'.
 
- (./demo.vrb <qubitimplementation.jpeg, id=160, 1055.945pt x 395.4775pt>
+ (./demo.vrb)
+Overfull \hbox (0.4pt too wide) in paragraph at lines 577--577
+[][]  
+ []
+
+[16
+
+]
+\openout4 = `demo.vrb'.
+
+ (./demo.vrb <qubitimplementation.jpeg, id=162, 1055.945pt x 395.4775pt>
 File: qubitimplementation.jpeg Graphic file (type jpg)
 
 <use qubitimplementation.jpeg>
@@ -1940,30 +2067,30 @@ Overfull \hbox (9.49608pt too wide) in paragraph at lines 10--11
  []
 
 )
-Overfull \hbox (0.4pt too wide) in paragraph at lines 523--523
+Overfull \hbox (0.4pt too wide) in paragraph at lines 597--597
 [][]  
  []
 
 
-Overfull \vbox (0.4047pt too high) detected at line 523
+Overfull \vbox (0.4047pt too high) detected at line 597
  []
 
-[15
+[17
 
  <./qubitimplementation.jpeg>]
 \openout4 = `demo.vrb'.
 
  (./demo.vrb)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 549--549
+Overfull \hbox (0.4pt too wide) in paragraph at lines 623--623
 [][]  
  []
 
-[16
+[18
 
 ]
 \openout4 = `demo.vrb'.
 
- (./demo.vrb <blochsphere.png, id=179, 2007.5pt x 2278.5125pt>
+ (./demo.vrb <blochsphere.png, id=181, 2007.5pt x 2278.5125pt>
 File: blochsphere.png Graphic file (type png)
 
 <use blochsphere.png>
@@ -1980,35 +2107,28 @@ Underfull \hbox (badness 1348) in paragraph at lines 15--19
  []
 
 )
-Overfull \hbox (0.4pt too wide) in paragraph at lines 582--582
+Overfull \hbox (0.4pt too wide) in paragraph at lines 656--656
 [][]  
  []
 
-[17
+[19
 
 pdfTeX warning (ext4): destination with the same identifier (name{equ:\040bloch
 qubit}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.582 \end{frame}
+l.656 \end{frame}
                   <./blochsphere.png>]
 \openout4 = `demo.vrb'.
 
- (./demo.vrb)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 600--600
-[][]  
- []
-
-[18
-
-] [19
-
-]
-\openout4 = `demo.vrb'.
-
- (./demo.vrb<<VPlayer.swf>><<interference.mp4>>)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 629--629
+ (./demo.vrbpdfTeX warning (ext4): destination with the same identifier (name{e
+qu:simplequbit}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.5 \label{equ:simplequbit}
+                           )
+Overfull \hbox (0.4pt too wide) in paragraph at lines 682--682
 [][]  
  []
 
@@ -2018,35 +2138,73 @@ Overfull \hbox (0.4pt too wide) in paragraph at lines 629--629
 \openout4 = `demo.vrb'.
 
  (./demo.vrb)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 637--637
+Overfull \hbox (0.4pt too wide) in paragraph at lines 700--700
 [][]  
  []
 
 [21
 
 ]
+Package epstopdf Info: Source file: <Vectors/laptop_qml.eps>
+(epstopdf)                    date: 2017-01-14 15:54:06
+(epstopdf)                    size: 304454 bytes
+(epstopdf)             Output file: <Vectors/laptop_qml-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-01-14 15:54:10
+(epstopdf)                    size: 92817 bytes
+(epstopdf)             Command: <repstopdf --outfile=Vectors/laptop_qml-eps-con
+verted-to.pdf Vectors/laptop_qml.eps>
+(epstopdf)             \includegraphics on input line 704.
+Package epstopdf Info: Output file is already uptodate.
+File: Vectors/laptop_qml-eps-converted-to.pdf Graphic file (type pdf)
+ <use Vectors/laptop_qml-eps-converted-to.pdf>
+Package pdftex.def Info: Vectors/laptop_qml-eps-converted-to.pdf used on input 
+line 704.
+(pdftex.def)             Requested size: 154.17522pt x 96.35948pt.
+ [22
+
+]
 \openout4 = `demo.vrb'.
 
  (./demo.vrb)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 645--645
+Overfull \hbox (0.4pt too wide) in paragraph at lines 759--759
 [][]  
  []
 
-[22
-
-] [23
+[23
 
 ]
 \openout4 = `demo.vrb'.
 
- (./demo.vrb) [24
+ (./demo.vrb)
+Overfull \hbox (0.4pt too wide) in paragraph at lines 795--795
+[][]  
+ []
 
-] [25
+[24
 
 ]
 \openout4 = `demo.vrb'.
 
- (./demo.vrb) [26
+ (./demo.vrb)
+Overfull \hbox (0.4pt too wide) in paragraph at lines 803--803
+[][]  
+ []
+
+[25
+
+] [26
+
+]
+\openout4 = `demo.vrb'.
+
+ (./demo.vrb) [27
+
+] [28
+
+]
+\openout4 = `demo.vrb'.
+
+ (./demo.vrb) [29
 
 ]
 \openout4 = `demo.vrb'.
@@ -2078,37 +2236,7 @@ qubit}) has been already used, duplicate ignored
                    \relax 
 l.21 \label{equ: blochqubit}
                             )
-Overfull \hbox (0.4pt too wide) in paragraph at lines 705--705
-[][]  
- []
-
-[27
-
-]
-\openout4 = `demo.vrb'.
-
- (./demo.vrb)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 732--732
-[][]  
- []
-
-[28
-
-]
-\openout4 = `demo.vrb'.
-
- (./demo.vrb)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 752--752
-[][]  
- []
-
-[29
-
-]
-\openout4 = `demo.vrb'.
-
- (./demo.vrb)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 789--789
+Overfull \hbox (0.4pt too wide) in paragraph at lines 863--863
 [][]  
  []
 
@@ -2118,7 +2246,7 @@ Overfull \hbox (0.4pt too wide) in paragraph at lines 789--789
 \openout4 = `demo.vrb'.
 
  (./demo.vrb)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 827--827
+Overfull \hbox (0.4pt too wide) in paragraph at lines 890--890
 [][]  
  []
 
@@ -2127,77 +2255,107 @@ Overfull \hbox (0.4pt too wide) in paragraph at lines 827--827
 ]
 \openout4 = `demo.vrb'.
 
- (./demo.vrb <knn-concept.png, id=299, 385.44pt x 289.08pt>
-File: knn-concept.png Graphic file (type png)
-
-<use knn-concept.png>
-Package pdftex.def Info: knn-concept.png used on input line 21.
-(pdftex.def)             Requested size: 153.64493pt x 115.23296pt.
-)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 858--858
+ (./demo.vrb)
+Overfull \hbox (0.4pt too wide) in paragraph at lines 910--910
 [][]  
- []
-
-
-Overfull \vbox (7.29341pt too high) detected at line 858
  []
 
 [32
 
- <./knn-concept.png>]
-File: knn-concept.png Graphic file (type png)
- <use knn-concept.png>
-Package pdftex.def Info: knn-concept.png used on input line 888.
-(pdftex.def)             Requested size: 96.35976pt x 72.26982pt.
+]
+\openout4 = `demo.vrb'.
 
-Overfull \hbox (0.4pt too wide) in paragraph at lines 888--888
+ (./demo.vrb)
+Overfull \hbox (0.4pt too wide) in paragraph at lines 947--947
 [][]  
- []
-
-
-Overfull \vbox (19.85799pt too high) detected at line 888
  []
 
 [33
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 903--903
+\openout4 = `demo.vrb'.
+
+ (./demo.vrb)
+Overfull \hbox (0.4pt too wide) in paragraph at lines 985--985
 [][]  
  []
 
 [34
 
 ]
-LaTeX Font Info:    Font shape `U/urwchancal/m/n' will be
-(Font)              scaled to size 9.60007pt on input line 924.
-LaTeX Font Info:    Font shape `U/urwchancal/m/n' will be
-(Font)              scaled to size 6.72005pt on input line 924.
-LaTeX Font Info:    Font shape `U/urwchancal/m/n' will be
-(Font)              scaled to size 4.80003pt on input line 924.
+\openout4 = `demo.vrb'.
 
-Overfull \hbox (0.4pt too wide) in paragraph at lines 924--924
+ (./demo.vrb <knn-concept.png, id=284, 385.44pt x 289.08pt>
+File: knn-concept.png Graphic file (type png)
+
+<use knn-concept.png>
+Package pdftex.def Info: knn-concept.png used on input line 21.
+(pdftex.def)             Requested size: 153.64493pt x 115.23296pt.
+)
+Overfull \hbox (0.4pt too wide) in paragraph at lines 1016--1016
 [][]  
+ []
+
+
+Overfull \vbox (7.29341pt too high) detected at line 1016
  []
 
 [35
 
-] <bloch3over4.png, id=322, 703.62875pt x 618.31pt>
+ <./knn-concept.png>]
+File: knn-concept.png Graphic file (type png)
+ <use knn-concept.png>
+Package pdftex.def Info: knn-concept.png used on input line 1046.
+(pdftex.def)             Requested size: 96.35976pt x 72.26982pt.
+
+Overfull \hbox (0.4pt too wide) in paragraph at lines 1046--1046
+[][]  
+ []
+
+
+Overfull \vbox (19.85799pt too high) detected at line 1046
+ []
+
+[36
+
+]
+Overfull \hbox (0.4pt too wide) in paragraph at lines 1061--1061
+[][]  
+ []
+
+[37
+
+]
+LaTeX Font Info:    Font shape `U/urwchancal/m/n' will be
+(Font)              scaled to size 9.60007pt on input line 1082.
+LaTeX Font Info:    Font shape `U/urwchancal/m/n' will be
+(Font)              scaled to size 6.72005pt on input line 1082.
+LaTeX Font Info:    Font shape `U/urwchancal/m/n' will be
+(Font)              scaled to size 4.80003pt on input line 1082.
+
+Overfull \hbox (0.4pt too wide) in paragraph at lines 1082--1082
+[][]  
+ []
+
+[38
+
+] <bloch3over4.png, id=309, 703.62875pt x 618.31pt>
 File: bloch3over4.png Graphic file (type png)
  <use bloch3over4.png>
-Package pdftex.def Info: bloch3over4.png used on input line 966.
+Package pdftex.def Info: bloch3over4.png used on input line 1124.
 (pdftex.def)             Requested size: 135.2062pt x 118.8104pt.
 
-Overfull \hbox (1.05978pt too wide) detected at line 966
+Overfull \hbox (1.05978pt too wide) detected at line 1124
 []\OT1/mathkerncmss/m/sl/7 CR[]\OT1/cmss/m/n/7 ([]) [] = [] = [] []([][] [] + [
 ][] []) [] []
  []
 
-LaTeX Font Info:    Try loading font information for U+dsrom on input line 966.
-
+LaTeX Font Info:    Try loading font information for U+dsrom on input line 1124
+.
 (/usr/share/texlive/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 )
-Overfull \hbox (15.7916pt too wide) detected at line 966
+Overfull \hbox (15.7916pt too wide) detected at line 1124
 \OT1/cmss/m/n/7 (\OT1/mathkerncmss/m/sl/7 X \OMS/cmsy/m/n/7 
  \U/dsrom/m/n/7 1 \OMS/cmsy/m/n/7 
  \U/dsrom/m/n/7 1 \OMS/cmsy/m/n/7 
@@ -2205,177 +2363,177 @@ Overfull \hbox (15.7916pt too wide) detected at line 966
  []
 
 
-Overfull \hbox (0.4pt too wide) in paragraph at lines 966--966
-[][]  
- []
-
-[36
-
- <./bloch3over4.png>]
-<IBMamplitudecomposer.png, id=331, 1255.69125pt x 594.22pt>
-File: IBMamplitudecomposer.png Graphic file (type png)
-
-<use IBMamplitudecomposer.png>
-Package pdftex.def Info: IBMamplitudecomposer.png used on input line 991.
-(pdftex.def)             Requested size: 324.67096pt x 153.64493pt.
-
-Overfull \hbox (17.38109pt too wide) in paragraph at lines 991--991
- [] 
- []
-
-
-Overfull \hbox (0.4pt too wide) in paragraph at lines 991--991
-[][]  
- []
-
-
-Overfull \vbox (15.34602pt too high) detected at line 991
- []
-
-[37
-
- <./IBMamplitudecomposer.png>]
-<IBMgates.png, id=338, 691.58376pt x 83.31125pt>
-File: IBMgates.png Graphic file (type png)
- <use IBMgates.png>
-Package pdftex.def Info: IBMgates.png used on input line 1005.
-(pdftex.def)             Requested size: 311.20981pt x 37.4897pt.
-
-Overfull \hbox (3.91994pt too wide) in paragraph at lines 1005--1005
- [] 
- []
-
-
-Overfull \hbox (0.4pt too wide) in paragraph at lines 1005--1005
-[][]  
- []
-
-[38
-
- <./IBMgates.png>] <controlledU.png, id=344, 297.11pt x 201.75375pt>
-File: controlledU.png Graphic file (type png)
-
-<use controlledU.png>
-Package pdftex.def Info: controlledU.png used on input line 1043.
-(pdftex.def)             Requested size: 90.5028pt x 61.45703pt.
-
-<controlledUdecomposition.png, id=345, 892.33376pt x 296.10625pt>
-File: controlledUdecomposition.png Graphic file (type png)
-
-<use controlledUdecomposition.png>
-Package pdftex.def Info: controlledUdecomposition.png used on input line 1043.
-(pdftex.def)             Requested size: 184.3758pt x 61.18109pt.
-LaTeX Font Info:    Font shape `U/urwchancal/m/n' will be
-(Font)              scaled to size 7.68005pt on input line 1043.
-LaTeX Font Info:    Font shape `U/urwchancal/m/n' will be
-(Font)              scaled to size 5.76004pt on input line 1043.
-
-Overfull \hbox (0.4pt too wide) in paragraph at lines 1043--1043
+Overfull \hbox (0.4pt too wide) in paragraph at lines 1124--1124
 [][]  
  []
 
 [39
 
- <./controlledU.png> <./controlledUdecomposition.png>]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 1069--1069
+ <./bloch3over4.png>]
+<IBMamplitudecomposer.png, id=318, 1255.69125pt x 594.22pt>
+File: IBMamplitudecomposer.png Graphic file (type png)
+
+<use IBMamplitudecomposer.png>
+Package pdftex.def Info: IBMamplitudecomposer.png used on input line 1149.
+(pdftex.def)             Requested size: 324.67096pt x 153.64493pt.
+
+Overfull \hbox (17.38109pt too wide) in paragraph at lines 1149--1149
+ [] 
+ []
+
+
+Overfull \hbox (0.4pt too wide) in paragraph at lines 1149--1149
 [][]  
+ []
+
+
+Overfull \vbox (15.34602pt too high) detected at line 1149
  []
 
 [40
 
-]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 1087--1087
+ <./IBMamplitudecomposer.png>]
+<IBMgates.png, id=324, 691.58376pt x 83.31125pt>
+File: IBMgates.png Graphic file (type png)
+ <use IBMgates.png>
+Package pdftex.def Info: IBMgates.png used on input line 1163.
+(pdftex.def)             Requested size: 311.20981pt x 37.4897pt.
+
+Overfull \hbox (3.91994pt too wide) in paragraph at lines 1163--1163
+ [] 
+ []
+
+
+Overfull \hbox (0.4pt too wide) in paragraph at lines 1163--1163
 [][]  
  []
 
 [41
 
-]
-PGFPlots: reading {datax.dat}
-PGFPlots: reading {datax.dat}
+ <./IBMgates.png>] <controlledU.png, id=330, 297.11pt x 201.75375pt>
+File: controlledU.png Graphic file (type png)
 
-Overfull \hbox (0.4pt too wide) in paragraph at lines 1115--1115
+<use controlledU.png>
+Package pdftex.def Info: controlledU.png used on input line 1201.
+(pdftex.def)             Requested size: 90.5028pt x 61.45703pt.
+
+<controlledUdecomposition.png, id=331, 892.33376pt x 296.10625pt>
+File: controlledUdecomposition.png Graphic file (type png)
+
+<use controlledUdecomposition.png>
+Package pdftex.def Info: controlledUdecomposition.png used on input line 1201.
+(pdftex.def)             Requested size: 184.3758pt x 61.18109pt.
+LaTeX Font Info:    Font shape `U/urwchancal/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 1201.
+LaTeX Font Info:    Font shape `U/urwchancal/m/n' will be
+(Font)              scaled to size 5.76004pt on input line 1201.
+
+Overfull \hbox (0.4pt too wide) in paragraph at lines 1201--1201
 [][]  
  []
 
 [42
 
-] <fowlerdistance.png, id=369, 798.985pt x 695.59875pt>
-File: fowlerdistance.png Graphic file (type png)
-
-<use fowlerdistance.png>
-Package pdftex.def Info: fowlerdistance.png used on input line 1148.
-(pdftex.def)             Requested size: 225.89655pt x 196.667pt.
-
-Overfull \hbox (0.4pt too wide) in paragraph at lines 1148--1148
+ <./controlledU.png> <./controlledUdecomposition.png>]
+Overfull \hbox (0.4pt too wide) in paragraph at lines 1227--1227
 [][]  
  []
 
 [43
 
- <./fowlerdistance.png>]
-LaTeX Font Info:    Try loading font information for TS1+cmss on input line 118
-1.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
-File: ts1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 1181--1181
+]
+Overfull \hbox (0.4pt too wide) in paragraph at lines 1245--1245
 [][]  
- []
-
-
-Overfull \vbox (22.60918pt too high) detected at line 1181
  []
 
 [44
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 1205--1205
+PGFPlots: reading {datax.dat}
+PGFPlots: reading {datax.dat}
+
+Overfull \hbox (0.4pt too wide) in paragraph at lines 1273--1273
 [][]  
  []
 
 [45
 
-]
-LaTeX Font Info:    Font shape `U/urwchancal/m/n' will be
-(Font)              scaled to size 11.52008pt on input line 1220.
+] <fowlerdistance.png, id=356, 798.985pt x 695.59875pt>
+File: fowlerdistance.png Graphic file (type png)
 
-Overfull \hbox (0.4pt too wide) in paragraph at lines 1220--1220
+<use fowlerdistance.png>
+Package pdftex.def Info: fowlerdistance.png used on input line 1306.
+(pdftex.def)             Requested size: 225.89655pt x 196.667pt.
+
+Overfull \hbox (0.4pt too wide) in paragraph at lines 1306--1306
 [][]  
  []
 
 [46
 
-] [47
+ <./fowlerdistance.png>]
+LaTeX Font Info:    Try loading font information for TS1+cmss on input line 133
+9.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
+File: ts1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+Overfull \hbox (0.4pt too wide) in paragraph at lines 1339--1339
+[][]  
+ []
+
+
+Overfull \vbox (22.60918pt too high) detected at line 1339
+ []
+
+[47
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 1233--1233
+Overfull \hbox (0.4pt too wide) in paragraph at lines 1363--1363
 [][]  
  []
 
 [48
 
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 1243--1243
+LaTeX Font Info:    Font shape `U/urwchancal/m/n' will be
+(Font)              scaled to size 11.52008pt on input line 1378.
+
+Overfull \hbox (0.4pt too wide) in paragraph at lines 1378--1378
 [][]  
  []
 
 [49
 
+] [50
+
 ]
-Overfull \hbox (0.4pt too wide) in paragraph at lines 1260--1260
+Overfull \hbox (0.4pt too wide) in paragraph at lines 1391--1391
 [][]  
  []
 
-[50
+[51
 
-] [51
+]
+Overfull \hbox (0.4pt too wide) in paragraph at lines 1401--1401
+[][]  
+ []
+
+[52
+
+]
+Overfull \hbox (0.4pt too wide) in paragraph at lines 1418--1418
+[][]  
+ []
+
+[53
+
+] [54
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\translate ' on input line 1267.
+(hyperref)                removing `\translate ' on input line 1425.
 
 \openout4 = `demo.vrb'.
 
@@ -2383,7 +2541,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Missing character: There is no â in font cmss8!
 Missing character: There is no ˆ in font cmss8!
 Missing character: There is no ’ in font cmss8!
-) [52
+) [55
 
 ]
 \openout4 = `demo.vrb'.
@@ -2403,123 +2561,123 @@ Missing character: There is no ¨ in font cmss8!
 Missing character: There is no â in font cmss8!
 Missing character: There is no € in font cmss8!
 Missing character: There is no “ in font cmss8!
- [53
+ [56
 
 ]
 \openout4 = `demo.vrb'.
 
- (./demo.vrb) [54
+ (./demo.vrb) [57
 
 ]
 \openout4 = `demo.vrb'.
 
- (./demo.vrb) [55
+ (./demo.vrb) [58
 
 ]
-<cube_notdiffused.png, id=440, 677.53125pt x 639.38875pt>
+<cube_notdiffused.png, id=427, 677.53125pt x 639.38875pt>
 File: cube_notdiffused.png Graphic file (type png)
 
 <use cube_notdiffused.png>
-Package pdftex.def Info: cube_notdiffused.png used on input line 1393.
+Package pdftex.def Info: cube_notdiffused.png used on input line 1551.
 (pdftex.def)             Requested size: 237.13948pt x 223.78941pt.
 
-Overfull \vbox (31.55025pt too high) detected at line 1393
+Overfull \vbox (31.55025pt too high) detected at line 1551
  []
 
-[56
+[59
 
  <./cube_notdiffused.png>]
-<4qubitdiffusion.png, id=447, 1351.0475pt x 773.89125pt>
+<4qubitdiffusion.png, id=433, 1351.0475pt x 773.89125pt>
 File: 4qubitdiffusion.png Graphic file (type png)
 
 <use 4qubitdiffusion.png>
-Package pdftex.def Info: 4qubitdiffusion.png used on input line 1414.
+Package pdftex.def Info: 4qubitdiffusion.png used on input line 1572.
 (pdftex.def)             Requested size: 270.20471pt x 154.7755pt.
 
-Overfull \vbox (48.9698pt too high) detected at line 1414
+Overfull \vbox (48.9698pt too high) detected at line 1572
  []
 
-[57
+[60
 
  <./4qubitdiffusion.png>]
-<cube_diffused.png, id=453, 747.79375pt x 665.48625pt>
+<cube_diffused.png, id=439, 747.79375pt x 665.48625pt>
 File: cube_diffused.png Graphic file (type png)
  <use cube_diffused.png>
-Package pdftex.def Info: cube_diffused.png used on input line 1425.
+Package pdftex.def Info: cube_diffused.png used on input line 1583.
 (pdftex.def)             Requested size: 246.77269pt x 219.61113pt.
 
-Overfull \vbox (27.37196pt too high) detected at line 1425
+Overfull \vbox (27.37196pt too high) detected at line 1583
  []
 
-[58
+[61
 
- <./cube_diffused.png>] <4d_hypercube.png, id=459, 662.475pt x 551.05875pt>
+ <./cube_diffused.png>] <4d_hypercube.png, id=447, 662.475pt x 551.05875pt>
 File: 4d_hypercube.png Graphic file (type png)
 
 <use 4d_hypercube.png>
-Package pdftex.def Info: 4d_hypercube.png used on input line 1436.
+Package pdftex.def Info: 4d_hypercube.png used on input line 1594.
 (pdftex.def)             Requested size: 218.61742pt x 181.84995pt.
- [59
+ [62
 
- <./4d_hypercube.png>] (./demo.bbl) [60
+ <./4d_hypercube.png>] (./demo.bbl) [63
 
  </usr/share/texlive/texmf-dist/tex/latex/beamer/art/beamericonarticle.pdf>] [6
-1
+4
 
 ]
 \openout4 = `demo.vrb'.
 
- (./demo.vrb) [62
+ (./demo.vrb) [65
 
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 1477.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 1635.
 
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 1477.
+(Font)              using `OT1/cmss/bx/n' instead on input line 1635.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/sc' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 1477.
+(Font)              using `OT1/cmss/bx/n' instead on input line 1635.
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 1477.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 1635.
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/it' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 1477
+(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 1635
 .
-[63
-
-] [64
-
-] [65
-
-] [66
+[66
 
 ] [67
 
 ] [68
 
-]
-\c@density=\count355
- [69
+] [69
 
 ] [70
 
 ] [71
 
-] [72
+]
+\c@density=\count355
+ [72
 
 ] [73
 
 ] [74
 
+] [75
+
+] [76
+
+] [77
+
 ]
-Package atenddvi Info: Last page = 75.
- [75
+Package atenddvi Info: Last page = 78.
+ [78
 
 ]
 \tf@nav=\write6
@@ -2531,14 +2689,14 @@ Package atenddvi Info: Last page = 75.
 \tf@snm=\write8
 \openout8 = `demo.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1634.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 1634.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1792.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 1792.
  (./demo.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1634.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1634.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1792.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1792.
 
 Package rerunfilecheck Info: File `demo.out' has not changed.
-(rerunfilecheck)             Checksum: 8A6634A80C86C0EBA892CD22CE2E743B;522.
+(rerunfilecheck)             Checksum: B3CB10BB39E7B94003852E1BB0916AD4;516.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -2550,13 +2708,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1634.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1792.
  ) 
 Here is how much of TeX's memory you used:
- 43945 strings out of 493029
- 1037728 string characters out of 6136235
- 1182242 words of memory out of 5000000
- 46452 multiletter control sequences out of 15000+600000
+ 43934 strings out of 493029
+ 1037126 string characters out of 6136235
+ 1181960 words of memory out of 5000000
+ 46430 multiletter control sequences out of 15000+600000
  26227 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,20n,105p,10390b,2406s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2588,10 +2746,10 @@ exmf-dist/fonts/type1/public/doublestroke/dsrom8.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/typ
 e1/public/cm-super/sfss1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
 zapfchan/uzcmi8a.pfb>
-Output written on demo.pdf (75 pages, 2715041 bytes).
+Output written on demo.pdf (78 pages, 2092943 bytes).
 PDF statistics:
- 699 PDF objects out of 1000 (max. 8388607)
- 548 compressed objects within 6 object streams
- 164 named destinations out of 1000 (max. 500000)
- 299 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 684 PDF objects out of 1000 (max. 8388607)
+ 534 compressed objects within 6 object streams
+ 170 named destinations out of 1000 (max. 500000)
+ 217 words of extra memory for PDF output out of 10000 (max. 10000000)
 
