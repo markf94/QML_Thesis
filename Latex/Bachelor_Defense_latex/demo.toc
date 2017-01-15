@@ -1,9 +1,9 @@
 \beamer@endinputifotherversion {3.36pt}
 \beamer@sectionintoc {1}{Introduction}{3}{0}{1}
 \beamer@sectionintoc {2}{Machine Learning}{7}{0}{2}
-\beamer@sectionintoc {3}{Quantum Computing}{11}{0}{3}
-\beamer@sectionintoc {4}{Quantum-enhanced Machine Learning}{15}{0}{4}
-\beamer@sectionintoc {5}{Results: Qubit-based kNN algorithm}{19}{0}{5}
-\beamer@sectionintoc {6}{Results: Amplitude-based kNN algorithm}{21}{0}{6}
-\beamer@sectionintoc {7}{Conclusion}{43}{0}{7}
-\beamer@sectionintoc {8}{Qubit-based kNN quantum algorithm}{57}{1}{8}
+\beamer@sectionintoc {3}{Quantum Computing}{13}{0}{3}
+\beamer@sectionintoc {4}{Quantum-enhanced Machine Learning}{19}{0}{4}
+\beamer@sectionintoc {5}{Results: Qubit-based kNN algorithm}{23}{0}{5}
+\beamer@sectionintoc {6}{Results: Amplitude-based kNN algorithm}{25}{0}{6}
+\beamer@sectionintoc {7}{Conclusion}{47}{0}{7}
+\beamer@sectionintoc {8}{Qubit-based kNN quantum algorithm}{61}{1}{8}

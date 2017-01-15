@@ -20,9 +20,32 @@
 \usepackage{amsmath,amsfonts} %for gathering equations
 \usepackage{siunitx} %for SI units
 \usepackage{pgfplots} %for plotting
-\usepackage{pgfkeys}
+%\usepackage{multimedia}
+\usepackage{media9}
+\usepackage{xcolor,colortbl}
+%\usepackage{fancyvrb}
+%\usepackage{array}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \definecolor{darkyellow}{HTML}{FFB600}
 \definecolor{emerald}{HTML}{32936F}
+\definecolor{red1}{HTML}{FF0000}
+\definecolor{red2}{HTML}{B20000}
+\definecolor{red3}{HTML}{7F0000}
+\definecolor{red4}{HTML}{FF3217}
+\definecolor{red5}{HTML}{FF0D48}
+\definecolor{blue1}{HTML}{0000FF}
+\definecolor{blue2}{HTML}{0000B5}
+\definecolor{blue3}{HTML}{000080}
+\definecolor{blue4}{HTML}{3C00FF}
+\definecolor{blue5}{HTML}{3C5DFF}
+\definecolor{inputblue1}{HTML}{0000CC}
+\definecolor{inputmixblue2}{HTML}{002DF7}
+\definecolor{inputmixblue3}{HTML}{3C8BFF}
+\definecolor{inputmixblue4}{HTML}{6730A8}
+\definecolor{inputred1}{HTML}{970000}
+\definecolor{inputmixred2}{HTML}{DF3100}
+\definecolor{inputmixred3}{HTML}{C43335}
+\definecolor{inputmixred4}{HTML}{DE366C}
 
 \usepackage{filecontents} %for data loading
 \begin{filecontents}{datax.dat}
@@ -138,34 +161,101 @@ Build computer hardware based on quantum physics
 \end{figure}
 \centering
 \textbf{Quantum-enhanced machine learning}\\
-Enable quantum computers how to learn from data
+Enable quantum computers to learn from data\\
+faster than classical computers
 
 \end{frame}
 }
 
 
 \section{Machine Learning}
+%\begin{figure}
+%\includegraphics[scale=3.5]{Vectors/laptop_ml.eps}
+%\end{figure}\\
 
 {
 \setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
-\begin{frame}[fragile]{Supervised pattern recognition}
+\begin{frame}[fragile]{Supervised machine learning}
 
-Introduce the concept of training and input dataset
-labels as well as supervision
+\begin{table}
+\begin{tabular}{| C{0.45cm} | C{1cm} |C{1.4cm} |}
+    \toprule
+      ID & Colour & Class label\\
+      \midrule
+       1 & \cellcolor{red1} & red \\\midrule
+       2 &\cellcolor{red2} & red \\\midrule
+       3 & \cellcolor{red3} & red \\\midrule\midrule
+       4 & \cellcolor{blue1} & blue \\\midrule
+       5 & \cellcolor{blue2} & blue \\\midrule
+       6 & \cellcolor{blue3} & blue \\
+      \bottomrule
+    \end{tabular}
+    \caption{Example training dataset.}
+\end{table}
+
+\begin{equation}
+f(x) = o\, .
+\end{equation}
+\begin{equation}
+f(\colorbox{red2}{colour}) = red\, .
+\end{equation}
+\begin{itemize}
+\item Labelled training dataset $\rightarrow$ supervision!
+\end{itemize}
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
+\begin{frame}[fragile]{Supervised machine learning}
+
+\begin{table}
+\centering
+    \begin{tabular}{| C{0.45cm} | C{1cm} |C{1.4cm}|}
+    \toprule
+      ID & Colour & Class label \\
+      \midrule
+       1 & \cellcolor{inputred1} &  ?\\\midrule
+      
+       2 & \cellcolor{inputblue1} & ? \\
+      \bottomrule
+    \end{tabular}
+    \caption{Example input dataset.}
+\end{table}
+
+The machine learning algorithm should approximate the function $f$ such that it can predict the output $o$ for a new unknown input $\tilde{x}$:
+\begin{equation}
+f(\tilde{x}) = ?\, .
+\end{equation}
+
+\end{frame}
+}
 
 
+
+{
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
+\begin{frame}[fragile]{Classical $k$-nearest neighbour}
 
 \begin{tikzpicture} \begin{axis}[legend pos=north west, scatter/classes={ a={mark=square*,blue}, b={mark=triangle*,red}, c={mark=diamond*,draw=black}}] \addplot[scatter,only marks, scatter src=explicit symbolic] table[meta=label] {
 x y label
 0.15 0.15 a
 0.25 0.17 a
-0.31 0.1 a
+0.26 0.1 a
 0.22 0.05 a
+
 0.35 0.18 a
 0.32 0.2 a
+0.32 0.23 a
+0.35 0.2 a
+0.42 0.25 b
+0.44 0.22 b
+0.39 0.19 b
+
 0.45 0.42 b
 0.55 0.32 b
-0.42 0.25 b
+
 0.61 0.46 b
 0.5 0.33 b
 0.55 0.43 b
@@ -184,7 +274,7 @@ x y label
 
 {
 \setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
-\begin{frame}[fragile]{$k$-nearest neighbour algorithm}
+\begin{frame}[fragile]{Classical $k$-nearest neighbour}
 
 \begin{minipage}[c]{0.49\textwidth}
 \centering
@@ -387,7 +477,7 @@ x y label
 
 {
 \setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
-\begin{frame}[fragile]{$k$-nearest neighbour algorithm}
+\begin{frame}[fragile]{Classical $k$-nearest neighbour}
 
 Explain the kNN!
 
@@ -399,21 +489,95 @@ Explain the kNN!
 
 {
 \setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
-\begin{frame}[fragile]{Quantum bits (Qubits)}
+\begin{frame}[fragile]{Classical vs. quantum bits (qubits)}
 
-0 and 1
-introduce ket vectors \& superposition
-show vector representation of a qubit
+PICTURE OF MOSFET
+
+Classical bit:
+\begin{itemize}
+\item Usually implemented through MOSFETs
+\item 2 definite states ($0$,$1$)
+\item Can be either $0$ OR $1$
+\end{itemize}
 
 \end{frame}
 }
 
 {
-\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
-\begin{frame}[fragile]{Visualizing a qubit}
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}Reprinted from RF Wireless World, n.d., Retrieved December 23, 2016, from \url{http://www.rfwireless-world.com/Terminology/Difference-between-Bit-and-Qubit.html}. Copyright 2012 by RF Wireless World.}}
+\begin{frame}[fragile]{Classical vs. quantum bits (qubits)}
 
-Bloch sphere intro
-maybe not needed if I concentrate on qubit-based kNN only
+Quantum bit (qubit):
+\begin{itemize}
+\item Can be $0$ OR $1$
+\item But it can also be $0$ AND $1$ $\rightarrow$ quantum superposition
+\end{itemize}
+
+\begin{figure}
+\includegraphics[scale=0.3]{qubitimplementation.jpeg}
+\caption{Example of a physical qubit.\textsuperscript{1}}
+\end{figure}
+
+%introduce ket vectors \& superposition
+%show vector representation of a qubit
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{\tiny{}}
+\begin{frame}[fragile]{Qubits}
+
+Mathematically, a qubit state is expressed as:
+\begin{equation}
+\label{equ:simplequbit}
+\ket{\psi} = \alpha \ket{0} + \beta \ket{1}\, ,
+\end{equation}
+where $\alpha, \beta \in \mathbb{C}$.
+
+$\ket{0}$ and $\ket{1}$ can be represented as the 2-D vectors:
+\begin{equation}
+\ket{0} \doteq  \begin{pmatrix}1\\0\end{pmatrix} \quad \mathrm{and} \quad \ket{1} \doteq \begin{pmatrix}0\\1\end{pmatrix}\, .
+\end{equation}
+
+Substituting into Eq.~\ref{equ:simplequbit} yields the vector representation of $\ket{\psi}$:
+\begin{equation}
+\ket{\psi} \doteq \alpha \begin{pmatrix} 1\\0 \end{pmatrix} + \beta \begin{pmatrix}0\\1 \end{pmatrix} = \begin{pmatrix}\alpha\\\beta\end{pmatrix}\, .
+\end{equation}
+
+%introduce ket vectors \& superposition
+%show vector representation of a qubit
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}Reprinted from Wikipedia, n.d., Retrieved September 7, 2016, from \url{https://en.wikipedia.org/wiki/Bloch_Sphere}. Copyright 2012 by Glosser.ca. Reprinted with permission.}}
+\begin{frame}[fragile]{The Bloch sphere}
+
+\begin{minipage}[c]{.5\textwidth}
+		%\centering
+		\hspace{2mm}
+       \includegraphics[width=0.8\textwidth]{blochsphere.png}
+       \captionsetup{justification=raggedright, singlelinecheck=false}
+       \captionof{figure}{\footnotesize{Arbitrary two-dimensional qubit $\ket{\psi}$ visualized on the Bloch sphere\textsuperscript{1}} }
+\end{minipage}%%%%%
+\begin{minipage}[c][][b]{.5\textwidth}
+Most general form of a 2-D qubit:
+\begin{equation}
+\label{equ: blochqubit}
+\ket{\psi} = \alpha \ket{0} + \beta \ket{1}\, ,
+\end{equation}
+where $\alpha,\beta \in \mathbb{C}$.\\
+\\
+Can also be visualized in spherical polar coords on the unit or Bloch sphere as follows: 
+
+\begin{equation}
+\label{equ: blochqubit}
+\ket{\psi} = \cos\frac{\theta}{2} \ket{0} + e^{i \phi} \sin\frac{\theta}{2} \ket{1}\, ,
+\end{equation}
+where $0 \leq \theta \leq \pi$ and $0 \leq \phi \leq 2\pi$
+\null
+\par\xdef\tpd{\the\prevdepth}
+\end{minipage}
 
 \end{frame}
 }
@@ -422,6 +586,13 @@ maybe not needed if I concentrate on qubit-based kNN only
 \setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
 \begin{frame}[fragile]{Quantum gates}
 
+\begin{equation}
+\label{equ:unitarytransformation}
+U \ket{\psi} \doteq \begin{pmatrix}
+ a & b \\ 
+ c & d
+ \end{pmatrix} \begin{pmatrix} \alpha\\ \beta \end{pmatrix}= \begin{pmatrix} a\alpha+b\beta\\c\alpha+d\beta\end{pmatrix}\, .
+\end{equation}
 show matrix representation
 show matrix vector multiplication??
 Show two simple examples (Hadamard and X gate?)
@@ -436,6 +607,24 @@ Show two simple examples (Hadamard and X gate?)
 \setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
 \begin{frame}[fragile]{Encoding classical data into qubits}
 
+%\movie[width=5cm,height=3.8cm,poster,autostart]{}{interference.mp4}
+\includemedia[
+  label=vidA,
+  addresource=interference.mp4,
+  activate=pageopen,
+  width=5cm, height=3.8cm,
+  flashvars={
+     source=interference.mp4
+    &loop=true
+  }
+]{}{VPlayer.swf}
+
+\mediabutton[
+  mediacommand=vidA:playPause,
+]{\fbox{Play/Pause}}
+%\begin{figure}[ht]
+%\includemovie[poster,text={\small(Loading Video...)}]{6cm}{4cm}{interference.mp4}
+%\end{figure}
 
 \end{frame}
 }
