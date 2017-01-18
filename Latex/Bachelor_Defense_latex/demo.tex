@@ -178,7 +178,7 @@ sets gets increasingly difficult\textsuperscript{2}
 \item Quantum mechanics is about vectors in complex Hilbert spaces
 \item Quantum computers are performing linear operations on qubits
 \item Many-qubit systems are described by large vectors that can be manipulated in parallel on quantum computers
-\item Machine learning involves manipulation of large vectors and matrices
+\item Machine learning involves manipulation of large vectors\\ and matrices
 \end{itemize}
 \end{minipage}%%
 \hspace{0.3cm}
@@ -578,7 +578,7 @@ $\rightarrow$ these amplitudes can be used to store huge amounts of information!
 \begin{tabular}{C{2cm} | C{4cm} | C{4cm}}
 \toprule
 Qubit number & classical RAM needed & Simulation time\\\midrule
-5 & 256 bytes & microseconds on smartphone \\\midrule
+5 & 256 bytes & seconds on smartwatch \\\midrule
 25 &  2 gigabytes & seconds on a laptop\\\midrule
 50 & 8000 terabytes & seconds on next year's supercomputer\\\midrule
 275 & number of atoms in the visible universe & age of the universe \\
@@ -602,7 +602,7 @@ Qubit number & classical RAM needed & Simulation time\\\midrule
 
 \textbf{However}, quantum computation is cutting edge research at the frontier of supercomputing technology!\\
 \vspace{0.1cm}
-$\rightarrow$ State-of-the art quantum computers are complicated laboratory experiments.
+$\rightarrow$ State-of-the art quantum computers are complicated laboratory experiments and prototypes.
 
 \begin{minipage}[c]{0.59\textwidth}
 \vspace{0.3cm}
@@ -611,7 +611,7 @@ $\rightarrow$ State-of-the art quantum computers are complicated laboratory expe
 \item IBM $\rightarrow$ \textbf{5 superconducting qubits}
 \item Google $\rightarrow$ \textbf{9 superconducting qubits}
 \item Weizmann Research Group in Israel\\$\rightarrow$ \textbf{8 trapped ions}
-\item DWave $\rightarrow$ \textbf{1,152 qubits}\\BUT solves only a narrow class of problems
+\item DWave $\rightarrow$ \textbf{1,152 qubits}\\BUT it solves only a narrow class of problems
 \end{itemize}
 \end{minipage}%%
 \begin{minipage}[c]{0.39\textwidth}
@@ -629,11 +629,11 @@ $\rightarrow$ State-of-the art quantum computers are complicated laboratory expe
 
 \begin{itemize}
 \item Classical machine learning is a very applied field
-\item State-of-the-art quantum computer have very small numbers of qubits
-\item Thus, quantum-enhanced machine learning is almost purely theoretical
+\item State-of-the-art quantum computers have very few qubits
+\item Quantum-enhanced machine learning is almost purely theoretical
 \item There have been only a handful of proof-of-principle studies in quantum-enhanced machine learning
-\item Need for more proof-of-principle implementations and simulations to demonstrate the benefits of quantum computation for machine learning
-\item Small machine learning problems need to be identified and implemented.
+\item Need for more proof-of-principle implementations and simulations\\ to demonstrate the benefits of quantum computation for\\machine learning
+\item Small-scale machine learning problems need to be\\ identified \& implemented.
 \end{itemize}
 
 \end{frame}
@@ -671,7 +671,7 @@ $\rightarrow$ State-of-the art quantum computers are complicated laboratory expe
 \setbeamertemplate{frame footer}{\tiny{}}
 \begin{frame}[fragile]{Methods: Liqui$\ket{}$}
 
-Small quantum computers can be simulated on conventional classical computers!\\
+Small quantum computers can be simulated on conventional computers!\\
 \vspace{0.5cm}
 %\begin{figure}
 %\includegraphics[height=0.4\textwidth]{liquidcodesnippet.png}
@@ -782,7 +782,7 @@ $\rightarrow$ requires only a few qubits and provides great speed-up
 \end{frame}
 }
 
-\section{Results: Amplitude-based kNN algorithm}
+\section{Results: Amplitude-based k-nearest neighbour algorithm}
 
 {
 \setbeamertemplate{frame footer}{}
@@ -822,7 +822,7 @@ $\rightarrow$ requires only a few qubits and provides great speed-up
 \item Until now, it is \textbf{impossible} to solve this particular machine learning problem on IBM's actual quantum hardware!
 \end{itemize}
 
-$\rightarrow$ Need for proof-of-principle simulations with Liqui$\ket{}$ to show that the quantum algorithms work!
+$\rightarrow$ Need for proof-of-principle simulations within the Liqui$\ket{}$ toolsuite to show that the quantum algorithms work!
 
 \end{frame}
 }
@@ -840,7 +840,7 @@ $\rightarrow$ Need for proof-of-principle simulations with Liqui$\ket{}$ to show
 
 Simulations demonstrated 100\% accuracy on the small-scale simple Bloch vector classification problem.
 
-$\rightarrow$ The amplitude-based kNN algorithm does work as expected and is scalable!
+$\rightarrow$ The amplitude-based kNN algorithm works as expected, is scalable\\$\quad\>$ and has the potential to outperform the classical counterpart.
 
 \end{frame}
 }
@@ -850,7 +850,7 @@ $\rightarrow$ The amplitude-based kNN algorithm does work as expected and is sca
 \begin{frame}{Summary}
 \begin{itemize}
 \item Quantum computing is at the frontier of supercomputing and bears the potential to vastly speed up classical machine learning algorithms
-\item A small-scale machine learning problem was selected for implementation and simulation of an amplitude-based quantum kNN algorithm
+\item A small-scale machine learning problem was selected for implementation and simulation of an amplitude-based\\quantum kNN algorithm
 %\item Subsequent quantum simulations established proof-of-principle of these algorithms
 \item The Bloch vector classification task could not be implemented with the IBM Quantum Experience
 \item Liqui$\ket{}$ simulations demonstrated 100\% classification accuracy on Bloch vector classification task

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  18 JAN 2017 12:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.7)  18 JAN 2017 12:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3104,7 +3104,7 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2623.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2623.
 
 Package rerunfilecheck Info: File `demo.out' has not changed.
-(rerunfilecheck)             Checksum: 9A808729FB7921064245E8336E741705;613.
+(rerunfilecheck)             Checksum: 08659A8EB5461609DCEAEE4422DA21F9;629.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -3121,7 +3121,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2623.
 Here is how much of TeX's memory you used:
  42264 strings out of 493029
  995225 string characters out of 6136235
- 1155789 words of memory out of 5000000
+ 1155821 words of memory out of 5000000
  44707 multiletter control sequences out of 15000+600000
  26227 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -3156,7 +3156,7 @@ ts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/publi
 c/cm-super/sfss1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfchan
 /uzcmi8a.pfb>
-Output written on demo.pdf (101 pages, 3139455 bytes).
+Output written on demo.pdf (101 pages, 3139782 bytes).
 PDF statistics:
  862 PDF objects out of 1000 (max. 8388607)
  668 compressed objects within 7 object streams

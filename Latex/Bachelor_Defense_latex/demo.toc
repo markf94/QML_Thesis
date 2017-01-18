@@ -3,7 +3,7 @@
 \beamer@sectionintoc {2}{\includegraphics [scale=3.5]{Vectors/laptop_ml.eps}\newline Machine Learning }{7}{0}{2}
 \beamer@sectionintoc {3}{\includegraphics [scale=2.4]{Vectors/laptop_q.eps}\newline Quantum Computing}{10}{0}{3}
 \beamer@sectionintoc {4}{Methods}{18}{0}{4}
-\beamer@sectionintoc {6}{Results: Amplitude-based kNN algorithm}{25}{0}{5}
+\beamer@sectionintoc {6}{Results: Amplitude-based k-nearest neighbour algorithm}{25}{0}{5}
 \beamer@sectionintoc {7}{Conclusion}{30}{0}{6}
 \beamer@sectionintoc {8}{Results: Qubit-based kNN algorithm}{35}{0}{7}
 \beamer@sectionintoc {9}{Conclusion}{50}{1}{8}
