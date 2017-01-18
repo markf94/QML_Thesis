@@ -77,19 +77,23 @@ x y class
 
 \newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
 
-\title{Quantum-enhanced machine learning: Implementing a quantum $k$-nearest neighbour algorithm}
+\title{Quantum-enhanced machine learning: Implementing a quantum $k$-nearest\\ neighbour algorithm}
 \subtitle{Bachelor thesis defense \newline 19. January 2017}
 %\subtitle{19. January 2017}
 %\date{\today}
 \date{}
-\author{Mark Fingerhuth}
-\institute{Maastricht Science Programme, Maastricht University, The Netherlands \newline Thesis work at the Centre for Quantum Technology, UKZN, South Africa \newline
-
+\author{Mark Fingerhuth\\ Supervisors: Dr. Fabrice Birembaut, Prof. Francesco Petruccione}
+\institute{Maastricht Science Programme, Maastricht University, The Netherlands \newline Thesis work at the Centre for Quantum Technology,
+University of KwaZulu-Natal\\ Durban, South Africa \newline
 \begin{minipage}[c]{0.49\textwidth}
+%\centering
+%\textbf{Dr. Fabrice Birembaut}
 \includegraphics[scale=0.3]{UM_logo.eps}
 \end{minipage}%%%
 %\hspace{0.5cm}
 \begin{minipage}[c]{0.49\textwidth}
+%\centering
+%\hspace{1cm}\textbf{Prof. Francesco Petruccione}
 \flushright
 \includegraphics[scale=0.35]{logo.jpeg} 
 \end{minipage}
@@ -107,10 +111,11 @@ x y class
   \item Introduction
   \item Machine Learning
   \item Quantum Computing
+  \item Methods
   \item Quantum-enhanced Machine Learning
   \item Results: Amplitude-based quantum $k$-nearest neighbour algorithm
-  \item Outlook
   \item Conclusion
+  \item Outlook
   \end{enumerate}
 \end{frame}
 
@@ -131,9 +136,10 @@ learn from data
 \end{minipage}%%
 \hspace{0.5cm}
 \begin{minipage}[c]{0.49\textwidth}
-\flushright
-\includegraphics[scale=0.09]{google_car.jpeg}
-\includegraphics[scale=0.55]{facial_recognition.jpg}\\
+%\flushright
+\centering
+%\includegraphics[scale=0.09]{google_car.jpeg}
+\includegraphics[scale=0.8]{facial_recognition.jpg}\\
 \vspace{-0.2cm}
 \tiny{Source: IEEE Spectrum}
 \normalsize
@@ -161,10 +167,12 @@ sets gets increasingly difficult\textsuperscript{2}
 \begin{frame}[fragile]{Enhancing machine learning with quantum mechanics}
 \hspace{-0.7cm}
 \begin{minipage}[c]{0.59\textwidth}
-\includegraphics[scale=0.13]{ibm-quantum-computer.jpg}
-\includegraphics[scale=0.12]{dwave.jpg}\\
-\tiny{Sources: DWave, IBM}
+\centering
+\includegraphics[scale=0.16]{ibm-quantum-computer.jpg}\\
+%\includegraphics[scale=0.12]{dwave.jpg}\\
+\tiny{Sources: IBM}
 \vspace{0.1cm}
+\flushleft
 \normalsize
 \begin{itemize}
 \item Quantum mechanics is about vectors in complex Hilbert spaces
@@ -214,7 +222,7 @@ Build computer hardware based on quantum physics
 \metroset{block=fill}
 
 \begin{exampleblock}{The problem statement}
-Given a dataset of inputs and their corresponding outputs, predict the output of a new unknown input.
+Given a dataset of inputs and their corresponding outputs,\\ predict the output of a new unknown input.
 \end{exampleblock}
 
 %\begin{equation}
@@ -226,8 +234,9 @@ Given a dataset of inputs and their corresponding outputs, predict the output of
 \begin{tabular}{l  l }
 \toprule
 Input & Output\\\midrule
+faces & emotions\\
 heartbeat & healthy or sick\\
-last year's oil prices & tomorrow's oil price\\
+last year's daily weather & tomorrow's weather\\
 message of a users & intention of text content\\
 search history of a user & chance of clicking on a particular ad\\
 \end{tabular}
@@ -268,299 +277,23 @@ search history of a user & chance of clicking on a particular ad\\
 
 {
 \setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
-\begin{frame}[fragile]{Supervised machine learning: concrete example}
-
-
-\begin{minipage}[c]{0.49\textwidth}
-\begin{tabular}{| C{0.45cm} | C{1cm} |C{1.4cm} |}
-    \toprule
-      ID & Colour & Class label\\
-     \midrule
-      1 & \cellcolor{red1} & red \\\midrule
-      2 &\cellcolor{red2} & red \\\midrule
-      3 & \cellcolor{red3} & red \\\midrule\midrule
-      4 & \cellcolor{blue1} & blue \\\midrule
-      5 & \cellcolor{blue2} & blue \\\midrule
-      6 & \cellcolor{blue3} & blue \\
-     \bottomrule
-   \end{tabular}
-   \captionsetup{justification=raggedright, singlelinecheck=false}
-   \captionof{table}{Example training dataset.}
-\end{minipage}%%%
-\begin{minipage}[c]{0.49\textwidth}
-\centering
-    \begin{tabular}{| C{0.45cm} | C{1cm} |C{1.4cm}|}
-    \toprule
-      ID & Colour & Class label \\
-      \midrule
-       1 & \cellcolor{inputred1} &  ?\\\midrule
-      
-       2 & \cellcolor{inputblue1} & ? \\
-      \bottomrule
-    \end{tabular}
-    \captionof{table}{Example input dataset.}
-\end{minipage}
-
-%The machine learning algorithm should approximate the function $f$ such that it can predict the output $o$ for a new unknown input $\tilde{x}$:
-%\begin{equation}
-%f(\tilde{x}) = ?\, .
-%\end{equation}
-
-\end{frame}
-}
-
-
-
-{
-\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
-\begin{frame}[fragile]{Classical $k$-nearest neighbour}
-
-\metroset{block=fill}
-
-\begin{alertblock}{Transferring the colours into vectors}
-In the case of 9-bit RGB colours:\\
-\centering{
-\textcolor{red}{000} \textcolor{green}{000} \textcolor{blue}{000}}\\
-3 bits for red, 3 bits for green and 3 bits for blue.
-%\begin{equation}
-%\begin{pmatrix}
-%\textcolor{red}{red\quad content}\\ \textcolor{green}{green\quad content} \\ %\textcolor{blue}{blue\quad content}
-%\end{pmatrix} = \begin{pmatrix}
-%7 \\ 0 \\ 0
-%\end{pmatrix}
-%\end{equation}
-\begin{equation}
-\begin{pmatrix}
-\textcolor{red}{red\quad content}\\ \cancel{\textcolor{green}{green\quad content}} \\ \textcolor{blue}{blue\quad content}
-\end{pmatrix} = \begin{pmatrix}
-7 \\ \cancel{0} \\ 0
-\end{pmatrix} \equiv \begin{pmatrix}
-7 \\ 0
-\end{pmatrix}
-\end{equation}
-\end{alertblock}
-
-\centering
-\begin{tikzpicture}[scale=0.6]
-\begin{axis}[legend pos=north east,
-ylabel={RGB blue content},
-      xlabel={RGB red content},
-      yticklabels={,,},
-      xticklabels={,,},
-      scatter/classes={ a={mark=square*,blue}, b={mark=triangle*,red}, c={mark=diamond*,draw=black}}] \addplot[scatter,only marks, scatter src=explicit symbolic] table[meta=label] {
-x y label
-0.15 -0.15 a
-0.25 -0.17 a
-0.26 -0.1 a
-0.22 -0.05 a
-
-0.35 -0.18 a
-0.32 -0.2 a
-0.32 -0.23 a
-0.35 -0.2 a
-0.1 -0.05 a
-0.42 -0.25 b
-0.44 -0.22 b
-0.39 -0.19 b
-
-0.45 -0.42 b
-0.55 -0.32 b
-
-0.61 -0.46 b
-0.5 -0.33 b
-0.55 -0.43 b
-};
-\addlegendentry{Training class A}
-\addlegendentry{Training class B}
-%\addlegendentry{Input vector}
-\end{axis}
-\end{tikzpicture}
-
-
-
-\end{frame}
-}
-
-{
-\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
-\begin{frame}[fragile]{Classical $k$-nearest neighbour}
-
-\centering{
-- kNN is a non-parametric classifier\\
-- $k$ is a positive integer, usually chosen small}
-
-\begin{minipage}[t]{.32\textwidth}
-Given training dataset:\\
-${D}_{T}$ = ${v}_{0}, {v}_{1},..,{v}_{16}$ \\
-$v_{i} \in$ \{$red$, $blue$\}
-\end{minipage}
-\hspace{0.2cm}
-\begin{minipage}[t]{.53\textwidth}
-Given a new vector $\tilde{x}$ (black halfcircle):\\
-- consider $k$ nearest neighbours\\
-- classify $\tilde{x}$, based on majority vote,\\as \emph{red} or \emph{blue}
-\end{minipage}
-
-\begin{minipage}[c]{0.45\textwidth}
-\centering
-$k = 3$\\
-\vspace{0.1cm}
-\begin{tikzpicture}[scale=0.6]
-\begin{axis}[legend pos=north east,
-ylabel={RGB blue content},
-      xlabel={RGB red content},
- yticklabels={,,},
-      xticklabels={,,},
-			scatter/classes={
-			a={mark=square*,blue}, 												b={mark=triangle*,red}, 											c={mark=halfcircle*,draw=black}}]
-			\addplot[scatter,only marks, scatter src=explicit symbolic]
-table[meta=label] {
-x y label
-0.15 -0.15 a
-0.25 -0.17 a
-0.26 -0.1 a
-0.22 -0.05 a
-0.35 -0.18 a
-0.32 -0.2 a
-0.32 -0.23 a
-0.35 -0.2 a
-0.1 -0.05 a
-0.42 -0.25 b
-0.44 -0.22 b
-0.39 -0.19 b
-0.45 -0.42 b
-0.55 -0.32 b
-0.61 -0.46 b
-0.5 -0.33 b
-0.55 -0.43 b
-0.41 -0.22 c
-};
-\addplot[scatter, scatter src=explicit symbolic]
-table[meta=label] {
-x y label
-0.42 -0.25 b
-0.41 -0.22 c
-};
-\addplot[scatter, scatter src=explicit symbolic]
-table[meta=label] {
-x y label
-0.44 -0.22 b
-0.41 -0.22 c
-};
-\addplot[scatter, scatter src=explicit symbolic]
-table[meta=label] {
-x y label
-0.39 -0.19 b
-0.41 -0.22 c
-};
-\addlegendentry{Training class A}
-\addlegendentry{Training class B}
-\addlegendentry{Input vector}
-\end{axis}
-\end{tikzpicture}
-Classification $\rightarrow$ \textbf{\textcolor{red}{RED}}
-\end{minipage}
-\begin{minipage}[c]{0.45\textwidth}
-\centering
-$k = 7$\\
-\vspace{0.1cm}
-\begin{tikzpicture}[scale=0.6]
-\begin{axis}[legend pos=north east,
- ylabel={RGB blue content},
-      xlabel={RGB red content},
- yticklabels={,,},
-      xticklabels={,,},
-			scatter/classes={
-			a={mark=square*,blue}, 												b={mark=triangle*,red}, 											c={mark=halfcircle*,draw=black}}]
-			\addplot[scatter,only marks, scatter src=explicit symbolic]
-table[meta=label] {
-x y label
-0.15 -0.15 a
-0.25 -0.17 a
-0.26 -0.1 a
-0.22 -0.05 a
-0.35 -0.18 a
-0.32 -0.2 a
-0.32 -0.23 a
-0.35 -0.2 a
-0.1 -0.05 a
-0.42 -0.25 b
-0.44 -0.22 b
-0.39 -0.19 b
-0.45 -0.42 b
-0.55 -0.32 b
-0.61 -0.46 b
-0.5 -0.33 b
-0.55 -0.43 b
-0.41 -0.22 c
-};
-\addplot[scatter, scatter src=explicit symbolic]
-table[meta=label] {
-x y label
-0.35 -0.18 a
-0.41 -0.22 c
-};
-\addplot[scatter, scatter src=explicit symbolic]
-table[meta=label] {
-x y label
-0.32 -0.2 a
-0.41 -0.22 c
-};
-\addplot[scatter, scatter src=explicit symbolic]
-table[meta=label] {
-x y label
-0.32 -0.23 a
-0.41 -0.22 c
-};
-\addplot[scatter, scatter src=explicit symbolic]
-table[meta=label] {
-x y label
-0.35 -0.2 a
-0.41 -0.22 c
-};
-\addplot[scatter, scatter src=explicit symbolic]
-table[meta=label] {
-x y label
-0.42 -0.25 b
-0.41 -0.22 c
-};
-\addplot[scatter, scatter src=explicit symbolic]
-table[meta=label] {
-x y label
-0.44 -0.22 b
-0.41 -0.22 c
-};
-\addplot[scatter, scatter src=explicit symbolic]
-table[meta=label] {
-x y label
-0.39 -0.19 b
-0.41 -0.22 c
-};
-\addlegendentry{Training class A}
-\addlegendentry{Training class B}
-\addlegendentry{Input vector}
-\end{axis}
-\end{tikzpicture}
-Classification $\rightarrow$ \textbf{\textcolor{blue}{BLUE}}
-\end{minipage}
-\end{frame}
-}
-
-{
-\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
 \begin{frame}[fragile]{Classical $k$-nearest neighbour with distance-weighting}
 
 \centering{
-- kNN is a non-parametric classifier\\
-- $k$ is a positive integer, usually chosen small}
+%- kNN is a non-parametric classifier\\
+- $k$ is a positive integer%, usually chosen small
+}
 
 \begin{minipage}[t]{.32\textwidth}
 Given training dataset:\\
 ${D}_{T}$ = ${v}_{0}, {v}_{1},..,{v}_{16}$ \\
 $v_{i} \in$ \{$red$, $blue$\}
 \end{minipage}
-\hspace{0.2cm}
+\hspace{0.1cm}
+\vline
+\hspace{0.1cm}
 \begin{minipage}[t]{.53\textwidth}
+\flushright
 Given a new vector $\tilde{x}$ (black halfcircle):\\
 - consider $k$ nearest neighbours\\
 - classify $\tilde{x}$, based on majority vote,\\as \emph{red} or \emph{blue}
@@ -709,10 +442,11 @@ x y label
 \end{tikzpicture}
 \end{minipage}%%%
 \begin{minipage}[c]{0.49\textwidth}
-Input vector will simply be classified as the class with the most members.\\
-Classification $\rightarrow$ \textbf{\textcolor{blue}{BLUE}}\\
-\vspace{0.1cm}
+%Input vector will simply be classified as the class with the most members.\\
+%Classification $\rightarrow$ \textbf{\textcolor{blue}{BLUE}}\\
+\vspace{0.3cm}
 Assign distance-dependent weights e.g. $\frac{1}{\mathrm{distance}}$ to increase the influence of close vectors over more distant ones!\\
+\newline
 Classification $\rightarrow$ \textbf{\textcolor{red}{RED}}\\
 \end{minipage}
 
@@ -768,25 +502,25 @@ Classification $\rightarrow$ \textbf{\textcolor{red}{RED}}\\
 
 {
 \setbeamertemplate{frame footer}{\tiny{}}
-\begin{frame}[fragile]{Qubits}
+\begin{frame}[fragile]{A qubit}
 
-Mathematically, a qubit state is expressed as:
+Mathematically, the superposition of a qubit is expressed as:
 \begin{equation}
 \label{equ:simplequbit}
-\ket{\psi} = \alpha \ket{0} + \beta \ket{1}\, ,
+\ket{\psi} = \alpha \ket{0} + \beta \ket{1} \doteq \begin{pmatrix}\alpha\\\beta\end{pmatrix}\, ,
 \end{equation}
 where $\alpha, \beta \in \mathbb{C}$ and they are called amplitudes.
 
-$\ket{0}$ and $\ket{1}$ can be represented as the 2-D vectors:
-\begin{equation}
-\ket{0} \doteq  \begin{pmatrix}1\\0\end{pmatrix} \quad \mathrm{and} \quad \ket{1} \doteq \begin{pmatrix}0\\1\end{pmatrix}\, .
-\end{equation}
+%$\ket{0}$ and $\ket{1}$ can be represented as the 2-D vectors:
+%\begin{equation}
+%\ket{0} \doteq  \begin{pmatrix}1\\0\end{pmatrix} \quad %\mathrm{and} \quad \ket{1} \doteq \begin{pmatrix}0\\1\end{pmatrix}\, .
+%\end{equation}
 
-Substituting into Eq.~\ref{equ:simplequbit} yields the vector representation of $\ket{\psi}$:
-\begin{equation}
-\ket{\psi} \doteq \alpha \begin{pmatrix} 1\\0 \end{pmatrix} + \beta \begin{pmatrix}0\\1 \end{pmatrix} = \begin{pmatrix}\alpha\\\beta\end{pmatrix}\, .
-\end{equation}
-This object is called the \textbf{amplitude vector}.
+%Substituting into Eq.~\ref{equ:simplequbit} yields the vector %representation of $\ket{\psi}$:
+%\begin{equation}
+%\ket{\psi} \doteq \alpha \begin{pmatrix} 1\\0 \end{pmatrix} + %\beta \begin{pmatrix}0\\1 \end{pmatrix} = \begin{pmatrix}\alpha\\\beta\end{pmatrix}\, .
+%\end{equation}
+The last expression is called the \textbf{amplitude vector}.
 %introduce ket vectors \& superposition
 %show vector representation of a qubit
 \end{frame}
@@ -825,457 +559,151 @@ where $0 \leq \theta \leq \pi$ and $0 \leq \phi \leq 2\pi$
 \end{frame}
 }
 
-{
-\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
-\begin{frame}[fragile]{Single-qubit quantum logic gates}
-
-\begin{minipage}[c]{0.49\textwidth}
-\centering
-\includegraphics[scale=0.18]{not_gate_c.png}
-\end{minipage}%%%
-\begin{minipage}[c]{0.49\textwidth}
-\centering
-\includegraphics[scale=0.1]{xcircuit.png}
-\end{minipage}
-\vspace{0.5cm}
-
-Any single-qubit quantum logic gates can be represented by a unitary $2\times 2$ matrix whose action on a qubit is defined as:
-\begin{equation}
-\label{equ:unitarytransformation}
-U \ket{\psi} \doteq \begin{pmatrix}
- a & b \\ 
- c & d
- \end{pmatrix} \begin{pmatrix} \alpha\\ \beta \end{pmatrix}= \begin{pmatrix} a\alpha+b\beta\\c\alpha+d\beta\end{pmatrix}\, .
-\end{equation}
-
-\begin{itemize}
-\item Quantum computers perform linear (unitary) operations on qubits
-\item A quantum computation is the manipulation of an amplitude vector with a matrix representing a quantum logic gate 
-\end{itemize}
-
-%show matrix representation
-%show matrix vector multiplication??
-%Show two simple examples (Hadamard and X gate?)
-
-\end{frame}
-}
 
 {
-\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
-\begin{frame}[fragile]{Single-qubit quantum logic gates: Hadamard gate}
+\setbeamertemplate{frame footer}{\tiny{}}
+\begin{frame}[fragile]{Multi-qubit systems: the power of quantum computing}
 
-\begin{figure}
-\includegraphics[scale=0.15]{hcircuit.png}
-\end{figure}
+A quantum computer with $n$ qubits has $2^n$ quantum amplitudes.\\
+$\rightarrow$ these amplitudes can be used to store huge amounts of information!
+%\begin{itemize}
+%\item It follows, that an $n$-qubit system has $2^n$ amplitudes.\\
+%$\rightarrow$ can be used to store huge amounts of information!
 
-A very important single-qubit quantum logic gate is the \textbf{\emph{Hadamard}} gate. It is represented by the matrix:
-\begin{equation}
-\label{equ:hadamard}
-H \doteq \begin{pmatrix}
- \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\ 
- \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}
- \end{pmatrix}\, .
-\end{equation}
+%\item Equivalently, to simulate an $n$-qubit quantum computer one needs to store the value of all $2^n$ amplitudes:\\
+%$\rightarrow$ requires $2^n\cdot 64$ classical bits of random-access memory (RAM).
+%\end{itemize}
 
-Consider acting the H gate on the $\ket{0}$ state:
-\begin{equation}
-H \ket{0}\doteq \begin{pmatrix}
- \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\ 
- \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}
- \end{pmatrix}\begin{pmatrix}
- 1 \\ 0 
- \end{pmatrix} = \begin{pmatrix}
- \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} 
- \end{pmatrix} \doteq \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}\, .
-\end{equation}
+\begin{table}[H]
+\begin{tabular}{C{2cm} | C{4cm} | C{4cm}}
+\toprule
+Qubit number & classical RAM needed & Simulation time\\\midrule
+5 & 256 bytes & microseconds on smartphone \\\midrule
+25 &  2 gigabytes & seconds on a laptop\\\midrule
+50 & 8000 terabytes & seconds on next year's supercomputer\\\midrule
+275 & number of atoms in the visible universe & age of the universe \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-$\rightarrow$ \textbf{creates an equal superposition of $\ket{0}$ and $\ket{1}$!}
-
-%show matrix representation
-%show matrix vector multiplication??
-%Show two simple examples (Hadamard and X gate?)
-
-\end{frame}
-}
-
-{
-\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
-\begin{frame}[fragile]{Single-qubit quantum logic gates: Hadamard gate}
-
-\begin{equation}
-H \ket{0} = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}\, .
-\end{equation}
-
-\begin{figure}
-\includegraphics[scale=0.5]{blochhadamard.png}
-\end{figure}
+%For example:
+%\begin{itemize}
+%\item 25 qubits can be simulated with just 2 gigabytes of RAM.
+%\item However, 50 qubits require $\sim$8000 terabytes of RAM
+%\item Lastly, 275 qubits have $2^{275} \approx 6\times 10^{82}$ amplitudes which is roughly equal to the number of atoms in our universe
+%\end{itemize}
 
 \end{frame}
 }
 
 {
 \setbeamertemplate{frame footer}{\tiny{}}
-\begin{frame}[fragile]{Multi-qubit systems}
+\begin{frame}[fragile]{State-of-the-art quantum computation}
 
-\textbf{\emph{Tensor products}} are required when combining several qubits.\\
-For example, the tensor product of two $\ket{0}$ kets is defined as:
-\begin{equation}
-\ket{0} \otimes \ket{0} = \ket{00} \doteq \begin{pmatrix}1\\0\end{pmatrix} \otimes \begin{pmatrix}1\\0\end{pmatrix} = \begin{pmatrix}1\cdot \begin{pmatrix}1\\0\end{pmatrix}\\0\cdot\begin{pmatrix}1\\0\end{pmatrix}\end{pmatrix} = \begin{pmatrix}1\\0\\0\\0\end{pmatrix}
-\end{equation}
-And for three $\ket{0}$ kets:
-\begin{equation}
-\ket{00} \otimes \ket{0} = \ket{000} \doteq \begin{pmatrix}1\\0\\0\\0\end{pmatrix} \otimes \begin{pmatrix}1\\0\end{pmatrix} = \begin{pmatrix}1\cdot \begin{pmatrix}1\\0\end{pmatrix}\\0\cdot \begin{pmatrix}1\\0\end{pmatrix}\\0\cdot \begin{pmatrix}1\\0\end{pmatrix}\\0\cdot \begin{pmatrix}1\\0\end{pmatrix}\end{pmatrix} = \begin{pmatrix}1\\0\\0\\0\\0\\0\\0\\0\end{pmatrix}
-\end{equation}
+\textbf{However}, quantum computation is cutting edge research at the frontier of supercomputing technology!\\
+\vspace{0.1cm}
+$\rightarrow$ State-of-the art quantum computers are complicated laboratory experiments.
 
-
-%introduce ket vectors \& superposition
-%show vector representation of a qubit
-\end{frame}
-}
-
-{
-\setbeamertemplate{frame footer}{\tiny{}}
-\begin{frame}[fragile]{Multi-qubit systems}
-
-\begin{itemize}
-\item It follows, that an $n$-qubit system has $2^n$ amplitudes.\\
-$\rightarrow$ can be used to store huge amounts of information!
-
-\item Equivalently, to simulate an $n$-qubit quantum computer one needs to store the value of all $2^n$ amplitudes:\\
-$\rightarrow$ requires $2^n\cdot 64$ classical bits of random-access memory (RAM).
-\end{itemize}
-
-For example:
-\begin{itemize}
-\item 25 qubits can be simulated with just 2 gigabytes of RAM.
-\item However, 50 qubits require $\sim$8000 terabytes of RAM
-\item Lastly, 275 qubits have $2^{275} \approx 6\times 10^{82}$ amplitudes which is roughly equal to the number of atoms in our universe
-\end{itemize}
-
-\end{frame}
-}
-
-{
-\setbeamertemplate{frame footer}{\tiny{}}
-\begin{frame}[fragile]{Three random bits vs. three qubits}
-
-\begin{minipage}[c]{0.49\textwidth}
-\centering
-\includegraphics[scale=1.9]{Vectors/laptop_c.eps}\\
-\vspace{0.4cm}
-\begin{tabular}{c | c}
-	Probability & Combination \\
-	\midrule
-	$p_1$ & \includegraphics[scale=0.06]{euro.jpg} $\quad$ \includegraphics[scale=0.06]{euro.jpg} $\quad$ \includegraphics[scale=0.06]{euro.jpg} \\
-	$p_2$ & \includegraphics[scale=0.06]{euro.jpg} $\quad$ \includegraphics[scale=0.25]{euro_b.jpg} $\quad$ \includegraphics[scale=0.06]{euro.jpg} \\
-	$p_3$ & \includegraphics[scale=0.06]{euro.jpg} $\quad$ \includegraphics[scale=0.06]{euro.jpg} $\quad$ \includegraphics[scale=0.26]{euro_b.jpg} \\
-	. & . \\
-	. & . \\
-	. & . \\
-	$p_8$ & \includegraphics[scale=0.26]{euro_b.jpg} $\quad$ \includegraphics[scale=0.26]{euro_b.jpg} $\quad$ \includegraphics[scale=0.26]{euro_b.jpg} \\
-	
-\end{tabular}
-\end{minipage}%%%
-\begin{minipage}[c]{0.49\textwidth}
-\centering
-\includegraphics[scale=1.2]{Vectors/laptop_q.eps}\\
-\vspace{0.5cm}
-\begin{tabular}{c | c}
-	Probability & Quantum state \\
-	\midrule
-	$p_1$ & \includegraphics[scale=0.03]{Vectors/black-atom-icon-free-vector.eps} $\quad$ \includegraphics[scale=0.03]{Vectors/black-atom-icon-free-vector.eps} $\quad$ \includegraphics[scale=0.03]{Vectors/black-atom-icon-free-vector.eps} \\
-	$p_2$ & \includegraphics[scale=0.03]{Vectors/black-atom-icon-free-vector.eps} $\quad$ \includegraphics[scale=0.03]{Vectors/red-atom.eps} $\quad$ \includegraphics[scale=0.03]{Vectors/black-atom-icon-free-vector.eps} \\
-	$p_3$ & \includegraphics[scale=0.03]{Vectors/black-atom-icon-free-vector.eps} $\quad$ \includegraphics[scale=0.03]{Vectors/black-atom-icon-free-vector.eps} $\quad$ \includegraphics[scale=0.03]{Vectors/red-atom.eps} \\
-	. & . \\
-	. & . \\
-	. & . \\
-	$p_8$ & \includegraphics[scale=0.03]{Vectors/red-atom.eps} $\quad$ \includegraphics[scale=0.03]{Vectors/red-atom.eps} $\quad$ \includegraphics[scale=0.03]{Vectors/red-atom.eps} \\
-	
-\end{tabular}
-\end{minipage}
-
-\end{frame}
-}
-
-{
-\setbeamertemplate{frame footer}{\tiny{}}
-\begin{frame}[fragile]{Three random bits vs. three qubits}
-
-\begin{minipage}[c]{0.49\textwidth}
-\centering
-\includegraphics[scale=1.9]{Vectors/laptop_c.eps}\\
-\vspace{0.4cm}
-\begin{tabular}{c | c}
-	Probability & Combination \\
-	\midrule
-	$p_1$ & 000 \\
-	$p_2$ & 010 \\
-	$p_3$ & 001 \\
-	. & .\\
-	. & . \\
-	. & . \\
-	$p_8$ & 111 \\
-	
-\end{tabular}
-\end{minipage}%%%
-\begin{minipage}[c]{0.49\textwidth}
-\centering
-\includegraphics[scale=1.2]{Vectors/laptop_q.eps}\\
-\vspace{0.5cm}
-\begin{tabular}{c | c}
-	Probability & Quantum state \\
-	\midrule
-	$p_1$ & $\ket{000}$ \\
-	$p_2$ & $\ket{010}$ \\
-	$p_3$ & $\ket{001}$ \\
-	. & . \\
-	. & . \\
-	. & . \\
-	$p_8$ & $\ket{111}$ \\
-	
-\end{tabular}
-\end{minipage}
-
-\end{frame}
-}
-
-{
-\setbeamertemplate{frame footer}{\tiny{}}
-\begin{frame}[fragile]{Three random bits vs. three qubits}
-
-\begin{minipage}[c]{0.39\textwidth}
-\centering
-\includegraphics[scale=1.9]{Vectors/laptop_c.eps}\\
-\vspace{0.4cm}
-\begin{tabular}{c | c}
-	Prob. & Combination \\
-	\midrule
-	$p_1 = \frac{1}{8}$ & 000 \\
-	$p_2= \frac{1}{8}$ & 010 \\
-	$p_3= \frac{1}{8}$ & 001 \\
-	. & .\\
-	. & . \\
-	. & . \\
-	$p_8= \frac{1}{8}$ & 111 \\
-	
-\end{tabular}
-\end{minipage}%%%
 \begin{minipage}[c]{0.59\textwidth}
-\centering
-\includegraphics[scale=1.2]{Vectors/laptop_q.eps}\\
-\vspace{0.5cm}
-\begin{tabular}{c | c | c}
-	Prob. & Amplitude & Quantum state \\
-	\midrule
-	$p_1 =\, \mid a_1\mid^2$ & $a_1$ & $\ket{000}$ \\
-	$p_2 =\,\mid a_2\mid^2$ & $a_2$ & $\ket{010}$ \\
-	$p_3 =\, \mid a_3\mid^2$ & $a_3$ & $\ket{001}$ \\
-	. & .  & .\\
-	. & . & .\\
-	. & . & .\\
-	$p_8 =\, \mid a_8\mid^2$ & $a_8$ & $\ket{111}$ \\
-	
-\end{tabular}
-\end{minipage}
-\end{frame}
-}
-
-{
-\setbeamertemplate{frame footer}{\tiny{}}
-\begin{frame}[fragile]{Three random bits vs. three qubits}
-
+\vspace{0.3cm}
+\textbf{Current state-of-the-art:}\\
+\begin{itemize}
+\item IBM $\rightarrow$ \textbf{5 superconducting qubits}
+\item Google $\rightarrow$ \textbf{9 superconducting qubits}
+\item Weizmann Research Group in Israel\\$\rightarrow$ \textbf{8 trapped ions}
+\item DWave $\rightarrow$ \textbf{1,152 qubits}\\BUT solves only a narrow class of problems
+\end{itemize}
+\end{minipage}%%
 \begin{minipage}[c]{0.39\textwidth}
+\includegraphics[scale=0.18]{ion-trap.jpg}\\
 \centering
-\includegraphics[scale=1.9]{Vectors/laptop_c.eps}\\
-\vspace{0.4cm}
-\begin{tabular}{c | c}
-	Prob. & Combination \\
-	\midrule
-	$p_1 = \frac{1}{8}$ & 000 \\
-	$p_2= \frac{1}{8}$ & 010 \\
-	$p_3= \frac{1}{8}$ & 001 \\
-	. & .\\
-	. & . \\
-	. & . \\
-	$p_8= \frac{1}{8}$ & 111 \\
-	
-\end{tabular}
-\end{minipage}%%%
-\begin{minipage}[c]{0.59\textwidth}
-\centering
-\includegraphics[scale=1.2]{Vectors/laptop_q.eps}\\
-\vspace{0.5cm}
-\begin{tabular}{c | c | c}
-	Prob. & Amplitude & Quantum state \\
-	\midrule
-	$p_1 = \mid\frac{1}{2\sqrt{2}}\mid^2 = \frac{1}{8}$ & $\frac{1}{2\sqrt{2}}$ & $\ket{000}$ \\
-	$p_2 =\frac{1}{8}$ & $-\frac{1}{2\sqrt{2}}$ & $\ket{010}$ \\
-	$p_3 = \frac{1}{8}$ & $-\frac{i}{2\sqrt{2}}$ & $\ket{001}$ \\
-	. & .  & .\\
-	. & . & .\\
-	. & . & .\\
-	$p_8 = \frac{1}{8}$ & $\frac{i}{2\sqrt{2}}$ & $\ket{111}$ \\
-	
-\end{tabular}
-\end{minipage}\\
-\vspace{0.5cm}
-$\rightarrow$ In quantum mechanics amplitudes can be interferred with each other!\\
-$\rightarrow$ This is impossible to do on a classical computer!
-\end{frame}
-}
-
-{
-\setbeamertemplate{frame footer}{\tiny{}}
-\begin{frame}[fragile]{Three random bits vs. three qubits}
-
-Applying an H gate to the first qubit leads to quantum interference such that:
-\centering
-\begin{figure}
-\includegraphics[scale=1.2]{Vectors/laptop_q.eps}\\
-\end{figure}
-\vspace{0.5cm}
-\begin{table}
-\begin{tabular}{c | c | c}
-	Prob. & Amplitude & Quantum state \\
-	\midrule
-	$p_1 = \,\mid a_1+a_5 \mid^2$ & $a_1+a_5$ & $\ket{000}$ \\
-	$p_2 =\, \mid a_2+a_6 \mid^2$ & $a_2+a_6$ & $\ket{010}$ \\
-	$p_3 = \,\mid a_3+a_7 \mid^2$ & $a_3+a_7$ & $\ket{001}$ \\
-	$p_4 = \,\mid a_4+a_8 \mid^2$ & $a_4+a_8$ & $\ket{011}$ \\
-	$p_5 = \,\mid a_1-a_5 \mid^2$ & $a_1-a_5$ & $\ket{100}$ \\
-	$p_6 = \,\mid a_2-a_6 \mid^2$ & $a_2-a_6$ & $\ket{110}$ \\
-	$p_7 = \,\mid a_3-a_7 \mid^2$ & $a_3-a_7$ & $\ket{101}$ \\
-	$p_8 = \,\mid a_4-a_8 \mid^2$ & $a_4-a_8$ & $\ket{111}$ \\
-	
-\end{tabular}
-\end{table}
+\tiny{Source: University of Innsbruck}
+\end{minipage}
 
 \end{frame}
 }
 
 {
 \setbeamertemplate{frame footer}{\tiny{}}
-\begin{frame}[fragile]{Three random bits vs. three qubits}
+\begin{frame}[fragile]{Motivation for this thesis research}
 
-For example, substituting the values for $a_1=\frac{1}{2\sqrt{2}}$ and $a_5=\frac{1}{2\sqrt{2}}$ yields:
-\centering
+\begin{itemize}
+\item Classical machine learning is a very applied field
+\item State-of-the-art quantum computer have very small numbers of qubits
+\item Thus, quantum-enhanced machine learning is almost purely theoretical
+\item There have been only a handful of proof-of-principle studies in quantum-enhanced machine learning
+\item Need for more proof-of-principle implementations and simulations to demonstrate the benefits of quantum computation for machine learning
+\item Small machine learning problems need to be identified and implemented.
+\end{itemize}
+
+\end{frame}
+}
+
+\section{Methods}
+
+{
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1} Screenshot taken from \url{https://quantumexperience.ng.bluemix.net/qstage/\#/editor}}}
+\begin{frame}[fragile]{Methods: IBM Quantum Experience}
+
 \begin{figure}
-\includegraphics[scale=1.2]{Vectors/laptop_q.eps}\\
+\includegraphics[height=0.45\textwidth]{IBMamplitudecomposer.png}
+       \caption{\footnotesize{IBM's quantum composer\textsuperscript{1}} }
 \end{figure}
-\vspace{0.5cm}
-\begin{table}
-\begin{tabular}{c | c | c}
-	Prob. & Amplitude & Quantum state \\
-	\midrule
-	$p_1 = \,\mid a_1+a_5 \mid^2$ & $\frac{1}{\sqrt{2}}(\frac{1}{2\sqrt{2}}+\frac{1}{2\sqrt{2}})$ & $\ket{000}$ \\
-	$p_2 =\, \mid a_2+a_6 \mid^2$ & $a_2+a_6$ & $\ket{010}$ \\
-	$p_3 = \,\mid a_3+a_7 \mid^2$ & $a_3+a_7$ & $\ket{001}$ \\
-	$p_4 = \,\mid a_4+a_8 \mid^2$ & $a_4+a_8$ & $\ket{011}$ \\
-	$p_5 = \,\mid a_1-a_5 \mid^2$ & $\frac{1}{\sqrt{2}}(\frac{1}{2\sqrt{2}}-\frac{1}{2\sqrt{2}})$ & $\ket{100}$ \\
-	$p_6 = \,\mid a_2-a_6 \mid^2$ & $a_2-a_6$ & $\ket{110}$ \\
-	$p_7 = \,\mid a_3-a_7 \mid^2$ & $a_3-a_7$ & $\ket{101}$ \\
-	$p_8 = \,\mid a_4-a_8 \mid^2$ & $a_4-a_8$ & $\ket{111}$ \\
-	
-\end{tabular}
-\end{table}
+\vspace{-5mm}
+\begin{minipage}[t]{.5\textwidth}
+\begin{itemize}
+\item Accessible to the public
+\item Allows for ideal + real simulations
+\end{itemize}
+\end{minipage}%%%%
+\begin{minipage}[t]{.5\textwidth}
+\begin{itemize}
+\item 5 superconducting qubits
+\item 40 gates (39 gates + 1 measurement)
+
+\end{itemize}
+\end{minipage}
 
 \end{frame}
 }
 
 {
 \setbeamertemplate{frame footer}{\tiny{}}
-\begin{frame}[fragile]{Three random bits vs. three qubits}
+\begin{frame}[fragile]{Methods: Liqui$\ket{}$}
 
-For example, substituting the values for $a_1 = \frac{1}{2\sqrt{2}}$ and $a_5 = \frac{1}{2\sqrt{2}}$ yields:
-\centering
-\begin{figure}
-\includegraphics[scale=1.2]{Vectors/laptop_q.eps}\\
-\end{figure}
+Small quantum computers can be simulated on conventional classical computers!\\
 \vspace{0.5cm}
-\begin{table}
-\begin{tabular}{c | c | c c}
-	Prob. & Amplitude & Quantum state &  \\
-	\midrule
-	$p_1 = \,\mid \frac{1}{2} \mid^2 = \frac{1}{4}$ & $\frac{1}{2}$ & $\ket{000}$ & $\rightarrow$ constructive interference \\
-	$p_2 =\, \mid a_2+a_6 \mid^2$ & $a_2+a_6$ & $\ket{010}$ & " \\
-	$p_3 = \,\mid a_3+a_7 \mid^2$ & $a_3+a_7$ & $\ket{001}$ & "\\
-	$p_4 = \,\mid a_4+a_8 \mid^2$ & $a_4+a_8$ & $\ket{011}$ & "\\
-	$p_5 = \,\mid 0 \mid^2 = 0$ & $0$ & $\ket{100}$ & $\rightarrow$ destructive interference \\
-	$p_6 = \,\mid a_2-a_6 \mid^2$ & $a_2-a_6$ & $\ket{110}$ & "\\
-	$p_7 = \,\mid a_3-a_7 \mid^2$ & $a_3-a_7$ & $\ket{101}$ & "\\
-	$p_8 = \,\mid a_4-a_8 \mid^2$ & $a_4-a_8$ & $\ket{111}$ & "\\
-	
-\end{tabular}
-\end{table}
+%\begin{figure}
+%\includegraphics[height=0.4\textwidth]{liquidcodesnippet.png}
+%\end{figure}
+%\vspace{-5mm}
+%\begin{minipage}[t]{.5\textwidth}
+Liqui$\ket{}$...
+\begin{itemize}
+\item stands for Language-Integrated Quantum Operations. 
+\item is a quantum simulation toolsuite written in F\# and developed by Microsoft Research.
+\item allows for simulations of up to 30 qubits with 16GB RAM.
+\item was used in this thesis to provide proof-of-principle simulations of quantum-enhanced machine learning algorithms.
+%\end{itemize}
+%\end{minipage}%%%%
+%%\begin{minipage}[t]{.5\textwidth}
+%\begin{itemize}
+%\item 5 superconducting qubits
+%\item 40 gates (39 gates + 1 measurement)
+
+\end{itemize}
+%\end{minipage}
 
 \end{frame}
 }
-
 
 \section*{\protect\includegraphics[scale=2.4]{Vectors/laptop_qml.eps}\newline Quantum-enhanced Machine Learning}
 
 {
 \setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
-\begin{frame}[fragile]{Encoding classical data into qubits}
-
-
-There are two fundamentally different ways for state preparation:
-
-\begin{alertblock}{Data encoded into qubits}
-%speed-up not very clear since the \# of qubits increases linearly with the \# of classical bits
-k-dimensional probability vector requires $4k$ classical bits which are encoded one-to-one into $4k$ qubits, e.g.\\
-\vspace{2mm}
-$\begin{pmatrix}
- \textcolor{blue}{0.6} \\ 
- \textcolor{emerald}{0.4}
- \end{pmatrix}*10 \rightarrow \begin{pmatrix}
- \textcolor{blue}{6} \\ 
- \textcolor{emerald}{4}
- \end{pmatrix} \rightarrow \begin{pmatrix}
- \textcolor{blue}{0110} \\ 
- \textcolor{emerald}{0100}
- \end{pmatrix} \rightarrow n=\textcolor{blue}{0110}\textcolor{emerald}{0100} \rightarrow \ket{n} = \ket{\textcolor{blue}{0110}\textcolor{emerald}{0100}}$\\
-%\textbf{Only slight speed up possible}
-\end{alertblock}
-\vspace{3mm}
-\begin{alertblock}{\textcolor{gray}{Data encoded into amplitudes}}
-\textcolor{gray}{k-dimensional probability vector is encoded into $log_{2}(k)$ qubits, e.g.\\ 
-\vspace{2mm}
-$\begin{pmatrix}
- 0.6 \\ 
- 0.4
- \end{pmatrix} \quad \rightarrow \quad \ket{n} = \sqrt{0.6}\ket{0}+\sqrt{0.4}\ket{1}$\\
-%\textbf{Possibility of exponential speed up}
-}
-\end{alertblock}
-
-
-\end{frame}
-}
-
-{
-\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
 \begin{frame}[fragile]{Encoding classical data into amplitudes}
-There are two fundamentally different ways for state preparation:
 
-\begin{alertblock}{\textcolor{gray}{Data encoded into qubits}}
-%speed-up not very clear since the \# of qubits increases linearly with the \# of classical bits
-\textcolor{gray}{k-dimensional probability vector requires $4k$ classical bits which are encoded one-to-one into $4k$ qubits, e.g.\\
-\vspace{2mm}
-$\begin{pmatrix}
- 0.6 \\ 
- 0.4
- \end{pmatrix}*10 \rightarrow \begin{pmatrix}
- 6 \\ 
- 4
- \end{pmatrix} \rightarrow \begin{pmatrix}
- 0110 \\ 
- 0100
- \end{pmatrix} \rightarrow n=01100100 \rightarrow \ket{n} = \ket{01100100}$\\
-%\textbf{Only slight speed up possible}
-}
-\end{alertblock}  
-\vspace{3mm}
+%There are two different ways for encoding classical data into quantum states. 
 \begin{alertblock}{Data encoded into amplitudes}
 k-dimensional probability vector is encoded into $log_{2}(k)$ qubits, e.g.\\ 
 \vspace{2mm}
@@ -1285,121 +713,15 @@ $\begin{pmatrix}
  \end{pmatrix} \quad \rightarrow \quad \ket{n} = \sqrt{\textcolor{blue}{0.6}}\ket{0}+\sqrt{\textcolor{emerald}{0.4}}\ket{1}$\\
 %\textbf{Possibility of exponential speed up}
 \end{alertblock}
-
-\end{frame}
-}
-
-{
-\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
-\begin{frame}[fragile]{Calculating distances with interference}
-\hspace{-0.7cm}
-\begin{minipage}[c]{0.29\textwidth}
-\begin{tikzpicture}[scale=0.75]
-%define the axes
-\draw[thick,->] (0,0) -- (3.5,0) node[anchor=north west] {x};
-\draw[thick,->] (0,0) -- (0,2.5) node[anchor=south east] {y};
-\draw (0 cm,1pt) -- (0 cm,-1pt) node[anchor=north] {$0$};
-%\draw (1 cm,1pt) -- (1 cm,-1pt) node[anchor=north] {$0.1$};
-\draw (2 cm,1pt) -- (2 cm,-1pt) node[anchor=north] {$0.2$};
-\draw (3 cm,1pt) -- (3 cm,-1pt) node[anchor=north] {$0.3$};
-%\draw (4 cm,1pt) -- (4 cm,-1pt) node[anchor=north] {$0.4$};
-%\draw (5 cm,1pt) -- (5 cm,-1pt) node[anchor=north] {$0.5$};
-\draw (1pt,1 cm) -- (-1pt,1 cm) node[anchor=east] {$0.1$};
-\draw (1pt,2 cm) -- (-1pt,2 cm) node[anchor=east] {$0.2$};
-%\draw (1pt,3 cm) -- (-1pt,3 cm) node[anchor=east] {$0.3$};
-%\draw (1pt,4 cm) -- (-1pt,4 cm) node[anchor=east] {$0.4$};
-%\draw (1pt,5 cm) -- (-1pt,5 cm) node[anchor=east] {$0.5$};
-%draw the dotted lines to the first point
-\draw[black,thick,dashed] (2,0) -- (2, 1);
-\draw[black,thick,dashed] (0,1) -- (2, 1);
-%draw the dotted lines to the second point
-\draw[red,thick,dashed] (3,0) -- (3, 2);
-\draw[red,thick,dashed] (0,2) -- (3, 2);
-%draw the two point markerss
-\node[mark size=3pt,color=red] at (3,2) {\pgfuseplotmark{triangle*}};
-\node[mark size=3pt,color=black] at (2,1) {\pgfuseplotmark{halfcircle*}};
-\end{tikzpicture}
-\end{minipage}%%%
-\hspace{0.55cm}
-\begin{minipage}[c]{0.69\textwidth}
-\centering
-\includegraphics[scale=1.2]{Vectors/laptop_q.eps}\\
 \vspace{0.5cm}
-\flushright
-\begin{tabular}{c | c | c c}
-	Prob. & Amplitude & Quantum state  \\
-	\midrule
-	$p_1 = 0.22 $ & $\frac{0.2}{\sqrt{0.18}}$ & $\ket{000}$\\
-	$p_2 = 0.055$ & $\frac{0.1}{\sqrt{0.18}}$ & $\ket{010}$  \\
-	$p_3= 0$ & $0$ & $\ket{001}$ \\
-	$p_4 = 0$ & $0$ & $\ket{011}$ \\
-	$p_5 = 0.5$ & $\frac{0.3}{\sqrt{0.18}}$ & $\ket{100}$  \\
-	$p_6= 0.22$ & $\frac{0.2}{\sqrt{0.18}}$ & $\ket{110}$ \\
-	$p_7 = 0$ & $0$ & $\ket{101}$ \\
-	$p_8 = 0$ & $0$ & $\ket{111}$\\
-	
-\end{tabular}
-\end{minipage}
+Schuld, Fingerhuth, and Petruccione (Manuscript in preparation) developed a new \textbf{amplitude-based} kNN algorithm.\\
+$\rightarrow$ requires only a few qubits and provides great speed-up
 
 \end{frame}
 }
 
 {
-\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
-\begin{frame}[fragile]{Calculating distances with interference}
-\hspace{-0.7cm}
-\begin{minipage}[c]{0.29\textwidth}
-\begin{tikzpicture}[scale=0.75]
-%define the axes
-\draw[thick,->] (0,0) -- (3.5,0) node[anchor=north west] {x};
-\draw[thick,->] (0,0) -- (0,2.5) node[anchor=south east] {y};
-\draw (0 cm,1pt) -- (0 cm,-1pt) node[anchor=north] {$0$};
-%\draw (1 cm,1pt) -- (1 cm,-1pt) node[anchor=north] {$0.1$};
-\draw (2 cm,1pt) -- (2 cm,-1pt) node[anchor=north] {$0.2$};
-\draw (3 cm,1pt) -- (3 cm,-1pt) node[anchor=north] {$0.3$};
-%\draw (4 cm,1pt) -- (4 cm,-1pt) node[anchor=north] {$0.4$};
-%\draw (5 cm,1pt) -- (5 cm,-1pt) node[anchor=north] {$0.5$};
-\draw (1pt,1 cm) -- (-1pt,1 cm) node[anchor=east] {$0.1$};
-\draw (1pt,2 cm) -- (-1pt,2 cm) node[anchor=east] {$0.2$};
-%\draw (1pt,3 cm) -- (-1pt,3 cm) node[anchor=east] {$0.3$};
-%\draw (1pt,4 cm) -- (-1pt,4 cm) node[anchor=east] {$0.4$};
-%\draw (1pt,5 cm) -- (-1pt,5 cm) node[anchor=east] {$0.5$};
-%draw the dotted lines to the first point
-\draw[black,thick,dashed] (2,0) -- (2, 1);
-\draw[black,thick,dashed] (0,1) -- (2, 1);
-%draw the dotted lines to the second point
-\draw[red,thick,dashed] (3,0) -- (3, 2);
-\draw[red,thick,dashed] (0,2) -- (3, 2);
-%draw the two point markerss
-\node[mark size=3pt,color=red] at (3,2) {\pgfuseplotmark{triangle*}};
-\node[mark size=3pt,color=black] at (2,1) {\pgfuseplotmark{halfcircle*}};
-\end{tikzpicture}
-\end{minipage}%%%
-\hspace{0.55cm}
-\begin{minipage}[c]{0.69\textwidth}
-\centering
-\includegraphics[scale=1.2]{Vectors/laptop_q.eps}\\
-\vspace{0.5cm}
-\flushright
-\begin{tabular}{c | c | c c}
-	Prob. & Amplitude & Quantum state  \\
-	\midrule
-	$p_1 =\, \frac{(0.2+0.3)^2}{0.18}$ & $\frac{0.2+0.3}{\sqrt{0.18}}$ & $\ket{000}$\\
-	$p_2 =\, \frac{(0.1+0.2)^2}{0.18}$ & $\frac{0.1+0.2}{\sqrt{0.18}}$ & $\ket{010}$  \\
-	$p_3 = 0$ & $0$ & $\ket{001}$ \\
-	$p_4 = 0$ & $0$ & $\ket{011}$ \\
-	$p_5 = \,\frac{(0.2-0.3)^2}{0.18}$ & $\frac{0.2-0.3}{\sqrt{0.18}}$ & $\ket{100}$  \\
-	$p_6 = \, \frac{(0.1-0.2)^2}{0.18}$ & $\frac{0.1-0.2}{\sqrt{0.18}}$ & $\ket{110}$ \\
-	$p_7 = 0$ & $0$ &  $\ket{101}$ \\
-	$p_8 = 0$ & $0$ &  $\ket{111}$\\
-	
-\end{tabular}
-\end{minipage}
-\end{frame}
-}
-
-{
-\setbeamertemplate{frame footer}{\tiny{Schuld, Maria (2016) unpublished.}}
+\setbeamertemplate{frame footer}{\tiny{Schuld, Fingerhuth, and Petruccione (Manuscript in preparation) Amplitude-based quantum k-nearest neighbour algorithm.}}
 \begin{frame}[fragile]{The amplitude-based kNN algorithm}
 
 \begin{enumerate}
@@ -1451,67 +773,11 @@ $\begin{pmatrix}
 %\mediabutton[
 %  mediacommand=vidA:playPause,
 %]{\fbox{Play/Pause}}
-%\begin{figure}[ht]
-%\includemovie[poster,text={\small(Loading Video...)}]{6cm}{4cm}%{interference.mp4}
-%\end{figure}
-
-\end{frame}
-}
-
-\section{Methods}
-
-{
-\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1} Screenshot taken from \url{https://quantumexperience.ng.bluemix.net/qstage/\#/editor}}}
-\begin{frame}[fragile]{Methods: IBM Quantum Experience}
-
-\begin{figure}
-\includegraphics[height=0.45\textwidth]{IBMamplitudecomposer.png}
-       \caption{\footnotesize{IBM's quantum composer\textsuperscript{1}} }
+\begin{figure}[ht]
+\includegraphics[scale=0.5]{wave-interference.png}
 \end{figure}
-\vspace{-5mm}
-\begin{minipage}[t]{.5\textwidth}
-\begin{itemize}
-\item Accessible to the public
-\item Allows for ideal + real simulations
-\end{itemize}
-\end{minipage}%%%%
-\begin{minipage}[t]{.5\textwidth}
-\begin{itemize}
-\item 5 superconducting qubits
-\item 40 gates (39 gates + 1 measurement)
-
-\end{itemize}
-\end{minipage}
-
-\end{frame}
-}
-
-{
-\setbeamertemplate{frame footer}{\tiny{}}
-\begin{frame}[fragile]{Methods: Liqui$\ket{}$}
-
-\textbf{Remember:} Small quantum computers can still be simulated!\\
-\vspace{0.5cm}
-%\begin{figure}
-%\includegraphics[height=0.4\textwidth]{liquidcodesnippet.png}
-%\end{figure}
-%\vspace{-5mm}
-%\begin{minipage}[t]{.5\textwidth}
-Liqui$\ket{}$...
-\begin{itemize}
-\item stands for Language-Integrated Quantum Operations. 
-\item is a quantum simulation toolsuite written in F\# .
-\item was developed by Microsoft Research.
-\item allows for simulations of up to 30 qubits with 16GB RAM.
-%\end{itemize}
-%\end{minipage}%%%%
-%%\begin{minipage}[t]{.5\textwidth}
-%\begin{itemize}
-%\item 5 superconducting qubits
-%\item 40 gates (39 gates + 1 measurement)
-
-\end{itemize}
-%\end{minipage}
+\centering
+\tiny{Source: TutorVista}
 
 \end{frame}
 }
@@ -1519,53 +785,14 @@ Liqui$\ket{}$...
 \section{Results: Amplitude-based kNN algorithm}
 
 {
-\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
-\begin{frame}[fragile]{}
-
-Illustrate the problems with IBMQE?
-
-Show Bloch vector classification simulation results here
-
-\end{frame}
-}
-
-{
 \setbeamertemplate{frame footer}{}
 \begin{frame}{Simple binary classification case}
 
-\begin{minipage}[c]{.4\textwidth}
-		%\centering
-		\hspace{-7mm}
-       \includegraphics[width=1.1\textwidth]{bloch3over4.png}
+\begin{figure}
+       \includegraphics[scale=0.3]{bloch3over4.png}
        \captionsetup{justification=raggedright, singlelinecheck=false}
        \captionof{figure}{\footnotesize{Simple binary classification problem of a quantum state} }
-\end{minipage}%%%%
-\begin{minipage}[c][][b]{.6\textwidth}
-\scriptsize{
-\begin{equation}
-\frac{1}{\sqrt{2M}}\sum_{m=1}^{M} (\textcolor{emerald}{\ket{0}}\ket{\textcolor{red}{\Psi_{\tilde{x}} (\star)}}+\textcolor{emerald}{\ket{1}}\ket{\textcolor{darkyellow}{\Psi}_{\textcolor{purple}{x^{m}}}})\ket{y^{m}(\textcolor{darkyellow}{A} \ or \ \textcolor{purple}{B})}\ket{m}
-\end{equation}}
-Procedure to load the input vector $\tilde{x}$:
-\begin{equation}
-\ket{\Psi_0} = \frac{1}{2}\sum_{m=1}^{2} (\textcolor{emerald}{\ket{0}}\ket{0}+\textcolor{emerald}{\ket{1}}\ket{0})\ket{y^{m}}\ket{m}
-\end{equation}
-Apply controlled rotation $_0^1CR_y(\frac{\pi}{4})$ s.t.
-\begin{equation}
-_0^1CR_y(\frac{\pi}{4})\ket{\Psi_0} = \ket{\Psi_1} = \frac{1}{2}\sum_{m=1}^{2} (\textcolor{emerald}{\ket{0}}\ket{0}+\textcolor{emerald}{\ket{1}}\ket{\textcolor{red}{\Psi_{\tilde{x}}}})\ket{y^{m}}\ket{m}
-\end{equation}
-Flip the ancilla qubit in the first register
-\begin{equation}
-(X\otimes\mathds{1}\otimes\mathds{1}\otimes\mathds{1})\ket{\Psi_1} = \ket{\Psi_2} = \frac{1}{2}\sum_{m=1}^{2} (\textcolor{emerald}{\ket{0}}\ket{\textcolor{red}{\Psi_{\tilde{x}}}}+\textcolor{emerald}{\ket{1}}\ket{0})\ket{y^{m}}\ket{m}
-\end{equation}
-\null
-\par\xdef\tpd{\the\prevdepth}
-\end{minipage}
-
-	%\metroset{block=fill}
-	%\begin{alertblock}{Algorithmic complexity}
-	%\centering
-	%$\mathcal{O}(\frac{1}{p_{acc}})$
-	%\end{alertblock}
+\end{figure}%%%%
 
 \end{frame}
 }
@@ -1579,208 +806,41 @@ Flip the ancilla qubit in the first register
        \caption{\footnotesize{IBM's universal gate set} }
 \end{figure}
 \vspace{10mm}
-\centering{\textbf{How can we implement the $_0^1CR_y(\frac{\pi}{4})$ gate?}}
-
-\end{frame}
-}
-
-{
-\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}Nielsen, M. A., \& Chuang, I. L. (2010). Quantum computation and quantum information. Cambridge University Press.\newline \textsuperscript{2}Jat, R. N., \& Ruhela, D. S. (2011). Comparative study of complexity of algorithms for iterative solution of non-linear equations. Journal of International Academy Of Physical Sciences, 15(4).}}
-\begin{frame}{Controlled U gate}
-
-\begin{minipage}[t]{.4\textwidth}
-	%\vspace{-20mm}
-	\includegraphics[height=0.5\textwidth]{controlledU.png}
-       \captionsetup{justification=raggedright, singlelinecheck=false}
-       \captionof{figure}{\footnotesize{Controlled U-gate} }
-\end{minipage}%%%%%
-\begin{minipage}[t]{.6\textwidth}
-%\vspace{-20mm}
-\includegraphics[width=1\textwidth]{controlledUdecomposition.png}
-       \captionsetup{justification=raggedright, singlelinecheck=false}
-       \captionof{figure}{\footnotesize{Decomposition of a controlled U-gate\textsuperscript{1}} }
-\end{minipage}
-
-Choose A,B,C and $\alpha$ s.t.
-\begin{equation}
-e^{i\alpha}*A*X*B*X*C = U \quad and \quad A*B*C = \mathds{1}
-\end{equation}
-Need to solve the following equation\textsuperscript{1}
-\begin{equation}
-U = \begin{pmatrix}
- e^{i(\alpha-\frac{\beta}{2}-\frac{\delta}{2})}\cos{\frac{\gamma}{2}} & -e^{i(\alpha-\frac{\beta}{2}+\frac{\delta}{2})}\sin{\frac{\gamma}{2}} \\ 
-e^{i(\alpha+\frac{\beta}{2}-\frac{\delta}{2})}\sin{\frac{\gamma}{2}} & e^{i(\alpha+\frac{\beta}{2}+\frac{\delta}{2})}\cos{\frac{\gamma}{2}}
- \end{pmatrix}
-\end{equation}
-
-%calculating a root of a function f(x) with n-digit precision, provided that a good initial approximation is known, is O((\log n) F(n)) where F(n) is the cost of calculating f(x)/f'(x)\, with n-digit precision.
-
-	%\metroset{block=fill}
-	%\begin{alertblock}{Overall algorithmic complexity}
-	%$\mathcal{O}(\frac{1}{p_{acc}})+\textcolor{red}{\mathcal{O}(k)}$ where $k$ is number of root finding iterations\textsuperscript{2}
-	%\end{alertblock}
-\end{frame}
-
-}{
-\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}Dawson, C. M., \& Nielsen, M. A. (2005). The Solovay-Kitaev algorithm. arXiv preprint quant-ph/0505030.}}
-\begin{frame}{Problems with universal gate sets}
-
-In our case we need to find A, B, C and $\alpha$ for $_0^1CR_y(\frac{\pi}{4})$:
-
-Using a root finding algorithm for non-linear equations we find:
-
-\begin{equation}
-\alpha =  \pi; \quad 
-\beta = 2\pi;\quad 
-\delta = \frac{7}{8}\pi;\quad 
-\gamma = 0
-\end{equation}
-Then,
-\begin{align}
-A \quad= \quad R_z(\beta)R_y(\frac{\gamma}{2})\quad =& \quad R_z(2\pi) \quad = \quad \textcolor{emerald}{\mathds{1}} \\
-B\quad =\quad R_y(-\frac{\gamma}{2})R_z(-\frac{\delta+\beta}{2})\quad =& \quad R_z(-\frac{23}{16}\pi) \quad= \quad \textcolor{red}{???}  \\
-C \quad=\quad R_z(\frac{\delta-\beta}{2})\quad =& \quad R_z(-\frac{9}{16}\pi) \quad= \quad \textcolor{red}{???} \\
-\begin{pmatrix} 1&0\cr0&e^{i\alpha} \end{pmatrix}\quad=& \quad \begin{pmatrix} 1&0\cr0&e^{i\pi} \end{pmatrix}\quad= \quad \textcolor{emerald}{Z}
-\end{align}
-
-\end{frame}
-}
-
-{
-\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}Dawson, C. M., \& Nielsen, M. A. (2005). The Solovay-Kitaev algorithm. arXiv preprint quant-ph/0505030.}}
-\begin{frame}{The Solovay-Kitaev theorem}
-
-\begin{align}
-B\quad =&\quad R_z(-\frac{23}{16}\pi) \quad= \quad \textcolor{red}{???}  \\
-C \quad=&\quad R_z(-\frac{9}{16}\pi) \quad= \quad \textcolor{red}{???}
-\end{align}
-
-The Solovay-Kitaev theorem guarantees that given a set of single-qubit quantum gates which generates a dense subset of $SU(2)$, then that set is guaranteed to fill $SU(2)$ quickly.\textsuperscript{1}
- 
-$\rightarrow$ \textcolor{emerald}{\textbf{Hence, given any universal gate set it is possible to obtain good approximations to any desired gate.}}
-
-$\rightarrow$ \textcolor{red}{\textbf{But needs to be computed classically!}}
-
-\end{frame}
-}
-
-{
-\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}Booth Jr, J. (2012). Quantum compiler optimizations. arXiv preprint arXiv:1206.3348.}}
-\begin{frame}{The Solovay-Kitaev algorithm}
-
-Fowler distance\textsuperscript{1}:
-\begin{equation}
-dist(U,U_{approx}) = \sqrt{\frac{2-\mid tr(U\cdot U_{approx}^\dagger)\mid}{2}}
-\end{equation}
-
-\begin{figure}
-    \begin{tikzpicture}[scale=0.8]
-\begin{axis}[xlabel={Gate count},ylabel={Fowler distance [$d(U,U_{approx})$]}]
-
-% Graph column 2 versus column 0
-\addplot table[x index=1,y index=0,col sep=comma] {datax.dat};
-\addlegendentry{$R_z(-\frac{9}{16}\pi)$}% y index+1 since humans count from 1
-
-% Graph column 1 versus column 0    
-\addplot table[x index=5,y index=4,col sep=comma] {datax.dat};
-\addlegendentry{$R_z(-\frac{23}{16}\pi)$}
-
-\end{axis}
-\end{tikzpicture}
-  \end{figure}
+\centering{\textbf{How can we implement the amplitude-based quantum kNN algorithm with this small gate set?}}
 
 \end{frame}
 }
 
 {
 \setbeamertemplate{frame footer}{}
-\begin{frame}{The Solovay-Kitaev algorithm}
+\begin{frame}{Results: IBM quantum computer implementation}
 
-\begin{minipage}[c]{.8\textwidth}
-	%\vspace{-20mm}
-	\includegraphics[height=0.8\textwidth]{fowlerdistance.png}
-       \captionsetup{justification=raggedright, singlelinecheck=false}
-       \captionof{figure}{\footnotesize{Various Fowler distances visualized on Bloch sphere} }
-\end{minipage}%%%%%
-\begin{minipage}[c]{.2\textwidth}
-\scriptsize
-\begin{equation}
-\textcolor{cyan}{d = 0.22739}
-\end{equation}
-\begin{equation}
-\textcolor{emerald}{d = 0.15165}
-\end{equation}
-\begin{equation}
-\textcolor{blue}{d = 0.10722}
-\end{equation}
-\begin{equation}
-\textcolor{darkyellow}{d = 0.02086}
-\end{equation}
-\begin{equation}
-\textcolor{red}{d = 0.00156}
-\end{equation}
+\begin{itemize}
+\item IBM's short qubit lifetimes only allow for 40 quantum gates. 
+\item IBM Quantum Experience has a very small universal gate set making it difficult to run complicated algorithms.
+\item For this particular classification problem the quantum kNN algorithm requires at least 55 quantum gates.
+\item Until now, it is \textbf{impossible} to solve this particular machine learning problem on IBM's actual quantum hardware!
+\end{itemize}
 
-\end{minipage}
+$\rightarrow$ Need for proof-of-principle simulations with Liqui$\ket{}$ to show that the quantum algorithms work!
 
 \end{frame}
 }
 
 {
 \setbeamertemplate{frame footer}{}
-\begin{frame}{The Solovay-Kitaev algorithm}
+\begin{frame}{Results: Liqui$\ket{}$ simulations of amplitude-based kNN algorithm}
 
-IBM's quantum computer needs \textbf{130ns for single-qubit gates} and \textbf{500ns for CNOT gates.}
+\begin{itemize}
+\item In Liqui$\ket{}$, one can simply define any quantum logic gate.
+\item Large universal gate set possible!
+\item No limit on the number of quantum gate slots.
+\item No need to worry about qubit lifetimes.
+\end{itemize}
 
-IBM qubit decoherence times:
+Simulations demonstrated 100\% accuracy on the small-scale simple Bloch vector classification problem.
 
-\SI{49.5}{\micro\second} $\leq T_1 \leq$ \SI{85.3}{\micro\second} "amplitude damping"\\
-\SI{56.0}{\micro\second} $\leq T_2 \leq$ \SI{139.7}{\micro\second} "phase damping"
-\vspace{6mm}
-
-
-\begin{table}
-    \begin{tabular}{c| c |c |c }
-      \toprule
-      Approx. Gate & Distance & Gate count & Execution time\\
-      \midrule
-      $R_z(-\frac{23}{16}\pi)$ & 0.15165 & 25 & \textcolor{emerald}{$\sim$\SI{3}{\micro\second}}\\
-       & 0.10722 & 109 & \textcolor{emerald}{$\sim$\SI{14}{\micro\second}}\\
-       & 0.02086 & 2997 & \textcolor{red}{$\sim$\SI{390}{\micro\second}}\\
-       & 0.01494 & 14721 & \textcolor{red}{$\sim$\SI{1914}{\micro\second}}\\
-       & 0.003327 & 74009 & \textcolor{red}{$\sim$\SI{9621}{\micro\second}}\\
-       & 0.001578 & 370813 & \textcolor{red}{$\sim$\SI{48206}{\micro\second}}\\
-      \bottomrule
-    \end{tabular}
-    \caption{SK algorithm results}
-  \end{table}
- 
-
-\end{frame}
-}
-
-{
-\setbeamertemplate{frame footer}{}
-\begin{frame}{Liqui$\ket{}$ simulations}
-	
-Currently impossible to implement the quantum algorithm on IBM's quantum computer!
-$\rightarrow$ can only simulate the algorithm with Liqui$\ket{}$
-
-In Liqui$\ket{}$, one can directly implement the controlled $R_y$ rotation!
-
-\begin{table}[scale=0.75]
-\begin{tabular}{C{2.7cm} |C{1.7cm} | C{1.7cm} | C{1.7cm} |C{1.5cm}| C{1.5cm}|}
-      \toprule
-      Vector representation  & $\mathrm{Prob(CM)}$ & $\mathrm{Prob}$ $(\ket{c} = \ket{0})$ & $\mathrm{Prob}$ $(\ket{c} = \ket{1})$ & Expected class & Algorithm output\\
-      \midrule
-       $e^{-i\frac{\pi}{8}}\begin{pmatrix} 0.92388\\0.38268 \end{pmatrix}$ & \begin{tabular}{c} 0.8266* \\\midrule 0.8050 \end{tabular} & \begin{tabular}{c} 0.5818* \\\midrule 0.5863 \end{tabular} & \begin{tabular}{c} 0.4182* \\\midrule 0.4137 \end{tabular} & $\ket{0}$ & $\ket{0}$ \\\midrule
-        
-       $e^{-i\frac{\pi}{16}}\begin{pmatrix}0.98079\\0.19509\end{pmatrix}$ & \begin{tabular}{c} 0.7940* \\\midrule 0.7710 \end{tabular} & \begin{tabular}{c} 0.6237* \\\midrule 0.6420 \end{tabular} & \begin{tabular}{c} 0.3763* \\\midrule 0.3580 \end{tabular} & $\ket{0}$ & $\ket{0}$\\\midrule
-      \bottomrule
-    \end{tabular}
-    %\caption{\label{tab:blochresults} aKNN classification results for two Bloch vectors after 1000 runs. The algorithm was trained with the training set defined in Table~\ref{tab:trainingset} consisting of the  $\ket{0}$ and \1 qubit states. Theoretical predictions (marked with asterisks) on top, simulation results at the bottom.}
-\end{table}
-%Could you also show what happens if I use approximated gate sequences?	
-%Run the command mono Liquid.exe "__BinaryAmplitudeKNN(10000)" in a terminal
+$\rightarrow$ The amplitude-based kNN algorithm does work as expected and is scalable!
 
 \end{frame}
 }
@@ -1789,21 +849,24 @@ In Liqui$\ket{}$, one can directly implement the controlled $R_y$ rotation!
 
 \begin{frame}{Summary}
 \begin{itemize}
-\item Initial state preparation is non-trivial! (even for very simple examples)
-\item In this case, state preparation dominates the overall algorithmic complexity
-\item Solovay-Kitaev yields long gate sequences for good approximations
-\item Some universal gate sets are only useful when combined with long qubit lifetimes
-\item \textbf{Need for better quantum compiling and more general state preparation algorithms!}
+\item Quantum computing is at the frontier of supercomputing and bears the potential to vastly speed up classical machine learning algorithms
+\item A small-scale machine learning problem was selected for implementation and simulation of an amplitude-based quantum kNN algorithm
+%\item Subsequent quantum simulations established proof-of-principle of these algorithms
+\item The Bloch vector classification task could not be implemented with the IBM Quantum Experience
+\item Liqui$\ket{}$ simulations demonstrated 100\% classification accuracy on Bloch vector classification task
+\item Open problem: How to encode arbitrary classical data into quantum amplitude distributions?
+%\item \textbf{Need for better quantum compiling and more general state preparation algorithms!}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Taking it further}
+\begin{frame}{Outlook}
 
 \begin{itemize}
-\item Complexity analysis of the qubit-based kNN algorithm
-\item Classification of gaussian probability distributions
-\item Implementing more general state preparation algorithms
-\item Waiting for IBM QASM 2.0 ...
+%\item Complexity analysis of the qubit-based kNN algorithm
+%\item Classification of gaussian probability distributions
+\item Finding more small-scale machine learning problems that can already be solved with quantum-enhanced machine learning algorithms
+\item Last week, IBM has released the IBM Quantum Experience 2.0 which makes an actual proof-of-principle implementation feasible. (Publication in preparation)
+\item Possible collaboration with the Weizmann Research Group in Israel to implement the amplitude-based kNN algorithm in their ion trap quantum computer.
 \end{itemize}
 \end{frame}
 
@@ -2171,206 +1234,6 @@ Flip the ancilla qubit in the first register
 \end{figure}
 \vspace{10mm}
 \centering{\textbf{How can we implement the $_0^1CR_y(\frac{\pi}{4})$ gate?}}
-
-\end{frame}
-}
-
-{
-\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}Nielsen, M. A., \& Chuang, I. L. (2010). Quantum computation and quantum information. Cambridge University Press.\newline \textsuperscript{2}Jat, R. N., \& Ruhela, D. S. (2011). Comparative study of complexity of algorithms for iterative solution of non-linear equations. Journal of International Academy Of Physical Sciences, 15(4).}}
-\begin{frame}{Controlled U gate}
-
-\begin{minipage}[t]{.4\textwidth}
-	%\vspace{-20mm}
-	\includegraphics[height=0.5\textwidth]{controlledU.png}
-       \captionsetup{justification=raggedright, singlelinecheck=false}
-       \captionof{figure}{\footnotesize{Controlled U-gate} }
-\end{minipage}%%%%%
-\begin{minipage}[t]{.6\textwidth}
-%\vspace{-20mm}
-\includegraphics[width=1\textwidth]{controlledUdecomposition.png}
-       \captionsetup{justification=raggedright, singlelinecheck=false}
-       \captionof{figure}{\footnotesize{Decomposition of a controlled U-gate\textsuperscript{1}} }
-\end{minipage}
-
-Choose A,B,C and $\alpha$ s.t.
-\begin{equation}
-e^{i\alpha}*A*X*B*X*C = U \quad and \quad A*B*C = \mathds{1}
-\end{equation}
-Need to solve the following equation\textsuperscript{1}
-\begin{equation}
-U = \begin{pmatrix}
- e^{i(\alpha-\frac{\beta}{2}-\frac{\delta}{2})}\cos{\frac{\gamma}{2}} & -e^{i(\alpha-\frac{\beta}{2}+\frac{\delta}{2})}\sin{\frac{\gamma}{2}} \\ 
-e^{i(\alpha+\frac{\beta}{2}-\frac{\delta}{2})}\sin{\frac{\gamma}{2}} & e^{i(\alpha+\frac{\beta}{2}+\frac{\delta}{2})}\cos{\frac{\gamma}{2}}
- \end{pmatrix}
-\end{equation}
-
-%calculating a root of a function f(x) with n-digit precision, provided that a good initial approximation is known, is O((\log n) F(n)) where F(n) is the cost of calculating f(x)/f'(x)\, with n-digit precision.
-
-	\metroset{block=fill}
-	\begin{alertblock}{Overall algorithmic complexity}
-	$\mathcal{O}(\frac{1}{p_{acc}})+\textcolor{red}{\mathcal{O}(k)}$ where $k$ is number of root finding iterations\textsuperscript{2}
-	\end{alertblock}
-\end{frame}
-
-}
-
-{
-\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}Dawson, C. M., \& Nielsen, M. A. (2005). The Solovay-Kitaev algorithm. arXiv preprint quant-ph/0505030.}}
-\begin{frame}{Problems with universal gate sets}
-
-In our case we need to find A, B, C and $\alpha$ for $_0^1CR_y(\frac{\pi}{4})$:
-
-Using a root finding algorithm for non-linear equations we find:
-
-\begin{equation}
-\alpha =  \pi; \quad 
-\beta = 2\pi;\quad 
-\delta = \frac{7}{8}\pi;\quad 
-\gamma = 0
-\end{equation}
-Then,
-\begin{align}
-A \quad= \quad R_z(\beta)R_y(\frac{\gamma}{2})\quad =& \quad R_z(2\pi) \quad = \quad \textcolor{emerald}{\mathds{1}} \\
-B\quad =\quad R_y(-\frac{\gamma}{2})R_z(-\frac{\delta+\beta}{2})\quad =& \quad R_z(-\frac{23}{16}\pi) \quad= \quad \textcolor{red}{???}  \\
-C \quad=\quad R_z(\frac{\delta-\beta}{2})\quad =& \quad R_z(-\frac{9}{16}\pi) \quad= \quad \textcolor{red}{???} \\
-\begin{pmatrix} 1&0\cr0&e^{i\alpha} \end{pmatrix}\quad=& \quad \begin{pmatrix} 1&0\cr0&e^{i\pi} \end{pmatrix}\quad= \quad \textcolor{emerald}{Z}
-\end{align}
-
-\end{frame}
-}
-
-{
-\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}Dawson, C. M., \& Nielsen, M. A. (2005). The Solovay-Kitaev algorithm. arXiv preprint quant-ph/0505030.}}
-\begin{frame}{The Solovay-Kitaev theorem}
-
-\begin{align}
-B\quad =&\quad R_z(-\frac{23}{16}\pi) \quad= \quad \textcolor{red}{???}  \\
-C \quad=&\quad R_z(-\frac{9}{16}\pi) \quad= \quad \textcolor{red}{???}
-\end{align}
-
-The Solovay-Kitaev theorem guarantees that given a set of single-qubit quantum gates which generates a dense subset of $SU(2)$, then that set is guaranteed to fill $SU(2)$ quickly.\textsuperscript{1}
- 
-$\rightarrow$ \textcolor{emerald}{\textbf{Hence, given any universal gate set it is possible to obtain good approximations to any desired gate.}}
-
-$\rightarrow$ \textcolor{red}{\textbf{But needs to be computed classically!}}
-
-\end{frame}
-}
-
-{
-\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}Booth Jr, J. (2012). Quantum compiler optimizations. arXiv preprint arXiv:1206.3348.}}
-\begin{frame}{The Solovay-Kitaev algorithm}
-
-Fowler distance\textsuperscript{1}:
-\begin{equation}
-dist(U,U_{approx}) = \sqrt{\frac{2-\mid tr(U\cdot U_{approx}^\dagger)\mid}{2}}
-\end{equation}
-
-\begin{figure}
-    \begin{tikzpicture}[scale=0.8]
-\begin{axis}[xlabel={Gate count},ylabel={Fowler distance [$d(U,U_{approx})$]}]
-
-% Graph column 2 versus column 0
-\addplot table[x index=1,y index=0,col sep=comma] {datax.dat};
-\addlegendentry{$R_z(-\frac{9}{16}\pi)$}% y index+1 since humans count from 1
-
-% Graph column 1 versus column 0    
-\addplot table[x index=5,y index=4,col sep=comma] {datax.dat};
-\addlegendentry{$R_z(-\frac{23}{16}\pi)$}
-
-\end{axis}
-\end{tikzpicture}
-  \end{figure}
-
-\end{frame}
-}
-
-{
-\setbeamertemplate{frame footer}{}
-\begin{frame}{The Solovay-Kitaev algorithm}
-
-\begin{minipage}[c]{.8\textwidth}
-	%\vspace{-20mm}
-	\includegraphics[height=0.8\textwidth]{fowlerdistance.png}
-       \captionsetup{justification=raggedright, singlelinecheck=false}
-       \captionof{figure}{\footnotesize{Various Fowler distances visualized on Bloch sphere} }
-\end{minipage}%%%%%
-\begin{minipage}[c]{.2\textwidth}
-\scriptsize
-\begin{equation}
-\textcolor{cyan}{d = 0.22739}
-\end{equation}
-\begin{equation}
-\textcolor{emerald}{d = 0.15165}
-\end{equation}
-\begin{equation}
-\textcolor{blue}{d = 0.10722}
-\end{equation}
-\begin{equation}
-\textcolor{darkyellow}{d = 0.02086}
-\end{equation}
-\begin{equation}
-\textcolor{red}{d = 0.00156}
-\end{equation}
-
-\end{minipage}
-
-\end{frame}
-}
-
-{
-\setbeamertemplate{frame footer}{}
-\begin{frame}{The Solovay-Kitaev algorithm}
-
-IBM's quantum computer needs \textbf{130ns for single-qubit gates} and \textbf{500ns for CNOT gates.}
-
-IBM qubit decoherence times:
-
-\SI{49.5}{\micro\second} $\leq T_1 \leq$ \SI{85.3}{\micro\second} "amplitude damping"\\
-\SI{56.0}{\micro\second} $\leq T_2 \leq$ \SI{139.7}{\micro\second} "phase damping"
-\vspace{6mm}
-
-
-\begin{table}
-    \begin{tabular}{c| c |c |c }
-      \toprule
-      Approx. Gate & Distance & Gate count & Execution time\\
-      \midrule
-      $R_z(-\frac{23}{16}\pi)$ & 0.15165 & 25 & \textcolor{emerald}{$\sim$\SI{3}{\micro\second}}\\
-       & 0.10722 & 109 & \textcolor{emerald}{$\sim$\SI{14}{\micro\second}}\\
-       & 0.02086 & 2997 & \textcolor{red}{$\sim$\SI{390}{\micro\second}}\\
-       & 0.01494 & 14721 & \textcolor{red}{$\sim$\SI{1914}{\micro\second}}\\
-       & 0.003327 & 74009 & \textcolor{red}{$\sim$\SI{9621}{\micro\second}}\\
-       & 0.001578 & 370813 & \textcolor{red}{$\sim$\SI{48206}{\micro\second}}\\
-      \bottomrule
-    \end{tabular}
-    \caption{SK algorithm results}
-  \end{table}
- 
-
-\end{frame}
-}
-
-{
-\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}Dawson, C. M., \& Nielsen, M. A. (2005). The Solovay-Kitaev algorithm. arXiv preprint quant-ph/0505030.}}
-\begin{frame}{Adding complexities}
-
-Executing the SK algorithm adds to our overall algorithmic complexity:
-
-\metroset{block=fill}
-	\begin{alertblock}{Overall algorithmic complexity}
-	$\mathcal{O}(\frac{1}{p_{acc}})+\mathcal{O}(k)+\textcolor{red}{\mathcal{O}(m*log^{2.71}(\frac{m}{\epsilon}))}$ for $\epsilon$-approximations of $m$ gates\textsuperscript{1}
-	\end{alertblock}
-	
-Due to state preparation we went from
-\begin{equation}
-\mathcal{O}(\frac{1}{p_{acc}})
-\end{equation}
-suddenly to 
-\begin{equation}
-\mathcal{O}(m*log^{2.71}(\frac{m}{\epsilon}))
-\end{equation}
-where $m$ is the number of gates that need approximation to $\epsilon$-accuracy
 
 \end{frame}
 }
@@ -2798,5 +1661,963 @@ or show \textbf{bold} results.\end{verbatim}
   \end{quote}
 \end{frame}
 
+{
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
+\begin{frame}[fragile]{Supervised machine learning: concrete example}
+
+
+\begin{minipage}[c]{0.49\textwidth}
+\begin{tabular}{| C{0.45cm} | C{1cm} |C{1.4cm} |}
+    \toprule
+      ID & Colour & Class label\\
+     \midrule
+      1 & \cellcolor{red1} & red \\\midrule
+      2 &\cellcolor{red2} & red \\\midrule
+      3 & \cellcolor{red3} & red \\\midrule\midrule
+      4 & \cellcolor{blue1} & blue \\\midrule
+      5 & \cellcolor{blue2} & blue \\\midrule
+      6 & \cellcolor{blue3} & blue \\
+     \bottomrule
+   \end{tabular}
+   \captionsetup{justification=raggedright, singlelinecheck=false}
+   \captionof{table}{Example training dataset.}
+\end{minipage}%%%
+\begin{minipage}[c]{0.49\textwidth}
+\centering
+    \begin{tabular}{| C{0.45cm} | C{1cm} |C{1.4cm}|}
+    \toprule
+      ID & Colour & Class label \\
+      \midrule
+       1 & \cellcolor{inputred1} &  ?\\\midrule
+      
+       2 & \cellcolor{inputblue1} & ? \\
+      \bottomrule
+    \end{tabular}
+    \captionof{table}{Example input dataset.}
+\end{minipage}
+
+%The machine learning algorithm should approximate the function $f$ such that it can predict the output $o$ for a new unknown input $\tilde{x}$:
+%\begin{equation}
+%f(\tilde{x}) = ?\, .
+%\end{equation}
+
+\end{frame}
+}
+
+
+
+{
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
+\begin{frame}[fragile]{Classical $k$-nearest neighbour}
+
+\metroset{block=fill}
+
+\begin{alertblock}{Transferring the colours into vectors}
+In the case of 9-bit RGB colours:\\
+\centering{
+\textcolor{red}{000} \textcolor{green}{000} \textcolor{blue}{000}}\\
+3 bits for red, 3 bits for green and 3 bits for blue.
+%\begin{equation}
+%\begin{pmatrix}
+%\textcolor{red}{red\quad content}\\ \textcolor{green}{green\quad content} \\ %\textcolor{blue}{blue\quad content}
+%\end{pmatrix} = \begin{pmatrix}
+%7 \\ 0 \\ 0
+%\end{pmatrix}
+%\end{equation}
+\begin{equation}
+\begin{pmatrix}
+\textcolor{red}{red\quad content}\\ \cancel{\textcolor{green}{green\quad content}} \\ \textcolor{blue}{blue\quad content}
+\end{pmatrix} = \begin{pmatrix}
+7 \\ \cancel{0} \\ 0
+\end{pmatrix} \equiv \begin{pmatrix}
+7 \\ 0
+\end{pmatrix}
+\end{equation}
+\end{alertblock}
+
+\centering
+\begin{tikzpicture}[scale=0.6]
+\begin{axis}[legend pos=north east,
+ylabel={RGB blue content},
+      xlabel={RGB red content},
+      yticklabels={,,},
+      xticklabels={,,},
+      scatter/classes={ a={mark=square*,blue}, b={mark=triangle*,red}, c={mark=diamond*,draw=black}}] \addplot[scatter,only marks, scatter src=explicit symbolic] table[meta=label] {
+x y label
+0.15 -0.15 a
+0.25 -0.17 a
+0.26 -0.1 a
+0.22 -0.05 a
+
+0.35 -0.18 a
+0.32 -0.2 a
+0.32 -0.23 a
+0.35 -0.2 a
+0.1 -0.05 a
+0.42 -0.25 b
+0.44 -0.22 b
+0.39 -0.19 b
+
+0.45 -0.42 b
+0.55 -0.32 b
+
+0.61 -0.46 b
+0.5 -0.33 b
+0.55 -0.43 b
+};
+\addlegendentry{Training class A}
+\addlegendentry{Training class B}
+%\addlegendentry{Input vector}
+\end{axis}
+\end{tikzpicture}
+
+
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
+\begin{frame}[fragile]{Classical $k$-nearest neighbour}
+
+\centering{
+- kNN is a non-parametric classifier\\
+- $k$ is a positive integer, usually chosen small}
+
+\begin{minipage}[t]{.32\textwidth}
+Given training dataset:\\
+${D}_{T}$ = ${v}_{0}, {v}_{1},..,{v}_{16}$ \\
+$v_{i} \in$ \{$red$, $blue$\}
+\end{minipage}
+\hspace{0.2cm}
+\begin{minipage}[t]{.53\textwidth}
+Given a new vector $\tilde{x}$ (black halfcircle):\\
+- consider $k$ nearest neighbours\\
+- classify $\tilde{x}$, based on majority vote,\\as \emph{red} or \emph{blue}
+\end{minipage}
+
+\begin{minipage}[c]{0.45\textwidth}
+\centering
+$k = 3$\\
+\vspace{0.1cm}
+\begin{tikzpicture}[scale=0.6]
+\begin{axis}[legend pos=north east,
+ylabel={RGB blue content},
+      xlabel={RGB red content},
+ yticklabels={,,},
+      xticklabels={,,},
+			scatter/classes={
+			a={mark=square*,blue}, 												b={mark=triangle*,red}, 											c={mark=halfcircle*,draw=black}}]
+			\addplot[scatter,only marks, scatter src=explicit symbolic]
+table[meta=label] {
+x y label
+0.15 -0.15 a
+0.25 -0.17 a
+0.26 -0.1 a
+0.22 -0.05 a
+0.35 -0.18 a
+0.32 -0.2 a
+0.32 -0.23 a
+0.35 -0.2 a
+0.1 -0.05 a
+0.42 -0.25 b
+0.44 -0.22 b
+0.39 -0.19 b
+0.45 -0.42 b
+0.55 -0.32 b
+0.61 -0.46 b
+0.5 -0.33 b
+0.55 -0.43 b
+0.41 -0.22 c
+};
+\addplot[scatter, scatter src=explicit symbolic]
+table[meta=label] {
+x y label
+0.42 -0.25 b
+0.41 -0.22 c
+};
+\addplot[scatter, scatter src=explicit symbolic]
+table[meta=label] {
+x y label
+0.44 -0.22 b
+0.41 -0.22 c
+};
+\addplot[scatter, scatter src=explicit symbolic]
+table[meta=label] {
+x y label
+0.39 -0.19 b
+0.41 -0.22 c
+};
+\addlegendentry{Training class A}
+\addlegendentry{Training class B}
+\addlegendentry{Input vector}
+\end{axis}
+\end{tikzpicture}
+Classification $\rightarrow$ \textbf{\textcolor{red}{RED}}
+\end{minipage}
+\begin{minipage}[c]{0.45\textwidth}
+\centering
+$k = 7$\\
+\vspace{0.1cm}
+\begin{tikzpicture}[scale=0.6]
+\begin{axis}[legend pos=north east,
+ ylabel={RGB blue content},
+      xlabel={RGB red content},
+ yticklabels={,,},
+      xticklabels={,,},
+			scatter/classes={
+			a={mark=square*,blue}, 												b={mark=triangle*,red}, 											c={mark=halfcircle*,draw=black}}]
+			\addplot[scatter,only marks, scatter src=explicit symbolic]
+table[meta=label] {
+x y label
+0.15 -0.15 a
+0.25 -0.17 a
+0.26 -0.1 a
+0.22 -0.05 a
+0.35 -0.18 a
+0.32 -0.2 a
+0.32 -0.23 a
+0.35 -0.2 a
+0.1 -0.05 a
+0.42 -0.25 b
+0.44 -0.22 b
+0.39 -0.19 b
+0.45 -0.42 b
+0.55 -0.32 b
+0.61 -0.46 b
+0.5 -0.33 b
+0.55 -0.43 b
+0.41 -0.22 c
+};
+\addplot[scatter, scatter src=explicit symbolic]
+table[meta=label] {
+x y label
+0.35 -0.18 a
+0.41 -0.22 c
+};
+\addplot[scatter, scatter src=explicit symbolic]
+table[meta=label] {
+x y label
+0.32 -0.2 a
+0.41 -0.22 c
+};
+\addplot[scatter, scatter src=explicit symbolic]
+table[meta=label] {
+x y label
+0.32 -0.23 a
+0.41 -0.22 c
+};
+\addplot[scatter, scatter src=explicit symbolic]
+table[meta=label] {
+x y label
+0.35 -0.2 a
+0.41 -0.22 c
+};
+\addplot[scatter, scatter src=explicit symbolic]
+table[meta=label] {
+x y label
+0.42 -0.25 b
+0.41 -0.22 c
+};
+\addplot[scatter, scatter src=explicit symbolic]
+table[meta=label] {
+x y label
+0.44 -0.22 b
+0.41 -0.22 c
+};
+\addplot[scatter, scatter src=explicit symbolic]
+table[meta=label] {
+x y label
+0.39 -0.19 b
+0.41 -0.22 c
+};
+\addlegendentry{Training class A}
+\addlegendentry{Training class B}
+\addlegendentry{Input vector}
+\end{axis}
+\end{tikzpicture}
+Classification $\rightarrow$ \textbf{\textcolor{blue}{BLUE}}
+\end{minipage}
+\end{frame}
+}
+
+
+{
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
+\begin{frame}[fragile]{Single-qubit quantum logic gates}
+
+\begin{minipage}[c]{0.49\textwidth}
+\centering
+\includegraphics[scale=0.18]{not_gate_c.png}
+\end{minipage}%%%
+\begin{minipage}[c]{0.49\textwidth}
+\centering
+\includegraphics[scale=0.1]{xcircuit.png}
+\end{minipage}
+\vspace{0.5cm}
+
+Any single-qubit quantum logic gates can be represented by a unitary $2\times 2$ matrix whose action on a qubit is defined as:
+\begin{equation}
+\label{equ:unitarytransformation}
+U \ket{\psi} \doteq \begin{pmatrix}
+ a & b \\ 
+ c & d
+ \end{pmatrix} \begin{pmatrix} \alpha\\ \beta \end{pmatrix}= \begin{pmatrix} a\alpha+b\beta\\c\alpha+d\beta\end{pmatrix}\, .
+\end{equation}
+
+\begin{itemize}
+\item Quantum computers perform linear (unitary) operations on qubits
+\item A quantum computation is the manipulation of an amplitude vector with a matrix representing a quantum logic gate 
+\end{itemize}
+
+%show matrix representation
+%show matrix vector multiplication??
+%Show two simple examples (Hadamard and X gate?)
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
+\begin{frame}[fragile]{Single-qubit quantum logic gates: Hadamard gate}
+
+\begin{figure}
+\includegraphics[scale=0.15]{hcircuit.png}
+\end{figure}
+
+A very important single-qubit quantum logic gate is the \textbf{\emph{Hadamard}} gate. It is represented by the matrix:
+\begin{equation}
+\label{equ:hadamard}
+H \doteq \begin{pmatrix}
+ \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\ 
+ \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}
+ \end{pmatrix}\, .
+\end{equation}
+
+Consider acting the H gate on the $\ket{0}$ state:
+\begin{equation}
+H \ket{0}\doteq \begin{pmatrix}
+ \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\ 
+ \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}
+ \end{pmatrix}\begin{pmatrix}
+ 1 \\ 0 
+ \end{pmatrix} = \begin{pmatrix}
+ \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} 
+ \end{pmatrix} \doteq \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}\, .
+\end{equation}
+
+$\rightarrow$ \textbf{creates an equal superposition of $\ket{0}$ and $\ket{1}$!}
+
+%show matrix representation
+%show matrix vector multiplication??
+%Show two simple examples (Hadamard and X gate?)
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
+\begin{frame}[fragile]{Single-qubit quantum logic gates: Hadamard gate}
+
+\begin{equation}
+H \ket{0} = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}\, .
+\end{equation}
+
+\begin{figure}
+\includegraphics[scale=0.5]{blochhadamard.png}
+\end{figure}
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{\tiny{}}
+\begin{frame}[fragile]{Multi-qubit systems}
+
+\textbf{\emph{Tensor products}} are required when combining several qubits.\\
+For example, the tensor product of two $\ket{0}$ kets is defined as:
+\begin{equation}
+\ket{0} \otimes \ket{0} = \ket{00} \doteq \begin{pmatrix}1\\0\end{pmatrix} \otimes \begin{pmatrix}1\\0\end{pmatrix} = \begin{pmatrix}1\cdot \begin{pmatrix}1\\0\end{pmatrix}\\0\cdot\begin{pmatrix}1\\0\end{pmatrix}\end{pmatrix} = \begin{pmatrix}1\\0\\0\\0\end{pmatrix}
+\end{equation}
+And for three $\ket{0}$ kets:
+\begin{equation}
+\ket{00} \otimes \ket{0} = \ket{000} \doteq \begin{pmatrix}1\\0\\0\\0\end{pmatrix} \otimes \begin{pmatrix}1\\0\end{pmatrix} = \begin{pmatrix}1\cdot \begin{pmatrix}1\\0\end{pmatrix}\\0\cdot \begin{pmatrix}1\\0\end{pmatrix}\\0\cdot \begin{pmatrix}1\\0\end{pmatrix}\\0\cdot \begin{pmatrix}1\\0\end{pmatrix}\end{pmatrix} = \begin{pmatrix}1\\0\\0\\0\\0\\0\\0\\0\end{pmatrix}
+\end{equation}
+
+
+%introduce ket vectors \& superposition
+%show vector representation of a qubit
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{\tiny{}}
+\begin{frame}[fragile]{Three random bits vs. three qubits}
+
+\begin{minipage}[c]{0.49\textwidth}
+\centering
+\includegraphics[scale=1.9]{Vectors/laptop_c.eps}\\
+\vspace{0.4cm}
+\begin{tabular}{c | c}
+	Probability & Combination \\
+	\midrule
+	$p_1$ & \includegraphics[scale=0.06]{euro.jpg} $\quad$ \includegraphics[scale=0.06]{euro.jpg} $\quad$ \includegraphics[scale=0.06]{euro.jpg} \\
+	$p_2$ & \includegraphics[scale=0.06]{euro.jpg} $\quad$ \includegraphics[scale=0.25]{euro_b.jpg} $\quad$ \includegraphics[scale=0.06]{euro.jpg} \\
+	$p_3$ & \includegraphics[scale=0.06]{euro.jpg} $\quad$ \includegraphics[scale=0.06]{euro.jpg} $\quad$ \includegraphics[scale=0.26]{euro_b.jpg} \\
+	. & . \\
+	. & . \\
+	. & . \\
+	$p_8$ & \includegraphics[scale=0.26]{euro_b.jpg} $\quad$ \includegraphics[scale=0.26]{euro_b.jpg} $\quad$ \includegraphics[scale=0.26]{euro_b.jpg} \\
+	
+\end{tabular}
+\end{minipage}%%%
+\begin{minipage}[c]{0.49\textwidth}
+\centering
+\includegraphics[scale=1.2]{Vectors/laptop_q.eps}\\
+\vspace{0.5cm}
+\begin{tabular}{c | c}
+	Probability & Quantum state \\
+	\midrule
+	$p_1$ & \includegraphics[scale=0.03]{Vectors/black-atom-icon-free-vector.eps} $\quad$ \includegraphics[scale=0.03]{Vectors/black-atom-icon-free-vector.eps} $\quad$ \includegraphics[scale=0.03]{Vectors/black-atom-icon-free-vector.eps} \\
+	$p_2$ & \includegraphics[scale=0.03]{Vectors/black-atom-icon-free-vector.eps} $\quad$ \includegraphics[scale=0.03]{Vectors/red-atom.eps} $\quad$ \includegraphics[scale=0.03]{Vectors/black-atom-icon-free-vector.eps} \\
+	$p_3$ & \includegraphics[scale=0.03]{Vectors/black-atom-icon-free-vector.eps} $\quad$ \includegraphics[scale=0.03]{Vectors/black-atom-icon-free-vector.eps} $\quad$ \includegraphics[scale=0.03]{Vectors/red-atom.eps} \\
+	. & . \\
+	. & . \\
+	. & . \\
+	$p_8$ & \includegraphics[scale=0.03]{Vectors/red-atom.eps} $\quad$ \includegraphics[scale=0.03]{Vectors/red-atom.eps} $\quad$ \includegraphics[scale=0.03]{Vectors/red-atom.eps} \\
+	
+\end{tabular}
+\end{minipage}
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{\tiny{}}
+\begin{frame}[fragile]{Three random bits vs. three qubits}
+
+\begin{minipage}[c]{0.49\textwidth}
+\centering
+\includegraphics[scale=1.9]{Vectors/laptop_c.eps}\\
+\vspace{0.4cm}
+\begin{tabular}{c | c}
+	Probability & Combination \\
+	\midrule
+	$p_1$ & 000 \\
+	$p_2$ & 010 \\
+	$p_3$ & 001 \\
+	. & .\\
+	. & . \\
+	. & . \\
+	$p_8$ & 111 \\
+	
+\end{tabular}
+\end{minipage}%%%
+\begin{minipage}[c]{0.49\textwidth}
+\centering
+\includegraphics[scale=1.2]{Vectors/laptop_q.eps}\\
+\vspace{0.5cm}
+\begin{tabular}{c | c}
+	Probability & Quantum state \\
+	\midrule
+	$p_1$ & $\ket{000}$ \\
+	$p_2$ & $\ket{010}$ \\
+	$p_3$ & $\ket{001}$ \\
+	. & . \\
+	. & . \\
+	. & . \\
+	$p_8$ & $\ket{111}$ \\
+	
+\end{tabular}
+\end{minipage}
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{\tiny{}}
+\begin{frame}[fragile]{Three random bits vs. three qubits}
+
+\begin{minipage}[c]{0.39\textwidth}
+\centering
+\includegraphics[scale=1.9]{Vectors/laptop_c.eps}\\
+\vspace{0.4cm}
+\begin{tabular}{c | c}
+	Prob. & Combination \\
+	\midrule
+	$p_1 = \frac{1}{8}$ & 000 \\
+	$p_2= \frac{1}{8}$ & 010 \\
+	$p_3= \frac{1}{8}$ & 001 \\
+	. & .\\
+	. & . \\
+	. & . \\
+	$p_8= \frac{1}{8}$ & 111 \\
+	
+\end{tabular}
+\end{minipage}%%%
+\begin{minipage}[c]{0.59\textwidth}
+\centering
+\includegraphics[scale=1.2]{Vectors/laptop_q.eps}\\
+\vspace{0.5cm}
+\begin{tabular}{c | c | c}
+	Prob. & Amplitude & Quantum state \\
+	\midrule
+	$p_1 =\, \mid a_1\mid^2$ & $a_1$ & $\ket{000}$ \\
+	$p_2 =\,\mid a_2\mid^2$ & $a_2$ & $\ket{010}$ \\
+	$p_3 =\, \mid a_3\mid^2$ & $a_3$ & $\ket{001}$ \\
+	. & .  & .\\
+	. & . & .\\
+	. & . & .\\
+	$p_8 =\, \mid a_8\mid^2$ & $a_8$ & $\ket{111}$ \\
+	
+\end{tabular}
+\end{minipage}
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{\tiny{}}
+\begin{frame}[fragile]{Three random bits vs. three qubits}
+
+\begin{minipage}[c]{0.39\textwidth}
+\centering
+\includegraphics[scale=1.9]{Vectors/laptop_c.eps}\\
+\vspace{0.4cm}
+\begin{tabular}{c | c}
+	Prob. & Combination \\
+	\midrule
+	$p_1 = \frac{1}{8}$ & 000 \\
+	$p_2= \frac{1}{8}$ & 010 \\
+	$p_3= \frac{1}{8}$ & 001 \\
+	. & .\\
+	. & . \\
+	. & . \\
+	$p_8= \frac{1}{8}$ & 111 \\
+	
+\end{tabular}
+\end{minipage}%%%
+\begin{minipage}[c]{0.59\textwidth}
+\centering
+\includegraphics[scale=1.2]{Vectors/laptop_q.eps}\\
+\vspace{0.5cm}
+\begin{tabular}{c | c | c}
+	Prob. & Amplitude & Quantum state \\
+	\midrule
+	$p_1 = \mid\frac{1}{2\sqrt{2}}\mid^2 = \frac{1}{8}$ & $\frac{1}{2\sqrt{2}}$ & $\ket{000}$ \\
+	$p_2 =\frac{1}{8}$ & $-\frac{1}{2\sqrt{2}}$ & $\ket{010}$ \\
+	$p_3 = \frac{1}{8}$ & $-\frac{i}{2\sqrt{2}}$ & $\ket{001}$ \\
+	. & .  & .\\
+	. & . & .\\
+	. & . & .\\
+	$p_8 = \frac{1}{8}$ & $\frac{i}{2\sqrt{2}}$ & $\ket{111}$ \\
+	
+\end{tabular}
+\end{minipage}\\
+\vspace{0.5cm}
+$\rightarrow$ In quantum mechanics amplitudes can be interferred with each other!\\
+$\rightarrow$ This is impossible to do on a classical computer!
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{\tiny{}}
+\begin{frame}[fragile]{Three random bits vs. three qubits}
+
+Applying an H gate to the first qubit leads to quantum interference such that:
+\centering
+\begin{figure}
+\includegraphics[scale=1.2]{Vectors/laptop_q.eps}\\
+\end{figure}
+\vspace{0.5cm}
+\begin{table}
+\begin{tabular}{c | c | c}
+	Prob. & Amplitude & Quantum state \\
+	\midrule
+	$p_1 = \,\mid a_1+a_5 \mid^2$ & $a_1+a_5$ & $\ket{000}$ \\
+	$p_2 =\, \mid a_2+a_6 \mid^2$ & $a_2+a_6$ & $\ket{010}$ \\
+	$p_3 = \,\mid a_3+a_7 \mid^2$ & $a_3+a_7$ & $\ket{001}$ \\
+	$p_4 = \,\mid a_4+a_8 \mid^2$ & $a_4+a_8$ & $\ket{011}$ \\
+	$p_5 = \,\mid a_1-a_5 \mid^2$ & $a_1-a_5$ & $\ket{100}$ \\
+	$p_6 = \,\mid a_2-a_6 \mid^2$ & $a_2-a_6$ & $\ket{110}$ \\
+	$p_7 = \,\mid a_3-a_7 \mid^2$ & $a_3-a_7$ & $\ket{101}$ \\
+	$p_8 = \,\mid a_4-a_8 \mid^2$ & $a_4-a_8$ & $\ket{111}$ \\
+	
+\end{tabular}
+\end{table}
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{\tiny{}}
+\begin{frame}[fragile]{Three random bits vs. three qubits}
+
+For example, substituting the values for $a_1=\frac{1}{2\sqrt{2}}$ and $a_5=\frac{1}{2\sqrt{2}}$ yields:
+\centering
+\begin{figure}
+\includegraphics[scale=1.2]{Vectors/laptop_q.eps}\\
+\end{figure}
+\vspace{0.5cm}
+\begin{table}
+\begin{tabular}{c | c | c}
+	Prob. & Amplitude & Quantum state \\
+	\midrule
+	$p_1 = \,\mid a_1+a_5 \mid^2$ & $\frac{1}{\sqrt{2}}(\frac{1}{2\sqrt{2}}+\frac{1}{2\sqrt{2}})$ & $\ket{000}$ \\
+	$p_2 =\, \mid a_2+a_6 \mid^2$ & $a_2+a_6$ & $\ket{010}$ \\
+	$p_3 = \,\mid a_3+a_7 \mid^2$ & $a_3+a_7$ & $\ket{001}$ \\
+	$p_4 = \,\mid a_4+a_8 \mid^2$ & $a_4+a_8$ & $\ket{011}$ \\
+	$p_5 = \,\mid a_1-a_5 \mid^2$ & $\frac{1}{\sqrt{2}}(\frac{1}{2\sqrt{2}}-\frac{1}{2\sqrt{2}})$ & $\ket{100}$ \\
+	$p_6 = \,\mid a_2-a_6 \mid^2$ & $a_2-a_6$ & $\ket{110}$ \\
+	$p_7 = \,\mid a_3-a_7 \mid^2$ & $a_3-a_7$ & $\ket{101}$ \\
+	$p_8 = \,\mid a_4-a_8 \mid^2$ & $a_4-a_8$ & $\ket{111}$ \\
+	
+\end{tabular}
+\end{table}
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{\tiny{}}
+\begin{frame}[fragile]{Three random bits vs. three qubits}
+
+For example, substituting the values for $a_1 = \frac{1}{2\sqrt{2}}$ and $a_5 = \frac{1}{2\sqrt{2}}$ yields:
+\centering
+\begin{figure}
+\includegraphics[scale=1.2]{Vectors/laptop_q.eps}\\
+\end{figure}
+\vspace{0.5cm}
+\begin{table}
+\begin{tabular}{c | c | c c}
+	Prob. & Amplitude & Quantum state &  \\
+	\midrule
+	$p_1 = \,\mid \frac{1}{2} \mid^2 = \frac{1}{4}$ & $\frac{1}{2}$ & $\ket{000}$ & $\rightarrow$ constructive interference \\
+	$p_2 =\, \mid a_2+a_6 \mid^2$ & $a_2+a_6$ & $\ket{010}$ & " \\
+	$p_3 = \,\mid a_3+a_7 \mid^2$ & $a_3+a_7$ & $\ket{001}$ & "\\
+	$p_4 = \,\mid a_4+a_8 \mid^2$ & $a_4+a_8$ & $\ket{011}$ & "\\
+	$p_5 = \,\mid 0 \mid^2 = 0$ & $0$ & $\ket{100}$ & $\rightarrow$ destructive interference \\
+	$p_6 = \,\mid a_2-a_6 \mid^2$ & $a_2-a_6$ & $\ket{110}$ & "\\
+	$p_7 = \,\mid a_3-a_7 \mid^2$ & $a_3-a_7$ & $\ket{101}$ & "\\
+	$p_8 = \,\mid a_4-a_8 \mid^2$ & $a_4-a_8$ & $\ket{111}$ & "\\
+	
+\end{tabular}
+\end{table}
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
+\begin{frame}[fragile]{Calculating distances with interference}
+\hspace{-0.7cm}
+\begin{minipage}[c]{0.29\textwidth}
+\begin{tikzpicture}[scale=0.75]
+%define the axes
+\draw[thick,->] (0,0) -- (3.5,0) node[anchor=north west] {x};
+\draw[thick,->] (0,0) -- (0,2.5) node[anchor=south east] {y};
+\draw (0 cm,1pt) -- (0 cm,-1pt) node[anchor=north] {$0$};
+%\draw (1 cm,1pt) -- (1 cm,-1pt) node[anchor=north] {$0.1$};
+\draw (2 cm,1pt) -- (2 cm,-1pt) node[anchor=north] {$0.2$};
+\draw (3 cm,1pt) -- (3 cm,-1pt) node[anchor=north] {$0.3$};
+%\draw (4 cm,1pt) -- (4 cm,-1pt) node[anchor=north] {$0.4$};
+%\draw (5 cm,1pt) -- (5 cm,-1pt) node[anchor=north] {$0.5$};
+\draw (1pt,1 cm) -- (-1pt,1 cm) node[anchor=east] {$0.1$};
+\draw (1pt,2 cm) -- (-1pt,2 cm) node[anchor=east] {$0.2$};
+%\draw (1pt,3 cm) -- (-1pt,3 cm) node[anchor=east] {$0.3$};
+%\draw (1pt,4 cm) -- (-1pt,4 cm) node[anchor=east] {$0.4$};
+%\draw (1pt,5 cm) -- (-1pt,5 cm) node[anchor=east] {$0.5$};
+%draw the dotted lines to the first point
+\draw[black,thick,dashed] (2,0) -- (2, 1);
+\draw[black,thick,dashed] (0,1) -- (2, 1);
+%draw the dotted lines to the second point
+\draw[red,thick,dashed] (3,0) -- (3, 2);
+\draw[red,thick,dashed] (0,2) -- (3, 2);
+%draw the two point markerss
+\node[mark size=3pt,color=red] at (3,2) {\pgfuseplotmark{triangle*}};
+\node[mark size=3pt,color=black] at (2,1) {\pgfuseplotmark{halfcircle*}};
+\end{tikzpicture}
+\end{minipage}%%%
+\hspace{0.55cm}
+\begin{minipage}[c]{0.69\textwidth}
+\centering
+\includegraphics[scale=1.2]{Vectors/laptop_q.eps}\\
+\vspace{0.5cm}
+\flushright
+\begin{tabular}{c | c | c c}
+	Prob. & Amplitude & Quantum state  \\
+	\midrule
+	$p_1 = 0.22 $ & $\frac{0.2}{\sqrt{0.18}}$ & $\ket{000}$\\
+	$p_2 = 0.055$ & $\frac{0.1}{\sqrt{0.18}}$ & $\ket{010}$  \\
+	$p_3= 0$ & $0$ & $\ket{001}$ \\
+	$p_4 = 0$ & $0$ & $\ket{011}$ \\
+	$p_5 = 0.5$ & $\frac{0.3}{\sqrt{0.18}}$ & $\ket{100}$  \\
+	$p_6= 0.22$ & $\frac{0.2}{\sqrt{0.18}}$ & $\ket{110}$ \\
+	$p_7 = 0$ & $0$ & $\ket{101}$ \\
+	$p_8 = 0$ & $0$ & $\ket{111}$\\
+	
+\end{tabular}
+\end{minipage}
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
+\begin{frame}[fragile]{Calculating distances with interference}
+\hspace{-0.7cm}
+\begin{minipage}[c]{0.29\textwidth}
+\begin{tikzpicture}[scale=0.75]
+%define the axes
+\draw[thick,->] (0,0) -- (3.5,0) node[anchor=north west] {x};
+\draw[thick,->] (0,0) -- (0,2.5) node[anchor=south east] {y};
+\draw (0 cm,1pt) -- (0 cm,-1pt) node[anchor=north] {$0$};
+%\draw (1 cm,1pt) -- (1 cm,-1pt) node[anchor=north] {$0.1$};
+\draw (2 cm,1pt) -- (2 cm,-1pt) node[anchor=north] {$0.2$};
+\draw (3 cm,1pt) -- (3 cm,-1pt) node[anchor=north] {$0.3$};
+%\draw (4 cm,1pt) -- (4 cm,-1pt) node[anchor=north] {$0.4$};
+%\draw (5 cm,1pt) -- (5 cm,-1pt) node[anchor=north] {$0.5$};
+\draw (1pt,1 cm) -- (-1pt,1 cm) node[anchor=east] {$0.1$};
+\draw (1pt,2 cm) -- (-1pt,2 cm) node[anchor=east] {$0.2$};
+%\draw (1pt,3 cm) -- (-1pt,3 cm) node[anchor=east] {$0.3$};
+%\draw (1pt,4 cm) -- (-1pt,4 cm) node[anchor=east] {$0.4$};
+%\draw (1pt,5 cm) -- (-1pt,5 cm) node[anchor=east] {$0.5$};
+%draw the dotted lines to the first point
+\draw[black,thick,dashed] (2,0) -- (2, 1);
+\draw[black,thick,dashed] (0,1) -- (2, 1);
+%draw the dotted lines to the second point
+\draw[red,thick,dashed] (3,0) -- (3, 2);
+\draw[red,thick,dashed] (0,2) -- (3, 2);
+%draw the two point markerss
+\node[mark size=3pt,color=red] at (3,2) {\pgfuseplotmark{triangle*}};
+\node[mark size=3pt,color=black] at (2,1) {\pgfuseplotmark{halfcircle*}};
+\end{tikzpicture}
+\end{minipage}%%%
+\hspace{0.55cm}
+\begin{minipage}[c]{0.69\textwidth}
+\centering
+\includegraphics[scale=1.2]{Vectors/laptop_q.eps}\\
+\vspace{0.5cm}
+\flushright
+\begin{tabular}{c | c | c c}
+	Prob. & Amplitude & Quantum state  \\
+	\midrule
+	$p_1 =\, \frac{(0.2+0.3)^2}{0.18}$ & $\frac{0.2+0.3}{\sqrt{0.18}}$ & $\ket{000}$\\
+	$p_2 =\, \frac{(0.1+0.2)^2}{0.18}$ & $\frac{0.1+0.2}{\sqrt{0.18}}$ & $\ket{010}$  \\
+	$p_3 = 0$ & $0$ & $\ket{001}$ \\
+	$p_4 = 0$ & $0$ & $\ket{011}$ \\
+	$p_5 = \,\frac{(0.2-0.3)^2}{0.18}$ & $\frac{0.2-0.3}{\sqrt{0.18}}$ & $\ket{100}$  \\
+	$p_6 = \, \frac{(0.1-0.2)^2}{0.18}$ & $\frac{0.1-0.2}{\sqrt{0.18}}$ & $\ket{110}$ \\
+	$p_7 = 0$ & $0$ &  $\ket{101}$ \\
+	$p_8 = 0$ & $0$ &  $\ket{111}$\\
+	
+\end{tabular}
+\end{minipage}
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}Nielsen, M. A., \& Chuang, I. L. (2010). Quantum computation and quantum information. Cambridge University Press.\newline \textsuperscript{2}Jat, R. N., \& Ruhela, D. S. (2011). Comparative study of complexity of algorithms for iterative solution of non-linear equations. Journal of International Academy Of Physical Sciences, 15(4).}}
+\begin{frame}{Controlled U gate}
+
+\begin{minipage}[t]{.4\textwidth}
+	%\vspace{-20mm}
+	\includegraphics[height=0.5\textwidth]{controlledU.png}
+       \captionsetup{justification=raggedright, singlelinecheck=false}
+       \captionof{figure}{\footnotesize{Controlled U-gate} }
+\end{minipage}%%%%%
+\begin{minipage}[t]{.6\textwidth}
+%\vspace{-20mm}
+\includegraphics[width=1\textwidth]{controlledUdecomposition.png}
+       \captionsetup{justification=raggedright, singlelinecheck=false}
+       \captionof{figure}{\footnotesize{Decomposition of a controlled U-gate\textsuperscript{1}} }
+\end{minipage}
+
+Choose A,B,C and $\alpha$ s.t.
+\begin{equation}
+e^{i\alpha}*A*X*B*X*C = U \quad and \quad A*B*C = \mathds{1}
+\end{equation}
+Need to solve the following equation\textsuperscript{1}
+\begin{equation}
+U = \begin{pmatrix}
+ e^{i(\alpha-\frac{\beta}{2}-\frac{\delta}{2})}\cos{\frac{\gamma}{2}} & -e^{i(\alpha-\frac{\beta}{2}+\frac{\delta}{2})}\sin{\frac{\gamma}{2}} \\ 
+e^{i(\alpha+\frac{\beta}{2}-\frac{\delta}{2})}\sin{\frac{\gamma}{2}} & e^{i(\alpha+\frac{\beta}{2}+\frac{\delta}{2})}\cos{\frac{\gamma}{2}}
+ \end{pmatrix}
+\end{equation}
+
+%calculating a root of a function f(x) with n-digit precision, provided that a good initial approximation is known, is O((\log n) F(n)) where F(n) is the cost of calculating f(x)/f'(x)\, with n-digit precision.
+
+	%\metroset{block=fill}
+	%\begin{alertblock}{Overall algorithmic complexity}
+	%$\mathcal{O}(\frac{1}{p_{acc}})+\textcolor{red}{\mathcal{O}(k)}$ where $k$ is number of root finding iterations\textsuperscript{2}
+	%\end{alertblock}
+\end{frame}
+
+}{
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}Dawson, C. M., \& Nielsen, M. A. (2005). The Solovay-Kitaev algorithm. arXiv preprint quant-ph/0505030.}}
+\begin{frame}{Problems with universal gate sets}
+
+In our case we need to find A, B, C and $\alpha$ for $_0^1CR_y(\frac{\pi}{4})$:
+
+Using a root finding algorithm for non-linear equations we find:
+
+\begin{equation}
+\alpha =  \pi; \quad 
+\beta = 2\pi;\quad 
+\delta = \frac{7}{8}\pi;\quad 
+\gamma = 0
+\end{equation}
+Then,
+\begin{align}
+A \quad= \quad R_z(\beta)R_y(\frac{\gamma}{2})\quad =& \quad R_z(2\pi) \quad = \quad \textcolor{emerald}{\mathds{1}} \\
+B\quad =\quad R_y(-\frac{\gamma}{2})R_z(-\frac{\delta+\beta}{2})\quad =& \quad R_z(-\frac{23}{16}\pi) \quad= \quad \textcolor{red}{???}  \\
+C \quad=\quad R_z(\frac{\delta-\beta}{2})\quad =& \quad R_z(-\frac{9}{16}\pi) \quad= \quad \textcolor{red}{???} \\
+\begin{pmatrix} 1&0\cr0&e^{i\alpha} \end{pmatrix}\quad=& \quad \begin{pmatrix} 1&0\cr0&e^{i\pi} \end{pmatrix}\quad= \quad \textcolor{emerald}{Z}
+\end{align}
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}Dawson, C. M., \& Nielsen, M. A. (2005). The Solovay-Kitaev algorithm. arXiv preprint quant-ph/0505030.}}
+\begin{frame}{The Solovay-Kitaev theorem}
+
+\begin{align}
+B\quad =&\quad R_z(-\frac{23}{16}\pi) \quad= \quad \textcolor{red}{???}  \\
+C \quad=&\quad R_z(-\frac{9}{16}\pi) \quad= \quad \textcolor{red}{???}
+\end{align}
+
+The Solovay-Kitaev theorem guarantees that given a set of single-qubit quantum gates which generates a dense subset of $SU(2)$, then that set is guaranteed to fill $SU(2)$ quickly.\textsuperscript{1}
+ 
+$\rightarrow$ \textcolor{emerald}{\textbf{Hence, given any universal gate set it is possible to obtain good approximations to any desired gate.}}
+
+$\rightarrow$ \textcolor{red}{\textbf{But needs to be computed classically!}}
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}Booth Jr, J. (2012). Quantum compiler optimizations. arXiv preprint arXiv:1206.3348.}}
+\begin{frame}{The Solovay-Kitaev algorithm}
+
+Fowler distance\textsuperscript{1}:
+\begin{equation}
+dist(U,U_{approx}) = \sqrt{\frac{2-\mid tr(U\cdot U_{approx}^\dagger)\mid}{2}}
+\end{equation}
+
+\begin{figure}
+    \begin{tikzpicture}[scale=0.8]
+\begin{axis}[xlabel={Gate count},ylabel={Fowler distance [$d(U,U_{approx})$]}]
+
+% Graph column 2 versus column 0
+\addplot table[x index=1,y index=0,col sep=comma] {datax.dat};
+\addlegendentry{$R_z(-\frac{9}{16}\pi)$}% y index+1 since humans count from 1
+
+% Graph column 1 versus column 0    
+\addplot table[x index=5,y index=4,col sep=comma] {datax.dat};
+\addlegendentry{$R_z(-\frac{23}{16}\pi)$}
+
+\end{axis}
+\end{tikzpicture}
+  \end{figure}
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{}
+\begin{frame}{The Solovay-Kitaev algorithm}
+
+\begin{minipage}[c]{.8\textwidth}
+	%\vspace{-20mm}
+	\includegraphics[height=0.8\textwidth]{fowlerdistance.png}
+       \captionsetup{justification=raggedright, singlelinecheck=false}
+       \captionof{figure}{\footnotesize{Various Fowler distances visualized on Bloch sphere} }
+\end{minipage}%%%%%
+\begin{minipage}[c]{.2\textwidth}
+\scriptsize
+\begin{equation}
+\textcolor{cyan}{d = 0.22739}
+\end{equation}
+\begin{equation}
+\textcolor{emerald}{d = 0.15165}
+\end{equation}
+\begin{equation}
+\textcolor{blue}{d = 0.10722}
+\end{equation}
+\begin{equation}
+\textcolor{darkyellow}{d = 0.02086}
+\end{equation}
+\begin{equation}
+\textcolor{red}{d = 0.00156}
+\end{equation}
+
+\end{minipage}
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{}
+\begin{frame}{The Solovay-Kitaev algorithm}
+
+IBM's quantum computer needs \textbf{130ns for single-qubit gates} and \textbf{500ns for CNOT gates.}
+
+IBM qubit decoherence times:
+
+\SI{49.5}{\micro\second} $\leq T_1 \leq$ \SI{85.3}{\micro\second} "amplitude damping"\\
+\SI{56.0}{\micro\second} $\leq T_2 \leq$ \SI{139.7}{\micro\second} "phase damping"
+\vspace{6mm}
+
+
+\begin{table}
+    \begin{tabular}{c| c |c |c }
+      \toprule
+      Approx. Gate & Distance & Gate count & Execution time\\
+      \midrule
+      $R_z(-\frac{23}{16}\pi)$ & 0.15165 & 25 & \textcolor{emerald}{$\sim$\SI{3}{\micro\second}}\\
+       & 0.10722 & 109 & \textcolor{emerald}{$\sim$\SI{14}{\micro\second}}\\
+       & 0.02086 & 2997 & \textcolor{red}{$\sim$\SI{390}{\micro\second}}\\
+       & 0.01494 & 14721 & \textcolor{red}{$\sim$\SI{1914}{\micro\second}}\\
+       & 0.003327 & 74009 & \textcolor{red}{$\sim$\SI{9621}{\micro\second}}\\
+       & 0.001578 & 370813 & \textcolor{red}{$\sim$\SI{48206}{\micro\second}}\\
+      \bottomrule
+    \end{tabular}
+    \caption{SK algorithm results}
+  \end{table}
+ 
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
+\begin{frame}[fragile]{Encoding classical data into qubits}
+
+%There are two different ways for encoding classical data into quantum states: 
+
+\begin{alertblock}{1. Data encoded into qubits}
+%speed-up not very clear since the \# of qubits increases linearly with the \# of classical bits
+k-dimensional probability vector requires $4k$ classical bits which are encoded one-to-one into $4k$ qubits, e.g.\\
+\vspace{2mm}
+$\begin{pmatrix}
+ \textcolor{blue}{0.6} \\ 
+ \textcolor{emerald}{0.4}
+ \end{pmatrix}*10 \rightarrow \begin{pmatrix}
+ \textcolor{blue}{6} \\ 
+ \textcolor{emerald}{4}
+ \end{pmatrix} \rightarrow \begin{pmatrix}
+ \textcolor{blue}{0110} \\ 
+ \textcolor{emerald}{0100}
+ \end{pmatrix} \rightarrow n=\textcolor{blue}{0110}\textcolor{emerald}{0100} \rightarrow \ket{n} = \ket{\textcolor{blue}{0110}\textcolor{emerald}{0100}}$\\
+%\textbf{Only slight speed up possible}
+\end{alertblock}
+\vspace{1cm}
+Schuld, Sinayskiy, and Petruccione (2014) developed a \textbf{qubit-based} quantum kNN algorithm. $\rightarrow$ requires a lot of qubits\\
+\vspace{0.5cm}
+My thesis research stressed the need for an alternative...
+
+
+\end{frame}
+}
 
 \end{document}

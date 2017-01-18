@@ -1,9 +1,26 @@
-\frametitle{Typography}
-\begin{verbatim}The theme provides sensible defaults to
-\emph{emphasize} text, \alert{accent} parts
-or show \textbf{bold} results.\end{verbatim}
+\frametitle{Encoding classical data into qubits}
 
-  \begin{center}becomes\end{center}
+%There are two different ways for encoding classical data into quantum states:
 
-  The theme provides sensible defaults to \emph{emphasize} text,
-  \alert{accent} parts or show \textbf{bold} results.
+\begin{alertblock}{1. Data encoded into qubits}
+%speed-up not very clear since the \# of qubits increases linearly with the \# of classical bits
+k-dimensional probability vector requires $4k$ classical bits which are encoded one-to-one into $4k$ qubits, e.g.\\
+\vspace{2mm}
+$\begin{pmatrix}
+ \textcolor{blue}{0.6} \\
+ \textcolor{emerald}{0.4}
+ \end{pmatrix}*10 \rightarrow \begin{pmatrix}
+ \textcolor{blue}{6} \\
+ \textcolor{emerald}{4}
+ \end{pmatrix} \rightarrow \begin{pmatrix}
+ \textcolor{blue}{0110} \\
+ \textcolor{emerald}{0100}
+ \end{pmatrix} \rightarrow n=\textcolor{blue}{0110}\textcolor{emerald}{0100} \rightarrow \ket{n} = \ket{\textcolor{blue}{0110}\textcolor{emerald}{0100}}$\\
+%\textbf{Only slight speed up possible}
+\end{alertblock}
+\vspace{1cm}
+Schuld, Sinayskiy, and Petruccione (2014) developed a \textbf{qubit-based} quantum kNN algorithm. $\rightarrow$ requires a lot of qubits\\
+\vspace{0.5cm}
+My thesis research stressed the need for an alternative...
+
+

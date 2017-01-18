@@ -1,11 +1,9 @@
 \begin{thebibliography}{1}
 
-\bibitem{bigdata}
-IBM.
-\newblock What is big data?
-\newblock
-  \url{https://www-01.ibm.com/software/data/bigdata/what-is-big-data.html},
-  2016.
-\newblock Accessed: 2016-09-08.
+\bibitem{SchuldFingerhuth}
+M.~Schuld, M.~Fingerhuth, and F.~Petruccione.
+\newblock {Amplitude-based quantum k-nearest neighbour algorithm. Manuscript in
+  preparation.}
+\newblock 2016.
 
 \end{thebibliography}
