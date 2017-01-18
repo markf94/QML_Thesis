@@ -131,8 +131,8 @@ approaches. Cambridge University Press.}}
 \includegraphics[scale=3.5]{Vectors/laptop_ml.eps}
 \newline
 \textbf{Machine learning}\\
-Enable computers to\\
-learn from data
+Enable computers\\
+to learn from data
 \end{minipage}%%
 \hspace{0.5cm}
 \begin{minipage}[c]{0.49\textwidth}
@@ -165,12 +165,21 @@ sets gets increasingly difficult\textsuperscript{2}
 {
 \setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
 \begin{frame}[fragile]{Enhancing machine learning with quantum mechanics}
-\hspace{-0.7cm}
+
+\begin{minipage}[c]{0.39\textwidth}
+\vspace{2.8cm}
+\centering
+\hspace{-1cm}\includegraphics[scale=2.2]{Vectors/laptop_q.eps}
+\flushleft
+\textbf{Quantum computing}\\
+Build computer hardware based on quantum physics
+\end{minipage}%%
+\hspace{0.1cm}
 \begin{minipage}[c]{0.59\textwidth}
 \centering
 \includegraphics[scale=0.16]{ibm-quantum-computer.jpg}\\
 %\includegraphics[scale=0.12]{dwave.jpg}\\
-\tiny{Sources: IBM}
+\tiny{Source: IBM}
 \vspace{0.1cm}
 \flushleft
 \normalsize
@@ -180,15 +189,6 @@ sets gets increasingly difficult\textsuperscript{2}
 \item Many-qubit systems are described by large vectors that can be manipulated in parallel on quantum computers
 \item Machine learning involves manipulation of large vectors\\ and matrices
 \end{itemize}
-\end{minipage}%%
-\hspace{0.3cm}
-\begin{minipage}[c]{0.39\textwidth}
-\vspace{2.8cm}
-\centering
-\hspace{-1cm}\includegraphics[scale=2.2]{Vectors/laptop_q.eps}
-\flushleft
-\textbf{Quantum computing}\\
-Build computer hardware based on quantum physics
 \end{minipage}
 
 \end{frame}
@@ -234,7 +234,7 @@ Given a dataset of inputs and their corresponding outputs,\\ predict the output 
 \begin{tabular}{l  l }
 \toprule
 Input & Output\\\midrule
-faces & emotions\\
+faces & emotions (happy or sad)\\
 heartbeat & healthy or sick\\
 last year's daily weather & tomorrow's weather\\
 message of a users & intention of text content\\
@@ -293,10 +293,11 @@ $v_{i} \in$ \{$red$, $blue$\}
 \vline
 \hspace{0.1cm}
 \begin{minipage}[t]{.53\textwidth}
-\flushright
+\flushleft
 Given a new vector $\tilde{x}$ (black halfcircle):\\
 - consider $k$ nearest neighbours\\
-- classify $\tilde{x}$, based on majority vote,\\as \emph{red} or \emph{blue}
+- classify $\tilde{x}$, based on majority vote,\\
+$\> \> \>$as \emph{red} or \emph{blue}
 \end{minipage}
 
 \begin{minipage}[c]{0.49\textwidth}
@@ -306,8 +307,6 @@ $k = all$
 \flushleft
 \begin{tikzpicture}[scale=0.6]
 \begin{axis}[legend pos=north east,
-ylabel={RGB blue content},
-      xlabel={RGB red content},
  yticklabels={,,},
       xticklabels={,,},
 			scatter/classes={
@@ -458,7 +457,7 @@ Classification $\rightarrow$ \textbf{\textcolor{red}{RED}}\\
 \section{\protect\includegraphics[scale=2.4]{Vectors/laptop_q.eps}\newline Quantum Computing}
 
 {
-\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}}}
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1} MOSFET - Metal Oxide Semiconductor Field Effect Transistor}}
 \begin{frame}[fragile]{Classical vs. quantum bits (qubits)}
 
 \begin{figure}
@@ -471,7 +470,7 @@ Classification $\rightarrow$ \textbf{\textcolor{red}{RED}}\\
 \flushleft
 \textbf{Classical bit:}
 \begin{itemize}
-\item Usually implemented through MOSFETs
+\item Usually implemented through MOSFETs\textsuperscript{1}
 \item 2 definite states ($0$,$1$)
 \item Can be either $0$ OR $1$
 \end{itemize}
@@ -527,7 +526,7 @@ The last expression is called the \textbf{amplitude vector}.
 }
 
 {
-\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}Reprinted from Wikipedia, n.d., Retrieved September 7, 2016, from \url{https://en.wikipedia.org/wiki/Bloch_Sphere}. Copyright 2012 by Glosser.ca. Reprinted with permission.}}
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}Source: Wikipedia}}
 \begin{frame}[fragile]{The Bloch sphere}
 
 \begin{minipage}[c]{.5\textwidth}
@@ -559,6 +558,74 @@ where $0 \leq \theta \leq \pi$ and $0 \leq \phi \leq 2\pi$
 \end{frame}
 }
 
+{
+\setbeamertemplate{frame footer}{\tiny{}}
+\begin{frame}[fragile]{State-of-the-art quantum computation}
+
+Quantum computing is cutting edge technology at the frontier\\ of supercomputing!\\
+\vspace{0.5cm}
+$\rightarrow$ State-of-the art quantum computers are complicated laboratory experiments and prototypes.
+
+%\begin{minipage}[c]{0.59\textwidth}
+%\vspace{0.3cm}
+%\textbf{Current state-of-the-art prototypes:}\\
+%\begin{itemize}
+%\item IBM $\rightarrow$ \textbf{5 superconducting qubits}
+%\item Google $\rightarrow$ \textbf{9 superconducting qubits}
+%\item Weizmann Research Group in Israel\\$\rightarrow$ \textbf{8 trapped ions}
+%\item DWave $\rightarrow$ \textbf{1,152 qubits}\\BUT it solves only a narrow class of problems
+%\end{itemize}
+%\end{minipage}%%
+%\begin{minipage}[c]{0.39\textwidth}
+%\includegraphics[scale=0.18]{ion-trap.jpg}\\
+%\centering
+%\tiny{Source: University of Innsbruck}
+%\end{minipage}
+
+\end{frame}
+}
+
+{
+\setbeamertemplate{frame footer}{\tiny{}}
+\begin{frame}[fragile]{State-of-the-art quantum computation}
+\begin{figure}
+\includegraphics[scale=0.42]{ibm_fridge.png}
+\end{figure}
+\centering
+\tiny{Source: IBM}
+
+\end{frame}
+}
+{
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1} IBM Quantum Experience \\
+\textsuperscript{2} Google Quantum A.I. Lab Team\\
+\textsuperscript{3} Roee Ozeri, Weizmann Institute of Science\\
+\textsuperscript{4} DWave Systems }}
+\begin{frame}[fragile]{State-of-the-art quantum computation}
+
+Quantum computing is cutting edge technology at the frontier\\ of supercomputing!\\
+\vspace{0.1cm}
+$\rightarrow$ State-of-the art quantum computers are complicated laboratory experiments and prototypes.
+
+%\begin{minipage}[c]{0.59\textwidth}
+\vspace{0.3cm}
+\textbf{Current state-of-the-art prototypes:}\\
+\begin{itemize}
+\item IBM $\rightarrow$ \textbf{5 superconducting qubits}\textsuperscript{1}
+\item Google $\rightarrow$ \textbf{9 superconducting qubits}\textsuperscript{2}
+\item Weizmann Research Group in Israel $\rightarrow$ \textbf{8 trapped ions}\textsuperscript{3}
+\item DWave $\rightarrow$ \textbf{1,152 qubits}\textsuperscript{4}\\
+BUT it solves only a narrow class of problems
+\end{itemize}
+%\end{minipage}%%
+%\begin{minipage}[c]{0.39\textwidth}
+%\includegraphics[scale=0.18]{ion-trap.jpg}\\
+%\centering
+%\tiny{Source: University of Innsbruck}
+%\end{minipage}
+
+\end{frame}
+}
 
 {
 \setbeamertemplate{frame footer}{\tiny{}}
@@ -597,41 +664,14 @@ Qubit number & classical RAM needed & Simulation time\\\midrule
 }
 
 {
-\setbeamertemplate{frame footer}{\tiny{}}
-\begin{frame}[fragile]{State-of-the-art quantum computation}
-
-\textbf{However}, quantum computation is cutting edge research at the frontier of supercomputing technology!\\
-\vspace{0.1cm}
-$\rightarrow$ State-of-the art quantum computers are complicated laboratory experiments and prototypes.
-
-\begin{minipage}[c]{0.59\textwidth}
-\vspace{0.3cm}
-\textbf{Current state-of-the-art:}\\
-\begin{itemize}
-\item IBM $\rightarrow$ \textbf{5 superconducting qubits}
-\item Google $\rightarrow$ \textbf{9 superconducting qubits}
-\item Weizmann Research Group in Israel\\$\rightarrow$ \textbf{8 trapped ions}
-\item DWave $\rightarrow$ \textbf{1,152 qubits}\\BUT it solves only a narrow class of problems
-\end{itemize}
-\end{minipage}%%
-\begin{minipage}[c]{0.39\textwidth}
-\includegraphics[scale=0.18]{ion-trap.jpg}\\
-\centering
-\tiny{Source: University of Innsbruck}
-\end{minipage}
-
-\end{frame}
-}
-
-{
-\setbeamertemplate{frame footer}{\tiny{}}
+\setbeamertemplate{frame footer}{\tiny{\textsuperscript{1}Biamonte, J., Wittek, P., Pancotti, N., Rebentrost, P., Wiebe, N., \& Lloyd, S. (2016). Quantum machine learning. arXiv preprint arXiv:1611.09347 .}}
 \begin{frame}[fragile]{Motivation for this thesis research}
 
 \begin{itemize}
 \item Classical machine learning is a very applied field
-\item State-of-the-art quantum computers have very few qubits
+\item State-of-the-art quantum computers only have few qubits
 \item Quantum-enhanced machine learning is almost purely theoretical
-\item There have been only a handful of proof-of-principle studies in quantum-enhanced machine learning
+\item There have been only a handful of proof-of-principle studies in quantum-enhanced machine learning\textsuperscript{1}
 \item Need for more proof-of-principle implementations and simulations\\ to demonstrate the benefits of quantum computation for\\machine learning
 \item Small-scale machine learning problems need to be\\ identified \& implemented.
 \end{itemize}
@@ -816,13 +856,14 @@ $\rightarrow$ requires only a few qubits and provides great speed-up
 \begin{frame}{Results: IBM quantum computer implementation}
 
 \begin{itemize}
-\item IBM's short qubit lifetimes only allow for 40 quantum gates. 
+\item IBM's short qubit lifetimes of about \SI{150}{\micro\second} only allow for 40 quantum gates.
 \item IBM Quantum Experience has a very small universal gate set making it difficult to run complicated algorithms.
 \item For this particular classification problem the quantum kNN algorithm requires at least 55 quantum gates.
 \item Until now, it is \textbf{impossible} to solve this particular machine learning problem on IBM's actual quantum hardware!
 \end{itemize}
 
-$\rightarrow$ Need for proof-of-principle simulations within the Liqui$\ket{}$ toolsuite to show that the quantum algorithms work!
+$\rightarrow$ Need for proof-of-principle simulations within the Liqui$\ket{}$ toolsuite to\\
+$\quad \,$ show that the quantum algorithms work!
 
 \end{frame}
 }
@@ -838,7 +879,7 @@ $\rightarrow$ Need for proof-of-principle simulations within the Liqui$\ket{}$ t
 \item No need to worry about qubit lifetimes.
 \end{itemize}
 
-Simulations demonstrated 100\% accuracy on the small-scale simple Bloch vector classification problem.
+Simulations demonstrated \textbf{100\% accuracy} on the small-scale simple Bloch vector classification problem.
 
 $\rightarrow$ The amplitude-based kNN algorithm works as expected, is scalable\\$\quad\>$ and has the potential to outperform the classical counterpart.
 
@@ -865,7 +906,7 @@ $\rightarrow$ The amplitude-based kNN algorithm works as expected, is scalable\\
 %\item Complexity analysis of the qubit-based kNN algorithm
 %\item Classification of gaussian probability distributions
 \item Finding more small-scale machine learning problems that can already be solved with quantum-enhanced machine learning algorithms
-\item Last week, IBM has released the IBM Quantum Experience 2.0 which makes an actual proof-of-principle implementation feasible. (Publication in preparation)
+\item Last week, IBM has released the IBM Quantum Experience 2.0 with three additional quantum logic gates and 80 quantum gate slots. (Publication in preparation)
 \item Possible collaboration with the Weizmann Research Group in Israel to implement the amplitude-based kNN algorithm in their ion trap quantum computer.
 \end{itemize}
 \end{frame}
@@ -873,18 +914,28 @@ $\rightarrow$ The amplitude-based kNN algorithm works as expected, is scalable\\
 \begin{frame}{References}
 
 \footnotesize{Bekkerman, R., Bilenko, M., \& Langford, J. (2011). Scaling up machine learning: Parallel and distributed
-approaches. Cambridge University Press.\newline
+approaches. Cambridge University Press.
 
-Booth Jr, J. (2012). Quantum compiler optimizations. arXiv preprint arXiv:1206.3348.
+Biamonte, J., Wittek, P., Pancotti, N., Rebentrost, P., Wiebe, N., \& Lloyd, S. (2016). Quantum
+machine learning. arXiv preprint arXiv:1611.09347.
 
-Dawson, C. M., \& Nielsen, M. A. (2005). The Solovay-Kitaev algorithm. arXiv preprint quant-ph/0505030.\newline
+Bishop, C. M. (2006). Pattern recognition. Machine Learning, 128 .
 
-IBM. (2016). What is big data? https://www-01.ibm.com/software/data/bigdata/what-is-big
--data.html. (Accessed: 2016-09-08) \newline
+Denchev, V. S., Boixo, S., Isakov, S. V., Ding, N., Babbush, R., Smelyanskiy, V., ... \& Neven, H. (2015). What is the Computational Value of Finite Range Tunneling?. arXiv preprint arXiv:1512.02206.
 
-Jat, R. N., \& Ruhela, D. S. (2011). Comparative study of complexity of algorithms for iterative solution of non-linear equations. Journal of International Academy Of Physical Sciences, 15(4).\newline
+Nielsen, M. A., \& Chuang, I. L. (2010). Quantum computation and quantum information. Cambridge University Press.
 
-Nielsen, M. A., \& Chuang, I. L. (2010). Quantum computation and quantum information. Cambridge University Press.}
+Schuld, M., Fingerhuth, M., \& Petruccione, F. (Manuscript in preparation). Amplitude-based quantum k-nearest neighbour algorithm. Manuscript in preparation.
+
+}
+\end{frame}
+
+\begin{frame}
+\begin{quote}
+    “Einstein said that if quantum mechanics were correct then the world would be crazy. Einstein was right - the world is crazy.”
+  \end{quote}
+  \centering
+  - Daniel Greenberger - 
 \end{frame}
 
 \begin{frame}[standout]
