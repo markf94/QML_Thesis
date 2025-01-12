@@ -1,174 +1,193 @@
-#from scipy.optimize import root
-from mpmath import findroot
-import cmath
-import math
+"""
+Quantum Gate Decomposition Algorithm
+
+This module implements the decomposition of 2x2 unitary matrices into elementary quantum gates
+using the ZYZ (or Euler) decomposition method. The decomposition expresses any 2x2 unitary
+matrix in terms of rotation angles (alpha, beta, gamma, delta).
+
+The implementation uses numerical optimization to find the angles that reproduce the target
+unitary matrix within specified precision.
+"""
+
+from typing import Tuple, Optional, List, Callable
 import numpy as np
-from itertools import product
+import cmath
+from dataclasses import dataclass
+from mpmath import findroot
+from functools import partial
 
-#Hadamard matrix elements
-u00 = 0.19509;
-u01 =-0.98079; #top right
-u10 = 0.98079; #bottom left
-u11 = 0.19509;
+@dataclass
+class UnitaryMatrix:
+    """Represents a 2x2 unitary matrix with its elements."""
+    u00: complex
+    u01: complex
+    u10: complex
+    u11: complex
 
-## STILL DOESN'T COPE WITH ZERO ENTRIES IN THE U MATRIX!
-# S phase shift matrix elements
-#u00 = 1.0;
-#u01 = 0.0; #top right
-#u10 = 0.0; #top left
-#u11 = -1.0;
+    def validate(self) -> bool:
+        """
+        Validates if the matrix is approximately unitary within numerical precision.
+        Returns True if valid, False otherwise.
+        """
+        # Create numpy matrix for easier computation
+        matrix = np.array([[self.u00, self.u01], 
+                          [self.u10, self.u11]], dtype=complex)
+        # Check if U†U ≈ I
+        product = matrix.conj().T @ matrix
+        identity = np.eye(2, dtype=complex)
+        return np.allclose(product, identity, atol=1e-6)
 
-#INITIALIZE SOME VARIABLES
-some_list = [math.pi/4, math.pi/2, 3/4*math.pi, math.pi, 0, -math.pi*1.5, -math.pi, -3/4*math.pi, -math.pi/2, -math.pi/4, 1.5*math.pi];
-alpha = 10;
-beta = 10;
-delta = 10;
-gamma = 10;
+@dataclass
+class DecompositionAngles:
+    """Stores the angles from the ZYZ decomposition."""
+    alpha: float
+    beta: float
+    gamma: float
+    delta: float
 
-if u10 != 0.0 and u01 != 0.0:
+class GateDecomposer:
+    def __init__(self, matrix: UnitaryMatrix, precision: float = 1e-6):
+        """
+        Initialize decomposer with target unitary matrix and desired precision.
+        
+        Args:
+            matrix: Target unitary matrix to decompose
+            precision: Numerical precision for optimization
+        """
+        if not matrix.validate():
+            raise ValueError("Input matrix must be unitary")
+        self.matrix = matrix
+        self.precision = precision
+        self.search_points = np.linspace(-2*np.pi, 2*np.pi, 20)
 
-	#First find beta & delta
-	def z1(beta,delta):
-		temp=cmath.exp(1j*(beta+delta))-u11/u00;
-		return temp
+    def _create_beta_delta_equations(self) -> Tuple[Callable, Callable]:
+        """Creates the equations for finding beta and delta angles."""
+        def eq1(beta: float, delta: float) -> complex:
+            return cmath.exp(1j*(beta+delta)) - self.matrix.u11/self.matrix.u00
 
-	def z2(beta,delta):
-		temp=cmath.exp(1j*(beta-delta))+u10/u01;
-		return temp
+        def eq2(beta: float, delta: float) -> complex:
+            return cmath.exp(1j*(beta-delta)) + self.matrix.u10/self.matrix.u01
 
-	#for strtp1 in reversed(some_list):
-		#for strtp2 in reversed(some_list):
+        return eq1, eq2
 
-	for strtp1, strtp2 in product(reversed(some_list), reversed(some_list)):
-			try:
-				ans =  findroot([z1,z2],(strtp1,strtp2));
-				beta_save = ans[0].real;
-				delta_save = ans[1].real;
-				if abs(beta_save) < abs(beta) and abs(delta_save) < abs(delta):
-					beta = beta_save;
-					delta = delta_save;
-					print "beta:", beta
-					print "delta:", delta
-					break
-			except ZeroDivisionError:
-				print "divide by zero"
+    def _create_alpha_gamma_equations(self, beta: float, delta: float) -> Tuple[Callable, Callable]:
+        """Creates the equations for finding alpha and gamma angles."""
+        def eq3(alpha: float, gamma: float) -> complex:
+            return (self.matrix.u11 * cmath.exp(-1j*alpha) * 
+                   cmath.exp(1j*(-beta/2-delta/2)) - cmath.cos(gamma/2))
 
-	#Move on to finding gamma
-	def z3(alpha,gamma):
-		temp=u11*cmath.exp(-1j*alpha)*cmath.exp(1j*(-beta/2-delta/2))-cmath.cos(gamma/2);
-    		return temp
-	def z4(alpha,gamma):
-		temp=u10*cmath.exp(-1j*alpha)*cmath.exp(1j*(-beta/2+delta/2))-cmath.sin(gamma/2);
-    		return temp
+        def eq4(alpha: float, gamma: float) -> complex:
+            return (self.matrix.u10 * cmath.exp(-1j*alpha) * 
+                   cmath.exp(1j*(-beta/2+delta/2)) - cmath.sin(gamma/2))
 
-	for strtp1, strtp2 in product(reversed(some_list), reversed(some_list)):
-			try:
-				ans =  findroot([z3,z4],(strtp1,strtp2));
-				alpha_save = ans[0].real;
-				gamma_save = ans[1].real;
-				if abs(alpha_save) < abs(alpha) and abs(gamma_save) < abs(gamma):
-					alpha = alpha_save;
-					gamma = gamma_save;
-					break
-			except ZeroDivisionError:
-				print "divide by zero"
-			except OverflowError:
-				print "overflow"
-	'''
-	def z3(gamma):
-		temp=u11*cmath.exp(-1j*delta)*cmath.tan(gamma/2)-u10;                #-U[1,1]/U[0,0];
-    		return temp
+        return eq3, eq4
 
-	for strtp1 in reversed(some_list):
-			try:
-				ans =  findroot(z3,strtp1);
-				gamma_save = ans.real;
-				if abs(gamma_save) < abs(gamma):
-					gamma = gamma_save;
-					print "gamma:", gamma
-			except ZeroDivisionError:
-				print "divide by zero"
+    def _find_minimum_magnitude_solution(self, 
+                                      equations: Tuple[Callable, Callable],
+                                      current_best: Tuple[float, float]) -> Optional[Tuple[float, float]]:
+        """
+        Finds the solution with minimum magnitude angles using multiple starting points.
+        """
+        best_solution = current_best
+        min_magnitude = sum(abs(x) for x in current_best)
 
-	#Now compute alpha
-	def z4(alpha):
-		temp=u11*cmath.exp(-1j*(beta/2+delta/2))*1/(cmath.cos(gamma/2)-cmath.exp(1j*alpha));
-		return temp
+        for x, y in np.ndindex(len(self.search_points), len(self.search_points)):
+            try:
+                start_point = (self.search_points[x], self.search_points[y])
+                solution = findroot(equations, start_point)
+                solution_real = (float(solution[0].real), float(solution[1].real))
+                
+                magnitude = sum(abs(x) for x in solution_real)
+                if magnitude < min_magnitude:
+                    min_magnitude = magnitude
+                    best_solution = solution_real
+                    
+            except (ZeroDivisionError, OverflowError, ValueError):
+                continue
 
-	for strtp1 in reversed(some_list):
-			try:
-				ans =  findroot(z4,strtp1)
-				alpha_save = ans
-				print "alpha_save:", alpha_save
-				if abs(alpha_save) < abs(alpha):
-					alpha = alpha_save;
-					print "alpha:", alpha
-			except ZeroDivisionError:
-				print "divide by zero"
-			except ValueError:
-				print "try another starting point"
-	'''
-	print "alpha, beta, gamma, delta:", alpha, beta, gamma, delta
-	nu00 = cmath.exp(1j*(alpha-beta/2-delta/2))*cmath.cos(gamma/2)
-	print "nu00", nu00
-	nu01 = -cmath.exp(1j*(alpha-beta/2+delta/2))*cmath.sin(gamma/2)
-	print "nu01", nu01
-	nu10 = cmath.exp(1j*(alpha+beta/2-delta/2))*cmath.sin(gamma/2)
-	print "nu10", nu10
-	nu11 = cmath.exp(1j*(alpha+beta/2+delta/2))*cmath.cos(gamma/2)
-	print "nu11", nu11
-else:
-	print "Calculate it by hand!"
-	'''
-	#set gamma=0
-	gamma = 0;
+        return best_solution if min_magnitude < sum(abs(x) for x in current_best) else None
 
-	#First find beta & delta
-	def z1(beta,delta):
-		temp=cmath.exp(1j*(beta+delta))-u11/u00;
-		return temp
+    def decompose(self) -> Optional[DecompositionAngles]:
+        """
+        Performs the ZYZ decomposition of the unitary matrix.
+        
+        Returns:
+            DecompositionAngles object containing the decomposition angles,
+            or None if decomposition fails
+        """
+        # Handle special case where matrix has zero elements
+        if abs(self.matrix.u10) < self.precision or abs(self.matrix.u01) < self.precision:
+            return self._handle_special_case()
 
-	def z2(beta,delta):
-		temp=cmath.exp(1j*(beta-delta)); #+u10/u01; (zero anyway)
-		return temp
+        # Find beta and delta
+        beta_delta_eqs = self._create_beta_delta_equations()
+        initial_angles = (10.0, 10.0)  # Large initial values
+        beta_delta = self._find_minimum_magnitude_solution(beta_delta_eqs, initial_angles)
+        
+        if not beta_delta:
+            return None
+            
+        beta, delta = beta_delta
 
-	#for strtp1 in reversed(some_list):
-		#for strtp2 in reversed(some_list):
+        # Find alpha and gamma
+        alpha_gamma_eqs = self._create_alpha_gamma_equations(beta, delta)
+        alpha_gamma = self._find_minimum_magnitude_solution(alpha_gamma_eqs, initial_angles)
+        
+        if not alpha_gamma:
+            return None
+            
+        alpha, gamma = alpha_gamma
 
-	for strtp1, strtp2 in product(reversed(some_list), reversed(some_list)):
-			try:
-				print "strtp1", strtp1
-				print "strtp2", strtp2
-				ans =  findroot([z1,z2],(strtp1,strtp2));
-				beta_save = ans[0].real;
-				delta_save = ans[1].real;
-				if abs(beta_save) < abs(beta) and abs(delta_save) < abs(delta):
-					beta = beta_save;
-					delta = delta_save;
-					print "beta:", beta
-					print "delta:", delta
-					break
-			except ZeroDivisionError:
-				print "divide by zero"
-			except ValueError:
-				print "value error"
+        return DecompositionAngles(alpha=alpha, beta=beta, gamma=gamma, delta=delta)
 
-	#Move on to finding gamma
-	def z3(alpha):
-		temp=u11*cmath.exp(-1j*alpha)*cmath.exp(1j*(-beta/2-delta/2))-cmath.cos(gamma/2);
-    		return temp
-	def z4(alpha):
-		temp=u10*cmath.exp(-1j*alpha)*cmath.exp(1j*(-beta/2+delta/2))-cmath.sin(gamma/2);
-    		return temp
+    def verify_decomposition(self, angles: DecompositionAngles) -> bool:
+        """
+        Verifies if the decomposition accurately reproduces the original matrix.
+        """
+        reconstructed = self.reconstruct_matrix(angles)
+        original = np.array([[self.matrix.u00, self.matrix.u01],
+                           [self.matrix.u10, self.matrix.u11]])
+        return np.allclose(reconstructed, original, atol=self.precision)
 
-	for strtp1 in reversed(some_list):
-			try:
-				ans =  findroot([z3,z4],strtp1);
-				alpha_save = ans.real;
-				if abs(alpha_save) < abs(alpha):
-					alpha = alpha_save;
-					break
-			except ZeroDivisionError:
-				print "divide by zero"
-			except OverflowError:
-				print "overflow"
-	'''
+    @staticmethod
+    def reconstruct_matrix(angles: DecompositionAngles) -> np.ndarray:
+        """
+        Reconstructs the unitary matrix from decomposition angles.
+        """
+        alpha, beta, gamma, delta = angles.alpha, angles.beta, angles.gamma, angles.delta
+        
+        nu00 = cmath.exp(1j*(alpha-beta/2-delta/2)) * cmath.cos(gamma/2)
+        nu01 = -cmath.exp(1j*(alpha-beta/2+delta/2)) * cmath.sin(gamma/2)
+        nu10 = cmath.exp(1j*(alpha+beta/2-delta/2)) * cmath.sin(gamma/2)
+        nu11 = cmath.exp(1j*(alpha+beta/2+delta/2)) * cmath.cos(gamma/2)
+        
+        return np.array([[nu00, nu01], [nu10, nu11]])
+
+def main():
+    # Example usage with Hadamard-like matrix
+    hadamard = UnitaryMatrix(
+        u00=0.19509,
+        u01=-0.98079,
+        u10=0.98079,
+        u11=0.19509
+    )
+    
+    decomposer = GateDecomposer(hadamard)
+    angles = decomposer.decompose()
+    
+    if angles:
+        print(f"Decomposition angles found:")
+        print(f"α = {angles.alpha:.6f}")
+        print(f"β = {angles.beta:.6f}")
+        print(f"γ = {angles.gamma:.6f}")
+        print(f"δ = {angles.delta:.6f}")
+        
+        if decomposer.verify_decomposition(angles):
+            print("\nDecomposition verified successfully!")
+        else:
+            print("\nWarning: Decomposition verification failed")
+    else:
+        print("Failed to find valid decomposition")
+
+if __name__ == "__main__":
+    main()
